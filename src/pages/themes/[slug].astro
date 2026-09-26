@@ -1,0 +1,36 @@
+---
+import Base from "../../layouts/Base.astro";
+import GuideRow from "../../components/GuideRow.astro";
+import ToolRow from "../../components/ToolRow.astro";
+import { getTheme, guidesInTheme, themes, tools, type Theme } from "../../lib/guides";
+import { href } from "../../lib/paths";
+
+export function getStaticPaths() {
+  return themes.map((theme) => ({ params: { slug: theme.slug } }));
+}
+
+const theme = getTheme(Astro.params.slug as string) as Theme;
+const list = guidesInTheme(theme.slug);
+const themeTools = tools.filter((tool) => tool.themes.includes(theme.slug));
+---
+
+<Base title={theme.name} description={theme.blurb}>
+  <a href={href("/guides")} class="text-[13px] leading-5 text-[#737373] hover:underline">Guides</a>
+  <h1 class="mt-3 text-[22px] font-semibold leading-7 text-[#171717]">{theme.name}</h1>
+  <p class="mt-4 text-[15px] leading-6 text-[#737373]">{theme.blurb}</p>
+
+  <div class="mt-14 space-y-8">
+    {list.map((guide) => <GuideRow guide={guide} />)}
+  </div>
+
+  {
+    themeTools.length > 0 ? (
+      <section class="mt-16">
+        <h2 class="text-[13px] leading-5 text-[#737373]">Outils pour ce thème</h2>
+        <div class="mt-6 space-y-6">
+          {themeTools.map((tool) => <ToolRow tool={tool} />)}
+        </div>
+      </section>
+    ) : null
+  }
+</Base>

@@ -86,6 +86,7 @@ export const guides: Guide[] = [
       {
         title: "Regardez les trois offres HTML Pub",
         text: "Starter pour une seule page avec un domaine, Pro pour un créateur seul (plus de pages, un blog, l'accès API et la publication depuis Claude ou ChatGPT), Business pour une petite équipe ou une agence qui publie beaucoup.",
+        image: { src: "/captures/choisir-offre.webp", alt: "Page des tarifs : les offres HTML Pub (Publish) et Leadpages (Optimize) côte à côte" },
       },
       {
         title: "Regardez les trois offres Leadpages",
@@ -128,6 +129,7 @@ export const guides: Guide[] = [
       {
         title: "Cliquez sur « Start 7-Day Free Trial »",
         text: "Créez votre compte avec votre adresse e-mail, puis indiquez une carte bancaire. Elle sert seulement à continuer après l'essai.",
+        image: { src: "/captures/essai-gratuit.webp", alt: "Boutons « Start 7-Day Free Trial » sur chaque offre" },
       },
       {
         title: "Notez la date de fin",
@@ -164,15 +166,16 @@ export const guides: Guide[] = [
     steps: [
       {
         title: "Ouvrez la facturation",
-        text: "Dans le menu de gauche de votre tableau de bord, cliquez sur « Billing ». Connectez-vous avec le compte propriétaire si le menu n'apparaît pas.",
+        text: "En bas du menu de gauche, cliquez sur le nom de votre espace, puis sur « Billing ». Connectez-vous avec le compte propriétaire si le lien n'apparaît pas.",
       },
       {
         title: "Changez d'offre",
-        text: "Choisissez l'offre supérieure ou inférieure. Le changement prend effet au prochain cycle de facturation.",
+        text: "La page affiche toutes les offres, avec « Current Plan » sur la vôtre. Choisissez l'offre supérieure ou inférieure. Le changement prend effet au prochain cycle de facturation.",
+        image: { src: "/captures/facturation.webp", alt: "Page Billing : offres, « Current Plan », « Manage Subscription » et « Cancel »" },
       },
       {
         title: "Ou annulez",
-        text: "Annulez depuis les réglages de votre compte. Pendant un essai, faites-le avant le 7e jour pour ne pas être prélevé.",
+        text: "Toujours dans « Billing », utilisez « Manage Subscription » ou « Cancel ». Pendant un essai, la date de fin est indiquée sous votre offre : annulez avant pour ne pas être prélevé.",
       },
       {
         title: "Sachez ce que deviennent vos pages",
@@ -204,11 +207,12 @@ export const guides: Guide[] = [
     steps: [
       {
         title: "Ouvrez l'écran de création",
-        text: "Dans votre tableau de bord, cliquez sur « Publish New Page ». Dans le choix « What are you making? », sélectionnez « Landing page ».",
+        text: "Dans le menu de gauche, cliquez sur « Create ». Piper, l'assistant, vous demande « What are you making? » : choisissez « Landing page ».",
+        image: { src: "/captures/creer-page-ia.webp", alt: "Écran Create : Piper demande « What are you making? »" },
       },
       {
         title: "Décrivez votre page précisément",
-        text: "Dans le champ « Describe the page you want », indiquez à qui s'adresse la page, ce que vous proposez, le ton, les couleurs et les sections voulues (titre, avantages, avis, formulaire). Plus c'est précis, meilleur est le résultat.",
+        text: "Dans le champ « Describe the page you want, or paste a URL or HTML… », indiquez à qui s'adresse la page, ce que vous proposez, le ton, les couleurs et les sections voulues (titre, avantages, avis, formulaire). Plus c'est précis, meilleur est le résultat.",
       },
       {
         title: "Ajoutez une image de référence",
@@ -220,7 +224,7 @@ export const guides: Guide[] = [
       },
       {
         title: "Publiez",
-        text: "Quand la page vous convient, cliquez sur « Done » puis publiez-la. « Open page » ouvre l'adresse en ligne.",
+        text: "Quand la page vous convient, publiez-la. Elle apparaît ensuite dans « Pages », avec le bouton « Edit » pour la retoucher.",
       },
     ],
     pitfalls: [
@@ -245,7 +249,8 @@ export const guides: Guide[] = [
     steps: [
       {
         title: "Ouvrez les modèles",
-        text: "Sur l'écran de création, regardez la zone « Start from a template », ou cliquez sur « Browse all templates » pour tout voir.",
+        text: "Sur l'écran « Create », cliquez sur « Templates » au-dessus de la barre de saisie, ou sur « Browse all templates » pour tout voir.",
+        image: { src: "/captures/modele.webp", alt: "Panneau Templates avec « Preview », « Use » et « Browse all templates »" },
       },
       {
         title: "Prévisualisez avant de choisir",
@@ -282,12 +287,13 @@ export const guides: Guide[] = [
       "Vous avez déjà une page en HTML, faite par vous ou par une IA ? HTML Pub la met en ligne en quelques secondes. Cette méthode ne consomme pas de crédits.",
     steps: [
       {
-        title: "Cliquez sur « Publish New Page »",
-        text: "Le bouton se trouve en haut à droite du tableau de bord.",
+        title: "Ouvrez l'écran de création",
+        text: "Cliquez sur « Create » dans le menu de gauche, ou sur « Create Page » depuis la liste de vos pages.",
       },
       {
         title: "Ajoutez votre code",
-        text: "Trois façons : coller le HTML dans le champ, déposer directement un fichier .html, ou écrire le code vous-même.",
+        text: "Collez votre HTML dans le champ « Describe the page you want, or paste a URL or HTML… », ou utilisez l'icône d'envoi de fichier de la barre pour déposer un fichier .html.",
+        image: { src: "/captures/publier-html.webp", alt: "Barre de saisie où coller du HTML, avec l'icône d'envoi de fichier" },
       },
       {
         title: "Vérifiez l'aperçu",
@@ -295,7 +301,7 @@ export const guides: Guide[] = [
       },
       {
         title: "Publiez",
-        text: "Cliquez sur « Publish ». La page est en ligne sur une adresse HTML Pub, ou sur votre domaine si vous l'avez connecté.",
+        text: "Envoyez, vérifiez, puis publiez. La page est en ligne sur l'adresse gratuite de votre espace, ou sur votre domaine si vous l'avez connecté.",
       },
     ],
     pitfalls: [
@@ -317,7 +323,8 @@ export const guides: Guide[] = [
     steps: [
       {
         title: "Choisissez « Website »",
-        text: "Sur l'écran de création, sélectionnez « Website » au lieu de « Landing page ».",
+        text: "Sur l'écran « Create », sélectionnez « Website », ou ouvrez le menu « Landing page » de la barre de saisie et choisissez « New website ».",
+        image: { src: "/captures/site-web.webp", alt: "Menu « What are you creating? » avec l'option « New website »" },
       },
       {
         title: "Décrivez la page d'accueil",
@@ -333,7 +340,7 @@ export const guides: Guide[] = [
       },
       {
         title: "Ajoutez une page plus tard",
-        text: "Sur l'écran de création, ouvrez le choix de destination, sélectionnez votre site, décrivez la nouvelle page et cliquez sur « Create ».",
+        text: "Sur l'écran « Create », ouvrez le menu de destination de la barre de saisie, sélectionnez votre site, puis décrivez la nouvelle page.",
       },
     ],
     pitfalls: [
@@ -355,7 +362,8 @@ export const guides: Guide[] = [
     steps: [
       {
         title: "Créez le blog",
-        text: "Dans le menu, ouvrez « Blog » puis cliquez sur « + Create Blog ». Donnez un titre, et si vous voulez une description et un nom d'auteur.",
+        text: "Dans le menu de gauche, ouvrez « Blog » puis cliquez sur « New Blog ». Donnez un titre, et si vous voulez une description et un nom d'auteur.",
+        image: { src: "/captures/blog.webp", alt: "Page Blog avec le bouton « New Blog »" },
       },
       {
         title: "Écrivez un article",
@@ -395,8 +403,9 @@ export const guides: Guide[] = [
       "Par défaut, vos pages ont une adresse HTML Pub. Avec votre propre domaine, elles inspirent plus confiance. Le certificat de sécurité (HTTPS) est fourni gratuitement.",
     steps: [
       {
-        title: "Ouvrez « Custom Domains »",
-        text: "Dans le tableau de bord, rubrique « Manage », cliquez sur « Custom Domains », puis sur « Connect Domain ».",
+        title: "Ouvrez « Domains »",
+        text: "Dans le menu de gauche, cliquez sur « Domains », puis sur « Connect Domain ». Pas encore de domaine ? Selon votre offre, « Claim Free Domain » vous en offre un.",
+        image: { src: "/captures/domaine.webp", alt: "Page Domains avec « Connect Domain » et « Claim Free Domain »" },
       },
       {
         title: "Tapez votre domaine",
@@ -440,23 +449,24 @@ export const guides: Guide[] = [
     theme: "publier",
     updatedOn: "2026-09-26",
     intro:
-      "Chaque page a quelques réglages simples dans la liste des pages. Ils servent à avoir une adresse lisible, à cacher une page en préparation ou à ranger vos pages.",
+      "Chaque page a quelques réglages simples, dans le menu « … » de sa carte, dans « Pages ». Ils servent à avoir une adresse lisible, à cacher une page en préparation ou à ranger vos pages.",
     steps: [
       {
-        title: "Changez le titre",
-        text: "Dans la liste des pages, cliquez sur le titre pour le modifier. C'est le nom affiché dans l'onglet du navigateur.",
+        title: "Ouvrez le menu de la page",
+        text: "Dans « Pages », cliquez sur « … » en bas de la carte de la page. Le menu regroupe les statistiques, les réponses, le partage et les réglages.",
+        image: { src: "/captures/reglages-page.webp", alt: "Menu « … » d'une page : Settings, Set Password, Tags" },
       },
       {
-        title: "Changez l'adresse (slug)",
-        text: "Cliquez sur l'adresse grisée sous le titre. Utilisez des minuscules, des chiffres et des tirets, entre 10 et 64 caractères, par exemple offre-coaching-septembre.",
+        title: "Changez le titre et l'adresse",
+        text: "Choisissez « Settings ». Pour l'adresse (slug), utilisez des minuscules, des chiffres et des tirets, par exemple offre-coaching-septembre.",
       },
       {
         title: "Protégez par mot de passe",
-        text: "Cliquez sur l'icône de cadenas de la page. Les visiteurs devront entrer le mot de passe pour la voir. Pratique pour une page client ou une page pas encore prête.",
+        text: "Choisissez « Set Password ». Les visiteurs devront entrer le mot de passe pour voir la page. Pratique pour une page client ou une page pas encore prête.",
       },
       {
         title: "Rangez avec des étiquettes",
-        text: "Ajoutez des étiquettes (« Tags ») pour retrouver vos pages par campagne ou par client.",
+        text: "Choisissez « Tags », ou cliquez sur « + tag » sur la carte, pour retrouver vos pages par campagne ou par client.",
       },
     ],
     pitfalls: [
@@ -484,16 +494,17 @@ export const guides: Guide[] = [
         text: "Demandez à l'assistant « ajoute un formulaire avec prénom et e-mail », ou utilisez un modèle qui en contient un.",
       },
       {
-        title: "Ouvrez « Forms »",
-        text: "Dans le menu de gauche, la rubrique « Forms » liste vos pages avec le nombre de réponses et la date de la dernière.",
+        title: "Ouvrez « Submissions »",
+        text: "Dans le menu de gauche, cliquez sur « Submissions ». La page « Leads » regroupe toutes les réponses : nom, e-mail, page d'origine et date.",
+        image: { src: "/captures/formulaires.webp", alt: "Page Submissions (Leads) avec les réponses des formulaires" },
       },
       {
         title: "Consultez les réponses",
-        text: "Cliquez sur le nom d'une page, puis dépliez une ligne pour voir tous les champs remplis.",
+        text: "Pour une seule page, ouvrez son menu « … » dans « Pages » et choisissez « Submissions ». Dépliez une ligne pour voir tous les champs remplis.",
       },
       {
         title: "Exportez en CSV",
-        text: "Cliquez sur « Export CSV » pour obtenir un fichier à ouvrir dans Excel ou Google Sheets.",
+        text: "Exportez les réponses en CSV pour les ouvrir dans Excel ou Google Sheets.",
       },
       {
         title: "Supprimez si on vous le demande",
@@ -510,16 +521,17 @@ export const guides: Guide[] = [
   },
   {
     slug: "connecter-leadpages-a-son-outil-e-mail",
-    question: "Comment envoyer ses contacts vers Mailchimp, Google Sheets ou son CRM ?",
+    question: "Comment envoyer ses contacts vers Mailchimp, Brevo ou son CRM ?",
     summary: "Connecter une intégration pour que chaque nouveau contact arrive au bon endroit.",
     theme: "contacts",
     updatedOn: "2026-09-26",
     intro:
-      "Une intégration envoie chaque réponse de formulaire vers un autre outil, sans copier-coller. HTML Pub se connecte notamment à Mailchimp, Google Sheets, HubSpot, Slack, Pipedrive et GetResponse.",
+      "Un connecteur envoie chaque réponse de formulaire vers un autre outil, sans copier-coller. HTML Pub en propose plus de 20 : Mailchimp, Brevo, MailerLite, Kit, ActiveCampaign, HubSpot, Pipedrive, Slack, Zapier, Stripe…",
     steps: [
       {
-        title: "Ouvrez « Integrations »",
-        text: "Dans le menu de gauche, trouvez l'outil voulu et cliquez sur « Connect ».",
+        title: "Ouvrez « Connectors »",
+        text: "Dans le menu de gauche, cliquez sur « Connectors ». Cherchez votre outil par nom ou par catégorie (e-mail, CRM, publicité…) et cliquez sur « Connect ».",
+        image: { src: "/captures/integrations.webp", alt: "Page Connectors avec les applications à connecter" },
       },
       {
         title: "Autorisez la connexion",
@@ -527,7 +539,7 @@ export const guides: Guide[] = [
       },
       {
         title: "Réglez l'automatisation",
-        text: "Dans la partie « Automations », indiquez où envoyer les contacts (la liste Mailchimp, le tableau Google Sheets…) et choisissez toutes les pages ou seulement certaines.",
+        text: "Dans l'onglet « Automations », indiquez où envoyer les contacts (par exemple votre liste Mailchimp) et choisissez toutes les pages ou seulement certaines.",
       },
       {
         title: "Testez avec votre propre e-mail",
@@ -564,6 +576,7 @@ export const guides: Guide[] = [
       {
         title: "Créez une variante",
         text: "Dupliquez votre page en un clic, ou laissez l'IA proposer une variante. Changez une seule chose importante : le titre, le bouton ou l'offre.",
+        image: { src: "/captures/test-ab.webp", alt: "Création d'une variante B et bascule entre A et B" },
       },
       {
         title: "Choisissez votre objectif",
@@ -606,6 +619,7 @@ export const guides: Guide[] = [
       {
         title: "Activez le mode carte de chaleur",
         text: "Dans l'éditeur de la page, cliquez sur l'icône en forme de flamme dans la barre d'outils.",
+        image: { src: "/captures/heatmap.webp", alt: "Carte de chaleur des clics, avec les onglets Clicks, Scroll et Attention" },
       },
       {
         title: "Lisez les clics",
@@ -647,7 +661,8 @@ export const guides: Guide[] = [
       },
       {
         title: "Activez Smart Traffic",
-        text: "Au lieu d'une répartition fixe, laissez l'IA diriger les visiteurs. Elle s'améliore au fil des visites.",
+        text: "Cliquez sur « Let AI optimize this for me ». Au lieu d'une répartition fixe, l'IA dirige chaque visiteur et s'améliore au fil des visites.",
+        image: { src: "/captures/smart-traffic.webp", alt: "Panneau Optimize : répartition automatique du trafic entre l'original et la variante" },
       },
       {
         title: "Suivez les résultats",
@@ -675,7 +690,7 @@ export const guides: Guide[] = [
     steps: [
       {
         title: "Vérifiez votre offre",
-        text: "Le connecteur MCP est inclus à partir de HTML Pub Pro et dans toutes les offres Leadpages.",
+        text: "Le connecteur MCP est inclus dans toutes les offres payantes, dès HTML Pub Starter, et dans toutes les offres Leadpages.",
       },
       {
         title: "Ajoutez le connecteur dans Claude",
@@ -683,7 +698,8 @@ export const guides: Guide[] = [
       },
       {
         title: "Autorisez l'accès",
-        text: "Connectez-vous à votre compte HTML Pub quand Claude le demande. Aucune clé API n'est nécessaire.",
+        text: "Connectez-vous à votre compte HTML Pub quand Claude le demande. Aucune clé API n'est nécessaire. Claude apparaît ensuite dans « Connected Apps », dans le menu de votre espace.",
+        image: { src: "/captures/claude-connecteur.webp", alt: "Page Connected Apps, où apparaît Claude une fois connecté" },
       },
       {
         title: "Demandez votre page",
@@ -698,7 +714,7 @@ export const guides: Guide[] = [
       "Ajouter une mauvaise adresse de connecteur : copiez-la depuis l'aide officielle.",
       "Publier sans relire : vérifiez toujours la page en ligne.",
     ],
-    tools: [{ slug: "html-pub", why: "Connecteur Claude inclus dès l'offre Pro." }],
+    tools: [{ slug: "html-pub", why: "Connecteur Claude inclus dès l'offre Starter." }],
     sources: [{ label: "HTML Pub : connecteur MCP pour Claude", url: `${help}43969915496845--HTMLPub-Using-the-Claude-MCP-Connector` }, pricing],
     related: ["creer-une-landing-page-avec-l-ia", "creer-une-pub-video-avec-ad-studio"],
   },
@@ -709,11 +725,12 @@ export const guides: Guide[] = [
     theme: "ia",
     updatedOn: "2026-09-26",
     intro:
-      "Ad Studio transforme une courte description en publicité vidéo. Il propose des pubs centrées sur le produit ou au style UGC, avec un créateur généré par IA.",
+      "Ad Studio transforme une courte description en publicité. Il propose des pubs centrées sur le produit ou au style UGC, avec un créateur généré par IA. Il est réservé aux offres Leadpages Optimize et Scale.",
     steps: [
       {
-        title: "Décrivez votre pub",
-        text: "Votre produit, votre public et le style voulu : pub produit ou vidéo façon UGC.",
+        title: "Ouvrez « Ads »",
+        text: "Dans le menu de gauche, cliquez sur « Ads ». Décrivez votre produit, votre public et le style voulu : pub produit ou vidéo façon UGC.",
+        image: { src: "/captures/adstudio.webp", alt: "Page Ads (Ad Studio), réservée aux offres Optimize et plus" },
       },
       {
         title: "Validez l'image de départ",
@@ -731,8 +748,9 @@ export const guides: Guide[] = [
     pitfalls: [
       "Lancer le rendu sans avoir bien relu le storyboard : c'est cette étape qui coûte des crédits.",
       "S'étonner d'une vidéo sans musique : si la musique n'est pas libre de droits, elle est retirée.",
+      "Chercher Ad Studio avec une offre HTML Pub : il faut passer à Leadpages Optimize.",
     ],
-    tools: [{ slug: "html-pub", why: "Ad Studio fait partie des outils IA de HTML Pub." }],
+    tools: [{ slug: "leadpages", why: "Ad Studio est inclus dès l'offre Optimize." }],
     sources: [{ label: "HTML Pub : créer des pubs vidéo dans Ad Studio", url: `${help}48970038606349--HTMLPub-Generating-Video-Ads-in-Ad-Studio` }],
     related: ["publier-une-page-depuis-claude", "creer-une-landing-page-avec-l-ia"],
   },

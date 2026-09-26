@@ -3,6 +3,7 @@ import Base from "../../layouts/Base.astro";
 import GuideRow from "../../components/GuideRow.astro";
 import ToolRow from "../../components/ToolRow.astro";
 import {
+  affiliateLink,
   formatDate,
   getGuide,
   getTheme,
@@ -67,11 +68,36 @@ const howTo = {
             <div>
               <h3 class="text-[15px] font-medium leading-6 text-[#171717]">{step.title}</h3>
               <p class="mt-1 text-[15px] leading-6 text-[#666666]">{step.text}</p>
+              {step.image ? (
+                <img
+                  src={step.image.src}
+                  alt={step.image.alt}
+                  loading="lazy"
+                  decoding="async"
+                  class="mt-4 w-full rounded-[6px] shadow-[0_0_0_1px_rgba(0,0,0,0.07),0_1px_2px_rgba(0,0,0,0.05)]"
+                />
+              ) : null}
             </div>
           </li>
         ))
       }
     </ol>
+  </section>
+
+  <section class="mt-14 rounded-[6px] bg-[#f3f3f3] p-6">
+    <h2 class="text-[15px] font-medium leading-5 text-[#171717]">Essayer par vous-même</h2>
+    <p class="mt-3 text-[14px] leading-6 text-[#666666]">
+      Toutes les offres HTML Pub et Leadpages s'essaient gratuitement pendant 7 jours, avec toutes leurs fonctions.
+    </p>
+    <a
+      href={affiliateLink}
+      target="_blank"
+      rel="sponsored noopener"
+      class="mt-5 inline-flex h-[39px] items-center rounded-[4px] bg-[#262626] px-6 text-[14px] font-medium text-white hover:bg-black"
+    >
+      Essayer Leadpages 7 jours ↗
+    </a>
+    <p class="mt-3 text-[13px] leading-5 text-[#a0a0a0]">Lien affilié : il ne change pas le prix pour vous.</p>
   </section>
 
   {

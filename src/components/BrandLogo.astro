@@ -9,6 +9,7 @@ interface Props {
 const { tool, size = "sm" } = Astro.props;
 const src = logoPath(tool);
 const fit = tool.logo?.fit ?? "contain";
+const zoom = tool.logo?.zoom;
 const box = size === "lg" ? "size-[64px] rounded-[16px]" : "size-[48px] rounded-[12px]";
 const letter = size === "lg" ? "text-[24px]" : "text-[18px]";
 ---
@@ -31,6 +32,7 @@ const letter = size === "lg" ? "text-[24px]" : "text-[18px]";
         width="64"
         height="64"
         onerror="this.remove()"
+        style={zoom ? `transform: scale(${zoom})` : undefined}
         class:list={[
           "absolute inset-0 size-full bg-white",
           fit === "cover" ? "object-cover" : "object-contain p-[18%]",

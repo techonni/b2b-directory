@@ -212,19 +212,33 @@ export const guides: Guide[] = [
       },
       {
         title: "Décrivez votre page précisément",
-        text: "Dans le champ « Describe the page you want, or paste a URL or HTML… », indiquez à qui s'adresse la page, ce que vous proposez, le ton, les couleurs et les sections voulues (titre, avantages, avis, formulaire). Plus c'est précis, meilleur est le résultat.",
+        text: "Dans le champ du bas, indiquez à qui s'adresse la page, ce que vous proposez, le ton, les couleurs et les sections voulues (titre, avantages, avis, formulaire). Plus c'est précis, meilleur est le résultat. Cliquez sur « Send ».",
+        image: { src: "/captures/ia-description.webp", alt: "Description d'une landing page tapée dans la barre de saisie" },
       },
       {
-        title: "Ajoutez une image de référence",
-        text: "Avec l'icône image de la barre de saisie, joignez votre logo, une photo du produit ou une page que vous aimez. L'IA s'en sert pour le style.",
+        title: "Choisissez les images",
+        text: "Piper demande quoi utiliser pour les images : les vôtres, des images générées par IA (plus de crédits) ou aucune pour l'instant. Le coût estimé en crédits est affiché en haut à droite. « Skip images for now » est le choix le plus économique.",
+        image: { src: "/captures/ia-images.webp", alt: "Choix des images avec l'estimation en crédits" },
       },
       {
-        title: "Corrigez section par section",
-        text: "Regardez l'aperçu à droite, puis demandez des changements un par un : « rends le titre plus court », « ajoute un formulaire e-mail en bas ». Chaque message consomme des crédits IA.",
+        title: "Choisissez un style",
+        text: "Trois directions visuelles sont proposées. Cliquez sur celle qui vous plaît, réglez « How far should I push it? » si vous voulez, puis cliquez sur « Build it ».",
+        image: { src: "/captures/ia-style.webp", alt: "Trois directions de style proposées par Piper" },
       },
       {
-        title: "Publiez",
-        text: "Quand la page vous convient, publiez-la. Elle apparaît ensuite dans « Pages », avec le bouton « Edit » pour la retoucher.",
+        title: "Laissez Piper construire",
+        text: "La construction se fait en six étapes, en une minute environ : lecture de la demande, sections, textes, images, assemblage et vérification.",
+        image: { src: "/captures/ia-construction.webp", alt: "Construction de la page, étape par étape" },
+      },
+      {
+        title: "Corrigez en discutant",
+        text: "Cliquez sur « Open in editor ». Dans le champ « Ask Piper to edit this page… », demandez un changement à la fois. Piper liste ce qu'il a modifié et le nombre de crédits utilisés.",
+        image: { src: "/captures/ia-modification.webp", alt: "Éditeur : Piper applique une modification demandée" },
+      },
+      {
+        title: "Vérifiez sur mobile, puis publiez",
+        text: "Les icônes en bas à droite de l'éditeur montrent la page sur ordinateur, tablette et mobile. Pour la mettre en ligne, gardez l'adresse gratuite en pubhtml.com ou reliez votre domaine (« Where should this live? »). Ensuite, « Update » publie vos changements.",
+        image: { src: "/captures/ia-publier.webp", alt: "Choix de l'adresse de publication : gratuite ou votre domaine" },
       },
     ],
     pitfalls: [
@@ -266,7 +280,8 @@ export const guides: Guide[] = [
       },
       {
         title: "Relisez sur mobile, puis publiez",
-        text: "La plupart des visiteurs arrivent sur téléphone. Vérifiez l'aperçu mobile, puis publiez.",
+        text: "La plupart des visiteurs arrivent sur téléphone. Dans l'éditeur, cliquez sur l'icône mobile en bas à droite pour vérifier, puis publiez.",
+        image: { src: "/captures/apercu-mobile.webp", alt: "Aperçu mobile de la page dans l'éditeur" },
       },
     ],
     pitfalls: [
@@ -323,24 +338,27 @@ export const guides: Guide[] = [
     steps: [
       {
         title: "Choisissez « Website »",
-        text: "Sur l'écran « Create », sélectionnez « Website », ou ouvrez le menu « Landing page » de la barre de saisie et choisissez « New website ».",
+        text: "Dans le menu de gauche, ouvrez la flèche à côté de « Create » et choisissez « Site ». Ou, sur l'écran « Create », sélectionnez « Website ».",
         image: { src: "/captures/site-web.webp", alt: "Menu « What are you creating? » avec l'option « New website »" },
       },
       {
-        title: "Décrivez la page d'accueil",
-        text: "Expliquez votre activité, votre public et le style voulu, puis cliquez sur « Create ».",
+        title: "Décrivez votre site",
+        text: "Expliquez votre activité, votre public, le style voulu et les pages souhaitées, puis cliquez sur « Send ». Tapez tout sur une seule ligne : chaque retour à la ligne envoie un message séparé.",
+        image: { src: "/captures/site-description.webp", alt: "Description d'un site tapée avec « New website »" },
       },
       {
         title: "Validez la liste des pages",
-        text: "L'assistant propose les autres pages du site (services, tarifs, contact…). Renommez, supprimez ou ajoutez-en avant de lancer.",
+        text: "Piper propose les pages du menu. Renommez, retirez (« Remove ») ou ajoutez-en (« Add a page »), puis cliquez sur « These pages ».",
+        image: { src: "/captures/site-pages.webp", alt: "Liste des pages proposées pour le site" },
       },
       {
-        title: "Construisez les pages une par une",
-        text: "Cliquez sur « Build » sur chaque page. Rien n'est généré tant que vous ne cliquez pas. Les pages reprennent l'en-tête, le pied de page et le style de l'accueil.",
+        title: "Choisissez images et style, puis construisez l'accueil",
+        text: "Comme pour une landing page, choisissez les images et une direction de style, puis cliquez sur « Build it ». Seule la page d'accueil est construite à ce stade.",
       },
       {
-        title: "Ajoutez une page plus tard",
-        text: "Sur l'écran « Create », ouvrez le menu de destination de la barre de saisie, sélectionnez votre site, puis décrivez la nouvelle page.",
+        title: "Construisez les autres pages",
+        text: "La carte « The rest of the site » liste les pages restantes avec une estimation en crédits. « Build 3 pages » les construit une par une, avec l'en-tête et le style de l'accueil. « Skip for now » permet de le faire plus tard.",
+        image: { src: "/captures/site-reste.webp", alt: "Carte « The rest of the site » avec le bouton pour construire les pages" },
       },
     ],
     pitfalls: [
@@ -362,20 +380,27 @@ export const guides: Guide[] = [
     steps: [
       {
         title: "Créez le blog",
-        text: "Dans le menu de gauche, ouvrez « Blog » puis cliquez sur « New Blog ». Donnez un titre, et si vous voulez une description et un nom d'auteur.",
-        image: { src: "/captures/blog.webp", alt: "Page Blog avec le bouton « New Blog »" },
+        text: "Dans le menu de gauche, ouvrez « Blog » puis cliquez sur « New Blog ». Donnez un titre ; l'adresse (slug) se remplit toute seule. La description et le nom d'auteur sont facultatifs. Cliquez sur « Create Blog ».",
+        image: { src: "/captures/blog-creer.webp", alt: "Fenêtre New Blog avec titre, slug et description" },
+      },
+      {
+        title: "Découvrez le tableau du blog",
+        text: "La page du blog montre le design de la page d'accueil du blog (« Feed layout ») et des articles (« Post layout »), puis vos articles publiés, en brouillon ou programmés.",
+        image: { src: "/captures/blog-tableau.webp", alt: "Tableau de bord d'un blog" },
       },
       {
         title: "Écrivez un article",
-        text: "Ouvrez le blog et cliquez sur « New Post ». Écrivez avec l'éditeur visuel ou en Markdown.",
+        text: "Cliquez sur « New post ». L'éditeur s'ouvre avec Penn, l'assistant d'écriture : choisissez une suggestion (« Write a how-to guide »…) ou écrivez vous-même.",
+        image: { src: "/captures/blog-article.webp", alt: "Éditeur d'article avec l'assistant Penn" },
       },
       {
-        title: "Remplissez les champs utiles",
-        text: "Titre, adresse (slug), résumé, image de couverture et mots-clés (tags). Le résumé et l'image apparaissent quand on partage l'article.",
+        title: "Remplissez les réglages de l'article",
+        text: "L'icône de document en bas ouvre « Post Settings » : titre, contenu, auteur, image de couverture et SEO. Cliquez sur « Save changes ».",
+        image: { src: "/captures/blog-reglages.webp", alt: "Panneau Post Settings d'un article" },
       },
       {
         title: "Publiez",
-        text: "Passez le statut de « Drafts » à « Published ». L'article est en ligne immédiatement, et un flux RSS est créé automatiquement.",
+        text: "Cliquez sur « Publish » en haut à droite. L'article est en ligne immédiatement.",
       },
       {
         title: "Rattachez-le à votre site",
@@ -413,7 +438,8 @@ export const guides: Guide[] = [
       },
       {
         title: "Choisissez ce qu'il affiche",
-        text: "Dans « Points To », choisissez une page, un site ou un blog. Vous pourrez le changer plus tard. Cliquez sur « Add & Configure Domain ».",
+        text: "Dans « Homepage », choisissez « Page », « Site » ou « Blog », puis l'élément à afficher. Vous pouvez aussi choisir une page d'erreur (« Custom 404 page »). Cliquez sur « Add & Configure Domain ».",
+        image: { src: "/captures/domaine-formulaire.webp", alt: "Formulaire Connect Your Domain" },
       },
       {
         title: "Laissez faire la configuration automatique",
@@ -461,12 +487,22 @@ export const guides: Guide[] = [
         text: "Choisissez « Settings ». Pour l'adresse (slug), utilisez des minuscules, des chiffres et des tirets, par exemple offre-coaching-septembre.",
       },
       {
+        title: "Ou passez par l'éditeur",
+        text: "Dans l'éditeur de la page, le menu « … » en haut à droite affiche l'adresse (slug, modifiable avec le crayon), l'adresse publiée, et les options « SEO & Social » et « Scripts & Pixels ».",
+        image: { src: "/captures/editeur-options.webp", alt: "Menu « … » de l'éditeur : slug, SEO & Social, Scripts & Pixels" },
+      },
+      {
         title: "Protégez par mot de passe",
         text: "Choisissez « Set Password ». Les visiteurs devront entrer le mot de passe pour voir la page. Pratique pour une page client ou une page pas encore prête.",
       },
       {
         title: "Rangez avec des étiquettes",
         text: "Choisissez « Tags », ou cliquez sur « + tag » sur la carte, pour retrouver vos pages par campagne ou par client.",
+      },
+      {
+        title: "Soignez le référencement",
+        text: "« SEO & Social » règle l'icône de l'onglet (favicon), l'indexation par Google, le titre et la description qui s'affichent dans les résultats de recherche.",
+        image: { src: "/captures/seo-social.webp", alt: "Fenêtre SEO & Social" },
       },
     ],
     pitfalls: [
@@ -539,7 +575,8 @@ export const guides: Guide[] = [
       },
       {
         title: "Réglez l'automatisation",
-        text: "Dans l'onglet « Automations », indiquez où envoyer les contacts (par exemple votre liste Mailchimp) et choisissez toutes les pages ou seulement certaines.",
+        text: "Dans l'onglet « Automations », cliquez sur « Create automation ». Choisissez le déclencheur (« Form submitted », « Checkout completed » ou « Visitor identified »), puis l'application connectée qui reçoit les contacts.",
+        image: { src: "/captures/automation-declencheur.webp", alt: "Création d'une automatisation : choix du déclencheur" },
       },
       {
         title: "Testez avec votre propre e-mail",

@@ -50,10 +50,12 @@ export type Tool = {
 };
 
 export const siteName = "Zunrel";
-export const tagline = "Leadpages et HTML Pub : comment faire, étape par étape.";
+export const tagline = "Leadpages, HTML Pub et Shopify : comment faire, étape par étape.";
 
 // Lien d'affiliation Leadpages (PartnerStack). Il mène à leadpages.com.
 export const affiliateLink = "https://try.leadpages.com/94z9pcfn1hu5";
+// Lien d'affiliation Shopify (Impact).
+export const shopifyLink = "https://shopify.pxf.io/6kMJxr";
 
 const help = "https://support.leadpages.com/hc/en-us/articles/";
 const pricing = { label: "Leadpages : offres et tarifs", url: "https://leadpages.com/pricing" };
@@ -65,6 +67,7 @@ export const themes: Theme[] = [
   { slug: "contacts", name: "Récolter des contacts", blurb: "Formulaires, export et connexion à vos outils." },
   { slug: "optimiser", name: "Optimiser", blurb: "Tests A/B, cartes de chaleur et Smart Traffic." },
   { slug: "ia", name: "IA et vidéo", blurb: "Publier depuis Claude, créer des pubs vidéo." },
+  { slug: "boutique", name: "Vendre avec Shopify", blurb: "Ouvrir sa boutique, ajouter ses produits, se faire payer." },
 ];
 
 export const guides: Guide[] = [
@@ -791,6 +794,230 @@ export const guides: Guide[] = [
     sources: [{ label: "HTML Pub : créer des pubs vidéo dans Ad Studio", url: `${help}48970038606349--HTMLPub-Generating-Video-Ads-in-Ad-Studio` }],
     related: ["publier-une-page-depuis-claude", "creer-une-landing-page-avec-l-ia"],
   },
+
+  // ——— Vendre avec Shopify ———
+  {
+    slug: "essayer-shopify-gratuitement",
+    question: "Comment essayer Shopify gratuitement ?",
+    summary: "L'essai de 3 jours, puis 1 € par mois pendant 3 mois : comment en profiter.",
+    theme: "boutique",
+    updatedOn: "2026-09-27",
+    popular: true,
+    intro:
+      "Shopify s'essaie gratuitement pendant 3 jours. Ensuite, l'offre de lancement permet de continuer pour 1 € par mois pendant 3 mois, de quoi construire sa boutique sans gros frais.",
+    steps: [
+      {
+        title: "Ouvrez la page des tarifs",
+        text: "Sur shopify.com, la page Tarification affiche l'offre du moment : 3 jours gratuits, puis 1 € par mois pendant 3 mois. L'offre peut changer : lisez-la le jour même.",
+        image: { src: "/captures/shopify-essai.webp", alt: "Page Tarification de Shopify : 3 jours d'essai, puis 1 €/mois pendant 3 mois" },
+      },
+      {
+        title: "Cliquez sur « Démarrer gratuitement »",
+        text: "Entrez votre adresse e-mail et créez votre compte. Shopify pose quelques questions sur votre projet pour préparer la boutique.",
+      },
+      {
+        title: "Préparez l'essentiel pendant les 3 jours",
+        text: "Ajoutez un ou deux produits, choisissez un thème et regardez les réglages de paiement. Vous saurez vite si l'outil vous convient.",
+      },
+      {
+        title: "Choisissez un forfait pour continuer",
+        text: "Pour garder la boutique après l'essai, choisissez un forfait. L'offre à 1 € s'applique alors pendant 3 mois, puis le prix normal du forfait.",
+      },
+      {
+        title: "Notez la date de fin",
+        text: "Mettez un rappel avant la fin des 3 mois à 1 € : c'est là que le prix normal commence.",
+      },
+    ],
+    pitfalls: ["Oublier qu'après 3 mois à 1 €, le forfait passe au prix normal.", "Passer l'essai à tout configurer sans ajouter un seul produit : on ne voit pas le vrai fonctionnement."],
+    tools: [{ slug: "shopify", why: "3 jours gratuits, puis 1 €/mois pendant 3 mois." }],
+    sources: [{ label: "Shopify : tarifs", url: "https://www.shopify.com/fr/tarifs" }],
+    related: ["choisir-son-forfait-shopify", "creer-sa-boutique-shopify"],
+  },
+  {
+    slug: "choisir-son-forfait-shopify",
+    question: "Comment choisir son forfait Shopify ?",
+    summary: "Basic, Grow, Advanced ou Plus : lequel prendre selon votre activité.",
+    theme: "boutique",
+    updatedOn: "2026-09-27",
+    intro:
+      "Shopify propose quatre forfaits. Pour démarrer seul, Basic suffit presque toujours. Les forfaits plus chers servent surtout aux équipes et aux gros volumes.",
+    steps: [
+      {
+        title: "Comparez les quatre forfaits",
+        text: "Basic pour les entrepreneurs seuls, Grow pour les petites équipes (jusqu'à 5 comptes d'employés), Advanced pour vendre à l'international avec plus d'outils (jusqu'à 15 comptes), Plus pour les grandes entreprises.",
+        image: { src: "/captures/shopify-offres.webp", alt: "Les forfaits Basic, Grow, Advanced et Plus sur la page des tarifs" },
+      },
+      {
+        title: "Choisissez le paiement annuel ou mensuel",
+        text: "Le paiement annuel coûte moins cher chaque mois. Le paiement mensuel laisse plus de liberté pour arrêter. Vérifiez les deux prix affichés.",
+      },
+      {
+        title: "Regardez les frais par vente",
+        text: "Avec Shopify Payments, les frais de carte baissent quand le forfait monte. Si vous utilisez un autre prestataire de paiement, Shopify ajoute des frais de transaction, plus élevés sur Basic.",
+      },
+      {
+        title: "Commencez petit",
+        text: "Démarrez sur Basic. Vous pourrez changer de forfait plus tard, quand vos ventes le justifient.",
+      },
+    ],
+    pitfalls: ["Prendre Advanced dès le départ sans en avoir besoin.", "Oublier le coût des applications payantes, qui s'ajoute au forfait."],
+    tools: [{ slug: "shopify", why: "Quatre forfaits, de l'indépendant à la grande entreprise." }],
+    sources: [{ label: "Shopify : tarifs", url: "https://www.shopify.com/fr/tarifs" }],
+    related: ["essayer-shopify-gratuitement", "accepter-les-paiements-shopify"],
+  },
+  {
+    slug: "creer-sa-boutique-shopify",
+    question: "Comment créer sa boutique Shopify ?",
+    summary: "De l'inscription à la boutique en ligne, dans l'ordre.",
+    theme: "boutique",
+    updatedOn: "2026-09-27",
+    popular: true,
+    intro:
+      "Créer une boutique Shopify prend une heure pour une première version. L'administration vous guide, et l'assistant IA Sidekick répond à vos questions.",
+    steps: [
+      {
+        title: "Créez votre compte",
+        text: "Sur shopify.com, cliquez sur « Démarrer gratuitement », entrez votre e-mail et répondez aux questions sur votre projet.",
+      },
+      {
+        title: "Découvrez l'administration",
+        text: "Le menu de gauche regroupe tout : Commandes, Produits, Clients, Réductions, Boutique en ligne et Paramètres. L'accueil affiche l'état de la boutique et une barre pour demander de l'aide à Sidekick.",
+        image: { src: "/captures/shopify-accueil.webp", alt: "Accueil de l'administration Shopify avec le menu et Sidekick" },
+      },
+      {
+        title: "Ajoutez vos premiers produits",
+        text: "Dans « Produits », ajoutez au moins un produit avec photo, description et prix.",
+      },
+      {
+        title: "Choisissez un thème",
+        text: "Dans « Boutique en ligne », choisissez un thème et personnalisez les couleurs, le logo et la page d'accueil.",
+      },
+      {
+        title: "Réglez paiements et livraison",
+        text: "Dans « Paramètres », configurez les paiements, l'expédition et les taxes pour votre pays.",
+      },
+      {
+        title: "Mettez la boutique en ligne",
+        text: "Choisissez un forfait, reliez votre nom de domaine, puis retirez le mot de passe de la boutique pour l'ouvrir au public.",
+      },
+    ],
+    pitfalls: ["Ouvrir la boutique sans avoir testé une commande de bout en bout.", "Oublier les pages légales (conditions de vente, remboursement, confidentialité)."],
+    tools: [{ slug: "shopify", why: "Boutique en ligne complète, avec assistant IA intégré." }],
+    sources: [{ label: "Centre d'aide Shopify", url: "https://help.shopify.com/fr" }, { label: "Shopify : tarifs", url: "https://www.shopify.com/fr/tarifs" }],
+    related: ["ajouter-un-produit-shopify", "connecter-son-domaine-shopify"],
+  },
+  {
+    slug: "ajouter-un-produit-shopify",
+    question: "Comment ajouter un produit sur Shopify ?",
+    summary: "Titre, photos, prix, stock et expédition : la fiche produit remplie correctement.",
+    theme: "boutique",
+    updatedOn: "2026-09-27",
+    intro:
+      "Une bonne fiche produit fait vendre. Shopify vous guide champ par champ ; les changements enregistrés s'affichent tout de suite dans la boutique.",
+    steps: [
+      {
+        title: "Ouvrez « Ajouter un produit »",
+        text: "Dans le menu de gauche, cliquez sur « Produits », puis sur « Ajouter un produit ».",
+        image: { src: "/captures/shopify-produit.webp", alt: "Formulaire « Ajouter un produit » : titre, description, supports multimédias" },
+      },
+      {
+        title: "Écrivez le titre et la description",
+        text: "Un titre clair, puis une description qui répond aux questions de l'acheteur : matière, taille, usage, délai.",
+      },
+      {
+        title: "Ajoutez les photos",
+        text: "Dans « Supports multimédias », cliquez sur « Importer ». Les images, vidéos et modèles 3D sont acceptés.",
+      },
+      {
+        title: "Fixez le prix et le stock",
+        text: "Indiquez le prix, et si vous voulez un « Prix avant réduction ». Dans « Stock », entrez la quantité disponible.",
+        image: { src: "/captures/shopify-prix.webp", alt: "Sections Prix et Stock de la fiche produit" },
+      },
+      {
+        title: "Réglez l'expédition et les variantes",
+        text: "Pour un produit physique, indiquez le poids. Ajoutez des variantes (taille, couleur) si besoin. Pour un fichier numérique, désactivez « Produit physique ».",
+      },
+      {
+        title: "Choisissez le statut et enregistrez",
+        text: "Le statut « Actif » rend le produit visible. Cliquez sur « Enregistrer ».",
+      },
+    ],
+    pitfalls: ["Laisser le poids à 0 : les frais de livraison seront faux.", "Des photos de tailles différentes : la boutique paraît moins professionnelle."],
+    tools: [{ slug: "shopify", why: "Produits illimités sur tous les forfaits." }],
+    sources: [{ label: "Shopify : ajouter et mettre à jour des produits", url: "https://help.shopify.com/fr/manual/products/add-update-products" }],
+    related: ["creer-sa-boutique-shopify", "accepter-les-paiements-shopify"],
+  },
+  {
+    slug: "connecter-son-domaine-shopify",
+    question: "Comment connecter son nom de domaine à Shopify ?",
+    summary: "Utiliser votre propre adresse au lieu de l'adresse en myshopify.com.",
+    theme: "boutique",
+    updatedOn: "2026-09-27",
+    intro:
+      "Chaque boutique a une adresse gratuite en .myshopify.com. Avec votre propre domaine, elle inspire plus confiance. Le certificat SSL (HTTPS) est gratuit.",
+    steps: [
+      {
+        title: "Ouvrez « Domaines »",
+        text: "Cliquez sur « Paramètres » en bas à gauche, puis sur « Domaines ». Trois choix : « Connecter un domaine existant », « Transférer un domaine » ou « Acheter un nouveau domaine ».",
+        image: { src: "/captures/shopify-domaines.webp", alt: "Paramètres > Domaines avec les domaines connectés" },
+      },
+      {
+        title: "Connectez un domaine existant",
+        text: "Cliquez sur « Connecter un domaine existant » et entrez votre domaine. Pour de nombreux hébergeurs de domaine, Shopify propose une connexion automatique.",
+      },
+      {
+        title: "Sinon, modifiez les DNS à la main",
+        text: "Chez votre hébergeur de domaine, mettez à jour les enregistrements indiqués par Shopify (enregistrement A et CNAME pour www).",
+      },
+      {
+        title: "Attendez la vérification",
+        text: "La connexion fonctionne souvent en moins de deux heures, mais peut prendre jusqu'à deux jours. Le statut passe à « Connecté ».",
+      },
+      {
+        title: "Choisissez le domaine principal",
+        text: "Si plusieurs domaines sont reliés, marquez celui que les clients verront comme « Principal ».",
+      },
+    ],
+    pitfalls: ["Supprimer d'anciens enregistrements DNS utilisés par vos e-mails.", "Oublier que le renouvellement du domaine se fait chez votre hébergeur, pas chez Shopify."],
+    tools: [{ slug: "shopify", why: "Domaine personnalisé et SSL gratuit inclus." }],
+    sources: [{ label: "Shopify : connecter un domaine tiers", url: "https://help.shopify.com/fr/manual/domains/add-a-domain/connecting-domains" }],
+    related: ["creer-sa-boutique-shopify", "connecter-son-nom-de-domaine-leadpages"],
+  },
+  {
+    slug: "accepter-les-paiements-shopify",
+    question: "Comment accepter les paiements sur Shopify ?",
+    summary: "Shopify Payments, Bancontact, PayPal : les réglages et les frais à connaître.",
+    theme: "boutique",
+    updatedOn: "2026-09-27",
+    intro:
+      "Shopify Payments permet d'accepter les cartes, Bancontact, Apple Pay et d'autres moyens de paiement sans prestataire externe. C'est aussi ce qui évite les frais de transaction supplémentaires.",
+    steps: [
+      {
+        title: "Ouvrez « Paiements »",
+        text: "Cliquez sur « Paramètres », puis sur « Paiements ».",
+      },
+      {
+        title: "Activez Shopify Payments",
+        text: "Suivez la configuration : informations sur votre activité et compte bancaire pour recevoir les versements. L'authentification en deux étapes est demandée.",
+      },
+      {
+        title: "Choisissez les moyens de paiement",
+        text: "Activez ceux que vos clients utilisent : cartes, Bancontact en Belgique, Klarna, etc. Les frais varient selon le forfait et le moyen de paiement.",
+      },
+      {
+        title: "Ajoutez PayPal si besoin",
+        text: "Dans « Fournisseurs de services de paiement supplémentaires », vous pouvez ajouter PayPal ou d'autres prestataires.",
+      },
+      {
+        title: "Passez une commande test",
+        text: "Avant d'ouvrir la boutique, faites un achat test pour vérifier que tout fonctionne.",
+      },
+    ],
+    pitfalls: ["Utiliser un autre prestataire à la place de Shopify Payments sans savoir que Shopify ajoute des frais de transaction (jusqu'à 2 % sur Basic).", "Ne pas activer Bancontact alors que vos clients sont en Belgique."],
+    tools: [{ slug: "shopify", why: "Shopify Payments inclus, frais dégressifs selon le forfait." }],
+    sources: [{ label: "Shopify Payments (aide)", url: "https://help.shopify.com/fr/manual/payments/shopify-payments" }, { label: "Shopify : tarifs", url: "https://www.shopify.com/fr/tarifs" }],
+    related: ["choisir-son-forfait-shopify", "ajouter-un-produit-shopify"],
+  },
 ];
 
 export const tools: Tool[] = [
@@ -821,6 +1048,20 @@ export const tools: Tool[] = [
     watchOut:
       "Plus cher que HTML Pub : inutile tant que vous avez peu de visiteurs. Une carte bancaire est demandée pour l'essai.",
     logo: { src: "https://leadpages.com/apple-icon.png", fit: "cover", direct: true },
+  },
+  {
+    slug: "shopify",
+    name: "Shopify",
+    summary: "Créer sa boutique en ligne et vendre partout, avec paiements intégrés.",
+    website: "https://www.shopify.com/fr",
+    affiliateUrl: shopifyLink,
+    freePlan: false,
+    themes: ["boutique"],
+    goodFor:
+      "Ceux qui veulent vendre des produits physiques ou numériques en ligne, seuls ou en petite équipe. Quatre forfaits (Basic, Grow, Advanced, Plus), 3 jours d'essai puis une offre de lancement à 1 €/mois pendant 3 mois.",
+    watchOut:
+      "Les applications payantes s'ajoutent au forfait. Sans Shopify Payments, des frais de transaction supplémentaires s'appliquent.",
+    logo: { src: "https://cdn.shopify.com/b/shopify-brochure2-assets/c97c60ca19c64a8b5378d9f9e971f7bd.png", fit: "cover", direct: true },
   },
 ];
 

@@ -1,0 +1,27 @@
+import type { Metadata } from "next";
+import { curator } from "@/lib/directory";
+
+export const metadata: Metadata = {
+  title: "About",
+  description: `A personal directory of B2B software, curated by ${curator}.`,
+};
+
+export default function AboutPage() {
+  return (
+    <>
+      <h1 className="text-[22px] font-semibold leading-7 text-[#171717]">About</h1>
+      <div className="mt-4 space-y-4 text-[15px] leading-6 text-[#737373]">
+        <p>
+          This is a personal directory of B2B software, curated by {curator}. I make stuff on
+          the internet.
+        </p>
+        <p>
+          Each note records what a company publishes about the product, who the price is built
+          for, and what is easy to miss before you buy. The checked date is the day those public
+          pages were read.
+        </p>
+        <p>Prices change. Logos and names belong to their owners.</p>
+      </div>
+    </>
+  );
+}

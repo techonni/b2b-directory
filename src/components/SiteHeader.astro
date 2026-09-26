@@ -4,24 +4,24 @@ import { href } from "../lib/paths";
 
 const path = Astro.url.pathname;
 const links = [
-  { href: "/categories", label: "Categories" },
-  { href: "/reviews", label: "Reviews" },
-  { href: "/about", label: "About" },
+  { href: "/guides", label: "Guides" },
+  { href: "/outils", label: "Outils" },
+  { href: "/a-propos", label: "À propos" },
 ];
 
 function isCurrent(target: string) {
-  if (target === "/categories") return path.includes("/categories");
-  if (target === "/reviews") return path.includes("/reviews") || path.includes("/tools");
-  return path.includes(target);
+  if (target === "/guides") return path.startsWith("/guides") || path.startsWith("/themes");
+  return path.startsWith(target);
 }
 ---
 
 <header class="px-6 py-6 sm:px-8">
   <div class="flex items-center justify-between">
-    <a href={href("/")} aria-label="Directory home" class="text-[#171717]">
+    <a href={href("/")} aria-label="Accueil" class="flex items-center gap-2 text-[#171717]">
       <DottedMark />
+      <span class="text-[15px] font-semibold tracking-[-0.01em]">Zunrel</span>
     </a>
-    <nav class="flex items-center gap-6 text-[14px] leading-5">
+    <nav class="flex items-center gap-5 text-[14px] leading-5 sm:gap-6">
       {
         links.map((link) => {
           const current = isCurrent(link.href);

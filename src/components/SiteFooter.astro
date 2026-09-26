@@ -1,11 +1,10 @@
 ---
-import { curator } from "../lib/directory";
 import { href } from "../lib/paths";
 
 const links = [
-  { href: "/categories", label: "Categories" },
-  { href: "/reviews", label: "Reviews" },
-  { href: "/about", label: "About" },
+  { href: "/guides", label: "Guides" },
+  { href: "/outils", label: "Outils" },
+  { href: "/a-propos", label: "À propos" },
 ];
 ---
 
@@ -22,8 +21,9 @@ const links = [
       ))
     }
   </nav>
-  <p class="mt-14 text-[13px] leading-5 text-[#a0a0a0]">© 2026 {curator}. All Rights Reserved.</p>
-  <p class="mt-2 text-[13px] leading-5 text-[#a0a0a0]">
-    Logos and names are trademarks of their respective owners.
+  <p class="mt-14 max-w-[520px] text-[13px] leading-5 text-[#a0a0a0]">
+    Informations générales, à vérifier sur les sites officiels avant toute décision. Certains liens vers des
+    outils peuvent être des liens affiliés : ils ne changent pas le prix pour vous.
   </p>
+  <p class="mt-2 text-[13px] leading-5 text-[#a0a0a0]">© 2026 Zunrel. Les noms cités appartiennent à leurs propriétaires.</p>
 </footer>

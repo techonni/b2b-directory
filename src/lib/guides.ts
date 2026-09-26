@@ -1,5 +1,5 @@
-// Contenu du site : thèmes, guides « comment faire » et outils.
-// Pour ajouter un lien d'affiliation, remplir `affiliateUrl` sur l'outil.
+// Contenu du site : thèmes, guides « comment faire » Leadpages et HTML Pub, et outils.
+// Le lien d'affiliation est défini une seule fois dans `affiliateLink`.
 
 export type Theme = {
   slug: string;
@@ -10,6 +10,8 @@ export type Theme = {
 export type Step = {
   title: string;
   text: string;
+  // Capture d'écran facultative, placée dans /public/captures/.
+  image?: { src: string; alt: string };
 };
 
 export type Source = {
@@ -47,581 +49,722 @@ export type Tool = {
 };
 
 export const siteName = "Zunrel";
-export const tagline = "Auto-entrepreneur : comment faire, étape par étape.";
+export const tagline = "Leadpages et HTML Pub : comment faire, étape par étape.";
+
+// Lien d'affiliation Leadpages (PartnerStack). Il mène à leadpages.com.
+export const affiliateLink = "https://try.leadpages.com/94z9pcfn1hu5";
+
+const help = "https://support.leadpages.com/hc/en-us/articles/";
+const pricing = { label: "Leadpages : offres et tarifs", url: "https://leadpages.com/pricing" };
 
 export const themes: Theme[] = [
-  { slug: "demarrer", name: "Démarrer", blurb: "Créer sa micro-entreprise et poser les bases." },
-  { slug: "facturer", name: "Facturer", blurb: "Devis, factures et mentions obligatoires." },
-  { slug: "declarer", name: "Déclarer et payer", blurb: "URSSAF, impôts et TVA sans stress." },
-  { slug: "banque", name: "Banque", blurb: "Compte pro, séparation des dépenses." },
-  { slug: "etre-paye", name: "Se faire payer", blurb: "Carte, virement, relances." },
-  { slug: "visibilite", name: "Être trouvé", blurb: "Site, fiche Google, premiers clients." },
+  { slug: "choisir", name: "Choisir son offre", blurb: "HTML Pub ou Leadpages, essai gratuit, changer d'offre." },
+  { slug: "creer", name: "Créer une page", blurb: "Landing page, site ou blog, avec l'IA ou un modèle." },
+  { slug: "publier", name: "Publier", blurb: "Nom de domaine, adresse de page, accès protégé." },
+  { slug: "contacts", name: "Récolter des contacts", blurb: "Formulaires, export et connexion à vos outils." },
+  { slug: "optimiser", name: "Optimiser", blurb: "Tests A/B, cartes de chaleur et Smart Traffic." },
+  { slug: "ia", name: "IA et vidéo", blurb: "Publier depuis Claude, créer des pubs vidéo." },
 ];
 
 export const guides: Guide[] = [
+  // ——— Choisir son offre ———
   {
-    slug: "creer-sa-micro-entreprise",
-    question: "Comment créer sa micro-entreprise ?",
-    summary: "La démarche en ligne, gratuite, et ce qu'il faut préparer avant.",
-    theme: "demarrer",
+    slug: "choisir-entre-html-pub-et-leadpages",
+    question: "Comment choisir entre HTML Pub et Leadpages ?",
+    summary: "Publier simplement ou optimiser ses conversions : la bonne offre selon votre besoin.",
+    theme: "choisir",
     updatedOn: "2026-09-26",
     popular: true,
     intro:
-      "Créer une micro-entreprise se fait en ligne et ne coûte rien sur le site officiel. Comptez une vingtaine de minutes si vos documents sont prêts.",
+      "HTML Pub et Leadpages viennent de la même entreprise et utilisent le même moteur. HTML Pub sert à publier. Leadpages ajoute tout ce qui aide à convertir plus de visiteurs.",
     steps: [
       {
-        title: "Préparez vos documents",
-        text: "Une pièce d'identité scannée, votre numéro de sécurité sociale, une adresse pour l'entreprise (souvent votre domicile) et une description claire de votre activité.",
+        title: "Demandez-vous ce que vous voulez faire",
+        text: "Vous voulez seulement mettre en ligne une page, un petit site ou un blog avec votre nom de domaine ? HTML Pub suffit. Vous voulez tester deux versions d'une page pour savoir laquelle vend le mieux ? Il vous faut Leadpages.",
       },
       {
-        title: "Allez sur le guichet unique",
-        text: "La déclaration se fait sur formalites.entreprises.gouv.fr, le site officiel de l'INPI. Créez un compte, puis choisissez « Créer une entreprise » et « Entrepreneur individuel ».",
+        title: "Regardez les trois offres HTML Pub",
+        text: "Starter pour une seule page avec un domaine, Pro pour un créateur seul (plus de pages, un blog, l'accès API et la publication depuis Claude ou ChatGPT), Business pour une petite équipe ou une agence qui publie beaucoup.",
       },
       {
-        title: "Choisissez le régime micro",
-        text: "Pendant le formulaire, optez pour le régime micro-social. Vous pouvez aussi demander le versement libératoire de l'impôt si votre revenu fiscal le permet.",
+        title: "Regardez les trois offres Leadpages",
+        text: "Grow ajoute les tests A/B manuels, le remplacement dynamique du texte et l'enrichissement des contacts. Optimize ajoute Smart Traffic, les cartes de chaleur et la personnalisation automatique. Scale ajoute l'optimisation automatique complète et les espaces d'équipe.",
       },
       {
-        title: "Attendez votre SIRET",
-        text: "L'INSEE vous attribue un numéro SIREN et un SIRET, en général sous une à quatre semaines. Vous en aurez besoin sur chaque facture.",
+        title: "Commencez petit",
+        text: "Vos pages et vos domaines vous suivent si vous changez d'offre. Vous pouvez donc démarrer avec HTML Pub et passer à Leadpages le jour où vous avez assez de visiteurs pour tester.",
       },
       {
-        title: "Activez votre espace URSSAF",
-        text: "Créez votre compte sur autoentrepreneur.urssaf.fr. C'est là que vous déclarerez votre chiffre d'affaires et paierez vos cotisations.",
+        title: "Vérifiez le prix affiché le jour même",
+        text: "Les prix changent selon les promotions et la facturation mensuelle ou annuelle (environ 20 % de moins à l'année). Consultez la page des tarifs avant de choisir.",
       },
     ],
     pitfalls: [
-      "Payer un site privé pour une démarche gratuite. Beaucoup de sites ressemblent au site officiel et facturent le service.",
-      "Oublier d'activer son espace URSSAF, puis rater sa première déclaration.",
+      "Prendre Leadpages Optimize dès le départ alors qu'on n'a pas encore de trafic : les tests et les cartes de chaleur ont besoin de visiteurs pour être utiles.",
+      "Croire que HTML Pub fait des tests A/B : ce n'est pas le cas, les tests commencent avec Leadpages Grow.",
     ],
     tools: [
-      { slug: "shine", why: "Ouvrir un compte pro pendant l'attente du SIRET." },
-      { slug: "henrri", why: "Préparer ses premières factures gratuitement." },
+      { slug: "html-pub", why: "Pour publier des pages, un site ou un blog." },
+      { slug: "leadpages", why: "Pour tester et améliorer vos conversions." },
     ],
-    sources: [
-      { label: "Guichet unique (INPI)", url: "https://formalites.entreprises.gouv.fr" },
-      { label: "URSSAF auto-entrepreneur", url: "https://www.autoentrepreneur.urssaf.fr" },
-      { label: "Service-Public.fr", url: "https://entreprendre.service-public.fr" },
-    ],
-    related: ["faut-il-un-compte-pro", "declarer-son-chiffre-d-affaires"],
+    sources: [pricing],
+    related: ["essayer-leadpages-gratuitement", "changer-ou-annuler-son-offre-leadpages"],
   },
   {
-    slug: "faire-sa-premiere-facture",
-    question: "Comment faire sa première facture ?",
-    summary: "Les mentions obligatoires, la numérotation et un modèle simple.",
-    theme: "facturer",
+    slug: "essayer-leadpages-gratuitement",
+    question: "Comment essayer Leadpages gratuitement ?",
+    summary: "L'essai de 7 jours, ce qu'il contient et comment ne pas être débité.",
+    theme: "choisir",
     updatedOn: "2026-09-26",
     popular: true,
     intro:
-      "Une facture d'auto-entrepreneur n'a rien de compliqué, mais certaines mentions sont obligatoires. Une facture incomplète peut valoir une amende.",
+      "Chaque offre HTML Pub et Leadpages s'essaie pendant 7 jours avec toutes ses fonctions. Une carte bancaire est demandée, mais rien n'est prélevé avant le 7e jour.",
     steps: [
       {
-        title: "Numérotez sans trou",
-        text: "Chaque facture a un numéro unique, qui suit une suite continue. Exemple : 2026-001, 2026-002… Ne supprimez jamais une facture émise : faites un avoir.",
+        title: "Choisissez l'offre à tester",
+        text: "Sur la page des tarifs, choisissez la facturation mensuelle ou annuelle, puis l'offre qui vous intéresse. Testez celle que vous comptez vraiment garder : l'essai donne accès à toutes ses fonctions.",
       },
       {
-        title: "Indiquez qui vous êtes",
-        text: "Votre nom et prénom suivis de « EI » ou « Entrepreneur individuel », votre adresse et votre numéro SIREN ou SIRET.",
+        title: "Cliquez sur « Start 7-Day Free Trial »",
+        text: "Créez votre compte avec votre adresse e-mail, puis indiquez une carte bancaire. Elle sert seulement à continuer après l'essai.",
       },
       {
-        title: "Indiquez le client",
-        text: "Son nom ou sa raison sociale et son adresse. Pour une entreprise cliente, ajoutez son SIREN.",
+        title: "Notez la date de fin",
+        text: "Mettez un rappel dans votre agenda un ou deux jours avant la fin des 7 jours. C'est le moment de décider si vous gardez l'offre.",
       },
       {
-        title: "Détaillez la prestation",
-        text: "La date, la description de ce que vous avez vendu, la quantité, le prix unitaire hors taxe et le total.",
+        title: "Utilisez l'essai pour de vrai",
+        text: "Créez une vraie page, connectez votre domaine et votre outil d'e-mails. Vous saurez vite si l'outil vous convient.",
       },
       {
-        title: "Gérez la mention TVA",
-        text: "Si vous êtes en franchise de TVA, écrivez « TVA non applicable, art. 293 B du CGI ». Sinon, indiquez le taux et le montant de TVA.",
-      },
-      {
-        title: "Précisez le paiement",
-        text: "La date d'échéance, les pénalités de retard et, pour un client professionnel, l'indemnité forfaitaire de 40 € pour frais de recouvrement.",
+        title: "Gardez ou annulez",
+        text: "Si l'outil vous plaît, ne faites rien : l'abonnement démarre. Sinon, annulez avant le 7e jour depuis les réglages de votre compte. Vos pages restent enregistrées.",
       },
     ],
     pitfalls: [
-      "Faire ses factures dans Word sans numérotation fiable.",
-      "Oublier la mention « EI » après son nom.",
-      "Ignorer la facture électronique : les micro-entreprises doivent pouvoir en recevoir depuis septembre 2026.",
+      "Oublier la date de fin et être prélevé sans l'avoir voulu.",
+      "Passer l'essai à regarder les modèles sans publier : on ne découvre pas les vraies limites de l'outil.",
     ],
     tools: [
-      { slug: "henrri", why: "Gratuit, suffisant pour commencer." },
-      { slug: "abby", why: "Factures et suivi URSSAF au même endroit." },
-      { slug: "freebe", why: "Pensé pour les freelances en prestation de services." },
+      { slug: "leadpages", why: "Essai de 7 jours, toutes fonctions incluses." },
+      { slug: "html-pub", why: "Essai de 7 jours aussi, pour l'offre la moins chère." },
     ],
-    sources: [
-      { label: "Mentions obligatoires (Service-Public)", url: "https://entreprendre.service-public.fr/vosdroits/F31808" },
-      { label: "Facturation électronique (impots.gouv)", url: "https://www.impots.gouv.fr/facturation-electronique" },
-    ],
-    related: ["facturer-sans-tva", "facture-electronique-2026", "relancer-une-facture-impayee"],
+    sources: [pricing],
+    related: ["choisir-entre-html-pub-et-leadpages", "creer-une-landing-page-avec-l-ia"],
   },
   {
-    slug: "facture-electronique-2026",
-    question: "Comment se préparer à la facture électronique ?",
-    summary: "Ce qui change pour les micro-entreprises en 2026 et 2027.",
-    theme: "facturer",
+    slug: "changer-ou-annuler-son-offre-leadpages",
+    question: "Comment changer d'offre ou annuler son abonnement Leadpages ?",
+    summary: "Monter ou descendre d'offre, arrêter l'abonnement, et ce que deviennent vos pages.",
+    theme: "choisir",
+    updatedOn: "2026-09-26",
+    intro:
+      "Vous pouvez changer d'offre ou annuler à tout moment, sans pénalité. Seul le propriétaire du compte peut gérer la facturation.",
+    steps: [
+      {
+        title: "Ouvrez la facturation",
+        text: "Dans le menu de gauche de votre tableau de bord, cliquez sur « Billing ». Connectez-vous avec le compte propriétaire si le menu n'apparaît pas.",
+      },
+      {
+        title: "Changez d'offre",
+        text: "Choisissez l'offre supérieure ou inférieure. Le changement prend effet au prochain cycle de facturation.",
+      },
+      {
+        title: "Ou annulez",
+        text: "Annulez depuis les réglages de votre compte. Pendant un essai, faites-le avant le 7e jour pour ne pas être prélevé.",
+      },
+      {
+        title: "Sachez ce que deviennent vos pages",
+        text: "Si l'abonnement s'arrête, les pages publiées repassent en brouillon. Elles ne sont pas perdues : vous pourrez les republier en réactivant un abonnement.",
+      },
+    ],
+    pitfalls: [
+      "Descendre d'offre sans vérifier les limites : nombre de pages, de domaines ou de blogs inclus.",
+      "Annuler alors que des publicités envoient encore du trafic vers vos pages.",
+    ],
+    tools: [{ slug: "leadpages", why: "Changement d'offre sans pénalité." }],
+    sources: [
+      { label: "HTML Pub : offres et facturation", url: `${help}43968293046413--HTMLPub-Plans-and-Billing` },
+      pricing,
+    ],
+    related: ["choisir-entre-html-pub-et-leadpages"],
+  },
+
+  // ——— Créer une page ———
+  {
+    slug: "creer-une-landing-page-avec-l-ia",
+    question: "Comment créer une landing page avec l'IA de Leadpages ?",
+    summary: "Décrire sa page, laisser l'IA la construire, puis l'améliorer en discutant.",
+    theme: "creer",
     updatedOn: "2026-09-26",
     popular: true,
     intro:
-      "La facture électronique devient obligatoire entre entreprises en France. Pour une micro-entreprise, cela se fait en deux temps : d'abord recevoir, ensuite émettre.",
+      "L'assistant de création (Piper, le « Page Agent ») construit une page à partir d'une simple description. Vous la corrigez ensuite en lui parlant, comme dans une discussion.",
     steps: [
       {
-        title: "Depuis septembre 2026 : recevoir",
-        text: "Toutes les entreprises, micro-entreprises comprises, doivent pouvoir recevoir des factures électroniques de leurs fournisseurs.",
+        title: "Ouvrez l'écran de création",
+        text: "Dans votre tableau de bord, cliquez sur « Publish New Page ». Dans le choix « What are you making? », sélectionnez « Landing page ».",
       },
       {
-        title: "À partir de septembre 2027 : émettre",
-        text: "Les micro-entreprises devront envoyer leurs factures aux clients professionnels au format électronique. Un PDF envoyé par e-mail ne suffira plus.",
+        title: "Décrivez votre page précisément",
+        text: "Dans le champ « Describe the page you want », indiquez à qui s'adresse la page, ce que vous proposez, le ton, les couleurs et les sections voulues (titre, avantages, avis, formulaire). Plus c'est précis, meilleur est le résultat.",
       },
       {
-        title: "Choisissez une plateforme agréée",
-        text: "Les factures électroniques passent par une plateforme agréée par l'administration. Beaucoup de logiciels de facturation s'y connectent pour vous.",
+        title: "Ajoutez une image de référence",
+        text: "Avec l'icône image de la barre de saisie, joignez votre logo, une photo du produit ou une page que vous aimez. L'IA s'en sert pour le style.",
       },
       {
-        title: "Vérifiez votre logiciel",
-        text: "Demandez à votre outil de facturation s'il est compatible ou partenaire d'une plateforme agréée. Si vous facturez sur Excel, prévoyez de changer avant 2027.",
+        title: "Corrigez section par section",
+        text: "Regardez l'aperçu à droite, puis demandez des changements un par un : « rends le titre plus court », « ajoute un formulaire e-mail en bas ». Chaque message consomme des crédits IA.",
+      },
+      {
+        title: "Publiez",
+        text: "Quand la page vous convient, cliquez sur « Done » puis publiez-la. « Open page » ouvre l'adresse en ligne.",
       },
     ],
     pitfalls: [
-      "Croire qu'un PDF par e-mail est une facture électronique.",
-      "Attendre la dernière minute : les calendriers et les outils changent encore.",
-      "Oublier que les ventes à des particuliers suivent une autre règle (transmission des données de paiement).",
+      "Écrire une description trop vague (« une belle page ») : on dépense des crédits en corrections.",
+      "Oublier le formulaire ou le bouton d'action : une landing page sans objectif ne sert à rien.",
     ],
     tools: [
-      { slug: "abby", why: "Logiciel de facturation qui prépare la réforme." },
-      { slug: "tiime", why: "Formule gratuite avec facturation." },
+      { slug: "html-pub", why: "L'assistant IA est inclus, avec des crédits chaque mois." },
+      { slug: "leadpages", why: "Même assistant, avec plus de crédits." },
     ],
-    sources: [
-      { label: "impots.gouv : facturation électronique", url: "https://www.impots.gouv.fr/facturation-electronique" },
-      { label: "Economie.gouv : calendrier", url: "https://www.economie.gouv.fr/tout-savoir-sur-la-facturation-electronique-pour-les-entreprises" },
-    ],
-    related: ["faire-sa-premiere-facture"],
+    sources: [{ label: "HTML Pub : utiliser le créateur de pages IA", url: `${help}43967499549965--HTMLPub-Using-the-AI-Page-Builder` }],
+    related: ["partir-d-un-modele-leadpages", "recuperer-les-formulaires-html-pub"],
   },
   {
-    slug: "facturer-sans-tva",
-    question: "Comment facturer sans TVA ?",
-    summary: "La franchise en base, la mention à écrire et quand elle s'arrête.",
-    theme: "declarer",
+    slug: "partir-d-un-modele-leadpages",
+    question: "Comment partir d'un modèle dans Leadpages ?",
+    summary: "Choisir un modèle prêt à l'emploi et l'adapter à votre activité.",
+    theme: "creer",
     updatedOn: "2026-09-26",
     intro:
-      "La plupart des auto-entrepreneurs ne facturent pas de TVA grâce à la franchise en base. C'est simple, tant que vous restez sous le seuil.",
+      "Un modèle vous évite de partir d'une page blanche. Vous gardez la structure qui fonctionne et vous remplacez les textes, les images et les couleurs.",
     steps: [
       {
-        title: "Vérifiez que vous êtes en franchise",
-        text: "Par défaut, une micro-entreprise qui démarre est en franchise en base de TVA. Vous ne facturez pas de TVA et vous ne la récupérez pas sur vos achats.",
+        title: "Ouvrez les modèles",
+        text: "Sur l'écran de création, regardez la zone « Start from a template », ou cliquez sur « Browse all templates » pour tout voir.",
       },
       {
-        title: "Écrivez la bonne mention",
-        text: "Sur chaque facture et chaque devis : « TVA non applicable, art. 293 B du CGI ». Vos prix sont alors des montants hors taxe, sans TVA ajoutée.",
+        title: "Prévisualisez avant de choisir",
+        text: "Cliquez sur « Preview » pour voir le modèle en grand. Choisissez celui dont la structure ressemble à ce que vous voulez vendre, pas seulement celui dont les couleurs vous plaisent.",
       },
       {
-        title: "Surveillez le seuil",
-        text: "La franchise s'arrête si votre chiffre d'affaires dépasse un seuil qui dépend de votre activité (vente ou service). Les seuils ont été débattus en 2025 et 2026 : vérifiez le montant actuel sur impots.gouv.fr.",
+        title: "Utilisez-le",
+        text: "Cliquez sur « Use ». Une copie du modèle s'ouvre, vous pouvez la modifier sans rien casser.",
       },
       {
-        title: "Anticipez le dépassement",
-        text: "Si vous dépassez le seuil, vous devez facturer la TVA à partir de la date prévue par la loi. Ajustez vos prix et votre logiciel à l'avance.",
+        title: "Adaptez le contenu",
+        text: "Demandez à l'assistant de remplacer les textes par les vôtres, ou modifiez-les directement. Mettez votre logo, vos photos et vos couleurs.",
+      },
+      {
+        title: "Relisez sur mobile, puis publiez",
+        text: "La plupart des visiteurs arrivent sur téléphone. Vérifiez l'aperçu mobile, puis publiez.",
       },
     ],
     pitfalls: [
-      "Ajouter 20 % de TVA sur une facture alors qu'on est en franchise.",
-      "Oublier la mention, ce qui rend la facture incomplète.",
+      "Laisser des textes d'exemple du modèle en ligne.",
+      "Garder toutes les sections du modèle alors que certaines ne servent pas votre offre.",
     ],
-    tools: [{ slug: "henrri", why: "Ajoute la mention automatiquement." }],
-    sources: [
-      { label: "Franchise en base de TVA (Service-Public)", url: "https://entreprendre.service-public.fr/vosdroits/F21746" },
-      { label: "impots.gouv", url: "https://www.impots.gouv.fr/professionnel" },
-    ],
-    related: ["faire-sa-premiere-facture", "declarer-son-chiffre-d-affaires"],
+    tools: [{ slug: "html-pub", why: "Modèles de landing pages, portfolios et pages « lien en bio »." }],
+    sources: [{ label: "HTML Pub : créer et modifier des pages", url: `${help}43966022984461--HTMLPub-Creating-and-Editing-Pages` }],
+    related: ["creer-une-landing-page-avec-l-ia", "creer-un-site-web-avec-html-pub"],
   },
   {
-    slug: "declarer-son-chiffre-d-affaires",
-    question: "Comment déclarer son chiffre d'affaires à l'URSSAF ?",
-    summary: "Mensuel ou trimestriel, quoi déclarer et quoi faire si c'est zéro.",
-    theme: "declarer",
+    slug: "publier-du-html-sur-html-pub",
+    question: "Comment publier une page HTML déjà prête sur HTML Pub ?",
+    summary: "Coller du code ou déposer un fichier .html, sans dépenser de crédits IA.",
+    theme: "creer",
+    updatedOn: "2026-09-26",
+    intro:
+      "Vous avez déjà une page en HTML, faite par vous ou par une IA ? HTML Pub la met en ligne en quelques secondes. Cette méthode ne consomme pas de crédits.",
+    steps: [
+      {
+        title: "Cliquez sur « Publish New Page »",
+        text: "Le bouton se trouve en haut à droite du tableau de bord.",
+      },
+      {
+        title: "Ajoutez votre code",
+        text: "Trois façons : coller le HTML dans le champ, déposer directement un fichier .html, ou écrire le code vous-même.",
+      },
+      {
+        title: "Vérifiez l'aperçu",
+        text: "Assurez-vous que les images s'affichent. Si elles sont sur votre ordinateur, ajoutez-les d'abord dans les fichiers (« Assets ») de la page.",
+      },
+      {
+        title: "Publiez",
+        text: "Cliquez sur « Publish ». La page est en ligne sur une adresse HTML Pub, ou sur votre domaine si vous l'avez connecté.",
+      },
+    ],
+    pitfalls: [
+      "Coller une page qui appelle des images ou des fichiers restés sur votre ordinateur.",
+      "Envoyer un formulaire vers un autre service : HTML Pub ne récupère alors pas les réponses.",
+    ],
+    tools: [{ slug: "html-pub", why: "Publication de HTML sans crédits IA." }],
+    sources: [{ label: "HTML Pub : bien démarrer", url: `${help}43965947894413--HTMLPub-Getting-Started-with-HTMLPub` }],
+    related: ["connecter-son-nom-de-domaine-leadpages", "recuperer-les-formulaires-html-pub"],
+  },
+  {
+    slug: "creer-un-site-web-avec-html-pub",
+    question: "Comment créer un site de plusieurs pages avec HTML Pub ?",
+    summary: "Une page d'accueil, puis les autres pages qui reprennent le même menu et le même style.",
+    theme: "creer",
+    updatedOn: "2026-09-26",
+    intro:
+      "Un site regroupe plusieurs pages sous un même domaine, avec un menu commun. L'IA crée d'abord la page d'accueil, puis chaque page quand vous le demandez.",
+    steps: [
+      {
+        title: "Choisissez « Website »",
+        text: "Sur l'écran de création, sélectionnez « Website » au lieu de « Landing page ».",
+      },
+      {
+        title: "Décrivez la page d'accueil",
+        text: "Expliquez votre activité, votre public et le style voulu, puis cliquez sur « Create ».",
+      },
+      {
+        title: "Validez la liste des pages",
+        text: "L'assistant propose les autres pages du site (services, tarifs, contact…). Renommez, supprimez ou ajoutez-en avant de lancer.",
+      },
+      {
+        title: "Construisez les pages une par une",
+        text: "Cliquez sur « Build » sur chaque page. Rien n'est généré tant que vous ne cliquez pas. Les pages reprennent l'en-tête, le pied de page et le style de l'accueil.",
+      },
+      {
+        title: "Ajoutez une page plus tard",
+        text: "Sur l'écran de création, ouvrez le choix de destination, sélectionnez votre site, décrivez la nouvelle page et cliquez sur « Create ».",
+      },
+    ],
+    pitfalls: [
+      "Construire toutes les pages d'un coup sans relire l'accueil : les erreurs de style se répètent partout.",
+      "Dépasser le nombre de pages inclus dans votre offre.",
+    ],
+    tools: [{ slug: "html-pub", why: "Sites multipages inclus dans toutes les offres payantes." }],
+    sources: [{ label: "HTML Pub : utiliser les sites", url: `${help}43969561553549--HTMLPub-Using-Sites` }],
+    related: ["creer-un-blog-avec-html-pub", "connecter-son-nom-de-domaine-leadpages"],
+  },
+  {
+    slug: "creer-un-blog-avec-html-pub",
+    question: "Comment créer un blog avec HTML Pub ?",
+    summary: "Créer le blog, écrire un article et le publier.",
+    theme: "creer",
+    updatedOn: "2026-09-26",
+    intro:
+      "Un blog attire des visiteurs depuis Google et les réseaux. Avec HTML Pub, il se crée en une minute et les articles sont en ligne dès que vous les publiez.",
+    steps: [
+      {
+        title: "Créez le blog",
+        text: "Dans le menu, ouvrez « Blog » puis cliquez sur « + Create Blog ». Donnez un titre, et si vous voulez une description et un nom d'auteur.",
+      },
+      {
+        title: "Écrivez un article",
+        text: "Ouvrez le blog et cliquez sur « New Post ». Écrivez avec l'éditeur visuel ou en Markdown.",
+      },
+      {
+        title: "Remplissez les champs utiles",
+        text: "Titre, adresse (slug), résumé, image de couverture et mots-clés (tags). Le résumé et l'image apparaissent quand on partage l'article.",
+      },
+      {
+        title: "Publiez",
+        text: "Passez le statut de « Drafts » à « Published ». L'article est en ligne immédiatement, et un flux RSS est créé automatiquement.",
+      },
+      {
+        title: "Rattachez-le à votre site",
+        text: "Si vous avez un site HTML Pub, vous pouvez afficher le blog à l'adresse /blog de votre domaine.",
+      },
+    ],
+    pitfalls: [
+      "Publier des articles sans image de couverture : ils sont moins cliqués sur les réseaux.",
+      "Choisir une offre sans blog : vérifiez que la vôtre en inclut au moins un.",
+    ],
+    tools: [{ slug: "html-pub", why: "Blog inclus à partir de l'offre Pro." }],
+    sources: [{ label: "HTML Pub : utiliser les blogs", url: `${help}43969067296653--HTMLPub-Using-Blogs` }, pricing],
+    related: ["creer-un-site-web-avec-html-pub"],
+  },
+
+  // ——— Publier ———
+  {
+    slug: "connecter-son-nom-de-domaine-leadpages",
+    question: "Comment connecter son nom de domaine à Leadpages ?",
+    summary: "Afficher vos pages sur votre propre adresse, avec le HTTPS offert.",
+    theme: "publier",
     updatedOn: "2026-09-26",
     popular: true,
     intro:
-      "En micro-entreprise, vous déclarez ce que vous avez encaissé, puis l'URSSAF calcule vos cotisations. Même à zéro, la déclaration est obligatoire.",
+      "Par défaut, vos pages ont une adresse HTML Pub. Avec votre propre domaine, elles inspirent plus confiance. Le certificat de sécurité (HTTPS) est fourni gratuitement.",
     steps: [
       {
-        title: "Connaissez votre rythme",
-        text: "Vous déclarez chaque mois ou chaque trimestre, selon votre choix à la création. Vous pouvez changer dans votre espace URSSAF.",
+        title: "Ouvrez « Custom Domains »",
+        text: "Dans le tableau de bord, rubrique « Manage », cliquez sur « Custom Domains », puis sur « Connect Domain ».",
       },
       {
-        title: "Additionnez vos encaissements",
-        text: "Comptez l'argent réellement reçu sur la période, pas les factures envoyées. Séparez ventes de marchandises et prestations de services si vous faites les deux.",
+        title: "Tapez votre domaine",
+        text: "Soit le domaine principal (monsite.com), soit un sous-domaine (www.monsite.com, offre.monsite.com). Un sous-domaine est le plus simple.",
       },
       {
-        title: "Déclarez en ligne",
-        text: "Sur autoentrepreneur.urssaf.fr ou l'application AutoEntrepreneur de l'URSSAF, saisissez le montant. Les cotisations sont calculées automatiquement.",
+        title: "Choisissez ce qu'il affiche",
+        text: "Dans « Points To », choisissez une page, un site ou un blog. Vous pourrez le changer plus tard. Cliquez sur « Add & Configure Domain ».",
       },
       {
-        title: "Payez dans la foulée",
-        text: "Le paiement se fait en même temps que la déclaration, par prélèvement. Gardez de côté une part de chaque encaissement pour ne pas être surpris.",
+        title: "Laissez faire la configuration automatique",
+        text: "Une fenêtre (Entri) propose de régler votre domaine pour vous. Cliquez sur « Continue », vérifiez les changements, puis « Authorize ». Le message « is now configured! » confirme.",
+      },
+      {
+        title: "Sinon, réglez les DNS à la main",
+        text: "Chez votre hébergeur de domaine, ajoutez les enregistrements indiqués par Leadpages : un CNAME pour www (ou votre sous-domaine), un TXT pour la sécurité et, pour le domaine principal, deux enregistrements A. Copiez les valeurs affichées dans votre compte.",
+      },
+      {
+        title: "Attendez l'activation",
+        text: "Le statut passe par plusieurs étapes jusqu'à « Active ». Le HTTPS peut prendre jusqu'à 48 heures.",
       },
     ],
     pitfalls: [
-      "Ne rien déclarer quand le chiffre d'affaires est nul : il faut déclarer 0.",
-      "Déclarer le montant facturé au lieu du montant encaissé.",
-      "Oublier de déclarer aussi ses revenus sur la déclaration d'impôt annuelle.",
+      "Oublier l'enregistrement TXT : sans lui, le HTTPS ne s'active pas.",
+      "Modifier le domaine principal alors qu'un autre site l'utilise déjà : utilisez plutôt un sous-domaine.",
     ],
     tools: [
-      { slug: "abby", why: "Calcule ce qu'il faut déclarer à partir de vos factures." },
-      { slug: "indy", why: "Suivi des encaissements et rappels de déclaration." },
+      { slug: "html-pub", why: "Domaine personnalisé et HTTPS inclus." },
+      { slug: "leadpages", why: "Plusieurs domaines selon l'offre." },
     ],
     sources: [
-      { label: "URSSAF auto-entrepreneur", url: "https://www.autoentrepreneur.urssaf.fr" },
+      { label: "Connecter votre domaine (nouveau Leadpages)", url: `${help}44792783022989--New-Leadpages-Connect-your-Domain` },
+      { label: "HTML Pub : connecter un domaine", url: `${help}43967609314829--HTMLPub-Connecting-a-Custom-Domain` },
     ],
-    related: ["facturer-sans-tva", "faut-il-un-compte-pro"],
+    related: ["modifier-l-adresse-d-une-page-leadpages", "creer-un-site-web-avec-html-pub"],
   },
   {
-    slug: "faut-il-un-compte-pro",
-    question: "Faut-il ouvrir un compte bancaire pro ?",
-    summary: "Ce que dit la loi, et pourquoi c'est pratique même quand ce n'est pas obligatoire.",
-    theme: "banque",
+    slug: "modifier-l-adresse-d-une-page-leadpages",
+    question: "Comment modifier l'adresse ou protéger une page par mot de passe ?",
+    summary: "Le titre, l'adresse (slug), le mot de passe et les étiquettes d'une page.",
+    theme: "publier",
+    updatedOn: "2026-09-26",
+    intro:
+      "Chaque page a quelques réglages simples dans la liste des pages. Ils servent à avoir une adresse lisible, à cacher une page en préparation ou à ranger vos pages.",
+    steps: [
+      {
+        title: "Changez le titre",
+        text: "Dans la liste des pages, cliquez sur le titre pour le modifier. C'est le nom affiché dans l'onglet du navigateur.",
+      },
+      {
+        title: "Changez l'adresse (slug)",
+        text: "Cliquez sur l'adresse grisée sous le titre. Utilisez des minuscules, des chiffres et des tirets, entre 10 et 64 caractères, par exemple offre-coaching-septembre.",
+      },
+      {
+        title: "Protégez par mot de passe",
+        text: "Cliquez sur l'icône de cadenas de la page. Les visiteurs devront entrer le mot de passe pour la voir. Pratique pour une page client ou une page pas encore prête.",
+      },
+      {
+        title: "Rangez avec des étiquettes",
+        text: "Ajoutez des étiquettes (« Tags ») pour retrouver vos pages par campagne ou par client.",
+      },
+    ],
+    pitfalls: [
+      "Changer l'adresse d'une page déjà partagée ou utilisée dans une publicité : l'ancien lien ne marche plus.",
+      "Oublier de retirer le mot de passe le jour du lancement.",
+    ],
+    tools: [{ slug: "html-pub", why: "Réglages de page inclus dans toutes les offres." }],
+    sources: [{ label: "HTML Pub : réglages de page", url: `${help}43967365239053--HTMLPub-Understanding-Page-Settings` }],
+    related: ["connecter-son-nom-de-domaine-leadpages"],
+  },
+
+  // ——— Récolter des contacts ———
+  {
+    slug: "recuperer-les-formulaires-html-pub",
+    question: "Comment récupérer les contacts de ses formulaires ?",
+    summary: "Voir les réponses, les exporter en CSV et les supprimer si besoin.",
+    theme: "contacts",
     updatedOn: "2026-09-26",
     popular: true,
     intro:
-      "Un auto-entrepreneur doit avoir un compte séparé pour son activité quand son chiffre d'affaires dépasse 10 000 € deux années civiles de suite. Beaucoup en ouvrent un dès le départ.",
+      "HTML Pub détecte tout seul les formulaires de vos pages et enregistre les réponses. Vous n'avez rien à régler.",
     steps: [
       {
-        title: "Compte dédié ou compte pro",
-        text: "La loi demande un compte dédié, pas forcément un « compte pro ». Un second compte personnel utilisé uniquement pour l'activité peut suffire.",
+        title: "Ajoutez un formulaire à votre page",
+        text: "Demandez à l'assistant « ajoute un formulaire avec prénom et e-mail », ou utilisez un modèle qui en contient un.",
       },
       {
-        title: "Comparez les néobanques",
-        text: "Les banques en ligne proposent des comptes pro rapides à ouvrir, avec carte, application et parfois facturation incluse. Les frais mensuels varient beaucoup.",
+        title: "Ouvrez « Forms »",
+        text: "Dans le menu de gauche, la rubrique « Forms » liste vos pages avec le nombre de réponses et la date de la dernière.",
       },
       {
-        title: "Vérifiez les frais cachés",
-        text: "Regardez les frais de dépôt d'espèces, les plafonds de paiement et le prix des virements instantanés avant de choisir.",
+        title: "Consultez les réponses",
+        text: "Cliquez sur le nom d'une page, puis dépliez une ligne pour voir tous les champs remplis.",
+      },
+      {
+        title: "Exportez en CSV",
+        text: "Cliquez sur « Export CSV » pour obtenir un fichier à ouvrir dans Excel ou Google Sheets.",
+      },
+      {
+        title: "Supprimez si on vous le demande",
+        text: "L'icône de corbeille supprime une réponse définitivement. Utile si une personne demande l'effacement de ses données.",
       },
     ],
     pitfalls: [
-      "Mélanger dépenses perso et pro, ce qui complique tout en cas de contrôle.",
-      "Choisir uniquement sur le prix sans vérifier le dépôt d'espèces si vous en recevez.",
+      "Envoyer le formulaire vers un service extérieur : HTML Pub ne voit alors plus les réponses.",
+      "Ne jamais exporter ses contacts : gardez une copie régulière.",
     ],
-    tools: [
-      { slug: "shine", why: "Compte pro en ligne pensé pour les indépendants." },
-      { slug: "qonto", why: "Compte pro complet, plus orienté petites entreprises." },
-      { slug: "indy", why: "Compte pro avec comptabilité intégrée." },
-    ],
-    sources: [
-      { label: "Compte bancaire dédié (Service-Public)", url: "https://entreprendre.service-public.fr" },
-    ],
-    related: ["creer-sa-micro-entreprise", "accepter-la-carte-bancaire"],
+    tools: [{ slug: "html-pub", why: "Réponses de formulaires enregistrées automatiquement." }],
+    sources: [{ label: "HTML Pub : récupérer les réponses de formulaires", url: `${help}43967816644493--HTMLPub-Collecting-Form-Submissions` }],
+    related: ["connecter-leadpages-a-son-outil-e-mail", "creer-une-landing-page-avec-l-ia"],
   },
   {
-    slug: "accepter-la-carte-bancaire",
-    question: "Comment accepter les paiements par carte ?",
-    summary: "Terminal, lien de paiement ou paiement en ligne : que choisir.",
-    theme: "etre-paye",
+    slug: "connecter-leadpages-a-son-outil-e-mail",
+    question: "Comment envoyer ses contacts vers Mailchimp, Google Sheets ou son CRM ?",
+    summary: "Connecter une intégration pour que chaque nouveau contact arrive au bon endroit.",
+    theme: "contacts",
     updatedOn: "2026-09-26",
     intro:
-      "Il existe trois façons simples d'être payé par carte : un petit terminal, un lien de paiement envoyé par message, ou un paiement sur votre site.",
+      "Une intégration envoie chaque réponse de formulaire vers un autre outil, sans copier-coller. HTML Pub se connecte notamment à Mailchimp, Google Sheets, HubSpot, Slack, Pipedrive et GetResponse.",
     steps: [
       {
-        title: "En face à face : un terminal",
-        text: "Un terminal mobile se connecte à votre téléphone. Vous l'achetez une fois, puis vous payez une commission sur chaque paiement.",
+        title: "Ouvrez « Integrations »",
+        text: "Dans le menu de gauche, trouvez l'outil voulu et cliquez sur « Connect ».",
       },
       {
-        title: "À distance : un lien de paiement",
-        text: "Vous créez un lien pour un montant précis et l'envoyez par SMS ou e-mail. Le client paie par carte en quelques secondes.",
+        title: "Autorisez la connexion",
+        text: "Connectez-vous à l'outil ou collez sa clé API, selon ce qui est demandé. Le statut passe à « Connected ».",
       },
       {
-        title: "En ligne : un paiement sur votre site",
-        text: "Si vous vendez en ligne, un service de paiement s'intègre à votre site ou à votre boutique.",
+        title: "Réglez l'automatisation",
+        text: "Dans la partie « Automations », indiquez où envoyer les contacts (la liste Mailchimp, le tableau Google Sheets…) et choisissez toutes les pages ou seulement certaines.",
       },
       {
-        title: "Comparez les commissions",
-        text: "Le coût réel, c'est la commission par transaction. Faites le calcul sur votre panier moyen, pas sur le prix affiché.",
+        title: "Testez avec votre propre e-mail",
+        text: "Remplissez le formulaire vous-même, puis vérifiez que le contact arrive dans l'outil.",
+      },
+      {
+        title: "Surveillez les erreurs",
+        text: "« View execution logs » montre chaque envoi : réussi, en attente ou échoué, avec la raison.",
       },
     ],
     pitfalls: [
-      "Oublier que la commission réduit votre marge : intégrez-la dans vos prix.",
-      "Déclarer à l'URSSAF le montant net reçu au lieu du montant payé par le client.",
+      "Ne pas tester : on découvre des semaines plus tard que les contacts n'arrivaient pas.",
+      "Dépasser le nombre d'intégrations actives de son offre.",
     ],
     tools: [
-      { slug: "sumup", why: "Terminal et liens de paiement, sans abonnement." },
-      { slug: "stripe", why: "Paiement en ligne, idéal pour un site." },
-      { slug: "paypal", why: "Connu des clients, pratique pour l'international." },
+      { slug: "html-pub", why: "Intégrations incluses selon l'offre." },
+      { slug: "leadpages", why: "Plus d'intégrations et des webhooks." },
     ],
-    sources: [],
-    related: ["relancer-une-facture-impayee", "faut-il-un-compte-pro"],
+    sources: [{ label: "HTML Pub : connecter des intégrations", url: `${help}43967898431757--HTMLPub-Connecting-Integrations` }],
+    related: ["recuperer-les-formulaires-html-pub"],
+  },
+
+  // ——— Optimiser ———
+  {
+    slug: "faire-un-test-ab-leadpages",
+    question: "Comment faire un test A/B avec Leadpages ?",
+    summary: "Comparer deux versions d'une page et garder celle qui convertit le mieux.",
+    theme: "optimiser",
+    updatedOn: "2026-09-26",
+    popular: true,
+    intro:
+      "Un test A/B montre deux versions d'une page à vos visiteurs et mesure laquelle obtient le plus de résultats. Il est inclus à partir de l'offre Leadpages Grow.",
+    steps: [
+      {
+        title: "Créez une variante",
+        text: "Dupliquez votre page en un clic, ou laissez l'IA proposer une variante. Changez une seule chose importante : le titre, le bouton ou l'offre.",
+      },
+      {
+        title: "Choisissez votre objectif",
+        text: "Indiquez ce qui compte comme réussite : envoi du formulaire, clic sur un bouton, achat ou conversion sur un autre site.",
+      },
+      {
+        title: "Répartissez le trafic",
+        text: "50/50 est le plus simple. Vous pouvez aussi choisir 70/30 ou toute répartition entre 10 et 90 %. Puis publiez.",
+      },
+      {
+        title: "Attendez un résultat clair",
+        text: "Les résultats s'affichent en direct avec trois niveaux : tendance, probable, gagnant clair. Attendez « gagnant clair » avant de décider.",
+      },
+      {
+        title: "Gardez la gagnante",
+        text: "Envoyez 100 % du trafic vers la meilleure version en un clic, puis lancez un nouveau test.",
+      },
+    ],
+    pitfalls: [
+      "Changer plusieurs choses à la fois : on ne sait plus ce qui a fait la différence.",
+      "Arrêter le test après quelques visites : le résultat est souvent dû au hasard.",
+    ],
+    tools: [{ slug: "leadpages", why: "Tests A/B dès Grow, sans limite de trafic." }],
+    sources: [{ label: "Leadpages : tests A/B", url: "https://leadpages.com/product/ab-testing" }, pricing],
+    related: ["utiliser-smart-traffic-leadpages", "lire-une-carte-de-chaleur-leadpages"],
   },
   {
-    slug: "relancer-une-facture-impayee",
-    question: "Comment relancer une facture impayée ?",
-    summary: "Les étapes, du rappel poli à la mise en demeure.",
-    theme: "etre-paye",
+    slug: "lire-une-carte-de-chaleur-leadpages",
+    question: "Comment lire une carte de chaleur (heatmap) dans Leadpages ?",
+    summary: "Voir où vos visiteurs cliquent, jusqu'où ils descendent et ce qu'ils lisent.",
+    theme: "optimiser",
     updatedOn: "2026-09-26",
     intro:
-      "La plupart des retards sont des oublis. Une relance claire et rapide règle la majorité des cas, sans abîmer la relation client.",
+      "Une carte de chaleur colore votre page selon l'activité des visiteurs. Elle est incluse dans les offres Leadpages Optimize et Scale, sans code à installer.",
     steps: [
       {
-        title: "Relance amicale",
-        text: "Quelques jours après l'échéance, envoyez un e-mail court avec la facture en pièce jointe, son numéro, le montant et un moyen de paiement.",
+        title: "Attendez assez de visites",
+        text: "En dessous d'environ 30 visites, les données sont trop maigres pour conclure.",
       },
       {
-        title: "Deuxième relance",
-        text: "Une à deux semaines plus tard, rappelez les pénalités de retard prévues sur la facture et proposez un appel.",
+        title: "Activez le mode carte de chaleur",
+        text: "Dans l'éditeur de la page, cliquez sur l'icône en forme de flamme dans la barre d'outils.",
       },
       {
-        title: "Mise en demeure",
-        text: "Sans réponse, envoyez une mise en demeure par lettre recommandée avec accusé de réception. Elle fixe un dernier délai.",
+        title: "Lisez les clics",
+        text: "Rouge : beaucoup de clics. Bleu : zones ignorées. Si les gens cliquent sur une image qui n'est pas un lien, faites-en un lien.",
       },
       {
-        title: "Recours",
-        text: "Pour une petite somme, une procédure d'injonction de payer est possible en ligne. Un conciliateur de justice peut aussi aider, gratuitement.",
+        title: "Lisez le défilement",
+        text: "La carte de défilement montre la part des visiteurs qui atteint 25, 50, 75 et 100 % de la page. Si peu arrivent au formulaire, remontez-le.",
+      },
+      {
+        title: "Corrigez tout de suite",
+        text: "Modifiez la page ou lancez un test A/B depuis le même écran.",
       },
     ],
     pitfalls: [
-      "Attendre des semaines avant la première relance.",
-      "Ne pas avoir écrit les pénalités de retard sur la facture.",
-      "Continuer à travailler pour un client qui ne paie pas.",
+      "Conclure avec trop peu de visites.",
+      "Chercher la carte d'attention sur mobile : elle n'existe que sur ordinateur (le mobile a les clics et le défilement).",
     ],
-    tools: [
-      { slug: "abby", why: "Relances automatiques par e-mail." },
-      { slug: "youtrust", why: "Faire signer un devis évite beaucoup de litiges." },
-    ],
-    sources: [
-      { label: "Injonction de payer (Service-Public)", url: "https://www.service-public.fr/particuliers/vosdroits/F1746" },
-    ],
-    related: ["faire-sa-premiere-facture", "faire-signer-un-devis"],
+    tools: [{ slug: "leadpages", why: "Cartes de chaleur dès l'offre Optimize." }],
+    sources: [{ label: "Leadpages : cartes de chaleur", url: "https://leadpages.com/product/heatmaps" }],
+    related: ["faire-un-test-ab-leadpages", "utiliser-smart-traffic-leadpages"],
   },
   {
-    slug: "faire-signer-un-devis",
-    question: "Comment faire un devis et le faire signer ?",
-    summary: "Ce qu'un devis doit contenir et comment obtenir une signature en ligne.",
-    theme: "facturer",
+    slug: "utiliser-smart-traffic-leadpages",
+    question: "Comment fonctionne Smart Traffic dans Leadpages ?",
+    summary: "L'IA envoie chaque visiteur vers la version de page qui a le plus de chances de lui plaire.",
+    theme: "optimiser",
     updatedOn: "2026-09-26",
     intro:
-      "Un devis signé protège les deux côtés : le client sait ce qu'il paie, vous savez ce que vous devez livrer. La signature peut se faire en ligne.",
+      "Un test A/B classique partage le trafic à égalité. Smart Traffic, lui, choisit pour chaque visiteur la variante la plus susceptible de le convertir. Il est inclus à partir de Leadpages Optimize.",
     steps: [
       {
-        title: "Rédigez le devis",
-        text: "Reprenez les informations d'une facture : vos coordonnées, celles du client, le détail de la prestation, les prix et la mention TVA. Ajoutez une durée de validité.",
+        title: "Préparez au moins deux variantes",
+        text: "Créez des versions vraiment différentes : une offre, un angle ou un public différent.",
       },
       {
-        title: "Précisez les conditions",
-        text: "Délais, acompte éventuel, modalités de paiement. Plus c'est clair, moins il y a de discussions ensuite.",
+        title: "Fixez l'objectif",
+        text: "Formulaire, clic ou achat : Smart Traffic apprend à partir de cet objectif.",
       },
       {
-        title: "Envoyez en signature électronique",
-        text: "Un service de signature envoie le devis au client, qui signe depuis son téléphone. Vous recevez une copie signée et horodatée.",
+        title: "Activez Smart Traffic",
+        text: "Au lieu d'une répartition fixe, laissez l'IA diriger les visiteurs. Elle s'améliore au fil des visites.",
       },
       {
-        title: "Transformez en facture",
-        text: "Une fois le travail fait, reprenez le devis pour créer la facture. La plupart des logiciels le font en un clic.",
+        title: "Suivez les résultats",
+        text: "Comparez le taux de conversion global avant et après. Ajoutez une nouvelle variante quand une autre s'essouffle.",
       },
     ],
     pitfalls: [
-      "Commencer le travail avant la signature.",
-      "Oublier la durée de validité du devis.",
+      "L'utiliser avec des variantes presque identiques : l'IA n'a rien à choisir.",
+      "S'attendre à un résultat en quelques jours avec peu de trafic.",
     ],
-    tools: [
-      { slug: "youtrust", why: "Signature électronique française (ex-Yousign), simple à utiliser." },
-      { slug: "freebe", why: "Devis puis facture dans le même outil." },
+    tools: [{ slug: "leadpages", why: "Smart Traffic dès Optimize, optimisation automatique complète avec Scale." }],
+    sources: [{ label: "Leadpages : tests A/B et Smart Traffic", url: "https://leadpages.com/product/ab-testing" }, pricing],
+    related: ["faire-un-test-ab-leadpages"],
+  },
+
+  // ——— IA et vidéo ———
+  {
+    slug: "publier-une-page-depuis-claude",
+    question: "Comment publier une page HTML Pub directement depuis Claude ?",
+    summary: "Connecter HTML Pub à Claude pour créer et modifier vos pages en discutant.",
+    theme: "ia",
+    updatedOn: "2026-09-26",
+    intro:
+      "HTML Pub a un connecteur pour Claude (MCP). Une fois connecté, vous demandez une page à Claude et il la publie dans votre compte.",
+    steps: [
+      {
+        title: "Vérifiez votre offre",
+        text: "Le connecteur MCP est inclus à partir de HTML Pub Pro et dans toutes les offres Leadpages.",
+      },
+      {
+        title: "Ajoutez le connecteur dans Claude",
+        text: "Sur claude.ai, ouvrez Réglages puis Connecteurs, choisissez « Ajouter un connecteur personnalisé » et collez l'adresse https://mcp.htmlpub.com/mcp.",
+      },
+      {
+        title: "Autorisez l'accès",
+        text: "Connectez-vous à votre compte HTML Pub quand Claude le demande. Aucune clé API n'est nécessaire.",
+      },
+      {
+        title: "Demandez votre page",
+        text: "Par exemple : « Crée et publie sur HTML Pub une landing page pour mon atelier photo, avec un formulaire d'inscription. » Claude vous donne l'adresse de la page.",
+      },
+      {
+        title: "Modifiez en discutant",
+        text: "Demandez des corrections à Claude : il modifie la page existante sans tout refaire.",
+      },
     ],
-    sources: [],
-    related: ["faire-sa-premiere-facture", "relancer-une-facture-impayee"],
+    pitfalls: [
+      "Ajouter une mauvaise adresse de connecteur : copiez-la depuis l'aide officielle.",
+      "Publier sans relire : vérifiez toujours la page en ligne.",
+    ],
+    tools: [{ slug: "html-pub", why: "Connecteur Claude inclus dès l'offre Pro." }],
+    sources: [{ label: "HTML Pub : connecteur MCP pour Claude", url: `${help}43969915496845--HTMLPub-Using-the-Claude-MCP-Connector` }, pricing],
+    related: ["creer-une-landing-page-avec-l-ia", "creer-une-pub-video-avec-ad-studio"],
   },
   {
-    slug: "etre-trouve-sur-google",
-    question: "Comment être trouvé sur Google quand on démarre ?",
-    summary: "La fiche Google gratuite, un site d'une page et les avis clients.",
-    theme: "visibilite",
+    slug: "creer-une-pub-video-avec-ad-studio",
+    question: "Comment créer une publicité vidéo avec Ad Studio ?",
+    summary: "Une image de départ, un storyboard, puis la vidéo finale, en validant chaque étape.",
+    theme: "ia",
     updatedOn: "2026-09-26",
     intro:
-      "Pas besoin d'un gros site pour exister. Pour une activité locale, la fiche d'établissement Google compte souvent plus que le site lui-même.",
+      "Ad Studio transforme une courte description en publicité vidéo. Il propose des pubs centrées sur le produit ou au style UGC, avec un créateur généré par IA.",
     steps: [
       {
-        title: "Créez votre fiche Google",
-        text: "Avec Google Business Profile, gratuit, vous apparaissez sur Google Maps avec vos horaires, votre téléphone et vos avis.",
+        title: "Décrivez votre pub",
+        text: "Votre produit, votre public et le style voulu : pub produit ou vidéo façon UGC.",
       },
       {
-        title: "Faites un site d'une page",
-        text: "Qui vous êtes, ce que vous proposez, vos prix ou une fourchette, et comment vous contacter. Une seule page claire suffit pour démarrer.",
+        title: "Validez l'image de départ",
+        text: "Ad Studio crée une image qui fixe le décor, le produit et le créateur. Demandez des retouches : cette étape ne consomme pas de crédits vidéo.",
       },
       {
-        title: "Demandez des avis",
-        text: "Après chaque mission réussie, envoyez le lien pour laisser un avis. Les premiers avis font une vraie différence.",
+        title: "Validez le storyboard",
+        text: "Relisez les plans, les légendes et les mouvements de caméra qui racontent l'histoire.",
       },
       {
-        title: "Utilisez les mots de vos clients",
-        text: "Écrivez ce que vos clients tapent vraiment : « plombier Lyon 7 », pas « solutions hydrauliques ».",
+        title: "Lancez le tournage",
+        text: "Avant le rendu, un devis indique le nombre de crédits selon le nombre de plans et la résolution. Validez pour obtenir la vidéo finale.",
       },
     ],
     pitfalls: [
-      "Payer un site cher avant d'avoir des clients.",
-      "Acheter de faux avis : c'est interdit et Google les supprime.",
+      "Lancer le rendu sans avoir bien relu le storyboard : c'est cette étape qui coûte des crédits.",
+      "S'étonner d'une vidéo sans musique : si la musique n'est pas libre de droits, elle est retirée.",
     ],
-    tools: [
-      { slug: "google-business-profile", why: "Gratuit, indispensable pour une activité locale." },
-      { slug: "carrd", why: "Un site d'une page, simple et peu cher." },
-      { slug: "calendly", why: "Laisser les clients réserver un créneau." },
-    ],
-    sources: [],
-    related: ["creer-sa-micro-entreprise"],
+    tools: [{ slug: "html-pub", why: "Ad Studio fait partie des outils IA de HTML Pub." }],
+    sources: [{ label: "HTML Pub : créer des pubs vidéo dans Ad Studio", url: `${help}48970038606349--HTMLPub-Generating-Video-Ads-in-Ad-Studio` }],
+    related: ["publier-une-page-depuis-claude", "creer-une-landing-page-avec-l-ia"],
   },
 ];
 
 export const tools: Tool[] = [
   {
-    slug: "henrri",
-    name: "Henrri",
-    summary: "Logiciel de facturation gratuit.",
-    website: "https://www.henrri.com",
-    freePlan: true,
-    themes: ["facturer"],
-    goodFor: "Faire des devis et des factures conformes sans payer, quand on démarre.",
-    watchOut: "Moins de fonctions de suivi URSSAF que les outils payants.",
-    logo: { src: "https://www.henrri.com/wp-content/themes/chouette-template/icons/apple-icon-180x180.png", fit: "cover" },
-  },
-  {
-    slug: "abby",
-    name: "Abby",
-    summary: "Facturation et gestion pour auto-entrepreneurs.",
-    website: "https://abby.fr",
-    freePlan: true,
-    themes: ["facturer", "declarer", "etre-paye"],
-    goodFor: "Centraliser devis, factures, relances et le suivi du chiffre d'affaires.",
-    watchOut: "Les fonctions avancées sont dans les formules payantes.",
-    logo: { src: "https://abby.fr/favicon-32x32.png", fit: "contain" },
-  },
-  {
-    slug: "freebe",
-    name: "Freebe",
-    summary: "Gestion pour freelances en prestation de services.",
-    website: "https://www.freebe.me",
+    slug: "html-pub",
+    name: "HTML Pub",
+    summary: "Publier des landing pages, des sites et des blogs avec l'IA, par Leadpages.",
+    website: "https://htmlpub.com",
+    affiliateUrl: affiliateLink,
     freePlan: false,
-    themes: ["facturer"],
-    goodFor: "Les freelances qui font des devis, du suivi de temps et des factures.",
-    watchOut: "Payant après la période d'essai.",
-    logo: { src: "https://cdn.prod.website-files.com/5d874b54ad1d4bcf0eff06d5/5e146f8b2c2877f75bbe5a02_freebe_logo.jpg", fit: "cover", zoom: 2.2 },
+    themes: ["creer", "publier", "contacts", "ia"],
+    goodFor:
+      "Les créateurs seuls et les petites équipes qui veulent mettre en ligne vite une page, un site ou un blog sur leur domaine, avec un assistant IA. Trois offres : Starter, Pro et Business, avec 7 jours d'essai.",
+    watchOut:
+      "Pas de tests A/B, de cartes de chaleur ni de Smart Traffic : il faut passer à Leadpages pour ça. Les crédits IA sont limités chaque mois.",
+    logo: { src: "https://htmlpub.com/apple-icon.png", fit: "cover" },
   },
   {
-    slug: "tiime",
-    name: "Tiime",
-    summary: "Facturation et notes de frais, avec une formule gratuite.",
-    website: "https://www.tiime.fr",
-    freePlan: true,
-    themes: ["facturer"],
-    goodFor: "Facturer gratuitement et garder ses justificatifs au même endroit.",
-    watchOut: "Interface pensée aussi pour les sociétés, un peu plus chargée.",
-    logo: { src: "https://www.tiime.fr/hubfs/Tiime%20Theme%202022/Logos/tiime-favicon-test-480x480-1.png", fit: "contain" },
-  },
-  {
-    slug: "indy",
-    name: "Indy",
-    summary: "Compte pro et comptabilité automatisée.",
-    website: "https://www.indy.fr",
-    freePlan: true,
-    themes: ["banque", "declarer"],
-    goodFor: "Avoir banque et suivi comptable dans une seule application.",
-    watchOut: "Comparez la formule gratuite et les formules payantes selon vos besoins.",
-    logo: { src: "https://www.indy.fr/wp-content/themes/hello-child/favicon/apple-touch-icon.png", fit: "cover" },
-  },
-  {
-    slug: "shine",
-    name: "Shine",
-    summary: "Compte pro en ligne pour indépendants.",
-    website: "https://www.shine.fr",
+    slug: "leadpages",
+    name: "Leadpages",
+    summary: "Landing pages avec tests A/B, cartes de chaleur et optimisation par IA.",
+    website: "https://leadpages.com",
+    affiliateUrl: affiliateLink,
     freePlan: false,
-    themes: ["banque"],
-    goodFor: "Ouvrir un compte pro rapidement, avec carte et application.",
-    watchOut: "Vérifiez les frais de dépôt d'espèces et les plafonds.",
-    logo: { src: "https://www.shine.fr/icons/icon-512x512.png", fit: "contain" },
-  },
-  {
-    slug: "qonto",
-    name: "Qonto",
-    summary: "Compte pro pour indépendants et petites entreprises.",
-    website: "https://qonto.com/fr",
-    freePlan: false,
-    themes: ["banque"],
-    goodFor: "Une activité qui grandit et a besoin de plusieurs cartes ou d'outils de gestion.",
-    watchOut: "Plus cher que le strict minimum pour une petite activité.",
-    logo: { src: "https://qonto.com/blog/assets/apple-touch-icon-4d8a168a3ba8d53fa08beaf4d665da32d9a43f49b88fa9f08d3017e23663ef53.png", fit: "cover" },
-  },
-  {
-    slug: "sumup",
-    name: "SumUp",
-    summary: "Terminal de paiement et liens de paiement.",
-    website: "https://www.sumup.com/fr-fr/",
-    freePlan: true,
-    themes: ["etre-paye"],
-    goodFor: "Encaisser par carte en face à face, sans abonnement mensuel.",
-    watchOut: "Le terminal s'achète, et une commission s'applique à chaque paiement.",
-    logo: { src: "https://static.sumup.com/favicons/apple-touch-icon.png", fit: "cover" },
-  },
-  {
-    slug: "stripe",
-    name: "Stripe",
-    summary: "Paiement en ligne pour sites et applications.",
-    website: "https://stripe.com/fr",
-    freePlan: true,
-    themes: ["etre-paye"],
-    goodFor: "Vendre en ligne ou envoyer des liens de paiement.",
-    watchOut: "Plus technique à intégrer qu'un simple terminal.",
-    logo: { src: "https://images.stripeassets.com/fzn2n1nzq965/4vVgZi0ZMoEzOhkcv7EVwK/8cce6fdcf2733b2ec8e99548908847ed/favicon.png", fit: "cover" },
-  },
-  {
-    slug: "paypal",
-    name: "PayPal",
-    summary: "Paiement en ligne connu des clients.",
-    website: "https://www.paypal.com/fr/business",
-    freePlan: true,
-    themes: ["etre-paye"],
-    goodFor: "Rassurer des clients, surtout à l'étranger.",
-    watchOut: "Les commissions peuvent être plus élevées, surtout avec conversion de devise.",
-    logo: { src: "https://www.paypalobjects.com/marketing/web/icons/monogram/pp258.png", fit: "contain" },
-  },
-  {
-    slug: "youtrust",
-    name: "Youtrust",
-    summary: "Signature électronique française (ex-Yousign).",
-    website: "https://youtrust.com/fr-fr",
-    freePlan: true,
-    themes: ["facturer"],
-    goodFor: "Faire signer devis et contrats à distance, en quelques minutes.",
-    watchOut: "La formule gratuite est limitée en nombre de signatures.",
-    logo: { src: "https://youtrust.com/apple-touch-icon.png", fit: "cover" },
-  },
-  {
-    slug: "google-business-profile",
-    name: "Google Business Profile",
-    summary: "Votre fiche sur Google Maps et la recherche.",
-    website: "https://www.google.com/intl/fr_fr/business/",
-    freePlan: true,
-    themes: ["visibilite"],
-    goodFor: "Toute activité locale : artisans, services à domicile, commerces.",
-    watchOut: "Google demande de vérifier l'adresse ou l'activité.",
-    logo: { src: "https://business.google.com/static/images/google-favicon-180.png", fit: "contain" },
-  },
-  {
-    slug: "carrd",
-    name: "Carrd",
-    summary: "Créer un site d'une page.",
-    website: "https://carrd.co",
-    freePlan: true,
-    themes: ["visibilite"],
-    goodFor: "Une page de présentation propre, en une soirée.",
-    watchOut: "Pour un nom de domaine à vous, il faut la formule payante.",
-    logo: { src: "https://cdn.jsdelivr.net/npm/simple-icons@13.21.0/icons/carrd.svg", fit: "contain" },
-  },
-  {
-    slug: "calendly",
-    name: "Calendly",
-    summary: "Prise de rendez-vous en ligne.",
-    website: "https://calendly.com/fr",
-    freePlan: true,
-    themes: ["visibilite"],
-    goodFor: "Laisser les clients réserver un appel sans échanges d'e-mails.",
-    watchOut: "La formule gratuite limite les types de rendez-vous.",
-    logo: { src: "https://calendly.com/media/favicon/apple-touch-icon.png", fit: "cover" },
+    themes: ["optimiser", "choisir", "contacts"],
+    goodFor:
+      "Ceux qui envoient déjà du trafic (publicité, réseaux) et veulent convertir plus. Tout HTML Pub, plus les tests A/B (Grow), Smart Traffic et les cartes de chaleur (Optimize), l'optimisation automatique (Scale). Trafic illimité, 7 jours d'essai.",
+    watchOut:
+      "Plus cher que HTML Pub : inutile tant que vous avez peu de visiteurs. Une carte bancaire est demandée pour l'essai.",
+    logo: { src: "https://leadpages.com/apple-icon.png", fit: "cover" },
   },
 ];
 

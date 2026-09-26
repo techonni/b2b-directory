@@ -43,7 +43,7 @@ export type Tool = {
   goodFor: string;
   watchOut: string;
   // Icône officielle de la marque, servie via /logos/<slug> (voir vercel.json).
-  logo?: { src: string; fit?: "cover" | "contain" };
+  logo?: { src: string; fit?: "cover" | "contain"; zoom?: number };
 };
 
 export const siteName = "Zunrel";
@@ -500,7 +500,7 @@ export const tools: Tool[] = [
     themes: ["facturer"],
     goodFor: "Les freelances qui font des devis, du suivi de temps et des factures.",
     watchOut: "Payant après la période d'essai.",
-    logo: { src: "https://cdn.prod.website-files.com/5d874b54ad1d4bcf0eff06d5/5e146f8b2c2877f75bbe5a02_freebe_logo.jpg", fit: "contain" },
+    logo: { src: "https://cdn.prod.website-files.com/5d874b54ad1d4bcf0eff06d5/5e146f8b2c2877f75bbe5a02_freebe_logo.jpg", fit: "cover", zoom: 2.2 },
   },
   {
     slug: "tiime",

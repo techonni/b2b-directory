@@ -1,0 +1,41 @@
+---
+import DottedMark from "./DottedMark.astro";
+import { href } from "../lib/paths";
+
+const path = Astro.url.pathname;
+const links = [
+  { href: "/categories", label: "Categories" },
+  { href: "/reviews", label: "Reviews" },
+  { href: "/about", label: "About" },
+];
+
+function isCurrent(target: string) {
+  if (target === "/categories") return path.includes("/categories");
+  if (target === "/reviews") return path.includes("/reviews") || path.includes("/tools");
+  return path.includes(target);
+}
+---
+
+<header class="px-6 py-6 sm:px-8">
+  <div class="flex items-center justify-between">
+    <a href={href("/")} aria-label="Directory home" class="text-[#171717]">
+      <DottedMark />
+    </a>
+    <nav class="flex items-center gap-6 text-[14px] leading-5">
+      {
+        links.map((link) => {
+          const current = isCurrent(link.href);
+          return (
+            <a
+              href={href(link.href)}
+              aria-current={current ? "page" : undefined}
+              class={current ? "text-[#0f4bf1]" : "text-[#171717] hover:opacity-70"}
+            >
+              {link.label}
+            </a>
+          );
+        })
+      }
+    </nav>
+  </div>
+</header>

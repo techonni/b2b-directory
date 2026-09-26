@@ -1,0 +1,31 @@
+---
+import Base from "../../layouts/Base.astro";
+import ToolRow from "../../components/ToolRow.astro";
+import { categories, toolsInCategory, type Category } from "../../lib/directory";
+import { href } from "../../lib/paths";
+
+export function getStaticPaths() {
+  return categories.map((category) => ({
+    params: { slug: category.slug },
+    props: { category },
+  }));
+}
+
+interface Props {
+  category: Category;
+}
+
+const { category } = Astro.props;
+const listed = toolsInCategory(category.slug);
+---
+
+<Base title={category.name} description={category.description}>
+  <h1 class="text-[22px] font-semibold leading-7 text-[#171717]">{category.name}</h1>
+  <p class="mt-4 max-w-[560px] text-[15px] leading-6 text-[#737373]">{category.description}</p>
+  <div class="mt-20 space-y-6">
+    {listed.map((tool) => <ToolRow tool={tool} />)}
+  </div>
+  <a href={href("/categories")} class="mt-8 block text-[15px] font-medium leading-5 text-[#171717] hover:underline">
+    See all categories →
+  </a>
+</Base>

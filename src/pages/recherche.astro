@@ -1,30 +1,37 @@
 ---
 import Base from "../layouts/Base.astro";
 import SearchForm from "../components/SearchForm.astro";
-import ToolRow from "../components/ToolRow.astro";
-import { getCategory, tools } from "../lib/directory";
+import GuideRow from "../components/GuideRow.astro";
+import { getTheme, guides } from "../lib/guides";
 
-const index = tools.map((tool) => {
-  const names = tool.categories.map((slug) => getCategory(slug)?.name ?? "").join(" ");
-  return {
-    slug: tool.slug,
-    haystack: `${tool.name} ${tool.summary} ${names}`.toLowerCase(),
-  };
-});
+const index = guides.map((guide) => ({
+  slug: guide.slug,
+  haystack: [
+    guide.question,
+    guide.summary,
+    guide.intro,
+    getTheme(guide.theme)?.name ?? "",
+    ...guide.steps.map((step) => `${step.title} ${step.text}`),
+  ]
+    .join(" ")
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/[̀-ͯ]/g, ""),
+}));
 ---
 
-<Base title="Search" description="Search the directory of B2B software.">
-  <h1 class="text-[22px] font-semibold leading-7 text-[#171717]">Search</h1>
+<Base title="Recherche" description="Rechercher un guide pour auto-entrepreneur.">
+  <h1 class="text-[22px] font-semibold leading-7 text-[#171717]">Recherche</h1>
   <SearchForm class="mt-8" />
   <p id="search-prompt" class="mt-10 text-[15px] leading-6 text-[#737373]">
-    Type a tool name to search the directory.
+    Tapez un mot : facture, URSSAF, TVA, banque…
   </p>
   <p id="search-empty" class="mt-10 hidden text-[15px] leading-6 text-[#737373]"></p>
-  <div id="search-results" class="mt-10 hidden space-y-6">
+  <div id="search-results" class="mt-10 hidden space-y-8">
     {
-      tools.map((tool) => (
-        <div data-slug={tool.slug}>
-          <ToolRow tool={tool} />
+      guides.map((guide) => (
+        <div data-slug={guide.slug}>
+          <GuideRow guide={guide} />
         </div>
       ))
     }
@@ -43,13 +50,18 @@ const index = tools.map((tool) => {
 
   if (prompt && empty && results && query !== "") {
     prompt.classList.add("hidden");
-    const needle = query.toLowerCase();
+    const words = query
+      .toLowerCase()
+      .normalize("NFD")
+      .replace(/[̀-ͯ]/g, "")
+      .split(/\s+/)
+      .filter(Boolean);
     const matches = new Set(
-      index.filter((item) => item.haystack.includes(needle)).map((item) => item.slug),
+      index.filter((item) => words.every((word) => item.haystack.includes(word))).map((item) => item.slug),
     );
 
     if (matches.size === 0) {
-      empty.textContent = `No tools matched “${query}”.`;
+      empty.textContent = `Aucun guide ne correspond à « ${query} ».`;
       empty.classList.remove("hidden");
     } else {
       for (const row of results.querySelectorAll("[data-slug]")) {

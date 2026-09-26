@@ -10,22 +10,22 @@ const { defaultQuery = "", class: className = "" } = Astro.props;
 ---
 
 <form
-  action={href("/search")}
+  action={href("/recherche")}
   method="get"
   class:list={["flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-2", className]}
 >
-  <label for="q" class="sr-only">Search tools</label>
+  <label for="q" class="sr-only">Rechercher un guide</label>
   <input
     id="q"
     name="q"
     value={defaultQuery}
-    placeholder="Search tools"
-    class="h-[39px] w-full rounded-[4px] bg-[#e5e5e5] px-3 text-[14px] text-[#171717] outline-none placeholder:text-[#737373] sm:w-[250px]"
+    placeholder="Ex. : facture, URSSAF, TVA"
+    class="h-[39px] w-full rounded-[4px] bg-[#e5e5e5] px-3 text-[14px] text-[#171717] outline-none placeholder:text-[#737373] sm:w-[280px]"
   />
   <button
     type="submit"
     class="h-[39px] rounded-[4px] bg-[#262626] px-6 text-[14px] font-medium text-white hover:bg-black"
   >
-    Search
+    Rechercher
   </button>
 </form>

@@ -45,7 +45,8 @@ export type Tool = {
   goodFor: string;
   watchOut: string;
   // Icône officielle de la marque, servie via /logos/<slug> (voir vercel.json).
-  logo?: { src: string; fit?: "cover" | "contain"; zoom?: number };
+  // `direct: true` : l'image est chargée depuis le site de la marque (quand le proxy est refusé).
+  logo?: { src: string; fit?: "cover" | "contain"; zoom?: number; direct?: boolean };
 };
 
 export const siteName = "Zunrel";
@@ -750,7 +751,7 @@ export const tools: Tool[] = [
       "Les créateurs seuls et les petites équipes qui veulent mettre en ligne vite une page, un site ou un blog sur leur domaine, avec un assistant IA. Trois offres : Starter, Pro et Business, avec 7 jours d'essai.",
     watchOut:
       "Pas de tests A/B, de cartes de chaleur ni de Smart Traffic : il faut passer à Leadpages pour ça. Les crédits IA sont limités chaque mois.",
-    logo: { src: "https://htmlpub.com/apple-icon.png", fit: "cover" },
+    logo: { src: "https://htmlpub.com/apple-icon.png", fit: "cover", direct: true },
   },
   {
     slug: "leadpages",
@@ -764,7 +765,7 @@ export const tools: Tool[] = [
       "Ceux qui envoient déjà du trafic (publicité, réseaux) et veulent convertir plus. Tout HTML Pub, plus les tests A/B (Grow), Smart Traffic et les cartes de chaleur (Optimize), l'optimisation automatique (Scale). Trafic illimité, 7 jours d'essai.",
     watchOut:
       "Plus cher que HTML Pub : inutile tant que vous avez peu de visiteurs. Une carte bancaire est demandée pour l'essai.",
-    logo: { src: "https://leadpages.com/apple-icon.png", fit: "cover" },
+    logo: { src: "https://leadpages.com/apple-icon.png", fit: "cover", direct: true },
   },
 ];
 
@@ -812,6 +813,7 @@ export function formatDate(iso: string) {
 // Chemin public du logo (proxy Vercel défini dans vercel.json).
 export function logoPath(tool: Tool) {
   if (!tool.logo) return undefined;
+  if (tool.logo.direct) return tool.logo.src;
   const ext = tool.logo.src.split("?")[0].split(".").pop() ?? "png";
   return `/logos/${tool.slug}.${ext}`;
 }

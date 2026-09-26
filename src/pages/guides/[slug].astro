@@ -1,0 +1,131 @@
+---
+import Base from "../../layouts/Base.astro";
+import GuideRow from "../../components/GuideRow.astro";
+import ToolRow from "../../components/ToolRow.astro";
+import {
+  formatDate,
+  getGuide,
+  getTheme,
+  getTool,
+  guides,
+  type Guide,
+  type Tool,
+} from "../../lib/guides";
+import { href } from "../../lib/paths";
+
+export function getStaticPaths() {
+  return guides.map((guide) => ({ params: { slug: guide.slug } }));
+}
+
+const guide = getGuide(Astro.params.slug as string) as Guide;
+const theme = getTheme(guide.theme);
+const tools = guide.tools
+  .map((item) => ({ tool: getTool(item.slug), why: item.why }))
+  .filter((item): item is { tool: Tool; why: string } => item.tool !== undefined);
+const related = guide.related
+  .map((slug) => getGuide(slug))
+  .filter((item): item is Guide => item !== undefined);
+
+const howTo = {
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  name: guide.question,
+  description: guide.summary,
+  inLanguage: "fr-FR",
+  step: guide.steps.map((step, index) => ({
+    "@type": "HowToStep",
+    position: index + 1,
+    name: step.title,
+    text: step.text,
+  })),
+};
+---
+
+<Base title={guide.question} description={guide.summary}>
+  <script type="application/ld+json" slot="head" set:html={JSON.stringify(howTo)} />
+
+  {
+    theme ? (
+      <a href={href(`/themes/${theme.slug}`)} class="text-[13px] leading-5 text-[#737373] hover:underline">
+        {theme.name}
+      </a>
+    ) : null
+  }
+  <h1 class="mt-3 text-[26px] font-semibold leading-8 tracking-[-0.015em] text-[#171717]">{guide.question}</h1>
+  <p class="mt-4 text-[15px] leading-6 text-[#666666]">{guide.intro}</p>
+  <p class="mt-4 text-[13px] leading-5 text-[#a0a0a0]">Mis à jour le {formatDate(guide.updatedOn)}</p>
+
+  <section class="mt-14">
+    <h2 class="text-[13px] leading-5 text-[#737373]">Étape par étape</h2>
+    <ol class="mt-6 space-y-8">
+      {
+        guide.steps.map((step, index) => (
+          <li class="flex gap-4">
+            <span class="flex size-7 shrink-0 items-center justify-center rounded-full bg-[#171717] text-[13px] font-medium text-white">
+              {index + 1}
+            </span>
+            <div>
+              <h3 class="text-[15px] font-medium leading-6 text-[#171717]">{step.title}</h3>
+              <p class="mt-1 text-[15px] leading-6 text-[#666666]">{step.text}</p>
+            </div>
+          </li>
+        ))
+      }
+    </ol>
+  </section>
+
+  {
+    guide.pitfalls.length > 0 ? (
+      <section class="mt-14 rounded-[6px] bg-[#fff6e5] p-6">
+        <h2 class="text-[15px] font-medium leading-5 text-[#171717]">Erreurs fréquentes</h2>
+        <ul class="mt-4 list-disc space-y-2 pl-5 text-[15px] leading-6 text-[#5c4a26]">
+          {guide.pitfalls.map((pitfall) => <li>{pitfall}</li>)}
+        </ul>
+      </section>
+    ) : null
+  }
+
+  {
+    tools.length > 0 ? (
+      <section class="mt-14">
+        <h2 class="text-[13px] leading-5 text-[#737373]">Outils utiles</h2>
+        <div class="mt-6 space-y-6">
+          {tools.map((item) => <ToolRow tool={item.tool} note={item.why} />)}
+        </div>
+      </section>
+    ) : null
+  }
+
+  {
+    guide.sources.length > 0 ? (
+      <section class="mt-14">
+        <h2 class="text-[13px] leading-5 text-[#737373]">Sources officielles</h2>
+        <ul class="mt-4 space-y-2">
+          {guide.sources.map((source) => (
+            <li>
+              <a
+                href={source.url}
+                target="_blank"
+                rel="noopener"
+                class="text-[15px] font-medium leading-6 text-[#171717] hover:underline"
+              >
+                {source.label} ↗
+              </a>
+            </li>
+          ))}
+        </ul>
+      </section>
+    ) : null
+  }
+
+  {
+    related.length > 0 ? (
+      <section class="mt-14">
+        <h2 class="text-[13px] leading-5 text-[#737373]">À lire ensuite</h2>
+        <div class="mt-6 space-y-8">
+          {related.map((item) => <GuideRow guide={item} />)}
+        </div>
+      </section>
+    ) : null
+  }
+</Base>

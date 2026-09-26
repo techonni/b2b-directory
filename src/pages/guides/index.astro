@@ -1,0 +1,27 @@
+---
+import Base from "../../layouts/Base.astro";
+import GuideRow from "../../components/GuideRow.astro";
+import { guidesInTheme, themes } from "../../lib/guides";
+import { href } from "../../lib/paths";
+---
+
+<Base title="Tous les guides" description="Tous les guides pratiques pour auto-entrepreneurs, classés par thème.">
+  <h1 class="text-[22px] font-semibold leading-7 text-[#171717]">Tous les guides</h1>
+  <p class="mt-4 text-[15px] leading-6 text-[#737373]">Classés par thème, du premier jour à la première relance.</p>
+  {
+    themes.map((theme) => {
+      const list = guidesInTheme(theme.slug);
+      if (list.length === 0) return null;
+      return (
+        <section class="mt-14">
+          <a href={href(`/themes/${theme.slug}`)} class="text-[13px] leading-5 text-[#737373] hover:underline">
+            {theme.name}
+          </a>
+          <div class="mt-5 space-y-8">
+            {list.map((guide) => <GuideRow guide={guide} />)}
+          </div>
+        </section>
+      );
+    })
+  }
+</Base>

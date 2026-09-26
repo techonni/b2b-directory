@@ -1,0 +1,20 @@
+@import "tailwindcss";
+@import "@fontsource-variable/geist";
+
+@theme inline {
+  --font-sans: "Geist Variable", ui-sans-serif, system-ui, sans-serif;
+}
+
+html {
+  background: #fbfbfb;
+}
+
+body {
+  background: #fbfbfb;
+  color: #171717;
+  font-family: "Geist Variable", ui-sans-serif, system-ui, sans-serif;
+}
+
+::selection {
+  background: #e5e5e5;
+}

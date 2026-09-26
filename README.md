@@ -2,7 +2,7 @@
 
 A small directory of B2B software, laid out as a narrow editorial page: categories, tool notes, and a search that stays in the browser.
 
-The subscribe field does not send anything. It only confirms on the page.
+Built with Astro. The subscribe field does not send anything. It only confirms on the page.
 
 ## Run it locally
 
@@ -11,7 +11,7 @@ npm install
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000).
+Open [http://localhost:4321/b2b-directory/](http://localhost:4321/b2b-directory/).
 
 ## Pages
 
@@ -24,4 +24,6 @@ Open [http://localhost:3000](http://localhost:3000).
 
 ## Publish
 
-The site is a static Next.js export. GitHub Actions in `.github/workflows/pages.yml` builds it and deploys GitHub Pages for this repository.
+`npm run build` writes a static site to `dist/`. The site is configured for GitHub Pages at `https://techonni.github.io/b2b-directory/`.
+
+GitHub Actions in `.github/workflows/pages.yml` builds that folder and deploys it when the workflow is allowed to run.

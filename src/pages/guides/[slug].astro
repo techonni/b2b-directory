@@ -4,6 +4,7 @@ import GuideRow from "../../components/GuideRow.astro";
 import ToolRow from "../../components/ToolRow.astro";
 import {
   affiliateLink,
+  shopifyLink,
   formatDate,
   getGuide,
   getTheme,
@@ -26,6 +27,19 @@ const tools = guide.tools
 const related = guide.related
   .map((slug) => getGuide(slug))
   .filter((item): item is Guide => item !== undefined);
+
+const isShop = guide.theme === "boutique";
+const cta = isShop
+  ? {
+      href: shopifyLink,
+      text: "Shopify s'essaie gratuitement pendant 3 jours, puis l'offre de lancement continue à 1 € par mois pendant 3 mois.",
+      label: "Essayer Shopify ↗",
+    }
+  : {
+      href: affiliateLink,
+      text: "Toutes les offres HTML Pub et Leadpages s'essaient gratuitement pendant 7 jours, avec toutes leurs fonctions.",
+      label: "Essayer Leadpages 7 jours ↗",
+    };
 
 const howTo = {
   "@context": "https://schema.org",
@@ -87,15 +101,15 @@ const howTo = {
   <section class="mt-14 rounded-[6px] bg-[#f3f3f3] p-6">
     <h2 class="text-[15px] font-medium leading-5 text-[#171717]">Essayer par vous-même</h2>
     <p class="mt-3 text-[14px] leading-6 text-[#666666]">
-      Toutes les offres HTML Pub et Leadpages s'essaient gratuitement pendant 7 jours, avec toutes leurs fonctions.
+      {cta.text}
     </p>
     <a
-      href={affiliateLink}
+      href={cta.href}
       target="_blank"
       rel="sponsored noopener"
       class="mt-5 inline-flex h-[39px] items-center rounded-[4px] bg-[#262626] px-6 text-[14px] font-medium text-white hover:bg-black"
     >
-      Essayer Leadpages 7 jours ↗
+      {cta.label}
     </a>
     <p class="mt-3 text-[13px] leading-5 text-[#a0a0a0]">Lien affilié : il ne change pas le prix pour vous.</p>
   </section>

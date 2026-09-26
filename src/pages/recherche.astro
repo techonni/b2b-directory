@@ -1,0 +1,74 @@
+---
+import Base from "../layouts/Base.astro";
+import SearchForm from "../components/SearchForm.astro";
+import GuideRow from "../components/GuideRow.astro";
+import { getTheme, guides } from "../lib/guides";
+
+const index = guides.map((guide) => ({
+  slug: guide.slug,
+  haystack: [
+    guide.question,
+    guide.summary,
+    guide.intro,
+    getTheme(guide.theme)?.name ?? "",
+    ...guide.steps.map((step) => `${step.title} ${step.text}`),
+  ]
+    .join(" ")
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/[̀-ͯ]/g, ""),
+}));
+---
+
+<Base title="Recherche" description="Rechercher un guide pour auto-entrepreneur.">
+  <h1 class="text-[22px] font-semibold leading-7 text-[#171717]">Recherche</h1>
+  <SearchForm class="mt-8" />
+  <p id="search-prompt" class="mt-10 text-[15px] leading-6 text-[#737373]">
+    Tapez un mot : facture, URSSAF, TVA, banque…
+  </p>
+  <p id="search-empty" class="mt-10 hidden text-[15px] leading-6 text-[#737373]"></p>
+  <div id="search-results" class="mt-10 hidden space-y-8">
+    {
+      guides.map((guide) => (
+        <div data-slug={guide.slug}>
+          <GuideRow guide={guide} />
+        </div>
+      ))
+    }
+  </div>
+</Base>
+
+<script define:vars={{ index }}>
+  const params = new URLSearchParams(window.location.search);
+  const query = params.get("q")?.trim() ?? "";
+  const input = document.querySelector("input[name='q']");
+  if (input instanceof HTMLInputElement) input.value = query;
+
+  const prompt = document.getElementById("search-prompt");
+  const empty = document.getElementById("search-empty");
+  const results = document.getElementById("search-results");
+
+  if (prompt && empty && results && query !== "") {
+    prompt.classList.add("hidden");
+    const words = query
+      .toLowerCase()
+      .normalize("NFD")
+      .replace(/[̀-ͯ]/g, "")
+      .split(/\s+/)
+      .filter(Boolean);
+    const matches = new Set(
+      index.filter((item) => words.every((word) => item.haystack.includes(word))).map((item) => item.slug),
+    );
+
+    if (matches.size === 0) {
+      empty.textContent = `Aucun guide ne correspond à « ${query} ».`;
+      empty.classList.remove("hidden");
+    } else {
+      for (const row of results.querySelectorAll("[data-slug]")) {
+        const slug = row.getAttribute("data-slug");
+        if (!slug || !matches.has(slug)) row.remove();
+      }
+      results.classList.remove("hidden");
+    }
+  }
+</script>

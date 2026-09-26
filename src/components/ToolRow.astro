@@ -1,4 +1,5 @@
 ---
+import BrandLogo from "./BrandLogo.astro";
 import { href } from "../lib/paths";
 import type { Tool } from "../lib/guides";
 
@@ -11,12 +12,7 @@ const { tool, note } = Astro.props;
 ---
 
 <a href={href(`/outils/${tool.slug}`)} class="group flex items-center gap-4">
-  <span
-    class="flex size-[48px] shrink-0 items-center justify-center rounded-[4px] bg-[#f0f0f0] text-[17px] font-semibold text-[#171717]"
-    aria-hidden="true"
-  >
-    {tool.name.slice(0, 1)}
-  </span>
+  <BrandLogo tool={tool} />
   <span class="min-w-0">
     <span class="block text-[15px] font-medium leading-5 text-[#171717] group-hover:underline">
       {tool.name} →

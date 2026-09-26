@@ -42,6 +42,8 @@ export type Tool = {
   themes: string[];
   goodFor: string;
   watchOut: string;
+  // Icône officielle de la marque, servie via /logos/<slug> (voir vercel.json).
+  logo?: { src: string; fit?: "cover" | "contain" };
 };
 
 export const siteName = "Zunrel";
@@ -382,7 +384,7 @@ export const guides: Guide[] = [
     ],
     tools: [
       { slug: "abby", why: "Relances automatiques par e-mail." },
-      { slug: "yousign", why: "Faire signer un devis évite beaucoup de litiges." },
+      { slug: "youtrust", why: "Faire signer un devis évite beaucoup de litiges." },
     ],
     sources: [
       { label: "Injonction de payer (Service-Public)", url: "https://www.service-public.fr/particuliers/vosdroits/F1746" },
@@ -420,7 +422,7 @@ export const guides: Guide[] = [
       "Oublier la durée de validité du devis.",
     ],
     tools: [
-      { slug: "yousign", why: "Signature électronique française, simple à utiliser." },
+      { slug: "youtrust", why: "Signature électronique française (ex-Yousign), simple à utiliser." },
       { slug: "freebe", why: "Devis puis facture dans le même outil." },
     ],
     sources: [],
@@ -476,6 +478,7 @@ export const tools: Tool[] = [
     themes: ["facturer"],
     goodFor: "Faire des devis et des factures conformes sans payer, quand on démarre.",
     watchOut: "Moins de fonctions de suivi URSSAF que les outils payants.",
+    logo: { src: "https://www.henrri.com/wp-content/themes/chouette-template/icons/apple-icon-180x180.png", fit: "cover" },
   },
   {
     slug: "abby",
@@ -486,6 +489,7 @@ export const tools: Tool[] = [
     themes: ["facturer", "declarer", "etre-paye"],
     goodFor: "Centraliser devis, factures, relances et le suivi du chiffre d'affaires.",
     watchOut: "Les fonctions avancées sont dans les formules payantes.",
+    logo: { src: "https://abby.fr/favicon-32x32.png", fit: "contain" },
   },
   {
     slug: "freebe",
@@ -496,6 +500,7 @@ export const tools: Tool[] = [
     themes: ["facturer"],
     goodFor: "Les freelances qui font des devis, du suivi de temps et des factures.",
     watchOut: "Payant après la période d'essai.",
+    logo: { src: "https://cdn.prod.website-files.com/5d874b54ad1d4bcf0eff06d5/5e146f8b2c2877f75bbe5a02_freebe_logo.jpg", fit: "contain" },
   },
   {
     slug: "tiime",
@@ -506,6 +511,7 @@ export const tools: Tool[] = [
     themes: ["facturer"],
     goodFor: "Facturer gratuitement et garder ses justificatifs au même endroit.",
     watchOut: "Interface pensée aussi pour les sociétés, un peu plus chargée.",
+    logo: { src: "https://www.tiime.fr/hubfs/Tiime%20Theme%202022/Logos/tiime-favicon-test-480x480-1.png", fit: "contain" },
   },
   {
     slug: "indy",
@@ -516,6 +522,7 @@ export const tools: Tool[] = [
     themes: ["banque", "declarer"],
     goodFor: "Avoir banque et suivi comptable dans une seule application.",
     watchOut: "Comparez la formule gratuite et les formules payantes selon vos besoins.",
+    logo: { src: "https://www.indy.fr/wp-content/themes/hello-child/favicon/apple-touch-icon.png", fit: "cover" },
   },
   {
     slug: "shine",
@@ -526,6 +533,7 @@ export const tools: Tool[] = [
     themes: ["banque"],
     goodFor: "Ouvrir un compte pro rapidement, avec carte et application.",
     watchOut: "Vérifiez les frais de dépôt d'espèces et les plafonds.",
+    logo: { src: "https://www.shine.fr/icons/icon-512x512.png", fit: "contain" },
   },
   {
     slug: "qonto",
@@ -536,6 +544,7 @@ export const tools: Tool[] = [
     themes: ["banque"],
     goodFor: "Une activité qui grandit et a besoin de plusieurs cartes ou d'outils de gestion.",
     watchOut: "Plus cher que le strict minimum pour une petite activité.",
+    logo: { src: "https://qonto.com/blog/assets/apple-touch-icon-4d8a168a3ba8d53fa08beaf4d665da32d9a43f49b88fa9f08d3017e23663ef53.png", fit: "cover" },
   },
   {
     slug: "sumup",
@@ -546,6 +555,7 @@ export const tools: Tool[] = [
     themes: ["etre-paye"],
     goodFor: "Encaisser par carte en face à face, sans abonnement mensuel.",
     watchOut: "Le terminal s'achète, et une commission s'applique à chaque paiement.",
+    logo: { src: "https://static.sumup.com/favicons/apple-touch-icon.png", fit: "cover" },
   },
   {
     slug: "stripe",
@@ -556,6 +566,7 @@ export const tools: Tool[] = [
     themes: ["etre-paye"],
     goodFor: "Vendre en ligne ou envoyer des liens de paiement.",
     watchOut: "Plus technique à intégrer qu'un simple terminal.",
+    logo: { src: "https://images.stripeassets.com/fzn2n1nzq965/4vVgZi0ZMoEzOhkcv7EVwK/8cce6fdcf2733b2ec8e99548908847ed/favicon.png", fit: "cover" },
   },
   {
     slug: "paypal",
@@ -566,16 +577,18 @@ export const tools: Tool[] = [
     themes: ["etre-paye"],
     goodFor: "Rassurer des clients, surtout à l'étranger.",
     watchOut: "Les commissions peuvent être plus élevées, surtout avec conversion de devise.",
+    logo: { src: "https://www.paypalobjects.com/marketing/web/icons/monogram/pp258.png", fit: "contain" },
   },
   {
-    slug: "yousign",
-    name: "Yousign",
-    summary: "Signature électronique française.",
-    website: "https://yousign.com/fr-fr",
+    slug: "youtrust",
+    name: "Youtrust",
+    summary: "Signature électronique française (ex-Yousign).",
+    website: "https://youtrust.com/fr-fr",
     freePlan: true,
     themes: ["facturer"],
     goodFor: "Faire signer devis et contrats à distance, en quelques minutes.",
     watchOut: "La formule gratuite est limitée en nombre de signatures.",
+    logo: { src: "https://youtrust.com/apple-touch-icon.png", fit: "cover" },
   },
   {
     slug: "google-business-profile",
@@ -586,6 +599,7 @@ export const tools: Tool[] = [
     themes: ["visibilite"],
     goodFor: "Toute activité locale : artisans, services à domicile, commerces.",
     watchOut: "Google demande de vérifier l'adresse ou l'activité.",
+    logo: { src: "https://business.google.com/static/images/google-favicon-180.png", fit: "contain" },
   },
   {
     slug: "carrd",
@@ -596,6 +610,7 @@ export const tools: Tool[] = [
     themes: ["visibilite"],
     goodFor: "Une page de présentation propre, en une soirée.",
     watchOut: "Pour un nom de domaine à vous, il faut la formule payante.",
+    logo: { src: "https://cdn.jsdelivr.net/npm/simple-icons@13.21.0/icons/carrd.svg", fit: "contain" },
   },
   {
     slug: "calendly",
@@ -606,6 +621,7 @@ export const tools: Tool[] = [
     themes: ["visibilite"],
     goodFor: "Laisser les clients réserver un appel sans échanges d'e-mails.",
     watchOut: "La formule gratuite limite les types de rendez-vous.",
+    logo: { src: "https://calendly.com/media/favicon/apple-touch-icon.png", fit: "cover" },
   },
 ];
 
@@ -648,4 +664,11 @@ export function formatDate(iso: string) {
     year: "numeric",
     timeZone: "UTC",
   }).format(new Date(`${iso}T00:00:00Z`));
+}
+
+// Chemin public du logo (proxy Vercel défini dans vercel.json).
+export function logoPath(tool: Tool) {
+  if (!tool.logo) return undefined;
+  const ext = tool.logo.src.split("?")[0].split(".").pop() ?? "png";
+  return `/logos/${tool.slug}.${ext}`;
 }

@@ -2,6 +2,7 @@
 import Base from "../layouts/Base.astro";
 import SearchForm from "../components/SearchForm.astro";
 import GuideRow from "../components/GuideRow.astro";
+import FormatCards from "../components/FormatCards.astro";
 import { guidesInTheme, popularGuides, themes } from "../lib/guides";
 import { href } from "../lib/paths";
 ---
@@ -17,6 +18,8 @@ import { href } from "../lib/paths";
   </p>
 
   <SearchForm class="mt-12" />
+
+  <FormatCards class="mt-12" />
 
   <section class="mt-[72px]">
     <h2 class="text-[13px] leading-5 text-[#737373]">Les questions les plus fréquentes</h2>

@@ -2,110 +2,245 @@
 // Inscription à la newsletter avec le formulaire « embedded » de Mailchimp.
 // Pas de clé API ni de serveur : le formulaire envoie directement à Mailchimp,
 // qui gère la confirmation par e-mail (double opt-in).
-// Le script envoie l'adresse en arrière-plan (point d'accès JSONP « post-json » de Mailchimp) :
-// le visiteur reste sur la page et voit le message ici. Si Mailchimp ne répond pas,
-// le formulaire est envoyé normalement dans un nouvel onglet.
+// Le visiteur ne quitte jamais la page : le script envoie l'adresse en arrière-plan
+// (point d'accès JSONP « post-json » de Mailchimp) et affiche la réponse dans le bloc.
+// Si Mailchimp ne répond pas, le formulaire est envoyé dans une iframe cachée.
 // Le bloc ne s'affiche que si `newsletterFormUrl` est rempli dans src/lib/guides.ts.
 import { newsletterFormUrl, newsletterHoneypot } from "../lib/guides";
 ---
 
 {
   newsletterFormUrl ? (
-    <section class="no-print mt-14 rounded-[6px] bg-[#f3f3f3] p-6">
-      <h2 class="text-[15px] font-medium leading-5 text-[#171717]">Recevoir les prochains guides</h2>
-      <p class="mt-3 text-[14px] leading-6 text-[#666666]">
-        Les nouveaux guides Leadpages, HTML Pub et Shopify par e-mail. Pas de spam, désinscription en un clic.
-      </p>
-      <form
-        action={newsletterFormUrl}
-        method="post"
-        target="_blank"
-        data-newsletter
-        class="mt-5 flex flex-col gap-2 min-[480px]:flex-row"
-      >
-        <label for="newsletter-email" class="sr-only">Adresse e-mail</label>
-        <input
-          id="newsletter-email"
-          type="email"
-          name="EMAIL"
-          required
-          autocomplete="email"
-          placeholder="vous@exemple.com"
-          class="h-[39px] flex-1 rounded-[4px] bg-white px-3 text-[14px] text-[#171717] outline-none placeholder:text-[#a0a0a0] focus:ring-2 focus:ring-[#171717]"
-        />
-        <div aria-hidden="true" style="position: absolute; left: -5000px;">
-          <input type="text" name={newsletterHoneypot} tabindex="-1" value="" />
+    <section data-newsletter-block class="no-print mt-14 rounded-[6px] bg-[#f3f3f3] p-6">
+      <div data-newsletter-intro>
+        <h2 class="text-[15px] font-medium leading-5 text-[#171717]">Recevoir les prochains guides</h2>
+        <p class="mt-3 text-[14px] leading-6 text-[#666666]">
+          Les nouveaux guides Leadpages, HTML Pub et Shopify par e-mail. Pas de spam, désinscription en un clic.
+        </p>
+        <form
+          action={newsletterFormUrl}
+          method="post"
+          target="zunrel-newsletter-frame"
+          novalidate
+          data-newsletter
+          class="mt-5 flex flex-col gap-2 min-[480px]:flex-row"
+        >
+          <label for="newsletter-email" class="sr-only">Adresse e-mail</label>
+          <input
+            id="newsletter-email"
+            type="email"
+            name="EMAIL"
+            required
+            autocomplete="email"
+            inputmode="email"
+            placeholder="vous@exemple.com"
+            aria-describedby="newsletter-help"
+            class="h-[39px] w-full min-w-0 rounded-[4px] min-[480px]:flex-1 bg-white px-3 text-[14px] text-[#171717] outline-none transition-shadow placeholder:text-[#a0a0a0] focus:ring-2 focus:ring-[#171717] aria-[invalid=true]:ring-2 aria-[invalid=true]:ring-[#b42318]"
+          />
+          <div aria-hidden="true" style="position: absolute; left: -5000px;">
+            <input type="text" name={newsletterHoneypot} tabindex="-1" value="" />
+          </div>
+          <button
+            type="submit"
+            class="inline-flex h-[39px] min-w-[120px] items-center justify-center gap-2 rounded-[4px] bg-[#262626] px-6 text-[14px] font-medium text-white transition-colors hover:bg-black disabled:cursor-wait"
+          >
+            <span data-newsletter-spinner hidden class="newsletter-spinner" aria-hidden="true"></span>
+            <span data-newsletter-label>S'inscrire</span>
+          </button>
+        </form>
+        <p id="newsletter-help" data-newsletter-message aria-live="polite" class="mt-3 text-[13px] leading-5 text-[#a0a0a0]">
+          Vous recevrez un e-mail pour confirmer votre inscription.
+        </p>
+      </div>
+
+      <div data-newsletter-done hidden tabindex="-1" class="newsletter-done flex items-start gap-3 outline-none">
+        <span class="mt-[2px] flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[#171717]" aria-hidden="true">
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+            <path class="newsletter-check" d="M2.5 6.2 5 8.5l4.5-5" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+        </span>
+        <div>
+          <p data-newsletter-done-title class="text-[15px] font-medium leading-6 text-[#171717]">Merci !</p>
+          <p data-newsletter-done-text class="mt-1 text-[14px] leading-6 text-[#666666]"></p>
         </div>
-        <button type="submit" class="h-[39px] rounded-[4px] bg-[#262626] px-6 text-[14px] font-medium text-white hover:bg-black disabled:opacity-60">
-          S'inscrire
-        </button>
-      </form>
-      <p data-newsletter-message role="status" class="mt-3 text-[13px] leading-5 text-[#a0a0a0]">
-        Vous recevrez un e-mail pour confirmer votre inscription.
-      </p>
+      </div>
+
+      <iframe name="zunrel-newsletter-frame" title="Inscription newsletter" hidden tabindex="-1"></iframe>
     </section>
   ) : null
 }
+
+<style>
+  .newsletter-spinner {
+    width: 14px;
+    height: 14px;
+    border-radius: 9999px;
+    border: 2px solid rgb(255 255 255 / 0.35);
+    border-top-color: #fff;
+    animation: newsletter-spin 0.7s linear infinite;
+  }
+  .newsletter-done:not([hidden]) {
+    animation: newsletter-in 0.35s ease-out both;
+  }
+  .newsletter-done:not([hidden]) .newsletter-check {
+    stroke-dasharray: 12;
+    stroke-dashoffset: 12;
+    animation: newsletter-draw 0.4s 0.15s ease-out forwards;
+  }
+  @keyframes newsletter-spin {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  @keyframes newsletter-in {
+    from {
+      opacity: 0;
+      transform: translateY(4px);
+    }
+  }
+  @keyframes newsletter-draw {
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .newsletter-spinner,
+    .newsletter-done:not([hidden]),
+    .newsletter-done:not([hidden]) .newsletter-check {
+      animation: none;
+      stroke-dashoffset: 0;
+    }
+  }
+</style>
 
 <script is:inline>
   (function () {
     var form = document.querySelector("form[data-newsletter]");
     if (!form) return;
-    var message = document.querySelector("[data-newsletter-message]");
+    var block = document.querySelector("[data-newsletter-block]");
+    var intro = block.querySelector("[data-newsletter-intro]");
+    var done = block.querySelector("[data-newsletter-done]");
+    var doneTitle = block.querySelector("[data-newsletter-done-title]");
+    var doneText = block.querySelector("[data-newsletter-done-text]");
+    var message = block.querySelector("[data-newsletter-message]");
+    var input = form.querySelector('input[name="EMAIL"]');
     var button = form.querySelector('button[type="submit"]');
+    var spinner = button.querySelector("[data-newsletter-spinner]");
+    var label = button.querySelector("[data-newsletter-label]");
+    var defaultHelp = message.textContent;
+    var storageKey = "zunrel-newsletter";
 
-    function show(text, isError) {
-      message.textContent = text;
-      message.style.color = isError ? "#b42318" : "#171717";
+    function remember() {
+      try {
+        localStorage.setItem(storageKey, "1");
+      } catch (e) {}
     }
+
+    function setBusy(busy) {
+      button.disabled = busy;
+      spinner.hidden = !busy;
+      label.textContent = busy ? "Envoi…" : "S'inscrire";
+      input.readOnly = busy;
+    }
+
+    function setError(text) {
+      input.setAttribute("aria-invalid", "true");
+      message.textContent = text;
+      message.style.color = "#b42318";
+      input.focus();
+    }
+
+    function clearError() {
+      input.removeAttribute("aria-invalid");
+      message.textContent = defaultHelp;
+      message.style.color = "";
+    }
+
+    function showDone(title, text, moveFocus) {
+      doneTitle.textContent = title;
+      doneText.textContent = text;
+      // Garde la hauteur du bloc pour que la page ne saute pas, et centre le message.
+      if (moveFocus !== false) block.style.minHeight = block.offsetHeight + "px";
+      block.classList.add("flex", "flex-col", "justify-center");
+      intro.hidden = true;
+      done.hidden = false;
+      if (moveFocus !== false) done.focus({ preventScroll: true });
+    }
+
+    // Déjà inscrit sur ce navigateur : un simple rappel au lieu du formulaire.
+    try {
+      if (localStorage.getItem(storageKey) === "1") {
+        showDone("Vous êtes inscrit.", "Merci ! Les prochains guides arrivent dans votre boîte mail.", false);
+      }
+    } catch (e) {}
+
+    input.addEventListener("input", function () {
+      if (input.hasAttribute("aria-invalid")) clearError();
+    });
 
     form.addEventListener("submit", function (event) {
       event.preventDefault();
+      if (!input.value.trim() || !input.checkValidity()) {
+        // Pas d'envoi : l'événement ne compte pas comme inscription dans les statistiques.
+        event.stopPropagation();
+        setError("Entrez une adresse e-mail valide, par exemple vous@exemple.com.");
+        return;
+      }
+
+      var email = input.value.trim();
       var name = "zunrelNewsletter" + Date.now();
       var url = form.action.replace("/subscribe/post?", "/subscribe/post-json?");
       var params = new URLSearchParams(new FormData(form));
       params.set("c", name);
       var script = document.createElement("script");
-      var done = false;
+      var finished = false;
 
-      function cleanup() {
-        done = true;
-        button.disabled = false;
+      function finish() {
+        finished = true;
+        clearTimeout(fallback);
+        setBusy(false);
         delete window[name];
         script.remove();
       }
 
-      // Si Mailchimp ne répond pas, on envoie le formulaire classique (nouvel onglet).
-      var fallback = setTimeout(function () {
-        if (done) return;
-        cleanup();
-        show("Terminez votre inscription dans l'onglet qui vient de s'ouvrir.", false);
+      function success() {
+        remember();
+        showDone(
+          "Merci !",
+          "Dernière étape : ouvrez l'e-mail envoyé à " + email + " et cliquez sur le bouton pour confirmer.",
+        );
+      }
+
+      // Mailchimp ne répond pas : envoi classique dans l'iframe cachée, sans quitter la page.
+      function sendInFrame() {
+        if (finished) return;
+        finish();
         form.submit();
-      }, 8000);
+        success();
+      }
+
+      var fallback = setTimeout(sendInFrame, 8000);
 
       window[name] = function (data) {
-        clearTimeout(fallback);
-        cleanup();
+        if (finished) return;
+        finish();
+        var msg = (data && data.msg) || "";
         if (data && data.result === "success") {
-          form.reset();
-          show("Presque fini : ouvrez l'e-mail que nous venons d'envoyer et cliquez sur le bouton pour confirmer.", false);
-        } else if (data && /already subscribed|déjà inscrit/i.test(data.msg || "")) {
-          show("Cette adresse est déjà inscrite. Merci !", false);
+          success();
+        } else if (/already subscribed|déjà inscrit/i.test(msg)) {
+          remember();
+          showDone("Vous êtes déjà inscrit.", "Merci ! Les prochains guides arrivent dans votre boîte mail.");
+        } else if (/too many|trop de/i.test(msg)) {
+          setError("Trop de tentatives avec cette adresse. Réessayez dans quelques minutes.");
         } else {
-          show("L'inscription n'a pas fonctionné. Vérifiez l'adresse e-mail et réessayez.", true);
+          setError("Cette adresse n'a pas pu être inscrite. Vérifiez-la et réessayez.");
         }
       };
 
-      button.disabled = true;
-      show("Inscription en cours…", false);
+      clearError();
+      setBusy(true);
       script.src = url + "&" + params.toString();
-      script.onerror = function () {
-        if (done) return;
-        clearTimeout(fallback);
-        cleanup();
-        show("Terminez votre inscription dans l'onglet qui vient de s'ouvrir.", false);
-        form.submit();
-      };
+      script.onerror = sendInFrame;
       document.body.appendChild(script);
     });
   })();

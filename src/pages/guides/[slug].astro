@@ -3,6 +3,7 @@ import Base from "../../layouts/Base.astro";
 import GuideRow from "../../components/GuideRow.astro";
 import ToolRow from "../../components/ToolRow.astro";
 import ShareButtons from "../../components/ShareButtons.astro";
+import NewsletterForm from "../../components/NewsletterForm.astro";
 import {
   affiliateLink,
   shopifyLink,
@@ -182,6 +183,10 @@ const howTo = {
       </section>
     ) : null
   }
+
+  <section class="no-print mt-14">
+    <NewsletterForm />
+  </section>
 
   {
     related.length > 0 ? (

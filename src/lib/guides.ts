@@ -969,6 +969,181 @@ export const guides: Guide[] = [
     related: ["essayer-shopify-gratuitement", "accepter-les-paiements-shopify"],
   },
   {
+    slug: "creer-sa-boutique-shopify-de-a-a-z",
+    question: "Comment créer sa boutique Shopify de A à Z ?",
+    summary: "Le guide complet : de l'inscription à la première vente, avec chaque écran de l'administration.",
+    theme: "boutique",
+    format: "complet",
+    updatedOn: "2026-09-27",
+    popular: true,
+    intro:
+      "Ce guide suit l'ordre réel d'une première boutique : préparer, s'inscrire, remplir la boutique, régler la vente, tester, puis ouvrir au public. Comptez une journée de travail, étalée sur les 3 jours d'essai gratuit.",
+    steps: [
+      {
+        title: "Préparez tout avant de vous inscrire",
+        text: "L'essai gratuit ne dure que 3 jours : préparez le contenu avant de créer le compte, pour passer ce temps à construire et non à chercher.\n\nRassemblez : le nom de la boutique, un logo (même simple), 3 à 5 produits avec leurs photos, un prix et une description pour chacun, le poids et la taille des colis si vous envoyez des objets, et votre numéro d'entreprise si vous en avez un.\n\nPréparez aussi le compte bancaire qui recevra les ventes : Shopify vous le demandera pour activer les paiements. Enfin, notez ce que vous voulez écrire dans vos conditions de retour : 14 jours, remboursement, frais de retour à la charge de qui.",
+      },
+      {
+        title: "Démarrez l'essai gratuit",
+        text: "Sur shopify.com, ouvrez la page Tarification. Au 27 septembre 2026, l'offre affichée en Belgique est : 3 jours d'essai gratuit, puis 1 € par mois pendant 3 mois. Les offres changent souvent : lisez celle du jour avant de commencer.\n\nCliquez sur « Démarrer gratuitement », entrez votre adresse e-mail et répondez aux questions sur votre projet. Ces réponses servent seulement à préparer l'administration : vous pourrez tout modifier ensuite.\n\nNotez tout de suite deux dates dans votre agenda : la fin des 3 jours d'essai, et la fin des 3 mois à 1 €, quand le prix normal du forfait commence.",
+        image: {
+          src: "/captures/shopify-essai.webp",
+          alt: "Page Tarification de Shopify : 3 jours d'essai gratuit, puis 1 € par mois pendant 3 mois",
+        },
+      },
+      {
+        title: "Prenez vos repères dans l'administration",
+        text: "Tout se passe dans l'administration Shopify. Le menu de gauche regroupe les rubriques que vous utiliserez chaque jour : « Commandes », « Produits », « Clients », « Réductions », « Contenu » et « Boutique en ligne ». Les réglages de la boutique sont tous dans « Paramètres », en bas à gauche.\n\nAu centre de l'accueil, une barre permet de poser une question à Sidekick, l'assistant IA de Shopify. Il connaît votre boutique : demandez-lui par exemple « Comment proposer la livraison gratuite dès 50 € ? ». Vérifiez tout de même ses réponses dans l'aide officielle avant de changer un réglage important.",
+        image: {
+          src: "/captures/shopify-accueil.webp",
+          alt: "Accueil de l'administration Shopify avec le menu de gauche et la barre Sidekick",
+        },
+      },
+      {
+        title: "Ajoutez votre premier produit",
+        text: "Cliquez sur « Produits », puis sur « Ajouter un produit ». Écrivez un titre clair, comme le client le chercherait sur Google : « Affiche Bauhaus A3 » plutôt que « Modèle 12 ».\n\nLa description répond aux questions que l'acheteur se pose : ce que c'est, la matière, la taille, l'usage, le délai d'envoi. Des phrases courtes et une liste de points se lisent mieux sur téléphone.\n\nDans « Supports multimédias », cliquez sur « Importer » et ajoutez plusieurs photos : le produit seul sur fond clair, puis en situation. Gardez le même format pour toutes les photos de la boutique : c'est ce qui donne un aspect professionnel.",
+        image: {
+          src: "/captures/shopify-produit.webp",
+          alt: "Formulaire « Ajouter un produit » : titre, description et supports multimédias",
+        },
+      },
+      {
+        title: "Fixez le prix, le stock, le poids et les variantes",
+        text: "Dans « Prix », indiquez le prix de vente. Le champ « Prix avant réduction » affiche un prix barré : ne l'utilisez que pour une vraie promotion.\n\nDans « Stock », entrez la quantité disponible pour que Shopify arrête la vente quand il n'y a plus rien. Pour un objet à envoyer, indiquez le poids avec l'emballage : c'est lui qui calcule les frais de livraison. Pour un fichier à télécharger, désactivez « Produit physique ».\n\nSi le produit existe en plusieurs tailles ou couleurs, ajoutez des variantes : chacune peut avoir son prix, son stock et sa photo. Réglez enfin le statut sur « Actif » et cliquez sur « Enregistrer ». Répétez l'opération pour vos autres produits.",
+        image: {
+          src: "/captures/shopify-prix.webp",
+          alt: "Sections Prix et Stock de la fiche produit Shopify",
+        },
+      },
+      {
+        title: "Choisissez et personnalisez votre thème",
+        text: "Le thème décide de l'apparence de toute la boutique. Dans « Boutique en ligne », puis « Thèmes », ou sur themes.shopify.com, filtrez sur les thèmes gratuits : ils sont conçus et mis à jour par Shopify et suffisent largement pour commencer.\n\nChoisissez un thème pour la façon dont il présente les produits, pas pour ses photos de démonstration. Cliquez sur « Ajouter » : le thème arrive dans votre bibliothèque sans remplacer celui qui est en ligne.\n\nCliquez sur « Personnaliser » pour ajouter votre logo, vos couleurs, vos polices et organiser la page d'accueil : une grande image, vos produits phares, une phrase qui dit ce que vous vendez. Regardez toujours l'aperçu sur mobile, puis cliquez sur « Publier ».",
+        image: {
+          src: "/captures/shopify-themes.webp",
+          alt: "Theme Store de Shopify filtrée sur les thèmes gratuits",
+        },
+      },
+      {
+        title: "Organisez les menus de la boutique",
+        text: "Les menus relient les pages entre elles. Ouvrez « Contenu », puis « Menus ». Deux menus existent déjà : le menu principal, en haut de la boutique, et le menu du pied de page.\n\nDans le menu principal, gardez peu d'entrées : l'accueil, le catalogue ou vos collections, et une page de contact. Dans le pied de page, mettez les pages pratiques : livraison, retours, conditions de vente, mentions légales.\n\nCliquez sur un menu pour ajouter, renommer ou déplacer un élément par glisser-déposer, puis enregistrez.",
+        image: {
+          src: "/captures/shopify-menus.webp",
+          alt: "Contenu > Menus : menu principal, menu de pied de page et menu du compte client",
+        },
+      },
+      {
+        title: "Réglez l'expédition et la livraison",
+        text: "Cliquez sur « Paramètres », puis sur « Expédition et livraison ». Le « Profil général » s'applique à tous vos produits : ouvrez-le pour voir les zones de livraison (par exemple la Belgique, puis le reste de l'Union européenne) et les tarifs de chaque zone.\n\nPour chaque zone, créez des tarifs simples : un prix fixe, ou un prix selon le poids de la commande. Un tarif « Livraison gratuite » à partir d'un certain montant pousse souvent les clients à ajouter un article.\n\nDans « Emballages », indiquez les dimensions de votre colis habituel : Shopify s'en sert pour estimer les frais. Si vous ne vendez que des produits numériques, vous n'avez pas besoin de tarif d'expédition.",
+        image: {
+          src: "/captures/shopify-expedition.webp",
+          alt: "Paramètres > Expédition et livraison : profil général, dates de livraison estimées et emballages",
+        },
+      },
+      {
+        title: "Vérifiez les taxes et la TVA",
+        text: "Dans « Paramètres », ouvrez « Taxes et droits de douane ». Le service fiscal de Shopify calcule automatiquement la TVA selon le pays du client, dans les « Régions fiscales » où vous livrez, comme l'Union européenne.\n\nVérifiez que vos régions de livraison apparaissent bien dans la liste. Vos obligations dépendent de votre statut : un indépendant en franchise de TVA ne facture pas la TVA comme une société assujettie.\n\nShopify le dit lui-même sur cet écran : en cas de doute sur vos obligations fiscales, consultez un comptable ou un fiscaliste avant d'ouvrir la boutique.",
+        image: {
+          src: "/captures/shopify-taxes.webp",
+          alt: "Paramètres > Taxes et frais de douane : services fiscaux Shopify actifs et régions fiscales",
+        },
+      },
+      {
+        title: "Activez les paiements",
+        text: "Dans « Paramètres », puis « Paiements », activez Shopify Payments. Shopify demande des informations sur votre activité et le compte bancaire qui recevra les versements. L'authentification en deux étapes est obligatoire.\n\nAvec Shopify Payments, vous acceptez les cartes et les moyens de paiement locaux sans prestataire externe. Sur le forfait Basic, les frais de carte commencent à 1,8 % + 0,30 € par vente (tarifs affichés en Belgique le 27 septembre 2026). Si vous utilisez un autre prestataire à la place, Shopify ajoute des frais de transaction.\n\nPayPal peut s'ajouter dans « Fournisseurs de services de paiement supplémentaires ».",
+        image: {
+          src: "/captures/shopify-paiements.webp",
+          alt: "Paramètres > Paiements : Shopify Payments, moyens de paiement, versements et PayPal",
+        },
+      },
+      {
+        title: "Choisissez les moyens de paiement de vos clients",
+        text: "Toujours dans « Paiements », cliquez sur « Moyens de paiement ». Activez ceux que vos clients utilisent vraiment : cartes Visa et Mastercard, Apple Pay, Shop Pay, et Bancontact si vous vendez en Belgique.\n\nLe bouton « Voir les tarifs de paiement » affiche les frais de chaque moyen : certains coûtent plus cher que d'autres. Inutile de tout activer ; trop de logos peut même embrouiller l'acheteur au moment de payer.",
+        image: {
+          src: "/captures/shopify-moyens-paiement.webp",
+          alt: "Liste des moyens de paiement en ligne : Shop Pay, Visa, Mastercard, American Express, Apple Pay",
+        },
+      },
+      {
+        title: "Rédigez vos politiques et vos mentions légales",
+        text: "Dans « Paramètres », ouvrez « Politiques ». Les politiques écrites s'affichent dans le pied de page du paiement : le client les voit avant d'acheter.\n\nRemplissez au minimum la politique de retour et de remboursement, les conditions de service, la politique d'expédition et la mention légale. Les « Coordonnées » sont marquées « Obligatoire » : ce sont les informations qui permettent au client de vous contacter.\n\nSi Shopify vous propose un modèle de texte, partez de là, mais adaptez-le à votre vraie façon de travailler. En Europe, le client a en général 14 jours pour se rétracter après un achat en ligne. Ajoutez ensuite ces pages au menu du pied de page.",
+        image: {
+          src: "/captures/shopify-politiques.webp",
+          alt: "Paramètres > Politiques : règles de retour et politiques écrites (retour, confidentialité, conditions de service, expédition, coordonnées, mention légale)",
+        },
+      },
+      {
+        title: "Créez un code de bienvenue",
+        text: "Une petite réduction aide à déclencher la première commande. Cliquez sur « Réductions », puis « Créer une réduction » et choisissez « Montant sur la commande ».\n\nTapez un code facile à retenir, comme BIENVENUE10, puis la valeur : 10 % par exemple. Dans « Utilisations maximales », cochez la limite d'une utilisation par client, sinon le code sert à chaque commande. Enregistrez : le code fonctionne tout de suite au paiement.\n\nCe code servira aussi sur vos pages de promotion et sur vos réseaux sociaux.",
+        image: {
+          src: "/captures/shopify-reduction.webp",
+          alt: "Formulaire « Créer une réduction » avec le code BIENVENUE10 à 10 % sur la commande",
+        },
+      },
+      {
+        title: "Passez une commande test",
+        text: "Avant d'ouvrir, achetez vous-même dans votre boutique, comme un vrai client : sur téléphone, en passant par la page d'accueil, un produit, le panier et le paiement, avec votre code de réduction.\n\nVérifiez à chaque étape : les frais de livraison sont-ils justes ? La TVA s'affiche-t-elle correctement ? L'e-mail de confirmation arrive-t-il, et donne-t-il envie de revenir ? Vous pouvez passer une vraie commande avec votre carte, puis l'annuler et la rembourser depuis « Commandes ».\n\nCorrigez tout ce qui vous a fait hésiter : si vous avez hésité, vos clients aussi.",
+      },
+      {
+        title: "Choisissez un forfait",
+        text: "Pour garder la boutique après l'essai, choisissez un forfait dans « Paramètres », puis « Forfait ». Pour une personne seule, Basic suffit presque toujours : au 27 septembre 2026, il coûte 27 € par mois en paiement mensuel, ou l'équivalent de 19 € par mois en paiement annuel.\n\nL'offre de lancement à 1 € par mois s'applique alors pendant 3 mois, puis le prix normal commence. Grow et Advanced servent surtout aux équipes et aux gros volumes : vous pourrez changer de forfait plus tard, quand vos ventes le justifient.\n\nN'oubliez pas que les applications payantes s'ajoutent au prix du forfait.",
+        image: {
+          src: "/captures/shopify-offres.webp",
+          alt: "Les forfaits Shopify Basic, Grow, Advanced et Plus sur la page des tarifs",
+        },
+      },
+      {
+        title: "Connectez votre nom de domaine",
+        text: "Votre boutique a déjà une adresse gratuite en .myshopify.com, mais votre propre domaine inspire plus confiance. Dans « Paramètres », puis « Domaines », choisissez « Connecter un domaine existant », « Transférer un domaine » ou « Acheter un nouveau domaine ».\n\nPour beaucoup d'hébergeurs de domaine, Shopify fait la connexion automatiquement. Sinon, il vous indique les enregistrements DNS à modifier chez votre hébergeur. La connexion prend souvent moins de deux heures, parfois jusqu'à deux jours. Le certificat HTTPS est gratuit.\n\nSi plusieurs domaines sont reliés, choisissez celui que les clients verront comme « Principal ».",
+        image: {
+          src: "/captures/shopify-domaines.webp",
+          alt: "Paramètres > Domaines avec les domaines connectés",
+        },
+      },
+      {
+        title: "Ouvrez la boutique au public",
+        text: "Tant que la boutique est en préparation, elle est protégée par un mot de passe. Pour l'ouvrir, allez dans « Boutique en ligne », puis « Préférences ». Dans « Accès à la boutique », désactivez « Mode privé » : la boutique devient visible pour tout le monde.\n\nSur la même page, remplissez le titre et la méta-description de la page d'accueil : c'est ce que Google et les réseaux sociaux affichent quand quelqu'un partage votre boutique.\n\nL'accueil de l'administration affiche alors « La boutique est en ligne », avec le nombre de visites et de visiteurs en direct.",
+        image: {
+          src: "/captures/shopify-acces-boutique.webp",
+          alt: "Boutique en ligne > Préférences : section Accès à la boutique avec l'option Mode privé",
+        },
+      },
+      {
+        title: "Attirez vos premiers clients",
+        text: "Une boutique en ligne ne reçoit pas de visites toute seule. Choisissez un produit phare et une offre (votre code de bienvenue), puis créez une landing page qui ne parle que de cette offre, avec HTML Pub ou Leadpages.\n\nPartagez l'adresse de cette page sur vos réseaux, dans votre bio, sur Pinterest ou dans vos publicités. Le bouton de la page mène directement à la fiche produit Shopify, pas à l'accueil de la boutique.\n\nRegardez chaque semaine combien de visiteurs arrivent et combien achètent, et améliorez la page qui convertit le moins. Le guide express « attirer des clients avec une landing page » détaille cette étape.",
+        image: {
+          src: "/captures/creer-page-ia.webp",
+          alt: "Création d'une landing page avec l'IA : l'assistant demande « What are you making? »",
+        },
+      },
+    ],
+    pitfalls: [
+      "Passer les 3 jours d'essai à régler des détails sans avoir ajouté un seul produit.",
+      "Ouvrir la boutique sans commande test : c'est le client qui découvre les frais de livraison faux.",
+      "Laisser les politiques vides : retours, conditions de vente et coordonnées rassurent l'acheteur au moment de payer.",
+      "Oublier que le prix normal du forfait commence après les 3 mois à 1 €.",
+      "Remplir le menu principal de dizaines de liens : le visiteur ne sait plus où cliquer.",
+    ],
+    tools: [
+      { slug: "shopify", why: "La boutique, les paiements et les commandes au même endroit." },
+      { slug: "html-pub", why: "Des pages de promotion créées avec l'IA, qui envoient vers vos produits Shopify." },
+      { slug: "leadpages", why: "Des landing pages avec formulaires et tests A/B pour attirer les premiers clients." },
+    ],
+    sources: [
+      { label: "Shopify : tarifs", url: "https://www.shopify.com/fr/tarifs" },
+      { label: "Aide Shopify : ajouter des produits", url: "https://help.shopify.com/fr/manual/products/add-update-products" },
+      { label: "Aide Shopify : Shopify Payments", url: "https://help.shopify.com/fr/manual/payments/shopify-payments" },
+      { label: "Aide Shopify : connecter un domaine", url: "https://help.shopify.com/fr/manual/domains/add-a-domain/connecting-domains" },
+      { label: "Aide Shopify (accueil)", url: "https://help.shopify.com/fr" },
+    ],
+    related: [
+      "creer-sa-boutique-shopify",
+      "essayer-shopify-gratuitement",
+      "ajouter-un-produit-shopify",
+      "accepter-les-paiements-shopify",
+      "attirer-des-clients-avec-une-landing-page",
+    ],
+  },
+  {
     slug: "creer-sa-boutique-shopify",
     question: "Comment créer sa boutique Shopify ?",
     summary: "De l'inscription à la boutique en ligne, dans l'ordre.",
@@ -1007,7 +1182,7 @@ export const guides: Guide[] = [
     pitfalls: ["Ouvrir la boutique sans avoir testé une commande de bout en bout.", "Oublier les pages légales (conditions de vente, remboursement, confidentialité)."],
     tools: [{ slug: "shopify", why: "Boutique en ligne complète, avec assistant IA intégré." }],
     sources: [{ label: "Centre d'aide Shopify", url: "https://help.shopify.com/fr" }, { label: "Shopify : tarifs", url: "https://www.shopify.com/fr/tarifs" }],
-    related: ["ajouter-un-produit-shopify", "connecter-son-domaine-shopify"],
+    related: ["creer-sa-boutique-shopify-de-a-a-z", "ajouter-un-produit-shopify", "connecter-son-domaine-shopify"],
   },
   {
     slug: "ajouter-un-produit-shopify",

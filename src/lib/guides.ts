@@ -32,7 +32,12 @@ export type Guide = {
   sources: Source[];
   related: string[];
   popular?: boolean;
+  // « express » (par défaut) : une question, l'essentiel en 30 secondes.
+  // « complet » : un projet de A à Z, long et riche en captures.
+  format?: GuideFormat;
 };
+
+export type GuideFormat = "express" | "complet";
 
 export type Tool = {
   slug: string;
@@ -1438,6 +1443,49 @@ export function getRelatedGuides(guide: Guide, limit = 4): Guide[] {
     .filter((item) => item.theme === guide.theme && !seen.has(item.slug))
     .sort((a, b) => Number(Boolean(b.popular)) - Number(Boolean(a.popular)) || b.updatedOn.localeCompare(a.updatedOn));
   return [...result, ...sameTheme].slice(0, limit);
+}
+
+// Les deux formats de guides. Une rubrique n'apparaît sur le site que si elle contient au moins un guide.
+export const formats: { slug: string; format: GuideFormat; name: string; label: string; blurb: string }[] = [
+  {
+    slug: "express",
+    format: "express",
+    name: "Guides express",
+    label: "Aller à l'essentiel",
+    blurb: "Une question, une réponse : l'essentiel se lit en 30 secondes, le détail en 1 à 2 minutes.",
+  },
+  {
+    slug: "complets",
+    format: "complet",
+    name: "Guides complets",
+    label: "Tout comprendre",
+    blurb: "Un projet de A à Z, avec beaucoup de captures d'écran : plus de 10 minutes de lecture.",
+  },
+];
+
+export function guideFormat(guide: Guide): GuideFormat {
+  return guide.format ?? "express";
+}
+
+export function guidesInFormat(format: GuideFormat) {
+  return guides.filter((guide) => guideFormat(guide) === format);
+}
+
+export function activeFormats() {
+  return formats.filter((item) => guidesInFormat(item.format).length > 0);
+}
+
+// Temps de lecture estimé (200 mots par minute, 1 minute minimum).
+export function readingMinutes(guide: Guide) {
+  const text = [
+    guide.question,
+    guide.intro,
+    ...guide.steps.flatMap((step) => [step.title, step.text]),
+    ...guide.pitfalls,
+    ...guide.tools.map((item) => item.why),
+  ].join(" ");
+  const words = text.split(/\s+/).filter(Boolean).length;
+  return Math.max(1, Math.round(words / 200));
 }
 
 export function formatDate(iso: string) {

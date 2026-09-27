@@ -66,6 +66,30 @@ const howTo = {
     text: step.text,
   })),
 };
+
+// FAQ Schema from pitfalls (common mistakes)
+const faqSchema = guide.pitfalls.length > 0 ? {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: guide.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: guide.intro,
+      },
+    },
+    ...guide.pitfalls.map((pitfall) => ({
+      "@type": "Question",
+      name: `Qual é o erro comum ao ${guide.question.toLowerCase()}?`,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: pitfall,
+      },
+    })),
+  ],
+} : null;
 ---
 
 <Base title={guide.question} description={guide.summary} image={`/pins/${guide.slug}.jpg`} type="article">
@@ -73,6 +97,7 @@ const howTo = {
   <meta property="article:author" content="Zunrel" slot="head" />
   {theme && <meta property="article:tag" content={theme.name} slot="head" />}
   <script type="application/ld+json" slot="head" set:html={JSON.stringify(howTo)} />
+  {faqSchema && <script type="application/ld+json" slot="head" set:html={JSON.stringify(faqSchema)} />}
   <script define:vars={{ guideSlug: guide.slug, guideTheme: theme?.slug || "unknown" }} slot="head">
     // Track guide view
     if (typeof window !== "undefined" && (window as any).gtag) {

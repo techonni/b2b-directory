@@ -87,8 +87,63 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
           try { localStorage.setItem("zunrel-consent", choice); } catch (e) {}
           gtag("consent", "update", { analytics_storage: choice });
           box.hidden = true;
+          if (choice === "granted") window.zunrelVitals();
         });
       })();
+    </script>
+    <!-- Événements Google Analytics : clics affiliés, partages, PDF, newsletter -->
+    <script is:inline>
+      (function () {
+        var guide = (location.pathname.match(/^\/guides\/([^/]+)/) || [])[1] || "";
+        document.addEventListener("click", function (event) {
+          var el = event.target.closest && event.target.closest("a, button");
+          if (!el) return;
+          if (el.matches('a[rel~="sponsored"]')) {
+            gtag("event", "affiliate_click", {
+              tool: el.getAttribute("data-affiliate") || el.hostname,
+              guide: guide,
+              page: location.pathname,
+              link_url: el.href,
+            });
+          } else if (el.hasAttribute("data-share")) {
+            gtag("event", "share", { method: el.getAttribute("data-share"), content_type: "guide", item_id: guide });
+          } else if (el.hasAttribute("data-print")) {
+            gtag("event", "pdf_download", { guide: guide });
+          }
+        });
+        document.addEventListener("submit", function (event) {
+          if (event.target.hasAttribute && event.target.hasAttribute("data-newsletter")) {
+            gtag("event", "sign_up", { method: "newsletter", guide: guide });
+          }
+        });
+      })();
+    </script>
+    <!-- Vitesse du site (Core Web Vitals : LCP, INP, CLS, FCP, TTFB), seulement après accord -->
+    <script is:inline>
+      window.zunrelVitals = function () {
+        if (window.zunrelVitalsStarted) return;
+        window.zunrelVitalsStarted = true;
+        import("https://cdn.jsdelivr.net/npm/web-vitals@4/+esm")
+          .then(function (wv) {
+            function send(metric) {
+              gtag("event", "web_vital", {
+                metric_name: metric.name,
+                metric_value: metric.name === "CLS" ? Math.round(metric.value * 1000) / 1000 : Math.round(metric.value),
+                metric_rating: metric.rating,
+                page: location.pathname,
+              });
+            }
+            wv.onLCP(send);
+            wv.onINP(send);
+            wv.onCLS(send);
+            wv.onFCP(send);
+            wv.onTTFB(send);
+          })
+          .catch(function () {});
+      };
+      try {
+        if (localStorage.getItem("zunrel-consent") === "granted") window.zunrelVitals();
+      } catch (e) {}
     </script>
   </body>
 </html>

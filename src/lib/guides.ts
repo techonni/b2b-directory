@@ -1626,6 +1626,193 @@ export const guides: Guide[] = [
     ],
     related: ["connecter-html-pub-a-shopify", "attirer-des-clients-avec-une-landing-page", "creer-un-code-de-reduction-shopify"],
   },
+  {
+    slug: "regler-l-expedition-shopify",
+    question: "Comment régler les frais de livraison sur Shopify ?",
+    summary: "Zones de livraison, tarifs fixes ou selon le poids, et livraison gratuite dès un montant.",
+    theme: "boutique",
+    updatedOn: "2026-09-27",
+    intro:
+      "Les frais de livraison se règlent une seule fois, par zone de livraison. Des tarifs simples et justes évitent les paniers abandonnés au moment de payer.",
+    steps: [
+      {
+        title: "Ouvrez « Expédition et livraison »",
+        text: "Dans l'administration, cliquez sur « Paramètres », en bas à gauche, puis sur « Expédition et livraison ». Le « Profil général » s'applique à tous vos produits : c'est lui que vous allez régler.",
+        image: {
+          src: "/captures/shopify-expedition.webp",
+          alt: "Paramètres > Expédition et livraison : profil général, dates de livraison estimées et emballages",
+        },
+      },
+      {
+        title: "Créez vos zones de livraison",
+        text: "Une zone regroupe les pays qui ont les mêmes tarifs. Commencez simple : une zone pour votre pays, puis une zone pour le reste de l'Union européenne si vous livrez à l'étranger. Un client d'un pays sans zone ne pourra pas commander.",
+      },
+      {
+        title: "Ajoutez un tarif à chaque zone",
+        text: "Dans une zone, cliquez sur « Ajouter un tarif ». Donnez-lui un nom clair que le client verra au paiement, comme « Livraison à domicile (3 à 5 jours) », puis un prix. Un tarif fixe est le plus facile à comprendre.",
+      },
+      {
+        title: "Ajoutez des conditions si besoin",
+        text: "Cliquez sur « Ajouter des conditions » pour qu'un tarif dépende du poids des articles ou du prix de la commande. Exemple : un tarif « Livraison gratuite » à 0 €, seulement pour les commandes à partir de 50 €. C'est souvent ce qui pousse à ajouter un article au panier.",
+      },
+      {
+        title: "Indiquez votre emballage habituel",
+        text: "Dans « Emballages », entrez les dimensions et le poids de votre colis le plus courant. Avec le poids de chaque produit, Shopify calcule ainsi le poids réel des commandes.",
+      },
+      {
+        title: "Testez au paiement",
+        text: "Passez une commande test avec une adresse de chaque zone et regardez les frais proposés. Vérifiez aussi le seuil de livraison gratuite, juste en dessous puis juste au-dessus du montant.",
+      },
+    ],
+    pitfalls: [
+      "Laisser le poids des produits à 0 : les tarifs basés sur le poids deviennent faux.",
+      "Oublier un pays où vous voulez vendre : ses clients sont bloqués au paiement.",
+      "Proposer trop de tarifs différents : le client hésite au lieu de payer.",
+    ],
+    tools: [{ slug: "shopify", why: "Zones, tarifs et conditions de livraison inclus dans tous les forfaits." }],
+    sources: [
+      { label: "Aide Shopify : zones et tarifs d'expédition", url: "https://help.shopify.com/fr/manual/fulfillment/setup/shipping-rates/setting-up-shipping-rates" },
+      { label: "Aide Shopify : tarifs d'expédition", url: "https://help.shopify.com/fr/manual/fulfillment/setup/shipping-rates" },
+    ],
+    related: ["ajouter-un-produit-shopify", "creer-sa-boutique-shopify-de-a-a-z", "rediger-les-politiques-shopify"],
+  },
+  {
+    slug: "rediger-les-politiques-shopify",
+    question: "Comment ajouter ses conditions de vente et politiques sur Shopify ?",
+    summary: "Retours, conditions de service, expédition, coordonnées et mentions légales, affichées au paiement.",
+    theme: "boutique",
+    updatedOn: "2026-09-27",
+    intro:
+      "Les politiques rassurent l'acheteur et sont exigées par la loi pour vendre en ligne. Shopify les affiche au paiement ; il reste à les écrire et à les mettre dans le menu.",
+    steps: [
+      {
+        title: "Ouvrez « Politiques »",
+        text: "Dans l'administration, cliquez sur « Paramètres », puis sur « Politiques ». Vous y trouvez les règles de retour et la liste des politiques écrites.",
+        image: {
+          src: "/captures/shopify-politiques.webp",
+          alt: "Paramètres > Politiques : règles de retour et politiques écrites (retour, confidentialité, conditions de service, expédition, coordonnées, mention légale)",
+        },
+      },
+      {
+        title: "Réglez vos règles de retour",
+        text: "Indiquez le délai de retour, qui paie le renvoi et comment vous remboursez. En Europe, le client a en général 14 jours pour se rétracter après un achat en ligne : ne proposez pas moins.",
+      },
+      {
+        title: "Remplissez les coordonnées",
+        text: "Les « Coordonnées » sont marquées « Obligatoire ». Entrez le nom de l'entreprise, l'adresse, l'e-mail et le numéro d'entreprise : c'est ce qui permet au client de vous joindre.",
+      },
+      {
+        title: "Écrivez les autres politiques",
+        text: "Ouvrez chaque politique : retour et remboursement, confidentialité, conditions de service, expédition et mention légale. Si Shopify propose un modèle, partez de là, puis adaptez chaque phrase à votre vraie façon de travailler. Enregistrez.",
+      },
+      {
+        title: "Ajoutez-les au pied de page",
+        text: "Les politiques apparaissent au paiement, mais pas forcément dans la boutique. Dans « Contenu », puis « Menus », ouvrez le menu du pied de page et ajoutez un lien vers chacune.",
+      },
+    ],
+    pitfalls: [
+      "Garder le modèle tel quel : il peut promettre des choses que vous ne faites pas.",
+      "Des politiques qui ne correspondent pas aux réglages réels (délai de retour, frais de livraison).",
+      "Oublier le lien dans le pied de page : le client ne trouve pas vos conditions avant d'acheter.",
+    ],
+    tools: [{ slug: "shopify", why: "Modèles de politiques et affichage automatique au paiement." }],
+    sources: [
+      { label: "Aide Shopify : ajouter les politiques de la boutique", url: "https://help.shopify.com/fr/manual/checkout-settings/refund-privacy-tos" },
+      { label: "Commission européenne : droit de rétractation", url: "https://europa.eu/youreurope/citizens/consumers/shopping/guarantees-returns/index_fr.htm" },
+    ],
+    related: ["creer-un-menu-shopify", "regler-l-expedition-shopify", "creer-sa-boutique-shopify-de-a-a-z"],
+  },
+  {
+    slug: "creer-un-menu-shopify",
+    question: "Comment modifier le menu de sa boutique Shopify ?",
+    summary: "Ajouter, renommer, déplacer des liens et créer un menu déroulant.",
+    theme: "boutique",
+    updatedOn: "2026-09-27",
+    intro:
+      "Le menu aide le visiteur à trouver vos produits en un clic. Shopify en crée deux au départ : le menu principal, en haut, et le menu du pied de page.",
+    steps: [
+      {
+        title: "Ouvrez « Menus »",
+        text: "Dans l'administration, cliquez sur « Contenu », puis sur « Menus ». Cliquez sur le menu à modifier, par exemple le menu principal.",
+        image: {
+          src: "/captures/shopify-menus.webp",
+          alt: "Contenu > Menus : menu principal, menu de pied de page et menu du compte client",
+        },
+      },
+      {
+        title: "Ajoutez un lien",
+        text: "Cliquez sur « Ajouter un élément de menu ». Écrivez le nom affiché, puis choisissez la destination : une collection, un produit, une page ou une politique. Cliquez sur « Enregistrer ».",
+      },
+      {
+        title: "Déplacez ou créez un menu déroulant",
+        text: "Faites glisser un élément pour changer l'ordre. Pour un menu déroulant, glissez un élément sous un autre et légèrement vers la droite : il devient un sous-menu.",
+      },
+      {
+        title: "Renommez ou supprimez",
+        text: "Cliquez sur un élément pour changer son nom ou sa destination. L'icône de corbeille le retire du menu, sans supprimer la page elle-même.",
+      },
+      {
+        title: "Vérifiez sur téléphone",
+        text: "Enregistrez, puis ouvrez la boutique sur votre téléphone. Le menu principal s'y affiche souvent derrière une icône : gardez des noms courts et peu d'entrées.",
+      },
+    ],
+    pitfalls: [
+      "Un menu principal de dix liens ou plus : le visiteur ne sait plus où cliquer.",
+      "Des pages pratiques (livraison, retours) dans le menu du haut au lieu du pied de page.",
+    ],
+    tools: [{ slug: "shopify", why: "Menus et sous-menus modifiables sans code." }],
+    sources: [{ label: "Aide Shopify : modifier les menus", url: "https://help.shopify.com/fr/manual/online-store/menus-and-links/editing-menus" }],
+    related: ["choisir-un-theme-shopify", "rediger-les-politiques-shopify", "creer-sa-boutique-shopify"],
+  },
+  {
+    slug: "ouvrir-sa-boutique-shopify-au-public",
+    question: "Comment retirer le mot de passe de sa boutique Shopify ?",
+    summary: "Ouvrir la boutique au public en désactivant le mode privé, et ce qu'il faut vérifier avant.",
+    theme: "boutique",
+    updatedOn: "2026-09-27",
+    intro:
+      "Une nouvelle boutique Shopify est protégée par un mot de passe : personne ne peut acheter. Pour l'ouvrir, il faut d'abord choisir un forfait, puis désactiver le mode privé.",
+    steps: [
+      {
+        title: "Choisissez un forfait",
+        text: "Le mot de passe ne peut être retiré qu'après le choix d'un forfait. Dans « Paramètres », puis « Forfait », choisissez-en un. Pendant l'essai gratuit, l'abonnement ne commence qu'à la fin de l'essai.",
+        image: {
+          src: "/captures/shopify-offres.webp",
+          alt: "Les forfaits Shopify Basic, Grow, Advanced et Plus sur la page des tarifs",
+        },
+      },
+      {
+        title: "Ouvrez les préférences de la boutique",
+        text: "Dans le menu de gauche, cliquez sur « Boutique en ligne », puis sur « Préférences ». Descendez jusqu'à la section « Accès à la boutique ».",
+      },
+      {
+        title: "Désactivez le mode privé",
+        text: "Désactivez « Mode privé », puis enregistrez. La boutique est visible pour tout le monde, sans mot de passe.",
+        image: {
+          src: "/captures/shopify-acces-boutique.webp",
+          alt: "Boutique en ligne > Préférences : section Accès à la boutique avec l'option Mode privé",
+        },
+      },
+      {
+        title: "Remplissez le titre et la description pour Google",
+        text: "Sur la même page, écrivez le titre et la méta-description de la page d'accueil. C'est ce que Google et les réseaux sociaux affichent quand on partage la boutique.",
+      },
+      {
+        title: "Vérifiez depuis un autre appareil",
+        text: "Ouvrez l'adresse de la boutique sur un téléphone où vous n'êtes pas connecté : la page d'accueil doit s'afficher directement, sans demande de mot de passe.",
+      },
+    ],
+    pitfalls: [
+      "Ouvrir la boutique sans commande test : c'est le premier client qui découvre les erreurs.",
+      "Ouvrir avec des politiques vides ou des produits de démonstration encore actifs.",
+    ],
+    tools: [{ slug: "shopify", why: "La boutique s'ouvre en un clic une fois le forfait choisi." }],
+    sources: [
+      { label: "Aide Shopify : protection par mot de passe", url: "https://help.shopify.com/fr/manual/online-store/themes/os/customize/password-page" },
+      { label: "Aide Shopify : préférences de la boutique en ligne", url: "https://help.shopify.com/fr/manual/online-store/setting-up/preferences" },
+    ],
+    related: ["choisir-son-forfait-shopify", "connecter-son-domaine-shopify", "creer-sa-boutique-shopify-de-a-a-z"],
+  },
 ];
 
 export const tools: Tool[] = [

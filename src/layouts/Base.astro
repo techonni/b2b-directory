@@ -17,6 +17,32 @@ const imageUrl = new URL(image, Astro.site);
 
 const documentTitle = title ? `${title} · ${siteName}` : `${siteName} · ${tagline}`;
 const canonical = new URL(Astro.url.pathname, Astro.site);
+
+// Structured Data: Organization
+const organizationSchema = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: siteName,
+  url: "https://zunrel.com",
+  description: tagline,
+  sameAs: [
+    "https://twitter.com/zunrel",
+    "https://pinterest.com/zunrel"
+  ]
+};
+
+// Structured Data: WebSite with SearchAction
+const websiteSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: siteName,
+  url: "https://zunrel.com",
+  potentialAction: {
+    "@type": "SearchAction",
+    target: "https://zunrel.com/recherche/?q={search_term_string}",
+    "query-input": "required name=search_term_string"
+  }
+};
 ---
 
 <!doctype html>
@@ -26,6 +52,11 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" type="image/svg+xml" href={`${import.meta.env.BASE_URL}favicon.svg`} />
     <link rel="canonical" href={canonical} />
+    <link rel="preconnect" href="https://www.googletagmanager.com" />
+    <link rel="preconnect" href="https://www.google-analytics.com" />
+    <link rel="dns-prefetch" href="https://leadpages.com" />
+    <link rel="dns-prefetch" href="https://shopify.pxf.io" />
+    <link rel="dns-prefetch" href="https://try.leadpages.com" />
     <title>{documentTitle}</title>
     <meta name="description" content={description} />
     <meta property="og:title" content={documentTitle} />
@@ -39,6 +70,8 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
     <meta name="twitter:card" content="summary_large_image" />
     <meta property="og:locale" content="fr_FR" />
     <meta name="p:domain_verify" content="485d0834fb682f692cd0c2e316b227a8" />
+    <script type="application/ld+json" set:html={JSON.stringify(organizationSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(websiteSchema)} />
     <GoogleAnalytics />
     <slot name="head" />
   </head>

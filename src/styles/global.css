@@ -18,3 +18,55 @@ body {
 ::selection {
   background: #e5e5e5;
 }
+
+/* Version imprimable / PDF des guides (bouton « Télécharger en PDF »). */
+@page {
+  margin: 16mm 14mm;
+}
+
+@media print {
+  html,
+  body {
+    background: #ffffff;
+  }
+
+  header,
+  footer,
+  .no-print {
+    display: none !important;
+  }
+
+  main {
+    padding-top: 0 !important;
+  }
+
+  .print-only {
+    display: block !important;
+  }
+
+  li,
+  img,
+  section {
+    break-inside: avoid;
+  }
+
+  h2,
+  h3 {
+    break-after: avoid;
+  }
+
+  img {
+    max-height: 110mm;
+    width: auto !important;
+    max-width: 100%;
+  }
+
+  a[href^="http"] {
+    color: #171717;
+  }
+
+  * {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+}

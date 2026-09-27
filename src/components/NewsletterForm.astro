@@ -3,7 +3,7 @@
 // Pas de clé API ni de serveur : le formulaire envoie directement à Mailchimp,
 // qui gère la confirmation par e-mail (double opt-in).
 // Le bloc ne s'affiche que si `newsletterFormUrl` est rempli dans src/lib/guides.ts.
-import { newsletterFormUrl } from "../lib/guides";
+import { newsletterFormUrl, newsletterHoneypot } from "../lib/guides";
 ---
 
 {
@@ -30,6 +30,9 @@ import { newsletterFormUrl } from "../lib/guides";
           placeholder="vous@exemple.com"
           class="h-[39px] flex-1 rounded-[4px] bg-white px-3 text-[14px] text-[#171717] outline-none placeholder:text-[#a0a0a0] focus:ring-2 focus:ring-[#171717]"
         />
+        <div aria-hidden="true" style="position: absolute; left: -5000px;">
+          <input type="text" name={newsletterHoneypot} tabindex="-1" value="" />
+        </div>
         <button type="submit" class="h-[39px] rounded-[4px] bg-[#262626] px-6 text-[14px] font-medium text-white hover:bg-black">
           S'inscrire
         </button>

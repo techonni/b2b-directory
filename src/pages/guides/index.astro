@@ -1,6 +1,7 @@
 ---
 import Base from "../../layouts/Base.astro";
 import GuideRow from "../../components/GuideRow.astro";
+import FormatCards from "../../components/FormatCards.astro";
 import { guidesInTheme, themes } from "../../lib/guides";
 import { href } from "../../lib/paths";
 ---
@@ -8,6 +9,7 @@ import { href } from "../../lib/paths";
 <Base title="Tous les guides" description="Tous les guides pratiques Leadpages, HTML Pub et Shopify, classés par thème.">
   <h1 class="text-[22px] font-semibold leading-7 text-[#171717]">Tous les guides</h1>
   <p class="mt-4 text-[15px] leading-6 text-[#737373]">Classés par thème, du choix de l'offre à l'ouverture de votre boutique.</p>
+  <FormatCards class="mt-8" />
   {
     themes.map((theme) => {
       const list = guidesInTheme(theme.slug);

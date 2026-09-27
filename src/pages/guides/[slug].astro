@@ -59,6 +59,7 @@ const howTo = {
 <Base title={guide.question} description={guide.summary}>
   <script type="application/ld+json" slot="head" set:html={JSON.stringify(howTo)} />
 
+  <p class="print-only hidden text-[13px] leading-5 text-[#737373]">Zunrel · zunrel.com/guides/{guide.slug}/</p>
   {
     theme ? (
       <a href={href(`/themes/${theme.slug}`)} class="text-[13px] leading-5 text-[#737373] hover:underline">
@@ -68,7 +69,22 @@ const howTo = {
   }
   <h1 class="mt-3 text-[26px] font-semibold leading-8 tracking-[-0.015em] text-[#171717]">{guide.question}</h1>
   <p class="mt-4 text-[15px] leading-6 text-[#666666]">{guide.intro}</p>
-  <p class="mt-4 text-[13px] leading-5 text-[#a0a0a0]">Mis à jour le {formatDate(guide.updatedOn)}</p>
+  <div class="mt-4 flex flex-wrap items-center gap-x-4 gap-y-2">
+    <p class="text-[13px] leading-5 text-[#a0a0a0]">Mis à jour le {formatDate(guide.updatedOn)}</p>
+    <button
+      type="button"
+      data-print
+      class="no-print inline-flex h-[30px] items-center gap-1.5 rounded-[4px] border border-[#e5e5e5] bg-white px-3 text-[13px] font-medium text-[#171717] hover:bg-[#f3f3f3]"
+    >
+      <svg aria-hidden="true" width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2v8M4.5 6.5 8 10l3.5-3.5M3 13h10" /></svg>
+      Télécharger en PDF
+    </button>
+  </div>
+  <script>
+    document.querySelectorAll("[data-print]").forEach((button) => {
+      button.addEventListener("click", () => window.print());
+    });
+  </script>
 
   <section class="mt-14">
     <h2 class="text-[13px] leading-5 text-[#737373]">Étape par étape</h2>

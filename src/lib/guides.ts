@@ -77,7 +77,7 @@ export const guides: Guide[] = [
     question: "Comment choisir entre HTML Pub et Leadpages ?",
     summary: "Publier simplement ou optimiser ses conversions : la bonne offre selon votre besoin.",
     theme: "choisir",
-    updatedOn: "2026-09-26",
+    updatedOn: "2026-09-27",
     popular: true,
     intro:
       "HTML Pub et Leadpages viennent de la même entreprise et utilisent le même moteur. HTML Pub sert à publier. Leadpages ajoute tout ce qui aide à convertir plus de visiteurs.",
@@ -88,12 +88,12 @@ export const guides: Guide[] = [
       },
       {
         title: "Regardez les trois offres HTML Pub",
-        text: "Starter pour une seule page avec un domaine, Pro pour un créateur seul (plus de pages, un blog, l'accès API et la publication depuis Claude ou ChatGPT), Business pour une petite équipe ou une agence qui publie beaucoup.",
+        text: "Starter : 5 pages et 1 domaine. Pro : 25 pages, 1 blog et l'accès API, pour un créateur seul. Business : 50 pages, 2 domaines et 2 blogs, pour une petite équipe ou une agence. La publication depuis Claude est incluse dans toutes les offres.",
         image: { src: "/captures/choisir-offre.webp", alt: "Page des tarifs : les offres HTML Pub (Publish) et Leadpages (Optimize) côte à côte" },
       },
       {
         title: "Regardez les trois offres Leadpages",
-        text: "Grow ajoute les tests A/B manuels, le remplacement dynamique du texte et l'enrichissement des contacts. Optimize ajoute Smart Traffic, les cartes de chaleur et la personnalisation automatique. Scale ajoute l'optimisation automatique complète et les espaces d'équipe.",
+        text: "Grow ajoute les tests A/B manuels, le remplacement dynamique du texte et l'enrichissement des contacts. Optimize ajoute Smart Traffic, les cartes de chaleur et la personnalisation automatique. Scale ajoute l'optimisation automatique complète et un support dédié.",
       },
       {
         title: "Commencez petit",
@@ -819,13 +819,13 @@ export const guides: Guide[] = [
     question: "Comment publier une page HTML Pub directement depuis Claude ?",
     summary: "Connecter HTML Pub à Claude pour créer et modifier vos pages en discutant.",
     theme: "ia",
-    updatedOn: "2026-09-26",
+    updatedOn: "2026-09-27",
     intro:
       "HTML Pub a un connecteur pour Claude (MCP). Une fois connecté, vous demandez une page à Claude et il la publie dans votre compte.",
     steps: [
       {
         title: "Vérifiez votre offre",
-        text: "Le connecteur MCP est inclus dans toutes les offres payantes, dès HTML Pub Starter, et dans toutes les offres Leadpages.",
+        text: "Le connecteur MCP est inclus dans toutes les offres HTML Pub et Leadpages, dès Starter.",
       },
       {
         title: "Ajoutez le connecteur dans Claude",
@@ -849,7 +849,7 @@ export const guides: Guide[] = [
       "Ajouter une mauvaise adresse de connecteur : copiez-la depuis l'aide officielle.",
       "Publier sans relire : vérifiez toujours la page en ligne.",
     ],
-    tools: [{ slug: "html-pub", why: "Connecteur Claude inclus dès l'offre Starter." }],
+    tools: [{ slug: "html-pub", why: "Connecteur Claude inclus dans toutes les offres." }],
     sources: [{ label: "HTML Pub : connecteur MCP pour Claude", url: `${help}43969915496845--HTMLPub-Using-the-Claude-MCP-Connector` }, pricing],
     related: ["creer-une-landing-page-avec-l-ia", "creer-une-pub-video-avec-ad-studio"],
   },
@@ -865,7 +865,7 @@ export const guides: Guide[] = [
       {
         title: "Ouvrez « Ads »",
         text: "Dans le menu de gauche, cliquez sur « Ads ». Décrivez votre produit, votre public et le style voulu : pub produit ou vidéo façon UGC.",
-        image: { src: "/captures/adstudio.webp", alt: "Page Ads (Ad Studio), réservée aux offres Optimize et plus" },
+        image: { src: "/captures/adstudio.webp", alt: "Page Ads (Ad Studio) : « Ad Studio is available on Optimize and above »" },
       },
       {
         title: "Validez l'image de départ",
@@ -886,7 +886,7 @@ export const guides: Guide[] = [
       "Chercher Ad Studio avec une offre HTML Pub : il faut passer à Leadpages Optimize.",
     ],
     tools: [{ slug: "leadpages", why: "Ad Studio est inclus dès l'offre Optimize." }],
-    sources: [{ label: "HTML Pub : créer des pubs vidéo dans Ad Studio", url: `${help}48970038606349--HTMLPub-Generating-Video-Ads-in-Ad-Studio` }],
+    sources: [{ label: "HTML Pub : créer des pubs vidéo dans Ad Studio", url: `${help}48970038606349--HTMLPub-Generating-Video-Ads-in-Ad-Studio` }, pricing],
     related: ["publier-une-page-depuis-claude", "creer-une-landing-page-avec-l-ia"],
   },
 

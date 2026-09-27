@@ -3,9 +3,10 @@ interface Props {
   title: string;
   url: string;
   description?: string;
+  guide?: string;
 }
 
-const { title, url, description } = Astro.props;
+const { title, url, description, guide } = Astro.props;
 
 // Encoded URLs for social sharing
 const encodedUrl = encodeURIComponent(url);
@@ -31,6 +32,7 @@ const shareLinks = {
     title="Partager sur X (Twitter)"
     class="inline-flex h-[30px] items-center gap-1.5 rounded-[4px] bg-[#f5f5f5] px-3 text-[13px] text-[#666666] hover:bg-[#171717] hover:text-white transition-colors"
     aria-label="Partager sur X"
+    data-platform="twitter"
   >
     <svg class="size-3.5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
       <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24h-6.627l-5.1-6.657-5.848 6.657H2.422l7.723-8.835L1.254 2.25h6.554l4.882 6.467 5.432-6.467zM17.534 20.766h1.832L6.455 3.88H4.482l13.052 16.886z"/>
@@ -45,6 +47,7 @@ const shareLinks = {
     title="Partager sur Pinterest"
     class="inline-flex h-[30px] items-center gap-1.5 rounded-[4px] bg-[#f5f5f5] px-3 text-[13px] text-[#666666] hover:bg-[#e60023] hover:text-white transition-colors"
     aria-label="Partager sur Pinterest"
+    data-platform="pinterest"
   >
     <svg class="size-3.5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
       <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm3.5-9c.83 0 1.5-.67 1.5-1.5S16.33 8 15.5 8 14 8.67 14 9.5s.67 1.5 1.5 1.5zm-7 0c.83 0 1.5-.67 1.5-1.5S9.33 8 8.5 8 7 8.67 7 9.5 7.67 11 8.5 11zm3.5 6.5c2.33 0 4.31-1.46 5.11-3.5H6.89c.8 2.04 2.78 3.5 5.11 3.5z"/>
@@ -59,6 +62,7 @@ const shareLinks = {
     title="Partager sur LinkedIn"
     class="inline-flex h-[30px] items-center gap-1.5 rounded-[4px] bg-[#f5f5f5] px-3 text-[13px] text-[#666666] hover:bg-[#0a66c2] hover:text-white transition-colors"
     aria-label="Partager sur LinkedIn"
+    data-platform="linkedin"
   >
     <svg class="size-3.5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
       <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"/>
@@ -73,6 +77,7 @@ const shareLinks = {
     title="Partager sur WhatsApp"
     class="inline-flex h-[30px] items-center gap-1.5 rounded-[4px] bg-[#f5f5f5] px-3 text-[13px] text-[#666666] hover:bg-[#25d366] hover:text-white transition-colors"
     aria-label="Partager sur WhatsApp"
+    data-platform="whatsapp"
   >
     <svg class="size-3.5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
       <path d="M17.6915026,13.4744748 C17.4744143,13.3599899 16.1845879,12.6559767 15.9393413,12.5274513 C15.6941013,12.3989258 15.5315186,12.3385037 15.3694217,12.5562025 C15.2073248,12.7744719 14.7651772,13.3599899 14.6315722,13.5228501 C14.4979671,13.6851784 14.3643621,13.7041792 14.1472231,13.5898883 C13.9296554,13.4749549 13.1900039,13.1670256 12.3034564,12.3600327 C11.6304379,11.7658045 11.1771216,11.0418622 11.0435165,10.8241623 C10.9099115,10.6064635 11.0274766,10.4606677 11.1404457,10.3468092 C11.2414572,10.2460093 11.3667802,10.0875849 11.4803788,9.95402045 C11.5939773,9.82045602 11.6543955,9.7238542 11.7755281,9.56159877 C11.8964445,9.39934333 11.8360263,9.26577917 11.7551049,9.15152506 C11.6741835,9.03727095 11.2195889,7.79872675 11.010049,7.29871873 C10.8070086,6.81738149 10.6015621,6.88525819 10.4485706,6.8759976 C10.3077822,6.86706769 10.1470949,6.86706769 9.98641754,6.86706769 C9.82573425,6.86706769 9.55655889,6.93524738 9.31135028,7.15293718 C9.06614166,7.37062699 8.40342699,7.98280813 8.40342699,9.22135227 C8.40342699,10.4599064 9.33199648,11.6379143 9.44560504,11.7993787 C9.5592136,11.9608432 11.1868277,14.5395549 13.5729863,15.4989653 C14.1337,15.7206945 14.5718147,15.8343027 14.8970609,15.9134631 C15.4577743,16.0523488 15.9725043,16.0226383 16.3786773,15.9417309 C16.8320937,15.8517652 17.7605702,15.3868574 17.9675506,14.8564854 C18.1745309,14.3261133 18.1745309,13.8768373 18.103637,13.7895522 C18.0327202,13.7015863 17.8704945,13.5898883 17.6915026,13.4744748"/>
@@ -80,3 +85,18 @@ const shareLinks = {
     WhatsApp
   </a>
 </div>
+
+<script define:vars={{ guide }}>
+  // Track social share button clicks
+  document.querySelectorAll("[data-platform]").forEach((button) => {
+    button.addEventListener("click", () => {
+      const platform = button.getAttribute("data-platform");
+      if (typeof window !== "undefined" && (window as any).gtag) {
+        (window as any).gtag("event", "social_share", {
+          platform,
+          guide: guide || "unknown",
+        });
+      }
+    });
+  });
+</script>

@@ -77,6 +77,14 @@
       } finally {
         button.disabled = false;
         button.textContent = originalText;
+
+        // Track newsletter signup
+        if (response.ok && typeof window !== "undefined" && (window as any).gtag) {
+          (window as any).gtag("event", "newsletter_signup", {
+            email: "valid",
+            source: "guide",
+          });
+        }
       }
     });
   }

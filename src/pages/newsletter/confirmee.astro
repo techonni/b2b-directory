@@ -1,0 +1,30 @@
+---
+// Page d'arrivée après la confirmation d'inscription (redirection réglée dans Mailchimp).
+import Base from "../../layouts/Base.astro";
+import { guides } from "../../lib/guides";
+
+const latest = [...guides].sort((a, b) => b.updatedOn.localeCompare(a.updatedOn)).slice(0, 3);
+---
+
+<Base title="Inscription confirmée" description="Votre inscription à la newsletter Zunrel est confirmée.">
+  <h1 class="text-[22px] font-semibold leading-7 text-[#171717]">C'est confirmé, merci !</h1>
+  <p class="mt-4 text-[15px] leading-6 text-[#666666]">
+    Vous recevrez les prochains guides Leadpages, HTML Pub et Shopify par e-mail. Vous pouvez vous désinscrire à tout
+    moment, en un clic, depuis chaque e-mail.
+  </p>
+  <h2 class="mt-10 text-[15px] font-medium leading-5 text-[#171717]">En attendant, les derniers guides</h2>
+  <ul class="mt-4 space-y-3 text-[15px] leading-6">
+    {
+      latest.map((guide) => (
+        <li>
+          <a href={`/guides/${guide.slug}/`} class="text-[#171717] underline underline-offset-4 hover:text-black">
+            {guide.question}
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+  <p class="mt-10 text-[15px] leading-6">
+    <a href="/guides/" class="text-[#171717] underline underline-offset-4 hover:text-black">Voir tous les guides</a>
+  </p>
+</Base>

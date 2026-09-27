@@ -11,6 +11,8 @@ export const GET: APIRoute = ({ site }) => {
     { path: "/guides/", lastmod: lastGuide },
     { path: "/outils/" },
     { path: "/a-propos/" },
+    { path: "/kit-media/" },
+    { path: "/conditions/" },
     ...guides.map((guide) => ({ path: `/guides/${guide.slug}/`, lastmod: guide.updatedOn })),
     ...activeFormats().map((item) => ({ path: `/formats/${item.slug}/`, lastmod: lastGuide })),
     ...themes.map((theme) => ({ path: `/themes/${theme.slug}/` })),

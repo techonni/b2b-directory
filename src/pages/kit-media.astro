@@ -1,0 +1,81 @@
+---
+import Base from "../layouts/Base.astro";
+import DottedMark from "../components/DottedMark.astro";
+import { guides } from "../lib/guides";
+
+const count = guides.length;
+const card = "rounded-[8px] bg-[#f5f5f5] p-4";
+const h2 = "text-[17px] font-semibold text-[#171717]";
+---
+
+<Base title="Kit média" description="Zunrel en bref pour les marques et les programmes partenaires : audience, contenus, formats et collaboration.">
+  <div class="flex items-center gap-3">
+    <DottedMark />
+    <h1 class="text-[22px] font-semibold leading-7 text-[#171717]">Kit média</h1>
+  </div>
+  <p class="mt-4 text-[15px] leading-6 text-[#666666]">
+    Zunrel publie des guides pratiques en français, étape par étape et illustrés de captures d'écran, pour les
+    solopreneurs et les petites entreprises qui créent leur activité en ligne avec Leadpages, HTML Pub et Shopify.
+  </p>
+
+  <div class="mt-8 grid gap-3 sm:grid-cols-3">
+    <div class={card}><p class="text-[22px] font-semibold text-[#171717]">{count}</p><p class="text-[13px] text-[#666666]">guides publiés</p></div>
+    <div class={card}><p class="text-[22px] font-semibold text-[#171717]">FR</p><p class="text-[13px] text-[#666666]">langue (PT et EN prévus)</p></div>
+    <div class={card}><p class="text-[22px] font-semibold text-[#171717]">3</p><p class="text-[13px] text-[#666666]">marques couvertes</p></div>
+  </div>
+
+  <div class="mt-10 space-y-8 text-[15px] leading-6 text-[#666666]">
+    <section>
+      <h2 class={h2}>Audience</h2>
+      <p class="mt-2">
+        Des débutants francophones (Belgique, France, Suisse, Canada) qui veulent lancer une landing page, récolter des
+        e-mails ou ouvrir une boutique, et qui cherchent une réponse claire à une question précise, souvent juste avant de
+        démarrer un essai gratuit.
+      </p>
+    </section>
+    <section>
+      <h2 class={h2}>Formats</h2>
+      <ul class="mt-2 list-disc space-y-1 pl-5">
+        <li><strong class="text-[#171717]">Guides express</strong> : lus en 30 secondes, l'essentiel en quelques étapes.</li>
+        <li><strong class="text-[#171717]">Guides complets</strong> : plus de 10 minutes de lecture, de A à Z, riches en captures d'écran.</li>
+        <li>Chaque guide : les étapes dans l'ordre, les erreurs fréquentes, les outils utiles et les liens vers l'aide officielle.</li>
+      </ul>
+    </section>
+    <section>
+      <h2 class={h2}>Canaux de diffusion</h2>
+      <ul class="mt-2 list-disc space-y-1 pl-5">
+        <li>Recherche Google (site indexé, sitemap et données structurées HowTo).</li>
+        <li>Pinterest : une épingle par guide, qui renvoie vers la page.</li>
+        <li>LinkedIn : page entreprise Zunrel.</li>
+      </ul>
+    </section>
+    <section>
+      <h2 class={h2}>Collaboration</h2>
+      <p class="mt-2">
+        Zunrel travaille en partenariat d'affiliation à la commission (part des revenus), avec des liens signalés comme
+        affiliés. Les guides restent honnêtes : chaque fiche outil indique aussi ses limites. Pas d'articles sponsorisés
+        déguisés.
+      </p>
+    </section>
+    <section>
+      <h2 class={h2}>Identité visuelle</h2>
+      <p class="mt-2">
+        Logo : un cercle de points noirs. Couleurs : noir, blanc et gris neutres. Police : Geist.
+      </p>
+    </section>
+    <section>
+      <h2 class={h2}>Contact</h2>
+      <p class="mt-2">
+        Par la messagerie PartnerStack ou via la <a class="text-[#171717] underline" href="https://www.linkedin.com/company/zunrel/" rel="noopener">page LinkedIn de Zunrel</a>.
+      </p>
+    </section>
+    <section class="border-t border-[#e5e5e5] pt-6">
+      <h2 class={h2}>In English</h2>
+      <p class="mt-2">
+        Zunrel publishes free, screenshot-rich, step-by-step how-to guides in French on Leadpages, HTML Pub and Shopify for
+        solopreneurs and small businesses. Short 30-second guides and long-form 10+ minute tutorials, distributed through
+        Google search, Pinterest and LinkedIn. Revenue-share affiliate partnerships only, always clearly disclosed.
+      </p>
+    </section>
+  </div>
+</Base>

@@ -253,6 +253,109 @@ export const guides: Guide[] = [
 
   // ——— Créer une page ———
   {
+    slug: "creer-sa-landing-page-leadpages-de-a-a-z",
+    question: "Comment créer sa première landing page Leadpages de A à Z ?",
+    summary: "Le guide complet : de l'essai gratuit à une page en ligne qui récolte des contacts, avec chaque écran.",
+    theme: "creer",
+    format: "complet",
+    updatedOn: "2026-09-27",
+    popular: true,
+    intro:
+      "Ce guide suit l'ordre réel d'une première landing page : préparer l'offre, créer la page avec l'IA, la relire, la publier sur votre domaine, puis récolter et suivre les contacts. Comptez une demi-journée, pendant les 7 jours d'essai gratuit.",
+    steps: [
+      {
+        title: "Préparez votre offre avant de commencer",
+        text: "Une landing page n'a qu'un seul objectif. Décidez-le avant d'ouvrir l'outil : récolter des e-mails, vendre un produit, prendre des rendez-vous.\n\nÉcrivez sur une feuille : à qui s'adresse la page, le problème que vous réglez, ce que le visiteur reçoit, et l'action unique que vous attendez de lui (par exemple « Recevoir le guide gratuit »).\n\nRassemblez aussi votre logo, 2 ou 3 photos, vos couleurs et, si vous en avez, quelques avis de clients réels. Vous gagnerez du temps et des crédits IA.\n\nPrévoyez enfin le plan de la page. Celui qui marche le mieux pour une première page tient en six blocs, dans cet ordre : un titre qui dit le résultat obtenu, une phrase qui précise pour qui c'est, trois avantages concrets, une preuve (avis, chiffre réel, logo d'un client), le formulaire ou le bouton, puis deux ou trois questions fréquentes pour lever les derniers doutes.\n\nPour le titre, partez du résultat que le visiteur veut, pas de votre produit. « Recevez 10 idées de repas prêtes en 20 minutes » parle plus que « Découvrez mon guide de cuisine ». Écrivez trois versions et gardez la plus claire : vous pourrez tester les autres plus tard.",
+      },
+      {
+        title: "Choisissez l'offre et démarrez l'essai",
+        text: "Sur la page des tarifs, deux familles d'offres existent. HTML Pub sert à publier des pages, des sites et des blogs. Leadpages ajoute les outils pour améliorer les résultats : tests A/B à partir de l'offre Grow, puis Smart Traffic et cartes de chaleur à partir d'Optimize.\n\nPour une première page, HTML Pub suffit souvent. Si vous voulez tester deux versions de votre page, prenez Leadpages Grow.\n\nCliquez sur « Start 7-Day Free Trial ». Une carte bancaire est demandée, mais rien n'est prélevé avant le 7e jour. Notez la date de fin dans votre agenda. Les prix changent souvent : lisez ceux du jour sur la page officielle.",
+        image: { src: "/captures/essai-gratuit.webp", alt: "Boutons « Start 7-Day Free Trial » sur chaque offre" },
+      },
+      {
+        title: "Ouvrez l'écran de création",
+        text: "Dans le menu de gauche, cliquez sur « Create ». L'assistant IA, Piper, vous demande « What are you making? » : choisissez « Landing page ».\n\nVous préférez partir d'une base existante ? Cliquez sur « Templates » pour choisir un modèle, puis sur « Use ». La suite du guide reste la même.",
+        image: { src: "/captures/creer-page-ia.webp", alt: "Écran Create : Piper demande « What are you making? »" },
+      },
+      {
+        title: "Décrivez votre page en détail",
+        text: "Dans le champ du bas, reprenez vos notes de l'étape 1 : le public, l'offre, le ton, les couleurs et les sections voulues. Par exemple : un titre, trois avantages, un avis client, une question fréquente et un formulaire avec un seul champ e-mail.\n\nPlus la description est précise, moins vous dépenserez de crédits en corrections. Cliquez sur « Send ».\n\nExemple de description complète : « Landing page en français pour un guide PDF gratuit destiné aux coachs sportifs indépendants qui veulent trouver leurs premiers clients en ligne. Ton simple et motivant. Couleurs : bleu nuit et orange. Sections : titre avec le résultat promis, trois avantages, un court texte sur l'auteur, deux questions fréquentes, un formulaire avec un seul champ e-mail et une case de consentement non cochée. Bouton : Recevoir le guide. »\n\nVous pouvez aussi coller l'adresse d'une page existante ou du code HTML : Piper s'en sert comme point de départ.",
+        image: { src: "/captures/ia-description.webp", alt: "Description d'une landing page tapée dans la barre de saisie" },
+      },
+      {
+        title: "Choisissez les images et le style",
+        text: "Piper demande quelles images utiliser : les vôtres, des images générées par IA (qui coûtent plus de crédits) ou aucune pour l'instant. Le coût estimé est affiché en haut à droite.\n\nIl propose ensuite trois directions visuelles. Cliquez sur celle qui vous plaît, puis sur « Build it ». La page se construit en une minute environ.",
+        image: { src: "/captures/ia-style.webp", alt: "Trois directions de style proposées par Piper" },
+      },
+      {
+        title: "Corrigez la page en discutant",
+        text: "Cliquez sur « Open in editor ». Dans le champ « Ask Piper to edit this page… », demandez un seul changement à la fois : « Remplace le titre par… », « Mets le bouton en vert », « Supprime la section tarifs ».\n\nPiper liste ce qu'il a modifié et les crédits utilisés. Relisez chaque texte vous-même : l'IA peut inventer des chiffres ou des avis. Remplacez-les par les vrais, ou supprimez-les.\n\nQuelques demandes utiles pour une première page : « Raccourcis tous les paragraphes à deux phrases maximum », « Ajoute le bouton aussi en haut de la page », « Mets mon logo en haut à gauche » (après l'avoir envoyé dans « Assets »), « Utilise les couleurs de mon Brand Kit ».\n\nPour un petit changement de texte, cliquer directement dans la page est souvent plus rapide que de passer par l'IA. Gardez Piper pour les changements de mise en page ou de style.",
+        image: { src: "/captures/ia-modification.webp", alt: "Éditeur : Piper applique une modification demandée" },
+      },
+      {
+        title: "Vérifiez le formulaire et le consentement",
+        text: "Le formulaire est le cœur de la page. Demandez le moins d'informations possible : souvent, l'e-mail seul suffit.\n\nSi vous comptez envoyer des e-mails commerciaux, ajoutez une case à cocher non cochée d'avance et une phrase qui explique à quoi servira l'adresse et comment se désinscrire.\n\nVérifiez enfin le texte du bouton : il doit dire ce que la personne obtient (« Recevoir le guide »), pas seulement « Envoyer ».\n\nPensez à ce qui se passe après l'envoi : un message de remerciement qui dit quoi faire ensuite (« Vérifiez votre boîte mail, le guide arrive dans 2 minutes »), ou une page de remerciement dédiée. C'est le bon endroit pour proposer l'étape suivante, par exemple un lien vers votre boutique ou votre prise de rendez-vous.\n\nSi vous promettez un fichier (guide PDF, liste, modèle), préparez-le maintenant et envoyez-le dans l'e-mail de bienvenue de votre outil e-mail (étape 11).",
+      },
+      {
+        title: "Contrôlez l'affichage sur mobile",
+        text: "La plupart des visiteurs arrivent sur téléphone. En bas à droite de l'éditeur, cliquez sur l'icône mobile. Vérifiez que le titre se lit sans zoomer, que le bouton se voit sans descendre trop bas et que le formulaire est facile à remplir avec le pouce.\n\nRegardez aussi la vitesse : des images trop lourdes ralentissent la page sur un réseau mobile, et chaque seconde d'attente fait partir des visiteurs. Utilisez des photos de taille raisonnable et évitez les vidéos en lecture automatique en haut de page.\n\nEnfin, relisez tout à voix haute une dernière fois. Les fautes et les phrases trop longues se repèrent beaucoup mieux ainsi.",
+        image: { src: "/captures/apercu-mobile.webp", alt: "Aperçu mobile de la page dans l'éditeur" },
+      },
+      {
+        title: "Réglez l'adresse et le référencement",
+        text: "Dans l'éditeur, le menu « … » en haut à droite affiche l'adresse de la page (le slug). Choisissez-la courte et lisible, par exemple guide-gratuit.\n\nDans « SEO & Social », indiquez le titre et la description qui s'affichent sur Google et lors d'un partage, et l'icône de l'onglet. Si la page sert seulement à une publicité, vous pouvez demander à Google de ne pas l'indexer.",
+        image: { src: "/captures/seo-social.webp", alt: "Fenêtre SEO & Social" },
+      },
+      {
+        title: "Publiez sur votre propre domaine",
+        text: "Au moment de publier, la question « Where should this live? » s'affiche. Vous pouvez garder l'adresse gratuite fournie, ou relier votre domaine pour inspirer plus confiance.\n\nPour relier un domaine, ouvrez « Domains » dans le menu de gauche, puis « Connect Domain ». Un sous-domaine comme offre.monsite.com est le plus simple. La configuration automatique règle le domaine pour vous. Le HTTPS est offert et peut prendre jusqu'à 48 heures.\n\nSi la configuration automatique n'est pas possible chez votre hébergeur de domaine, ajoutez à la main les enregistrements affichés par Leadpages : un CNAME pour le sous-domaine et un TXT pour la sécurité. Copiez les valeurs exactes depuis votre compte.\n\nAprès chaque modification, cliquez sur « Update » pour mettre la page en ligne.",
+        image: { src: "/captures/ia-publier.webp", alt: "Choix de l'adresse de publication : gratuite ou votre domaine" },
+      },
+      {
+        title: "Envoyez les contacts vers votre outil e-mail",
+        text: "Dans le menu de gauche, ouvrez « Connectors ». Cherchez votre outil (Mailchimp, Brevo, MailerLite, HubSpot…) et cliquez sur « Connect ».\n\nDans l'onglet « Automations », cliquez sur « Create automation », choisissez le déclencheur « Form submitted », puis l'outil qui recevra les contacts. Chaque nouvel inscrit y arrivera tout seul. Préparez-y un e-mail de bienvenue.",
+        image: { src: "/captures/integrations.webp", alt: "Page Connectors avec les applications à connecter" },
+      },
+      {
+        title: "Faites un test complet vous-même",
+        text: "Ouvrez la page publiée sur votre téléphone, remplissez le formulaire avec votre propre adresse, puis vérifiez trois choses.\n\nLa réponse apparaît dans « Submissions », d'où vous pouvez aussi l'exporter en CSV. Le contact arrive dans votre outil e-mail. L'e-mail de bienvenue part bien. Si un point bloque, « View execution logs » dans « Connectors » indique la raison.",
+        image: { src: "/captures/formulaires.webp", alt: "Page Submissions avec les réponses du formulaire" },
+      },
+      {
+        title: "Faites venir vos premiers visiteurs",
+        text: "Une page en ligne ne reçoit pas de visites toute seule. Commencez par les personnes qui vous connaissent déjà : envoyez le lien à vos contacts, mettez-le dans votre signature e-mail et dans la bio de vos réseaux sociaux.\n\nPubliez ensuite régulièrement là où votre public cherche des idées. Sur Pinterest, une épingle verticale avec le résultat promis et le lien de la page peut apporter des visites pendant des mois. Sur Instagram, LinkedIn ou Facebook, un court conseil utile suivi du lien fonctionne mieux qu'une simple publicité pour votre page.\n\nPour savoir quel canal marche, ajoutez un repère à la fin du lien selon l'endroit où vous le partagez, par exemple ?utm_source=pinterest ou ?utm_source=instagram. L'onglet « Acquisition » de l'étape suivante vous montrera alors d'où viennent les inscrits.\n\nSi vous passez à la publicité payante, commencez petit, avec un budget par jour que vous pouvez perdre sans regret, et n'augmentez que lorsque le taux de conversion de la page est bon.",
+      },
+      {
+        title: "Suivez les résultats",
+        text: "Ouvrez « Analytics ». Les chiffres clés sont en haut : « Sessions » (les visites), « Form submissions » (les formulaires envoyés), « Conversions » et « Conv. rate » (le taux de conversion).\n\nChoisissez la période (7, 14 ou 30 jours) et une page précise avec « All Pages ». L'onglet « Acquisition » montre d'où viennent vos visiteurs. Attendez au moins une centaine de visites avant de tirer des conclusions.\n\nSi beaucoup de personnes viennent mais peu s'inscrivent, le problème est souvent le titre ou l'offre : la promesse n'est pas assez claire ou pas assez utile. Si presque personne ne vient, c'est la diffusion qu'il faut travailler : partagez le lien dans vos e-mails, sur vos réseaux, dans votre bio Instagram ou sur une épingle Pinterest.\n\nPour suivre les publicités, « Scripts & Pixels », dans le menu « … » de l'éditeur, permet d'ajouter le pixel de Meta ou de Google Ads.",
+        image: { src: "/captures/statistiques.webp", alt: "Page Analytics : conversions, taux de conversion, formulaires envoyés et sessions" },
+      },
+      {
+        title: "Améliorez la page avec un test A/B",
+        text: "Avec Leadpages Grow ou plus, dupliquez la page pour créer une version B et changez une seule chose : le titre, le bouton ou l'offre.\n\nChoisissez votre objectif (formulaire envoyé, clic, achat), répartissez le trafic à 50/50 et attendez le résultat « gagnant clair ». Gardez ensuite la meilleure version et lancez un nouveau test. Sur l'offre Optimize, Smart Traffic peut envoyer chaque visiteur vers la version qui a le plus de chances de lui plaire.\n\nPar quoi commencer ? Le titre, presque toujours : c'est ce que tout le monde lit. Ensuite, le texte du bouton, puis l'offre elle-même (un guide ou une liste, une réduction ou un cadeau). Notez chaque test et son résultat dans un simple tableau : au bout de quelques mois, vous saurez précisément ce qui fait réagir votre public.\n\nVous êtes sur HTML Pub ? Vous pouvez passer à Leadpages Grow depuis les réglages de votre compte quand vous serez prêt : vos pages et vos domaines sont conservés.",
+        image: { src: "/captures/test-ab.webp", alt: "Création d'une variante B et bascule entre A et B" },
+      },
+    ],
+    pitfalls: [
+      "Mettre plusieurs objectifs sur la même page (s'inscrire, acheter, suivre sur Instagram) : le visiteur hésite et ne fait rien.",
+      "Laisser en ligne des chiffres, avis ou témoignages inventés par l'IA.",
+      "Publier sans tester le formulaire soi-même : on découvre trop tard que les contacts n'arrivaient pas.",
+      "Oublier la fin de l'essai de 7 jours et être prélevé sans l'avoir décidé.",
+    ],
+    tools: [
+      { slug: "html-pub", why: "Assistant IA, formulaires, domaine et connecteurs pour publier sa première page." },
+      { slug: "leadpages", why: "Ajoute les tests A/B (dès Grow), Smart Traffic et les cartes de chaleur (dès Optimize)." },
+    ],
+    sources: [
+      pricing,
+      { label: "HTML Pub : utiliser le créateur de pages IA", url: `${help}43967499549965--HTMLPub-Using-the-AI-Page-Builder` },
+      { label: "Connecter votre domaine (nouveau Leadpages)", url: `${help}44792783022989--New-Leadpages-Connect-your-Domain` },
+      { label: "HTML Pub : connecter des intégrations", url: `${help}43967898431757--HTMLPub-Connecting-Integrations` },
+      { label: "CNIL : la prospection commerciale par courrier électronique", url: "https://www.cnil.fr/fr/la-prospection-commerciale-par-courrier-electronique" },
+    ],
+    related: ["creer-une-landing-page-avec-l-ia", "recolter-des-e-mails-avant-un-lancement", "faire-un-test-ab-leadpages"],
+  },
+  {
     slug: "creer-une-landing-page-avec-l-ia",
     question: "Comment créer une landing page avec l'IA de Leadpages ?",
     summary: "Décrire sa page, laisser l'IA la construire, puis l'améliorer en discutant.",

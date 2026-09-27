@@ -1,0 +1,62 @@
+---
+// Track Core Web Vitals and send to Google Analytics
+// Monitors: LCP, FID, CLS, FCP, TTFB
+// Only runs client-side when analytics is available
+---
+
+<script>
+  // Web Vitals tracking - runs only in browser
+  if (typeof window !== "undefined" && (window as any).gtag) {
+    import("web-vitals").then(({ getLCP, getFID, getCLS, getFCP, getTTFB }) => {
+      // Largest Contentful Paint - how fast the main content loads
+      getLCP((metric) => {
+        (window as any).gtag("event", "web_vital", {
+          metric_name: "LCP",
+          metric_value: Math.round(metric.value),
+          metric_rating: metric.rating,
+          metric_delta: Math.round(metric.delta),
+        });
+      });
+
+      // First Input Delay - responsiveness to user input
+      getFID((metric) => {
+        (window as any).gtag("event", "web_vital", {
+          metric_name: "FID",
+          metric_value: Math.round(metric.value),
+          metric_rating: metric.rating,
+          metric_delta: Math.round(metric.delta),
+        });
+      });
+
+      // Cumulative Layout Shift - visual stability
+      getCLS((metric) => {
+        (window as any).gtag("event", "web_vital", {
+          metric_name: "CLS",
+          metric_value: Math.round(metric.value * 10000) / 10000,
+          metric_rating: metric.rating,
+          metric_delta: Math.round(metric.delta * 10000) / 10000,
+        });
+      });
+
+      // First Contentful Paint - initial paint timing
+      getFCP((metric) => {
+        (window as any).gtag("event", "web_vital", {
+          metric_name: "FCP",
+          metric_value: Math.round(metric.value),
+          metric_rating: metric.rating,
+          metric_delta: Math.round(metric.delta),
+        });
+      });
+
+      // Time to First Byte - server response time
+      getTTFB((metric) => {
+        (window as any).gtag("event", "web_vital", {
+          metric_name: "TTFB",
+          metric_value: Math.round(metric.value),
+          metric_rating: metric.rating,
+          metric_delta: Math.round(metric.delta),
+        });
+      });
+    });
+  }
+</script>

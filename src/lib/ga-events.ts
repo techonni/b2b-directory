@@ -7,7 +7,8 @@ export type EventName =
   | "pdf_download"
   | "newsletter_signup"
   | "guide_view"
-  | "search";
+  | "search"
+  | "web_vital";
 
 export interface EventParams {
   [key: string]: string | number | boolean;
@@ -97,5 +98,21 @@ export function trackSearch(query: string, results: number): void {
   trackEvent("search", {
     search_term: query,
     results_count: results,
+  });
+}
+
+/**
+ * Track Web Vitals metrics (LCP, FID, CLS, FCP, TTFB)
+ * Usage: Automatically sent by WebVitals component
+ */
+export function trackWebVital(
+  metricName: string,
+  value: number,
+  rating: "good" | "needs-improvement" | "poor"
+): void {
+  trackEvent("web_vital", {
+    metric_name: metricName,
+    metric_value: value,
+    metric_rating: rating,
   });
 }

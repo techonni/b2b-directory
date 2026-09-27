@@ -3,6 +3,7 @@ import "../styles/global.css";
 import SiteFooter from "../components/SiteFooter.astro";
 import SiteHeader from "../components/SiteHeader.astro";
 import GoogleAnalytics from "../components/GoogleAnalytics.astro";
+import WebVitals from "../components/WebVitals.astro";
 import { siteName, tagline } from "../lib/guides";
 
 interface Props {
@@ -73,6 +74,7 @@ const websiteSchema = {
     <script type="application/ld+json" set:html={JSON.stringify(organizationSchema)} />
     <script type="application/ld+json" set:html={JSON.stringify(websiteSchema)} />
     <GoogleAnalytics />
+    <WebVitals />
     <slot name="head" />
   </head>
   <body class="min-h-full bg-[#fbfbfb] text-[#171717]">

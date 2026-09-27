@@ -5,6 +5,7 @@ import ToolRow from "../../components/ToolRow.astro";
 import ShareButtons from "../../components/ShareButtons.astro";
 import NewsletterForm from "../../components/NewsletterForm.astro";
 import { trackGuideView } from "../../lib/ga-events";
+import { addUTMParams, getAffiliateUTMParams } from "../../lib/utm";
 import {
   affiliateLink,
   shopifyLink,
@@ -32,14 +33,22 @@ const related = guide.related
   .filter((item): item is Guide => item !== undefined);
 
 const isShop = guide.theme === "boutique";
+
+// Add UTM parameters to affiliate links
+const affiliateUTMParams = getAffiliateUTMParams(isShop ? "shopify" : "leadpages", guide.slug);
+const ctaHref = addUTMParams(
+  isShop ? shopifyLink : affiliateLink,
+  affiliateUTMParams
+);
+
 const cta = isShop
   ? {
-      href: shopifyLink,
+      href: ctaHref,
       text: "Shopify s'essaie gratuitement pendant 3 jours, puis l'offre de lancement continue à 1 € par mois pendant 3 mois.",
       label: "Essayer Shopify ↗",
     }
   : {
-      href: affiliateLink,
+      href: ctaHref,
       text: "Toutes les offres HTML Pub et Leadpages s'essaient gratuitement pendant 7 jours, avec toutes leurs fonctions.",
       label: "Essayer Leadpages 7 jours ↗",
     };

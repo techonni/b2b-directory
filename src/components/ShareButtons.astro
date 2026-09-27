@@ -1,4 +1,6 @@
 ---
+import { addUTMParams, getShareUTMParams } from "../lib/utm";
+
 interface Props {
   title: string;
   url: string;
@@ -8,17 +10,28 @@ interface Props {
 
 const { title, url, description, guide } = Astro.props;
 
+// Add UTM parameters to the sharing URL
+const utmParams = getShareUTMParams("social", guide || "guide");
+
+const twitterUTM = addUTMParams(url, { ...utmParams, utm_source: "twitter" });
+const pinterestUTM = addUTMParams(url, { ...utmParams, utm_source: "pinterest" });
+const linkedinUTM = addUTMParams(url, { ...utmParams, utm_source: "linkedin" });
+const whatsappUTM = addUTMParams(url, { ...utmParams, utm_source: "whatsapp" });
+
 // Encoded URLs for social sharing
-const encodedUrl = encodeURIComponent(url);
+const encodedTwitterUrl = encodeURIComponent(twitterUTM);
+const encodedPinterestUrl = encodeURIComponent(pinterestUTM);
+const encodedLinkedinUrl = encodeURIComponent(linkedinUTM);
+const encodedWhatsappUrl = encodeURIComponent(whatsappUTM);
 const encodedTitle = encodeURIComponent(title);
 const encodedDesc = encodeURIComponent(description || title);
 
 const shareLinks = {
-  twitter: `https://twitter.com/intent/tweet?url=${encodedUrl}&text=${encodedTitle}`,
-  pinterest: `https://pinterest.com/pin/create/button/?url=${encodedUrl}&description=${encodedTitle}`,
-  linkedin: `https://www.linkedin.com/sharing/share-offsite/?url=${encodedUrl}`,
-  whatsapp: `https://wa.me/?text=${encodedTitle}%20${encodedUrl}`,
-  facebook: `https://www.facebook.com/sharer/sharer.php?u=${encodedUrl}`,
+  twitter: `https://twitter.com/intent/tweet?url=${encodedTwitterUrl}&text=${encodedTitle}`,
+  pinterest: `https://pinterest.com/pin/create/button/?url=${encodedPinterestUrl}&description=${encodedTitle}`,
+  linkedin: `https://www.linkedin.com/sharing/share-offsite/?url=${encodedLinkedinUrl}`,
+  whatsapp: `https://wa.me/?text=${encodedTitle}%20${encodedWhatsappUrl}`,
+  facebook: `https://www.facebook.com/sharer/sharer.php?u=${encodedPinterestUrl}`,
 };
 ---
 

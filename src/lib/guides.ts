@@ -63,7 +63,10 @@ export const affiliateLink = "https://try.leadpages.com/94z9pcfn1hu5";
 export const shopifyLink = "https://shopify.pxf.io/6kMJxr";
 // Formulaire Mailchimp « embedded » (Audience → Signup forms → Embedded forms → attribut action du <form>).
 // Vide = le bloc newsletter n'est pas affiché.
-export const newsletterFormUrl = "";
+export const newsletterFormUrl =
+  "https://gmail.us9.list-manage.com/subscribe/post?u=13aa96838d6074fef23022e3e&id=893c08eb5d&f_id=0073d9e1f0";
+// Champ anti-robots du même formulaire Mailchimp (nom donné dans le code « embedded »).
+export const newsletterHoneypot = "b_13aa96838d6074fef23022e3e_893c08eb5d";
 
 const help = "https://support.leadpages.com/hc/en-us/articles/";
 const pricing = { label: "Leadpages : offres et tarifs", url: "https://leadpages.com/pricing" };

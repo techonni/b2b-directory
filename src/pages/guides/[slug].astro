@@ -2,11 +2,14 @@
 import Base from "../../layouts/Base.astro";
 import GuideRow from "../../components/GuideRow.astro";
 import ToolRow from "../../components/ToolRow.astro";
+import ShareButtons from "../../components/ShareButtons.astro";
+import NewsletterForm from "../../components/NewsletterForm.astro";
 import {
   affiliateLink,
   shopifyLink,
   formatDate,
   getGuide,
+  getRelatedGuides,
   getTheme,
   getTool,
   guides,
@@ -24,9 +27,7 @@ const theme = getTheme(guide.theme);
 const tools = guide.tools
   .map((item) => ({ tool: getTool(item.slug), why: item.why }))
   .filter((item): item is { tool: Tool; why: string } => item.tool !== undefined);
-const related = guide.related
-  .map((slug) => getGuide(slug))
-  .filter((item): item is Guide => item !== undefined);
+const related = getRelatedGuides(guide);
 
 const isShop = guide.theme === "boutique";
 const cta = isShop
@@ -123,6 +124,7 @@ const howTo = {
       href={cta.href}
       target="_blank"
       rel="sponsored noopener"
+      data-affiliate={isShop ? "shopify" : "leadpages"}
       class="mt-5 inline-flex h-[39px] items-center rounded-[4px] bg-[#262626] px-6 text-[14px] font-medium text-white hover:bg-black"
     >
       {cta.label}
@@ -173,6 +175,12 @@ const howTo = {
       </section>
     ) : null
   }
+
+  <section class="no-print mt-14">
+    <ShareButtons title={guide.question} slug={guide.slug} />
+  </section>
+
+  <NewsletterForm />
 
   {
     related.length > 0 ? (

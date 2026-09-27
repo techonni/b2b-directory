@@ -56,6 +56,9 @@ export const tagline = "Leadpages, HTML Pub et Shopify : comment faire, étape p
 export const affiliateLink = "https://try.leadpages.com/94z9pcfn1hu5";
 // Lien d'affiliation Shopify (Impact).
 export const shopifyLink = "https://shopify.pxf.io/6kMJxr";
+// Formulaire Mailchimp « embedded » (Audience → Signup forms → Embedded forms → attribut action du <form>).
+// Vide = le bloc newsletter n'est pas affiché.
+export const newsletterFormUrl = "";
 
 const help = "https://support.leadpages.com/hc/en-us/articles/";
 const pricing = { label: "Leadpages : offres et tarifs", url: "https://leadpages.com/pricing" };
@@ -1417,6 +1420,24 @@ export function guidesUsingTool(slug: string) {
 
 export function toolLink(tool: Tool) {
   return tool.affiliateUrl ?? tool.website;
+}
+
+// Guides à lire ensuite : d'abord la liste `related`, puis d'autres guides du même thème
+// (populaires d'abord, puis les plus récents).
+export function getRelatedGuides(guide: Guide, limit = 4): Guide[] {
+  const result: Guide[] = [];
+  const seen = new Set<string>([guide.slug]);
+  for (const slug of guide.related) {
+    const item = getGuide(slug);
+    if (item && !seen.has(item.slug)) {
+      result.push(item);
+      seen.add(item.slug);
+    }
+  }
+  const sameTheme = guides
+    .filter((item) => item.theme === guide.theme && !seen.has(item.slug))
+    .sort((a, b) => Number(Boolean(b.popular)) - Number(Boolean(a.popular)) || b.updatedOn.localeCompare(a.updatedOn));
+  return [...result, ...sameTheme].slice(0, limit);
 }
 
 export function formatDate(iso: string) {

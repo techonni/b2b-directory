@@ -197,6 +197,52 @@ export const guides: Guide[] = [
     related: ["choisir-entre-html-pub-et-leadpages"],
   },
 
+  {
+    slug: "choisir-entre-leadpages-et-shopify",
+    question: "Leadpages ou Shopify : lequel choisir ?",
+    summary: "Des pages qui convertissent, une boutique complète, ou les deux ensemble.",
+    theme: "choisir",
+    updatedOn: "2026-09-27",
+    popular: true,
+    intro:
+      "Leadpages (et HTML Pub) sert à créer des pages qui transforment les visiteurs en contacts ou en clients. Shopify sert à gérer une boutique : produits, stock, paiements et livraisons.",
+    steps: [
+      {
+        title: "Vous vendez plusieurs produits ? Prenez Shopify",
+        text: "Catalogue, stock, variantes, frais de livraison, taxes, commandes et retours : Shopify gère tout cela. Leadpages n'est pas fait pour tenir une boutique.",
+        image: { src: "/captures/shopify-offres.webp", alt: "Les forfaits Shopify Basic, Grow, Advanced et Plus" },
+      },
+      {
+        title: "Vous voulez récolter des contacts ? Prenez Leadpages ou HTML Pub",
+        text: "Page d'inscription, page d'attente avant un lancement, webinaire, guide gratuit : une landing page avec un formulaire suffit, sans boutique.",
+        image: { src: "/captures/choisir-offre.webp", alt: "Les offres HTML Pub et Leadpages côte à côte" },
+      },
+      {
+        title: "Vous avez un seul produit ou un service ? Commencez simple",
+        text: "Une page HTML Pub avec un bouton de paiement peut suffire pour un produit unique, une formation ou une prestation. Passez à Shopify quand le catalogue grandit.",
+      },
+      {
+        title: "Vous faites de la publicité ? Utilisez les deux",
+        text: "Envoyez vos visiteurs vers une landing page Leadpages centrée sur une offre, puis vers le produit dans votre boutique Shopify. Avec Leadpages, vous pouvez tester deux versions de la page.",
+      },
+      {
+        title: "Essayez avant de payer",
+        text: "Leadpages et HTML Pub s'essaient 7 jours, Shopify propose un essai puis une offre de lancement. Vérifiez les conditions du jour sur les pages de tarifs.",
+      },
+    ],
+    pitfalls: [
+      "Construire une boutique entière dans Leadpages : la gestion des commandes et du stock devient vite impossible.",
+      "Envoyer une publicité vers la page d'accueil de la boutique au lieu d'une page centrée sur une seule offre.",
+    ],
+    tools: [
+      { slug: "leadpages", why: "Landing pages, tests A/B et optimisation." },
+      { slug: "shopify", why: "Boutique en ligne complète avec paiements intégrés." },
+      { slug: "html-pub", why: "La version simple pour publier vite." },
+    ],
+    sources: [pricing, { label: "Shopify : tarifs", url: "https://www.shopify.com/fr/tarifs" }],
+    related: ["choisir-entre-html-pub-et-leadpages", "attirer-des-clients-avec-une-landing-page", "creer-sa-boutique-shopify"],
+  },
+
   // ——— Créer une page ———
   {
     slug: "creer-une-landing-page-avec-l-ia",
@@ -602,6 +648,55 @@ export const guides: Guide[] = [
     related: ["recuperer-les-formulaires-html-pub"],
   },
 
+  {
+    slug: "recolter-des-e-mails-avant-un-lancement",
+    question: "Comment récolter des e-mails avant un lancement ?",
+    summary: "Une page d'attente, un formulaire e-mail, une bonne raison de s'inscrire, et vos contacts dans votre outil e-mail.",
+    theme: "contacts",
+    updatedOn: "2026-09-27",
+    popular: true,
+    intro:
+      "Avant de lancer un produit, une page d'attente vous permet de réunir des personnes intéressées. Le jour du lancement, vous leur écrivez : ce sont vos premiers clients.",
+    steps: [
+      {
+        title: "Donnez une raison de s'inscrire",
+        text: "Une réduction de lancement, un accès avant tout le monde ou un cadeau. Écrivez-la clairement dans le titre ou juste au-dessus du formulaire.",
+      },
+      {
+        title: "Créez la page d'attente avec l'IA",
+        text: "Dans HTML Pub ou Leadpages, décrivez la page : le produit à venir, la date, ce que reçoivent les inscrits et un formulaire avec un seul champ e-mail.",
+        image: { src: "/captures/htmlpub-page-attente.webp", alt: "Description d'une page d'attente avec un formulaire e-mail dans l'assistant IA de HTML Pub" },
+      },
+      {
+        title: "Ajoutez le consentement",
+        text: "Pour envoyer des e-mails commerciaux à des particuliers, il faut leur accord. Ajoutez une case à cocher non cochée d'avance et une phrase qui dit à quoi servira l'e-mail et comment se désinscrire.",
+      },
+      {
+        title: "Retrouvez les inscrits",
+        text: "Chaque inscription arrive dans « Submissions ». Vous pouvez les consulter et les exporter en CSV.",
+        image: { src: "/captures/formulaires.webp", alt: "Page Submissions avec les réponses du formulaire" },
+      },
+      {
+        title: "Envoyez-les vers votre outil e-mail",
+        text: "Dans « Connectors », reliez Mailchimp, Brevo ou un autre outil pour que chaque inscrit y arrive automatiquement. Préparez un e-mail de bienvenue et l'e-mail du jour du lancement.",
+        image: { src: "/captures/integrations.webp", alt: "Page Connectors avec les applications e-mail à connecter" },
+      },
+    ],
+    pitfalls: [
+      "Demander le nom, le téléphone et la ville : chaque champ en plus fait baisser les inscriptions.",
+      "Une case de consentement déjà cochée : elle n'est pas valable.",
+      "Ne rien envoyer avant le lancement : écrivez au moins un e-mail de bienvenue pour qu'on se souvienne de vous.",
+    ],
+    tools: [
+      { slug: "html-pub", why: "Page d'attente, formulaire et connecteurs e-mail inclus." },
+      { slug: "leadpages", why: "Pour tester deux versions de la page et inscrire plus de monde." },
+    ],
+    sources: [
+      { label: "CNIL : la prospection commerciale par courrier électronique", url: "https://www.cnil.fr/fr/la-prospection-commerciale-par-courrier-electronique" },
+    ],
+    related: ["recuperer-les-formulaires-html-pub", "connecter-leadpages-a-son-outil-e-mail", "creer-une-landing-page-avec-l-ia"],
+  },
+
   // ——— Optimiser ———
   {
     slug: "faire-un-test-ab-leadpages",
@@ -994,7 +1089,8 @@ export const guides: Guide[] = [
     steps: [
       {
         title: "Ouvrez « Paiements »",
-        text: "Cliquez sur « Paramètres », puis sur « Paiements ».",
+        text: "Cliquez sur « Paramètres », puis sur « Paiements ». Vous y voyez l'état de Shopify Payments, vos moyens de paiement, vos versements et les prestataires supplémentaires comme PayPal.",
+        image: { src: "/captures/shopify-paiements.webp", alt: "Paramètres > Paiements : Shopify Payments, moyens de paiement, versements et PayPal" },
       },
       {
         title: "Activez Shopify Payments",
@@ -1002,7 +1098,8 @@ export const guides: Guide[] = [
       },
       {
         title: "Choisissez les moyens de paiement",
-        text: "Activez ceux que vos clients utilisent : cartes, Bancontact en Belgique, Klarna, etc. Les frais varient selon le forfait et le moyen de paiement.",
+        text: "Cliquez sur « Moyens de paiement » et activez ceux que vos clients utilisent : cartes, Shop Pay, Apple Pay, Bancontact en Belgique, Klarna, etc. Le bouton « Voir les tarifs de paiement » affiche les frais de chaque moyen.",
+        image: { src: "/captures/shopify-moyens-paiement.webp", alt: "Liste des moyens de paiement en ligne : Shop Pay, Visa, Mastercard, American Express, Apple Pay" },
       },
       {
         title: "Ajoutez PayPal si besoin",
@@ -1195,6 +1292,53 @@ export const guides: Guide[] = [
       { label: "Shopify : codes de réduction", url: "https://help.shopify.com/fr/manual/discounts/discount-types/percentage-fixed-amount" },
     ],
     related: ["creer-un-code-de-reduction-shopify", "connecter-html-pub-a-shopify", "creer-une-landing-page-avec-l-ia"],
+  },
+  {
+    slug: "creer-une-page-de-vente-pour-un-produit-shopify",
+    question: "Comment créer une page de vente pour un produit Shopify ?",
+    summary: "Une page d'une seule offre, créée avec l'IA de HTML Pub, qui envoie vers votre produit Shopify.",
+    theme: "boutique",
+    updatedOn: "2026-09-27",
+    intro:
+      "Une fiche produit Shopify montre le produit ; une page de vente le raconte. Elle sert surtout quand vous faites de la publicité ou des vidéos pour un produit précis.",
+    steps: [
+      {
+        title: "Préparez le produit dans Shopify",
+        text: "Le produit doit être actif, avec ses photos, son prix et son stock. Ouvrez-le dans votre boutique en ligne et copiez l'adresse de la page : c'est là que mènera le bouton.",
+      },
+      {
+        title: "Décrivez la page à l'IA",
+        text: "Dans HTML Pub ou Leadpages, créez une page avec l'IA et décrivez-la précisément : le produit, pour qui il est fait, 3 avantages, des avis clients, des questions fréquentes et un bouton « Acheter maintenant ».",
+        image: { src: "/captures/htmlpub-page-de-vente.webp", alt: "Description d'une page de vente pour un produit Shopify dans l'assistant IA de HTML Pub" },
+      },
+      {
+        title: "Reliez le bouton au produit",
+        text: "Dans l'éditeur, choisissez l'action du bouton « lien externe » et collez l'adresse du produit Shopify. Vous pouvez aussi coller un Buy Button Shopify dans un bloc HTML.",
+      },
+      {
+        title: "Ajoutez une raison d'acheter maintenant",
+        text: "Un code de réduction limité dans le temps, la livraison offerte ou un bonus. Créez-le d'abord dans Shopify pour qu'il fonctionne au paiement.",
+        image: { src: "/captures/shopify-reduction.webp", alt: "Création du code de réduction BIENVENUE10 dans Shopify" },
+      },
+      {
+        title: "Publiez et testez sur téléphone",
+        text: "Publiez la page, ouvrez-la sur votre téléphone, cliquez sur le bouton et allez jusqu'au paiement. Partagez ensuite l'adresse de la page dans vos publicités et vos vidéos.",
+      },
+    ],
+    pitfalls: [
+      "Plusieurs produits et plusieurs boutons sur la même page : le visiteur hésite et ne clique pas.",
+      "Un bouton qui mène à la page d'accueil de la boutique au lieu du produit.",
+      "Des avis clients inventés : n'utilisez que de vrais avis.",
+    ],
+    tools: [
+      { slug: "html-pub", why: "Créer la page de vente avec l'IA en quelques minutes." },
+      { slug: "shopify", why: "Encaisser la commande et gérer la livraison." },
+    ],
+    sources: [
+      { label: "Leadpages : accepter des achats Shopify", url: `${help}4407720741517-Accept-Shopify-purchases-with-Leadpages` },
+      { label: "Shopify : ajouter des produits", url: "https://help.shopify.com/fr/manual/products/add-update-products" },
+    ],
+    related: ["connecter-html-pub-a-shopify", "attirer-des-clients-avec-une-landing-page", "creer-un-code-de-reduction-shopify"],
   },
 ];
 

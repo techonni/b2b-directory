@@ -945,7 +945,7 @@ export const guides: Guide[] = [
     pitfalls: ["Laisser le poids à 0 : les frais de livraison seront faux.", "Des photos de tailles différentes : la boutique paraît moins professionnelle."],
     tools: [{ slug: "shopify", why: "Produits illimités sur tous les forfaits." }],
     sources: [{ label: "Shopify : ajouter et mettre à jour des produits", url: "https://help.shopify.com/fr/manual/products/add-update-products" }],
-    related: ["creer-sa-boutique-shopify", "accepter-les-paiements-shopify"],
+    related: ["creer-sa-boutique-shopify", "creer-un-code-de-reduction-shopify"],
   },
   {
     slug: "connecter-son-domaine-shopify",
@@ -1017,6 +1017,184 @@ export const guides: Guide[] = [
     tools: [{ slug: "shopify", why: "Shopify Payments inclus, frais dégressifs selon le forfait." }],
     sources: [{ label: "Shopify Payments (aide)", url: "https://help.shopify.com/fr/manual/payments/shopify-payments" }, { label: "Shopify : tarifs", url: "https://www.shopify.com/fr/tarifs" }],
     related: ["choisir-son-forfait-shopify", "ajouter-un-produit-shopify"],
+  },  {
+    slug: "choisir-un-theme-shopify",
+    question: "Comment choisir et installer un thème gratuit sur Shopify ?",
+    summary: "Trouver un thème gratuit dans la Theme Store, l'essayer, puis le publier.",
+    theme: "boutique",
+    updatedOn: "2026-09-27",
+    intro:
+      "Le thème décide de l'apparence de votre boutique. Shopify propose des thèmes gratuits, conçus et maintenus par Shopify : c'est le meilleur point de départ.",
+    steps: [
+      {
+        title: "Ouvrez la Theme Store",
+        text: "Allez sur themes.shopify.com ou, dans l'administration, sur « Boutique en ligne » puis « Thèmes ». Dans le filtre « Price », cochez « Free » pour ne voir que les thèmes gratuits.",
+        image: { src: "/captures/shopify-themes.webp", alt: "Theme Store de Shopify filtrée sur les thèmes gratuits : Horizon, Colorblock, Tinker" },
+      },
+      {
+        title: "Filtrez selon votre activité",
+        text: "Utilisez le filtre « Industry » (vêtements, beauté, maison, alimentation…) et regardez surtout comment le thème présente les produits, pas les photos de démonstration.",
+      },
+      {
+        title: "Ajoutez le thème à votre boutique",
+        text: "Ouvrez la fiche du thème et cliquez sur « Ajouter ». Il arrive dans votre bibliothèque de thèmes, sans remplacer celui qui est en ligne.",
+      },
+      {
+        title: "Prévisualisez et personnalisez",
+        text: "Cliquez sur « Personnaliser » : ajoutez votre logo, vos couleurs, vos polices et les sections de la page d'accueil. Vérifiez aussi l'aperçu sur mobile.",
+      },
+      {
+        title: "Publiez-le",
+        text: "Quand tout vous convient, cliquez sur « Publier ». Un seul thème est en ligne à la fois ; l'ancien reste dans la bibliothèque et vous pouvez revenir en arrière.",
+      },
+    ],
+    pitfalls: [
+      "Acheter un thème payant dès le départ : les thèmes gratuits suffisent pour une première boutique.",
+      "Publier sans avoir vérifié l'affichage sur téléphone, alors que la majorité des visites viennent du mobile.",
+    ],
+    tools: [{ slug: "shopify", why: "Thèmes gratuits conçus et mis à jour par Shopify." }],
+    sources: [
+      { label: "Shopify : ajouter et prévisualiser des thèmes", url: "https://help.shopify.com/fr/manual/online-store/themes/adding-themes" },
+      { label: "Shopify : publier un thème", url: "https://help.shopify.com/fr/manual/online-store/themes/managing-themes/publishing-themes" },
+      { label: "Shopify Theme Store", url: "https://themes.shopify.com/themes?price%5B%5D=free" },
+    ],
+    related: ["creer-sa-boutique-shopify", "ajouter-un-produit-shopify"],
+  },
+  {
+    slug: "creer-un-code-de-reduction-shopify",
+    question: "Comment créer un code de réduction sur Shopify ?",
+    summary: "Un code promo en pourcentage ou en montant fixe, avec ses conditions et ses limites.",
+    theme: "boutique",
+    updatedOn: "2026-09-27",
+    intro:
+      "Un code de réduction aide à déclencher une première commande. Sur Shopify, il se crée en quelques minutes et s'applique au moment du paiement.",
+    steps: [
+      {
+        title: "Ouvrez « Réductions »",
+        text: "Dans le menu de gauche, cliquez sur « Réductions », puis sur « Créer une réduction ».",
+      },
+      {
+        title: "Choisissez le type de réduction",
+        text: "Quatre choix : « Montant sur les produits », « Achetez X, obtenez Y », « Montant sur la commande » ou « Expédition gratuite ». Pour un code de bienvenue, prenez « Montant sur la commande ».",
+      },
+      {
+        title: "Écrivez le code et sa valeur",
+        text: "Gardez la méthode « Code de réduction », tapez un code facile à retenir (par exemple BIENVENUE10), puis choisissez « Pourcentage » ou « Montant fixe » et la valeur. Le résumé à droite se met à jour tout de suite.",
+        image: { src: "/captures/shopify-reduction.webp", alt: "Formulaire « Créer une réduction » avec le code BIENVENUE10 et 10 % de réduction sur la commande" },
+      },
+      {
+        title: "Fixez les conditions",
+        text: "« Admissibilité » : tous les clients ou certains seulement. « Exigences minimales d'achat » : un montant ou un nombre d'articles minimum. « Utilisations maximales » : limitez le nombre total d'utilisations ou une seule utilisation par client.",
+      },
+      {
+        title: "Choisissez les dates et enregistrez",
+        text: "Indiquez une date de début et, si vous voulez, une date de fin. Cliquez sur « Enregistrer » : le code apparaît dans la liste des réductions.",
+      },
+    ],
+    pitfalls: [
+      "Oublier « Limiter à une utilisation par client » pour un code de bienvenue : il peut alors être utilisé à chaque commande.",
+      "Diffuser le code sans l'avoir testé dans une commande test.",
+    ],
+    tools: [{ slug: "shopify", why: "Codes de réduction et réductions automatiques inclus dans tous les forfaits." }],
+    sources: [
+      { label: "Shopify : réductions en pourcentage ou montant fixe", url: "https://help.shopify.com/fr/manual/discounts/discount-types/percentage-fixed-amount" },
+    ],
+    related: ["attirer-des-clients-avec-une-landing-page", "accepter-les-paiements-shopify"],
+  },
+  {
+    slug: "connecter-html-pub-a-shopify",
+    question: "Comment relier HTML Pub ou Leadpages à Shopify ?",
+    summary: "Le connecteur Shopify de HTML Pub, et les boutons qui envoient vers votre boutique.",
+    theme: "boutique",
+    updatedOn: "2026-09-27",
+    intro:
+      "Vos pages HTML Pub ou Leadpages attirent les visiteurs, Shopify encaisse les ventes. Deux liens sont possibles : le connecteur Shopify, et des boutons qui mènent au paiement Shopify.",
+    steps: [
+      {
+        title: "Ouvrez « Connectors »",
+        text: "Dans le menu de votre espace HTML Pub, cliquez sur « Connectors » et tapez « Shopify » dans la recherche. La carte Shopify sert à envoyer les données clients de votre checkout HTML Pub vers Shopify.",
+      },
+      {
+        title: "Indiquez l'adresse de votre boutique",
+        text: "Cliquez sur « Connect », entrez l'adresse en .myshopify.com de votre boutique, puis sur « Connect Shopify ». Validez ensuite l'autorisation dans Shopify.",
+        image: { src: "/captures/htmlpub-shopify.webp", alt: "Connectors HTML Pub : carte Shopify avec le champ « Your Shopify store domain »" },
+      },
+      {
+        title: "Ajoutez un bouton vers Shopify",
+        text: "Pour vendre un produit depuis une page, ajoutez un bouton et, dans son action de clic, choisissez un lien externe : collez l'adresse du produit ou un lien de paiement Shopify.",
+      },
+      {
+        title: "Ou collez un Buy Button Shopify",
+        text: "Dans Shopify, ajoutez le canal de vente « Buy Button », créez un bouton pour un produit, copiez son code HTML et collez-le dans un bloc HTML de votre page.",
+      },
+      {
+        title: "Testez le parcours complet",
+        text: "Publiez la page, cliquez sur le bouton et allez jusqu'au paiement pour vérifier que le bon produit s'ouvre.",
+      },
+    ],
+    pitfalls: [
+      "Croire que Leadpages compte les ventes Shopify : ses statistiques s'arrêtent au clic sur le bouton.",
+      "Entrer votre propre nom de domaine au lieu de l'adresse en .myshopify.com dans le connecteur.",
+    ],
+    tools: [
+      { slug: "html-pub", why: "Connecteur Shopify dans « Connectors »." },
+      { slug: "shopify", why: "Encaisse les commandes venues de vos pages." },
+    ],
+    sources: [
+      { label: "Leadpages : accepter des achats Shopify", url: `${help}4407720741517-Accept-Shopify-purchases-with-Leadpages` },
+      { label: "Leadpages : intégration Shopify", url: "https://leadpages.com/integrations/shopify" },
+    ],
+    related: ["attirer-des-clients-avec-une-landing-page", "connecter-leadpages-a-son-outil-e-mail"],
+  },
+  {
+    slug: "attirer-des-clients-avec-une-landing-page",
+    question: "Comment attirer des clients vers sa boutique Shopify avec une landing page ?",
+    summary: "Une page simple, une offre claire, un formulaire, puis un lien vers votre boutique.",
+    theme: "boutique",
+    updatedOn: "2026-09-27",
+    popular: true,
+    intro:
+      "Une landing page présente une seule offre à un seul public. Elle transforme les visiteurs venus des réseaux ou d'une publicité en contacts, puis en clients de votre boutique.",
+    steps: [
+      {
+        title: "Choisissez une seule offre",
+        text: "Un produit phare ou une réduction de bienvenue. Créez d'abord le code dans Shopify, par exemple 10 % sur la première commande : c'est la raison de laisser son e-mail.",
+        image: { src: "/captures/shopify-reduction.webp", alt: "Code de bienvenue BIENVENUE10 créé dans Shopify" },
+      },
+      {
+        title: "Créez la page avec l'IA",
+        text: "Dans HTML Pub ou Leadpages, cliquez sur « Create » et décrivez la page : le produit, le public, l'offre et le bouton attendu. Gardez un titre court, trois avantages et une photo du produit.",
+        image: { src: "/captures/creer-page-ia.webp", alt: "Écran Create : l'assistant demande « What are you making? »" },
+      },
+      {
+        title: "Ajoutez un formulaire et un bouton",
+        text: "Un formulaire pour récolter l'e-mail en échange du code, et un bouton qui mène au produit ou à la boutique Shopify.",
+      },
+      {
+        title: "Reliez la page à vos outils",
+        text: "Dans « Connectors », envoyez les contacts vers votre outil e-mail et reliez Shopify pour retrouver vos clients au même endroit.",
+        image: { src: "/captures/htmlpub-shopify.webp", alt: "Connecteur Shopify dans HTML Pub" },
+      },
+      {
+        title: "Envoyez du trafic et mesurez",
+        text: "Partagez l'adresse de la page dans vos publications, votre bio et vos publicités. Regardez le taux de conversion de la page ; avec Leadpages, testez deux titres avec un test A/B.",
+      },
+    ],
+    pitfalls: [
+      "Mettre toute la boutique sur la page : une landing page = une offre, un bouton.",
+      "Envoyer le trafic vers la page d'accueil de la boutique au lieu de la page du produit mis en avant.",
+      "Promettre un code de réduction qui n'existe pas encore dans Shopify.",
+    ],
+    tools: [
+      { slug: "html-pub", why: "Pour créer et publier la landing page rapidement." },
+      { slug: "leadpages", why: "Pour tester vos titres et améliorer la conversion." },
+      { slug: "shopify", why: "Pour encaisser les commandes." },
+    ],
+    sources: [
+      { label: "Leadpages : accepter des achats Shopify", url: `${help}4407720741517-Accept-Shopify-purchases-with-Leadpages` },
+      { label: "Shopify : codes de réduction", url: "https://help.shopify.com/fr/manual/discounts/discount-types/percentage-fixed-amount" },
+    ],
+    related: ["creer-un-code-de-reduction-shopify", "connecter-html-pub-a-shopify", "creer-une-landing-page-avec-l-ia"],
   },
 ];
 

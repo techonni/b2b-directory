@@ -1,29 +1,18 @@
-# B2B software directory
+# Zunrel
 
-A small directory of B2B software, laid out as a narrow editorial page: categories, tool notes, and a search that stays in the browser.
+Guides « comment faire » pour Leadpages, HTML Pub et Shopify, étape par étape : https://zunrel.com
 
-Built with Astro. The subscribe field does not send anything. It only confirms on the page.
+Site statique Astro + Tailwind, publié sur Vercel (projet `zunrel`) à chaque push sur `main`.
 
-## Run it locally
+- Contenu (thèmes, guides, outils) : `src/lib/guides.ts`
+- Captures d'écran : `public/captures/`
+- Plan du site : `src/pages/sitemap.xml.ts` → https://zunrel.com/sitemap.xml
 
-```bash
+## Lancer en local
+
+```
 npm install
 npm run dev
 ```
 
-Open [http://localhost:4321/b2b-directory/](http://localhost:4321/b2b-directory/).
-
-## Pages
-
-- `/` home, with categories, popular tools, and the latest reviews
-- `/categories` and `/categories/[slug]`
-- `/reviews`
-- `/tools/[slug]`
-- `/about`
-- `/search?q=`
-
-## Publish
-
-`npm run build` writes a static site to `dist/`. The site is configured for GitHub Pages at `https://techonni.github.io/b2b-directory/`.
-
-GitHub Actions in `.github/workflows/pages.yml` builds that folder and deploys it when the workflow is allowed to run.
+Puis ouvrir http://localhost:4321/.

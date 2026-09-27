@@ -1428,6 +1428,36 @@ export function formatDate(iso: string) {
   }).format(new Date(`${iso}T00:00:00Z`));
 }
 
+// Smart related guides: use explicit related list + supplement with same-theme guides
+export function getRelatedGuides(guide: Guide, limit: number = 4): Guide[] {
+  const relatedSlugs = new Set(guide.related);
+  const related: Guide[] = [];
+
+  // First: add explicit related guides in order
+  for (const slug of guide.related) {
+    const g = getGuide(slug);
+    if (g) {
+      related.push(g);
+      if (related.length >= limit) return related;
+    }
+  }
+
+  // Second: supplement with guides from same theme (sorted by popularity then date)
+  const themeGuides = guides
+    .filter((g) => g.theme === guide.theme && g.slug !== guide.slug && !relatedSlugs.has(g.slug))
+    .sort((a, b) => {
+      if (a.popular !== b.popular) return a.popular ? -1 : 1;
+      return new Date(b.updatedOn).getTime() - new Date(a.updatedOn).getTime();
+    });
+
+  for (const g of themeGuides) {
+    related.push(g);
+    if (related.length >= limit) break;
+  }
+
+  return related;
+}
+
 // Chemin public du logo (proxy Vercel défini dans vercel.json).
 export function logoPath(tool: Tool) {
   if (!tool.logo) return undefined;

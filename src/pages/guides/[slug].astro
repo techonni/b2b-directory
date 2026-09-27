@@ -11,6 +11,7 @@ import {
   shopifyLink,
   formatDate,
   getGuide,
+  getRelatedGuides,
   getTheme,
   getTool,
   guides,
@@ -28,9 +29,7 @@ const theme = getTheme(guide.theme);
 const tools = guide.tools
   .map((item) => ({ tool: getTool(item.slug), why: item.why }))
   .filter((item): item is { tool: Tool; why: string } => item.tool !== undefined);
-const related = guide.related
-  .map((slug) => getGuide(slug))
-  .filter((item): item is Guide => item !== undefined);
+const related = getRelatedGuides(guide);
 
 const isShop = guide.theme === "boutique";
 

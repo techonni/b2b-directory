@@ -1,0 +1,21 @@
+---
+// Google Analytics component for GA4
+// Add GOOGLE_ANALYTICS_ID to your environment variables
+const gaId = import.meta.env.GOOGLE_ANALYTICS_ID;
+---
+
+{
+  gaId && (
+    <>
+      <script async src={`https://www.googletagmanager.com/gtag/js?id=${gaId}`}></script>
+      <script is:inline define:vars={{ gaId }}>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() {
+          dataLayer.push(arguments);
+        }
+        gtag("js", new Date());
+        gtag("config", gaId);
+      </script>
+    </>
+  )
+}

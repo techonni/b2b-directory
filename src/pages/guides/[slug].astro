@@ -100,7 +100,9 @@ const howTo = {
   </script>
 
   <section class="mt-10 rounded-[6px] border border-[#e5e5e5] bg-white p-6">
-    <h2 class="text-[15px] font-medium leading-5 text-[#171717]">L'essentiel en 30 secondes</h2>
+    <h2 class="text-[15px] font-medium leading-5 text-[#171717]">
+      {guideFormat(guide) === "complet" ? "Le parcours en bref" : "L'essentiel en 30 secondes"}
+    </h2>
     <ol class="mt-4 list-decimal space-y-1.5 pl-5 text-[15px] leading-6 text-[#404040]">
       {guide.steps.map((step) => <li>{step.title}</li>)}
     </ol>
@@ -127,7 +129,9 @@ const howTo = {
             </span>
             <div>
               <h3 class="text-[15px] font-medium leading-6 text-[#171717]">{step.title}</h3>
-              <p class="mt-1 text-[15px] leading-6 text-[#666666]">{step.text}</p>
+              {step.text.split("\n\n").map((paragraph, index) => (
+                <p class:list={["text-[15px] leading-6 text-[#666666]", index === 0 ? "mt-1" : "mt-3"]}>{paragraph}</p>
+              ))}
               {step.image ? (
                 <img
                   src={step.image.src}

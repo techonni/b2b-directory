@@ -123,11 +123,16 @@ Après l'inscription, votre visiteur voit « Thank you » et… rien d'autre ?
 Une vraie page de remerciement : dire quoi faire ensuite, livrer le cadeau tout de suite, et un seul bouton vers l'étape suivante.
 Comment la créer sur Leadpages : https://zunrel.com/guides/creer-une-page-de-remerciement-leadpages/?utm_source=SOURCE&utm_medium=social&utm_campaign=post-diario
 
+### Dia 22
+Vos abonnés Instagram aiment vos produits, mais ne savent pas où les acheter ?
+Avec l'application Facebook & Instagram de Meta sur Shopify, vous identifiez vos produits dans vos posts. Et en attendant la validation : un seul lien en bio, qui vend.
+Comment faire : https://zunrel.com/guides/vendre-sur-instagram-avec-shopify/?utm_source=SOURCE&utm_medium=social&utm_campaign=post-diario
+
 ---
 
 ## Pinterest: 5 pins por dia
 
-Desde 28/09/2026 **todos** estes pins (e os « erreurs ») estão em `pinterest-agendar.csv`, 10 por dia de 30/09 a 08/10. O Chrome não publica pins. Tabelas abaixo só como arquivo.
+Desde 28/09/2026 **todos** estes pins (e os « erreurs ») estão em `pinterest-agendar.csv` (94 pins, 30/09 a 09/10), **já carregado no Pinterest pelo Chrome a 28/09** (lote P). Os pins novos vão para `pinterest-agendar-2.csv` (a partir de 10/10; máx. 15 por dia, regra do Techonni; usamos 10). Tabelas abaixo só como arquivo.
 
 Imagem: descarregar o link da coluna « Imagem ». Nunca criar um guia novo para um pin: os pins repetem os guias existentes. Quando os 9 dias acabarem, o Claude Code cria imagens novas (outro título e outra captura) para os mesmos guias.
 
@@ -263,6 +268,15 @@ Guia novo de 28/09 (também no `pinterest-agendar.csv`, 09/10).
 | Imagem | Título | Descrição | Painel | Link |
 |---|---|---|---|---|
 | https://zunrel.com/pins/creer-une-page-de-remerciement-leadpages.jpg | Comment créer une page de remerciement après un formulaire Leadpages ? | Dire merci, livrer le cadeau et proposer l'étape suivante. Guide gratuit, étape par étape. | Landing pages : Leadpages et HTML Pub | https://zunrel.com/guides/creer-une-page-de-remerciement-leadpages/?utm_source=pinterest&utm_medium=social&utm_campaign=pin-diario&utm_content=creer-une-page-de-remerciement-leadpages |
+
+
+### Dia 16
+
+Guia novo de 28/09 (em `pinterest-agendar-2.csv`, 10/10).
+
+| Imagem | Título | Descrição | Painel | Link |
+|---|---|---|---|---|
+| https://zunrel.com/pins/vendre-sur-instagram-avec-shopify.jpg | Comment vendre sur Instagram avec Shopify ? | Relier votre boutique à Instagram et garder un lien en bio qui vend. Guide gratuit, étape par étape. | Shopify : ouvrir sa boutique | https://zunrel.com/guides/vendre-sur-instagram-avec-shopify/?utm_source=pinterest&utm_medium=social&utm_campaign=pin-diario&utm_content=vendre-sur-instagram-avec-shopify |
 
 
 ## Pins « erreurs à éviter » (2.ª imagem de cada guia): 4 por dia, além do pin do dia

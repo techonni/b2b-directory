@@ -66,6 +66,9 @@ export const tagline = "Leadpages, HTML Pub et Shopify : comment faire, étape p
 export const affiliateLink = "https://try.leadpages.com/94z9pcfn1hu5";
 // Lien d'affiliation Shopify (Impact).
 export const shopifyLink = "https://shopify.pxf.io/6kMJxr";
+// Même lien Impact, mais vers la page des tarifs (shopify.com/fr/tarifs), pour les guides sur les prix.
+export const shopifyPricingLink = "https://shopify.pxf.io/KBdaZa";
+export const shopifyPricingGuides = ["combien-coute-shopify", "choisir-son-forfait-shopify"];
 // Formulaire Mailchimp « embedded » (Audience → Signup forms → Embedded forms → attribut action du <form>).
 // Vide = le bloc newsletter n'est pas affiché.
 export const newsletterFormUrl =
@@ -565,7 +568,7 @@ export const guides: Guide[] = [
     ],
     tools: [{ slug: "html-pub", why: "Modèles « lien en bio », formulaires et domaine personnalisé." }],
     sources: [{ label: "HTML Pub : créer et modifier des pages", url: `${help}43966022984461--HTMLPub-Creating-and-Editing-Pages` }],
-    related: ["partir-d-un-modele-leadpages", "recuperer-les-formulaires-html-pub", "modifier-l-adresse-d-une-page-leadpages"],
+    related: ["partir-d-un-modele-leadpages", "vendre-sur-instagram-avec-shopify", "recuperer-les-formulaires-html-pub", "modifier-l-adresse-d-une-page-leadpages"],
   },
   {
     slug: "publier-du-html-sur-html-pub",
@@ -1739,7 +1742,53 @@ export const guides: Guide[] = [
     pitfalls: ["Laisser le poids à 0 : les frais de livraison seront faux.", "Des photos de tailles différentes : la boutique paraît moins professionnelle."],
     tools: [{ slug: "shopify", why: "Produits illimités sur tous les forfaits." }],
     sources: [{ label: "Shopify : ajouter et mettre à jour des produits", url: "https://help.shopify.com/fr/manual/products/add-update-products" }],
-    related: ["creer-une-page-de-vente-pour-un-produit-shopify", "creer-sa-boutique-shopify", "creer-un-code-de-reduction-shopify", "regler-l-expedition-shopify", "ajouter-des-variantes-shopify"],
+    related: ["creer-une-page-de-vente-pour-un-produit-shopify", "creer-sa-boutique-shopify", "creer-un-code-de-reduction-shopify", "regler-l-expedition-shopify", "ajouter-des-variantes-shopify", "vendre-sur-instagram-avec-shopify"],
+  },
+  {
+    slug: "vendre-sur-instagram-avec-shopify",
+    question: "Comment vendre sur Instagram avec Shopify ?",
+    summary: "Relier votre boutique à Instagram, identifier vos produits dans les publications et garder un lien en bio qui vend.",
+    theme: "boutique",
+    publishedOn: "2026-09-28",
+    updatedOn: "2026-09-28",
+    intro:
+      "Instagram est souvent la première source de visiteurs d'une boutique qui démarre. Avec l'application officielle de Meta pour Shopify, vos produits apparaissent dans un catalogue que vous pouvez identifier dans vos publications. En attendant, un bon lien en bio suffit déjà à vendre.",
+    steps: [
+      {
+        title: "Passez votre compte Instagram en compte professionnel",
+        text: "Dans l'application Instagram, ouvrez les paramètres du compte et passez à un compte professionnel (« Entreprise » ou « Créateur »). Reliez-le à une page Facebook : Meta en a besoin pour le catalogue de produits.",
+      },
+      {
+        title: "Installez l'application Facebook & Instagram",
+        text: "Dans l'administration Shopify, ouvrez l'App Store de Shopify et cherchez « Facebook & Instagram », publiée par Meta. Installez-la : elle s'ajoute comme canal de vente, gratuitement.",
+      },
+      {
+        title: "Connectez vos comptes Meta",
+        text: "Dans le canal Facebook & Instagram, suivez l'assistant : votre compte Facebook, votre compte Meta Business (Business Manager), votre page Facebook et votre compte Instagram professionnel. Acceptez les conditions, puis lancez la synchronisation du catalogue.",
+      },
+      {
+        title: "Vérifiez vos fiches produit",
+        text: "Seuls les produits actifs, avec une photo, un prix et une description, passent correctement dans le catalogue. Choisissez dans l'application quels produits partager : commencez par vos meilleures ventes plutôt que tout le catalogue.",
+      },
+      {
+        title: "Identifiez vos produits dans vos publications",
+        text: "Quand Meta a validé votre compte (cela peut prendre quelques jours), vous pouvez identifier vos produits dans les publications et les stories, comme on identifie une personne. Un clic sur l'étiquette montre le prix et mène à la fiche produit. Selon le pays, certaines fonctions d'achat ne sont pas disponibles : l'application affiche ce qui l'est pour vous.",
+      },
+      {
+        title: "Gardez un lien en bio qui vend",
+        text: "En attendant la validation, ou en plus : mettez dans votre bio un seul lien vers une page qui regroupe votre boutique, votre offre du moment et votre inscription e-mail. Ajoutez des paramètres UTM à ce lien pour voir dans Google Analytics ce qu'Instagram vous rapporte.",
+      },
+    ],
+    pitfalls: [
+      "Partager tout le catalogue d'un coup avec des fiches incomplètes : les produits sans photo ou sans prix sont refusés.",
+      "Compter uniquement sur les étiquettes produit : elles dépendent de la validation de Meta et du pays. Le lien en bio marche tout de suite.",
+      "Envoyer les visiteurs d'Instagram vers la page d'accueil : un lien direct vers le produit ou une page dédiée convertit mieux.",
+    ],
+    tools: [{ slug: "shopify", why: "L'application Facebook & Instagram de Meta est gratuite et s'ajoute comme canal de vente." }],
+    sources: [
+      { label: "Aide Shopify : Facebook & Instagram by Meta", url: "https://help.shopify.com/fr/manual/online-sales-channels/facebook-instagram-by-meta" },
+    ],
+    related: ["creer-une-page-lien-en-bio-avec-html-pub", "ajouter-un-produit-shopify", "creer-un-code-de-reduction-shopify"],
   },
   {
     slug: "ajouter-des-variantes-shopify",

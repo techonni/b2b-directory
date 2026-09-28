@@ -779,4 +779,115 @@ export const enGuides: TranslatedGuide[] = [
       "Adding too many links: one main button converts better.",
     ],
   },
+  {
+    slug: "vendre-sur-instagram-avec-shopify",
+    localSlug: "sell-on-instagram-shopify",
+    question: "How to sell on Instagram with Shopify?",
+    summary: "Connect your store to Instagram, tag your products in posts and keep a link in bio that sells.",
+    intro:
+      "Instagram is often the first source of visitors for a new store. With Meta's official app for Shopify, your products go into a catalog you can tag in your posts. Until then, a good link in bio is already enough to sell.",
+    steps: [
+      {
+        title: "Switch your Instagram account to a professional account",
+        text: "In the Instagram app, open your account settings and switch to a professional account (« Business » or « Creator »). Connect it to a Facebook Page: Meta needs it for the product catalog.",
+      },
+      {
+        title: "Install the Facebook & Instagram app",
+        text: "In the Shopify admin, open the Shopify App Store and search for « Facebook & Instagram », published by Meta. Install it: it is added as a free sales channel.",
+      },
+      {
+        title: "Connect your Meta accounts",
+        text: "In the Facebook & Instagram channel, follow the setup: your Facebook account, your Meta Business account (Business Manager), your Facebook Page and your Instagram professional account. Accept the terms, then start the catalog sync.",
+      },
+      {
+        title: "Check your product pages",
+        text: "Only active products with a photo, a price and a description sync correctly to the catalog. Choose in the app which products to share: start with your best sellers rather than the whole catalog.",
+      },
+      {
+        title: "Tag your products in your posts",
+        text: "Once Meta has approved your account (this can take a few days), you can tag your products in posts and stories, just like tagging a person. Tapping the tag shows the price and leads to the product page. Some shopping features depend on your country: the app shows what is available to you.",
+      },
+      {
+        title: "Keep a link in bio that sells",
+        text: "While you wait for approval, or on top of it: put a single link in your bio to a page with your store, your current offer and your email sign-up. Add UTM parameters to this link to see in Google Analytics what Instagram brings you.",
+      },
+    ],
+    pitfalls: [
+      "Sharing the whole catalog at once with incomplete product pages: products without a photo or a price are rejected.",
+      "Relying only on product tags: they depend on Meta's approval and your country. A link in bio works right away.",
+      "Sending Instagram visitors to your home page: a direct link to the product or a dedicated page converts better.",
+    ],
+  },
+  {
+    slug: "ajouter-un-produit-shopify",
+    localSlug: "add-product-shopify",
+    question: "How to add a product on Shopify?",
+    summary: "Title, photos, price, inventory and shipping: a product page filled in the right way.",
+    intro:
+      "A good product page sells. Shopify guides you field by field, and saved changes show up in your store right away.",
+    steps: [
+      {
+        title: "Open « Add product »",
+        text: "In the left menu, click « Products », then « Add product ».",
+        alt: "« Add product » form: title, description, media (French interface)",
+      },
+      {
+        title: "Write the title and description",
+        text: "A clear title, then a description that answers the buyer's questions: material, size, use, delivery time.",
+      },
+      {
+        title: "Add the photos",
+        text: "In « Media », click « Upload new ». Images, videos and 3D models are accepted.",
+      },
+      {
+        title: "Set the price and inventory",
+        text: "Enter the price and, if you want, a « Compare-at price ». In « Inventory », enter the quantity available.",
+        alt: "Price and Inventory sections of the product page (French interface)",
+      },
+      {
+        title: "Set shipping and variants",
+        text: "For a physical product, enter the weight. Add variants (size, color) if needed. For a digital file, turn off « Physical product ».",
+      },
+      {
+        title: "Choose the status and save",
+        text: "The « Active » status makes the product visible. Click « Save ».",
+      },
+    ],
+    pitfalls: ["Leaving the weight at 0: shipping rates will be wrong.", "Photos of different sizes: the store looks less professional."],
+  },
+  {
+    slug: "choisir-un-theme-shopify",
+    localSlug: "choose-free-theme-shopify",
+    question: "How to choose and install a free Shopify theme?",
+    summary: "Find a free theme in the Theme Store, try it, then publish it.",
+    intro:
+      "The theme decides how your store looks. Shopify offers free themes, designed and maintained by Shopify: they are the best place to start.",
+    steps: [
+      {
+        title: "Open the Theme Store",
+        text: "Go to themes.shopify.com or, in the admin, to « Online Store » then « Themes ». In the « Price » filter, check « Free » to see only free themes.",
+        alt: "Shopify Theme Store filtered on free themes: Horizon, Colorblock, Tinker",
+      },
+      {
+        title: "Filter by your business",
+        text: "Use the « Industry » filter (clothing, beauty, home, food…) and look mostly at how the theme shows products, not at the demo photos.",
+      },
+      {
+        title: "Add the theme to your store",
+        text: "Open the theme page and click « Add ». It goes into your theme library without replacing the one that is live.",
+      },
+      {
+        title: "Preview and customize",
+        text: "Click « Customize »: add your logo, colors, fonts and the home page sections. Also check the mobile preview.",
+      },
+      {
+        title: "Publish it",
+        text: "When everything looks right, click « Publish ». Only one theme is live at a time; the old one stays in the library and you can switch back.",
+      },
+    ],
+    pitfalls: [
+      "Buying a paid theme right away: free themes are enough for a first store.",
+      "Publishing without checking the phone view, when most visits come from mobile.",
+    ],
+  },
 ];

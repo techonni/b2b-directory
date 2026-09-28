@@ -626,4 +626,43 @@ export const enGuides: TranslatedGuide[] = [
       "Promising a delivery time you cannot keep: write realistic times in your shipping settings and policies.",
     ],
   },
+  {
+    slug: "ajouter-google-analytics-a-une-page-leadpages",
+    localSlug: "add-google-analytics-leadpages",
+    question: "How to add Google Analytics to a Leadpages page?",
+    summary: "Connect your page to Google Analytics 4 to see where your visitors come from, before trying to convert them.",
+    intro:
+      "Leadpages already counts the visits and sign-ups of each page. Google Analytics 4 also tells you where visitors come from (Google, Instagram, ads…) and what they do. All it takes is copying a Google Analytics tag into your Leadpages page settings.",
+    steps: [
+      {
+        title: "Create a Google Analytics 4 property",
+        text: "On analytics.google.com, sign in with your Google account. If you do not have an Analytics account yet, follow the setup: an account, then a property (your site's name), then a « Web » data stream with your page's address.",
+      },
+      {
+        title: "Copy the Google tag",
+        text: "In « Admin », open « Data streams » and click your Web stream. Click « View tag instructions », then « Install manually ». Copy the whole code shown: it starts with <script> and contains your measurement ID (G-…).",
+      },
+      {
+        title: "Paste it into the page settings",
+        text: "In Leadpages, open the page in the editor, then its « Settings » and the tracking section (« Analytics » or « Tracking Codes » depending on the version). Paste the tag into the header code field, « Head Section Tracking Code ».",
+      },
+      {
+        title: "Update the page",
+        text: "Save, then click « Update » (or « Publish »): until the page is republished, the tag is not live. Do the same for each page you want to track, with the same tag.",
+      },
+      {
+        title: "Check that visits come in",
+        text: "Open your published page in another tab. In Google Analytics, go to « Reports », then « Realtime »: your visit should appear within a minute. If nothing shows, check that the tag is in the header and that the page was updated.",
+      },
+      {
+        title: "Add UTM links",
+        text: "To know which post or ad brings in leads, add UTM parameters to your links, for example ?utm_source=instagram&utm_medium=social. In Google Analytics, the « Acquisition » report groups them by source.",
+      },
+    ],
+    pitfalls: [
+      "Forgetting to republish the page: the tag stays in the editor and no visit is counted.",
+      "Pasting only the measurement ID (G-…) into the header code field: you need the whole tag.",
+      "Ignoring privacy rules: tell visitors you use analytics in your privacy policy, and ask for consent where the law requires it.",
+    ],
+  },
 ];

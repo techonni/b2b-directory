@@ -4,7 +4,7 @@
 > O CLAUDE.md manda ler este ficheiro e fazer **todos** os passos da lista « Próxima sessão », um a seguir ao outro, publicando cada um.
 > Claude no Chrome (Co-work): o Techonni também diz só « continua ». O trabalho dele está em `docs/growth/CHROME-PROXIMO.md` (máx. 3 tarefas e 2 sites) e os resultados em `docs/growth/RESULTADOS-CHROME.md`. Nunca os dois ao mesmo tempo.
 
-Data: 28/09/2026 (4.ª sessão do dia: preços do lote 1 do Chrome, guia da semana 5, posts até ao dia 19). Responde ao Techonni em **português**, com palavras simples. Os textos do site e dos emails são em **francês**.
+Data: 28/09/2026 (5.ª sessão do dia: resultados da rotina diária do Chrome, lote 3 para o Chrome, guia da semana 6). Responde ao Techonni em **português**, com palavras simples. Os textos do site e dos emails são em **francês**.
 
 ---
 
@@ -48,7 +48,7 @@ Data: 28/09/2026 (4.ª sessão do dia: preços do lote 1 do Chrome, guia da sema
 | 3 | Páginas de preços e comparação | ✅ `combien-coute-leadpages` (todos os planos, incl. Starter e Scale, confirmados pelo Chrome a 28/09; agora também em PT e EN) e `combien-coute-shopify` (preços em euros confirmados a 28/09). ⚠️ Preços Shopify em **dólares** ainda por obter: a Shopify mostra sempre euros ao Chrome (geolocalização). O guia EN de preços da Shopify continua escondido |
 | 4 | Página « Meilleures offres du moment » | ✅ `/offres/`, ligada na página inicial e no rodapé. Atualizar todos os meses (`verifiedOn` em `src/pages/offres.astro`) |
 | 5 | Search Console: títulos e descrições | 🟡 Descrições mais longas em todos os guias (resumo + intro, até 160 caracteres). Campos `seoTitle` / `seoDescription` prontos. Falta: dados do Search Console (tarefa D do Chrome) para reescrever as páginas com muitas impressões e poucos cliques |
-| 6 | Um guia novo por semana | ✅ Semanas 1 a 5 feitas (semana 5: `suivre-ses-commandes-et-expedier-shopify`, FR + PT + EN, 2 pins). Próxima: semana 6 de `plano-growth.md`. Capturas pedidas nos lotes 5 e 5b do Chrome |
+| 6 | Um guia novo por semana | ✅ Semanas 1 a 6 feitas (5: `suivre-ses-commandes-et-expedier-shopify`; 6: `ajouter-google-analytics-a-une-page-leadpages`; FR + PT + EN, 2 pins cada). Próxima: semana 7 de `plano-growth.md`. Capturas pedidas nos lotes 5 e 5b do Chrome |
 | 7 | Atualizar guias antigos todos os meses | ✅ Rotina pronta: `check-guides.mjs` lista os guias com mais de 30 dias. Nenhum está desatualizado hoje. Próxima revisão: **28/10/2026** (preços Shopify e Leadpages, `/offres/`) |
 | 8 | Links internos | ✅ Todos os 41 guias têm pelo menos 2 links internos |
 | 9 | Versões PT e EN | ✅ 12 guias em `/pt/` e `/en/`, com hreflang e ligações a partir dos guias franceses e da página inicial. Traduções em `src/lib/translations/` |
@@ -65,6 +65,8 @@ Data: 28/09/2026 (4.ª sessão do dia: preços do lote 1 do Chrome, guia da sema
 | 20 | Backlinks | 🟡 Plano, 4 propostas de artigos e emails modelo em `backlinks.md`. Falta: lista de 10 blogs (tarefa K do Chrome) e envio dos emails pelo Techonni |
 
 ## Pendentes do lado do Techonni
+
+- [ ] **Impact:** iniciar sessão em impact.com no Chrome onde trabalha o Co-work (o Chrome não tem sessão e não entra sozinho). Depois disso o lote 2b pode ser feito.
 
 - [ ] Pinterest: pinterest.com → menu do perfil → Configurações → **Criar Pins em massa** → carregar `pinterest-agendar.csv` (descarregar em https://github.com/techonni/zunrel/blob/main/docs/growth/pinterest-agendar.csv, botão « Download raw file »). Só depois da mensagem do Claude Code a 29/09 (« já podes carregar »): antes disso as imagens novas ainda não estão online. Se um painel não existir, o Pinterest cria-o sozinho.
 - [x] Frase do Co-work: não é preciso mudar nada. A correção está no ficheiro que o Co-work lê (`CHROME-PROXIMO.md`).
@@ -115,17 +117,29 @@ Data: 28/09/2026 (4.ª sessão do dia: preços do lote 1 do Chrome, guia da sema
 | 7. Traduções | ✅ `combien-coute-leadpages` em PT (`quanto-custa-leadpages`) e EN (`how-much-does-leadpages-cost`): preços em dólares, servem os EUA. Os outros esperam os dados de visitas (lote 3). |
 | 8. Redes | ✅ Posts X/LinkedIn dos dias 13 a 19 em `fila-redes.md` (pins até ao dia 20). |
 
+## Sessão de 28/09 (5.ª): o que foi feito
+
+| Passo | Estado |
+|---|---|
+| 1. Resultados do Chrome | ✅ O Chrome fez a **rotina diária** (dia 1: post no X e no LinkedIn; PartnerStack) em vez do lote 2. Números: PartnerStack, programa Leadpages ativo, **85 cliques no total, 14 nos últimos 90 dias, 0 inscrições, 0 € de comissões**; candidatura à rede PartnerStack continua recusada (os programas já aprovados continuam ativos); nenhum link novo. **Impact bloqueado: o Chrome não tem sessão iniciada.** O resto do lote 2 passou para a fila como « Lote 2b » (só depois do login no Impact). **Lote atual = Lote 3 (Search Console + GA4).** |
+| 2. Link HTML Pub | ⏳ O PartnerStack não mostrou nenhum link novo; a pergunta exata (existe link para o HTML Pub?) está no lote 2b. |
+| 3-4. Search Console, GA4 | ⏳ Lote 3 pronto para o Chrome. |
+| 5. Guia da semana 6 | ✅ `ajouter-google-analytics-a-une-page-leadpages` em FR + PT (`google-analytics-leadpages`) + EN (`add-google-analytics-leadpages`), 2 pins, ligado a partir de `faire-un-test-ab-leadpages` e `ameliorer-le-taux-de-conversion-de-ses-pages-de-a-a-z`. ⚠️ Esta máquina não consegue abrir a ajuda da Leadpages: os nomes dos menus da Leadpages (« Settings », « Head Section Tracking Code ») vêm do guia do pop-up e ficam por confirmar com a captura `leadpages-tracking.webp` (acrescentada ao lote 5b). Pins no CSV a 09/10; post no dia 20 de `fila-redes.md`. |
+| 6. Newsletter | ⏸️ Nada (regra 0). |
+| 7. Traduções | ⏳ Esperam o lote 3. |
+| 8. Redes | ✅ Posts até ao dia 20. |
+
 ## Próxima sessão (fazer tudo, por esta ordem)
 
 0. Ver se a produção da Vercel está `READY` com o último commit de `main` (a 28/09 houve um « rate limit »).
-1. Ler `docs/growth/RESULTADOS-CHROME.md`. Usar os lotes novos (esperado: lote 2), passar o lote seguinte da fila para « Lote atual » em `CHROME-PROXIMO.md` (máx. 3 tarefas, 2 sites) e publicar. Se não houver resultados novos, seguir para o ponto 5.
-2. Lote 2: pôr o link HTML Pub em `affiliateUrl` da ferramenta `html-pub` e o deep link Shopify se existir; registar cliques/comissões no Painel.
+1. Ler `docs/growth/RESULTADOS-CHROME.md`. Usar os lotes novos (esperado: lote 3), passar o lote seguinte da fila para « Lote atual » em `CHROME-PROXIMO.md` (máx. 3 tarefas, 2 sites) e publicar. Se não houver resultados novos, seguir para o ponto 5.
+2. Lote 2b (quando feito): pôr o link HTML Pub em `affiliateUrl` da ferramenta `html-pub` e o deep link Shopify se existir; registar cliques/comissões no Painel.
 3. Search Console (lote 3): `seoTitle` / `seoDescription` nas 5 páginas com mais impressões e CTR mais baixo.
 4. GA4 (lote 3): `affiliate_click` por `placement` e `guide`; `web_vital`; registar a semana no Painel.
-5. Guia da semana 6 (ver `plano-growth.md`) em FR, PT e EN, pin normal + pin `--variant erreurs`, 2 links internos, pins no CSV. Capturas quando chegarem: `shopify-page-contact.webp` (lote 5, passo 1 do guia do formulário), `shopify-commandes.webp` (lote 5, passo 1 do guia das encomendas + refazer os pins), `leadpages-popup.webp` e `leadpages-popup-publish.webp` (lote 5b, passos 1 e 4 do guia do pop-up).
+5. Guia da semana 7 (« page de remerciement après un formulaire Leadpages », ver `plano-growth.md`) em FR, PT e EN, pin normal + pin `--variant erreurs`, 2 links internos, pins no CSV. Capturas quando chegarem: `shopify-page-contact.webp` (lote 5, passo 1 do guia do formulário), `shopify-commandes.webp` (lote 5, passo 1 do guia das encomendas + refazer os pins), `leadpages-popup.webp` e `leadpages-popup-publish.webp` (lote 5b, passos 1 e 4 do guia do pop-up), `leadpages-tracking.webp` (lote 5b, passo 3 do guia Google Analytics, e corrigir os nomes dos menus se forem outros).
 6. Newsletter: **nada** enquanto não houver inscrito real (regra 0). Não perguntar ao Techonni.
 7. Traduzir para PT e EN os guias com mais visitas (dados do lote 3).
-8. `fila-redes.md` tem posts até ao dia 19 e pins até ao dia 20: manter 7 dias de avanço. Antes de 08/10: novo `pinterest-agendar.csv` (a partir de 09/10) com imagens novas.
+8. `fila-redes.md` tem posts até ao dia 20 e pins até ao dia 20: manter 7 dias de avanço. Antes de 08/10: novo `pinterest-agendar.csv` (a partir de 09/10) com imagens novas.
 9. Atualizar este ficheiro, publicar e enviar ao Techonni.
 
 ---
@@ -144,5 +158,5 @@ Os prompts de `prompts-chrome/` e o `PROMPT-COWORK-CHROME.md` ficam só como arq
 
 - **Mailchimp:** chave `MAILCHIMP_API_KEY` (us9, expira ~09/2027). Plano Free: 250 contactos, 500 envios/mês, sem agendamento. Lista `893c08eb5d`, double opt-in, remetente `Zunrel <contact@zunrel.com>`. Tags: `shopify` 11404677 · `leadpages` 11404678 · `htmlpub` 11404679. Rascunhos: `ff4c739dc9`, `42198dabdc`, `4cdfb81660`, `8fd430e3d8`.
 - **Vercel:** equipa `team_wgtfY6T8u2diPfxnznOnKn6t`, projeto `prj_FcUDt9LY9iVD0NlgcC3HPK110WqH`.
-- **Site:** 45 guias FR + 16 PT + 16 EN (o EN de preços Shopify escondido); `/offres/`; 3 brindes; FAQ; pesquisa Pagefind; GA4 (`affiliate_click` com `placement`, `sign_up`, `share`, `pdf_download`, `newsletter_bar_click`, `web_vital`).
+- **Site:** 46 guias FR + 17 PT + 17 EN (o EN de preços Shopify escondido); `/offres/`; 3 brindes; FAQ; pesquisa Pagefind; GA4 (`affiliate_click` com `placement`, `sign_up`, `share`, `pdf_download`, `newsletter_bar_click`, `web_vital`).
 - **Documentos:** `plano-growth.md` (calendário de guias), `calendario-redes.md`, `newsletter-plano.md`, `backlinks.md`, `verificacao-links-afiliados.md`, `PROMPT-COWORK-CHROME.md`.

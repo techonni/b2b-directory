@@ -623,4 +623,43 @@ export const ptGuides: TranslatedGuide[] = [
       "Prometer um prazo de entrega que não consegue cumprir: escreva prazos realistas nas configurações de envio e nas políticas.",
     ],
   },
+  {
+    slug: "ajouter-google-analytics-a-une-page-leadpages",
+    localSlug: "google-analytics-leadpages",
+    question: "Como adicionar o Google Analytics a uma página Leadpages?",
+    summary: "Ligar a sua página ao Google Analytics 4 para saber de onde vêm os visitantes, antes de tentar convertê-los.",
+    intro:
+      "A Leadpages já conta as visitas e as inscrições de cada página. O Google Analytics 4 diz também de onde vêm os visitantes (Google, Instagram, anúncios…) e o que fazem. Basta copiar uma tag do Google Analytics para as configurações da sua página Leadpages.",
+    steps: [
+      {
+        title: "Crie uma propriedade Google Analytics 4",
+        text: "Em analytics.google.com, entre com a sua conta Google. Se ainda não tem conta no Analytics, siga o assistente: uma conta, depois uma propriedade (o nome do seu site), depois um fluxo de dados « Web » com o endereço da sua página.",
+      },
+      {
+        title: "Copie a tag do Google",
+        text: "Em « Administrador », abra « Fluxos de dados » e clique no seu fluxo Web. Clique em « Ver instruções da tag » e depois em « Instalar manualmente ». Copie todo o código mostrado: começa por <script> e contém o seu ID de medição (G-…).",
+      },
+      {
+        title: "Cole-a nas configurações da página",
+        text: "Na Leadpages, abra a página no editor, depois as configurações (« Settings ») e a parte de rastreamento (« Analytics » ou « Tracking Codes », conforme a versão). Cole a tag no campo do código de cabeçalho, « Head Section Tracking Code ».",
+      },
+      {
+        title: "Atualize a página",
+        text: "Guarde e clique em « Update » (ou « Publish »): enquanto a página não for publicada de novo, a tag não fica online. Faça o mesmo em cada página que quer acompanhar, com a mesma tag.",
+      },
+      {
+        title: "Verifique se as visitas chegam",
+        text: "Abra a página publicada noutra aba. No Google Analytics, vá a « Relatórios » e depois « Tempo real »: a sua visita deve aparecer em menos de um minuto. Se nada aparecer, confira se a tag está no cabeçalho e se a página foi atualizada.",
+      },
+      {
+        title: "Use links com UTM",
+        text: "Para saber que post ou que anúncio traz contatos, junte parâmetros UTM aos seus links, por exemplo ?utm_source=instagram&utm_medium=social. No Google Analytics, o relatório « Aquisição » agrupa-os por origem.",
+      },
+    ],
+    pitfalls: [
+      "Esquecer de publicar a página de novo: a tag fica no editor e nenhuma visita é contada.",
+      "Colar só o ID de medição (G-…) no campo do código de cabeçalho: é preciso o código completo da tag.",
+      "Esquecer o consentimento: a LGPD (Brasil) e o RGPD (Europa) pedem que o visitante seja informado e, na Europa, que aceite os cookies de medição.",
+    ],
+  },
 ];

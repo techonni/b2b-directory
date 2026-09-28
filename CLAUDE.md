@@ -44,7 +44,17 @@ When the handoff file (or Techonni) gives a list of steps, **carry out every ste
 - Only stop early if a step is truly blocked by a decision that is his to make; even then, do the other steps first.
 - At the end, the handoff file lists every step with its status (feito / pronto, falta o Techonni / bloqueado e porquê).
 
-## Working with Claude in Chrome (Co-work)
+## Working without Chrome (Techonni, 2026-09-28)
+
+Co-work / Claude in Chrome is **stopped** (credits run out too fast). Do not write new batches in `CHROME-PROXIMO.md`; do everything from Claude Code, and move to local work on the Mac app when cloud credits run out.
+- Site visits: Vercel Web Analytics (enabled 2026-09-28) read with the Vercel tool `aggregate_pageviews` (project `prj_FcUDt9LY9iVD0NlgcC3HPK110WqH`).
+- Mailchimp: API and connector from here.
+- Pinterest: Claude Code prepares `docs/growth/pinterest-agendar-N.csv`; Techonni uploads it (Settings → Bulk create Pins) every ~10 days.
+- X / LinkedIn: Claude Code keeps the week's posts ready in `docs/growth/fila-redes.md`; Techonni copies them.
+- Screenshots, PartnerStack, Impact, Search Console: Techonni, only when he wants (about once a month). Guides can be published without screenshots.
+The Chrome sections below are kept only as history.
+
+## Working with Claude in Chrome (Co-work) — paused
 
 Claude in Chrome freezes on long jobs (it did on 2026-09-28 with an 11-task prompt). Techonni wants to say only « continua » on both sides, never paste prompts.
 

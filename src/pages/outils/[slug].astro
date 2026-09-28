@@ -40,6 +40,7 @@ const isAffiliate = Boolean(tool.affiliateUrl);
     target="_blank"
     rel={isAffiliate ? "sponsored noopener" : "noopener"}
     data-affiliate={isAffiliate ? tool.slug : undefined}
+    data-placement={isAffiliate ? "fiche" : undefined}
     class="mt-10 inline-flex h-[39px] items-center rounded-[4px] bg-[#262626] px-6 text-[14px] font-medium text-white hover:bg-black"
   >
     Voir le site de {tool.name} ↗

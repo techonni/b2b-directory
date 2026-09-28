@@ -1,11 +1,11 @@
 # Rotina diária do Claude no Chrome (Co-work)
 
-Pedida pelo Techonni a 28/09/2026. Três trabalhos por dia, **cada um numa conversa separada** (máximo 3 tarefas e 2 sites de cada vez, para não encravar).
+Pedida pelo Techonni a 28/09/2026. **Só se faz quando o Lote atual de `CHROME-PROXIMO.md` já está feito** (ver « Regra n.º 1 » lá: nenhuma pergunta fora das previstas aqui). Dois trabalhos por dia (o Pinterest passou a ser agendado de uma vez, ver C), **cada um numa conversa separada** (máximo 3 tarefas e 2 sites de cada vez, para não encravar).
 
 ## Antes de começar (obrigatório)
 
 1. Ler o topo de `docs/growth/RESULTADOS-CHROME.md` para saber o último « Dia N » feito.
-2. **Avisar o Techonni e esperar o « sim »:** « Hoje vou fazer: A) publicação X + LinkedIn (dia N), B) verificação Impact + PartnerStack, C) 5 pins Pinterest (dia N). Posso começar? » Nada começa sem resposta. Se ele disser só uma letra, fazer só essa.
+2. **Avisar o Techonni e esperar o « sim »**, com esta frase exata e nenhuma outra pergunta: « Hoje vou fazer: A) publicação X + LinkedIn (dia N), B) verificação Impact + PartnerStack. Posso começar? » Nada começa sem resposta. Se ele disser só uma letra, fazer só essa.
 3. Nunca ao mesmo tempo que o Claude Code está a trabalhar.
 
 ## A · X e LinkedIn (sites: x.com, linkedin.com)
@@ -22,11 +22,9 @@ Pedida pelo Techonni a 28/09/2026. Três trabalhos por dia, **cada um numa conve
 
 Anotar em RESULTADOS-CHROME.md: números, links novos, erros encontrados, mensagens respondidas (sem dados pessoais nem dados bancários).
 
-## C · Pinterest (site: pinterest.com)
+## C · Pinterest: já não é diário
 
-1. Publicar os 5 pins do « Dia N » de `docs/growth/fila-redes.md`: imagem, título, descrição, painel e link com UTM, exatamente como na tabela.
-2. Não criar guias nem imagens novas.
-3. Anotar em RESULTADOS-CHROME.md: « Diário · data · C feito (dia N) ».
+Desde 28/09/2026 os pins são **agendados de uma vez** com o ficheiro `docs/growth/pinterest-agendar.csv` (preparado pelo Claude Code, até 100 pins com data e hora). O Chrome não publica pins um a um. Só se o Techonni pedir « carrega o CSV do Pinterest »: pinterest.com → menu do perfil → **Configurações** → **Criar Pins em massa** (« Bulk create Pins ») → carregar o ficheiro. Depois anotar em RESULTADOS-CHROME.md: « Pinterest · data · CSV carregado (N pins agendados) » e os erros que o Pinterest mostrar.
 
 ## Regras de sempre
 

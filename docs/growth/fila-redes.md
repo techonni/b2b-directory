@@ -82,6 +82,8 @@ Comment faire : https://zunrel.com/guides/ajouter-un-pop-up-d-inscription-leadpa
 
 ## Pinterest: 5 pins por dia
 
+Desde 28/09/2026 estes pins vão todos para `pinterest-agendar.csv` (agendamento de uma vez no Pinterest). Ao acrescentar dias, gerar um CSV novo só com os dias ainda não agendados.
+
 Imagem: descarregar o link da coluna « Imagem ». Nunca criar um guia novo para um pin: os pins repetem os guias existentes. Quando os 9 dias acabarem, o Claude Code cria imagens novas (outro título e outra captura) para os mesmos guias.
 
 ### Dia 1

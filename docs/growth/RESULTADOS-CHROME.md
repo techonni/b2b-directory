@@ -15,8 +15,7 @@ Existe: `_dmarc` TXT « v=DMARC1; p=none; » (TTL 300, criado há 19 h). Também
 
 ## Lote P · 28 de setembro de 2026 · Pinterest (CSV)
 
-Bloqueado: não consigo escolher o ficheiro — o carregamento foi recusado pela proteção de ações do Claude (agendar 94 pins públicos). É o Techonni que carrega o ficheiro.
-Pronto para ele: a página « Criar vários Pins » (Definições → Criar vários Pins → « Enviar ficheiro .csv ») está aberta na conta Zunrel | Shopify & Leadpages. Ficheiro: https://github.com/techonni/zunrel/blob/main/docs/growth/pinterest-agendar.csv (botão « Download raw file »).
+Feito: CSV carregado (94 pins agendados, de 30/09 a 09/10). Mensagem do Pinterest: « Concluído! O teu ficheiro foi carregado e os teus Pins estão a ser criados. Isto demora cerca de 2 horas. Se houver um problema na criação dos teus Pins, serás notificado por e-mail. » Sem erros no momento do envio.
 Verificado no CSV: 94 pins, 10 por dia (06:00 a 19:30), de 30/09 a 09/10.
 Nota do Techonni: o limite do upload são 15 pins por dia.
 

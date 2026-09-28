@@ -2,7 +2,7 @@
 
 > **Como usar:** abre uma sessão nova do Claude Code no projeto `techonni/zunrel` e escreve só: **« continua »**.
 > O CLAUDE.md manda ler este ficheiro e fazer **todos** os passos da lista « Próxima sessão », um a seguir ao outro, publicando cada um.
-> Para o Claude no Chrome (Co-work): usa os prompts curtos de `docs/growth/prompts-chrome/` (um por conversa, nunca ao mesmo tempo que o Claude Code). O Techonni cola as respostas ao Claude Code.
+> Claude no Chrome (Co-work): o Techonni também diz só « continua ». O trabalho dele está em `docs/growth/CHROME-PROXIMO.md` (máx. 3 tarefas e 2 sites) e os resultados em `docs/growth/RESULTADOS-CHROME.md`. Nunca os dois ao mesmo tempo.
 
 Data: 28/09/2026 (fim da sessão dos 20 passos). Responde ao Techonni em **português**, com palavras simples. Os textos do site e dos emails são em **francês**.
 
@@ -57,13 +57,13 @@ Data: 28/09/2026 (fim da sessão dos 20 passos). Responde ao Techonni em **portu
 
 - [ ] **« oui »** para enviar `ff4c739dc9` (1.ª newsletter) a todos.
 - [ ] Aprovar o pedido de permissão para criar o rascunho da newsletter de 12/10 (comando em `newsletter-plano.md`).
-- [ ] Correr os prompts curtos de `docs/growth/prompts-chrome/` (1 a 7), um por conversa, e colar as respostas ao Claude Code. O prompt grande encravou o Chrome a 28/09 e não guardou nada.
+- [ ] Uma só vez: guardar nas instruções do projeto do Co-work a frase de arranque (ver « Claude no Chrome » abaixo). Depois, dizer « continua » no Chrome (lote 1: preços).
 - [ ] Link PartnerStack que leve ao **HTML Pub**.
 - [ ] No iCloud: marcar os testes como « Não é lixo » e guardar contact@zunrel.com nos contactos.
 
 ## Próxima sessão (fazer tudo, por esta ordem)
 
-1. Usar as respostas do Chrome que o Techonni colar na conversa (ou `docs/growth/RESULTADOS-CHROME.md`, se existir). Se não houver nenhuma, dizer-lhe que faltam os prompts de `prompts-chrome/` e seguir para o ponto 5.
+1. Ler `docs/growth/RESULTADOS-CHROME.md`. Usar os lotes novos, passar o lote seguinte da fila para « Lote atual » em `CHROME-PROXIMO.md` (máx. 3 tarefas, 2 sites) e publicar. Se não houver resultados novos, seguir para o ponto 5.
 2. Com os resultados: corrigir preços (`combien-coute-*`, `/offres/`, botões), pôr o link HTML Pub em `affiliateUrl` da ferramenta `html-pub`, pôr deep links se existirem.
 3. Search Console: `seoTitle` / `seoDescription` nas 5 páginas com mais impressões e CTR mais baixo.
 4. GA4: ver `affiliate_click` por `placement` e `guide`; ver `web_vital` e corrigir páginas lentas. Registar a semana no Painel.
@@ -73,6 +73,14 @@ Data: 28/09/2026 (fim da sessão dos 20 passos). Responde ao Techonni em **portu
 8. Atualizar este ficheiro, publicar e enviar ao Techonni.
 
 ---
+
+## Claude no Chrome
+
+Frase a guardar **uma vez** nas instruções do projeto do Co-work (ou a colar uma única vez):
+
+> Quando eu disser « continua », abre https://github.com/techonni/zunrel/blob/main/docs/growth/CHROME-PROXIMO.md e faz exatamente o que lá está (no máximo 3 tarefas e 2 sites). Responde-me em português.
+
+Os prompts de `prompts-chrome/` e o `PROMPT-COWORK-CHROME.md` ficam só como arquivo.
 
 ## Referência
 

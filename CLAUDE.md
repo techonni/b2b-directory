@@ -41,3 +41,13 @@ When the handoff file (or Techonni) gives a list of steps, **carry out every ste
 - For a step that needs Techonni (his dashboards, social accounts, his « oui », screenshots from his Chrome), do everything that can be done from here (texts, files, pages, instructions), mark it « prêt, falta o Techonni », and move on to the next step.
 - Only stop early if a step is truly blocked by a decision that is his to make; even then, do the other steps first.
 - At the end, the handoff file lists every step with its status (feito / pronto, falta o Techonni / bloqueado e porquê).
+
+## Working with Claude in Chrome (Co-work)
+
+Claude in Chrome freezes on long jobs (it did on 2026-09-28 with an 11-task prompt). Techonni wants to say only « continua » on both sides, never paste prompts.
+
+- **Never give Claude in Chrome more than 3 tasks and 2 websites at a time** (GitHub, used only to save its results, does not count). Split bigger jobs into several batches.
+- The only channel is two files: `docs/growth/CHROME-PROXIMO.md` (the current batch, written only by Claude Code, with a queue of next batches) and `docs/growth/RESULTADOS-CHROME.md` (results, written by Claude in Chrome at the top of the file).
+- At the start of every session (on « continua »), read `RESULTADOS-CHROME.md`, use the new results, then move the next batch from the queue into « Lote atual » in `CHROME-PROXIMO.md` (max 3 tasks, 2 sites) and publish it, so Chrome always has its next batch ready.
+- Claude in Chrome only reads dashboards, takes captures and posts on social media. It never edits the site's code, never merges, and never edits files written by Claude Code. The two never work at the same time.
+- Do not ask Techonni to paste `.md` files or prompts: everything goes through these two files.

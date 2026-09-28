@@ -1,3 +1,5 @@
+> ⚠️ **Arquivo.** Substituído por `docs/growth/CHROME-PROXIMO.md`: o Techonni diz só « continua » no Chrome.
+
 # Prompts curtos para o Claude no Chrome
 
 O prompt grande (`../PROMPT-COWORK-CHROME.md`) encravou o Claude do Chrome a 28/09. Use estes em vez dele.

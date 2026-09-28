@@ -124,6 +124,7 @@ const breadcrumbList = breadcrumbs && {
           if (el.matches('a[rel~="sponsored"]')) {
             gtag("event", "affiliate_click", {
               tool: el.getAttribute("data-affiliate") || el.hostname,
+              placement: el.getAttribute("data-placement") || "autre",
               guide: guide,
               page: location.pathname,
               link_url: el.href,

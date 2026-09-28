@@ -1,5 +1,7 @@
 # Zunrel · Passagem para a próxima sessão do Claude
 
+> **Desde 28/09 à noite: sem Chrome/Co-work** (créditos). O Techonni passa a trabalhar **em local** na app Claude do Mac (os créditos da nuvem estão a acabar). No Mac: abrir a pasta do projeto `zunrel` (clonada de `techonni/zunrel`, fazer `git pull` antes) e escrever **« continua »**. Visitas: Vercel Web Analytics (ligado a 28/09), ler com a ferramenta Vercel `aggregate_pageviews`.
+>
 > **Como usar:** abre uma sessão nova do Claude Code no projeto `techonni/zunrel` e escreve só: **« continua »**.
 > O CLAUDE.md manda ler este ficheiro e fazer **todos** os passos da lista « Próxima sessão », um a seguir ao outro, publicando cada um.
 > Claude no Chrome (Co-work): o Techonni também diz só « continua ». O trabalho dele está em `docs/growth/CHROME-PROXIMO.md` (máx. 3 tarefas e 2 sites) e os resultados em `docs/growth/RESULTADOS-CHROME.md`. Nunca os dois ao mesmo tempo.
@@ -65,6 +67,9 @@ Data: 28/09/2026 (7.ª sessão do dia: resultados dos lotes 2, P e 4; link Shopi
 | 20 | Backlinks | 🟡 Plano, 4 propostas de artigos e emails modelo em `backlinks.md`. Falta: lista de 10 blogs (tarefa K do Chrome) e envio dos emails pelo Techonni |
 
 ## Pendentes do lado do Techonni
+
+- [x] Vercel Web Analytics ativado (28/09).
+- [ ] Mudar para trabalho local na app Claude do Mac (créditos da nuvem a acabar).
 
 - [x] **Impact:** sessão iniciada no Chrome (confirmado pelo Chrome a 28/09).
 
@@ -158,7 +163,7 @@ Data: 28/09/2026 (7.ª sessão do dia: resultados dos lotes 2, P e 4; link Shopi
 ## Próxima sessão (fazer tudo, por esta ordem)
 
 0. Ver se a produção da Vercel está `READY` com o último commit de `main` (a 28/09 houve um « rate limit »).
-1. Ler `docs/growth/RESULTADOS-CHROME.md`. Se o Chrome voltou (créditos), usar os lotes novos (esperado: lote 5 e lote 5b, capturas), passar o lote seguinte da fila para « Lote atual » em `CHROME-PROXIMO.md` (máx. 3 tarefas, 2 sites) e publicar. Se não houver resultados novos, seguir para o ponto 5.
+1. **Sem Chrome.** Ler as visitas na Vercel (`aggregate_pageviews`, por `requestPath` e por `referrerHostname`, 7 dias). Só ler `RESULTADOS-CHROME.md` se o Techonni disser que o Chrome voltou. Se houver resultados novos, passar o lote seguinte da fila para « Lote atual » em `CHROME-PROXIMO.md` (máx. 3 tarefas, 2 sites) e publicar. Se não houver resultados novos, seguir para o ponto 5.
 2. Capturas: pôr cada captura no passo certo do guia (lista no ponto 5) e refazer os pins desses guias com `make-pins.mjs --force` (e `--variant erreurs --force`).
 3. Search Console (lote 3b, a partir de 30/09): `seoTitle` / `seoDescription` nas 5 páginas com mais impressões e CTR mais baixo.
 4. GA4: próxima leitura na semana de 05/10 (pedir num lote com o Search Console): `affiliate_click` por `placement` e `guide`; `web_vital` por página.

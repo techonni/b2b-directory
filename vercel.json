@@ -310,6 +310,26 @@
       "source": "/themes/visibilite/",
       "destination": "/guides/",
       "permanent": true
+    },
+    {
+      "source": "/pt/guias/recolher-emails-antes-do-lancamento",
+      "destination": "/pt/guias/captar-emails-antes-do-lancamento/",
+      "permanent": true
+    },
+    {
+      "source": "/pt/guias/recolher-emails-antes-do-lancamento/",
+      "destination": "/pt/guias/captar-emails-antes-do-lancamento/",
+      "permanent": true
+    },
+    {
+      "source": "/pt/guias/ligar-dominio-leadpages",
+      "destination": "/pt/guias/conectar-dominio-leadpages/",
+      "permanent": true
+    },
+    {
+      "source": "/pt/guias/ligar-dominio-leadpages/",
+      "destination": "/pt/guias/conectar-dominio-leadpages/",
+      "permanent": true
     }
   ],
   "headers": [

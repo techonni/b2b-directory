@@ -15,7 +15,7 @@
 
 Sites: shopify.com e leadpages.com.
 
-1. Abre https://www.shopify.com/fr/tarifs e copia exatamente: a duração do essai gratuit, a oferta de 1 € (quantos meses), e o preço de Basic, Grow e Advanced em €, no pagamento mensal e no anual.
+1. Abre https://www.shopify.com/fr/tarifs e depois https://www.shopify.com/pricing (versão dos EUA, em dólares). Em cada uma, copia exatamente: a duração do teste grátis, a oferta de lançamento (preço e quantos meses), e o preço de Basic, Grow e Advanced no pagamento mensal e no anual.
 2. Abre https://leadpages.com/pricing e copia, para as ofertas HTML Pub (Starter, Pro, Business) e Leadpages (Grow, Optimize, Scale): o preço mensal e o anual, e a duração do teste grátis.
 3. Guarda o resultado como explicado acima (passo 3).
 

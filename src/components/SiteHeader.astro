@@ -1,12 +1,19 @@
 ---
 import DottedMark from "./DottedMark.astro";
 import { href } from "../lib/paths";
-import { listPath, ui, type Lang } from "../lib/i18n";
+import { langLabels, listPath, ui, type Lang } from "../lib/i18n";
 
 interface Props {
   lang?: Lang;
+  // Versions de cette page dans les autres langues (sinon : l'accueil de chaque langue).
+  alternates?: { lang: Lang; path: string }[];
 }
-const { lang = "fr" } = Astro.props;
+const { lang = "fr", alternates } = Astro.props;
+const switcher = (["fr", "en", "pt"] as const).map((code) => ({
+  code,
+  label: langLabels[code],
+  href: alternates?.find((item) => item.lang === code)?.path ?? (code === "fr" ? "/" : listPath(code)),
+}));
 const path = Astro.url.pathname;
 const frLinks = [
   { href: "/guides", label: "Guides" },
@@ -20,7 +27,6 @@ const links =
     ? frLinks
     : [
         { href: listPath(lang), label: ui[lang].guides },
-        { href: "/", label: "Français" },
       ];
 const homeHref = lang === "fr" ? "/" : listPath(lang);
 
@@ -55,4 +61,17 @@ function isCurrent(target: string) {
       }
     </nav>
   </div>
+  <nav aria-label="Langue / Language / Idioma" class="mt-3 flex justify-end gap-3 text-[12px] font-medium leading-4 tracking-[0.04em]">
+    {
+      switcher.map((item) =>
+        item.code === lang ? (
+          <span aria-current="true" class="text-[#171717]">{item.label}</span>
+        ) : (
+          <a href={item.href} hreflang={item.code} class="text-[#a0a0a0] hover:text-[#171717]">
+            {item.label}
+          </a>
+        ),
+      )
+    }
+  </nav>
 </header>

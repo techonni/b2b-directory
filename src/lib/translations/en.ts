@@ -7,34 +7,34 @@ export const enGuides: TranslatedGuide[] = [
     slug: "essayer-shopify-gratuitement",
     localSlug: "try-shopify-free",
     question: "How to try Shopify for free?",
-    summary: "The 3-day trial, then €1 a month for 3 months: how to make the most of it.",
+    summary: "The free trial, then the low-cost launch offer: how to make the most of it.",
     intro:
-      "Shopify can be tried for free for 3 days. Then the launch offer lets you continue for €1 a month for 3 months (offer seen in Europe on 27 September 2026), enough to build your store without big costs.",
+      "Shopify can be tried for free for a few days. Then a launch offer lets you keep going at a very low monthly price for the first months, enough to build your store before paying full price.",
     steps: [
       {
         title: "Open the pricing page",
-        text: "On shopify.com, the pricing page shows the current offer: 3 days free, then €1 a month for 3 months. The offer can change and depends on your country: check it on the day.",
-        alt: "Shopify pricing page: 3-day trial, then €1/month for 3 months",
+        text: "On shopify.com/pricing, the top of the page shows the current offer in the US: how long the free trial lasts, then the launch price and how many months it applies. Offers change often and differ by country, so read it on the day.",
+        alt: "Shopify pricing page (European version shown): free trial, then a launch offer",
       },
       {
         title: "Click the button to start for free",
         text: "Enter your email address and create your account. Shopify asks a few questions about your project to prepare your store.",
       },
       {
-        title: "Set up the essentials during the 3 days",
+        title: "Set up the essentials during the trial",
         text: "Add one or two products, pick a theme and look at the payment settings. You will quickly see whether the tool suits you.",
       },
       {
         title: "Choose a plan to continue",
-        text: "To keep your store after the trial, choose a plan. The €1 offer then applies for 3 months, followed by the plan's normal price.",
+        text: "To keep your store after the trial, choose a plan. The launch price then applies for the months shown on the pricing page, followed by the plan's regular price.",
       },
       {
         title: "Write down the end date",
-        text: "Set a reminder before the end of the 3 months at €1: that is when the normal price starts.",
+        text: "Set a reminder before the launch offer ends: that is when the regular price starts.",
       },
     ],
     pitfalls: [
-      "Forgetting that after 3 months at €1, the plan goes back to its normal price.",
+      "Forgetting that after the launch offer, the plan goes back to its regular price.",
       "Spending the trial on settings without adding a single product: you never see how the store really works.",
     ],
   },
@@ -48,7 +48,7 @@ export const enGuides: TranslatedGuide[] = [
     steps: [
       {
         title: "Selling several products? Choose Shopify",
-        text: "Catalogue, stock, variants, shipping rates, taxes, orders and returns: Shopify handles all of it. Leadpages is not built to run a store.",
+        text: "Catalog, stock, variants, shipping rates, taxes, orders and returns: Shopify handles all of it. Leadpages is not built to run a store.",
         alt: "Shopify plans Basic, Grow, Advanced and Plus",
       },
       {
@@ -58,7 +58,7 @@ export const enGuides: TranslatedGuide[] = [
       },
       {
         title: "One product or a service? Start simple",
-        text: "An HTML Pub page with a payment button can be enough for a single product, a course or a service. Move to Shopify when your catalogue grows.",
+        text: "An HTML Pub page with a payment button can be enough for a single product, a course or a service. Move to Shopify when your catalog grows.",
       },
       {
         title: "Running ads? Use both",
@@ -78,7 +78,7 @@ export const enGuides: TranslatedGuide[] = [
     slug: "choisir-entre-html-pub-et-leadpages",
     localSlug: "html-pub-or-leadpages",
     question: "How to choose between HTML Pub and Leadpages?",
-    summary: "Publish simply or optimise your conversions: the right plan for your needs.",
+    summary: "Publish simply or optimize your conversions: the right plan for your needs.",
     intro:
       "HTML Pub and Leadpages come from the same company and run on the same engine. HTML Pub is for publishing. Leadpages adds everything that helps convert more visitors.",
     steps: [
@@ -93,7 +93,7 @@ export const enGuides: TranslatedGuide[] = [
       },
       {
         title: "Look at the three Leadpages plans",
-        text: "Grow adds manual A/B tests, dynamic text replacement and lead enrichment. Optimize adds Smart Traffic, heatmaps and automatic personalisation. Scale adds full automatic optimisation and dedicated support.",
+        text: "Grow adds manual A/B tests, dynamic text replacement and lead enrichment. Optimize adds Smart Traffic, heatmaps and automatic personalization. Scale adds full automatic optimization and dedicated support.",
       },
       {
         title: "Start small",
@@ -159,7 +159,7 @@ export const enGuides: TranslatedGuide[] = [
       },
       {
         title: "Describe your page precisely",
-        text: "In the bottom field, say who the page is for, what you offer, the tone, the colours and the sections you want (headline, benefits, reviews, form). The more precise you are, the better the result. Click « Send ».",
+        text: "In the bottom field, say who the page is for, what you offer, the tone, the colors and the sections you want (headline, benefits, reviews, form). The more precise you are, the better the result. Click « Send ».",
         alt: "Landing page description typed in the input bar",
       },
       {
@@ -216,11 +216,11 @@ export const enGuides: TranslatedGuide[] = [
       },
       {
         title: "Pick a theme",
-        text: "In « Online Store », choose a theme and customise the colours, the logo and the home page.",
+        text: "In « Online Store », choose a theme and customize the colors, the logo and the home page.",
       },
       {
         title: "Set up payments and shipping",
-        text: "In « Settings », set up payments, shipping and taxes for your country.",
+        text: "In « Settings », set up payments, shipping and sales tax for the states where you sell.",
       },
       {
         title: "Put your store online",
@@ -235,6 +235,9 @@ export const enGuides: TranslatedGuide[] = [
   {
     slug: "combien-coute-shopify",
     localSlug: "how-much-does-shopify-cost",
+    // Masqué : les prix de ce texte sont ceux affichés en Belgique (en euros). À publier quand les prix
+    // américains en dollars auront été relevés sur shopify.com/pricing (lot Chrome).
+    hidden: true,
     question: "How much does Shopify cost in 2026: plans and fees?",
     summary: "Shopify plan prices, the €1 offer, fees on each sale and the costs people forget.",
     intro:
@@ -326,8 +329,8 @@ export const enGuides: TranslatedGuide[] = [
         alt: "Description of a waiting page with an email form in the HTML Pub AI assistant",
       },
       {
-        title: "Add consent",
-        text: "To send marketing emails to individuals you need their consent. Add an unticked checkbox and a sentence saying what the email is for and how to unsubscribe.",
+        title: "Add consent and an easy way out",
+        text: "In the US, the CAN-SPAM Act requires every marketing email to include your postal address and a clear way to unsubscribe. Asking for consent up front is also required in many countries (the EU, Canada), so the safe choice is an unchecked checkbox and a sentence saying what the emails are about and how to unsubscribe.",
       },
       {
         title: "Find your subscribers",
@@ -342,7 +345,7 @@ export const enGuides: TranslatedGuide[] = [
     ],
     pitfalls: [
       "Asking for name, phone and city: every extra field lowers sign-ups.",
-      "A pre-ticked consent box: it is not valid.",
+      "A pre-checked consent box: it is not valid in the EU and it annoys everyone else.",
       "Sending nothing before the launch: write at least a welcome email so people remember you.",
     ],
   },

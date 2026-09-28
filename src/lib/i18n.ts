@@ -16,11 +16,62 @@ export type TranslatedGuide = {
   // Même nombre d'étapes, dans le même ordre que le guide français.
   steps: { title: string; text: string; alt?: string }[];
   pitfalls: string[];
+  // Pas encore publié (par exemple : prix à vérifier pour ce pays).
+  hidden?: boolean;
 };
 
-export const translations: Record<OtherLang, TranslatedGuide[]> = { pt: ptGuides, en: enGuides };
+// Anglais : public américain (dollars). Portugais : neutre (Brésil et Portugal).
+export const translations: Record<OtherLang, TranslatedGuide[]> = {
+  pt: ptGuides.filter((item) => !item.hidden),
+  en: enGuides.filter((item) => !item.hidden),
+};
 
-export const locales: Record<Lang, string> = { fr: "fr_FR", pt: "pt_PT", en: "en_GB" };
+export const locales: Record<Lang, string> = { fr: "fr_FR", pt: "pt_BR", en: "en_US" };
+
+// Libellés du sélecteur de langue en haut de chaque page.
+export const langLabels: Record<Lang, string> = { fr: "FR", pt: "PT", en: "US" };
+
+// Tags Mailchimp de langue (Audience → Tags) : chaque inscription reçoit celui de la page.
+export const langTags: Record<Lang, string> = { fr: "11404680", pt: "11404681", en: "11404682" };
+
+// Sources officielles des guides traduits : même lien dans la langue du lecteur quand il existe,
+// ou `null` pour ne pas afficher une source qui ne concerne que la France.
+const sourceMap: Record<string, Record<OtherLang, { label: string; url: string } | null>> = {
+  "https://www.shopify.com/fr/tarifs": {
+    pt: { label: "Shopify: preços", url: "https://www.shopify.com/pricing" },
+    en: { label: "Shopify pricing", url: "https://www.shopify.com/pricing" },
+  },
+  "https://leadpages.com/pricing": {
+    pt: { label: "Leadpages: planos e preços", url: "https://leadpages.com/pricing" },
+    en: { label: "Leadpages pricing", url: "https://leadpages.com/pricing" },
+  },
+  "https://help.shopify.com/fr": {
+    pt: { label: "Central de Ajuda da Shopify", url: "https://help.shopify.com/pt-BR" },
+    en: { label: "Shopify Help Center", url: "https://help.shopify.com/en" },
+  },
+  "https://www.cnil.fr/fr/la-prospection-commerciale-par-courrier-electronique": {
+    pt: null,
+    en: { label: "FTC: CAN-SPAM Act compliance guide", url: "https://www.ftc.gov/business-guidance/resources/can-spam-act-compliance-guide-business" },
+  },
+};
+
+const labelWords: Record<OtherLang, [RegExp, string][]> = {
+  pt: [[/ \(aide\)/, " (ajuda)"], [/codes de réduction/, "códigos de desconto"], [/utiliser le créateur de pages IA/, "criador de páginas com IA"],
+    [/connecter un domaine/, "conectar um domínio"], [/Connecter votre domaine \(nouveau Leadpages\)/, "Leadpages: conectar o seu domínio"],
+    [/accepter des achats Shopify/, "aceitar compras Shopify"]],
+  en: [[/ \(aide\)/, " (help)"], [/codes de réduction/, "discount codes"], [/utiliser le créateur de pages IA/, "using the AI page builder"],
+    [/connecter un domaine/, "connecting a custom domain"], [/Connecter votre domaine \(nouveau Leadpages\)/, "Leadpages: connect your domain"],
+    [/accepter des achats Shopify/, "accept Shopify purchases"]],
+};
+
+export function localizeSource(lang: OtherLang, source: { label: string; url: string }) {
+  const mapped = sourceMap[source.url];
+  if (mapped !== undefined) return mapped[lang];
+  let label = source.label.replace(" : ", ": ");
+  for (const [pattern, text] of labelWords[lang]) label = label.replace(pattern, text);
+  const url = source.url.replace("help.shopify.com/fr/", lang === "pt" ? "help.shopify.com/pt-BR/" : "help.shopify.com/en/");
+  return { label, url };
+}
 
 export const ui = {
   fr: {
@@ -60,6 +111,12 @@ export const ui = {
     ctaPagesLabel: "Experimentar a Leadpages 7 dias ↗",
     footer:
       "Site independente, não editado pela Leadpages nem pela Shopify. Confirme as informações nos sites oficiais antes de decidir. Os links para a Leadpages, o HTML Pub e a Shopify são links de afiliado: não mudam o preço para si.",
+    newsletterTitle: "Receber os próximos guias",
+    newsletterText: "Os novos guias Leadpages, HTML Pub e Shopify por e-mail, de 15 em 15 dias. Sem spam, cancelamento com um clique.",
+    newsletterNote: "Vai receber um e-mail (em francês) para confirmar a inscrição.",
+    newsletterTopic: "Quero receber os guias sobre",
+    newsletterAll: "Tudo",
+    newsletterButton: "Inscrever-me",
     consent: "Usamos o Google Analytics para saber que guias são úteis. Sem publicidade e sem cookies sem o seu acordo.",
     accept: "Aceitar",
     refuse: "Recusar",
@@ -94,6 +151,12 @@ export const ui = {
     ctaPagesLabel: "Try Leadpages for 7 days ↗",
     footer:
       "Independent website, not published by Leadpages or Shopify. Check the information on the official websites before deciding. Links to Leadpages, HTML Pub and Shopify are affiliate links: they do not change the price for you.",
+    newsletterTitle: "Get the next guides",
+    newsletterText: "New Leadpages, HTML Pub and Shopify guides by email, every two weeks. No spam, unsubscribe in one click.",
+    newsletterNote: "You will get an email (in French) to confirm your subscription.",
+    newsletterTopic: "I want guides about",
+    newsletterAll: "Everything",
+    newsletterButton: "Subscribe",
     consent: "We use Google Analytics to learn which guides are useful. No ads, no cookies without your consent.",
     accept: "Accept",
     refuse: "Decline",

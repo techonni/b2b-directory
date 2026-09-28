@@ -2,7 +2,7 @@
 
 > **Como usar:** abre uma sessão nova do Claude Code no projeto `techonni/zunrel` e escreve só: **« continua »**.
 > O CLAUDE.md manda ler este ficheiro e fazer **todos** os passos da lista « Próxima sessão », um a seguir ao outro, publicando cada um.
-> Para o Claude no Chrome (Co-work): cola o conteúdo de `docs/growth/PROMPT-COWORK-CHROME.md`.
+> Para o Claude no Chrome (Co-work): usa os prompts curtos de `docs/growth/prompts-chrome/` (um por conversa, nunca ao mesmo tempo que o Claude Code). O Techonni cola as respostas ao Claude Code.
 
 Data: 28/09/2026 (fim da sessão dos 20 passos). Responde ao Techonni em **português**, com palavras simples. Os textos do site e dos emails são em **francês**.
 
@@ -16,7 +16,8 @@ Data: 28/09/2026 (fim da sessão dos 20 passos). Responde ao Techonni em **portu
 4. **A morada no rodapé dos emails fica como está.**
 5. Só Leadpages, HTML Pub e Shopify. Site anónimo. Links afiliados sempre assinalados. **Nunca inventar preços nem links de afiliação**: preços só com data e fonte (capturas das páginas oficiais).
 6. Antes de apagar algo, mostrar o id e o título.
-7. **Bloqueios de segurança do Claude Code:** mudar o CLAUDE.md e correr o script da newsletter (envia um email de teste) podem ser bloqueados. Não insistir por outro caminho: pedir ao Techonni para aprovar o pedido de permissão.
+7. **Chrome e Claude Code nunca ao mesmo tempo.** O Chrome só lê painéis, tira capturas e publica nas redes; o código e o site são só do Claude Code.
+8. **Bloqueios de segurança do Claude Code:** mudar o CLAUDE.md e correr o script da newsletter (envia um email de teste) podem ser bloqueados. Não insistir por outro caminho: pedir ao Techonni para aprovar o pedido de permissão.
 
 ## Ferramentas desta máquina
 
@@ -56,13 +57,13 @@ Data: 28/09/2026 (fim da sessão dos 20 passos). Responde ao Techonni em **portu
 
 - [ ] **« oui »** para enviar `ff4c739dc9` (1.ª newsletter) a todos.
 - [ ] Aprovar o pedido de permissão para criar o rascunho da newsletter de 12/10 (comando em `newsletter-plano.md`).
-- [ ] Colar `PROMPT-COWORK-CHROME.md` no Claude do Chrome (tarefas A a K): links PartnerStack/Impact, preços de hoje, Search Console, GA4, reCAPTCHA, DMARC, capturas, publicações, painel, blogs.
+- [ ] Correr os prompts curtos de `docs/growth/prompts-chrome/` (1 a 7), um por conversa, e colar as respostas ao Claude Code. O prompt grande encravou o Chrome a 28/09 e não guardou nada.
 - [ ] Link PartnerStack que leve ao **HTML Pub**.
 - [ ] No iCloud: marcar os testes como « Não é lixo » e guardar contact@zunrel.com nos contactos.
 
 ## Próxima sessão (fazer tudo, por esta ordem)
 
-1. Ler `docs/growth/RESULTADOS-CHROME.md` se existir. Se não existir, dizer ao Techonni que falta correr o prompt do Chrome e seguir para o ponto 5.
+1. Usar as respostas do Chrome que o Techonni colar na conversa (ou `docs/growth/RESULTADOS-CHROME.md`, se existir). Se não houver nenhuma, dizer-lhe que faltam os prompts de `prompts-chrome/` e seguir para o ponto 5.
 2. Com os resultados: corrigir preços (`combien-coute-*`, `/offres/`, botões), pôr o link HTML Pub em `affiliateUrl` da ferramenta `html-pub`, pôr deep links se existirem.
 3. Search Console: `seoTitle` / `seoDescription` nas 5 páginas com mais impressões e CTR mais baixo.
 4. GA4: ver `affiliate_click` por `placement` e `guide`; ver `web_vital` e corrigir páginas lentas. Registar a semana no Painel.

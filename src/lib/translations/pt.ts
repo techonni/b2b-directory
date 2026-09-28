@@ -887,4 +887,1092 @@ export const ptGuides: TranslatedGuide[] = [
       "Publicar sem ver como fica no smartphone, quando a maioria das visitas vem do smartphone.",
     ],
   },
+  {
+    slug: "changer-ou-annuler-son-offre-leadpages",
+    localSlug: "mudar-ou-cancelar-plano-leadpages",
+    question: "Como mudar de plano ou cancelar a assinatura da Leadpages?",
+    summary: "Subir ou descer de plano, parar a assinatura, e o que acontece com as suas páginas.",
+    intro:
+      "Pode mudar de plano ou cancelar a qualquer momento, sem multa. Só o proprietário da conta pode gerir a faturação.",
+    steps: [
+      {
+        title: "Abra a faturação",
+        text: "No fundo do menu da esquerda, clique no nome do seu espaço e depois em « Billing ». Entre com a conta do proprietário se o link não aparecer.",
+      },
+      {
+        title: "Mude de plano",
+        text: "A página mostra todas as ofertas, com « Current Plan » na sua. Escolha o plano acima ou abaixo. A mudança vale a partir do próximo ciclo de faturação.",
+        alt: "Página Billing: ofertas, « Current Plan », « Manage Subscription » e « Cancel »",
+      },
+      {
+        title: "Ou cancele",
+        text: "Ainda em « Billing », use « Manage Subscription » ou « Cancel ». Durante um teste, a data de fim aparece por baixo do seu plano: cancele antes dela para não ser cobrado.",
+      },
+      {
+        title: "Saiba o que acontece com as suas páginas",
+        text: "Se a assinatura parar, as páginas publicadas voltam a rascunho. Não se perdem: pode publicá-las de novo ao reativar uma assinatura.",
+      },
+    ],
+    pitfalls: [
+      "Descer de plano sem verificar os limites: número de páginas, domínios ou blogs incluídos.",
+      "Cancelar quando ainda há anúncios a enviar visitantes para as suas páginas.",
+    ],
+  },
+  {
+    slug: "creer-sa-landing-page-leadpages-de-a-a-z",
+    localSlug: "criar-landing-page-leadpages-completo",
+    question: "Como criar a sua primeira landing page Leadpages do início ao fim?",
+    summary: "O guia completo: do teste grátis a uma página online que capta contatos, com cada tela.",
+    intro:
+      "Este guia segue a ordem real de uma primeira landing page: preparar a oferta, criar a página com IA, revê-la, publicá-la no seu domínio, depois captar e acompanhar os contatos. Conte meio dia de trabalho, durante os 7 dias de teste grátis.",
+    steps: [
+      {
+        title: "Prepare a sua oferta antes de começar",
+        text: "Uma landing page tem um só objetivo. Decida-o antes de abrir a ferramenta: captar e-mails, vender um produto, marcar reuniões.\n\nEscreva numa folha: para quem é a página, o problema que resolve, o que o visitante recebe e a única ação que espera dele (por exemplo « Receber o guia grátis »).\n\nJunte também o seu logo, 2 ou 3 fotos, as suas cores e, se tiver, algumas opiniões de clientes reais. Vai ganhar tempo e créditos de IA.\n\nPlaneie por fim a estrutura da página. A que funciona melhor numa primeira página cabe em seis blocos, por esta ordem: um título que diz o resultado, uma frase que diz para quem é, três vantagens concretas, uma prova (opinião, número real, logo de um cliente), o formulário ou o botão, e depois duas ou três perguntas frequentes para tirar as últimas dúvidas.\n\nNo título, parta do resultado que o visitante quer, não do seu produto. « Receba 10 ideias de refeições prontas em 20 minutos » diz mais do que « Descubra o meu guia de cozinha ». Escreva três versões e fique com a mais clara: pode testar as outras mais tarde.",
+      },
+      {
+        title: "Escolha o plano e comece o teste",
+        text: "Na página de preços há duas famílias de ofertas. O HTML Pub serve para publicar páginas, sites e blogs. A Leadpages junta as ferramentas para melhorar os resultados: testes A/B a partir do plano Grow, e Smart Traffic e mapas de calor a partir do Optimize.\n\nPara uma primeira página, o HTML Pub muitas vezes basta. Se quiser testar duas versões da página, escolha Leadpages Grow.\n\nClique em « Start 7-Day Free Trial ». É pedido um cartão, mas nada é cobrado antes do 7.º dia. Anote a data de fim na sua agenda. Os preços mudam muitas vezes: leia os do dia na página oficial.",
+        alt: "Botões « Start 7-Day Free Trial » em cada oferta",
+      },
+      {
+        title: "Abra a tela de criação",
+        text: "No menu da esquerda, clique em « Create ». O assistente de IA, Piper, pergunta « What are you making? »: escolha « Landing page ».\n\nPrefere partir de uma base pronta? Clique em « Templates » para escolher um modelo e depois em « Use ». O resto do guia é igual.",
+        alt: "Tela Create: o Piper pergunta « What are you making? »",
+      },
+      {
+        title: "Descreva a página em detalhe",
+        text: "No campo de baixo, use as notas do passo 1: o público, a oferta, o tom, as cores e as secções que quer. Por exemplo: um título, três vantagens, uma opinião de cliente, uma pergunta frequente e um formulário com um só campo de e-mail.\n\nQuanto mais precisa for a descrição, menos créditos gasta em correções. Clique em « Send ».\n\nExemplo de descrição completa: « Landing page em português para um guia PDF grátis para personal trainers independentes que querem encontrar os primeiros clientes online. Tom simples e motivador. Cores: azul-escuro e laranja. Secções: título com o resultado prometido, três vantagens, um texto curto sobre o autor, duas perguntas frequentes, um formulário com um só campo de e-mail e uma caixa de consentimento não marcada. Botão: Receber o guia. »\n\nTambém pode colar o endereço de uma página existente ou código HTML: o Piper usa-o como ponto de partida.",
+        alt: "Descrição de uma landing page escrita na barra de texto",
+      },
+      {
+        title: "Escolha as imagens e o estilo",
+        text: "O Piper pergunta que imagens usar: as suas, imagens geradas por IA (gastam mais créditos) ou nenhuma por agora. O custo estimado aparece no canto superior direito.\n\nDepois propõe três direções visuais. Clique na que prefere e em « Build it ». A página fica pronta em cerca de um minuto.",
+        alt: "Três direções de estilo propostas pelo Piper",
+      },
+      {
+        title: "Corrija a página conversando",
+        text: "Clique em « Open in editor ». No campo « Ask Piper to edit this page… », peça uma só mudança de cada vez: « Troque o título por… », « Ponha o botão verde », « Apague a secção de preços ».\n\nO Piper lista o que mudou e os créditos usados. Releia cada texto você mesmo: a IA pode inventar números ou opiniões. Troque-os pelos verdadeiros, ou apague-os.\n\nAlguns pedidos úteis numa primeira página: « Encurte todos os parágrafos para duas frases no máximo », « Ponha o botão também no topo da página », « Ponha o meu logo no canto superior esquerdo » (depois de o enviar em « Assets »), « Use as cores do meu Brand Kit ».\n\nPara uma pequena mudança de texto, clicar diretamente na página é muitas vezes mais rápido do que pedir à IA. Guarde o Piper para mudanças de estrutura ou de estilo.",
+        alt: "Editor: o Piper aplica uma mudança pedida",
+      },
+      {
+        title: "Verifique o formulário e o consentimento",
+        text: "O formulário é o coração da página. Peça o mínimo de informação: muitas vezes basta o e-mail.\n\nSe vai enviar e-mails comerciais, junte uma caixa de seleção que não venha marcada e uma frase que explique para que serve o endereço e como cancelar a inscrição.\n\nVerifique por fim o texto do botão: deve dizer o que a pessoa recebe (« Receber o guia »), e não só « Enviar ».\n\nPense no que acontece depois do envio: uma mensagem de agradecimento que diz o que fazer a seguir (« Veja a sua caixa de e-mail, o guia chega em 2 minutos »), ou uma página de agradecimento própria. É o lugar certo para propor o passo seguinte, por exemplo um link para a sua loja ou para marcar uma reunião.\n\nSe promete um arquivo (guia PDF, lista, modelo), prepare-o agora e envie-o no e-mail de boas-vindas da sua ferramenta de e-mail (passo 11).",
+      },
+      {
+        title: "Confira a página no celular",
+        text: "A maioria dos visitantes chega pelo celular. No canto inferior direito do editor, clique no ícone de celular. Verifique que o título se lê sem zoom, que o botão se vê sem descer muito e que o formulário se preenche facilmente com o polegar.\n\nVeja também a velocidade: imagens pesadas deixam a página lenta numa rede móvel, e cada segundo de espera faz sair visitantes. Use fotos de tamanho razoável e evite vídeos com reprodução automática no topo da página.\n\nPor fim, leia tudo em voz alta uma última vez. Os erros e as frases longas demais notam-se muito melhor assim.",
+        alt: "Pré-visualização da página no celular dentro do editor",
+      },
+      {
+        title: "Defina o endereço e o SEO",
+        text: "No editor, o menu « … » no canto superior direito mostra o endereço da página (o slug). Escolha um curto e legível, por exemplo guia-gratis.\n\nEm « SEO & Social », indique o título e a descrição que aparecem no Google e quando alguém partilha a página, e o ícone do separador. Se a página só serve para um anúncio, pode pedir ao Google para não a indexar.",
+        alt: "Janela SEO & Social",
+      },
+      {
+        title: "Publique no seu próprio domínio",
+        text: "Ao publicar, aparece a pergunta « Where should this live? ». Pode ficar com o endereço grátis ou conectar o seu domínio para passar mais confiança.\n\nPara conectar um domínio, abra « Domains » no menu da esquerda e depois « Connect Domain ». Um subdomínio como oferta.meusite.com é o mais simples. A configuração automática trata do domínio por si. O HTTPS é grátis e pode demorar até 48 horas.\n\nSe a configuração automática não for possível no seu fornecedor de domínio, junte à mão os registos que a Leadpages mostra: um CNAME para o subdomínio e um TXT para a segurança. Copie os valores exatos da sua conta.\n\nDepois de cada mudança, clique em « Update » para pôr a página online.",
+        alt: "Escolha do endereço de publicação: grátis ou o seu domínio",
+      },
+      {
+        title: "Envie os contatos para a sua ferramenta de e-mail",
+        text: "No menu da esquerda, abra « Connectors ». Procure a sua ferramenta (Mailchimp, Brevo, MailerLite, HubSpot…) e clique em « Connect ».\n\nNo separador « Automations », clique em « Create automation », escolha o gatilho « Form submitted » e depois a ferramenta que recebe os contatos. Cada novo inscrito chega lá sozinho. Prepare lá um e-mail de boas-vindas.",
+        alt: "Página Connectors com as aplicações para conectar",
+      },
+      {
+        title: "Faça você mesmo um teste completo",
+        text: "Abra a página publicada no celular, preencha o formulário com o seu próprio endereço e verifique três coisas.\n\nA resposta aparece em « Submissions », de onde também a pode exportar em CSV. O contato chega à sua ferramenta de e-mail. O e-mail de boas-vindas é enviado. Se algo falhar, « View execution logs » em « Connectors » mostra o motivo.",
+        alt: "Página Submissions com as respostas do formulário",
+      },
+      {
+        title: "Traga os primeiros visitantes",
+        text: "Uma página online não recebe visitas sozinha. Comece pelas pessoas que já o conhecem: envie o link aos seus contatos, ponha-o na assinatura de e-mail e na bio das suas redes sociais.\n\nDepois publique com regularidade onde o seu público procura ideias. No Pinterest, um pin vertical com o resultado prometido e o link da página pode trazer visitas durante meses. No Instagram, no LinkedIn ou no Facebook, uma dica curta e útil seguida do link funciona melhor do que um simples anúncio da página.\n\nPara saber que canal funciona, junte uma marca no fim do link conforme o lugar onde o partilha, por exemplo ?utm_source=pinterest ou ?utm_source=instagram. O separador « Acquisition » do passo seguinte mostra então de onde vêm os inscritos.\n\nSe passar à publicidade paga, comece pequeno, com um orçamento diário que pode perder sem pena, e só aumente quando a taxa de conversão da página for boa.",
+      },
+      {
+        title: "Acompanhe os resultados",
+        text: "Abra « Analytics ». Os números principais estão no topo: « Sessions » (as visitas), « Form submissions » (os formulários enviados), « Conversions » e « Conv. rate » (a taxa de conversão).\n\nEscolha o período (7, 14 ou 30 dias) e uma página específica com « All Pages ». O separador « Acquisition » mostra de onde vêm os visitantes. Espere pelo menos uma centena de visitas antes de tirar conclusões.\n\nSe vem muita gente mas poucos se inscrevem, o problema costuma ser o título ou a oferta: a promessa não é clara ou útil o suficiente. Se quase ninguém vem, é a divulgação que precisa de trabalho: partilhe o link nos seus e-mails, nas redes, na bio do Instagram ou num pin do Pinterest.\n\nPara acompanhar anúncios, « Scripts & Pixels », no menu « … » do editor, permite juntar o pixel da Meta ou do Google Ads.",
+        alt: "Página Analytics: conversões, taxa de conversão, formulários enviados e sessões",
+      },
+      {
+        title: "Melhore a página com um teste A/B",
+        text: "Com Leadpages Grow ou superior, duplique a página para criar uma versão B e mude uma só coisa: o título, o botão ou a oferta.\n\nEscolha o objetivo (formulário enviado, clique, compra), divida o tráfego 50/50 e espere pelo resultado « vencedor claro ». Fique depois com a melhor versão e comece um novo teste. No plano Optimize, o Smart Traffic pode enviar cada visitante para a versão com mais hipóteses de lhe agradar.\n\nPor onde começar? Pelo título, quase sempre: é o que toda a gente lê. Depois, o texto do botão, e por fim a própria oferta (um guia ou uma lista, um desconto ou um brinde). Anote cada teste e o resultado numa tabela simples: ao fim de alguns meses, vai saber exatamente o que faz o seu público reagir.\n\nEstá no HTML Pub? Pode passar para Leadpages Grow nas configurações da conta quando estiver pronto: as suas páginas e domínios ficam.",
+        alt: "Criação de uma variante B e troca entre A e B",
+      },
+    ],
+    pitfalls: [
+      "Pôr vários objetivos na mesma página (inscrever-se, comprar, seguir no Instagram): o visitante hesita e não faz nada.",
+      "Deixar online números, opiniões ou depoimentos inventados pela IA.",
+      "Publicar sem testar o formulário você mesmo: descobre tarde demais que os contatos não chegavam.",
+      "Esquecer o fim do teste de 7 dias e ser cobrado sem ter decidido.",
+    ],
+  },
+  {
+    slug: "partir-d-un-modele-leadpages",
+    localSlug: "usar-modelo-leadpages",
+    question: "Como partir de um modelo na Leadpages?",
+    summary: "Escolher um modelo pronto a usar e adaptá-lo ao seu negócio.",
+    intro:
+      "Um modelo evita começar de uma página em branco. Mantém a estrutura que funciona e troca os textos, as imagens e as cores.",
+    steps: [
+      {
+        title: "Abra os modelos",
+        text: "Na tela « Create », clique em « Templates » por cima da barra de texto, ou em « Browse all templates » para ver todos.",
+        alt: "Painel Templates com « Preview », « Use » e « Browse all templates »",
+      },
+      {
+        title: "Pré-visualize antes de escolher",
+        text: "Clique em « Preview » para ver o modelo em grande. Escolha aquele cuja estrutura se parece com o que quer vender, não só aquele cujas cores lhe agradam.",
+      },
+      {
+        title: "Use-o",
+        text: "Clique em « Use ». Abre-se uma cópia do modelo, que pode editar sem estragar nada.",
+      },
+      {
+        title: "Adapte o conteúdo",
+        text: "Peça ao assistente para trocar os textos pelos seus, ou edite-os diretamente. Ponha o seu logo, as suas fotos e as suas cores.",
+      },
+      {
+        title: "Reveja no celular e publique",
+        text: "A maioria dos visitantes chega pelo celular. No editor, clique no ícone de celular no canto inferior direito para verificar, e depois publique.",
+        alt: "Pré-visualização da página no celular dentro do editor",
+      },
+    ],
+    pitfalls: [
+      "Deixar online textos de exemplo do modelo.",
+      "Manter todas as secções do modelo quando algumas não servem a sua oferta.",
+    ],
+  },
+  {
+    slug: "publier-du-html-sur-html-pub",
+    localSlug: "publicar-html-no-html-pub",
+    question: "Como publicar uma página HTML já pronta no HTML Pub?",
+    summary: "Colar código ou enviar um arquivo .html, sem gastar créditos de IA.",
+    intro:
+      "Já tem uma página em HTML, feita por si ou por uma IA? O HTML Pub põe-na online em segundos. Este método não gasta créditos.",
+    steps: [
+      {
+        title: "Abra a tela de criação",
+        text: "Clique em « Create » no menu da esquerda, ou em « Create Page » a partir da lista das suas páginas.",
+      },
+      {
+        title: "Junte o seu código",
+        text: "Cole o HTML no campo « Describe the page you want, or paste a URL or HTML… », ou use o ícone de envio de arquivo da barra para enviar um arquivo .html.",
+        alt: "Barra de texto onde colar HTML, com o ícone de envio de arquivo",
+      },
+      {
+        title: "Verifique a pré-visualização",
+        text: "Confirme que as imagens aparecem. Se estão no seu computador, junte-as primeiro aos arquivos (« Assets ») da página.",
+      },
+      {
+        title: "Publique",
+        text: "Envie, verifique e publique. A página fica online no endereço grátis do seu espaço, ou no seu domínio se o conectou.",
+      },
+    ],
+    pitfalls: [
+      "Colar uma página que usa imagens ou arquivos que ficaram no seu computador.",
+      "Enviar um formulário para outro serviço: o HTML Pub deixa de receber as respostas.",
+    ],
+  },
+  {
+    slug: "creer-un-site-web-avec-html-pub",
+    localSlug: "criar-site-html-pub",
+    question: "Como criar um site com várias páginas no HTML Pub?",
+    summary: "Uma página inicial, e depois as outras páginas com o mesmo menu e o mesmo estilo.",
+    intro:
+      "Um site junta várias páginas no mesmo domínio, com um menu comum. A IA cria primeiro a página inicial, e depois cada página quando pedir.",
+    steps: [
+      {
+        title: "Escolha « Website »",
+        text: "No menu da esquerda, abra a seta ao lado de « Create » e escolha « Site ». Ou, na tela « Create », selecione « Website ».",
+        alt: "Menu « What are you creating? » com a opção « New website »",
+      },
+      {
+        title: "Descreva o seu site",
+        text: "Explique o seu negócio, o seu público, o estilo que quer e as páginas desejadas, e clique em « Send ». Escreva tudo numa só linha: cada mudança de linha envia uma mensagem separada.",
+        alt: "Descrição de um site escrita com « New website »",
+      },
+      {
+        title: "Valide a lista de páginas",
+        text: "O Piper propõe as páginas do menu. Mude o nome, retire (« Remove ») ou junte páginas (« Add a page »), e clique em « These pages ».",
+        alt: "Lista das páginas propostas para o site",
+      },
+      {
+        title: "Escolha imagens e estilo, e construa a página inicial",
+        text: "Como numa landing page, escolha as imagens e uma direção de estilo e clique em « Build it ». Nesta fase só a página inicial é construída.",
+      },
+      {
+        title: "Construa as outras páginas",
+        text: "O cartão « The rest of the site » lista as páginas que faltam com uma estimativa de créditos. « Build 3 pages » constrói-as uma a uma, com o cabeçalho e o estilo da página inicial. « Skip for now » deixa para mais tarde.",
+        alt: "Cartão « The rest of the site » com o botão para construir as páginas",
+      },
+    ],
+    pitfalls: [
+      "Construir todas as páginas de uma vez sem rever a página inicial: os erros de estilo repetem-se em todo o lado.",
+      "Ultrapassar o número de páginas incluído no seu plano.",
+    ],
+  },
+  {
+    slug: "creer-un-blog-avec-html-pub",
+    localSlug: "criar-blog-html-pub",
+    question: "Como criar um blog com o HTML Pub?",
+    summary: "Criar o blog no HTML Pub, escrever um primeiro artigo e publicá-lo no seu site, passo a passo.",
+    intro:
+      "Um blog traz visitantes do Google e das redes sociais. Com o HTML Pub, cria-se num minuto e os artigos ficam online assim que os publica.",
+    steps: [
+      {
+        title: "Crie o blog",
+        text: "No menu da esquerda, abra « Blog » e clique em « New Blog ». Dê um título; o endereço (slug) preenche-se sozinho. A descrição e o nome do autor são opcionais. Clique em « Create Blog ».",
+        alt: "Janela New Blog com título, slug e descrição",
+      },
+      {
+        title: "Conheça o painel do blog",
+        text: "A página do blog mostra o design da página inicial do blog (« Feed layout ») e dos artigos (« Post layout »), e depois os seus artigos publicados, em rascunho ou agendados.",
+        alt: "Painel de um blog",
+      },
+      {
+        title: "Escreva um artigo",
+        text: "Clique em « New post ». O editor abre com o Penn, o assistente de escrita: escolha uma sugestão (« Write a how-to guide »…) ou escreva você mesmo.",
+        alt: "Editor de artigo com o assistente Penn",
+      },
+      {
+        title: "Preencha as configurações do artigo",
+        text: "O ícone de documento em baixo abre « Post Settings »: título, conteúdo, autor, imagem de capa e SEO. Clique em « Save changes ».",
+        alt: "Painel Post Settings de um artigo",
+      },
+      {
+        title: "Publique",
+        text: "Clique em « Publish » no canto superior direito. O artigo fica online de imediato.",
+      },
+      {
+        title: "Ligue-o ao seu site",
+        text: "Se tem um site HTML Pub, pode mostrar o blog no endereço /blog do seu domínio.",
+      },
+    ],
+    pitfalls: [
+      "Publicar artigos sem imagem de capa: têm menos cliques nas redes sociais.",
+      "Escolher um plano sem blog: confirme que o seu inclui pelo menos um.",
+    ],
+  },
+  {
+    slug: "modifier-l-adresse-d-une-page-leadpages",
+    localSlug: "mudar-endereco-pagina-leadpages",
+    question: "Como mudar o endereço de uma página ou protegê-la com senha?",
+    summary: "O título, o endereço (slug), a senha e as etiquetas de uma página.",
+    intro:
+      "Cada página tem algumas configurações simples, no menu « … » do seu cartão, em « Pages ». Servem para ter um endereço legível, esconder uma página em preparação ou arrumar as suas páginas.",
+    steps: [
+      {
+        title: "Abra o menu da página",
+        text: "Em « Pages », clique em « … » no fundo do cartão da página. O menu junta as estatísticas, as respostas, a partilha e as configurações.",
+        alt: "Menu « … » de uma página: Settings, Set Password, Tags",
+      },
+      {
+        title: "Mude o título e o endereço",
+        text: "Escolha « Settings ». No endereço (slug), use minúsculas, números e hífenes, por exemplo oferta-coaching-setembro.",
+      },
+      {
+        title: "Ou faça-o no editor",
+        text: "No editor da página, o menu « … » no canto superior direito mostra o endereço (slug, editável com o lápis), o endereço publicado e as opções « SEO & Social » e « Scripts & Pixels ».",
+        alt: "Menu « … » do editor: slug, SEO & Social, Scripts & Pixels",
+      },
+      {
+        title: "Proteja com senha",
+        text: "Escolha « Set Password ». Os visitantes terão de escrever a senha para ver a página. Útil para uma página de cliente ou uma página ainda não pronta.",
+      },
+      {
+        title: "Arrume com etiquetas",
+        text: "Escolha « Tags », ou clique em « + tag » no cartão, para encontrar as páginas por campanha ou por cliente.",
+      },
+      {
+        title: "Cuide do SEO",
+        text: "« SEO & Social » define o ícone do separador (favicon), a indexação pelo Google, e o título e a descrição que aparecem nos resultados de pesquisa.",
+        alt: "Janela SEO & Social",
+      },
+    ],
+    pitfalls: [
+      "Mudar o endereço de uma página já partilhada ou usada num anúncio: o link antigo deixa de funcionar.",
+      "Esquecer de retirar a senha no dia do lançamento.",
+    ],
+  },
+  {
+    slug: "recuperer-les-formulaires-html-pub",
+    localSlug: "ver-respostas-formularios-html-pub",
+    question: "Como ver os contatos dos seus formulários?",
+    summary: "Ver as respostas, exportá-las em CSV e apagá-las se for preciso.",
+    intro:
+      "O HTML Pub deteta sozinho os formulários das suas páginas e guarda as respostas. Não precisa de configurar nada.",
+    steps: [
+      {
+        title: "Junte um formulário à página",
+        text: "Peça ao assistente « junte um formulário com nome e e-mail », ou use um modelo que já tenha um.",
+      },
+      {
+        title: "Abra « Submissions »",
+        text: "No menu da esquerda, clique em « Submissions ». A página « Leads » junta todas as respostas: nome, e-mail, página de origem e data.",
+        alt: "Página Submissions (Leads) com as respostas dos formulários",
+      },
+      {
+        title: "Consulte as respostas",
+        text: "Para uma só página, abra o menu « … » dela em « Pages » e escolha « Submissions ». Abra uma linha para ver todos os campos preenchidos.",
+      },
+      {
+        title: "Exporte em CSV",
+        text: "Exporte as respostas em CSV para as abrir no Excel ou no Google Sheets.",
+      },
+      {
+        title: "Apague se lhe pedirem",
+        text: "O ícone do lixo apaga uma resposta para sempre. Útil se uma pessoa pedir que os seus dados sejam apagados.",
+      },
+    ],
+    pitfalls: [
+      "Enviar o formulário para um serviço externo: o HTML Pub deixa de ver as respostas.",
+      "Nunca exportar os contatos: guarde uma cópia com regularidade.",
+    ],
+  },
+  {
+    slug: "connecter-leadpages-a-son-outil-e-mail",
+    localSlug: "conectar-leadpages-ferramenta-email",
+    question: "Como enviar os contatos para o Mailchimp, o Brevo ou o seu CRM?",
+    summary: "Conectar uma integração para que cada novo contato chegue ao lugar certo.",
+    intro:
+      "Um conector envia cada resposta de formulário para outra ferramenta, sem copiar e colar. O HTML Pub tem mais de 20: Mailchimp, Brevo, MailerLite, Kit, ActiveCampaign, HubSpot, Pipedrive, Slack, Zapier, Stripe…",
+    steps: [
+      {
+        title: "Abra « Connectors »",
+        text: "No menu da esquerda, clique em « Connectors ». Procure a sua ferramenta pelo nome ou pela categoria (e-mail, CRM, publicidade…) e clique em « Connect ».",
+        alt: "Página Connectors com as aplicações para conectar",
+      },
+      {
+        title: "Autorize a conexão",
+        text: "Entre na ferramenta ou cole a chave de API dela, conforme o que for pedido. O estado passa a « Connected ».",
+      },
+      {
+        title: "Configure a automação",
+        text: "No separador « Automations », clique em « Create automation ». Escolha o gatilho (« Form submitted », « Checkout completed » ou « Visitor identified ») e a aplicação conectada que recebe os contatos.",
+        alt: "Criação de uma automação: escolha do gatilho",
+      },
+      {
+        title: "Teste com o seu próprio e-mail",
+        text: "Preencha o formulário você mesmo e confirme que o contato chega à ferramenta.",
+      },
+      {
+        title: "Vigie os erros",
+        text: "« View execution logs » mostra cada envio: com sucesso, pendente ou falhado, com o motivo.",
+      },
+    ],
+    pitfalls: [
+      "Não testar: descobre semanas depois que os contatos não chegavam.",
+      "Ultrapassar o número de integrações ativas do seu plano.",
+    ],
+  },
+  {
+    slug: "faire-un-test-ab-leadpages",
+    localSlug: "teste-ab-leadpages",
+    question: "Como fazer um teste A/B com a Leadpages?",
+    summary: "Comparar duas versões de uma página e ficar com a que converte mais.",
+    intro:
+      "Um teste A/B mostra duas versões de uma página aos visitantes e mede qual dá mais resultados. Está incluído a partir do plano Leadpages Grow.",
+    steps: [
+      {
+        title: "Crie uma variante",
+        text: "Duplique a página com um clique, ou deixe a IA propor uma variante. Mude uma só coisa importante: o título, o botão ou a oferta.",
+        alt: "Criação de uma variante B e troca entre A e B",
+      },
+      {
+        title: "Escolha o objetivo",
+        text: "Indique o que conta como sucesso: envio do formulário, clique num botão, compra ou conversão noutro site.",
+      },
+      {
+        title: "Divida o tráfego",
+        text: "50/50 é o mais simples. Também pode escolher 70/30 ou qualquer divisão entre 10 e 90 %. Depois publique.",
+      },
+      {
+        title: "Espere por um resultado claro",
+        text: "Os resultados aparecem em direto com três níveis: tendência, provável, vencedor claro. Espere por « vencedor claro » antes de decidir.",
+      },
+      {
+        title: "Fique com a vencedora",
+        text: "Envie 100 % do tráfego para a melhor versão com um clique, e comece um novo teste.",
+      },
+    ],
+    pitfalls: [
+      "Mudar várias coisas de uma vez: deixa de saber o que fez a diferença.",
+      "Parar o teste depois de poucas visitas: o resultado muitas vezes é sorte.",
+    ],
+  },
+  {
+    slug: "lire-une-carte-de-chaleur-leadpages",
+    localSlug: "mapa-de-calor-leadpages",
+    question: "Como ler um mapa de calor (heatmap) na Leadpages?",
+    summary: "Ver onde os visitantes clicam, até onde descem e o que leem.",
+    intro:
+      "Um mapa de calor pinta a página conforme a atividade dos visitantes. Está incluído nos planos Leadpages Optimize e Scale, sem código para instalar.",
+    steps: [
+      {
+        title: "Espere por visitas suficientes",
+        text: "Abaixo de cerca de 30 visitas, os dados são poucos demais para concluir.",
+      },
+      {
+        title: "Ative o modo mapa de calor",
+        text: "No editor da página, clique no ícone em forma de chama na barra de ferramentas.",
+        alt: "Mapa de calor dos cliques, com os separadores Clicks, Scroll e Attention",
+      },
+      {
+        title: "Leia os cliques",
+        text: "Vermelho: muitos cliques. Azul: zonas ignoradas. Se as pessoas clicam numa imagem que não é um link, transforme-a num link.",
+      },
+      {
+        title: "Leia a rolagem",
+        text: "O mapa de rolagem mostra a parte dos visitantes que chega a 25, 50, 75 e 100 % da página. Se poucos chegam ao formulário, suba-o.",
+      },
+      {
+        title: "Corrija logo",
+        text: "Edite a página ou comece um teste A/B a partir da mesma tela.",
+      },
+    ],
+    pitfalls: [
+      "Tirar conclusões com poucas visitas.",
+      "Procurar o mapa de atenção no celular: só existe no computador (no celular há cliques e rolagem).",
+    ],
+  },
+  {
+    slug: "utiliser-smart-traffic-leadpages",
+    localSlug: "smart-traffic-leadpages",
+    question: "Como funciona o Smart Traffic da Leadpages?",
+    summary: "A IA envia cada visitante para a versão da página com mais hipóteses de lhe agradar.",
+    intro:
+      "Um teste A/B clássico divide o tráfego por igual. O Smart Traffic escolhe, para cada visitante, a variante com mais hipóteses de o converter. Está incluído a partir do Leadpages Optimize.",
+    steps: [
+      {
+        title: "Prepare pelo menos duas variantes",
+        text: "Crie versões realmente diferentes: outra oferta, outro ângulo ou outro público.",
+      },
+      {
+        title: "Defina o objetivo",
+        text: "Formulário, clique ou compra: o Smart Traffic aprende a partir desse objetivo.",
+      },
+      {
+        title: "Ative o Smart Traffic",
+        text: "Clique em « Let AI optimize this for me ». Em vez de uma divisão fixa, a IA encaminha cada visitante e melhora com o tempo.",
+        alt: "Painel Optimize: divisão automática do tráfego entre o original e a variante",
+      },
+      {
+        title: "Acompanhe os resultados",
+        text: "Compare a taxa de conversão global antes e depois. Junte uma nova variante quando outra perder força.",
+      },
+    ],
+    pitfalls: [
+      "Usá-lo com variantes quase iguais: a IA não tem nada para escolher.",
+      "Esperar resultados em poucos dias com pouco tráfego.",
+    ],
+  },
+  {
+    slug: "ameliorer-le-taux-de-conversion-de-ses-pages-de-a-a-z",
+    localSlug: "melhorar-taxa-de-conversao-completo",
+    question: "Como melhorar a taxa de conversão das suas landing pages do início ao fim?",
+    summary: "Guia completo para analisar, otimizar e aumentar a taxa de conversão das suas landing pages Leadpages e HTML Pub, passo a passo.",
+    intro:
+      "A sua página está online, mas a taxa de conversão continua baixa. Antes de criar outra página ou mudar de ferramenta, há um caminho lógico: perceber de onde vem o problema, corrigir os bloqueios um a um e medir cada melhoria. Este guia segue esse caminho do início ao fim, com as funções da Leadpages e do HTML Pub.",
+    steps: [
+      {
+        title: "Perceba o que é a taxa de conversão",
+        text: "A taxa de conversão é a percentagem de visitantes que faz a ação esperada: preencher um formulário, clicar num botão ou comprar. Se 100 pessoas visitam a página e 3 preenchem o formulário, a taxa é de 3 %. Uma boa taxa depende do setor, mas a média das landing pages anda pelos 3 a 5 %. O objetivo é passar acima disso trabalhando cada elemento da página.",
+      },
+      {
+        title: "Leia as suas estatísticas atuais",
+        text: "Antes de mudar seja o que for, anote a taxa de conversão atual. Na Leadpages, abra o painel da página: vê os visitantes únicos, as conversões e a taxa. É o seu ponto de partida.\n\nSe acabou de lançar a página e o tráfego é baixo, espere pelo menos 200 visitantes antes de tirar conclusões. Abaixo disso, os números não são fiáveis.",
+        alt: "Painel Leadpages: visitantes únicos, conversões e taxa de conversão",
+      },
+      {
+        title: "Use os mapas de calor para encontrar os bloqueios",
+        text: "Os mapas de calor mostram onde os visitantes clicam e até onde descem. Se ninguém chega ao formulário, o problema está acima dele. Se toda a gente clica num elemento que não é um link, é uma oportunidade perdida.\n\nNa Leadpages, os mapas de calor existem a partir do plano Optimize. Ative-os nas configurações da página e deixe-os correr alguns dias antes de os ler.",
+        alt: "Mapa de calor Leadpages: zonas de cliques e profundidade de rolagem",
+      },
+      {
+        title: "Reescreva o título principal",
+        text: "O título é a primeira coisa que o visitante lê. Deve responder a uma pergunta simples: « O que é que eu ganho com isto? ». Um bom título fala do resultado, não do seu produto.\n\nMau: « A nossa solução inovadora de marketing digital ». Bom: « Duplique as suas inscrições em 30 dias sem aumentar o orçamento de anúncios ». Teste um título centrado no principal benefício da sua oferta.",
+      },
+      {
+        title: "Simplifique o formulário",
+        text: "Cada campo a mais num formulário baixa a taxa de conversão. Se pede nome, apelido, e-mail, telefone e empresa, reduza ao e-mail para começar. Pode pedir o resto mais tarde, quando já tiver o contato.\n\nNa Leadpages, abra o formulário no editor e apague os campos inúteis. Mantenha um só botão de ação com um texto claro: « Receber o guia », e não « Submeter ».",
+        alt: "Editor de formulário Leadpages: campos e botão de ação",
+      },
+      {
+        title: "Junte prova social",
+        text: "Os visitantes confiam nos outros visitantes. Junte depoimentos de clientes, logos de parceiros, o número de utilizadores ou avaliações. A prova social tranquiliza e tira dúvidas.\n\nPonha os depoimentos perto do formulário ou do botão de compra, onde o visitante hesita. Um depoimento com nome, foto e um resultado em números vale mais do que uma citação anónima.",
+      },
+      {
+        title: "Alinhe o anúncio com a página",
+        text: "Se o anúncio promete um ebook grátis e a página fala de um webinar, o visitante vai embora. A mensagem do anúncio, o título da página e a oferta devem contar a mesma história.\n\nVerifique cada fonte de tráfego: o texto do anúncio no Facebook, o assunto do e-mail, o link na bio do Instagram. Cada um deve corresponder exatamente ao que a página oferece.",
+      },
+      {
+        title: "Otimize para celular",
+        text: "Mais de metade do tráfego vem do celular. Se a página é difícil de ler ou o botão é pequeno demais no celular, perde conversões.\n\nNa Leadpages, use a pré-visualização de celular do editor. Confirme que o título se lê sem zoom, que o formulário se preenche facilmente com o polegar e que o botão é grande o suficiente para tocar sem esforço.",
+        alt: "Pré-visualização de celular no editor Leadpages: verificação do layout no telefone",
+      },
+      {
+        title: "Crie uma página de agradecimento eficaz",
+        text: "A página de agradecimento é a mais subestimada. O visitante acabou de converter: está envolvido. Aproveite para propor uma ação seguinte: partilhar nas redes, inscrever-se num webinar, conhecer um produto.\n\nNa Leadpages, defina a página de agradecimento nas configurações do formulário. Crie uma página a sério com uma oferta seguinte, em vez de uma simples mensagem « Obrigado ».",
+      },
+      {
+        title: "Junte uma urgência verdadeira",
+        text: "A urgência funciona quando é verdadeira. Uma contagem regressiva para uma oferta que nunca acaba destrói a confiança. Use limites reais: um número de vagas, uma data de fim de promoção, um stock limitado.\n\nSe não tem um limite natural, crie um: « Os 50 primeiros inscritos recebem um bónus ». O importante é ser verificável e honesto.",
+      },
+      {
+        title: "Lance um teste A/B",
+        text: "Não mude tudo de uma vez. Crie uma variante com uma só mudança: outro título, um botão de outra cor, um formulário mais curto. Deixe o teste correr até ter pelo menos 100 conversões por variante para um resultado fiável.\n\nNa Leadpages, duplique a página, mude um elemento e lance o teste no separador Optimize. A Leadpages divide o tráfego automaticamente.",
+        alt: "Interface de teste A/B Leadpages: variante original e variante de teste com divisão do tráfego",
+      },
+      {
+        title: "Ative o Smart Traffic para automatizar",
+        text: "Quando tiver várias variantes que funcionam, o Smart Traffic assume. Em vez de dividir o tráfego por igual, a IA envia cada visitante para a variante com mais hipóteses de o converter, conforme o aparelho, a localização e o comportamento.\n\nO Smart Traffic existe a partir do Leadpages Optimize. Ative-o no separador Optimize da página depois de criar pelo menos duas variantes.",
+        alt: "Painel Optimize: ativação do Smart Traffic para uma divisão inteligente do tráfego",
+      },
+      {
+        title: "Otimize o SEO da página",
+        text: "Uma página bem posicionada recebe tráfego grátis e qualificado. Preencha o título SEO, a meta-descrição e o URL com as suas palavras-chave principais. Junte um texto alternativo a cada imagem.\n\nNa Leadpages, abra as configurações de SEO da página. O título deve conter a palavra-chave principal e ter menos de 60 caracteres. A descrição deve dar vontade de clicar em menos de 155 caracteres.",
+        alt: "Configurações de SEO e redes sociais na Leadpages: título, descrição e imagem de partilha",
+      },
+      {
+        title: "Crie um acompanhamento semanal",
+        text: "Otimizar a taxa de conversão não é um projeto pontual, é um processo contínuo. Todas as semanas, anote a taxa de conversão, o número de visitantes e os resultados dos testes em curso.\n\nCrie uma tabela simples com a data, a taxa, a mudança testada e o resultado. Ao fim de algumas semanas, vai ver que tipo de mudanças tem mais impacto nas suas páginas.",
+      },
+    ],
+    pitfalls: [
+      "Mudar vários elementos de uma vez: impossível saber qual teve efeito.",
+      "Tirar conclusões com menos de 200 visitantes por variante.",
+      "Copiar a página de um concorrente sem perceber porque funciona para o público dele.",
+      "Ignorar o celular: mais de metade do tráfego passa por lá.",
+      "Juntar uma contagem regressiva falsa que recomeça a cada visita.",
+    ],
+  },
+  {
+    slug: "publier-une-page-depuis-claude",
+    localSlug: "publicar-pagina-a-partir-do-claude",
+    question: "Como publicar uma página HTML Pub diretamente a partir do Claude?",
+    summary: "Conectar o HTML Pub ao Claude para criar e editar as suas páginas conversando.",
+    intro:
+      "O HTML Pub tem um conector para o Claude (MCP). Depois de conectado, pede uma página ao Claude e ele publica-a na sua conta.",
+    steps: [
+      {
+        title: "Confirme o seu plano",
+        text: "O conector MCP está incluído em todas as ofertas HTML Pub e Leadpages, a partir do Starter.",
+      },
+      {
+        title: "Junte o conector no Claude",
+        text: "Em claude.ai, abra Configurações e depois Conectores, escolha « Adicionar conector personalizado » e cole o endereço https://mcp.htmlpub.com/mcp.",
+      },
+      {
+        title: "Autorize o acesso",
+        text: "Entre na sua conta HTML Pub quando o Claude pedir. Não precisa de chave de API. O Claude aparece depois em « Connected Apps », no menu do seu espaço.",
+        alt: "Página Connected Apps, onde o Claude aparece depois de conectado",
+      },
+      {
+        title: "Peça a sua página",
+        text: "Por exemplo: « Cria e publica no HTML Pub uma landing page para o meu workshop de fotografia, com um formulário de inscrição. » O Claude dá-lhe o endereço da página.",
+      },
+      {
+        title: "Edite conversando",
+        text: "Peça correções ao Claude: ele edita a página existente sem refazer tudo.",
+      },
+    ],
+    pitfalls: [
+      "Juntar um endereço de conector errado: copie-o da ajuda oficial.",
+      "Publicar sem rever: confira sempre a página online.",
+    ],
+  },
+  {
+    slug: "creer-une-pub-video-avec-ad-studio",
+    localSlug: "criar-anuncio-video-ad-studio",
+    question: "Como criar um anúncio em vídeo com o Ad Studio?",
+    summary: "Uma imagem de partida, um storyboard e depois o vídeo final, validando cada etapa.",
+    intro:
+      "O Ad Studio transforma uma descrição curta num anúncio. Propõe anúncios centrados no produto ou no estilo UGC, com um criador gerado por IA. Só existe nos planos Leadpages Optimize e Scale.",
+    steps: [
+      {
+        title: "Abra « Ads »",
+        text: "No menu da esquerda, clique em « Ads ». Descreva o produto, o público e o estilo que quer: anúncio de produto ou vídeo no estilo UGC.",
+        alt: "Página Ads (Ad Studio): « Ad Studio is available on Optimize and above »",
+      },
+      {
+        title: "Valide a imagem de partida",
+        text: "O Ad Studio cria uma imagem que define o cenário, o produto e o criador. Peça ajustes: esta etapa não gasta créditos de vídeo.",
+      },
+      {
+        title: "Valide o storyboard",
+        text: "Releia os planos, as legendas e os movimentos de câmara que contam a história.",
+      },
+      {
+        title: "Lance a gravação",
+        text: "Antes da renderização, um orçamento mostra o número de créditos conforme o número de planos e a resolução. Valide para receber o vídeo final.",
+      },
+    ],
+    pitfalls: [
+      "Lançar a renderização sem rever bem o storyboard: é esta etapa que gasta créditos.",
+      "Estranhar um vídeo sem música: se a música não for livre de direitos, é retirada.",
+      "Procurar o Ad Studio num plano HTML Pub: é preciso passar para Leadpages Optimize.",
+    ],
+  },
+  {
+    slug: "choisir-son-forfait-shopify",
+    localSlug: "escolher-plano-shopify",
+    question: "Como escolher o seu plano Shopify?",
+    summary: "Basic, Grow, Advanced ou Plus: qual escolher conforme o seu negócio.",
+    intro:
+      "A Shopify tem quatro planos. Para começar sozinho, o Basic quase sempre basta. Os planos mais caros servem sobretudo equipes e grandes volumes.",
+    steps: [
+      {
+        title: "Compare os quatro planos",
+        text: "Basic para quem trabalha sozinho, Grow para pequenas equipes (até 5 contas de funcionários), Advanced para vender para outros países com mais ferramentas (até 15 contas), Plus para grandes empresas.",
+        alt: "Os planos Basic, Grow, Advanced e Plus na página de preços",
+      },
+      {
+        title: "Escolha pagamento anual ou mensal",
+        text: "O pagamento anual sai mais barato por mês. O mensal dá mais liberdade para parar. Compare os dois preços mostrados.",
+      },
+      {
+        title: "Veja as taxas por venda",
+        text: "Com o Shopify Payments, as taxas de cartão baixam quando o plano sobe. Se usar outro prestador de pagamento, a Shopify junta taxas de transação, mais altas no Basic.",
+      },
+      {
+        title: "Comece pequeno",
+        text: "Comece no Basic. Pode mudar de plano mais tarde, quando as vendas o justificarem.",
+      },
+    ],
+    pitfalls: [
+      "Escolher o Advanced logo de início sem precisar.",
+      "Esquecer o custo das aplicações pagas, que se soma ao plano.",
+    ],
+  },
+  {
+    slug: "creer-sa-boutique-shopify-de-a-a-z",
+    localSlug: "criar-loja-shopify-completo",
+    question: "Como criar a sua loja Shopify do início ao fim?",
+    summary: "O guia completo: da inscrição à primeira venda, com cada tela da administração.",
+    intro:
+      "Este guia segue a ordem real de uma primeira loja: preparar, inscrever-se, encher a loja, configurar a venda, testar e abrir ao público. Conte um dia de trabalho, distribuído pelos 3 dias de teste grátis.",
+    steps: [
+      {
+        title: "Prepare tudo antes de se inscrever",
+        text: "O teste grátis só dura 3 dias: prepare o conteúdo antes de criar a conta, para passar esse tempo a construir e não a procurar.\n\nJunte: o nome da loja, um logo (mesmo simples), 3 a 5 produtos com fotos, um preço e uma descrição para cada um, o peso e o tamanho das embalagens se envia objetos, e o número da empresa se tiver.\n\nPrepare também a conta bancária que vai receber as vendas: a Shopify pede-a para ativar os pagamentos. Por fim, anote o que quer escrever nas condições de devolução: prazo, reembolso, quem paga o envio de volta.",
+      },
+      {
+        title: "Comece o teste grátis",
+        text: "Em shopify.com, abra a página de preços. A 27 de setembro de 2026, a oferta mostrada na Bélgica era: 3 dias de teste grátis, depois 1 € por mês durante 3 meses. As ofertas mudam muitas vezes e dependem do país: leia a do dia antes de começar.\n\nClique no botão para começar grátis, introduza o seu e-mail e responda às perguntas sobre o projeto. As respostas só servem para preparar a administração: pode mudar tudo depois.\n\nAnote já duas datas na agenda: o fim dos 3 dias de teste e o fim da oferta de lançamento, quando começa o preço normal do plano.",
+        alt: "Página de preços da Shopify: 3 dias de teste grátis, depois 1 € por mês durante 3 meses",
+      },
+      {
+        title: "Conheça a administração",
+        text: "Tudo acontece na administração da Shopify. O menu da esquerda junta as secções que vai usar todos os dias: « Pedidos », « Produtos », « Clientes », « Descontos », « Conteúdo » e « Loja virtual ». As configurações da loja estão todas em « Configurações », no canto inferior esquerdo.\n\nNo centro da página inicial, uma barra permite fazer perguntas ao Sidekick, o assistente de IA da Shopify. Ele conhece a sua loja: pergunte por exemplo « Como oferecer frete grátis a partir de 50? ». Mesmo assim, confirme as respostas na ajuda oficial antes de mudar uma configuração importante.",
+        alt: "Página inicial da administração Shopify com o menu da esquerda e a barra do Sidekick",
+      },
+      {
+        title: "Junte o seu primeiro produto",
+        text: "Clique em « Produtos » e depois em « Adicionar produto ». Escreva um título claro, como o cliente o procuraria no Google: « Pôster Bauhaus A3 » em vez de « Modelo 12 ».\n\nA descrição responde às perguntas do comprador: o que é, o material, o tamanho, o uso, o prazo de envio. Frases curtas e uma lista de pontos leem-se melhor no celular.\n\nEm « Mídia », clique em « Carregar » e junte várias fotos: o produto sozinho em fundo claro, e depois em uso. Mantenha o mesmo formato em todas as fotos da loja: é isso que dá um aspeto profissional.",
+        alt: "Formulário « Adicionar produto »: título, descrição e mídia",
+      },
+      {
+        title: "Defina preço, estoque, peso e variantes",
+        text: "Em « Preço », indique o preço de venda. O campo « Preço comparativo » mostra um preço riscado: use-o só numa promoção verdadeira.\n\nEm « Estoque », indique a quantidade disponível para a Shopify parar a venda quando não houver mais. Num objeto para enviar, indique o peso com a embalagem: é ele que calcula o frete. Num arquivo para baixar, desative « Produto físico ».\n\nSe o produto existe em vários tamanhos ou cores, junte variantes: cada uma pode ter o seu preço, o seu estoque e a sua foto. Por fim, defina o status como « Ativo » e clique em « Salvar ». Repita para os outros produtos.",
+        alt: "Secções Preço e Estoque da ficha de produto Shopify",
+      },
+      {
+        title: "Escolha e personalize o tema",
+        text: "O tema decide o aspeto de toda a loja. Em « Loja virtual » e depois « Temas », ou em themes.shopify.com, filtre pelos temas grátis: são feitos e atualizados pela Shopify e chegam bem para começar.\n\nEscolha um tema pela forma como mostra os produtos, não pelas fotos de demonstração. Clique em « Adicionar »: o tema entra na sua biblioteca sem substituir o que está online.\n\nClique em « Personalizar » para pôr o seu logo, as cores, as fontes e organizar a página inicial: uma imagem grande, os produtos principais, uma frase que diz o que vende. Veja sempre a pré-visualização no celular e depois clique em « Publicar ».",
+        alt: "Theme Store da Shopify filtrada pelos temas grátis",
+      },
+      {
+        title: "Organize os menus da loja",
+        text: "Os menus ligam as páginas entre si. Abra « Conteúdo » e depois « Menus ». Já existem dois: o menu principal, no topo da loja, e o menu do rodapé.\n\nNo menu principal, mantenha poucas entradas: a página inicial, o catálogo ou as coleções, e uma página de contato. No rodapé, ponha as páginas práticas: envio, devoluções, condições de venda, informações legais.\n\nClique num menu para juntar, mudar o nome ou mover um item arrastando-o, e salve.",
+        alt: "Conteúdo > Menus: menu principal, menu do rodapé e menu da conta do cliente",
+      },
+      {
+        title: "Configure o envio e a entrega",
+        text: "Clique em « Configurações » e depois em « Frete e entrega ». O « Perfil geral » aplica-se a todos os produtos: abra-o para ver as zonas de entrega (por exemplo o seu país e depois o resto do mundo) e as tarifas de cada zona.\n\nEm cada zona, crie tarifas simples: um preço fixo, ou um preço conforme o peso do pedido. Uma tarifa de « Frete grátis » a partir de um certo valor leva muitas vezes o cliente a juntar mais um artigo.\n\nEm « Embalagens », indique as medidas da sua embalagem habitual: a Shopify usa-as para estimar o frete. Se só vende produtos digitais, não precisa de tarifa de envio.",
+        alt: "Configurações > Frete e entrega: perfil geral, datas de entrega estimadas e embalagens",
+      },
+      {
+        title: "Verifique os impostos",
+        text: "Em « Configurações », abra « Impostos e taxas alfandegárias ». O serviço fiscal da Shopify calcula os impostos conforme o país do cliente, nas regiões onde entrega.\n\nConfirme que as suas regiões de entrega aparecem na lista. As suas obrigações dependem do seu estatuto e do seu país: um trabalhador independente não fatura os impostos da mesma forma que uma empresa.\n\nA própria Shopify o diz nesta tela: em caso de dúvida sobre as suas obrigações fiscais, fale com um contador antes de abrir a loja.",
+        alt: "Configurações > Impostos e taxas: serviços fiscais da Shopify ativos e regiões fiscais",
+      },
+      {
+        title: "Ative os pagamentos",
+        text: "Em « Configurações » e depois « Pagamentos », ative o Shopify Payments. A Shopify pede informações sobre o seu negócio e a conta bancária que recebe os repasses. A autenticação em dois fatores é obrigatória.\n\nCom o Shopify Payments, aceita cartões e meios de pagamento locais sem prestador externo. O Shopify Payments não existe em todos os países: se não aparecer, use um dos prestadores propostos. No plano Basic, as taxas de cartão começavam em 1,8 % + 0,30 € por venda (tarifas mostradas na Bélgica a 27 de setembro de 2026). Se usar outro prestador em vez dele, a Shopify junta taxas de transação.\n\nO PayPal pode ser adicionado em « Provedores de pagamento adicionais ».",
+        alt: "Configurações > Pagamentos: Shopify Payments, meios de pagamento, repasses e PayPal",
+      },
+      {
+        title: "Escolha os meios de pagamento dos clientes",
+        text: "Ainda em « Pagamentos », clique em « Formas de pagamento ». Ative as que os seus clientes usam de verdade: cartões Visa e Mastercard, Apple Pay, Shop Pay, e os meios de pagamento locais do seu país.\n\nO botão para ver as tarifas de pagamento mostra as taxas de cada meio: alguns custam mais do que outros. Não vale a pena ativar tudo; logos a mais podem até confundir o comprador na hora de pagar.",
+        alt: "Lista dos meios de pagamento online: Shop Pay, Visa, Mastercard, American Express, Apple Pay",
+      },
+      {
+        title: "Escreva as suas políticas e informações legais",
+        text: "Em « Configurações », abra « Políticas ». As políticas escritas aparecem no rodapé do checkout: o cliente vê-as antes de comprar.\n\nPreencha no mínimo a política de devolução e reembolso, os termos de serviço, a política de envio e as informações legais. Os « Dados de contato » são obrigatórios: são as informações que permitem ao cliente falar consigo.\n\nSe a Shopify propuser um modelo de texto, parta daí, mas adapte-o à sua forma real de trabalhar. As regras de devolução dependem do país: na União Europeia, o cliente tem em geral 14 dias para desistir de uma compra online, e no Brasil o Código de Defesa do Consumidor dá 7 dias. Depois, junte estas páginas ao menu do rodapé.",
+        alt: "Configurações > Políticas: regras de devolução e políticas escritas (devolução, privacidade, termos de serviço, envio, contato, informações legais)",
+      },
+      {
+        title: "Crie um código de boas-vindas",
+        text: "Um pequeno desconto ajuda a fazer o primeiro pedido acontecer. Clique em « Descontos », depois em « Criar desconto » e escolha « Valor do pedido ».\n\nEscreva um código fácil de lembrar, como BEMVINDO10, e o valor: 10 % por exemplo. Em « Máximo de usos », marque o limite de um uso por cliente, senão o código serve em todos os pedidos. Salve: o código funciona logo no checkout.\n\nEste código também serve nas suas páginas de promoção e nas redes sociais.",
+        alt: "Formulário « Criar desconto » com um código de 10 % no pedido",
+      },
+      {
+        title: "Faça um pedido de teste",
+        text: "Antes de abrir, compre você mesmo na sua loja, como um cliente real: no celular, passando pela página inicial, um produto, o carrinho e o pagamento, com o seu código de desconto.\n\nVerifique em cada passo: o frete está certo? Os impostos aparecem bem? O e-mail de confirmação chega, e dá vontade de voltar? Pode fazer um pedido real com o seu cartão, e depois cancelá-lo e reembolsá-lo em « Pedidos ».\n\nCorrija tudo o que o fez hesitar: se você hesitou, os seus clientes também vão hesitar.",
+      },
+      {
+        title: "Escolha um plano",
+        text: "Para manter a loja depois do teste, escolha um plano em « Configurações » e depois « Plano ». Para quem trabalha sozinho, o Basic quase sempre basta: a 27 de setembro de 2026, custava na Bélgica 27 € por mês em pagamento mensal, ou o equivalente a 19 € por mês em pagamento anual. Os preços mudam conforme o país: veja os seus na página de preços.\n\nA oferta de lançamento aplica-se então durante 3 meses, e depois começa o preço normal. Grow e Advanced servem sobretudo equipes e grandes volumes: pode mudar de plano mais tarde, quando as vendas o justificarem.\n\nNão se esqueça de que as aplicações pagas se somam ao preço do plano.",
+        alt: "Os planos Shopify Basic, Grow, Advanced e Plus na página de preços",
+      },
+      {
+        title: "Conecte o seu domínio",
+        text: "A loja já tem um endereço grátis em .myshopify.com, mas o seu próprio domínio passa mais confiança. Em « Configurações » e depois « Domínios », escolha conectar um domínio existente, transferir um domínio ou comprar um novo.\n\nEm muitos fornecedores de domínio, a Shopify faz a conexão automaticamente. Senão, indica os registos DNS a mudar no seu fornecedor. A conexão demora muitas vezes menos de duas horas, às vezes até dois dias. O certificado HTTPS é grátis.\n\nSe tiver vários domínios conectados, escolha o que os clientes vão ver como « Principal ».",
+        alt: "Configurações > Domínios com os domínios conectados",
+      },
+      {
+        title: "Abra a loja ao público",
+        text: "Enquanto está em preparação, a loja está protegida por senha. Para a abrir, vá a « Loja virtual » e depois « Preferências ». Em « Acesso à loja », desative o modo privado (a proteção por senha): a loja fica visível para toda a gente.\n\nNa mesma página, preencha o título e a meta-descrição da página inicial: é o que o Google e as redes sociais mostram quando alguém partilha a sua loja.\n\nA página inicial da administração mostra então que a loja está online, com o número de visitas e de visitantes em direto.",
+        alt: "Loja virtual > Preferências: secção de acesso à loja com a opção de modo privado",
+      },
+      {
+        title: "Atraia os primeiros clientes",
+        text: "Uma loja online não recebe visitas sozinha. Escolha um produto principal e uma oferta (o seu código de boas-vindas), e crie uma landing page que só fala dessa oferta, com o HTML Pub ou a Leadpages.\n\nPartilhe o endereço dessa página nas redes, na bio, no Pinterest ou nos anúncios. O botão da página leva diretamente à ficha do produto Shopify, não à página inicial da loja.\n\nVeja todas as semanas quantos visitantes chegam e quantos compram, e melhore a página que converte menos. O guia « atrair clientes com uma landing page » explica esta etapa em detalhe.",
+        alt: "Criação de uma landing page com IA: o assistente pergunta « What are you making? »",
+      },
+    ],
+    pitfalls: [
+      "Passar os 3 dias de teste a afinar detalhes sem ter juntado um único produto.",
+      "Abrir a loja sem pedido de teste: é o cliente que descobre o frete errado.",
+      "Deixar as políticas vazias: devoluções, condições de venda e contatos tranquilizam o comprador na hora de pagar.",
+      "Esquecer que o preço normal do plano começa depois da oferta de lançamento.",
+      "Encher o menu principal com dezenas de links: o visitante já não sabe onde clicar.",
+    ],
+  },
+  {
+    slug: "connecter-son-domaine-shopify",
+    localSlug: "conectar-dominio-shopify",
+    question: "Como conectar o seu domínio à Shopify?",
+    summary: "Usar o seu próprio endereço em vez do endereço em myshopify.com.",
+    intro:
+      "Cada loja tem um endereço grátis em .myshopify.com. Com o seu próprio domínio, passa mais confiança. O certificado SSL (HTTPS) é grátis.",
+    steps: [
+      {
+        title: "Abra « Domínios »",
+        text: "Clique em « Configurações » no canto inferior esquerdo e depois em « Domínios ». Três opções: conectar um domínio existente, transferir um domínio ou comprar um novo.",
+        alt: "Configurações > Domínios com os domínios conectados",
+      },
+      {
+        title: "Conecte um domínio existente",
+        text: "Escolha conectar um domínio existente e escreva o seu domínio. Em muitos fornecedores de domínio, a Shopify propõe uma conexão automática.",
+      },
+      {
+        title: "Senão, mude os DNS à mão",
+        text: "No seu fornecedor de domínio, atualize os registos indicados pela Shopify (registo A e CNAME para www).",
+      },
+      {
+        title: "Espere pela verificação",
+        text: "A conexão funciona muitas vezes em menos de duas horas, mas pode demorar até dois dias. O estado passa a « Conectado ».",
+      },
+      {
+        title: "Escolha o domínio principal",
+        text: "Se tiver vários domínios conectados, marque como « Principal » o que os clientes vão ver.",
+      },
+    ],
+    pitfalls: [
+      "Apagar registos DNS antigos usados pelos seus e-mails.",
+      "Esquecer que a renovação do domínio se faz no seu fornecedor, não na Shopify.",
+    ],
+  },
+  {
+    slug: "accepter-les-paiements-shopify",
+    localSlug: "aceitar-pagamentos-shopify",
+    question: "Como aceitar pagamentos na Shopify?",
+    summary: "Shopify Payments, meios de pagamento locais, PayPal: as configurações e as taxas a conhecer.",
+    intro:
+      "O Shopify Payments permite aceitar cartões, Apple Pay e outros meios de pagamento sem prestador externo. É também o que evita as taxas de transação extra. Não existe em todos os países: se não aparecer, a Shopify propõe outros prestadores.",
+    steps: [
+      {
+        title: "Abra « Pagamentos »",
+        text: "Clique em « Configurações » e depois em « Pagamentos ». Vê o estado do Shopify Payments, os meios de pagamento, os repasses e os prestadores extra, como o PayPal.",
+        alt: "Configurações > Pagamentos: Shopify Payments, meios de pagamento, repasses e PayPal",
+      },
+      {
+        title: "Ative o Shopify Payments",
+        text: "Siga a configuração: informações sobre o seu negócio e conta bancária para receber os repasses. É pedida a autenticação em dois fatores.",
+      },
+      {
+        title: "Escolha os meios de pagamento",
+        text: "Clique em « Formas de pagamento » e ative os que os seus clientes usam: cartões, Shop Pay, Apple Pay e os meios locais do seu país. O botão das tarifas de pagamento mostra as taxas de cada meio.",
+        alt: "Lista dos meios de pagamento online: Shop Pay, Visa, Mastercard, American Express, Apple Pay",
+      },
+      {
+        title: "Junte o PayPal se precisar",
+        text: "Em « Provedores de pagamento adicionais », pode juntar o PayPal ou outros prestadores.",
+      },
+      {
+        title: "Faça um pedido de teste",
+        text: "Antes de abrir a loja, faça uma compra de teste para confirmar que tudo funciona.",
+      },
+    ],
+    pitfalls: [
+      "Usar outro prestador em vez do Shopify Payments sem saber que a Shopify junta taxas de transação (até 2 % no Basic).",
+      "Não ativar o meio de pagamento que os seus clientes mais usam no país deles.",
+    ],
+  },
+  {
+    slug: "connecter-html-pub-a-shopify",
+    localSlug: "conectar-html-pub-shopify",
+    question: "Como ligar o HTML Pub ou a Leadpages à Shopify?",
+    summary: "O conector Shopify do HTML Pub, e os botões que levam à sua loja.",
+    intro:
+      "As suas páginas HTML Pub ou Leadpages atraem os visitantes, a Shopify recebe as vendas. Há duas ligações possíveis: o conector Shopify, e botões que levam ao checkout da Shopify.",
+    steps: [
+      {
+        title: "Abra « Connectors »",
+        text: "No menu do seu espaço HTML Pub, clique em « Connectors » e escreva « Shopify » na pesquisa. O cartão Shopify serve para enviar os dados dos clientes do checkout HTML Pub para a Shopify.",
+      },
+      {
+        title: "Indique o endereço da sua loja",
+        text: "Clique em « Connect », escreva o endereço .myshopify.com da sua loja e clique em « Connect Shopify ». Depois valide a autorização na Shopify.",
+        alt: "Connectors HTML Pub: cartão Shopify com o campo « Your Shopify store domain »",
+      },
+      {
+        title: "Junte um botão para a Shopify",
+        text: "Para vender um produto a partir de uma página, junte um botão e, na ação de clique, escolha um link externo: cole o endereço do produto ou um link de checkout da Shopify.",
+      },
+      {
+        title: "Ou cole um Buy Button da Shopify",
+        text: "Na Shopify, junte o canal de vendas « Buy Button », crie um botão para um produto, copie o código HTML e cole-o num bloco HTML da sua página.",
+      },
+      {
+        title: "Teste o percurso completo",
+        text: "Publique a página, clique no botão e vá até ao pagamento para confirmar que abre o produto certo.",
+      },
+    ],
+    pitfalls: [
+      "Achar que a Leadpages conta as vendas da Shopify: as estatísticas dela param no clique no botão.",
+      "Escrever o seu próprio domínio em vez do endereço .myshopify.com no conector.",
+    ],
+  },
+  {
+    slug: "creer-une-page-de-vente-pour-un-produit-shopify",
+    localSlug: "pagina-de-vendas-produto-shopify",
+    question: "Como criar uma página de vendas para um produto Shopify?",
+    summary: "Uma página com uma só oferta, criada com a IA do HTML Pub, que leva ao seu produto Shopify.",
+    intro:
+      "A ficha de produto da Shopify mostra o produto; uma página de vendas conta a história dele. Serve sobretudo quando faz anúncios ou vídeos para um produto específico.",
+    steps: [
+      {
+        title: "Prepare o produto na Shopify",
+        text: "O produto deve estar ativo, com fotos, preço e estoque. Abra-o na loja online e copie o endereço da página: é para lá que o botão vai levar.",
+      },
+      {
+        title: "Descreva a página à IA",
+        text: "No HTML Pub ou na Leadpages, crie uma página com IA e descreva-a com precisão: o produto, para quem é, 3 vantagens, opiniões de clientes, perguntas frequentes e um botão « Comprar agora ».",
+        alt: "Descrição de uma página de vendas para um produto Shopify no assistente de IA do HTML Pub",
+      },
+      {
+        title: "Ligue o botão ao produto",
+        text: "No editor, escolha a ação do botão « link externo » e cole o endereço do produto Shopify. Também pode colar um Buy Button da Shopify num bloco HTML.",
+      },
+      {
+        title: "Dê uma razão para comprar agora",
+        text: "Um código de desconto por tempo limitado, frete grátis ou um brinde. Crie-o primeiro na Shopify para funcionar no pagamento.",
+        alt: "Criação de um código de desconto na Shopify",
+      },
+      {
+        title: "Publique e teste no celular",
+        text: "Publique a página, abra-a no celular, clique no botão e vá até ao pagamento. Depois partilhe o endereço da página nos seus anúncios e vídeos.",
+      },
+    ],
+    pitfalls: [
+      "Vários produtos e vários botões na mesma página: o visitante hesita e não clica.",
+      "Um botão que leva à página inicial da loja em vez do produto.",
+      "Opiniões de clientes inventadas: use só opiniões verdadeiras.",
+    ],
+  },
+  {
+    slug: "rediger-les-politiques-shopify",
+    localSlug: "politicas-loja-shopify",
+    question: "Como juntar as condições de venda e as políticas na Shopify?",
+    summary: "Devoluções, termos de serviço, envio, contatos e informações legais, mostrados no checkout.",
+    intro:
+      "As políticas tranquilizam o comprador e, em muitos países, são obrigatórias por lei para vender online. A Shopify mostra-as no checkout; falta escrevê-las e pô-las no menu.",
+    steps: [
+      {
+        title: "Abra « Políticas »",
+        text: "Na administração, clique em « Configurações » e depois em « Políticas ». Encontra as regras de devolução e a lista das políticas escritas.",
+        alt: "Configurações > Políticas: regras de devolução e políticas escritas (devolução, privacidade, termos de serviço, envio, contato, informações legais)",
+      },
+      {
+        title: "Defina as regras de devolução",
+        text: "Indique o prazo de devolução, quem paga o envio de volta e como reembolsa. O prazo mínimo depende do país: na União Europeia, o cliente tem em geral 14 dias para desistir de uma compra online, e no Brasil o Código de Defesa do Consumidor dá 7 dias. Não proponha menos do que a lei do seu país.",
+      },
+      {
+        title: "Preencha os contatos",
+        text: "Os « Dados de contato » são obrigatórios. Escreva o nome da empresa, a morada, o e-mail e o número da empresa: é o que permite ao cliente falar consigo.",
+      },
+      {
+        title: "Escreva as outras políticas",
+        text: "Abra cada política: devolução e reembolso, privacidade, termos de serviço, envio e informações legais. Se a Shopify propuser um modelo, parta daí e adapte cada frase à sua forma real de trabalhar. Salve.",
+      },
+      {
+        title: "Junte-as ao rodapé",
+        text: "As políticas aparecem no checkout, mas não necessariamente na loja. Em « Conteúdo » e depois « Menus », abra o menu do rodapé e junte um link para cada uma.",
+      },
+    ],
+    pitfalls: [
+      "Deixar o modelo tal como está: pode prometer coisas que não faz.",
+      "Políticas que não batem com as configurações reais (prazo de devolução, frete).",
+      "Esquecer o link no rodapé: o cliente não encontra as suas condições antes de comprar.",
+    ],
+  },
+  {
+    slug: "creer-un-menu-shopify",
+    localSlug: "editar-menu-shopify",
+    question: "Como editar o menu da sua loja Shopify?",
+    summary: "Juntar, mudar o nome e mover links, e criar um menu suspenso.",
+    intro:
+      "O menu ajuda o visitante a encontrar os seus produtos com um clique. A Shopify cria dois no início: o menu principal, no topo, e o menu do rodapé.",
+    steps: [
+      {
+        title: "Abra « Menus »",
+        text: "Na administração, clique em « Conteúdo » e depois em « Menus ». Clique no menu a editar, por exemplo o menu principal.",
+        alt: "Conteúdo > Menus: menu principal, menu do rodapé e menu da conta do cliente",
+      },
+      {
+        title: "Junte um link",
+        text: "Clique em « Adicionar item de menu ». Escreva o nome mostrado e escolha o destino: uma coleção, um produto, uma página ou uma política. Clique em « Salvar ».",
+      },
+      {
+        title: "Mova ou crie um menu suspenso",
+        text: "Arraste um item para mudar a ordem. Para um menu suspenso, arraste um item para baixo de outro e um pouco para a direita: passa a ser um submenu.",
+      },
+      {
+        title: "Mude o nome ou apague",
+        text: "Clique num item para mudar o nome ou o destino. O ícone do lixo tira-o do menu, sem apagar a página em si.",
+      },
+      {
+        title: "Confira no celular",
+        text: "Salve e abra a loja no celular. O menu principal aparece muitas vezes atrás de um ícone: use nomes curtos e poucas entradas.",
+      },
+    ],
+    pitfalls: [
+      "Um menu principal com dez links ou mais: o visitante já não sabe onde clicar.",
+      "Páginas práticas (envio, devoluções) no menu do topo em vez do rodapé.",
+    ],
+  },
+  {
+    slug: "ouvrir-sa-boutique-shopify-au-public",
+    localSlug: "abrir-loja-shopify-ao-publico",
+    question: "Como retirar a senha da sua loja Shopify?",
+    summary: "Abrir a loja ao público desativando o modo privado, e o que verificar antes.",
+    intro:
+      "Uma loja Shopify nova está protegida por senha: ninguém pode comprar. Para a abrir, primeiro escolha um plano e depois desative o modo privado.",
+    steps: [
+      {
+        title: "Escolha um plano",
+        text: "A senha só pode ser retirada depois de escolher um plano. Em « Configurações » e depois « Plano », escolha um. Durante o teste grátis, a assinatura só começa no fim do teste.",
+        alt: "Os planos Shopify Basic, Grow, Advanced e Plus na página de preços",
+      },
+      {
+        title: "Abra as preferências da loja",
+        text: "No menu da esquerda, clique em « Loja virtual » e depois em « Preferências ». Desça até à secção de acesso à loja.",
+      },
+      {
+        title: "Desative o modo privado",
+        text: "Desative o modo privado (a proteção por senha) e salve. A loja fica visível para toda a gente, sem senha.",
+        alt: "Loja virtual > Preferências: secção de acesso à loja com a opção de modo privado",
+      },
+      {
+        title: "Preencha o título e a descrição para o Google",
+        text: "Na mesma página, escreva o título e a meta-descrição da página inicial. É o que o Google e as redes sociais mostram quando alguém partilha a loja.",
+      },
+      {
+        title: "Confira a partir de outro aparelho",
+        text: "Abra o endereço da loja num celular onde não tenha sessão iniciada: a página inicial deve aparecer diretamente, sem pedir senha.",
+      },
+    ],
+    pitfalls: [
+      "Abrir a loja sem pedido de teste: é o primeiro cliente que descobre os erros.",
+      "Abrir com políticas vazias ou produtos de demonstração ainda ativos.",
+    ],
+  },
+  {
+    slug: "creer-un-tunnel-de-vente-avec-leadpages-et-shopify-de-a-a-z",
+    localSlug: "funil-de-vendas-leadpages-shopify-completo",
+    question: "Como criar um funil de vendas com a Leadpages e a Shopify do início ao fim?",
+    summary: "Guia completo para montar um funil de vendas que capta contatos com a Leadpages e os transforma em clientes na Shopify, passo a passo.",
+    intro:
+      "Um funil de vendas é o caminho que um visitante faz entre descobrir a sua oferta e comprar. Em vez de mandar toda a gente diretamente para a loja Shopify, começa por captar o e-mail com uma landing page Leadpages, convence por e-mail, e depois envia para a Shopify para comprar. Este guia monta o funil completo, da primeira página ao primeiro pagamento.",
+    steps: [
+      {
+        title: "Perceba a estrutura de um funil de vendas",
+        text: "Um funil de vendas tem quatro etapas: atrair a atenção, captar o contato, alimentar a relação por e-mail e propor a compra. Cada etapa tem a sua ferramenta.\n\nA Leadpages trata das duas primeiras: a landing page que atrai e o formulário que capta o e-mail. O seu serviço de e-mail marketing trata da terceira. A Shopify trata da última: o pagamento e a entrega. O conjunto forma um sistema automático que vende enquanto dorme.",
+      },
+      {
+        title: "Prepare a oferta na Shopify",
+        text: "Antes de montar o funil, o produto tem de estar pronto na Shopify. Crie o produto com fotos, preço, descrição e variantes. Confirme que o pagamento funciona com um pedido de teste.\n\nCopie o link direto para o produto ou para a coleção: vai precisar dele para o botão de compra nos e-mails e na página de vendas.",
+        alt: "Página de produto Shopify: título, descrição, preço e imagens do produto",
+      },
+      {
+        title: "Crie um brinde irresistível",
+        text: "O brinde (lead magnet) é o que oferece em troca do e-mail. Um guia em PDF, uma checklist, um código de desconto, um acesso antecipado. Deve resolver um problema concreto do seu cliente ideal e estar diretamente ligado ao seu produto pago.\n\nExemplo: vende acessórios de cozinha na Shopify. O brinde pode ser « 10 receitas rápidas para a semana » em PDF. O visitante dá o e-mail, recebe as receitas, e depois os seus e-mails apresentam os seus acessórios.",
+      },
+      {
+        title: "Monte a landing page de captura",
+        text: "Na Leadpages, crie uma página nova a partir de um modelo ou com IA. A página tem um só objetivo: convencer o visitante a deixar o e-mail em troca do brinde.\n\nO título anuncia o benefício do brinde. O formulário só pede o e-mail. O botão diz exatamente o que o visitante recebe: « Receber as 10 receitas » em vez de « Inscrever-me ». Tire tudo o que distrai: sem menu, sem links para outras páginas.",
+        alt: "Criação de uma landing page com o assistente de IA da Leadpages",
+      },
+      {
+        title: "Conecte o seu serviço de e-mail",
+        text: "Na Leadpages, abra as integrações da página e conecte o seu serviço de e-mail marketing: Mailchimp, Kit (ex-ConvertKit), ActiveCampaign ou outro. Cada novo inscrito entra automaticamente numa lista ou tag específica.\n\nCrie uma lista ou tag só para este funil, para que os e-mails de venda cheguem apenas a quem pediu este brinde.",
+        alt: "Painel de integrações da Leadpages: conexão com os serviços de e-mail",
+      },
+      {
+        title: "Escreva a sequência de e-mails",
+        text: "Prepare 4 a 6 e-mails automáticos enviados ao longo de 7 a 10 dias. O primeiro entrega o brinde. Os seguintes dão valor e apresentam aos poucos o seu produto Shopify.\n\nE-mail 1: entrega do brinde + apresentação rápida de si. E-mail 2: uma dica ligada ao tema do brinde. E-mail 3: a história de um cliente que resolveu o problema com o seu produto. E-mail 4: apresentação do produto com o link para a Shopify. E-mail 5: lembrete com um código de desconto por tempo limitado.",
+      },
+      {
+        title: "Crie um código de desconto na Shopify",
+        text: "Na Shopify, vá a Descontos e crie um código promocional só para os inscritos do funil. Um código como BEMVINDO15 com 15 % de desconto na primeira compra dá uma razão para comprar agora e não mais tarde.\n\nLimite o código a um uso por cliente e defina uma data de fim para criar uma urgência verdadeira.",
+        alt: "Criação de um código de desconto na Shopify: percentagem, condições e limites",
+      },
+      {
+        title: "Monte a página de vendas",
+        text: "Crie uma segunda página na Leadpages: a página de vendas. É para ela que os e-mails levam os contatos prontos a comprar. Apresenta o produto em detalhe com um botão que leva à Shopify.\n\nEsta página é mais longa do que a de captura: depoimentos, detalhes do produto, garantia, perguntas frequentes. O botão de compra usa o link direto para o produto Shopify.",
+        alt: "Página de vendas HTML Pub com botão de compra ligado à Shopify",
+      },
+      {
+        title: "Configure a página de agradecimento",
+        text: "Depois da inscrição na página de captura, o visitante chega a uma página de agradecimento. Use-a para reforçar o envolvimento: lembre de ver o spam, convide a seguir as suas redes, ou mostre um vislumbre do seu produto Shopify.\n\nNa Leadpages, defina o redirecionamento depois do formulário para a página de agradecimento. Também pode pôr lá diretamente a oferta com o código de desconto para os mais apressados.",
+      },
+      {
+        title: "Teste o funil completo",
+        text: "Antes de enviar tráfego, percorra você mesmo cada etapa. Inscreva-se com um endereço de teste, confirme que o e-mail de boas-vindas chega, clique em cada link da sequência e faça um pedido de teste na Shopify com o código de desconto.\n\nConfira também no celular: a maior parte do tráfego vem daí. Se um e-mail aparece mal ou um botão é pequeno demais, corrija antes de lançar.",
+      },
+      {
+        title: "Envie tráfego para a página de captura",
+        text: "O funil está pronto: agora é preciso trazer visitantes. As fontes mais comuns: um anúncio no Facebook ou no Instagram dirigido ao seu público, um post nas redes com o link da página, um artigo de blog que leva ao brinde, ou uma parceria com um criador de conteúdo do seu nicho.\n\nComece com um orçamento de anúncios pequeno para confirmar que o funil converte antes de gastar mais.",
+      },
+      {
+        title: "Acompanhe os resultados em cada etapa",
+        text: "Um funil de vendas mede-se etapa a etapa. Anote a taxa de conversão da landing page, a taxa de abertura dos e-mails, a taxa de clique para a Shopify e a taxa de compra final.\n\nNa Leadpages, o painel dá a taxa de conversão da página. No serviço de e-mail, vê as aberturas e os cliques. Na Shopify, as vendas com o código de desconto mostram quantas vendas vêm do funil.",
+        alt: "Painel Leadpages: acompanhamento das conversões e do tráfego",
+      },
+      {
+        title: "Otimize com testes A/B",
+        text: "Quando o funil já funciona e gera dados, melhore cada etapa. Teste dois títulos na página de captura. Teste dois assuntos de e-mail. Teste dois preços ou duas ofertas na página de vendas.\n\nNa Leadpages, use os testes A/B na página de captura e na página de vendas. Mude um só elemento de cada vez e espere pelo menos 100 conversões por variante antes de escolher a vencedora.",
+        alt: "Interface de teste A/B Leadpages: comparação entre duas variantes da página",
+      },
+    ],
+    pitfalls: [
+      "Enviar o tráfego diretamente para a Shopify sem captar o e-mail primeiro: os visitantes que saem ficam perdidos para sempre.",
+      "Escrever uma sequência de e-mails 100 % promocional: os contatos cancelam a inscrição antes de comprar.",
+      "Não testar o funil no celular antes de lançar os anúncios.",
+      "Usar um código de desconto sem data de fim: não há urgência nenhuma em comprar.",
+      "Lançar anúncios pagos antes de confirmar que cada etapa do funil funciona.",
+    ],
+  },
 ];

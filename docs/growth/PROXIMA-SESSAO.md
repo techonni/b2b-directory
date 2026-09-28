@@ -53,7 +53,7 @@ Data: 28/09/2026 (7.ª sessão do dia: resultados dos lotes 2, P e 4; link Shopi
 | 6 | Um guia novo por semana | ✅ Semanas 1 a 8 feitas (8: `vendre-sur-instagram-avec-shopify`; 5: `suivre-ses-commandes-et-expedier-shopify`; 6: `ajouter-google-analytics-a-une-page-leadpages`; 7: `creer-une-page-de-remerciement-leadpages`; FR + PT + EN, 2 pins cada). Próxima: semana 9 de `plano-growth.md` (semanas 9 a 12 já escritas no calendário). Capturas pedidas nos lotes 5 e 5b do Chrome |
 | 7 | Atualizar guias antigos todos os meses | ✅ Rotina pronta: `check-guides.mjs` lista os guias com mais de 30 dias. Nenhum está desatualizado hoje. Próxima revisão: **28/10/2026** (preços Shopify e Leadpages, `/offres/`) |
 | 8 | Links internos | ✅ Todos os 41 guias têm pelo menos 2 links internos |
-| 9 | Versões PT e EN | ✅ 23 guias em PT e EN (a 28/09). Primeiros: 12 guias em `/pt/` e `/en/`, com hreflang e ligações a partir dos guias franceses e da página inicial. Traduções em `src/lib/translations/` |
+| 9 | Versões PT e EN | ✅ **Todos os 48 guias em PT e EN** (29/09, sessão local no Mac). Só o guia EN de preços da Shopify continua escondido (faltam os preços em dólares). Rótulos das fontes traduzidos em `src/lib/i18n.ts` (`labelWords`). Cada guia novo continua a sair nas 3 línguas no mesmo dia |
 | 10 | 1.ª newsletter | ⏸️ Em pausa até haver um inscrito real (rascunho `ff4c739dc9` guardado) |
 | 11 | Ritmo quinzenal | ⏸️ Em pausa até haver um inscrito real |
 | 12 | Mais brindes | ✅ `/newsletter/checklist-leadpages/` e `/newsletter/modeles-landing-page/`. O formulário anuncia o brinde do tema do guia |
@@ -69,7 +69,8 @@ Data: 28/09/2026 (7.ª sessão do dia: resultados dos lotes 2, P e 4; link Shopi
 ## Pendentes do lado do Techonni
 
 - [x] Vercel Web Analytics ativado (28/09).
-- [ ] Mudar para trabalho local na app Claude do Mac (créditos da nuvem a acabar).
+- [x] Trabalho local na app Claude do Mac (29/09): projeto em `/Users/techonni/zunrel`, `npm install` e `npm run build` funcionam aqui, `git push` também (conta techonni). Servidor local: `npx astro dev --background` → http://localhost:4321.
+- [ ] 5 guias sem captura (remerciement, pop-up, Google Analytics, Instagram, encomendas): o Techonni decidiu deixar para mais tarde.
 
 - [x] **Impact:** sessão iniciada no Chrome (confirmado pelo Chrome a 28/09).
 

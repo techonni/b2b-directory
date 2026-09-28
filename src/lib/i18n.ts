@@ -57,6 +57,10 @@ const sourceMap: Record<string, Record<OtherLang, { label: string; url: string }
     pt: { label: "Central de ajuda da Leadpages", url: "https://support.leadpages.com/hc/en-us" },
     en: { label: "Leadpages Help Center", url: "https://support.leadpages.com/hc/en-us" },
   },
+  "https://europa.eu/youreurope/citizens/consumers/shopping/guarantees-returns/index_fr.htm": {
+    pt: { label: "Comissão Europeia: direito de rescisão", url: "https://europa.eu/youreurope/citizens/consumers/shopping/guarantees-returns/index_pt.htm" },
+    en: null,
+  },
   "https://www.cnil.fr/fr/la-prospection-commerciale-par-courrier-electronique": {
     pt: null,
     en: { label: "FTC: CAN-SPAM Act compliance guide", url: "https://www.ftc.gov/business-guidance/resources/can-spam-act-compliance-guide-business" },
@@ -64,7 +68,8 @@ const sourceMap: Record<string, Record<OtherLang, { label: string; url: string }
 };
 
 const labelWords: Record<OtherLang, [RegExp, string][]> = {
-  pt: [[/ \(aide\)/, " (ajuda)"], [/codes de réduction/, "códigos de desconto"], [/utiliser le créateur de pages IA/, "criador de páginas com IA"],
+  pt: [[/connecter un domaine tiers/, "conectar um domínio de terceiros"], [/ajouter des produits/, "adicionar produtos"], [/ajouter les politiques de la boutique/, "adicionar as políticas da loja"], [/protection par mot de passe/, "proteção por senha"], [/préférences de la boutique en ligne/, "preferências da loja virtual"], [/bien démarrer/, "primeiros passos"], [/connecter des intégrations/, "conectar integrações"], [/connecteur MCP pour Claude/, "conector MCP para o Claude"], [/créer des pubs vidéo dans Ad Studio/, "criar anúncios em vídeo no Ad Studio"], [/offres et facturation/, "planos e faturação"], [/récupérer les réponses de formulaires/, "receber as respostas dos formulários"], [/réglages de page/, "configurações da página"], [/utiliser les blogs/, "usar os blogs"], [/utiliser les sites/, "usar os sites"], [/cartes de chaleur/, "mapas de calor"], [/créer un pop-up/, "criar um pop-up"], [/publier un pop-up/, "publicar um pop-up"], [/intégration Shopify/, "integração com a Shopify"], [/intégrations/, "integrações"], [/tests A\/B et Smart Traffic/, "testes A/B e Smart Traffic"], [/tests A\/B/, "testes A/B"], [/conversion analytics/, "análise de conversões"], 
+    [/ \(aide\)/, " (ajuda)"], [/codes de réduction/, "códigos de desconto"], [/utiliser le créateur de pages IA/, "criador de páginas com IA"],
     [/connecter un domaine/, "conectar um domínio"], [/Connecter votre domaine \(nouveau Leadpages\)/, "Leadpages: conectar o seu domínio"],
     [/accepter des achats Shopify/, "aceitar compras Shopify"], [/^Aide Shopify/, "Ajuda Shopify"],
     [/ajouter une page de contact/, "adicionar uma página de contato"], [/modifier les menus/, "editar os menus"],
@@ -72,7 +77,8 @@ const labelWords: Record<OtherLang, [RegExp, string][]> = {
     [/créer et modifier des pages/, "criar e editar páginas"], [/traiter les commandes/, "processar pedidos"], [/: commandes$/, ": pedidos"],
     [/^Shopify: réductions en pourcentage ou montant fixe$/, "Ajuda Shopify: descontos em percentagem ou valor fixo"], [/zones et tarifs d'expédition/, "zonas e tarifas de envio"], [/tarifs d'expédition/, "tarifas de envio"],
     [/ajouter et prévisualiser des thèmes/, "adicionar e pré-visualizar temas"], [/publier un thème/, "publicar um tema"]],
-  en: [[/ \(aide\)/, " (help)"], [/codes de réduction/, "discount codes"], [/utiliser le créateur de pages IA/, "using the AI page builder"],
+  en: [[/connecter un domaine tiers/, "connecting a third-party domain"], [/ajouter des produits/, "add products"], [/ajouter les politiques de la boutique/, "add store policies"], [/protection par mot de passe/, "password protection"], [/préférences de la boutique en ligne/, "online store preferences"], [/bien démarrer/, "getting started"], [/connecter des intégrations/, "connecting integrations"], [/connecteur MCP pour Claude/, "Claude MCP connector"], [/créer des pubs vidéo dans Ad Studio/, "video ads in Ad Studio"], [/offres et facturation/, "plans and billing"], [/récupérer les réponses de formulaires/, "collecting form submissions"], [/réglages de page/, "page settings"], [/utiliser les blogs/, "using blogs"], [/utiliser les sites/, "using sites"], [/cartes de chaleur/, "heatmaps"], [/créer un pop-up/, "create a pop-up"], [/publier un pop-up/, "publish a pop-up"], [/intégration Shopify/, "Shopify integration"], [/intégrations/, "integrations"], [/tests A\/B et Smart Traffic/, "A/B testing and Smart Traffic"], [/tests A\/B/, "A/B testing"], [/conversion analytics/, "conversion analytics"], 
+    [/ \(aide\)/, " (help)"], [/codes de réduction/, "discount codes"], [/utiliser le créateur de pages IA/, "using the AI page builder"],
     [/connecter un domaine/, "connecting a custom domain"], [/Connecter votre domaine \(nouveau Leadpages\)/, "Leadpages: connect your domain"],
     [/accepter des achats Shopify/, "accept Shopify purchases"], [/^Aide Shopify/, "Shopify Help"],
     [/ajouter une page de contact/, "add a contact page"], [/modifier les menus/, "edit menus"],
@@ -104,7 +110,7 @@ export const ui = {
     guides: "Guias",
     listTitle: "Guias Zunrel em português",
     listIntro:
-      "Os guias mais lidos do Zunrel, traduzidos do francês: Leadpages, HTML Pub e Shopify, passo a passo. Os restantes guias estão em francês.",
+      "Todos os guias do Zunrel, traduzidos do francês: Leadpages, HTML Pub e Shopify, passo a passo.",
     uiNote:
       "As capturas mostram a interface usada no guia original (Shopify em francês, Leadpages em inglês). Na sua conta, os botões aparecem na sua língua.",
     stepByStep: "Passo a passo",
@@ -144,7 +150,7 @@ export const ui = {
     guides: "Guides",
     listTitle: "Zunrel guides in English",
     listIntro:
-      "Zunrel's most-read guides, translated from French: Leadpages, HTML Pub and Shopify, step by step. The other guides are in French.",
+      "Every Zunrel guide, translated from French: Leadpages, HTML Pub and Shopify, step by step.",
     uiNote:
       "Screenshots show the interface used in the original guide (Shopify in French, Leadpages in English). In your account, buttons appear in your language.",
     stepByStep: "Step by step",

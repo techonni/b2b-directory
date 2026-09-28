@@ -32,3 +32,12 @@ Work is only live on zunrel.com once it is merged into `main` (Vercel deploys `m
 ## End of session
 
 Techonni prefers a Markdown handoff file. Before ending a session, update `docs/growth/PROXIMA-SESSAO.md` (state, rules, what is pending on his side, next steps), merge it into `main`, and send him the file. Start each new session by reading it.
+
+## Step lists: do them all in one session
+
+When the handoff file (or Techonni) gives a list of steps, **carry out every step in the same session**, one after the other, without stopping after the first one to ask whether to continue. Do not read « un passo de cada vez » as « one step per session »: it means finish, publish and check each step before starting the next one.
+
+- Publish as you go (merge into `main`, production `READY`, check zunrel.com) so nothing is lost if the session stops.
+- For a step that needs Techonni (his dashboards, social accounts, his « oui », screenshots from his Chrome), do everything that can be done from here (texts, files, pages, instructions), mark it « prêt, falta o Techonni », and move on to the next step.
+- Only stop early if a step is truly blocked by a decision that is his to make; even then, do the other steps first.
+- At the end, the handoff file lists every step with its status (feito / pronto, falta o Techonni / bloqueado e porquê).

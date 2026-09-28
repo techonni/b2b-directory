@@ -1,7 +1,7 @@
 # Zunrel · Passagem para a próxima sessão do Claude
 
 > **Como usar:** abre uma sessão nova do Claude Code no projeto `techonni/zunrel` e escreve:
-> « Lê `docs/growth/PROXIMA-SESSAO.md` e começa pelo passo 2. Faz um passo de cada vez, publica tudo (merge para `main`) e confirma no zunrel.com. »
+> « Lê `docs/growth/PROXIMA-SESSAO.md` e começa pelo passo 2. Faz todos os passos nesta sessão, um a seguir ao outro; publica cada um (merge para `main`) e confirma no zunrel.com. »
 
 Data: 28/09/2026 (atualizado depois do passo 1). Responde ao Techonni em **português**, com palavras simples. Os textos do site e dos emails são em **francês**.
 

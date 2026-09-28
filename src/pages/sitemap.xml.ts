@@ -10,6 +10,7 @@ export const GET: APIRoute = ({ site }) => {
     { path: "/", lastmod: lastGuide },
     { path: "/guides/", lastmod: lastGuide },
     { path: "/outils/" },
+    { path: "/faq/", lastmod: lastGuide },
     { path: "/a-propos/" },
     { path: "/kit-media/" },
     { path: "/conditions-d-utilisation/" },

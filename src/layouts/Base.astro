@@ -2,6 +2,8 @@
 import "../styles/global.css";
 import SiteFooter from "../components/SiteFooter.astro";
 import SiteHeader from "../components/SiteHeader.astro";
+import Breadcrumbs, { type Crumb } from "../components/Breadcrumbs.astro";
+import { href } from "../lib/paths";
 import { siteName, tagline } from "../lib/guides";
 
 interface Props {
@@ -9,13 +11,32 @@ interface Props {
   description?: string;
   image?: string;
   type?: string;
+  // Fil d'Ariane affiché au-dessus du titre, avec ses données structurées BreadcrumbList.
+  breadcrumbs?: Crumb[];
 }
 
-const { title, description = tagline, image = "/pins/creer-sa-boutique-shopify.jpg", type = "website" } = Astro.props;
+const {
+  title,
+  description = tagline,
+  image = "/pins/creer-sa-boutique-shopify.jpg",
+  type = "website",
+  breadcrumbs,
+} = Astro.props;
 const imageUrl = new URL(image, Astro.site);
 
 const documentTitle = title ? `${title} · ${siteName}` : `${siteName} · ${tagline}`;
 const canonical = new URL(Astro.url.pathname, Astro.site);
+
+const breadcrumbList = breadcrumbs && {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: breadcrumbs.map((crumb, index) => ({
+    "@type": "ListItem",
+    position: index + 1,
+    name: crumb.name,
+    item: crumb.path ? new URL(href(crumb.path), Astro.site).href : canonical.href,
+  })),
+};
 ---
 
 <!doctype html>
@@ -38,6 +59,7 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
     <meta name="twitter:card" content="summary_large_image" />
     <meta property="og:locale" content="fr_FR" />
     <meta name="p:domain_verify" content="485d0834fb682f692cd0c2e316b227a8" />
+    {breadcrumbList ? <script type="application/ld+json" set:html={JSON.stringify(breadcrumbList)} /> : null}
     <slot name="head" />
     <!-- Google Analytics 4 (Consent Mode : rien n'est stocké avant l'accord du visiteur) -->
     <script is:inline>
@@ -60,6 +82,7 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
     <SiteHeader />
     <div class="mx-auto w-full max-w-[580px] px-5 min-[620px]:px-0">
       <main class="pt-16">
+        {breadcrumbs ? <Breadcrumbs items={breadcrumbs} /> : null}
         <slot />
       </main>
       <SiteFooter />

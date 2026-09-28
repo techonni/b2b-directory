@@ -4,7 +4,7 @@
 > O CLAUDE.md manda ler este ficheiro e fazer **todos** os passos da lista « Próxima sessão », um a seguir ao outro, publicando cada um.
 > Claude no Chrome (Co-work): o Techonni também diz só « continua ». O trabalho dele está em `docs/growth/CHROME-PROXIMO.md` (máx. 3 tarefas e 2 sites) e os resultados em `docs/growth/RESULTADOS-CHROME.md`. Nunca os dois ao mesmo tempo.
 
-Data: 28/09/2026 (fim da sessão dos 20 passos). Responde ao Techonni em **português**, com palavras simples. Os textos do site e dos emails são em **francês**.
+Data: 28/09/2026 (2.ª sessão do dia: guia da semana 2). Responde ao Techonni em **português**, com palavras simples. Os textos do site e dos emails são em **francês**.
 
 ---
 
@@ -47,10 +47,10 @@ Data: 28/09/2026 (fim da sessão dos 20 passos). Responde ao Techonni em **portu
 | 3 | Páginas de preços e comparação | ✅ `combien-coute-leadpages` e `combien-coute-shopify` (preços das capturas oficiais de 27/09, com data). « HTML Pub vs Leadpages » já existia (`choisir-entre-html-pub-et-leadpages`). ⚠️ A página inicial da Leadpages dizia « Plans start at $99/mo » a 28/09: confirmar a tabela de preços (tarefa C do Chrome) e corrigir se mudou |
 | 4 | Página « Meilleures offres du moment » | ✅ `/offres/`, ligada na página inicial e no rodapé. Atualizar todos os meses (`verifiedOn` em `src/pages/offres.astro`) |
 | 5 | Search Console: títulos e descrições | 🟡 Descrições mais longas em todos os guias (resumo + intro, até 160 caracteres). Campos `seoTitle` / `seoDescription` prontos. Falta: dados do Search Console (tarefa D do Chrome) para reescrever as páginas com muitas impressões e poucos cliques |
-| 6 | Um guia novo por semana | ✅ Semana 1: `ajouter-des-variantes-shopify`. Próximas: calendário em `plano-growth.md` (semanas 2 a 8). Capturas pedidas na tarefa G do Chrome |
+| 6 | Um guia novo por semana | ✅ Semana 1: `ajouter-des-variantes-shopify`. Semana 2: `ajouter-un-formulaire-de-contact-shopify` (FR, PT, EN, pin; captura própria virá do lote 5 do Chrome). Próximas: calendário em `plano-growth.md` (semanas 2 a 8). Capturas pedidas na tarefa G do Chrome |
 | 7 | Atualizar guias antigos todos os meses | ✅ Rotina pronta: `check-guides.mjs` lista os guias com mais de 30 dias. Nenhum está desatualizado hoje. Próxima revisão: **28/10/2026** (preços Shopify e Leadpages, `/offres/`) |
 | 8 | Links internos | ✅ Todos os 41 guias têm pelo menos 2 links internos |
-| 9 | Versões PT e EN | ✅ 10 guias em `/pt/` e `/en/`, com hreflang e ligações a partir dos guias franceses e da página inicial. Traduções em `src/lib/translations/` |
+| 9 | Versões PT e EN | ✅ 12 guias em `/pt/` e `/en/`, com hreflang e ligações a partir dos guias franceses e da página inicial. Traduções em `src/lib/translations/` |
 | 10 | 1.ª newsletter | ⏳ Pronto, **falta o « oui »** do Techonni: `ff4c739dc9` para todos (3 assinantes) |
 | 11 | Ritmo quinzenal | 🟡 Calendário em `newsletter-plano.md`. O rascunho de 12/10 foi bloqueado pela segurança (envia um teste): comando pronto no ficheiro, precisa de aprovação |
 | 12 | Mais brindes | ✅ `/newsletter/checklist-leadpages/` e `/newsletter/modeles-landing-page/`. O formulário anuncia o brinde do tema do guia |
@@ -71,16 +71,30 @@ Data: 28/09/2026 (fim da sessão dos 20 passos). Responde ao Techonni em **portu
 - [ ] Link PartnerStack que leve ao **HTML Pub**.
 - [ ] No iCloud: marcar os testes como « Não é lixo » e guardar contact@zunrel.com nos contactos.
 
+## Sessão de 28/09 (2.ª): o que foi feito
+
+| Passo | Estado |
+|---|---|
+| « b2b » | ✅ Explicado: não há segundo repositório. O `package.json` ainda tinha o nome do modelo inicial, `b2b-directory`; o Co-work lia esse nome. Mudado para `zunrel`. Na Vercel também só existe o projeto `zunrel` para este site. |
+| 1. Resultados do Chrome | ⏳ Ainda nenhum lote em `RESULTADOS-CHROME.md`. O lote 1 (preços) continua como « Lote atual ». **Falta o Techonni** dizer « continua » no Chrome. |
+| 2. Preços, link HTML Pub | ⏳ Bloqueado: espera o lote 1 (preços) e o lote 2 (PartnerStack) do Chrome. |
+| 3. Search Console | ⏳ Bloqueado: espera o lote 3 do Chrome. |
+| 4. GA4 e Painel | ⏳ Bloqueado: espera o lote 3 do Chrome. |
+| 5. Guia da semana 2 | ✅ `ajouter-un-formulaire-de-contact-shopify` em FR + PT (`formulario-de-contato-shopify`) + EN (`add-contact-form-shopify`), pin, ligado a partir de `creer-un-menu-shopify` e `rediger-les-politiques-shopify`. Post e pin no dia 10 de `fila-redes.md`. |
+| 6. Newsletter 12/10 | ⏳ Bloqueado outra vez pela segurança do Claude Code (envia um email de teste). **Falta o Techonni:** aprovar o pedido quando aparecer, ou acrescentar uma regra de permissão para `node --experimental-strip-types scripts/mailchimp.mjs newsletter`. Os preços do email dependem do lote 1. |
+| 7. Traduções | ✅ `ajouter-des-variantes-shopify` também em PT e EN. Sem dados de visitas ainda (lote 3) para escolher os seguintes. |
+
 ## Próxima sessão (fazer tudo, por esta ordem)
 
 1. Ler `docs/growth/RESULTADOS-CHROME.md`. Usar os lotes novos, passar o lote seguinte da fila para « Lote atual » em `CHROME-PROXIMO.md` (máx. 3 tarefas, 2 sites) e publicar. Se não houver resultados novos, seguir para o ponto 5.
 2. Com os resultados: corrigir preços (`combien-coute-*`, `/offres/`, botões), pôr o link HTML Pub em `affiliateUrl` da ferramenta `html-pub`, pôr deep links se existirem.
 3. Search Console: `seoTitle` / `seoDescription` nas 5 páginas com mais impressões e CTR mais baixo.
 4. GA4: ver `affiliate_click` por `placement` e `guide`; ver `web_vital` e corrigir páginas lentas. Registar a semana no Painel.
-5. Guia da semana 2 (« formulaire de contact Shopify ») com as capturas da tarefa G, pin com `make-pins.mjs`, 2 links internos.
+5. Guia da semana 3 (ver `plano-growth.md`) em FR, PT e EN, pin com `make-pins.mjs`, 2 links internos. Quando chegar `shopify-page-contact.webp` (lote 5), pô-la no passo 1 do guia do formulário de contacto.
 6. Newsletter: criar o rascunho de 12/10 (com aprovação) e enviar só com « oui ».
-7. Traduzir para PT e EN os guias novos que tiverem mais visitas.
-8. Atualizar este ficheiro, publicar e enviar ao Techonni.
+7. Traduzir para PT e EN os guias com mais visitas (dados do lote 3).
+8. Antes do fim do dia 9 de `fila-redes.md`: novas imagens de pins para os dias 10+ (4 por dia além do guia novo).
+9. Atualizar este ficheiro, publicar e enviar ao Techonni.
 
 ---
 
@@ -98,5 +112,5 @@ Os prompts de `prompts-chrome/` e o `PROMPT-COWORK-CHROME.md` ficam só como arq
 
 - **Mailchimp:** chave `MAILCHIMP_API_KEY` (us9, expira ~09/2027). Plano Free: 250 contactos, 500 envios/mês, sem agendamento. Lista `893c08eb5d`, double opt-in, remetente `Zunrel <contact@zunrel.com>`. Tags: `shopify` 11404677 · `leadpages` 11404678 · `htmlpub` 11404679. Rascunhos: `ff4c739dc9`, `42198dabdc`, `4cdfb81660`, `8fd430e3d8`.
 - **Vercel:** equipa `team_wgtfY6T8u2diPfxnznOnKn6t`, projeto `prj_FcUDt9LY9iVD0NlgcC3HPK110WqH`.
-- **Site:** 41 guias FR + 10 PT + 10 EN; `/offres/`; 3 brindes; FAQ; pesquisa Pagefind; GA4 (`affiliate_click` com `placement`, `sign_up`, `share`, `pdf_download`, `newsletter_bar_click`, `web_vital`).
+- **Site:** 42 guias FR + 12 PT + 12 EN; `/offres/`; 3 brindes; FAQ; pesquisa Pagefind; GA4 (`affiliate_click` com `placement`, `sign_up`, `share`, `pdf_download`, `newsletter_bar_click`, `web_vital`).
 - **Documentos:** `plano-growth.md` (calendário de guias), `calendario-redes.md`, `newsletter-plano.md`, `backlinks.md`, `verificacao-links-afiliados.md`, `PROMPT-COWORK-CHROME.md`.

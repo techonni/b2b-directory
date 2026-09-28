@@ -890,4 +890,1092 @@ export const enGuides: TranslatedGuide[] = [
       "Publishing without checking the phone view, when most visits come from mobile.",
     ],
   },
+  {
+    slug: "changer-ou-annuler-son-offre-leadpages",
+    localSlug: "change-or-cancel-leadpages-plan",
+    question: "How do you change or cancel your Leadpages plan?",
+    summary: "Upgrade or downgrade, stop your subscription, and what happens to your pages.",
+    intro:
+      "You can change plans or cancel at any time, with no penalty. Only the account owner can manage billing.",
+    steps: [
+      {
+        title: "Open billing",
+        text: "At the bottom of the left menu, click your workspace name, then « Billing ». Sign in with the owner account if the link doesn't appear.",
+      },
+      {
+        title: "Change your plan",
+        text: "The page shows every plan, with « Current Plan » on yours. Pick a higher or lower plan. The change takes effect at the next billing cycle.",
+        alt: "Billing page: plans, « Current Plan », « Manage Subscription » and « Cancel »",
+      },
+      {
+        title: "Or cancel",
+        text: "Still in « Billing », use « Manage Subscription » or « Cancel ». During a trial, the end date is shown under your plan: cancel before it so you aren't charged.",
+      },
+      {
+        title: "Know what happens to your pages",
+        text: "If your subscription stops, published pages go back to draft. They aren't lost: you can publish them again when you reactivate a subscription.",
+      },
+    ],
+    pitfalls: [
+      "Downgrading without checking the limits: number of pages, domains or blogs included.",
+      "Canceling while ads are still sending traffic to your pages.",
+    ],
+  },
+  {
+    slug: "creer-sa-landing-page-leadpages-de-a-a-z",
+    localSlug: "create-leadpages-landing-page-complete-guide",
+    question: "How do you create your first Leadpages landing page from start to finish?",
+    summary: "The complete guide: from the free trial to a live page that collects leads, with every screen.",
+    intro:
+      "This guide follows the real order of a first landing page: plan the offer, build the page with AI, review it, publish it on your domain, then collect and track leads. Plan on half a day, during the 7-day free trial.",
+    steps: [
+      {
+        title: "Plan your offer before you start",
+        text: "A landing page has one goal. Decide it before you open the tool: collect emails, sell a product, book calls.\n\nWrite down: who the page is for, the problem you solve, what the visitor gets, and the one action you want them to take (for example « Get the free guide »).\n\nGather your logo, 2 or 3 photos, your colors and, if you have them, a few real customer reviews. You'll save time and AI credits.\n\nFinally, plan the page layout. The one that works best for a first page fits in six blocks, in this order: a headline that states the result, a line that says who it's for, three concrete benefits, proof (a review, a real number, a client logo), the form or button, then two or three FAQs to clear the last doubts.\n\nFor the headline, start from the result the visitor wants, not your product. « Get 10 dinner ideas ready in 20 minutes » says more than « Discover my cookbook ». Write three versions and keep the clearest: you can test the others later.",
+      },
+      {
+        title: "Pick a plan and start the trial",
+        text: "The pricing page has two families of plans. HTML Pub is for publishing pages, sites and blogs. Leadpages adds tools to improve results: A/B testing from the Grow plan, then Smart Traffic and heatmaps from Optimize.\n\nFor a first page, HTML Pub is often enough. If you want to test two versions of your page, choose Leadpages Grow.\n\nClick « Start 7-Day Free Trial ». A credit card is required, but nothing is charged before day 7. Put the end date in your calendar. Prices change often: check today's on the official page.",
+        alt: "« Start 7-Day Free Trial » buttons on each plan",
+      },
+      {
+        title: "Open the Create screen",
+        text: "In the left menu, click « Create ». The AI assistant, Piper, asks « What are you making? »: choose « Landing page ».\n\nPrefer to start from something ready-made? Click « Templates » to pick one, then « Use ». The rest of the guide stays the same.",
+        alt: "Create screen: Piper asks « What are you making? »",
+      },
+      {
+        title: "Describe your page in detail",
+        text: "In the field at the bottom, use your notes from step 1: the audience, the offer, the tone, the colors and the sections you want. For example: a headline, three benefits, a customer review, an FAQ and a form with a single email field.\n\nThe more precise the description, the fewer credits you'll spend on fixes. Click « Send ».\n\nExample of a complete description: « Landing page in English for a free PDF guide for independent fitness coaches who want to find their first clients online. Simple, motivating tone. Colors: navy and orange. Sections: headline with the promised result, three benefits, a short author bio, two FAQs, a form with a single email field and an unchecked consent box. Button: Get the guide. »\n\nYou can also paste the address of an existing page or some HTML: Piper uses it as a starting point.",
+        alt: "Landing page description typed into the input bar",
+      },
+      {
+        title: "Choose images and style",
+        text: "Piper asks which images to use: yours, AI-generated images (which cost more credits) or none for now. The estimated cost is shown at the top right.\n\nIt then suggests three visual directions. Click the one you like, then « Build it ». The page is built in about a minute.",
+        alt: "Three style directions suggested by Piper",
+      },
+      {
+        title: "Fix the page by chatting",
+        text: "Click « Open in editor ». In the « Ask Piper to edit this page… » field, ask for one change at a time: « Replace the headline with… », « Make the button green », « Remove the pricing section ».\n\nPiper lists what it changed and the credits used. Reread every piece of text yourself: AI can make up numbers or reviews. Replace them with real ones, or delete them.\n\nA few useful requests for a first page: « Shorten every paragraph to two sentences max », « Add the button at the top of the page too », « Put my logo at the top left » (after uploading it in « Assets »), « Use my Brand Kit colors ».\n\nFor a small text change, clicking directly in the page is often faster than going through AI. Keep Piper for layout or style changes.",
+        alt: "Editor: Piper applies a requested change",
+      },
+      {
+        title: "Check the form and consent",
+        text: "The form is the heart of the page. Ask for as little as possible: often, the email alone is enough.\n\nIf you plan to send marketing emails, add a checkbox that isn't pre-checked and a sentence explaining what the address will be used for and how to unsubscribe.\n\nFinally, check the button text: it should say what the person gets (« Get the guide »), not just « Submit ».\n\nThink about what happens after submitting: a thank-you message that says what to do next (« Check your inbox, the guide arrives in 2 minutes »), or a dedicated thank-you page. It's the right place to offer the next step, like a link to your store or your booking page.\n\nIf you promise a file (PDF guide, checklist, template), prepare it now and send it in the welcome email of your email tool (step 11).",
+      },
+      {
+        title: "Check the mobile view",
+        text: "Most visitors arrive on their phone. At the bottom right of the editor, click the mobile icon. Check that the headline reads without zooming, the button is visible without scrolling too far, and the form is easy to fill in with a thumb.\n\nCheck speed too: heavy images slow the page down on a mobile network, and every second of waiting makes visitors leave. Use reasonably sized photos and avoid autoplay videos at the top of the page.\n\nFinally, read everything out loud one last time. Typos and sentences that run too long are much easier to spot that way.",
+        alt: "Mobile preview of the page in the editor",
+      },
+      {
+        title: "Set the address and SEO",
+        text: "In the editor, the « … » menu at the top right shows the page address (the slug). Keep it short and readable, for example free-guide.\n\nIn « SEO & Social », set the title and description shown on Google and when the page is shared, plus the tab icon. If the page is only for an ad, you can ask Google not to index it.",
+        alt: "SEO & Social window",
+      },
+      {
+        title: "Publish on your own domain",
+        text: "When you publish, the question « Where should this live? » appears. You can keep the free address provided, or connect your domain to look more trustworthy.\n\nTo connect a domain, open « Domains » in the left menu, then « Connect Domain ». A subdomain like offer.mysite.com is the simplest. Automatic setup configures the domain for you. HTTPS is free and can take up to 48 hours.\n\nIf automatic setup isn't available with your domain provider, add the records Leadpages shows by hand: a CNAME for the subdomain and a TXT for security. Copy the exact values from your account.\n\nAfter each change, click « Update » to put the page live.",
+        alt: "Choosing where to publish: free address or your domain",
+      },
+      {
+        title: "Send leads to your email tool",
+        text: "In the left menu, open « Connectors ». Find your tool (Mailchimp, Brevo, MailerLite, HubSpot…) and click « Connect ».\n\nIn the « Automations » tab, click « Create automation », choose the « Form submitted » trigger, then the tool that will receive the leads. Every new subscriber lands there automatically. Set up a welcome email there.",
+        alt: "Connectors page with apps to connect",
+      },
+      {
+        title: "Run a full test yourself",
+        text: "Open the published page on your phone, fill in the form with your own address, then check three things.\n\nThe response shows up in « Submissions », where you can also export it as CSV. The contact arrives in your email tool. The welcome email goes out. If something fails, « View execution logs » in « Connectors » shows why.",
+        alt: "Submissions page with form responses",
+      },
+      {
+        title: "Bring in your first visitors",
+        text: "A live page doesn't get visits on its own. Start with people who already know you: send the link to your contacts, add it to your email signature and to your social media bios.\n\nThen post regularly where your audience looks for ideas. On Pinterest, a vertical pin with the promised result and the page link can bring visits for months. On Instagram, LinkedIn or Facebook, a short useful tip followed by the link works better than a plain ad for your page.\n\nTo know which channel works, add a tag at the end of the link depending on where you share it, for example ?utm_source=pinterest or ?utm_source=instagram. The « Acquisition » tab in the next step will then show where your subscribers come from.\n\nIf you move to paid ads, start small, with a daily budget you can afford to lose, and only increase it once the page's conversion rate is good.",
+      },
+      {
+        title: "Track your results",
+        text: "Open « Analytics ». The key numbers are at the top: « Sessions » (visits), « Form submissions », « Conversions » and « Conv. rate » (conversion rate).\n\nPick the period (7, 14 or 30 days) and a specific page with « All Pages ». The « Acquisition » tab shows where visitors come from. Wait for at least a hundred visits before drawing conclusions.\n\nIf lots of people come but few sign up, the problem is often the headline or the offer: the promise isn't clear or useful enough. If almost nobody comes, it's distribution that needs work: share the link in your emails, on social media, in your Instagram bio or on a Pinterest pin.\n\nTo track ads, « Scripts & Pixels », in the editor's « … » menu, lets you add the Meta or Google Ads pixel.",
+        alt: "Analytics page: conversions, conversion rate, form submissions and sessions",
+      },
+      {
+        title: "Improve the page with an A/B test",
+        text: "With Leadpages Grow or higher, duplicate the page to create a version B and change one thing only: the headline, the button or the offer.\n\nChoose your goal (form submitted, click, purchase), split traffic 50/50 and wait for the « clear winner » result. Then keep the better version and start a new test. On the Optimize plan, Smart Traffic can send each visitor to the version most likely to appeal to them.\n\nWhere to start? The headline, almost always: it's what everyone reads. Then the button text, then the offer itself (a guide or a checklist, a discount or a freebie). Log each test and its result in a simple table: after a few months, you'll know exactly what your audience responds to.\n\nOn HTML Pub? You can move up to Leadpages Grow from your account settings when you're ready: your pages and domains are kept.",
+        alt: "Creating a variant B and switching between A and B",
+      },
+    ],
+    pitfalls: [
+      "Putting several goals on the same page (sign up, buy, follow on Instagram): the visitor hesitates and does nothing.",
+      "Leaving numbers, reviews or testimonials made up by AI on the live page.",
+      "Publishing without testing the form yourself: you find out too late that leads weren't coming through.",
+      "Forgetting the end of the 7-day trial and getting charged before you decided.",
+    ],
+  },
+  {
+    slug: "partir-d-un-modele-leadpages",
+    localSlug: "use-template-leadpages",
+    question: "How do you start from a template in Leadpages?",
+    summary: "Pick a ready-made template and adapt it to your business.",
+    intro:
+      "A template saves you from starting with a blank page. You keep a structure that works and replace the text, images and colors.",
+    steps: [
+      {
+        title: "Open the templates",
+        text: "On the « Create » screen, click « Templates » above the input bar, or « Browse all templates » to see them all.",
+        alt: "Templates panel with « Preview », « Use » and « Browse all templates »",
+      },
+      {
+        title: "Preview before choosing",
+        text: "Click « Preview » to see the template full size. Choose the one whose structure matches what you want to sell, not just the one with colors you like.",
+      },
+      {
+        title: "Use it",
+        text: "Click « Use ». A copy of the template opens, and you can edit it without breaking anything.",
+      },
+      {
+        title: "Adapt the content",
+        text: "Ask the assistant to replace the text with yours, or edit it directly. Add your logo, photos and colors.",
+      },
+      {
+        title: "Check on mobile, then publish",
+        text: "Most visitors arrive on their phone. In the editor, click the mobile icon at the bottom right to check, then publish.",
+        alt: "Mobile preview of the page in the editor",
+      },
+    ],
+    pitfalls: [
+      "Leaving the template's placeholder text on the live page.",
+      "Keeping every section of the template when some don't serve your offer.",
+    ],
+  },
+  {
+    slug: "publier-du-html-sur-html-pub",
+    localSlug: "publish-html-on-html-pub",
+    question: "How do you publish a ready-made HTML page on HTML Pub?",
+    summary: "Paste code or upload an .html file, without spending AI credits.",
+    intro:
+      "Already have a page in HTML, made by you or by an AI? HTML Pub puts it online in seconds. This method doesn't use credits.",
+    steps: [
+      {
+        title: "Open the Create screen",
+        text: "Click « Create » in the left menu, or « Create Page » from your page list.",
+      },
+      {
+        title: "Add your code",
+        text: "Paste your HTML into the « Describe the page you want, or paste a URL or HTML… » field, or use the upload icon in the bar to drop in an .html file.",
+        alt: "Input bar for pasting HTML, with the file upload icon",
+      },
+      {
+        title: "Check the preview",
+        text: "Make sure the images show up. If they're on your computer, add them to the page's files (« Assets ») first.",
+      },
+      {
+        title: "Publish",
+        text: "Send, check, then publish. The page is live on your workspace's free address, or on your domain if you've connected one.",
+      },
+    ],
+    pitfalls: [
+      "Pasting a page that loads images or files still sitting on your computer.",
+      "Sending a form to another service: HTML Pub then doesn't collect the responses.",
+    ],
+  },
+  {
+    slug: "creer-un-site-web-avec-html-pub",
+    localSlug: "create-website-html-pub",
+    question: "How do you create a multi-page website with HTML Pub?",
+    summary: "A homepage, then the other pages with the same menu and style.",
+    intro:
+      "A website groups several pages under one domain, with a shared menu. The AI builds the homepage first, then each page when you ask.",
+    steps: [
+      {
+        title: "Choose « Website »",
+        text: "In the left menu, open the arrow next to « Create » and choose « Site ». Or, on the « Create » screen, select « Website ».",
+        alt: "« What are you creating? » menu with the « New website » option",
+      },
+      {
+        title: "Describe your site",
+        text: "Explain your business, your audience, the style you want and the pages you need, then click « Send ». Type everything on a single line: each line break sends a separate message.",
+        alt: "Site description typed with « New website »",
+      },
+      {
+        title: "Approve the page list",
+        text: "Piper suggests the menu pages. Rename, remove (« Remove ») or add some (« Add a page »), then click « These pages ».",
+        alt: "List of pages suggested for the site",
+      },
+      {
+        title: "Choose images and style, then build the homepage",
+        text: "As with a landing page, choose images and a style direction, then click « Build it ». Only the homepage is built at this stage.",
+      },
+      {
+        title: "Build the other pages",
+        text: "The « The rest of the site » card lists the remaining pages with a credit estimate. « Build 3 pages » builds them one by one, with the homepage's header and style. « Skip for now » lets you do it later.",
+        alt: "« The rest of the site » card with the button to build the pages",
+      },
+    ],
+    pitfalls: [
+      "Building every page at once without reviewing the homepage: style mistakes get repeated everywhere.",
+      "Going over the number of pages included in your plan.",
+    ],
+  },
+  {
+    slug: "creer-un-blog-avec-html-pub",
+    localSlug: "create-blog-html-pub",
+    question: "How do you create a blog with HTML Pub?",
+    summary: "Create the blog on HTML Pub, write a first post and publish it on your site, step by step.",
+    intro:
+      "A blog brings visitors from Google and social media. With HTML Pub, it takes a minute to set up, and posts go live as soon as you publish them.",
+    steps: [
+      {
+        title: "Create the blog",
+        text: "In the left menu, open « Blog » and click « New Blog ». Give it a title; the address (slug) fills in on its own. The description and author name are optional. Click « Create Blog ».",
+        alt: "New Blog window with title, slug and description",
+      },
+      {
+        title: "Explore the blog dashboard",
+        text: "The blog page shows the design of the blog homepage (« Feed layout ») and of posts (« Post layout »), then your published, draft and scheduled posts.",
+        alt: "Blog dashboard",
+      },
+      {
+        title: "Write a post",
+        text: "Click « New post ». The editor opens with Penn, the writing assistant: pick a suggestion (« Write a how-to guide »…) or write it yourself.",
+        alt: "Post editor with the Penn assistant",
+      },
+      {
+        title: "Fill in the post settings",
+        text: "The document icon at the bottom opens « Post Settings »: title, content, author, cover image and SEO. Click « Save changes ».",
+        alt: "Post Settings panel for a post",
+      },
+      {
+        title: "Publish",
+        text: "Click « Publish » at the top right. The post is live immediately.",
+      },
+      {
+        title: "Attach it to your site",
+        text: "If you have an HTML Pub site, you can show the blog at the /blog address of your domain.",
+      },
+    ],
+    pitfalls: [
+      "Publishing posts without a cover image: they get fewer clicks on social media.",
+      "Choosing a plan without a blog: check that yours includes at least one.",
+    ],
+  },
+  {
+    slug: "modifier-l-adresse-d-une-page-leadpages",
+    localSlug: "change-page-url-leadpages",
+    question: "How do you change a page's URL or protect it with a password?",
+    summary: "A page's title, address (slug), password and tags.",
+    intro:
+      "Each page has a few simple settings, in the « … » menu on its card in « Pages ». They give you a readable address, hide a page that's not ready, or keep your pages organized.",
+    steps: [
+      {
+        title: "Open the page menu",
+        text: "In « Pages », click « … » at the bottom of the page's card. The menu groups stats, responses, sharing and settings.",
+        alt: "A page's « … » menu: Settings, Set Password, Tags",
+      },
+      {
+        title: "Change the title and address",
+        text: "Choose « Settings ». For the address (slug), use lowercase letters, numbers and hyphens, for example coaching-offer-september.",
+      },
+      {
+        title: "Or do it from the editor",
+        text: "In the page editor, the « … » menu at the top right shows the address (slug, editable with the pencil), the published address, and the « SEO & Social » and « Scripts & Pixels » options.",
+        alt: "Editor « … » menu: slug, SEO & Social, Scripts & Pixels",
+      },
+      {
+        title: "Protect with a password",
+        text: "Choose « Set Password ». Visitors will need to enter the password to see the page. Handy for a client page or a page that isn't ready yet.",
+      },
+      {
+        title: "Organize with tags",
+        text: "Choose « Tags », or click « + tag » on the card, to find your pages by campaign or by client.",
+      },
+      {
+        title: "Take care of SEO",
+        text: "« SEO & Social » sets the tab icon (favicon), indexing by Google, and the title and description shown in search results.",
+        alt: "SEO & Social window",
+      },
+    ],
+    pitfalls: [
+      "Changing the address of a page already shared or used in an ad: the old link stops working.",
+      "Forgetting to remove the password on launch day.",
+    ],
+  },
+  {
+    slug: "recuperer-les-formulaires-html-pub",
+    localSlug: "view-form-submissions-html-pub",
+    question: "How do you get the leads from your forms?",
+    summary: "See responses, export them to CSV and delete them if needed.",
+    intro:
+      "HTML Pub detects the forms on your pages automatically and saves the responses. There's nothing to set up.",
+    steps: [
+      {
+        title: "Add a form to your page",
+        text: "Ask the assistant to « add a form with first name and email », or use a template that includes one.",
+      },
+      {
+        title: "Open « Submissions »",
+        text: "In the left menu, click « Submissions ». The « Leads » page groups every response: name, email, source page and date.",
+        alt: "Submissions (Leads) page with form responses",
+      },
+      {
+        title: "Review the responses",
+        text: "For a single page, open its « … » menu in « Pages » and choose « Submissions ». Expand a row to see every field filled in.",
+      },
+      {
+        title: "Export to CSV",
+        text: "Export the responses to CSV to open them in Excel or Google Sheets.",
+      },
+      {
+        title: "Delete when asked",
+        text: "The trash icon deletes a response permanently. Useful if someone asks for their data to be erased.",
+      },
+    ],
+    pitfalls: [
+      "Sending the form to an outside service: HTML Pub then no longer sees the responses.",
+      "Never exporting your leads: keep a regular copy.",
+    ],
+  },
+  {
+    slug: "connecter-leadpages-a-son-outil-e-mail",
+    localSlug: "connect-leadpages-email-tool",
+    question: "How do you send your leads to Mailchimp, Brevo or your CRM?",
+    summary: "Connect an integration so every new lead lands in the right place.",
+    intro:
+      "A connector sends each form response to another tool, with no copy and paste. HTML Pub offers more than 20: Mailchimp, Brevo, MailerLite, Kit, ActiveCampaign, HubSpot, Pipedrive, Slack, Zapier, Stripe…",
+    steps: [
+      {
+        title: "Open « Connectors »",
+        text: "In the left menu, click « Connectors ». Search for your tool by name or category (email, CRM, ads…) and click « Connect ».",
+        alt: "Connectors page with apps to connect",
+      },
+      {
+        title: "Authorize the connection",
+        text: "Sign in to the tool or paste its API key, depending on what's asked. The status changes to « Connected ».",
+      },
+      {
+        title: "Set up the automation",
+        text: "In the « Automations » tab, click « Create automation ». Choose the trigger (« Form submitted », « Checkout completed » or « Visitor identified »), then the connected app that receives the leads.",
+        alt: "Creating an automation: choosing the trigger",
+      },
+      {
+        title: "Test with your own email",
+        text: "Fill in the form yourself, then check that the contact arrives in the tool.",
+      },
+      {
+        title: "Watch for errors",
+        text: "« View execution logs » shows every send: successful, pending or failed, with the reason.",
+      },
+    ],
+    pitfalls: [
+      "Not testing: you find out weeks later that leads weren't coming through.",
+      "Going over the number of active integrations in your plan.",
+    ],
+  },
+  {
+    slug: "faire-un-test-ab-leadpages",
+    localSlug: "ab-test-leadpages",
+    question: "How do you run an A/B test with Leadpages?",
+    summary: "Compare two versions of a page and keep the one that converts best.",
+    intro:
+      "An A/B test shows two versions of a page to your visitors and measures which one gets more results. It's included from the Leadpages Grow plan.",
+    steps: [
+      {
+        title: "Create a variant",
+        text: "Duplicate your page in one click, or let the AI suggest a variant. Change one important thing only: the headline, the button or the offer.",
+        alt: "Creating a variant B and switching between A and B",
+      },
+      {
+        title: "Choose your goal",
+        text: "Say what counts as success: form submitted, button click, purchase or a conversion on another site.",
+      },
+      {
+        title: "Split the traffic",
+        text: "50/50 is the simplest. You can also choose 70/30 or any split between 10 and 90%. Then publish.",
+      },
+      {
+        title: "Wait for a clear result",
+        text: "Results show live with three levels: trending, likely, clear winner. Wait for « clear winner » before deciding.",
+      },
+      {
+        title: "Keep the winner",
+        text: "Send 100% of traffic to the better version in one click, then start a new test.",
+      },
+    ],
+    pitfalls: [
+      "Changing several things at once: you no longer know what made the difference.",
+      "Stopping the test after a few visits: the result is often down to chance.",
+    ],
+  },
+  {
+    slug: "lire-une-carte-de-chaleur-leadpages",
+    localSlug: "read-heatmap-leadpages",
+    question: "How do you read a heatmap in Leadpages?",
+    summary: "See where visitors click, how far they scroll and what they read.",
+    intro:
+      "A heatmap colors your page based on visitor activity. It's included in the Leadpages Optimize and Scale plans, with no code to install.",
+    steps: [
+      {
+        title: "Wait for enough visits",
+        text: "Below about 30 visits, there's too little data to draw conclusions.",
+      },
+      {
+        title: "Turn on heatmap mode",
+        text: "In the page editor, click the flame icon in the toolbar.",
+        alt: "Click heatmap, with the Clicks, Scroll and Attention tabs",
+      },
+      {
+        title: "Read the clicks",
+        text: "Red: lots of clicks. Blue: ignored areas. If people click an image that isn't a link, make it one.",
+      },
+      {
+        title: "Read the scrolling",
+        text: "The scroll map shows the share of visitors who reach 25, 50, 75 and 100% of the page. If few reach the form, move it up.",
+      },
+      {
+        title: "Fix things right away",
+        text: "Edit the page or start an A/B test from the same screen.",
+      },
+    ],
+    pitfalls: [
+      "Drawing conclusions from too few visits.",
+      "Looking for the attention map on mobile: it only exists on desktop (mobile has clicks and scrolling).",
+    ],
+  },
+  {
+    slug: "utiliser-smart-traffic-leadpages",
+    localSlug: "smart-traffic-leadpages",
+    question: "How does Smart Traffic work in Leadpages?",
+    summary: "AI sends each visitor to the page version most likely to appeal to them.",
+    intro:
+      "A classic A/B test splits traffic evenly. Smart Traffic instead picks, for each visitor, the variant most likely to convert them. It's included from Leadpages Optimize.",
+    steps: [
+      {
+        title: "Prepare at least two variants",
+        text: "Create truly different versions: a different offer, angle or audience.",
+      },
+      {
+        title: "Set the goal",
+        text: "Form, click or purchase: Smart Traffic learns from this goal.",
+      },
+      {
+        title: "Turn on Smart Traffic",
+        text: "Click « Let AI optimize this for me ». Instead of a fixed split, the AI routes each visitor and gets better as visits add up.",
+        alt: "Optimize panel: automatic traffic split between the original and the variant",
+      },
+      {
+        title: "Track the results",
+        text: "Compare the overall conversion rate before and after. Add a new variant when another one runs out of steam.",
+      },
+    ],
+    pitfalls: [
+      "Using it with near-identical variants: the AI has nothing to choose between.",
+      "Expecting results within a few days with little traffic.",
+    ],
+  },
+  {
+    slug: "ameliorer-le-taux-de-conversion-de-ses-pages-de-a-a-z",
+    localSlug: "improve-landing-page-conversion-rate-complete-guide",
+    question: "How do you improve your landing page conversion rate from start to finish?",
+    summary: "A complete guide to analyzing, optimizing and raising the conversion rate of your Leadpages and HTML Pub landing pages, step by step.",
+    intro:
+      "Your page is live, but the conversion rate stays low. Before building a new page or switching tools, there's a logical path: understand where the problem comes from, fix the blockers one by one and measure each improvement. This guide follows that path from start to finish, with Leadpages and HTML Pub features.",
+    steps: [
+      {
+        title: "Understand what conversion rate means",
+        text: "Conversion rate is the percentage of visitors who take the action you want: fill in a form, click a button or buy. If 100 people visit your page and 3 fill in the form, the rate is 3%. A good rate depends on the industry, but the landing page average is around 3 to 5%. The goal is to beat it by working on each part of the page.",
+      },
+      {
+        title: "Read your current stats",
+        text: "Before changing anything, write down the current conversion rate. In Leadpages, open the page dashboard: you'll see unique visitors, conversions and the rate. That's your starting point.\n\nIf you just launched the page and traffic is low, wait for at least 200 visitors before drawing conclusions. Below that, the numbers aren't reliable.",
+        alt: "Leadpages dashboard: unique visitors, conversions and conversion rate",
+      },
+      {
+        title: "Use heatmaps to find blockers",
+        text: "Heatmaps show where visitors click and how far they scroll. If nobody scrolls down to the form, the problem is above it. If everyone clicks an element that isn't a link, that's a missed opportunity.\n\nIn Leadpages, heatmaps are available from the Optimize plan. Turn them on in the page settings and let them run a few days before reading them.",
+        alt: "Leadpages heatmap: click areas and scroll depth",
+      },
+      {
+        title: "Rewrite the main headline",
+        text: "The headline is the first thing visitors read. It has to answer one simple question: « What's in it for me? ». A good headline talks about the result, not your product.\n\nBad: « Our innovative digital marketing solution ». Good: « Double your sign-ups in 30 days without raising your ad budget ». Test a headline built around your offer's main benefit.",
+      },
+      {
+        title: "Simplify the form",
+        text: "Every extra field in a form lowers the conversion rate. If you ask for first name, last name, email, phone and company, cut it down to email only to start. You can ask for the rest later, once you have the contact.\n\nIn Leadpages, open the form in the editor and delete the fields you don't need. Keep a single action button with clear text: « Get the guide », not « Submit ».",
+        alt: "Leadpages form editor: fields and call-to-action button",
+      },
+      {
+        title: "Add social proof",
+        text: "Visitors trust other visitors. Add customer testimonials, partner logos, user counts or ratings. Social proof reassures people and clears doubts.\n\nPlace testimonials near the form or the buy button, where visitors hesitate. A testimonial with a name, a photo and a result in numbers is worth more than an anonymous quote.",
+      },
+      {
+        title: "Match your ad and your page",
+        text: "If your ad promises a free ebook and the page talks about a webinar, the visitor leaves. The ad message, the page headline and the offer must tell the same story.\n\nCheck every traffic source: the Facebook ad copy, the email subject line, the link in your Instagram bio. Each one must match exactly what the page offers.",
+      },
+      {
+        title: "Optimize for mobile",
+        text: "More than half of traffic comes from phones. If your page is hard to read or the button is too small on mobile, you lose conversions.\n\nIn Leadpages, use the editor's mobile preview. Check that the headline reads without zooming, the form is easy to fill in with a thumb, and the button is big enough to tap easily.",
+        alt: "Mobile preview in the Leadpages editor: checking the layout on a phone",
+      },
+      {
+        title: "Build a thank-you page that works",
+        text: "The thank-you page is the most underrated page. The visitor just converted: they're engaged. Use it to offer a next step: share on social media, sign up for a webinar, discover a product.\n\nIn Leadpages, set the thank-you page in the form settings. Build a real page with a next offer rather than a plain « Thanks » message.",
+      },
+      {
+        title: "Add real urgency",
+        text: "Urgency works when it's real. A countdown for an offer that never ends destroys trust. Use real limits: a number of spots, a promotion end date, limited stock.\n\nIf you have no natural limit, create one: « The first 50 sign-ups get a bonus ». What matters is that it's verifiable and honest.",
+      },
+      {
+        title: "Run an A/B test",
+        text: "Don't change everything at once. Create a variant with a single change: a different headline, a different button color, a shorter form. Let the test run until you have at least 100 conversions per variant for a reliable result.\n\nIn Leadpages, duplicate your page, change one element and start the test from the Optimize tab. Leadpages splits the traffic automatically.",
+        alt: "Leadpages A/B testing interface: original and test variant with traffic split",
+      },
+      {
+        title: "Turn on Smart Traffic to automate",
+        text: "Once you have several variants that work, Smart Traffic takes over. Instead of splitting traffic evenly, the AI sends each visitor to the variant most likely to convert them, based on their device, location and behavior.\n\nSmart Traffic is available from Leadpages Optimize. Turn it on in your page's Optimize tab after creating at least two variants.",
+        alt: "Optimize panel: turning on Smart Traffic for smart traffic routing",
+      },
+      {
+        title: "Optimize the page's SEO",
+        text: "A page that ranks well gets free, qualified traffic. Fill in the SEO title, meta description and URL with your main keywords. Add alt text to every image.\n\nIn Leadpages, open the page's SEO settings. The title should include your main keyword and stay under 60 characters. The description should make people want to click, in under 155 characters.",
+        alt: "SEO and social settings in Leadpages: title, description and share image",
+      },
+      {
+        title: "Set up weekly tracking",
+        text: "Conversion rate optimization isn't a one-off project, it's an ongoing process. Every week, write down the conversion rate, the number of visitors and the results of running tests.\n\nCreate a simple table with the date, the rate, the change tested and the result. After a few weeks, you'll see which kinds of changes have the most impact on your pages.",
+      },
+    ],
+    pitfalls: [
+      "Changing several elements at once: impossible to know which one had an effect.",
+      "Drawing conclusions with fewer than 200 visitors per variant.",
+      "Copying a competitor's page without understanding why it works for their audience.",
+      "Ignoring mobile: more than half of traffic comes through it.",
+      "Adding a fake countdown that restarts on every visit.",
+    ],
+  },
+  {
+    slug: "publier-une-page-depuis-claude",
+    localSlug: "publish-page-from-claude",
+    question: "How do you publish an HTML Pub page straight from Claude?",
+    summary: "Connect HTML Pub to Claude to create and edit your pages by chatting.",
+    intro:
+      "HTML Pub has a connector for Claude (MCP). Once it's connected, you ask Claude for a page and it publishes it to your account.",
+    steps: [
+      {
+        title: "Check your plan",
+        text: "The MCP connector is included in every HTML Pub and Leadpages plan, from Starter up.",
+      },
+      {
+        title: "Add the connector in Claude",
+        text: "On claude.ai, open Settings, then Connectors, choose « Add custom connector » and paste the address https://mcp.htmlpub.com/mcp.",
+      },
+      {
+        title: "Authorize access",
+        text: "Sign in to your HTML Pub account when Claude asks. No API key is needed. Claude then appears in « Connected Apps », in your workspace menu.",
+        alt: "Connected Apps page, where Claude appears once connected",
+      },
+      {
+        title: "Ask for your page",
+        text: "For example: « Create and publish on HTML Pub a landing page for my photography workshop, with a sign-up form. » Claude gives you the page address.",
+      },
+      {
+        title: "Edit by chatting",
+        text: "Ask Claude for changes: it edits the existing page without starting over.",
+      },
+    ],
+    pitfalls: [
+      "Adding the wrong connector address: copy it from the official help center.",
+      "Publishing without reviewing: always check the live page.",
+    ],
+  },
+  {
+    slug: "creer-une-pub-video-avec-ad-studio",
+    localSlug: "create-video-ad-ad-studio",
+    question: "How do you create a video ad with Ad Studio?",
+    summary: "A starting image, a storyboard, then the final video, approving each step.",
+    intro:
+      "Ad Studio turns a short description into an ad. It offers product-focused ads or UGC-style ads with an AI-generated creator. It's only available on the Leadpages Optimize and Scale plans.",
+    steps: [
+      {
+        title: "Open « Ads »",
+        text: "In the left menu, click « Ads ». Describe your product, your audience and the style you want: product ad or UGC-style video.",
+        alt: "Ads page (Ad Studio): « Ad Studio is available on Optimize and above »",
+      },
+      {
+        title: "Approve the starting image",
+        text: "Ad Studio creates an image that sets the scene, the product and the creator. Ask for tweaks: this step doesn't use video credits.",
+      },
+      {
+        title: "Approve the storyboard",
+        text: "Review the shots, captions and camera moves that tell the story.",
+      },
+      {
+        title: "Start the shoot",
+        text: "Before rendering, a quote shows the number of credits based on the number of shots and the resolution. Approve it to get the final video.",
+      },
+    ],
+    pitfalls: [
+      "Starting the render without reviewing the storyboard carefully: that's the step that costs credits.",
+      "Being surprised by a video with no music: if the music isn't royalty-free, it's removed.",
+      "Looking for Ad Studio on an HTML Pub plan: you need to move up to Leadpages Optimize.",
+    ],
+  },
+  {
+    slug: "choisir-son-forfait-shopify",
+    localSlug: "choose-shopify-plan",
+    question: "How do you choose your Shopify plan?",
+    summary: "Basic, Grow, Advanced or Plus: which one to pick for your business.",
+    intro:
+      "Shopify has four plans. If you're starting solo, Basic is almost always enough. The pricier plans are mostly for teams and high volumes.",
+    steps: [
+      {
+        title: "Compare the four plans",
+        text: "Basic for solo entrepreneurs, Grow for small teams (up to 5 staff accounts), Advanced for selling internationally with more tools (up to 15 accounts), Plus for large businesses.",
+        alt: "The Basic, Grow, Advanced and Plus plans on the pricing page",
+      },
+      {
+        title: "Choose yearly or monthly billing",
+        text: "Paying yearly costs less per month. Paying monthly gives you more freedom to stop. Check both prices shown on shopify.com/pricing.",
+      },
+      {
+        title: "Look at the fees per sale",
+        text: "With Shopify Payments, card rates go down as the plan goes up. If you use another payment provider, Shopify adds transaction fees, which are higher on Basic.",
+      },
+      {
+        title: "Start small",
+        text: "Start on Basic. You can change plans later, when your sales justify it.",
+      },
+    ],
+    pitfalls: [
+      "Picking Advanced from day one without needing it.",
+      "Forgetting the cost of paid apps, which comes on top of the plan.",
+    ],
+  },
+  {
+    slug: "creer-sa-boutique-shopify-de-a-a-z",
+    localSlug: "create-shopify-store-complete-guide",
+    question: "How do you create your Shopify store from start to finish?",
+    summary: "The complete guide: from sign-up to your first sale, with every admin screen.",
+    intro:
+      "This guide follows the real order of a first store: prepare, sign up, fill the store, set up selling, test, then open to the public. Plan on a day of work, spread over the free trial.",
+    steps: [
+      {
+        title: "Prepare everything before you sign up",
+        text: "The free trial is short: prepare your content before you create the account, so you spend that time building rather than searching.\n\nGather: the store name, a logo (even a simple one), 3 to 5 products with photos, a price and a description for each, package weight and size if you ship physical items, and your business details (EIN if you have one).\n\nHave the bank account that will receive your sales ready too: Shopify asks for it to turn on payments. Finally, write down what you want in your return policy: how many days, refund or exchange, who pays return shipping.",
+      },
+      {
+        title: "Start the free trial",
+        text: "On shopify.com, open the Pricing page. It shows the current offer: a free trial, often followed by a discounted launch price for the first months. Offers change often and depend on your country: read today's offer before you start.\n\nClick « Start free trial », enter your email and answer the questions about your project. Your answers only help set up the admin: you can change everything later.\n\nPut two dates in your calendar right away: the end of the free trial, and the end of the launch offer, when the regular plan price starts.",
+        alt: "Shopify pricing page with the free trial and launch offer",
+      },
+      {
+        title: "Find your way around the admin",
+        text: "Everything happens in the Shopify admin. The left menu groups the sections you'll use every day: « Orders », « Products », « Customers », « Discounts », « Content » and « Online Store ». Store settings are all in « Settings », at the bottom left.\n\nIn the middle of the home page, a bar lets you ask Sidekick, Shopify's AI assistant, a question. It knows your store: ask it, for example, « How do I offer free shipping over $50? ». Still, check its answers against the official help center before changing an important setting.",
+        alt: "Shopify admin home with the left menu and the Sidekick bar",
+      },
+      {
+        title: "Add your first product",
+        text: "Click « Products », then « Add product ». Write a clear title, the way a customer would search for it on Google: « Bauhaus Poster 11x17 » rather than « Model 12 ».\n\nThe description answers the buyer's questions: what it is, the material, the size, how to use it, shipping time. Short sentences and a bullet list read better on a phone.\n\nIn « Media », click « Upload » and add several photos: the product alone on a light background, then in use. Keep the same format for every photo in the store: that's what makes it look professional.",
+        alt: "« Add product » form: title, description and media",
+      },
+      {
+        title: "Set price, inventory, weight and variants",
+        text: "In « Pricing », enter the selling price. The « Compare-at price » field shows a crossed-out price: only use it for a real sale.\n\nIn « Inventory », enter the quantity available so Shopify stops selling when you run out. For an item you ship, enter the weight including packaging: it's used to calculate shipping. For a downloadable file, turn off « Physical product ».\n\nIf the product comes in several sizes or colors, add variants: each one can have its own price, inventory and photo. Finally, set the status to « Active » and click « Save ». Repeat for your other products.",
+        alt: "Pricing and Inventory sections of the Shopify product page",
+      },
+      {
+        title: "Choose and customize your theme",
+        text: "The theme decides how the whole store looks. In « Online Store », then « Themes », or on themes.shopify.com, filter for free themes: they're built and updated by Shopify and more than enough to start.\n\nChoose a theme for the way it shows products, not for its demo photos. Click « Add »: the theme goes into your library without replacing the one that's live.\n\nClick « Customize » to add your logo, colors and fonts and to arrange the home page: a large image, your featured products, a line that says what you sell. Always check the mobile preview, then click « Publish ».",
+        alt: "Shopify Theme Store filtered on free themes",
+      },
+      {
+        title: "Organize the store menus",
+        text: "Menus link your pages together. Open « Content », then « Menus ». Two menus already exist: the main menu, at the top of the store, and the footer menu.\n\nIn the main menu, keep few entries: home, the catalog or your collections, and a contact page. In the footer, put the practical pages: shipping, returns, terms of sale, legal notice.\n\nClick a menu to add, rename or drag and drop an item, then save.",
+        alt: "Content > Menus: main menu, footer menu and customer account menu",
+      },
+      {
+        title: "Set up shipping and delivery",
+        text: "Click « Settings », then « Shipping and delivery ». The « General profile » applies to all your products: open it to see your shipping zones (for example the United States, then the rest of the world) and the rates for each zone.\n\nFor each zone, create simple rates: a flat price, or a price based on order weight. A « Free shipping » rate above a certain amount often nudges customers to add one more item.\n\nIn « Packages », enter the dimensions of your usual box: Shopify uses them to estimate shipping costs. If you only sell digital products, you don't need a shipping rate.",
+        alt: "Settings > Shipping and delivery: general profile, estimated delivery dates and packages",
+      },
+      {
+        title: "Check your taxes",
+        text: "In « Settings », open « Taxes and duties ». Shopify Tax calculates sales tax automatically based on where the customer is, in the regions where you're set up to collect.\n\nIn the United States, you generally collect sales tax in states where you have nexus (a physical presence or enough sales there). Check that the right states are listed, and register with each state before collecting.\n\nShopify says it on this screen itself: if you're unsure about your tax obligations, talk to an accountant or tax professional before opening the store.",
+        alt: "Settings > Taxes and duties: Shopify tax services and tax regions",
+      },
+      {
+        title: "Turn on payments",
+        text: "In « Settings », then « Payments », turn on Shopify Payments. Shopify asks for details about your business and the bank account that will receive payouts. Two-step authentication is required.\n\nWith Shopify Payments, you accept cards and local payment methods without an outside provider. Card rates depend on your plan: check them on shopify.com/pricing. If you use another provider instead, Shopify adds transaction fees.\n\nPayPal can be added under « Supported payment methods » or « Additional payment methods ».",
+        alt: "Settings > Payments: Shopify Payments, payment methods, payouts and PayPal",
+      },
+      {
+        title: "Choose your customers' payment methods",
+        text: "Still in « Payments », open the payment methods. Turn on the ones your customers really use: Visa and Mastercard, American Express, Apple Pay, Google Pay and Shop Pay.\n\nThe button to view payment rates shows the fees for each method: some cost more than others. There's no need to turn everything on; too many logos can even confuse buyers at checkout.",
+        alt: "List of online payment methods: Shop Pay, Visa, Mastercard, American Express, Apple Pay",
+      },
+      {
+        title: "Write your policies",
+        text: "In « Settings », open « Policies ». Written policies appear in the checkout footer: customers see them before they buy.\n\nAt a minimum, fill in the return and refund policy, terms of service, shipping policy and privacy policy. « Contact information » is marked required: it's what lets customers reach you.\n\nIf Shopify offers a template, start from it, but adapt it to how you really work. US law doesn't set a single return period for online purchases, so state your own window clearly (30 days is common). Then add these pages to the footer menu.",
+        alt: "Settings > Policies: return rules and written policies (return, privacy, terms of service, shipping, contact information, legal notice)",
+      },
+      {
+        title: "Create a welcome code",
+        text: "A small discount helps trigger the first order. Click « Discounts », then « Create discount » and choose « Amount off order ».\n\nType an easy-to-remember code, like WELCOME10, then the value: 10% for example. Under « Maximum discount uses », check the one-use-per-customer limit, or the code works on every order. Save: the code works at checkout right away.\n\nYou'll also use this code on your promo pages and social media.",
+        alt: "« Create discount » form with a 10% off order code",
+      },
+      {
+        title: "Place a test order",
+        text: "Before opening, buy from your own store like a real customer: on your phone, going through the home page, a product, the cart and checkout, with your discount code.\n\nCheck at each step: is shipping right? Does sales tax show correctly? Does the confirmation email arrive, and does it make you want to come back? You can place a real order with your card, then cancel and refund it from « Orders ».\n\nFix anything that made you hesitate: if you hesitated, your customers will too.",
+      },
+      {
+        title: "Choose a plan",
+        text: "To keep the store after the trial, choose a plan in « Settings », then « Plan ». For a solo seller, Basic is almost always enough. Check the current US prices, monthly and yearly, on shopify.com/pricing.\n\nIf there's a launch offer, it applies for the first months, then the regular price starts. Grow and Advanced are mostly for teams and high volumes: you can change plans later, when your sales justify it.\n\nRemember that paid apps come on top of the plan price.",
+        alt: "Shopify Basic, Grow, Advanced and Plus plans on the pricing page",
+      },
+      {
+        title: "Connect your domain name",
+        text: "Your store already has a free .myshopify.com address, but your own domain looks more trustworthy. In « Settings », then « Domains », choose to connect an existing domain, transfer a domain or buy a new one.\n\nWith many domain providers, Shopify connects it automatically. Otherwise, it tells you which DNS records to change at your provider. Connecting often takes less than two hours, sometimes up to two days. The HTTPS certificate is free.\n\nIf several domains are connected, choose the one customers will see as « Primary ».",
+        alt: "Settings > Domains with connected domains",
+      },
+      {
+        title: "Open the store to the public",
+        text: "While the store is being set up, it's password protected. To open it, go to « Online Store », then « Preferences ». Under store access, turn off password protection: the store becomes visible to everyone.\n\nOn the same page, fill in the home page title and meta description: that's what Google and social networks show when someone shares your store.\n\nThe admin home page then shows that the store is live, with live visit and visitor counts.",
+        alt: "Online Store > Preferences: store access section with the password option",
+      },
+      {
+        title: "Attract your first customers",
+        text: "An online store doesn't get visits on its own. Pick a hero product and an offer (your welcome code), then create a landing page that only talks about that offer, with HTML Pub or Leadpages.\n\nShare that page's address on social media, in your bio, on Pinterest or in your ads. The page button goes straight to the Shopify product page, not the store home page.\n\nEvery week, look at how many visitors arrive and how many buy, and improve the page that converts least. The quick guide « get customers with a landing page » covers this step in detail.",
+        alt: "Creating a landing page with AI: the assistant asks « What are you making? »",
+      },
+    ],
+    pitfalls: [
+      "Spending the free trial tweaking details without adding a single product.",
+      "Opening the store without a test order: the customer is the one who finds the wrong shipping rates.",
+      "Leaving policies empty: returns, terms and contact details reassure buyers at checkout.",
+      "Forgetting that the regular plan price starts after the launch offer.",
+      "Filling the main menu with dozens of links: visitors no longer know where to click.",
+    ],
+  },
+  {
+    slug: "connecter-son-domaine-shopify",
+    localSlug: "connect-domain-shopify",
+    question: "How do you connect your domain name to Shopify?",
+    summary: "Use your own address instead of the myshopify.com one.",
+    intro:
+      "Every store has a free .myshopify.com address. With your own domain, it looks more trustworthy. The SSL certificate (HTTPS) is free.",
+    steps: [
+      {
+        title: "Open « Domains »",
+        text: "Click « Settings » at the bottom left, then « Domains ». Three choices: connect an existing domain, transfer a domain or buy a new domain.",
+        alt: "Settings > Domains with connected domains",
+      },
+      {
+        title: "Connect an existing domain",
+        text: "Choose to connect an existing domain and enter your domain. For many domain providers, Shopify offers an automatic connection.",
+      },
+      {
+        title: "Otherwise, edit the DNS by hand",
+        text: "At your domain provider, update the records Shopify shows (an A record, and a CNAME for www).",
+      },
+      {
+        title: "Wait for verification",
+        text: "The connection often works in under two hours, but can take up to two days. The status changes to « Connected ».",
+      },
+      {
+        title: "Choose the primary domain",
+        text: "If several domains are connected, mark the one customers will see as « Primary ».",
+      },
+    ],
+    pitfalls: [
+      "Deleting old DNS records your email uses.",
+      "Forgetting that domain renewal happens at your domain provider, not at Shopify.",
+    ],
+  },
+  {
+    slug: "accepter-les-paiements-shopify",
+    localSlug: "accept-payments-shopify",
+    question: "How do you accept payments on Shopify?",
+    summary: "Shopify Payments, wallets and PayPal: the settings and fees to know.",
+    intro:
+      "Shopify Payments lets you accept cards, Apple Pay, Google Pay and other payment methods without an outside provider. It's also what avoids extra transaction fees.",
+    steps: [
+      {
+        title: "Open « Payments »",
+        text: "Click « Settings », then « Payments ». You'll see the status of Shopify Payments, your payment methods, your payouts and additional providers like PayPal.",
+        alt: "Settings > Payments: Shopify Payments, payment methods, payouts and PayPal",
+      },
+      {
+        title: "Turn on Shopify Payments",
+        text: "Follow the setup: details about your business and the bank account for payouts. Two-step authentication is required.",
+      },
+      {
+        title: "Choose payment methods",
+        text: "Open the payment methods and turn on the ones your customers use: cards, Shop Pay, Apple Pay, Google Pay, and buy now, pay later options if you want them. The button to view payment rates shows the fees for each method.",
+        alt: "List of online payment methods: Shop Pay, Visa, Mastercard, American Express, Apple Pay",
+      },
+      {
+        title: "Add PayPal if needed",
+        text: "In the additional payment methods, you can add PayPal or other providers.",
+      },
+      {
+        title: "Place a test order",
+        text: "Before opening the store, place a test order to check that everything works.",
+      },
+    ],
+    pitfalls: [
+      "Using another provider instead of Shopify Payments without knowing that Shopify adds transaction fees (up to 2% on Basic).",
+      "Skipping the payment methods your customers use most, like Apple Pay or Shop Pay.",
+    ],
+  },
+  {
+    slug: "connecter-html-pub-a-shopify",
+    localSlug: "connect-html-pub-shopify",
+    question: "How do you link HTML Pub or Leadpages to Shopify?",
+    summary: "HTML Pub's Shopify connector, and buttons that send visitors to your store.",
+    intro:
+      "Your HTML Pub or Leadpages pages bring in visitors, Shopify takes the payments. There are two ways to link them: the Shopify connector, and buttons that lead to Shopify checkout.",
+    steps: [
+      {
+        title: "Open « Connectors »",
+        text: "In your HTML Pub workspace menu, click « Connectors » and type « Shopify » in the search. The Shopify card sends customer data from your HTML Pub checkout to Shopify.",
+      },
+      {
+        title: "Enter your store address",
+        text: "Click « Connect », enter your store's .myshopify.com address, then click « Connect Shopify ». Then approve the authorization in Shopify.",
+        alt: "HTML Pub Connectors: Shopify card with the « Your Shopify store domain » field",
+      },
+      {
+        title: "Add a button to Shopify",
+        text: "To sell a product from a page, add a button and, in its click action, choose an external link: paste the product address or a Shopify checkout link.",
+      },
+      {
+        title: "Or paste a Shopify Buy Button",
+        text: "In Shopify, add the « Buy Button » sales channel, create a button for a product, copy its HTML code and paste it into an HTML block on your page.",
+      },
+      {
+        title: "Test the whole path",
+        text: "Publish the page, click the button and go all the way to checkout to check that the right product opens.",
+      },
+    ],
+    pitfalls: [
+      "Thinking Leadpages counts Shopify sales: its stats stop at the button click.",
+      "Entering your own domain name instead of the .myshopify.com address in the connector.",
+    ],
+  },
+  {
+    slug: "creer-une-page-de-vente-pour-un-produit-shopify",
+    localSlug: "sales-page-shopify-product",
+    question: "How do you create a sales page for a Shopify product?",
+    summary: "A single-offer page, built with HTML Pub's AI, that sends visitors to your Shopify product.",
+    intro:
+      "A Shopify product page shows the product; a sales page tells its story. It's most useful when you run ads or make videos for one specific product.",
+    steps: [
+      {
+        title: "Get the product ready in Shopify",
+        text: "The product must be active, with its photos, price and inventory. Open it in your online store and copy the page address: that's where the button will lead.",
+      },
+      {
+        title: "Describe the page to the AI",
+        text: "In HTML Pub or Leadpages, create a page with AI and describe it precisely: the product, who it's for, 3 benefits, customer reviews, FAQs and a « Buy now » button.",
+        alt: "Describing a sales page for a Shopify product in HTML Pub's AI assistant",
+      },
+      {
+        title: "Link the button to the product",
+        text: "In the editor, set the button action to « external link » and paste the Shopify product address. You can also paste a Shopify Buy Button into an HTML block.",
+      },
+      {
+        title: "Add a reason to buy now",
+        text: "A time-limited discount code, free shipping or a bonus. Create it in Shopify first so it works at checkout.",
+        alt: "Creating a discount code in Shopify",
+      },
+      {
+        title: "Publish and test on your phone",
+        text: "Publish the page, open it on your phone, click the button and go all the way to checkout. Then share the page address in your ads and videos.",
+      },
+    ],
+    pitfalls: [
+      "Several products and several buttons on the same page: the visitor hesitates and doesn't click.",
+      "A button that leads to the store home page instead of the product.",
+      "Made-up customer reviews: only use real ones.",
+    ],
+  },
+  {
+    slug: "rediger-les-politiques-shopify",
+    localSlug: "store-policies-shopify",
+    question: "How do you add your terms and policies on Shopify?",
+    summary: "Returns, terms of service, shipping, contact details and privacy, shown at checkout.",
+    intro:
+      "Policies reassure buyers, and some are required by law or by payment providers. Shopify shows them at checkout; you still need to write them and put them in the menu.",
+    steps: [
+      {
+        title: "Open « Policies »",
+        text: "In the admin, click « Settings », then « Policies ». You'll find the return rules and the list of written policies.",
+        alt: "Settings > Policies: return rules and written policies (return, privacy, terms of service, shipping, contact information, legal notice)",
+      },
+      {
+        title: "Set your return rules",
+        text: "State the return window, who pays return shipping and how you refund. US law doesn't set one general return period for online purchases, so your policy is what counts: make it clear and stick to it (30 days is common).",
+      },
+      {
+        title: "Fill in contact information",
+        text: "« Contact information » is marked required. Enter the business name, address, email and phone: that's what lets customers reach you.",
+      },
+      {
+        title: "Write the other policies",
+        text: "Open each policy: return and refund, privacy, terms of service and shipping. If Shopify offers a template, start from it, then adapt each sentence to how you really work. Save.",
+      },
+      {
+        title: "Add them to the footer",
+        text: "Policies appear at checkout, but not necessarily in the store. In « Content », then « Menus », open the footer menu and add a link to each one.",
+      },
+    ],
+    pitfalls: [
+      "Keeping the template as is: it may promise things you don't do.",
+      "Policies that don't match your real settings (return window, shipping costs).",
+      "Forgetting the footer link: customers can't find your terms before buying.",
+    ],
+  },
+  {
+    slug: "creer-un-menu-shopify",
+    localSlug: "edit-menu-shopify",
+    question: "How do you edit your Shopify store menu?",
+    summary: "Add, rename and move links, and create a dropdown menu.",
+    intro:
+      "The menu helps visitors find your products in one click. Shopify creates two to start: the main menu, at the top, and the footer menu.",
+    steps: [
+      {
+        title: "Open « Menus »",
+        text: "In the admin, click « Content », then « Menus ». Click the menu to edit, for example the main menu.",
+        alt: "Content > Menus: main menu, footer menu and customer account menu",
+      },
+      {
+        title: "Add a link",
+        text: "Click « Add menu item ». Type the name shown, then choose the destination: a collection, a product, a page or a policy. Click « Save ».",
+      },
+      {
+        title: "Move items or create a dropdown",
+        text: "Drag an item to change the order. For a dropdown, drag an item under another one and slightly to the right: it becomes a submenu.",
+      },
+      {
+        title: "Rename or delete",
+        text: "Click an item to change its name or destination. The trash icon removes it from the menu, without deleting the page itself.",
+      },
+      {
+        title: "Check on your phone",
+        text: "Save, then open the store on your phone. The main menu often shows behind an icon there: keep names short and entries few.",
+      },
+    ],
+    pitfalls: [
+      "A main menu with ten or more links: visitors no longer know where to click.",
+      "Practical pages (shipping, returns) in the top menu instead of the footer.",
+    ],
+  },
+  {
+    slug: "ouvrir-sa-boutique-shopify-au-public",
+    localSlug: "remove-password-shopify-store",
+    question: "How do you remove the password from your Shopify store?",
+    summary: "Open your store to the public by turning off password protection, and what to check first.",
+    intro:
+      "A new Shopify store is password protected: nobody can buy. To open it, you first choose a plan, then turn off password protection.",
+    steps: [
+      {
+        title: "Choose a plan",
+        text: "The password can only be removed after you choose a plan. In « Settings », then « Plan », pick one. During the free trial, billing only starts when the trial ends.",
+        alt: "Shopify Basic, Grow, Advanced and Plus plans on the pricing page",
+      },
+      {
+        title: "Open the store preferences",
+        text: "In the left menu, click « Online Store », then « Preferences ». Scroll down to the store access section.",
+      },
+      {
+        title: "Turn off password protection",
+        text: "Turn off password protection, then save. The store is visible to everyone, with no password.",
+        alt: "Online Store > Preferences: store access section with the password option",
+      },
+      {
+        title: "Fill in the title and description for Google",
+        text: "On the same page, write the home page title and meta description. That's what Google and social networks show when someone shares the store.",
+      },
+      {
+        title: "Check from another device",
+        text: "Open the store address on a phone where you're not signed in: the home page should appear directly, with no password prompt.",
+      },
+    ],
+    pitfalls: [
+      "Opening the store without a test order: the first customer is the one who finds the mistakes.",
+      "Opening with empty policies or demo products still active.",
+    ],
+  },
+  {
+    slug: "creer-un-tunnel-de-vente-avec-leadpages-et-shopify-de-a-a-z",
+    localSlug: "sales-funnel-leadpages-shopify-complete-guide",
+    question: "How do you build a sales funnel with Leadpages and Shopify from start to finish?",
+    summary: "A complete guide to building a sales funnel that captures leads with Leadpages and turns them into customers on Shopify, step by step.",
+    intro:
+      "A sales funnel is the path a visitor takes from discovering your offer to buying. Instead of sending everyone straight to your Shopify store, you first capture their email with a Leadpages landing page, win them over by email, then send them to Shopify to buy. This guide builds the whole funnel, from the first page to the first payment.",
+    steps: [
+      {
+        title: "Understand how a sales funnel is built",
+        text: "A sales funnel has four stages: grab attention, capture the lead, nurture the relationship by email, then offer the purchase. Each stage has the right tool.\n\nLeadpages handles the first two: the landing page that attracts and the form that captures the email. Your email marketing service handles the third. Shopify handles the last: payment and delivery. Together they form an automated system that sells while you sleep.",
+      },
+      {
+        title: "Get your offer ready in Shopify",
+        text: "Before building the funnel, your product must be ready in Shopify. Create it with photos, price, description and variants. Check that payment works by placing a test order.\n\nCopy the direct link to the product or collection: you'll need it for the buy button in your emails and on your sales page.",
+        alt: "Shopify product page: title, description, price and product images",
+      },
+      {
+        title: "Create an irresistible lead magnet",
+        text: "The lead magnet is what you offer in exchange for the email. A PDF guide, a checklist, a discount code, early access. It must solve a concrete problem for your ideal customer and tie directly to your paid product.\n\nExample: you sell kitchen accessories on Shopify. Your lead magnet could be « 10 quick weeknight recipes » as a PDF. The visitor gives their email, gets the recipes, then your emails introduce your accessories.",
+      },
+      {
+        title: "Build the opt-in landing page",
+        text: "In Leadpages, create a new page from a template or with AI. The page has one goal: convince the visitor to leave their email in exchange for the lead magnet.\n\nThe headline announces the lead magnet's benefit. The form asks for email only. The button says exactly what the visitor gets: « Get the 10 recipes » rather than « Sign up ». Remove anything distracting: no menu, no links to other pages.",
+        alt: "Creating a landing page with the AI assistant in Leadpages",
+      },
+      {
+        title: "Connect your email service",
+        text: "In Leadpages, open your page's integrations and connect your email marketing service: Mailchimp, Kit (formerly ConvertKit), ActiveCampaign or another. Every new subscriber is added automatically to a specific list or tag.\n\nCreate a list or tag just for this funnel so your sales emails only reach people who asked for this particular lead magnet.",
+        alt: "Leadpages integrations panel: connecting email services",
+      },
+      {
+        title: "Write the email sequence",
+        text: "Prepare 4 to 6 automated emails sent over 7 to 10 days. The first delivers the lead magnet. The next ones bring value and gradually introduce your Shopify product.\n\nEmail 1: lead magnet delivery + a quick intro to you. Email 2: a tip related to the lead magnet's topic. Email 3: the story of a customer who solved their problem with your product. Email 4: the product pitch with the link to Shopify. Email 5: a reminder with a time-limited discount code.",
+      },
+      {
+        title: "Create a discount code in Shopify",
+        text: "In Shopify, go to Discounts and create a promo code just for your funnel subscribers. A code like WELCOME15 for 15% off the first order gives people a reason to buy now rather than later.\n\nLimit the code to one use per customer and set an end date to create real urgency.",
+        alt: "Creating a discount code in Shopify: percentage, conditions and limits",
+      },
+      {
+        title: "Build the sales page",
+        text: "Create a second page in Leadpages: the sales page. It's where your emails send contacts who are ready to buy. It presents your product in detail with a button that leads to Shopify.\n\nThis page is longer than the opt-in page: testimonials, product details, guarantee, FAQ. The buy button uses the direct link to your Shopify product.",
+        alt: "HTML Pub sales page with a buy button linked to Shopify",
+      },
+      {
+        title: "Set up the thank-you page",
+        text: "After signing up on the opt-in page, the visitor lands on a thank-you page. Use it to build engagement: remind them to check spam, invite them to follow you on social media, or give a preview of your Shopify product.\n\nIn Leadpages, set the post-form redirect to your thank-you page. You can also put your offer with the discount code right there for people in a hurry.",
+      },
+      {
+        title: "Test the whole funnel",
+        text: "Before sending traffic, go through every step yourself. Sign up with a test address, check that the welcome email arrives, click every link in the sequence, and place a test order on Shopify with the discount code.\n\nCheck on mobile too: most traffic will come from there. If an email doesn't display well or a button is too small, fix it before launching.",
+      },
+      {
+        title: "Send traffic to the opt-in page",
+        text: "The funnel is ready: now it needs visitors. The most common sources: a Facebook or Instagram ad targeting your audience, a social media post with the page link, a blog post that points to the lead magnet, or a partnership with a creator in your niche.\n\nStart with a small ad budget to confirm the funnel converts before spending more.",
+      },
+      {
+        title: "Track results at each stage",
+        text: "A sales funnel is measured stage by stage. Write down the landing page conversion rate, the email open rate, the click-through rate to Shopify and the final purchase rate.\n\nIn Leadpages, the dashboard gives the page's conversion rate. In your email service, you see opens and clicks. In Shopify, sales with the discount code show how many sales come from the funnel.",
+        alt: "Leadpages dashboard: tracking conversions and traffic",
+      },
+      {
+        title: "Optimize with A/B tests",
+        text: "Once the funnel is running and producing data, improve each stage. Test two headlines on the opt-in page. Test two email subject lines. Test two prices or two offers on the sales page.\n\nIn Leadpages, use A/B tests for the opt-in page and the sales page. Change one element at a time and wait for at least 100 conversions per variant before picking a winner.",
+        alt: "Leadpages A/B testing interface: comparing two page variants",
+      },
+    ],
+    pitfalls: [
+      "Sending traffic straight to Shopify without capturing the email first: visitors who leave are lost for good.",
+      "Writing a 100% promotional email sequence: contacts unsubscribe before they buy.",
+      "Not testing the funnel on mobile before launching ads.",
+      "Using a discount code with no end date: there's no reason to buy now.",
+      "Launching paid ads before checking that every stage of the funnel works.",
+    ],
+  },
 ];

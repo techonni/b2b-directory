@@ -22,6 +22,7 @@ import {
   type Tool,
 } from "../../lib/guides";
 import { href } from "../../lib/paths";
+import { imageSize } from "../../lib/image-size";
 
 export function getStaticPaths() {
   return guides.map((guide) => ({ params: { slug: guide.slug } }));
@@ -144,6 +145,8 @@ const howTo = {
                 <img
                   src={step.image.src}
                   alt={step.image.alt}
+                  width={imageSize(step.image.src)?.width}
+                  height={imageSize(step.image.src)?.height}
                   loading="lazy"
                   decoding="async"
                   class="mt-4 w-full rounded-[6px] shadow-[0_0_0_1px_rgba(0,0,0,0.07),0_1px_2px_rgba(0,0,0,0.05)]"

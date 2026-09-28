@@ -4,7 +4,7 @@
 > O CLAUDE.md manda ler este ficheiro e fazer **todos** os passos da lista « Próxima sessão », um a seguir ao outro, publicando cada um.
 > Claude no Chrome (Co-work): o Techonni também diz só « continua ». O trabalho dele está em `docs/growth/CHROME-PROXIMO.md` (máx. 3 tarefas e 2 sites) e os resultados em `docs/growth/RESULTADOS-CHROME.md`. Nunca os dois ao mesmo tempo.
 
-Data: 28/09/2026 (2.ª sessão do dia: guia da semana 2). Responde ao Techonni em **português**, com palavras simples. Os textos do site e dos emails são em **francês**.
+Data: 28/09/2026 (3.ª sessão do dia: limpeza « b2b », guia da semana 4, pins novos). Responde ao Techonni em **português**, com palavras simples. Os textos do site e dos emails são em **francês**.
 
 ---
 
@@ -68,6 +68,7 @@ Data: 28/09/2026 (2.ª sessão do dia: guia da semana 2). Responde ao Techonni e
 
 - [ ] Uma só vez: guardar nas instruções do projeto do Co-work a frase de arranque (ver « Claude no Chrome » abaixo). Depois, dizer « continua » no Chrome (lote 1: preços).
 - [ ] Link PartnerStack que leve ao **HTML Pub**.
+- [ ] Se ainda vir « b2b-directory » na app do Claude no Mac: é uma pasta antiga no computador. No Finder, apagar (ou renomear para `zunrel`) a pasta `b2b-directory`, e na app do Claude escolher sempre o repositório `techonni/zunrel`. No GitHub e na Vercel já não existe nada com esse nome.
 - [ ] No iCloud: marcar os testes como « Não é lixo » e guardar contact@zunrel.com nos contactos.
 
 ## Sessão de 28/09 (2.ª): o que foi feito
@@ -85,16 +86,28 @@ Data: 28/09/2026 (2.ª sessão do dia: guia da semana 2). Responde ao Techonni e
 | Chrome em pausa | ⏸️ O Techonni atingiu o limite de uso do Co-work a 28/09. **Não pedir nada ao Chrome** até ele dizer que voltou. O lote 1 fica à espera em `CHROME-PROXIMO.md`. |
 | 7. Traduções | ✅ `ajouter-des-variantes-shopify` também em PT e EN. Sem dados de visitas ainda (lote 3) para escolher os seguintes. |
 
+## Sessão de 28/09 (3.ª): o que foi feito
+
+| Passo | Estado |
+|---|---|
+| Limpeza « b2b » | ✅ Verificado: o Claude só tem acesso a **um** repositório, `techonni/zunrel`. Na Vercel, o projeto `zunrel` só tem `zunrel.com`, `www.zunrel.com` e `zunrel-com.vercel.app` (o endereço `b2b-directory-eight.vercel.app` já foi apagado). O código não tem mais « b2b ». A conversa antiga « Dois repos e B2B » foi renomeada. Se ainda aparecer « b2b-directory » na app do Claude no Mac, é só uma pasta/lista antiga guardada na app (ver « Pendentes do lado do Techonni »). |
+| 1. Resultados do Chrome | ⏸️ Nenhum lote novo (o Chrome está em pausa: limite de uso). Acrescentado à fila o **lote 5b** (capturas do pop-up Leadpages). |
+| 2 a 4. Preços, Search Console, GA4 | ⏳ Bloqueados: esperam os lotes 1 a 3 do Chrome. |
+| 5. Guia da semana 4 | ✅ `ajouter-un-pop-up-d-inscription-leadpages` em FR + PT (`pop-up-de-inscricao-leadpages`) + EN (`add-signup-pop-up-leadpages`), pin, ligado a partir de `recolter-des-e-mails-avant-un-lancement` e `connecter-leadpages-a-son-outil-e-mail`. Fonte: artigos de ajuda oficiais da Leadpages (« Create a pop-up », « Publish your pop-up »). Post e pin no dia 12 de `fila-redes.md`. Falta a captura (lote 5b). |
+| 6. Newsletter | ⏸️ Nada (regra 0). |
+| 7. Traduções | ⏳ Espera os dados de visitas (lote 3). |
+| 8. Pins dos dias 10+ | ✅ 2.ª imagem para cada um dos 44 guias (« Les erreurs à éviter », fundo escuro) em `public/pins/erreurs/`, criada com `make-pins.mjs --variant erreurs`. Na fila: 4 por dia, dias 10 a 20. |
+
 ## Próxima sessão (fazer tudo, por esta ordem)
 
 1. Ler `docs/growth/RESULTADOS-CHROME.md`. Usar os lotes novos, passar o lote seguinte da fila para « Lote atual » em `CHROME-PROXIMO.md` (máx. 3 tarefas, 2 sites) e publicar. Se não houver resultados novos, seguir para o ponto 5.
 2. Com os resultados: corrigir preços (`combien-coute-*`, `/offres/`, botões), pôr o link HTML Pub em `affiliateUrl` da ferramenta `html-pub`, pôr deep links se existirem.
 3. Search Console: `seoTitle` / `seoDescription` nas 5 páginas com mais impressões e CTR mais baixo.
 4. GA4: ver `affiliate_click` por `placement` e `guide`; ver `web_vital` e corrigir páginas lentas. Registar a semana no Painel.
-5. Guia da semana 4 (« pop-up d'inscription Leadpages », ver `plano-growth.md`) em FR, PT e EN, pin com `make-pins.mjs`, 2 links internos. Quando chegar `shopify-page-contact.webp` (lote 5), pô-la no passo 1 do guia do formulário de contacto.
+5. Guia da semana 5 (« suivre ses commandes et expédier sur Shopify », ver `plano-growth.md`) em FR, PT e EN, pin normal + pin `--variant erreurs`, 2 links internos. Quando chegarem capturas: `shopify-page-contact.webp` (lote 5) no passo 1 do guia do formulário de contacto; `leadpages-popup.webp` e `leadpages-popup-publish.webp` (lote 5b) nos passos 1 e 4 do guia do pop-up (e corrigir os nomes dos menus se o Chrome disser que mudaram).
 6. Newsletter: **nada** enquanto não houver inscrito real (regra 0). Não perguntar ao Techonni.
 7. Traduzir para PT e EN os guias com mais visitas (dados do lote 3).
-8. Antes do fim do dia 9 de `fila-redes.md`: novas imagens de pins para os dias 10+ (4 por dia além do guia novo).
+8. `fila-redes.md` tem posts até ao dia 12 e pins até ao dia 20: antes do fim do dia 5, escrever posts X/LinkedIn para os dias 13+ (7 dias de avanço).
 9. Atualizar este ficheiro, publicar e enviar ao Techonni.
 
 ---

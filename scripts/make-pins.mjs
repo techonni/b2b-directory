@@ -40,6 +40,7 @@ const titles = {
   "creer-un-menu-shopify": "Un [menu] clair pour votre boutique",
   "ouvrir-sa-boutique-shopify-au-public": "Ouvrir sa boutique au [public]",
   "creer-un-tunnel-de-vente-avec-leadpages-et-shopify-de-a-a-z": "Un [tunnel de vente] Leadpages + Shopify",
+  "ajouter-des-variantes-shopify": "Tailles et couleurs : les [variantes] Shopify",
 };
 
 const escape = (text) => text.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");

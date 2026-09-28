@@ -981,6 +981,53 @@ export const guides: Guide[] = [
 
   // ——— Optimiser ———
   {
+    slug: "ajouter-google-analytics-a-une-page-leadpages",
+    question: "Comment ajouter Google Analytics à une page Leadpages ?",
+    summary: "Relier votre page à Google Analytics 4 pour savoir d'où viennent vos visiteurs, avant de chercher à les convertir.",
+    theme: "optimiser",
+    publishedOn: "2026-09-28",
+    updatedOn: "2026-09-28",
+    intro:
+      "Leadpages compte déjà les visites et les inscriptions de chaque page. Google Analytics 4 vous dit en plus d'où viennent les visiteurs (Google, Instagram, publicité…) et ce qu'ils font. Il suffit de copier une balise de Google Analytics dans les réglages de votre page Leadpages.",
+    steps: [
+      {
+        title: "Créez une propriété Google Analytics 4",
+        text: "Sur analytics.google.com, connectez-vous avec votre compte Google. Si vous n'avez pas encore de compte Analytics, suivez l'assistant : un compte, puis une propriété (le nom de votre site), puis un flux de données « Web » avec l'adresse de votre page.",
+      },
+      {
+        title: "Copiez la balise Google",
+        text: "Dans « Administration », ouvrez « Flux de données » et cliquez sur votre flux Web. Cliquez sur « Afficher les instructions concernant la balise », puis sur « Installer manuellement ». Copiez tout le code affiché : il commence par <script> et contient votre ID de mesure (G-…).",
+      },
+      {
+        title: "Collez-la dans les réglages de la page",
+        text: "Dans Leadpages, ouvrez la page dans l'éditeur, puis ses réglages (« Settings ») et la partie consacrée au suivi (« Analytics » ou « Tracking Codes » selon la version). Collez la balise dans le champ du code d'en-tête, « Head Section Tracking Code ».",
+      },
+      {
+        title: "Mettez la page à jour",
+        text: "Enregistrez, puis cliquez sur « Update » (ou « Publish ») : tant que la page n'est pas republiée, la balise n'est pas en ligne. Faites de même pour chaque page à suivre, avec la même balise.",
+      },
+      {
+        title: "Vérifiez que les visites arrivent",
+        text: "Ouvrez votre page publiée dans un autre onglet. Dans Google Analytics, allez dans « Rapports », puis « Temps réel » : votre visite doit apparaître en moins d'une minute. Si rien n'arrive, vérifiez que la balise est bien dans l'en-tête et que la page a été mise à jour.",
+      },
+      {
+        title: "Ajoutez des liens avec UTM",
+        text: "Pour savoir quel post ou quelle publicité amène des contacts, ajoutez à vos liens des paramètres UTM, par exemple ?utm_source=instagram&utm_medium=social. Dans Google Analytics, le rapport « Acquisition » les regroupe par source.",
+      },
+    ],
+    pitfalls: [
+      "Oublier de republier la page : la balise reste dans l'éditeur et aucune visite n'est comptée.",
+      "Coller seulement l'ID de mesure (G-…) dans le champ du code d'en-tête : il faut tout le code de la balise.",
+      "Oublier le consentement : en Europe, les cookies de mesure demandent l'accord du visiteur (RGPD), prévoyez un bandeau de consentement.",
+    ],
+    tools: [{ slug: "leadpages", why: "Un champ de code d'en-tête dans les réglages de chaque page." }],
+    sources: [
+      { label: "Aide Google Analytics : configurer Analytics pour un site web", url: "https://support.google.com/analytics/answer/9304153?hl=fr" },
+      { label: "Centre d'aide Leadpages", url: "https://support.leadpages.com/hc/en-us" },
+    ],
+    related: ["faire-un-test-ab-leadpages", "lire-une-carte-de-chaleur-leadpages", "ameliorer-le-taux-de-conversion-de-ses-pages-de-a-a-z"],
+  },
+  {
     slug: "faire-un-test-ab-leadpages",
     question: "Comment faire un test A/B avec Leadpages ?",
     summary: "Comparer deux versions d'une page et garder celle qui convertit le mieux.",
@@ -1019,7 +1066,7 @@ export const guides: Guide[] = [
     ],
     tools: [{ slug: "leadpages", why: "Tests A/B dès Grow, sans limite de trafic." }],
     sources: [{ label: "Leadpages : tests A/B", url: "https://leadpages.com/product/ab-testing" }, pricing],
-    related: ["utiliser-smart-traffic-leadpages", "lire-une-carte-de-chaleur-leadpages", "ameliorer-le-taux-de-conversion-de-ses-pages-de-a-a-z"],
+    related: ["utiliser-smart-traffic-leadpages", "lire-une-carte-de-chaleur-leadpages", "ajouter-google-analytics-a-une-page-leadpages", "ameliorer-le-taux-de-conversion-de-ses-pages-de-a-a-z"],
   },
   {
     slug: "lire-une-carte-de-chaleur-leadpages",
@@ -1189,7 +1236,7 @@ export const guides: Guide[] = [
       { label: "Leadpages : conversion analytics", url: "https://leadpages.com/product/conversion-tools" },
       pricing,
     ],
-    related: ["faire-un-test-ab-leadpages", "utiliser-smart-traffic-leadpages", "creer-sa-landing-page-leadpages-de-a-a-z"],
+    related: ["ajouter-google-analytics-a-une-page-leadpages", "faire-un-test-ab-leadpages", "utiliser-smart-traffic-leadpages", "creer-sa-landing-page-leadpages-de-a-a-z"],
   },
 
   // ——— IA et vidéo ———

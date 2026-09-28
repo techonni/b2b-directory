@@ -113,6 +113,11 @@ Vous avez déjà une page HTML toute prête ? Pas besoin de la refaire.
 Sur HTML Pub, collez le code ou déposez le fichier .html : elle est en ligne, sans crédits IA.
 Comment faire : https://zunrel.com/guides/publier-du-html-sur-html-pub/?utm_source=SOURCE&utm_medium=social&utm_campaign=post-diario
 
+### Dia 20
+Avant d'optimiser une landing page, il faut savoir d'où viennent les visiteurs.
+Sur Leadpages : copiez la balise Google Analytics 4, collez-la dans « Head Section Tracking Code », republiez. Vérifiez dans « Temps réel ».
+Comment faire : https://zunrel.com/guides/ajouter-google-analytics-a-une-page-leadpages/?utm_source=SOURCE&utm_medium=social&utm_campaign=post-diario
+
 ---
 
 ## Pinterest: 5 pins por dia
@@ -235,6 +240,15 @@ Guia novo de 28/09 (também no `pinterest-agendar.csv`, 08/10).
 | Imagem | Título | Descrição | Painel | Link |
 |---|---|---|---|---|
 | https://zunrel.com/pins/suivre-ses-commandes-et-expedier-shopify.jpg | Comment suivre ses commandes et expédier sur Shopify ? | De la nouvelle commande au colis livré, avec le numéro de suivi. Guide gratuit, étape par étape. | Shopify : ouvrir sa boutique | https://zunrel.com/guides/suivre-ses-commandes-et-expedier-shopify/?utm_source=pinterest&utm_medium=social&utm_campaign=pin-diario&utm_content=suivre-ses-commandes-et-expedier-shopify |
+
+
+### Dia 14
+
+Guia novo de 28/09 (também no `pinterest-agendar.csv`, 09/10).
+
+| Imagem | Título | Descrição | Painel | Link |
+|---|---|---|---|---|
+| https://zunrel.com/pins/ajouter-google-analytics-a-une-page-leadpages.jpg | Comment ajouter Google Analytics à une page Leadpages ? | Relier votre page à Google Analytics 4 pour savoir d'où viennent vos visiteurs. Guide gratuit, étape par étape. | Landing pages : Leadpages et HTML Pub | https://zunrel.com/guides/ajouter-google-analytics-a-une-page-leadpages/?utm_source=pinterest&utm_medium=social&utm_campaign=pin-diario&utm_content=ajouter-google-analytics-a-une-page-leadpages |
 
 
 ## Pins « erreurs à éviter » (2.ª imagem de cada guia): 4 por dia, além do pin do dia

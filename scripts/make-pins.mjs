@@ -48,6 +48,7 @@ const titles = {
   "ajouter-des-variantes-shopify": "Tailles et couleurs : les [variantes] Shopify",
   "ajouter-un-formulaire-de-contact-shopify": "Une page [Contact] pour votre boutique",
   "suivre-ses-commandes-et-expedier-shopify": "Expédier vos [commandes] Shopify",
+  "ajouter-google-analytics-a-une-page-leadpages": "[Google Analytics] sur Leadpages",
   "creer-une-page-lien-en-bio-avec-html-pub": "Votre page [lien en bio] Instagram et TikTok",
 };
 

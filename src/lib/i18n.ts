@@ -49,6 +49,14 @@ const sourceMap: Record<string, Record<OtherLang, { label: string; url: string }
     pt: { label: "Central de Ajuda da Shopify", url: "https://help.shopify.com/pt-BR" },
     en: { label: "Shopify Help Center", url: "https://help.shopify.com/en" },
   },
+  "https://support.google.com/analytics/answer/9304153?hl=fr": {
+    pt: { label: "Ajuda do Google Analytics: configurar o Analytics para um site", url: "https://support.google.com/analytics/answer/9304153?hl=pt-BR" },
+    en: { label: "Google Analytics Help: set up Analytics for a website", url: "https://support.google.com/analytics/answer/9304153?hl=en" },
+  },
+  "https://support.leadpages.com/hc/en-us": {
+    pt: { label: "Central de ajuda da Leadpages", url: "https://support.leadpages.com/hc/en-us" },
+    en: { label: "Leadpages Help Center", url: "https://support.leadpages.com/hc/en-us" },
+  },
   "https://www.cnil.fr/fr/la-prospection-commerciale-par-courrier-electronique": {
     pt: null,
     en: { label: "FTC: CAN-SPAM Act compliance guide", url: "https://www.ftc.gov/business-guidance/resources/can-spam-act-compliance-guide-business" },

@@ -13,13 +13,13 @@
 
 ---
 
-## Lote atual: Lote 2 · afiliação
+## Lote atual: Lote 3 · Google
 
-Sites: partnerstack.com (painel da Leadpages / HTML Pub) e impact.com (painel da Shopify).
+Sites: search.google.com/search-console e analytics.google.com (propriedade zunrel.com).
 
-1. No PartnerStack: procura um link de afiliado que leve ao **HTML Pub** (htmlpub.com ou a página HTML Pub da Leadpages). Se existir, copia o link completo e a página de destino. Se não existir, escreve « não existe » e o texto exato que o painel mostra sobre links personalizados / deep links.
-2. No PartnerStack e no Impact: copia os cliques, as inscrições/vendas e as comissões dos **últimos 30 dias** (só os números, sem nomes nem emails de clientes).
-3. No Impact: vê se é possível criar um link para https://www.shopify.com/fr/tarifs (deep link). Se sim, copia o link. Não mudes nada no perfil.
+1. Search Console → « Desempenho » → « Resultados da pesquisa », últimos 3 meses: copia as 30 primeiras **consultas** e as 30 primeiras **páginas**, com cliques, impressões, CTR e posição média.
+2. GA4 → últimos 28 dias: as 15 páginas mais vistas (visualizações e utilizadores), e o tráfego por canal (« Aquisição de tráfego »: Organic Search, Direct, Organic Social, Referral…).
+3. GA4 → « Eventos », últimos 28 dias: o total de `affiliate_click`, `sign_up`, `share`, `pdf_download`, `newsletter_bar_click` e `web_vital`. Se der, abre `affiliate_click` e copia a repartição por `placement` e por `guide`.
 
 Guarda o resultado como explicado acima (passo 4).
 
@@ -27,8 +27,8 @@ Guarda o resultado como explicado acima (passo 4).
 
 ## Fila (o Claude Code passa o próximo para « Lote atual » depois de ler o resultado)
 
-- Lote 3 · Google: Search Console (30 consultas e 30 páginas, 3 meses) + GA4 (15 páginas mais vistas, totais dos eventos, tráfego por canal, 28 dias).
+- Lote 2b · afiliação (só depois de o Techonni iniciar sessão no Impact no Chrome): (1) PartnerStack: existe um link ou « custom link / deep link » que leve ao **HTML Pub** (htmlpub.com)? Copia o link ou o texto exato do painel; (2) Impact: cliques, vendas e comissões dos últimos 30 dias; (3) Impact: é possível criar um link para https://www.shopify.com/fr/tarifs? Copia-o. (O lote 2 ficou meio feito na rotina diária de 28/09: PartnerStack 85 cliques no total, 14 em 90 dias, 0 inscrições, 0 € de comissões; Impact bloqueado sem sessão.)
 - Lote 4 · Mailchimp e Vercel: (1) desligar o reCAPTCHA (aprovado pelo Techonni); (2) mudar o email de confirmação da inscrição para o texto em 3 línguas de `docs/newsletter/confirmacao-3-linguas.md` — **perguntar ao Techonni « posso mudar? » antes de guardar**; (3) ver se existe o registo DNS `_dmarc` na Vercel (sem criar nem apagar).
 - Lote 5 · capturas Shopify (só o admin Shopify): `shopify-variantes.webp`, `shopify-page-contact.webp`, `shopify-commandes.webp`, enviadas para `public/captures/` no GitHub.
-- Lote 5b · capturas Leadpages (só o painel Leadpages): `leadpages-popup.webp` (« Conversion Tools » → « Pop-Ups » → « Create New Pop-Up » → editor do pop-up, **sem guardar nem publicar**) e `leadpages-popup-publish.webp` (o painel « Publish » com as opções de abertura, sem publicar), enviadas para `public/captures/` no GitHub. Anotar em `RESULTADOS-CHROME.md` se os nomes dos menus forem diferentes.
+- Lote 5b · capturas Leadpages (só o painel Leadpages): `leadpages-popup.webp` (« Conversion Tools » → « Pop-Ups » → « Create New Pop-Up » → editor do pop-up, **sem guardar nem publicar**) `leadpages-popup-publish.webp` (o painel « Publish » com as opções de abertura, sem publicar) e `leadpages-tracking.webp` (editor de uma página → « Settings » → a parte « Analytics » / « Tracking Codes » com o campo « Head Section Tracking Code », sem colar nada nem guardar), enviadas para `public/captures/` no GitHub. Anotar em `RESULTADOS-CHROME.md` se os nomes dos menus forem diferentes.
 - Lote 6 · blogs: 10 blogs francófonos de e-commerce para backlinks (Google + os sites dos blogs; só ler).

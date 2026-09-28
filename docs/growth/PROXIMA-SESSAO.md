@@ -68,7 +68,7 @@ Data: 28/09/2026 (6.ª sessão do dia: resultados do lote 3, lote 2 de novo para
 
 - [x] **Impact:** sessão iniciada no Chrome (confirmado pelo Chrome a 28/09).
 
-- [ ] Pinterest: pinterest.com → menu do perfil → Configurações → **Criar Pins em massa** → carregar `pinterest-agendar.csv` (descarregar em https://github.com/techonni/zunrel/blob/main/docs/growth/pinterest-agendar.csv, botão « Download raw file »). **Já pode ser carregado** (28/09: todas as imagens do CSV estão online, 94 pins de 30/09 a 09/10). O Chrome **não** publica pins: o CSV agenda-os todos de uma vez. Se um painel não existir, o Pinterest cria-o sozinho.
+- [ ] Pinterest: agora é o **Chrome** que carrega o `pinterest-agendar.csv` (« Lote seguinte » em `CHROME-PROXIMO.md`, depois do lote 2). O Techonni só o faz se o Chrome escrever « bloqueado: não consigo escolher o ficheiro »: pinterest.com → menu do perfil → Configurações → Criar Pins em massa → carregar o ficheiro (https://github.com/techonni/zunrel/blob/main/docs/growth/pinterest-agendar.csv, « Download raw file »).
 - [x] Frase do Co-work: não é preciso mudar nada. A correção está no ficheiro que o Co-work lê (`CHROME-PROXIMO.md`).
 - [ ] Link PartnerStack que leve ao **HTML Pub**.
 - [ ] Se ainda vir « b2b-directory » na app do Claude no Mac: é uma pasta antiga no computador. No Finder, apagar (ou renomear para `zunrel`) a pasta `b2b-directory`, e na app do Claude escolher sempre o repositório `techonni/zunrel`. No GitHub e na Vercel já não existe nada com esse nome.
@@ -145,7 +145,7 @@ Data: 28/09/2026 (6.ª sessão do dia: resultados do lote 3, lote 2 de novo para
 ## Próxima sessão (fazer tudo, por esta ordem)
 
 0. Ver se a produção da Vercel está `READY` com o último commit de `main` (a 28/09 houve um « rate limit »).
-1. Ler `docs/growth/RESULTADOS-CHROME.md`. Usar os lotes novos (esperado: lote 2), passar o lote seguinte da fila para « Lote atual » em `CHROME-PROXIMO.md` (máx. 3 tarefas, 2 sites) e publicar. Se não houver resultados novos, seguir para o ponto 5.
+1. Ler `docs/growth/RESULTADOS-CHROME.md`. Usar os lotes novos (esperado: lote 2 e lote P do Pinterest; se o P ficou bloqueado, pedir ao Techonni para carregar o CSV), passar o lote seguinte da fila para « Lote atual » em `CHROME-PROXIMO.md` (máx. 3 tarefas, 2 sites) e publicar. Se não houver resultados novos, seguir para o ponto 5.
 2. Lote 2 (quando feito): pôr o link HTML Pub em `affiliateUrl` da ferramenta `html-pub` e o deep link Shopify se existir; registar cliques/comissões no Painel.
 3. Search Console (lote 3b, a partir de 30/09): `seoTitle` / `seoDescription` nas 5 páginas com mais impressões e CTR mais baixo.
 4. GA4: próxima leitura na semana de 05/10 (pedir num lote com o Search Console): `affiliate_click` por `placement` e `guide`; `web_vital` por página.

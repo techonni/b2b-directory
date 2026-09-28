@@ -389,4 +389,85 @@ export const enGuides: TranslatedGuide[] = [
       "Changing the main domain while another website already uses it: use a subdomain instead.",
     ],
   },
+  {
+    slug: "ajouter-un-formulaire-de-contact-shopify",
+    localSlug: "add-contact-form-shopify",
+    question: "How do I add a contact form to my Shopify store?",
+    summary: "A Contact page with a form, linked from your menu, and messages that actually reach your inbox.",
+    intro:
+      "Before buying, many shoppers want to know they can reach you. Shopify comes with a ready-made \"contact\" page template: create the page, pick that template and add it to your menu. No code, no app.",
+    steps: [
+      {
+        title: "Create a page",
+        text: "In your Shopify admin, click Online Store, then Pages (in some versions, Pages is under Content). Click Add page and title it \"Contact\".",
+      },
+      {
+        title: "Write a short intro",
+        text: "In the content box, say in two sentences when you reply (for example \"within 24 hours, Monday to Friday\") and what to write about: orders, returns, product questions.",
+      },
+      {
+        title: "Choose the \"contact\" template",
+        text: "On the right, under Theme template, choose \"contact\". This template adds the form (name, email, phone, message) below your text. Make sure the page is Visible, then click Save.",
+      },
+      {
+        title: "Add the page to your menu",
+        text: "Go to Content, then Menus, and open your main menu or footer menu. Click Add menu item, type \"Contact\" and pick the Contact page as the link. Save.",
+        alt: "Content > Menus: main menu and footer menu, where you add the Contact link",
+      },
+      {
+        title: "Check where messages go",
+        text: "Contact form messages go to your store email address, set in Settings. Make sure it is correct, then send yourself a test message from the page: it should land in your inbox (check spam too).",
+      },
+      {
+        title: "Keep spam protection on",
+        text: "In Online Store, then Preferences, the Spam protection section turns on hCaptcha for the contact form. Leave it on: it blocks bots without getting in the way of real customers.",
+      },
+    ],
+    pitfalls: [
+      "Creating the page without choosing the \"contact\" template: the page shows up, but with no form.",
+      "Never testing the form: if your store email is wrong, customer messages get lost.",
+      "Hiding the page: with no link in the menu or footer, nobody finds it.",
+    ],
+  },
+  {
+    slug: "ajouter-des-variantes-shopify",
+    localSlug: "add-product-variants-shopify",
+    question: "How do I add variants (size, color) to a Shopify product?",
+    summary: "One product, several sizes or colors, each with its own price, inventory and photo.",
+    intro:
+      "A T-shirt in three sizes and two colors is one product with six variants. Shoppers pick on the product page, and you track inventory for each variant.",
+    steps: [
+      {
+        title: "Open the product",
+        text: "In the left menu, click Products, then the product you want to edit, or Add product to create one. Fill in the title, description and photos first.",
+        alt: "Add product page in the Shopify admin",
+      },
+      {
+        title: "Add an option",
+        text: "Scroll down to the Variants section and click Add options like size or color. Under Option name, type for example \"Size\".",
+      },
+      {
+        title: "Enter the values",
+        text: "Under Option values, type one value per line: S, then M, then L. Click Done. Add a second option, such as \"Color\", the same way: Shopify creates every combination.\n\nA product can have up to 3 options (for example size, color and material).",
+      },
+      {
+        title: "Set the price and inventory of each variant",
+        text: "Shopify lists the variants. Click a variant to change its price (an XL can cost more), its SKU and its quantity in stock. Use Group by to edit all the variants of one color at once.",
+        alt: "Pricing and Inventory sections, filled in for each variant",
+      },
+      {
+        title: "Match a photo to each color",
+        text: "In the variant list, click a variant's image square and pick the matching photo. When a shopper selects \"Blue\", the blue photo shows up.",
+      },
+      {
+        title: "Save and check your store",
+        text: "Click Save, then open the product in your store: the size and color pickers appear on the page. Try a sold-out variant to see what shoppers see.",
+      },
+    ],
+    pitfalls: [
+      "Creating a separate product for each size: shoppers no longer see the other sizes and your stats get scattered.",
+      "Forgetting a variant's inventory: it shows as available when it isn't, or stays stuck at 0.",
+      "Using the same photo for every color: shoppers can't see what they are buying.",
+    ],
+  },
 ];

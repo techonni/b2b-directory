@@ -386,4 +386,85 @@ export const ptGuides: TranslatedGuide[] = [
       "Alterar o domínio principal quando outro site já o usa: prefira um subdomínio.",
     ],
   },
+  {
+    slug: "ajouter-un-formulaire-de-contact-shopify",
+    localSlug: "formulario-de-contato-shopify",
+    question: "Como adicionar um formulário de contato na Shopify?",
+    summary: "Uma página « Contato » com formulário, ligada ao menu, e mensagens que chegam mesmo à sua caixa de entrada.",
+    intro:
+      "Antes de comprar, muitos clientes querem saber que podem falar com você. A Shopify já tem um modelo de página « contact » pronto: basta criar a página, escolher esse modelo e adicioná-la ao menu. Sem código e sem aplicativos.",
+    steps: [
+      {
+        title: "Crie uma página",
+        text: "No painel da Shopify, clique em « Loja virtual » e depois em « Páginas » (em algumas versões, « Páginas » fica em « Conteúdo »). Clique em « Adicionar página » e dê-lhe o título « Contato ».",
+      },
+      {
+        title: "Escreva um texto curto",
+        text: "No conteúdo, diga em duas frases quando responde (por exemplo « em até 24 horas, de segunda a sexta ») e para que escrever: pedido, devolução, dúvida sobre um produto.",
+      },
+      {
+        title: "Escolha o modelo « contact »",
+        text: "À direita, em « Modelo de tema », escolha « contact ». É este modelo que adiciona o formulário (nome, e-mail, telefone, mensagem) debaixo do seu texto. Confira que a página está « Visível » e clique em « Salvar ».",
+      },
+      {
+        title: "Adicione a página ao menu",
+        text: "Em « Conteúdo » e depois « Menus », abra o menu principal ou o do rodapé. Clique em « Adicionar item ao menu », escreva « Contato » e escolha a página « Contato » como destino. Salve.",
+        alt: "Conteúdo > Menus: menu principal e menu do rodapé, onde adicionar o link « Contato »",
+      },
+      {
+        title: "Confira para onde vão as mensagens",
+        text: "As mensagens do formulário vão para o e-mail da loja, indicado em « Configurações ». Confira que está correto e envie uma mensagem de teste a partir da página: ela deve chegar à sua caixa de entrada (veja também o spam).",
+      },
+      {
+        title: "Mantenha a proteção contra spam",
+        text: "Em « Loja virtual » e depois « Preferências », a seção « Proteção contra spam » ativa o hCaptcha no formulário de contato. Deixe-a ativada: bloqueia as mensagens automáticas sem atrapalhar os clientes reais.",
+      },
+    ],
+    pitfalls: [
+      "Criar a página sem escolher o modelo « contact »: a página aparece, mas sem formulário.",
+      "Nunca testar o formulário: se o e-mail da loja estiver errado, as mensagens dos clientes perdem-se.",
+      "Esconder a página: sem link no menu ou no rodapé, ninguém a encontra.",
+    ],
+  },
+  {
+    slug: "ajouter-des-variantes-shopify",
+    localSlug: "variantes-de-produto-shopify",
+    question: "Como adicionar variantes (tamanho, cor) a um produto na Shopify?",
+    summary: "Um só produto, vários tamanhos ou cores, cada um com o seu preço, estoque e foto.",
+    intro:
+      "Uma camiseta em três tamanhos e duas cores é um só produto com seis variantes. O cliente escolhe na página do produto, e você acompanha o estoque de cada variante.",
+    steps: [
+      {
+        title: "Abra o produto",
+        text: "No menu à esquerda, clique em « Produtos » e depois no produto a alterar, ou em « Adicionar produto » para criar um. Preencha primeiro o título, a descrição e as fotos.",
+        alt: "Página « Adicionar produto » no painel da Shopify",
+      },
+      {
+        title: "Adicione uma opção",
+        text: "Desça até à seção « Variantes » e clique em « Adicionar opções como tamanho ou cor ». Em « Nome da opção », escreva por exemplo « Tamanho ».",
+      },
+      {
+        title: "Escreva os valores",
+        text: "Em « Valores da opção », escreva um valor por linha: P, depois M, depois G. Clique em « Concluído ». Adicione uma segunda opção, como « Cor », da mesma forma: a Shopify cria todas as combinações.\n\nUm produto pode ter até 3 opções (por exemplo tamanho, cor e material).",
+      },
+      {
+        title: "Defina o preço e o estoque de cada variante",
+        text: "A Shopify mostra a lista das variantes. Clique numa variante para mudar o preço (um GG pode custar mais), a referência (SKU) e a quantidade em estoque. Use « Agrupar por » para alterar todas as variantes de uma cor de uma só vez.",
+        alt: "Seções Preço e Estoque, a preencher para cada variante",
+      },
+      {
+        title: "Associe uma foto a cada cor",
+        text: "Na lista das variantes, clique no quadrado de imagem de uma variante e escolha a foto certa. Quando o cliente escolhe « Azul », aparece a foto azul.",
+      },
+      {
+        title: "Salve e confira na loja",
+        text: "Clique em « Salvar » e abra o produto na sua loja: os seletores de tamanho e cor aparecem na página. Teste uma variante sem estoque para ver o que o cliente vê.",
+      },
+    ],
+    pitfalls: [
+      "Criar um produto separado para cada tamanho: o cliente deixa de ver os outros tamanhos e as estatísticas ficam espalhadas.",
+      "Esquecer o estoque de uma variante: aparece disponível quando não está, ou fica bloqueada em 0.",
+      "Deixar a mesma foto para todas as cores: o cliente não vê o que está comprando.",
+    ],
+  },
 ];

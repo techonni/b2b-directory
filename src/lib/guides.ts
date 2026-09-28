@@ -1606,6 +1606,57 @@ export const guides: Guide[] = [
     related: ["ajouter-un-produit-shopify", "regler-l-expedition-shopify", "creer-un-code-de-reduction-shopify"],
   },
   {
+    slug: "ajouter-un-formulaire-de-contact-shopify",
+    question: "Comment ajouter un formulaire de contact sur Shopify ?",
+    summary: "Une page « Contact » avec formulaire, reliée au menu, et des messages qui arrivent bien dans votre boîte.",
+    theme: "boutique",
+    publishedOn: "2026-09-28",
+    updatedOn: "2026-09-28",
+    intro:
+      "Avant d'acheter, beaucoup de clients veulent savoir qu'ils peuvent vous écrire. Shopify a un modèle de page « contact » tout prêt : il suffit de créer la page, de choisir ce modèle et de l'ajouter au menu. Aucun code, aucune application.",
+    steps: [
+      {
+        title: "Créez une page",
+        text: "Dans l'administration, cliquez sur « Boutique en ligne », puis sur « Pages » (selon la version, « Pages » peut se trouver dans « Contenu »). Cliquez sur « Ajouter une page » et donnez-lui le titre « Contact ».",
+      },
+      {
+        title: "Écrivez un court texte",
+        text: "Dans le contenu, dites en deux phrases quand vous répondez (par exemple « sous 24 heures, du lundi au vendredi ») et pour quoi écrire : commande, retour, question sur un produit.",
+      },
+      {
+        title: "Choisissez le modèle « contact »",
+        text: "À droite, dans « Modèle de thème », choisissez « contact ». C'est ce modèle qui ajoute le formulaire (nom, e-mail, téléphone, message) sous votre texte. Vérifiez que la visibilité est sur « Visible », puis cliquez sur « Enregistrer ».",
+      },
+      {
+        title: "Ajoutez la page au menu",
+        text: "Dans « Contenu », puis « Menus », ouvrez le menu principal ou celui du pied de page. Cliquez sur « Ajouter un élément de menu », écrivez « Contact » et choisissez la page « Contact » comme destination. Enregistrez.",
+        image: {
+          src: "/captures/shopify-menus.webp",
+          alt: "Contenu > Menus : menu principal et menu du pied de page, où ajouter le lien « Contact »",
+        },
+      },
+      {
+        title: "Vérifiez où arrivent les messages",
+        text: "Les messages du formulaire partent vers l'adresse e-mail de la boutique, indiquée dans « Paramètres ». Vérifiez qu'elle est juste, puis envoyez-vous un message de test depuis la page : il doit arriver dans votre boîte (regardez aussi les indésirables).",
+      },
+      {
+        title: "Gardez la protection contre le spam",
+        text: "Dans « Boutique en ligne », puis « Préférences », la section « Protection contre le spam » active hCaptcha sur le formulaire de contact. Laissez-la activée : elle bloque les messages automatiques sans gêner les vrais clients.",
+      },
+    ],
+    pitfalls: [
+      "Créer la page sans choisir le modèle « contact » : la page s'affiche, mais sans formulaire.",
+      "Ne jamais tester le formulaire : si l'adresse e-mail de la boutique est fausse, les messages des clients se perdent.",
+      "Cacher la page : sans lien dans le menu ou le pied de page, personne ne la trouve.",
+    ],
+    tools: [{ slug: "shopify", why: "Page de contact avec formulaire incluse dans tous les thèmes gratuits." }],
+    sources: [
+      { label: "Aide Shopify : ajouter une page de contact", url: "https://help.shopify.com/fr/manual/online-store/themes/customizing-themes/add-contact-page" },
+      { label: "Aide Shopify : modifier les menus", url: "https://help.shopify.com/fr/manual/online-store/menus-and-links/editing-menus" },
+    ],
+    related: ["creer-un-menu-shopify", "rediger-les-politiques-shopify", "ouvrir-sa-boutique-shopify-au-public"],
+  },
+  {
     slug: "connecter-son-domaine-shopify",
     question: "Comment connecter son nom de domaine à Shopify ?",
     summary: "Utiliser votre propre adresse au lieu de l'adresse en myshopify.com.",
@@ -2006,7 +2057,7 @@ export const guides: Guide[] = [
       { label: "Aide Shopify : ajouter les politiques de la boutique", url: "https://help.shopify.com/fr/manual/checkout-settings/refund-privacy-tos" },
       { label: "Commission européenne : droit de rétractation", url: "https://europa.eu/youreurope/citizens/consumers/shopping/guarantees-returns/index_fr.htm" },
     ],
-    related: ["creer-un-menu-shopify", "regler-l-expedition-shopify", "creer-sa-boutique-shopify-de-a-a-z"],
+    related: ["creer-un-menu-shopify", "ajouter-un-formulaire-de-contact-shopify", "regler-l-expedition-shopify", "creer-sa-boutique-shopify-de-a-a-z"],
   },
   {
     slug: "creer-un-menu-shopify",
@@ -2049,7 +2100,7 @@ export const guides: Guide[] = [
     ],
     tools: [{ slug: "shopify", why: "Menus et sous-menus modifiables sans code." }],
     sources: [{ label: "Aide Shopify : modifier les menus", url: "https://help.shopify.com/fr/manual/online-store/menus-and-links/editing-menus" }],
-    related: ["choisir-un-theme-shopify", "rediger-les-politiques-shopify", "creer-sa-boutique-shopify"],
+    related: ["choisir-un-theme-shopify", "rediger-les-politiques-shopify", "ajouter-un-formulaire-de-contact-shopify", "creer-sa-boutique-shopify"],
   },
   {
     slug: "ouvrir-sa-boutique-shopify-au-public",

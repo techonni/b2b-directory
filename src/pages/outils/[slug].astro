@@ -13,7 +13,11 @@ const usedIn = guidesUsingTool(tool.slug);
 const isAffiliate = Boolean(tool.affiliateUrl);
 ---
 
-<Base title={tool.name} description={tool.summary}>
+<Base
+  title={tool.name}
+  description={tool.summary}
+  breadcrumbs={[{ name: "Accueil", path: "/" }, { name: "Outils", path: "/outils" }, { name: tool.name }]}
+>
   <BrandLogo tool={tool} size="lg" />
   <h1 class="mt-6 text-[22px] font-semibold leading-7 text-[#171717]">{tool.name}</h1>
   <p class="mt-3 text-[15px] leading-6 text-[#737373]">{tool.summary}</p>

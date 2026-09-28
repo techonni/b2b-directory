@@ -1,31 +1,184 @@
 ---
 import { href } from "../lib/paths";
 
+// Recherche Pagefind. Sans JavaScript, le formulaire envoie vers /recherche/?q=….
+// Avec JavaScript, les résultats s'affichent pendant la saisie :
+// - `page` (page /recherche/) : tous les résultats, et l'adresse suit la saisie ;
+// - sinon (accueil) : les premiers résultats et un lien vers la page de recherche.
 interface Props {
   defaultQuery?: string;
   class?: string;
+  page?: boolean;
+  limit?: number;
 }
 
-const { defaultQuery = "", class: className = "" } = Astro.props;
+const { defaultQuery = "", class: className = "", page = false, limit = 5 } = Astro.props;
+const searchPage = href("/recherche");
 ---
 
-<form
-  action={href("/recherche")}
-  method="get"
-  class:list={["flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-2", className]}
+<div
+  data-search
+  data-search-page={page ? "" : undefined}
+  data-limit={page ? undefined : limit}
+  data-action={searchPage}
+  data-bundle={`${import.meta.env.BASE_URL}pagefind/`}
+  class={className}
 >
-  <label for="q" class="sr-only">Rechercher un guide</label>
-  <input
-    id="q"
-    name="q"
-    value={defaultQuery}
-    placeholder="Ex. : domaine, formulaire, blog"
-    class="h-[39px] w-full rounded-[4px] bg-[#e5e5e5] px-3 text-[14px] text-[#171717] outline-none placeholder:text-[#737373] sm:w-[280px]"
-  />
-  <button
-    type="submit"
-    class="h-[39px] rounded-[4px] bg-[#262626] px-6 text-[14px] font-medium text-white hover:bg-black"
+  <form
+    action={searchPage}
+    method="get"
+    role="search"
+    class="flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-2"
   >
-    Rechercher
-  </button>
-</form>
+    <label for="q" class="sr-only">Rechercher un guide</label>
+    <input
+      id="q"
+      name="q"
+      value={defaultQuery}
+      placeholder="Ex. : domaine, formulaire, blog"
+      autocomplete="off"
+      class="h-[39px] w-full rounded-[4px] bg-[#e5e5e5] px-3 text-[14px] text-[#171717] outline-none placeholder:text-[#737373] sm:w-[280px]"
+    />
+    <button
+      type="submit"
+      class="h-[39px] rounded-[4px] bg-[#262626] px-6 text-[14px] font-medium text-white hover:bg-black"
+    >
+      Rechercher
+    </button>
+  </form>
+  <p data-search-status aria-live="polite" class:list={["text-[15px] leading-6 text-[#737373]", page ? "mt-10" : "mt-6 empty:hidden"]}>
+    {page ? "Tapez un mot : domaine, formulaire, boutique, produit…" : ""}
+  </p>
+  <div data-search-results class:list={["hidden space-y-8", page ? "mt-10" : "mt-6"]}></div>
+  <a data-search-more href={searchPage} class="mt-6 hidden text-[14px] font-medium leading-5 text-[#171717] hover:underline"></a>
+</div>
+
+<!-- Chargé tel quel : Vite ne doit pas transformer cet import (le bundle Pagefind n'existe qu'après le build). -->
+<script is:inline>
+  window.zunrelPagefind = (bundle) => import(`${bundle}pagefind.js`);
+</script>
+
+<script>
+  type PagefindResult = { url: string; excerpt: string; meta: Record<string, string> };
+  type Pagefind = {
+    options: (options: Record<string, unknown>) => Promise<void>;
+    init: () => Promise<void>;
+    debouncedSearch: (
+      query: string,
+      options?: Record<string, unknown>,
+      delay?: number,
+    ) => Promise<{ results: { data: () => Promise<PagefindResult> }[] } | null>;
+  };
+
+  declare global {
+    interface Window {
+      zunrelPagefind: (bundle: string) => Promise<Pagefind>;
+    }
+  }
+
+  let loading: Promise<Pagefind> | undefined;
+
+  // Le bundle Pagefind est chargé à la demande, au premier focus ou à la première recherche.
+  function loadPagefind(bundle: string) {
+    loading ??= window.zunrelPagefind(bundle).then(async (pagefind) => {
+      await pagefind.options({ baseUrl: "/", excerptLength: 24 });
+      await pagefind.init();
+      return pagefind;
+    });
+    return loading;
+  }
+
+  function row(result: PagefindResult) {
+    const link = document.createElement("a");
+    link.href = result.url;
+    link.className = "group block";
+
+    const title = document.createElement("span");
+    title.className = "block text-[15px] font-medium leading-5 text-[#171717] group-hover:underline";
+    title.textContent = `${result.meta.title ?? result.url} →`;
+
+    // L'extrait vient de Pagefind : texte échappé, seuls les mots trouvés sont entourés de <mark>.
+    const excerpt = document.createElement("span");
+    excerpt.className =
+      "mt-1 block text-[14px] leading-5 text-[#737373] [&_mark]:bg-transparent [&_mark]:font-medium [&_mark]:text-[#171717]";
+    excerpt.innerHTML = result.excerpt || result.meta.summary || "";
+
+    link.append(title, excerpt);
+    if (result.meta.minutes) {
+      const minutes = document.createElement("span");
+      minutes.className = "mt-1 block text-[13px] leading-5 text-[#a0a0a0]";
+      minutes.textContent = `Lecture : ${result.meta.minutes} min`;
+      link.append(minutes);
+    }
+    return link;
+  }
+
+  for (const root of document.querySelectorAll<HTMLElement>("[data-search]")) {
+    const form = root.querySelector("form")!;
+    const input = root.querySelector<HTMLInputElement>("input[name='q']")!;
+    const status = root.querySelector<HTMLElement>("[data-search-status]")!;
+    const list = root.querySelector<HTMLElement>("[data-search-results]")!;
+    const more = root.querySelector<HTMLAnchorElement>("[data-search-more]")!;
+    const isPage = root.hasAttribute("data-search-page");
+    const limit = Number(root.dataset.limit) || Infinity;
+    const bundle = root.dataset.bundle!;
+    const prompt = status.textContent ?? "";
+    let latest = "";
+
+    function show(message: string, results: PagefindResult[] = [], total = 0) {
+      status.textContent = message;
+      list.replaceChildren(...results.map(row));
+      list.classList.toggle("hidden", results.length === 0);
+      const hasMore = total > results.length;
+      more.classList.toggle("hidden", !hasMore);
+      more.classList.toggle("inline-block", hasMore);
+      if (hasMore) {
+        more.href = `${root.dataset.action}?q=${encodeURIComponent(latest)}`;
+        more.textContent = `Voir les ${total} résultats →`;
+      }
+    }
+
+    async function run(query: string) {
+      latest = query;
+      if (isPage) {
+        const url = new URL(window.location.href);
+        if (query) url.searchParams.set("q", query);
+        else url.searchParams.delete("q");
+        history.replaceState(null, "", url);
+      }
+      if (query === "") return show(prompt);
+
+      let pagefind: Pagefind;
+      try {
+        pagefind = await loadPagefind(bundle);
+      } catch {
+        if (query === latest) show("La recherche n'est pas disponible pour le moment.");
+        return;
+      }
+      const search = await pagefind.debouncedSearch(query, {}, 150);
+      // `null` : une saisie plus récente a remplacé celle-ci.
+      if (search === null || query !== latest) return;
+
+      const total = search.results.length;
+      const results = await Promise.all(search.results.slice(0, limit).map((item) => item.data()));
+      if (query !== latest) return;
+      if (total === 0) return show(`Aucun guide ne correspond à « ${query} ».`);
+      show(isPage ? `${total} ${total === 1 ? "guide trouvé" : "guides trouvés"}` : "", results, total);
+    }
+
+    input.addEventListener("focus", () => loadPagefind(bundle).catch(() => {}), { once: true });
+    input.addEventListener("input", () => run(input.value.trim()));
+    form.addEventListener("submit", (event) => {
+      // Sur l'accueil, Entrée mène à la page de recherche ; sur la page, on reste sur place.
+      if (!isPage) return;
+      event.preventDefault();
+      run(input.value.trim());
+    });
+
+    if (isPage) {
+      const query = new URLSearchParams(window.location.search).get("q")?.trim() ?? "";
+      input.value = query;
+      if (query) run(query);
+    }
+  }
+</script>

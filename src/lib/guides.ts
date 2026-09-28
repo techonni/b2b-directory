@@ -24,6 +24,7 @@ export type Guide = {
   question: string;
   summary: string;
   theme: string;
+  publishedOn: string;
   updatedOn: string;
   intro: string;
   steps: Step[];
@@ -96,6 +97,7 @@ export const guides: Guide[] = [
     question: "Comment choisir entre HTML Pub et Leadpages ?",
     summary: "Publier simplement ou optimiser ses conversions : la bonne offre selon votre besoin.",
     theme: "choisir",
+    publishedOn: "2026-09-27",
     updatedOn: "2026-09-27",
     popular: true,
     intro:
@@ -139,6 +141,7 @@ export const guides: Guide[] = [
     question: "Comment essayer Leadpages gratuitement ?",
     summary: "L'essai de 7 jours, ce qu'il contient et comment ne pas être débité.",
     theme: "choisir",
+    publishedOn: "2026-09-26",
     updatedOn: "2026-09-26",
     popular: true,
     intro:
@@ -182,6 +185,7 @@ export const guides: Guide[] = [
     question: "Comment changer d'offre ou annuler son abonnement Leadpages ?",
     summary: "Monter ou descendre d'offre, arrêter l'abonnement, et ce que deviennent vos pages.",
     theme: "choisir",
+    publishedOn: "2026-09-26",
     updatedOn: "2026-09-26",
     intro:
       "Vous pouvez changer d'offre ou annuler à tout moment, sans pénalité. Seul le propriétaire du compte peut gérer la facturation.",
@@ -221,6 +225,7 @@ export const guides: Guide[] = [
     question: "Leadpages ou Shopify : lequel choisir ?",
     summary: "Des pages qui convertissent, une boutique complète, ou les deux ensemble.",
     theme: "choisir",
+    publishedOn: "2026-09-27",
     updatedOn: "2026-09-27",
     popular: true,
     intro:
@@ -269,6 +274,7 @@ export const guides: Guide[] = [
     summary: "Le guide complet : de l'essai gratuit à une page en ligne qui récolte des contacts, avec chaque écran.",
     theme: "creer",
     format: "complet",
+    publishedOn: "2026-09-27",
     updatedOn: "2026-09-27",
     popular: true,
     intro:
@@ -371,6 +377,7 @@ export const guides: Guide[] = [
     question: "Comment créer une landing page avec l'IA de Leadpages ?",
     summary: "Décrire sa page, laisser l'IA la construire, puis l'améliorer en discutant.",
     theme: "creer",
+    publishedOn: "2026-09-26",
     updatedOn: "2026-09-26",
     popular: true,
     intro:
@@ -428,6 +435,7 @@ export const guides: Guide[] = [
     question: "Comment partir d'un modèle dans Leadpages ?",
     summary: "Choisir un modèle prêt à l'emploi et l'adapter à votre activité.",
     theme: "creer",
+    publishedOn: "2026-09-26",
     updatedOn: "2026-09-26",
     intro:
       "Un modèle vous évite de partir d'une page blanche. Vous gardez la structure qui fonctionne et vous remplacez les textes, les images et les couleurs.",
@@ -468,6 +476,7 @@ export const guides: Guide[] = [
     question: "Comment publier une page HTML déjà prête sur HTML Pub ?",
     summary: "Coller du code ou déposer un fichier .html, sans dépenser de crédits IA.",
     theme: "creer",
+    publishedOn: "2026-09-26",
     updatedOn: "2026-09-26",
     intro:
       "Vous avez déjà une page en HTML, faite par vous ou par une IA ? HTML Pub la met en ligne en quelques secondes. Cette méthode ne consomme pas de crédits.",
@@ -503,6 +512,7 @@ export const guides: Guide[] = [
     question: "Comment créer un site de plusieurs pages avec HTML Pub ?",
     summary: "Une page d'accueil, puis les autres pages qui reprennent le même menu et le même style.",
     theme: "creer",
+    publishedOn: "2026-09-26",
     updatedOn: "2026-09-26",
     intro:
       "Un site regroupe plusieurs pages sous un même domaine, avec un menu commun. L'IA crée d'abord la page d'accueil, puis chaque page quand vous le demandez.",
@@ -545,6 +555,7 @@ export const guides: Guide[] = [
     question: "Comment créer un blog avec HTML Pub ?",
     summary: "Créer le blog sur HTML Pub, écrire un premier article et le publier sur votre site, étape par étape.",
     theme: "creer",
+    publishedOn: "2026-09-26",
     updatedOn: "2026-09-26",
     intro:
       "Un blog attire des visiteurs depuis Google et les réseaux. Avec HTML Pub, il se crée en une minute et les articles sont en ligne dès que vous les publiez.",
@@ -593,6 +604,7 @@ export const guides: Guide[] = [
     question: "Comment connecter son nom de domaine à Leadpages ?",
     summary: "Afficher vos pages sur votre propre adresse, avec le HTTPS offert.",
     theme: "publier",
+    publishedOn: "2026-09-26",
     updatedOn: "2026-09-26",
     popular: true,
     intro:
@@ -644,6 +656,7 @@ export const guides: Guide[] = [
     question: "Comment modifier l'adresse ou protéger une page par mot de passe ?",
     summary: "Le titre, l'adresse (slug), le mot de passe et les étiquettes d'une page.",
     theme: "publier",
+    publishedOn: "2026-09-26",
     updatedOn: "2026-09-26",
     intro:
       "Chaque page a quelques réglages simples, dans le menu « … » de sa carte, dans « Pages ». Ils servent à avoir une adresse lisible, à cacher une page en préparation ou à ranger vos pages.",
@@ -691,6 +704,7 @@ export const guides: Guide[] = [
     question: "Comment récupérer les contacts de ses formulaires ?",
     summary: "Voir les réponses, les exporter en CSV et les supprimer si besoin.",
     theme: "contacts",
+    publishedOn: "2026-09-26",
     updatedOn: "2026-09-26",
     popular: true,
     intro:
@@ -731,6 +745,7 @@ export const guides: Guide[] = [
     question: "Comment envoyer ses contacts vers Mailchimp, Brevo ou son CRM ?",
     summary: "Connecter une intégration pour que chaque nouveau contact arrive au bon endroit.",
     theme: "contacts",
+    publishedOn: "2026-09-26",
     updatedOn: "2026-09-26",
     intro:
       "Un connecteur envoie chaque réponse de formulaire vers un autre outil, sans copier-coller. HTML Pub en propose plus de 20 : Mailchimp, Brevo, MailerLite, Kit, ActiveCampaign, HubSpot, Pipedrive, Slack, Zapier, Stripe…",
@@ -775,6 +790,7 @@ export const guides: Guide[] = [
     question: "Comment récolter des e-mails avant un lancement ?",
     summary: "Une page d'attente, un formulaire e-mail, une bonne raison de s'inscrire, et vos contacts dans votre outil e-mail.",
     theme: "contacts",
+    publishedOn: "2026-09-27",
     updatedOn: "2026-09-27",
     popular: true,
     intro:
@@ -825,6 +841,7 @@ export const guides: Guide[] = [
     question: "Comment faire un test A/B avec Leadpages ?",
     summary: "Comparer deux versions d'une page et garder celle qui convertit le mieux.",
     theme: "optimiser",
+    publishedOn: "2026-09-26",
     updatedOn: "2026-09-26",
     popular: true,
     intro:
@@ -858,13 +875,14 @@ export const guides: Guide[] = [
     ],
     tools: [{ slug: "leadpages", why: "Tests A/B dès Grow, sans limite de trafic." }],
     sources: [{ label: "Leadpages : tests A/B", url: "https://leadpages.com/product/ab-testing" }, pricing],
-    related: ["utiliser-smart-traffic-leadpages", "lire-une-carte-de-chaleur-leadpages"],
+    related: ["utiliser-smart-traffic-leadpages", "lire-une-carte-de-chaleur-leadpages", "ameliorer-le-taux-de-conversion-de-ses-pages-de-a-a-z"],
   },
   {
     slug: "lire-une-carte-de-chaleur-leadpages",
     question: "Comment lire une carte de chaleur (heatmap) dans Leadpages ?",
     summary: "Voir où vos visiteurs cliquent, jusqu'où ils descendent et ce qu'ils lisent.",
     theme: "optimiser",
+    publishedOn: "2026-09-26",
     updatedOn: "2026-09-26",
     intro:
       "Une carte de chaleur colore votre page selon l'activité des visiteurs. Elle est incluse dans les offres Leadpages Optimize et Scale, sans code à installer.",
@@ -897,13 +915,14 @@ export const guides: Guide[] = [
     ],
     tools: [{ slug: "leadpages", why: "Cartes de chaleur dès l'offre Optimize." }],
     sources: [{ label: "Leadpages : cartes de chaleur", url: "https://leadpages.com/product/heatmaps" }],
-    related: ["faire-un-test-ab-leadpages", "utiliser-smart-traffic-leadpages"],
+    related: ["faire-un-test-ab-leadpages", "utiliser-smart-traffic-leadpages", "ameliorer-le-taux-de-conversion-de-ses-pages-de-a-a-z"],
   },
   {
     slug: "utiliser-smart-traffic-leadpages",
     question: "Comment fonctionne Smart Traffic dans Leadpages ?",
     summary: "L'IA envoie chaque visiteur vers la version de page qui a le plus de chances de lui plaire.",
     theme: "optimiser",
+    publishedOn: "2026-09-26",
     updatedOn: "2026-09-26",
     intro:
       "Un test A/B classique partage le trafic à égalité. Smart Traffic, lui, choisit pour chaque visiteur la variante la plus susceptible de le convertir. Il est inclus à partir de Leadpages Optimize.",
@@ -934,6 +953,100 @@ export const guides: Guide[] = [
     sources: [{ label: "Leadpages : tests A/B et Smart Traffic", url: "https://leadpages.com/product/ab-testing" }, pricing],
     related: ["faire-un-test-ab-leadpages"],
   },
+  {
+    slug: "ameliorer-le-taux-de-conversion-de-ses-pages-de-a-a-z",
+    question: "Comment améliorer le taux de conversion de ses landing pages de A à Z ?",
+    summary:
+      "Guide complet pour analyser, optimiser et augmenter le taux de conversion de vos landing pages Leadpages et HTML Pub, étape par étape.",
+    theme: "optimiser",
+    updatedOn: "2026-09-28",
+    popular: true,
+    format: "complet",
+    intro:
+      "Votre page est en ligne, mais le taux de conversion reste bas. Avant de créer une nouvelle page ou de changer d'outil, il y a un parcours logique : comprendre d'où vient le problème, corriger les blocages un par un et mesurer chaque amélioration. Ce guide suit ce parcours du début à la fin, avec les fonctions de Leadpages et HTML Pub.",
+    steps: [
+      {
+        title: "Comprenez ce qu'est le taux de conversion",
+        text: "Le taux de conversion, c'est le pourcentage de visiteurs qui font l'action attendue : remplir un formulaire, cliquer sur un bouton ou acheter. Si 100 personnes visitent votre page et que 3 remplissent le formulaire, le taux est de 3 %. Un bon taux dépend du secteur, mais la moyenne des landing pages tourne autour de 3 à 5 %. L'objectif est de passer au-dessus en travaillant chaque élément de la page.",
+      },
+      {
+        title: "Lisez vos statistiques actuelles",
+        text: "Avant de changer quoi que ce soit, notez le taux de conversion actuel. Dans Leadpages, ouvrez le tableau de bord de la page : vous voyez les visiteurs uniques, les conversions et le taux. C'est votre point de départ.\n\nSi vous venez de lancer la page et que le trafic est faible, attendez au moins 200 visiteurs avant de tirer des conclusions. En dessous, les chiffres ne sont pas fiables.",
+        image: { src: "/captures/statistiques.webp", alt: "Tableau de bord Leadpages : visiteurs uniques, conversions et taux de conversion" },
+      },
+      {
+        title: "Utilisez les cartes de chaleur pour trouver les blocages",
+        text: "Les cartes de chaleur montrent où les visiteurs cliquent et jusqu'où ils défilent. Si personne ne descend jusqu'au formulaire, le problème est au-dessus. Si tout le monde clique sur un élément qui n'est pas un lien, c'est une opportunité manquée.\n\nDans Leadpages, les cartes de chaleur sont disponibles dès l'offre Optimize. Activez-les dans les réglages de la page et laissez-les tourner quelques jours avant de les lire.",
+        image: { src: "/captures/heatmap.webp", alt: "Carte de chaleur Leadpages : zones de clics et profondeur de défilement" },
+      },
+      {
+        title: "Réécrivez le titre principal",
+        text: "Le titre est la première chose que le visiteur lit. Il doit répondre à une question simple : « Qu'est-ce que j'y gagne ? ». Un bon titre parle du résultat, pas de votre produit.\n\nMauvais : « Notre solution innovante de marketing digital ». Bon : « Doublez vos inscriptions en 30 jours sans augmenter votre budget pub ». Testez un titre centré sur le bénéfice principal de votre offre.",
+      },
+      {
+        title: "Simplifiez le formulaire",
+        text: "Chaque champ supplémentaire dans un formulaire fait baisser le taux de conversion. Si vous demandez le nom, le prénom, l'email, le téléphone et l'entreprise, réduisez à l'email seul pour commencer. Vous pourrez demander le reste plus tard, une fois le contact acquis.\n\nDans Leadpages, ouvrez le formulaire dans l'éditeur et supprimez les champs inutiles. Gardez un seul bouton d'action avec un texte clair : « Recevoir le guide », pas « Soumettre ».",
+        image: { src: "/captures/formulaires.webp", alt: "Éditeur de formulaire Leadpages : champs et bouton d'appel à l'action" },
+      },
+      {
+        title: "Ajoutez de la preuve sociale",
+        text: "Les visiteurs font confiance aux autres visiteurs. Ajoutez des témoignages clients, des logos de partenaires, le nombre d'utilisateurs ou des notes. La preuve sociale rassure et lève les doutes.\n\nPlacez les témoignages près du formulaire ou du bouton d'achat, là où le visiteur hésite. Un témoignage avec un nom, une photo et un résultat chiffré vaut plus qu'une citation anonyme.",
+      },
+      {
+        title: "Alignez votre publicité et votre page",
+        text: "Si votre publicité promet un ebook gratuit et que la page parle d'un webinaire, le visiteur part. Le message de la publicité, le titre de la page et l'offre doivent raconter la même histoire.\n\nVérifiez chaque source de trafic : le texte de la pub Facebook, le titre de l'email, le lien dans la bio Instagram. Chacun doit correspondre exactement à ce que la page propose.",
+      },
+      {
+        title: "Optimisez l'affichage mobile",
+        text: "Plus de la moitié du trafic vient du téléphone. Si votre page est difficile à lire ou que le bouton est trop petit sur mobile, vous perdez des conversions.\n\nDans Leadpages, utilisez l'aperçu mobile de l'éditeur. Vérifiez que le titre est lisible sans zoomer, que le formulaire est facile à remplir au pouce et que le bouton est assez grand pour être tapé facilement.",
+        image: { src: "/captures/apercu-mobile.webp", alt: "Aperçu mobile dans l'éditeur Leadpages : vérification de la mise en page sur téléphone" },
+      },
+      {
+        title: "Créez une page de remerciement efficace",
+        text: "La page de remerciement est la page la plus sous-estimée. Le visiteur vient de convertir : il est engagé. Profitez-en pour proposer une action suivante : partager sur les réseaux, s'inscrire à un webinaire, découvrir un produit.\n\nDans Leadpages, configurez la page de remerciement dans les réglages du formulaire. Créez une vraie page avec une offre suivante plutôt qu'un simple message « Merci ».",
+      },
+      {
+        title: "Ajoutez un sentiment d'urgence réel",
+        text: "L'urgence fonctionne quand elle est vraie. Un compte à rebours pour une offre qui ne se termine jamais détruit la confiance. Utilisez de vraies limites : un nombre de places, une date de fin de promotion, un stock limité.\n\nSi vous n'avez pas de limite naturelle, créez-en une : « Les 50 premiers inscrits reçoivent un bonus ». L'important est que ce soit vérifiable et honnête.",
+      },
+      {
+        title: "Lancez un test A/B",
+        text: "Ne changez pas tout d'un coup. Créez une variante avec un seul changement : un titre différent, un bouton d'une autre couleur, un formulaire plus court. Laissez le test tourner jusqu'à avoir au moins 100 conversions par variante pour un résultat fiable.\n\nDans Leadpages, dupliquez votre page, modifiez un élément et lancez le test depuis l'onglet Optimize. Leadpages répartit le trafic automatiquement.",
+        image: { src: "/captures/test-ab.webp", alt: "Interface de test A/B Leadpages : variante originale et variante de test avec répartition du trafic" },
+      },
+      {
+        title: "Activez Smart Traffic pour automatiser",
+        text: "Une fois que vous avez plusieurs variantes qui fonctionnent, Smart Traffic prend le relais. Au lieu de répartir le trafic à parts égales, l'IA envoie chaque visiteur vers la variante la plus susceptible de le convertir, en fonction de son appareil, sa localisation et son comportement.\n\nSmart Traffic est disponible dès Leadpages Optimize. Activez-le dans l'onglet Optimize de votre page après avoir créé au moins deux variantes.",
+        image: { src: "/captures/smart-traffic.webp", alt: "Panneau Optimize : activation de Smart Traffic pour une répartition intelligente du trafic" },
+      },
+      {
+        title: "Optimisez le référencement de la page",
+        text: "Une page bien référencée reçoit du trafic gratuit et qualifié. Remplissez le titre SEO, la méta-description et l'URL avec vos mots-clés principaux. Ajoutez un texte alt à chaque image.\n\nDans Leadpages, ouvrez les réglages SEO de la page. Le titre doit contenir votre mot-clé principal et faire moins de 60 caractères. La description doit donner envie de cliquer en moins de 155 caractères.",
+        image: { src: "/captures/seo-social.webp", alt: "Réglages SEO et réseaux sociaux dans Leadpages : titre, description et image de partage" },
+      },
+      {
+        title: "Mettez en place un suivi hebdomadaire",
+        text: "L'optimisation du taux de conversion n'est pas un projet ponctuel, c'est un processus continu. Chaque semaine, notez le taux de conversion, le nombre de visiteurs et les résultats des tests en cours.\n\nCréez un tableau simple avec la date, le taux, le changement testé et le résultat. Après quelques semaines, vous verrez quels types de changements ont le plus d'impact sur vos pages.",
+      },
+    ],
+    pitfalls: [
+      "Changer plusieurs éléments à la fois : impossible de savoir lequel a eu un effet.",
+      "Tirer des conclusions avec moins de 200 visiteurs par variante.",
+      "Copier la page d'un concurrent sans comprendre pourquoi elle fonctionne pour son audience.",
+      "Ignorer le mobile : plus de la moitié du trafic y passe.",
+      "Ajouter un compte à rebours factice qui recommence à chaque visite.",
+    ],
+    tools: [
+      { slug: "leadpages", why: "Tests A/B, cartes de chaleur et Smart Traffic dès l'offre Optimize." },
+      { slug: "html-pub", why: "Création rapide de pages optimisées avec l'IA, idéal pour tester des variantes." },
+    ],
+    sources: [
+      { label: "Leadpages : tests A/B et Smart Traffic", url: "https://leadpages.com/product/ab-testing" },
+      { label: "Leadpages : conversion analytics", url: "https://leadpages.com/product/conversion-tools" },
+      pricing,
+    ],
+    related: ["faire-un-test-ab-leadpages", "utiliser-smart-traffic-leadpages", "creer-sa-landing-page-leadpages-de-a-a-z"],
+  },
 
   // ——— IA et vidéo ———
   {
@@ -941,6 +1054,7 @@ export const guides: Guide[] = [
     question: "Comment publier une page HTML Pub directement depuis Claude ?",
     summary: "Connecter HTML Pub à Claude pour créer et modifier vos pages en discutant.",
     theme: "ia",
+    publishedOn: "2026-09-27",
     updatedOn: "2026-09-27",
     intro:
       "HTML Pub a un connecteur pour Claude (MCP). Une fois connecté, vous demandez une page à Claude et il la publie dans votre compte.",
@@ -980,6 +1094,7 @@ export const guides: Guide[] = [
     question: "Comment créer une publicité vidéo avec Ad Studio ?",
     summary: "Une image de départ, un storyboard, puis la vidéo finale, en validant chaque étape.",
     theme: "ia",
+    publishedOn: "2026-09-26",
     updatedOn: "2026-09-26",
     intro:
       "Ad Studio transforme une courte description en publicité. Il propose des pubs centrées sur le produit ou au style UGC, avec un créateur généré par IA. Il est réservé aux offres Leadpages Optimize et Scale.",
@@ -1018,6 +1133,7 @@ export const guides: Guide[] = [
     question: "Comment essayer Shopify gratuitement ?",
     summary: "L'essai de 3 jours, puis 1 € par mois pendant 3 mois : comment en profiter.",
     theme: "boutique",
+    publishedOn: "2026-09-27",
     updatedOn: "2026-09-27",
     popular: true,
     intro:
@@ -1055,6 +1171,7 @@ export const guides: Guide[] = [
     question: "Comment choisir son forfait Shopify ?",
     summary: "Basic, Grow, Advanced ou Plus : lequel prendre selon votre activité.",
     theme: "boutique",
+    publishedOn: "2026-09-27",
     updatedOn: "2026-09-27",
     intro:
       "Shopify propose quatre forfaits. Pour démarrer seul, Basic suffit presque toujours. Les forfaits plus chers servent surtout aux équipes et aux gros volumes.",
@@ -1088,6 +1205,7 @@ export const guides: Guide[] = [
     summary: "Le guide complet : de l'inscription à la première vente, avec chaque écran de l'administration.",
     theme: "boutique",
     format: "complet",
+    publishedOn: "2026-09-27",
     updatedOn: "2026-09-27",
     popular: true,
     intro:
@@ -1262,6 +1380,7 @@ export const guides: Guide[] = [
     question: "Comment créer sa boutique Shopify ?",
     summary: "De l'inscription à la boutique en ligne : compte, thème, produits et paiements, dans l'ordre.",
     theme: "boutique",
+    publishedOn: "2026-09-27",
     updatedOn: "2026-09-27",
     popular: true,
     intro:
@@ -1296,13 +1415,14 @@ export const guides: Guide[] = [
     pitfalls: ["Ouvrir la boutique sans avoir testé une commande de bout en bout.", "Oublier les pages légales (conditions de vente, remboursement, confidentialité)."],
     tools: [{ slug: "shopify", why: "Boutique en ligne complète, avec assistant IA intégré." }],
     sources: [{ label: "Centre d'aide Shopify", url: "https://help.shopify.com/fr" }, { label: "Shopify : tarifs", url: "https://www.shopify.com/fr/tarifs" }],
-    related: ["creer-sa-boutique-shopify-de-a-a-z", "ajouter-un-produit-shopify", "connecter-son-domaine-shopify"],
+    related: ["creer-sa-boutique-shopify-de-a-a-z", "ajouter-un-produit-shopify", "creer-un-tunnel-de-vente-avec-leadpages-et-shopify-de-a-a-z"],
   },
   {
     slug: "ajouter-un-produit-shopify",
     question: "Comment ajouter un produit sur Shopify ?",
     summary: "Titre, photos, prix, stock et expédition : la fiche produit remplie correctement.",
     theme: "boutique",
+    publishedOn: "2026-09-27",
     updatedOn: "2026-09-27",
     intro:
       "Une bonne fiche produit fait vendre. Shopify vous guide champ par champ ; les changements enregistrés s'affichent tout de suite dans la boutique.",
@@ -1344,6 +1464,7 @@ export const guides: Guide[] = [
     question: "Comment connecter son nom de domaine à Shopify ?",
     summary: "Utiliser votre propre adresse au lieu de l'adresse en myshopify.com.",
     theme: "boutique",
+    publishedOn: "2026-09-27",
     updatedOn: "2026-09-27",
     intro:
       "Chaque boutique a une adresse gratuite en .myshopify.com. Avec votre propre domaine, elle inspire plus confiance. Le certificat SSL (HTTPS) est gratuit.",
@@ -1380,6 +1501,7 @@ export const guides: Guide[] = [
     question: "Comment accepter les paiements sur Shopify ?",
     summary: "Shopify Payments, Bancontact, PayPal : les réglages et les frais à connaître.",
     theme: "boutique",
+    publishedOn: "2026-09-27",
     updatedOn: "2026-09-27",
     intro:
       "Shopify Payments permet d'accepter les cartes, Bancontact, Apple Pay et d'autres moyens de paiement sans prestataire externe. C'est aussi ce qui évite les frais de transaction supplémentaires.",
@@ -1416,6 +1538,7 @@ export const guides: Guide[] = [
     question: "Comment choisir et installer un thème gratuit sur Shopify ?",
     summary: "Trouver un thème gratuit dans la Theme Store, l'essayer, puis le publier.",
     theme: "boutique",
+    publishedOn: "2026-09-27",
     updatedOn: "2026-09-27",
     intro:
       "Le thème décide de l'apparence de votre boutique. Shopify propose des thèmes gratuits, conçus et maintenus par Shopify : c'est le meilleur point de départ.",
@@ -1459,6 +1582,7 @@ export const guides: Guide[] = [
     question: "Comment créer un code de réduction sur Shopify ?",
     summary: "Un code promo en pourcentage ou en montant fixe, avec ses conditions et ses limites.",
     theme: "boutique",
+    publishedOn: "2026-09-27",
     updatedOn: "2026-09-27",
     intro:
       "Un code de réduction aide à déclencher une première commande. Sur Shopify, il se crée en quelques minutes et s'applique au moment du paiement.",
@@ -1500,6 +1624,7 @@ export const guides: Guide[] = [
     question: "Comment relier HTML Pub ou Leadpages à Shopify ?",
     summary: "Le connecteur Shopify de HTML Pub, et les boutons qui envoient vers votre boutique.",
     theme: "boutique",
+    publishedOn: "2026-09-27",
     updatedOn: "2026-09-27",
     intro:
       "Vos pages HTML Pub ou Leadpages attirent les visiteurs, Shopify encaisse les ventes. Deux liens sont possibles : le connecteur Shopify, et des boutons qui mènent au paiement Shopify.",
@@ -1545,6 +1670,7 @@ export const guides: Guide[] = [
     question: "Comment attirer des clients vers sa boutique Shopify avec une landing page ?",
     summary: "Une page simple, une offre claire, un formulaire, puis un lien vers votre boutique.",
     theme: "boutique",
+    publishedOn: "2026-09-27",
     updatedOn: "2026-09-27",
     popular: true,
     intro:
@@ -1595,6 +1721,7 @@ export const guides: Guide[] = [
     question: "Comment créer une page de vente pour un produit Shopify ?",
     summary: "Une page d'une seule offre, créée avec l'IA de HTML Pub, qui envoie vers votre produit Shopify.",
     theme: "boutique",
+    publishedOn: "2026-09-27",
     updatedOn: "2026-09-27",
     intro:
       "Une fiche produit Shopify montre le produit ; une page de vente le raconte. Elle sert surtout quand vous faites de la publicité ou des vidéos pour un produit précis.",
@@ -1642,6 +1769,7 @@ export const guides: Guide[] = [
     question: "Comment régler les frais de livraison sur Shopify ?",
     summary: "Zones de livraison, tarifs fixes ou selon le poids, et livraison gratuite dès un montant.",
     theme: "boutique",
+    publishedOn: "2026-09-27",
     updatedOn: "2026-09-27",
     intro:
       "Les frais de livraison se règlent une seule fois, par zone de livraison. Des tarifs simples et justes évitent les paniers abandonnés au moment de payer.",
@@ -1692,6 +1820,7 @@ export const guides: Guide[] = [
     question: "Comment ajouter ses conditions de vente et politiques sur Shopify ?",
     summary: "Retours, conditions de service, expédition, coordonnées et mentions légales, affichées au paiement.",
     theme: "boutique",
+    publishedOn: "2026-09-27",
     updatedOn: "2026-09-27",
     intro:
       "Les politiques rassurent l'acheteur et sont exigées par la loi pour vendre en ligne. Shopify les affiche au paiement ; il reste à les écrire et à les mettre dans le menu.",
@@ -1738,6 +1867,7 @@ export const guides: Guide[] = [
     question: "Comment modifier le menu de sa boutique Shopify ?",
     summary: "Ajouter, renommer, déplacer des liens et créer un menu déroulant.",
     theme: "boutique",
+    publishedOn: "2026-09-27",
     updatedOn: "2026-09-27",
     intro:
       "Le menu aide le visiteur à trouver vos produits en un clic. Shopify en crée deux au départ : le menu principal, en haut, et le menu du pied de page.",
@@ -1780,6 +1910,7 @@ export const guides: Guide[] = [
     question: "Comment retirer le mot de passe de sa boutique Shopify ?",
     summary: "Ouvrir la boutique au public en désactivant le mode privé, et ce qu'il faut vérifier avant.",
     theme: "boutique",
+    publishedOn: "2026-09-27",
     updatedOn: "2026-09-27",
     intro:
       "Une nouvelle boutique Shopify est protégée par un mot de passe : personne ne peut acheter. Pour l'ouvrir, il faut d'abord choisir un forfait, puis désactiver le mode privé.",
@@ -1823,6 +1954,97 @@ export const guides: Guide[] = [
       { label: "Aide Shopify : préférences de la boutique en ligne", url: "https://help.shopify.com/fr/manual/online-store/setting-up/preferences" },
     ],
     related: ["choisir-son-forfait-shopify", "connecter-son-domaine-shopify", "creer-sa-boutique-shopify-de-a-a-z"],
+  },
+  {
+    slug: "creer-un-tunnel-de-vente-avec-leadpages-et-shopify-de-a-a-z",
+    question: "Comment créer un tunnel de vente avec Leadpages et Shopify de A à Z ?",
+    summary:
+      "Guide complet pour construire un tunnel de vente qui capture des contacts avec Leadpages et les transforme en clients sur Shopify, étape par étape.",
+    theme: "boutique",
+    updatedOn: "2026-09-28",
+    popular: true,
+    format: "complet",
+    intro:
+      "Un tunnel de vente, c'est le chemin que suit un visiteur entre la découverte de votre offre et l'achat. Au lieu d'envoyer tout le monde directement sur votre boutique Shopify, vous commencez par capturer leur email avec une landing page Leadpages, vous les convainquez par email, puis vous les envoyez vers Shopify pour acheter. Ce guide monte le tunnel complet, de la première page au premier paiement.",
+    steps: [
+      {
+        title: "Comprenez la structure d'un tunnel de vente",
+        text: "Un tunnel de vente suit quatre étapes : attirer l'attention, capturer le contact, nourrir la relation par email, puis proposer l'achat. Chaque étape a un outil adapté.\n\nLeadpages gère les deux premières étapes : la landing page qui attire et le formulaire qui capture l'email. Votre service d'emailing gère la troisième. Shopify gère la dernière : le paiement et la livraison. L'ensemble forme un système automatisé qui vend pendant que vous dormez.",
+      },
+      {
+        title: "Préparez votre offre dans Shopify",
+        text: "Avant de construire le tunnel, votre produit doit être prêt dans Shopify. Créez le produit avec ses photos, son prix, sa description et ses variantes. Vérifiez que le paiement fonctionne en passant une commande test.\n\nCopiez le lien direct vers le produit ou la collection : vous en aurez besoin pour le bouton d'achat dans vos emails et sur votre page de vente.",
+        image: { src: "/captures/shopify-produit.webp", alt: "Page produit Shopify : titre, description, prix et images du produit" },
+      },
+      {
+        title: "Créez un lead magnet irrésistible",
+        text: "Le lead magnet, c'est ce que vous offrez en échange de l'email. Un guide PDF, une checklist, un code de réduction, un accès anticipé. Il doit résoudre un problème concret de votre client idéal et être directement lié à votre produit payant.\n\nExemple : vous vendez des accessoires de cuisine sur Shopify. Votre lead magnet peut être « 10 recettes rapides pour la semaine » en PDF. Le visiteur donne son email, reçoit les recettes, puis vos emails lui présentent vos accessoires.",
+      },
+      {
+        title: "Construisez la landing page de capture",
+        text: "Dans Leadpages, créez une nouvelle page à partir d'un modèle ou avec l'IA. La page a un seul objectif : convaincre le visiteur de laisser son email en échange du lead magnet.\n\nLe titre doit annoncer le bénéfice du lead magnet. Le formulaire ne demande que l'email. Le bouton dit exactement ce que le visiteur reçoit : « Recevoir les 10 recettes » plutôt que « S'inscrire ». Supprimez tout ce qui distrait : pas de menu, pas de liens vers d'autres pages.",
+        image: { src: "/captures/creer-page-ia.webp", alt: "Création d'une landing page avec l'assistant IA dans Leadpages" },
+      },
+      {
+        title: "Connectez votre service d'emailing",
+        text: "Dans Leadpages, ouvrez les intégrations de votre page et connectez votre service d'emailing : Mailchimp, ConvertKit, ActiveCampaign ou un autre. Chaque nouvel inscrit est automatiquement ajouté à une liste ou un tag spécifique.\n\nCréez une liste ou un tag dédié à ce tunnel pour que vos emails de vente n'arrivent qu'aux personnes qui ont demandé ce lead magnet précis.",
+        image: { src: "/captures/integrations.webp", alt: "Panneau d'intégrations Leadpages : connexion avec les services d'emailing" },
+      },
+      {
+        title: "Écrivez la séquence d'emails",
+        text: "Préparez 4 à 6 emails automatiques envoyés sur 7 à 10 jours. Le premier email livre le lead magnet. Les suivants apportent de la valeur et présentent progressivement votre produit Shopify.\n\nEmail 1 : livraison du lead magnet + présentation rapide de vous. Email 2 : un conseil lié au sujet du lead magnet. Email 3 : l'histoire d'un client qui a résolu son problème avec votre produit. Email 4 : présentation du produit avec le lien vers Shopify. Email 5 : rappel avec un code de réduction à durée limitée.",
+      },
+      {
+        title: "Créez un code de réduction dans Shopify",
+        text: "Dans Shopify, allez dans Réductions et créez un code promotionnel réservé aux abonnés de votre tunnel. Un code comme BIENVENUE15 pour 15 % de réduction sur la première commande donne une raison d'acheter maintenant plutôt que plus tard.\n\nLimitez le code à une utilisation par client et fixez une date d'expiration pour créer un sentiment d'urgence réel.",
+        image: { src: "/captures/shopify-reduction.webp", alt: "Création d'un code de réduction dans Shopify : pourcentage, conditions et limites" },
+      },
+      {
+        title: "Construisez la page de vente",
+        text: "Créez une deuxième page dans Leadpages : la page de vente. C'est la page vers laquelle vos emails envoient les contacts prêts à acheter. Elle présente votre produit en détail avec un bouton qui renvoie vers Shopify.\n\nCette page est plus longue que la page de capture : témoignages, détails du produit, garantie, FAQ. Le bouton d'achat utilise le lien direct vers votre produit Shopify.",
+        image: { src: "/captures/htmlpub-shopify.webp", alt: "Page de vente HTML Pub avec bouton d'achat lié à Shopify" },
+      },
+      {
+        title: "Configurez la page de remerciement",
+        text: "Après l'inscription sur la page de capture, le visiteur arrive sur une page de remerciement. Utilisez-la pour renforcer l'engagement : rappelez de vérifier les spams, proposez de suivre vos réseaux sociaux, ou montrez un aperçu de votre produit Shopify.\n\nDans Leadpages, configurez la redirection post-formulaire vers votre page de remerciement. Vous pouvez aussi y placer directement votre offre avec le code de réduction pour les plus pressés.",
+      },
+      {
+        title: "Testez le tunnel complet",
+        text: "Avant d'envoyer du trafic, parcourez vous-même chaque étape. Inscrivez-vous avec une adresse test, vérifiez que l'email de bienvenue arrive, cliquez sur chaque lien de la séquence, et passez une commande test sur Shopify avec le code de réduction.\n\nVérifiez sur mobile aussi : la majorité du trafic viendra de là. Si un email ne s'affiche pas bien ou qu'un bouton est trop petit, corrigez avant de lancer.",
+      },
+      {
+        title: "Envoyez du trafic vers la page de capture",
+        text: "Le tunnel est prêt : il faut maintenant y envoyer des visiteurs. Les sources les plus courantes : une publicité Facebook ou Instagram qui cible votre audience, un post sur les réseaux sociaux avec le lien vers la page, un article de blog qui renvoie vers le lead magnet, ou un partenariat avec un créateur de contenu dans votre niche.\n\nCommencez avec un petit budget publicitaire pour valider que le tunnel convertit avant d'augmenter les dépenses.",
+      },
+      {
+        title: "Suivez les résultats à chaque étape",
+        text: "Un tunnel de vente se mesure étape par étape. Notez le taux de conversion de la landing page, le taux d'ouverture des emails, le taux de clic vers Shopify et le taux d'achat final.\n\nDans Leadpages, le tableau de bord donne le taux de conversion de la page. Dans votre service d'emailing, vous voyez les ouvertures et les clics. Dans Shopify, les ventes avec le code de réduction vous montrent combien de ventes viennent du tunnel.",
+        image: { src: "/captures/statistiques.webp", alt: "Tableau de bord Leadpages : suivi des conversions et du trafic" },
+      },
+      {
+        title: "Optimisez avec les tests A/B",
+        text: "Une fois que le tunnel tourne et génère des données, améliorez chaque étape. Testez deux titres différents sur la page de capture. Testez deux objets d'email. Testez deux prix ou deux offres sur la page de vente.\n\nDans Leadpages, utilisez les tests A/B pour la page de capture et la page de vente. Changez un seul élément à la fois et attendez au moins 100 conversions par variante avant de choisir un gagnant.",
+        image: { src: "/captures/test-ab.webp", alt: "Interface de test A/B Leadpages : comparaison entre deux variantes de page" },
+      },
+    ],
+    pitfalls: [
+      "Envoyer le trafic directement sur Shopify sans capturer l'email d'abord : les visiteurs qui partent sont perdus pour toujours.",
+      "Écrire une séquence d'emails 100 % promotionnelle : les contacts se désabonnent avant d'acheter.",
+      "Ne pas tester le tunnel sur mobile avant de lancer la publicité.",
+      "Utiliser un code de réduction sans date d'expiration : il n'y a aucune urgence à acheter.",
+      "Lancer de la publicité payante avant d'avoir vérifié que chaque étape du tunnel fonctionne.",
+    ],
+    tools: [
+      { slug: "leadpages", why: "Landing pages de capture et de vente avec intégrations emailing et tests A/B." },
+      { slug: "html-pub", why: "Alternative rapide pour créer des pages de capture et de vente avec l'IA." },
+      { slug: "shopify", why: "Boutique en ligne pour gérer les produits, les paiements et les livraisons." },
+    ],
+    sources: [
+      { label: "Leadpages : intégrations", url: "https://leadpages.com/integrations" },
+      { label: "Aide Shopify : codes de réduction", url: "https://help.shopify.com/fr/manual/discounts" },
+      pricing,
+    ],
+    related: ["creer-sa-boutique-shopify-de-a-a-z", "creer-sa-landing-page-leadpages-de-a-a-z", "ameliorer-le-taux-de-conversion-de-ses-pages-de-a-a-z"],
   },
 ];
 

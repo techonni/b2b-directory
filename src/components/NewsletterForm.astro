@@ -18,10 +18,18 @@ interface Props {
   text?: string;
 }
 
+const { tag } = Astro.props;
+// Cadeau annoncé selon le sujet du guide lu.
+const gift =
+  tag === "shopify"
+    ? "la checklist de lancement Shopify"
+    : tag
+      ? "la checklist de lancement d'une landing page et nos modèles de textes"
+      : "une checklist de lancement (Shopify ou landing page)";
+
 const {
-  tag,
   title = "Recevoir les prochains guides",
-  text = "Les nouveaux guides Leadpages, HTML Pub et Shopify par e-mail, une fois par quinzaine, avec la checklist de lancement Shopify offerte. Pas de spam, désinscription en un clic.",
+  text = `Les nouveaux guides Leadpages, HTML Pub et Shopify par e-mail, une fois par quinzaine, avec ${gift} en cadeau. Pas de spam, désinscription en un clic.`,
 } = Astro.props;
 
 const interests = [

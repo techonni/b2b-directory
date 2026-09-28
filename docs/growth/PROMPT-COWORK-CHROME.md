@@ -1,3 +1,5 @@
+> ⚠️ **Substituído a 28/09/2026:** este prompt é grande demais e encravou o Claude do Chrome. Usar os prompts curtos em `docs/growth/prompts-chrome/` (um por conversa).
+
 # Prompt para o Claude no Chrome (Cowork)
 
 > **Como usar:** abre o Claude no painel lateral do Chrome, com sessão iniciada no GitHub, PartnerStack, Impact, Google Search Console, Google Analytics, Mailchimp e Vercel. Copia tudo o que está abaixo da linha e cola na conversa.

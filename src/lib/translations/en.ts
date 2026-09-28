@@ -511,4 +511,43 @@ export const enGuides: TranslatedGuide[] = [
       "A long, complicated address: it gets cut off or mistyped.",
     ],
   },
+  {
+    slug: "ajouter-un-pop-up-d-inscription-leadpages",
+    localSlug: "add-signup-pop-up-leadpages",
+    question: "How do I add a signup pop-up in Leadpages?",
+    summary: "A window that opens at the right moment to offer your freebie or newsletter, without hiding the whole page.",
+    intro:
+      "A pop-up is a small form that opens on top of the page: when someone clicks a button, after a few seconds, or when the visitor is about to leave. In Leadpages, you build it separately, then publish it on your pages or your website.",
+    steps: [
+      {
+        title: "Create the pop-up",
+        text: "In the menu, open Conversion Tools, then Pop-Ups, and click Create New Pop-Up. Give it a clear name (for example \"Checklist – free guide\"), then click Start Building.",
+      },
+      {
+        title: "Write your offer in one sentence",
+        text: "A headline that says what people get (\"Get the free checklist\"), one supporting sentence, a single email field and an action button. No name, no phone number: every extra field costs you signups.",
+      },
+      {
+        title: "Choose where signups go",
+        text: "Click the pop-up's form: pick the email tool that receives the contacts (Mailchimp, Brevo…) and what happens after submitting (a thank-you message or a thank-you page). In the US, also say clearly what people will receive and how to unsubscribe.",
+      },
+      {
+        title: "Choose when it opens",
+        text: "Click Publish in the top-right corner. Three ways to open it: on click of a button, link or image; after a delay (timed); or when the mouse heads to the top of the window (exit). The most respectful is on click: the visitor asked for it.",
+      },
+      {
+        title: "Connect it to your landing page",
+        text: "In your Leadpages page, select the button and, in its link settings, choose to open the pop-up. For a timed or exit pop-up, copy the code from Publish and paste it into the page settings, in the tracking section (Head Section Tracking Code). Update the page.",
+      },
+      {
+        title: "Test on desktop and on mobile",
+        text: "Open the live page, trigger the pop-up and sign up with your own email. Check that the contact reaches your email tool. On phones, timed and exit pop-ups do not open: always keep a visible button.",
+      },
+    ],
+    pitfalls: [
+      "A pop-up that opens as soon as the page loads: visitors close it without reading, and Google dislikes windows that cover content on mobile.",
+      "Relying only on an exit pop-up: it does not work on phones, where most visitors come from.",
+      "Skipping the test: a pop-up connected to the wrong email tool loses every signup.",
+    ],
+  },
 ];

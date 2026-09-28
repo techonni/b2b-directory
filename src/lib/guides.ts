@@ -878,7 +878,7 @@ export const guides: Guide[] = [
       { slug: "leadpages", why: "Plus d'intégrations et des webhooks." },
     ],
     sources: [{ label: "HTML Pub : connecter des intégrations", url: `${help}43967898431757--HTMLPub-Connecting-Integrations` }],
-    related: ["recuperer-les-formulaires-html-pub", "recolter-des-e-mails-avant-un-lancement"],
+    related: ["recuperer-les-formulaires-html-pub", "recolter-des-e-mails-avant-un-lancement", "ajouter-un-pop-up-d-inscription-leadpages"],
   },
 
   {
@@ -928,7 +928,55 @@ export const guides: Guide[] = [
     sources: [
       { label: "CNIL : la prospection commerciale par courrier électronique", url: "https://www.cnil.fr/fr/la-prospection-commerciale-par-courrier-electronique" },
     ],
-    related: ["recuperer-les-formulaires-html-pub", "connecter-leadpages-a-son-outil-e-mail", "creer-une-landing-page-avec-l-ia"],
+    related: ["recuperer-les-formulaires-html-pub", "connecter-leadpages-a-son-outil-e-mail", "creer-une-landing-page-avec-l-ia", "ajouter-un-pop-up-d-inscription-leadpages"],
+  },
+
+  {
+    slug: "ajouter-un-pop-up-d-inscription-leadpages",
+    question: "Comment ajouter un pop-up d'inscription sur Leadpages ?",
+    summary: "Une fenêtre qui s'ouvre au bon moment pour proposer votre cadeau ou votre newsletter, sans cacher toute la page.",
+    theme: "contacts",
+    publishedOn: "2026-09-28",
+    updatedOn: "2026-09-28",
+    intro:
+      "Un pop-up est un petit formulaire qui s'ouvre par-dessus la page : au clic sur un bouton, après quelques secondes ou quand le visiteur s'apprête à partir. Dans Leadpages, il se crée à part, puis se publie sur vos pages ou sur votre site.",
+    steps: [
+      {
+        title: "Créez le pop-up",
+        text: "Dans le menu, ouvrez « Conversion Tools », puis « Pop-Ups », et cliquez sur « Create New Pop-Up ». Donnez-lui un nom clair (par exemple « Checklist – guide gratuit »), puis cliquez sur « Start Building ».",
+      },
+      {
+        title: "Écrivez une offre en une phrase",
+        text: "Un titre qui dit ce que la personne reçoit (« Recevez la checklist gratuite »), une phrase de précision, un seul champ e-mail et un bouton d'action. Pas de nom, pas de téléphone : chaque champ en plus fait perdre des inscrits.",
+      },
+      {
+        title: "Réglez où vont les inscrits",
+        text: "Cliquez sur le formulaire du pop-up : choisissez l'outil e-mail qui reçoit les contacts (Mailchimp, Brevo…) et ce qui se passe après l'envoi (message de remerciement ou page de remerciement). Ajoutez une case de consentement non cochée d'avance.",
+      },
+      {
+        title: "Choisissez quand il s'ouvre",
+        text: "Cliquez sur « Publish » en haut à droite. Trois façons de l'ouvrir : au clic sur un bouton, un lien ou une image ; après un délai (« timed ») ; ou quand la souris part vers le haut de la fenêtre (« exit »). Le plus respectueux est le clic : le visiteur l'a demandé.",
+      },
+      {
+        title: "Reliez-le à votre landing page",
+        text: "Dans votre page Leadpages, sélectionnez le bouton voulu et, dans ses réglages de lien, choisissez d'ouvrir le pop-up. Pour un pop-up à délai ou de sortie, copiez le code donné par « Publish » et collez-le dans les réglages de la page, partie suivi / « Head Section Tracking Code ». Mettez la page à jour.",
+      },
+      {
+        title: "Testez sur ordinateur et sur téléphone",
+        text: "Ouvrez la page publiée, déclenchez le pop-up et inscrivez-vous avec votre propre e-mail. Vérifiez que le contact arrive dans votre outil e-mail. Sur téléphone, les pop-ups à délai et de sortie ne s'ouvrent pas : gardez toujours un bouton visible.",
+      },
+    ],
+    pitfalls: [
+      "Un pop-up qui s'ouvre dès l'arrivée sur la page : le visiteur le ferme sans lire, et Google n'aime pas les fenêtres qui cachent le contenu sur mobile.",
+      "Compter uniquement sur le pop-up de sortie : il ne fonctionne pas sur téléphone, où arrivent la plupart des visiteurs.",
+      "Oublier le test : un pop-up relié au mauvais outil e-mail perd tous les inscrits.",
+    ],
+    tools: [{ slug: "leadpages", why: "Pop-ups au clic, à délai et de sortie, reliés à vos outils e-mail." }],
+    sources: [
+      { label: "Leadpages : créer un pop-up", url: `${help}115000438247-Create-a-pop-up` },
+      { label: "Leadpages : publier un pop-up", url: `${help}115000463348-Publish-your-pop-up` },
+    ],
+    related: ["recolter-des-e-mails-avant-un-lancement", "connecter-leadpages-a-son-outil-e-mail", "creer-sa-landing-page-leadpages-de-a-a-z"],
   },
 
   // ——— Optimiser ———

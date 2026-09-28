@@ -4,7 +4,7 @@
 > O CLAUDE.md manda ler este ficheiro e fazer **todos** os passos da lista « Próxima sessão », um a seguir ao outro, publicando cada um.
 > Claude no Chrome (Co-work): o Techonni também diz só « continua ». O trabalho dele está em `docs/growth/CHROME-PROXIMO.md` (máx. 3 tarefas e 2 sites) e os resultados em `docs/growth/RESULTADOS-CHROME.md`. Nunca os dois ao mesmo tempo.
 
-Data: 28/09/2026 (2.ª sessão do dia: guia da semana 2). Responde ao Techonni em **português**, com palavras simples. Os textos do site e dos emails são em **francês**.
+Data: 28/09/2026 (3.ª sessão do dia: limpeza « b2b », guia da semana 4, pins novos). Responde ao Techonni em **português**, com palavras simples. Os textos do site e dos emails são em **francês**.
 
 ---
 
@@ -66,8 +66,10 @@ Data: 28/09/2026 (2.ª sessão do dia: guia da semana 2). Responde ao Techonni e
 
 ## Pendentes do lado do Techonni
 
-- [ ] Uma só vez: guardar nas instruções do projeto do Co-work a frase de arranque (ver « Claude no Chrome » abaixo). Depois, dizer « continua » no Chrome (lote 1: preços).
+- [ ] Pinterest: pinterest.com → menu do perfil → Configurações → **Criar Pins em massa** → carregar `pinterest-agendar.csv` (descarregar em https://github.com/techonni/zunrel/blob/main/docs/growth/pinterest-agendar.csv, botão « Download raw file »). Carregar **no dia 29/09** (depois das 06:00 UTC: o Claude Code relança a publicação da Vercel às 05:45 UTC com uma mensagem agendada, e as imagens novas ficam online).
+- [ ] Uma só vez: guardar (ou substituir) nas instruções do projeto do Co-work a frase de arranque nova (ver « Claude no Chrome » abaixo). Depois, dizer « continua » no Chrome (lote 1: preços).
 - [ ] Link PartnerStack que leve ao **HTML Pub**.
+- [ ] Se ainda vir « b2b-directory » na app do Claude no Mac: é uma pasta antiga no computador. No Finder, apagar (ou renomear para `zunrel`) a pasta `b2b-directory`, e na app do Claude escolher sempre o repositório `techonni/zunrel`. No GitHub e na Vercel já não existe nada com esse nome.
 - [ ] No iCloud: marcar os testes como « Não é lixo » e guardar contact@zunrel.com nos contactos.
 
 ## Sessão de 28/09 (2.ª): o que foi feito
@@ -85,27 +87,42 @@ Data: 28/09/2026 (2.ª sessão do dia: guia da semana 2). Responde ao Techonni e
 | Chrome em pausa | ⏸️ O Techonni atingiu o limite de uso do Co-work a 28/09. **Não pedir nada ao Chrome** até ele dizer que voltou. O lote 1 fica à espera em `CHROME-PROXIMO.md`. |
 | 7. Traduções | ✅ `ajouter-des-variantes-shopify` também em PT e EN. Sem dados de visitas ainda (lote 3) para escolher os seguintes. |
 
+## Sessão de 28/09 (3.ª): o que foi feito
+
+| Passo | Estado |
+|---|---|
+| Limpeza « b2b » | ✅ Verificado: o Claude só tem acesso a **um** repositório, `techonni/zunrel`. Na Vercel, o projeto `zunrel` só tem `zunrel.com`, `www.zunrel.com` e `zunrel-com.vercel.app` (o endereço `b2b-directory-eight.vercel.app` já foi apagado). O código não tem mais « b2b ». A conversa antiga « Dois repos e B2B » foi renomeada. Se ainda aparecer « b2b-directory » na app do Claude no Mac, é só uma pasta/lista antiga guardada na app (ver « Pendentes do lado do Techonni »). |
+| 1. Resultados do Chrome | ⏸️ Nenhum lote novo (o Chrome está em pausa: limite de uso). Acrescentado à fila o **lote 5b** (capturas do pop-up Leadpages). |
+| 2 a 4. Preços, Search Console, GA4 | ⏳ Bloqueados: esperam os lotes 1 a 3 do Chrome. |
+| 5. Guia da semana 4 | ✅ `ajouter-un-pop-up-d-inscription-leadpages` em FR + PT (`pop-up-de-inscricao-leadpages`) + EN (`add-signup-pop-up-leadpages`), pin, ligado a partir de `recolter-des-e-mails-avant-un-lancement` e `connecter-leadpages-a-son-outil-e-mail`. Fonte: artigos de ajuda oficiais da Leadpages (« Create a pop-up », « Publish your pop-up »). Post e pin no dia 12 de `fila-redes.md`. Falta a captura (lote 5b). |
+| 6. Newsletter | ⏸️ Nada (regra 0). |
+| 7. Traduções | ⏳ Espera os dados de visitas (lote 3). |
+| Pinterest de uma vez | ✅ `docs/growth/pinterest-agendar.csv` (pedido do Techonni: todos os pins, 10 por dia): **88 pins** = a imagem normal + a imagem « erreurs » de cada um dos 44 guias, de 30/09 a 08/10, das 06:00 às 19:30 UTC. Tudo em **francês**: cada pin leva ao guia francês (`/guides/<slug>/`), nunca a `/pt/` ou `/en/` (as imagens são em francês). UTM `utm_campaign=pin-csv`. Não há conector do Claude para o Pinterest, por isso o carregamento é um clique do Techonni. Próximo CSV antes de 08/10 (guias novos + imagens novas). Os pins das tabelas de `fila-redes.md` ficam todos dentro deste CSV: o Chrome não publica pins. |
+| Vercel: limite diário | ⚠️ A 28/09 às 05:30 UTC a Vercel recusou a publicação: « Deployment rate limited — retry in 24 hours » (plano Hobby: máx. 100 publicações por dia). O merge foi feito; o site só é atualizado com a próxima publicação. **Próxima sessão:** ver se a produção ficou `READY` com o commit de `main`; se não, relançar com `create_deployment` em `main`. Publicar menos vezes por dia (juntar os passos num só PR). |
+| Co-work: perguntas fora do « continua » | ✅ Corrigido em `CHROME-PROXIMO.md` (« Regra n.º 1 »: « continua » = fazer o Lote atual, sem outras perguntas; a rotina diária só depois, com uma única pergunta) e em `CHROME-DIARIO.md`. A causa: o passo 0 mandava o Co-work propor a rotina diária antes de tudo. **Falta o Techonni:** atualizar a frase nas instruções do projeto do Co-work (ver « Claude no Chrome » abaixo). |
+| 8. Pins dos dias 10+ | ✅ 2.ª imagem para cada um dos 44 guias (« Les erreurs à éviter », fundo escuro) em `public/pins/erreurs/`, criada com `make-pins.mjs --variant erreurs`. Na fila: 4 por dia, dias 10 a 20. |
+
 ## Próxima sessão (fazer tudo, por esta ordem)
 
 1. Ler `docs/growth/RESULTADOS-CHROME.md`. Usar os lotes novos, passar o lote seguinte da fila para « Lote atual » em `CHROME-PROXIMO.md` (máx. 3 tarefas, 2 sites) e publicar. Se não houver resultados novos, seguir para o ponto 5.
 2. Com os resultados: corrigir preços (`combien-coute-*`, `/offres/`, botões), pôr o link HTML Pub em `affiliateUrl` da ferramenta `html-pub`, pôr deep links se existirem.
 3. Search Console: `seoTitle` / `seoDescription` nas 5 páginas com mais impressões e CTR mais baixo.
 4. GA4: ver `affiliate_click` por `placement` e `guide`; ver `web_vital` e corrigir páginas lentas. Registar a semana no Painel.
-5. Guia da semana 4 (« pop-up d'inscription Leadpages », ver `plano-growth.md`) em FR, PT e EN, pin com `make-pins.mjs`, 2 links internos. Quando chegar `shopify-page-contact.webp` (lote 5), pô-la no passo 1 do guia do formulário de contacto.
+5. Guia da semana 5 (« suivre ses commandes et expédier sur Shopify », ver `plano-growth.md`) em FR, PT e EN, pin normal + pin `--variant erreurs`, 2 links internos. Quando chegarem capturas: `shopify-page-contact.webp` (lote 5) no passo 1 do guia do formulário de contacto; `leadpages-popup.webp` e `leadpages-popup-publish.webp` (lote 5b) nos passos 1 e 4 do guia do pop-up (e corrigir os nomes dos menus se o Chrome disser que mudaram).
 6. Newsletter: **nada** enquanto não houver inscrito real (regra 0). Não perguntar ao Techonni.
 7. Traduzir para PT e EN os guias com mais visitas (dados do lote 3).
-8. Antes do fim do dia 9 de `fila-redes.md`: novas imagens de pins para os dias 10+ (4 por dia além do guia novo).
+8. `fila-redes.md` tem posts até ao dia 12 e pins até ao dia 20: antes do fim do dia 5, escrever posts X/LinkedIn para os dias 13+ (7 dias de avanço).
 9. Atualizar este ficheiro, publicar e enviar ao Techonni.
 
 ---
 
 ## Claude no Chrome
 
-**Rotina diária** (`CHROME-DIARIO.md`): A) X + LinkedIn, B) Impact + PartnerStack, C) 5 pins Pinterest. O Chrome pergunta sempre antes de começar. O conteúdo está em `fila-redes.md` (9 dias preparados a 28/09): manter sempre 7 dias de avanço.
+**Rotina diária** (`CHROME-DIARIO.md`): A) X + LinkedIn, B) Impact + PartnerStack. Só depois do Lote atual, e a única pergunta é « Posso começar? ». **Pinterest:** já não é diário: `pinterest-agendar.csv` agenda os pins de uma vez (Configurações → Criar Pins em massa). O conteúdo está em `fila-redes.md` (9 dias preparados a 28/09): manter sempre 7 dias de avanço.
 
 Frase a guardar **uma vez** nas instruções do projeto do Co-work (ou a colar uma única vez):
 
-> Quando eu disser « continua », abre https://github.com/techonni/zunrel/blob/main/docs/growth/CHROME-PROXIMO.md e faz exatamente o que lá está (no máximo 3 tarefas e 2 sites). Responde-me em português.
+> Quando eu disser « continua », abre https://github.com/techonni/zunrel/blob/main/docs/growth/CHROME-PROXIMO.md e faz exatamente o que lá está (no máximo 3 tarefas e 2 sites), sem me fazer outras perguntas. Responde-me em português.
 
 Os prompts de `prompts-chrome/` e o `PROMPT-COWORK-CHROME.md` ficam só como arquivo.
 

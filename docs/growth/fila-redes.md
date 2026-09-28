@@ -73,9 +73,16 @@ Un seul lien dans votre bio Instagram ou TikTok ? Faites-en une page à vous : b
 Avec HTML Pub : un modèle « lien en bio », 3 à 5 boutons, un champ e-mail, et c'est en ligne.
 Comment faire : https://zunrel.com/guides/creer-une-page-lien-en-bio-avec-html-pub/?utm_source=SOURCE&utm_medium=social&utm_campaign=post-diario
 
+### Dia 12
+Un pop-up d'inscription qui s'ouvre au clic, pas dès l'arrivée : vos visiteurs lisent, puis s'inscrivent.
+Sur Leadpages : « Conversion Tools », « Pop-Ups », un seul champ e-mail, et un bouton qui l'ouvre. Testez aussi sur téléphone.
+Comment faire : https://zunrel.com/guides/ajouter-un-pop-up-d-inscription-leadpages/?utm_source=SOURCE&utm_medium=social&utm_campaign=post-diario
+
 ---
 
 ## Pinterest: 5 pins por dia
+
+Desde 28/09/2026 **todos** estes pins (e os « erreurs ») estão em `pinterest-agendar.csv`, 10 por dia de 30/09 a 08/10. O Chrome não publica pins. Tabelas abaixo só como arquivo.
 
 Imagem: descarregar o link da coluna « Imagem ». Nunca criar um guia novo para um pin: os pins repetem os guias existentes. Quando os 9 dias acabarem, o Claude Code cria imagens novas (outro título e outra captura) para os mesmos guias.
 
@@ -178,3 +185,113 @@ Guia novo de 28/09 (só este pin novo; os outros 4 pins do dia 10 em diante ser�
 | Imagem | Título | Descrição | Painel | Link |
 |---|---|---|---|---|
 | https://zunrel.com/pins/creer-une-page-lien-en-bio-avec-html-pub.jpg | Comment créer une page « lien en bio » avec HTML Pub ? | Un seul lien dans votre bio Instagram ou TikTok, qui mène à tous vos liens. Guide gratuit, étape par étape. | Landing pages : Leadpages et HTML Pub | https://zunrel.com/guides/creer-une-page-lien-en-bio-avec-html-pub/?utm_source=pinterest&utm_medium=social&utm_campaign=pin-diario&utm_content=creer-une-page-lien-en-bio-avec-html-pub |
+
+### Dia 12
+
+| Imagem | Título | Descrição | Painel | Link |
+|---|---|---|---|---|
+| https://zunrel.com/pins/ajouter-un-pop-up-d-inscription-leadpages.jpg | Comment ajouter un pop-up d'inscription sur Leadpages ? | Un pop-up qui s'ouvre au bon moment pour proposer votre cadeau ou votre newsletter. Guide gratuit, étape par étape. | Landing pages : Leadpages et HTML Pub | https://zunrel.com/guides/ajouter-un-pop-up-d-inscription-leadpages/?utm_source=pinterest&utm_medium=social&utm_campaign=pin-diario&utm_content=ajouter-un-pop-up-d-inscription-leadpages |
+
+
+## Pins « erreurs à éviter » (2.ª imagem de cada guia): 4 por dia, além do pin do dia
+
+Imagens em `public/pins/erreurs/`. Publicar **em conjunto** com os pins do mesmo dia acima (Dia 10: o pin do guia novo + estes 4 = 5 pins).
+
+### Dia 10 (erreurs)
+
+| Imagem | Título | Descrição | Painel | Link |
+|---|---|---|---|---|
+| https://zunrel.com/pins/erreurs/choisir-entre-html-pub-et-leadpages.jpg | Les erreurs à éviter : Comment choisir entre HTML Pub et Leadpages ? | À éviter : prendre Leadpages Optimize dès le départ alors qu'on n'a pas encore de trafic. Guide gratuit, étape par étape. | Landing pages : Leadpages et HTML Pub | https://zunrel.com/guides/choisir-entre-html-pub-et-leadpages/?utm_source=pinterest&utm_medium=social&utm_campaign=pin-diario&utm_content=choisir-entre-html-pub-et-leadpages-erreurs |
+| https://zunrel.com/pins/erreurs/essayer-shopify-gratuitement.jpg | Les erreurs à éviter : Comment essayer Shopify gratuitement ? | À éviter : oublier qu'après 3 mois à 1 €, le forfait passe au prix normal. Guide gratuit, étape par étape. | Shopify : ouvrir sa boutique | https://zunrel.com/guides/essayer-shopify-gratuitement/?utm_source=pinterest&utm_medium=social&utm_campaign=pin-diario&utm_content=essayer-shopify-gratuitement-erreurs |
+| https://zunrel.com/pins/erreurs/essayer-leadpages-gratuitement.jpg | Les erreurs à éviter : Comment essayer Leadpages gratuitement ? | À éviter : oublier la date de fin et être prélevé sans l'avoir voulu. Guide gratuit, étape par étape. | Landing pages : Leadpages et HTML Pub | https://zunrel.com/guides/essayer-leadpages-gratuitement/?utm_source=pinterest&utm_medium=social&utm_campaign=pin-diario&utm_content=essayer-leadpages-gratuitement-erreurs |
+| https://zunrel.com/pins/erreurs/choisir-son-forfait-shopify.jpg | Les erreurs à éviter : Comment choisir son forfait Shopify ? | À éviter : prendre Advanced dès le départ sans en avoir besoin. Guide gratuit, étape par étape. | Shopify : ouvrir sa boutique | https://zunrel.com/guides/choisir-son-forfait-shopify/?utm_source=pinterest&utm_medium=social&utm_campaign=pin-diario&utm_content=choisir-son-forfait-shopify-erreurs |
+
+### Dia 11 (erreurs)
+
+| Imagem | Título | Descrição | Painel | Link |
+|---|---|---|---|---|
+| https://zunrel.com/pins/erreurs/changer-ou-annuler-son-offre-leadpages.jpg | Les erreurs à éviter : Comment changer d'offre ou annuler son abonnement Leadpages ? | À éviter : descendre d'offre sans vérifier les limites. Guide gratuit, étape par étape. | Landing pages : Leadpages et HTML Pub | https://zunrel.com/guides/changer-ou-annuler-son-offre-leadpages/?utm_source=pinterest&utm_medium=social&utm_campaign=pin-diario&utm_content=changer-ou-annuler-son-offre-leadpages-erreurs |
+| https://zunrel.com/pins/erreurs/combien-coute-shopify.jpg | Les erreurs à éviter : Combien coûte Shopify en 2026 : forfaits et frais ? | À éviter : oublier la date de fin des 3 mois à 1 €. Guide gratuit, étape par étape. | Shopify : ouvrir sa boutique | https://zunrel.com/guides/combien-coute-shopify/?utm_source=pinterest&utm_medium=social&utm_campaign=pin-diario&utm_content=combien-coute-shopify-erreurs |
+| https://zunrel.com/pins/erreurs/choisir-entre-leadpages-et-shopify.jpg | Les erreurs à éviter : Leadpages ou Shopify : lequel choisir ? | À éviter : construire une boutique entière dans Leadpages. Guide gratuit, étape par étape. | Landing pages : Leadpages et HTML Pub | https://zunrel.com/guides/choisir-entre-leadpages-et-shopify/?utm_source=pinterest&utm_medium=social&utm_campaign=pin-diario&utm_content=choisir-entre-leadpages-et-shopify-erreurs |
+| https://zunrel.com/pins/erreurs/creer-sa-boutique-shopify-de-a-a-z.jpg | Les erreurs à éviter : Comment créer sa boutique Shopify de A à Z ? | À éviter : passer les 3 jours d'essai à régler des détails sans avoir ajouté un seul produit. Guide gratuit, étape par étape. | Shopify : ouvrir sa boutique | https://zunrel.com/guides/creer-sa-boutique-shopify-de-a-a-z/?utm_source=pinterest&utm_medium=social&utm_campaign=pin-diario&utm_content=creer-sa-boutique-shopify-de-a-a-z-erreurs |
+
+### Dia 12 (erreurs)
+
+| Imagem | Título | Descrição | Painel | Link |
+|---|---|---|---|---|
+| https://zunrel.com/pins/erreurs/combien-coute-leadpages.jpg | Les erreurs à éviter : Combien coûte Leadpages (et HTML Pub) en 2026 ? | À éviter : comparer un prix annuel avec un prix mensuel. Guide gratuit, étape par étape. | Landing pages : Leadpages et HTML Pub | https://zunrel.com/guides/combien-coute-leadpages/?utm_source=pinterest&utm_medium=social&utm_campaign=pin-diario&utm_content=combien-coute-leadpages-erreurs |
+| https://zunrel.com/pins/erreurs/creer-sa-boutique-shopify.jpg | Les erreurs à éviter : Comment créer sa boutique Shopify ? | À éviter : ouvrir la boutique sans avoir testé une commande de bout en bout. Guide gratuit, étape par étape. | Shopify : ouvrir sa boutique | https://zunrel.com/guides/creer-sa-boutique-shopify/?utm_source=pinterest&utm_medium=social&utm_campaign=pin-diario&utm_content=creer-sa-boutique-shopify-erreurs |
+| https://zunrel.com/pins/erreurs/creer-sa-landing-page-leadpages-de-a-a-z.jpg | Les erreurs à éviter : Comment créer sa première landing page Leadpages de A à Z ? | À éviter : mettre plusieurs objectifs sur la même page. Guide gratuit, étape par étape. | Landing pages : Leadpages et HTML Pub | https://zunrel.com/guides/creer-sa-landing-page-leadpages-de-a-a-z/?utm_source=pinterest&utm_medium=social&utm_campaign=pin-diario&utm_content=creer-sa-landing-page-leadpages-de-a-a-z-erreurs |
+| https://zunrel.com/pins/erreurs/ajouter-un-produit-shopify.jpg | Les erreurs à éviter : Comment ajouter un produit sur Shopify ? | À éviter : laisser le poids à 0. Guide gratuit, étape par étape. | Shopify : ouvrir sa boutique | https://zunrel.com/guides/ajouter-un-produit-shopify/?utm_source=pinterest&utm_medium=social&utm_campaign=pin-diario&utm_content=ajouter-un-produit-shopify-erreurs |
+
+### Dia 13 (erreurs)
+
+| Imagem | Título | Descrição | Painel | Link |
+|---|---|---|---|---|
+| https://zunrel.com/pins/erreurs/creer-une-landing-page-avec-l-ia.jpg | Les erreurs à éviter : Comment créer une landing page avec l'IA de Leadpages ? | À éviter : écrire une description trop vague. Guide gratuit, étape par étape. | Landing pages : Leadpages et HTML Pub | https://zunrel.com/guides/creer-une-landing-page-avec-l-ia/?utm_source=pinterest&utm_medium=social&utm_campaign=pin-diario&utm_content=creer-une-landing-page-avec-l-ia-erreurs |
+| https://zunrel.com/pins/erreurs/ajouter-des-variantes-shopify.jpg | Les erreurs à éviter : Comment ajouter des variantes (taille, couleur) à un produit Shopify ? | À éviter : créer un produit séparé pour chaque taille. Guide gratuit, étape par étape. | Shopify : ouvrir sa boutique | https://zunrel.com/guides/ajouter-des-variantes-shopify/?utm_source=pinterest&utm_medium=social&utm_campaign=pin-diario&utm_content=ajouter-des-variantes-shopify-erreurs |
+| https://zunrel.com/pins/erreurs/partir-d-un-modele-leadpages.jpg | Les erreurs à éviter : Comment partir d'un modèle dans Leadpages ? | À éviter : laisser des textes d'exemple du modèle en ligne. Guide gratuit, étape par étape. | Landing pages : Leadpages et HTML Pub | https://zunrel.com/guides/partir-d-un-modele-leadpages/?utm_source=pinterest&utm_medium=social&utm_campaign=pin-diario&utm_content=partir-d-un-modele-leadpages-erreurs |
+| https://zunrel.com/pins/erreurs/ajouter-un-formulaire-de-contact-shopify.jpg | Les erreurs à éviter : Comment ajouter un formulaire de contact sur Shopify ? | À éviter : créer la page sans choisir le modèle « contact ». Guide gratuit, étape par étape. | Shopify : ouvrir sa boutique | https://zunrel.com/guides/ajouter-un-formulaire-de-contact-shopify/?utm_source=pinterest&utm_medium=social&utm_campaign=pin-diario&utm_content=ajouter-un-formulaire-de-contact-shopify-erreurs |
+
+### Dia 14 (erreurs)
+
+| Imagem | Título | Descrição | Painel | Link |
+|---|---|---|---|---|
+| https://zunrel.com/pins/erreurs/creer-une-page-lien-en-bio-avec-html-pub.jpg | Les erreurs à éviter : Comment créer une page « lien en bio » avec HTML Pub ? | À éviter : mettre dix boutons. Guide gratuit, étape par étape. | Landing pages : Leadpages et HTML Pub | https://zunrel.com/guides/creer-une-page-lien-en-bio-avec-html-pub/?utm_source=pinterest&utm_medium=social&utm_campaign=pin-diario&utm_content=creer-une-page-lien-en-bio-avec-html-pub-erreurs |
+| https://zunrel.com/pins/erreurs/connecter-son-domaine-shopify.jpg | Les erreurs à éviter : Comment connecter son nom de domaine à Shopify ? | À éviter : supprimer d'anciens enregistrements DNS utilisés par vos e-mails. Guide gratuit, étape par étape. | Shopify : ouvrir sa boutique | https://zunrel.com/guides/connecter-son-domaine-shopify/?utm_source=pinterest&utm_medium=social&utm_campaign=pin-diario&utm_content=connecter-son-domaine-shopify-erreurs |
+| https://zunrel.com/pins/erreurs/publier-du-html-sur-html-pub.jpg | Les erreurs à éviter : Comment publier une page HTML déjà prête sur HTML Pub ? | À éviter : coller une page qui appelle des images ou des fichiers restés sur votre ordinateur. Guide gratuit, étape par étape. | Landing pages : Leadpages et HTML Pub | https://zunrel.com/guides/publier-du-html-sur-html-pub/?utm_source=pinterest&utm_medium=social&utm_campaign=pin-diario&utm_content=publier-du-html-sur-html-pub-erreurs |
+| https://zunrel.com/pins/erreurs/accepter-les-paiements-shopify.jpg | Les erreurs à éviter : Comment accepter les paiements sur Shopify ? | À éviter : utiliser un autre prestataire à la place de Shopify Payments sans savoir que Shopify ajoute des frais de transaction. Guide gratuit, étape par étape. | Shopify : ouvrir sa boutique | https://zunrel.com/guides/accepter-les-paiements-shopify/?utm_source=pinterest&utm_medium=social&utm_campaign=pin-diario&utm_content=accepter-les-paiements-shopify-erreurs |
+
+### Dia 15 (erreurs)
+
+| Imagem | Título | Descrição | Painel | Link |
+|---|---|---|---|---|
+| https://zunrel.com/pins/erreurs/creer-un-site-web-avec-html-pub.jpg | Les erreurs à éviter : Comment créer un site de plusieurs pages avec HTML Pub ? | À éviter : construire toutes les pages d'un coup sans relire l'accueil. Guide gratuit, étape par étape. | Landing pages : Leadpages et HTML Pub | https://zunrel.com/guides/creer-un-site-web-avec-html-pub/?utm_source=pinterest&utm_medium=social&utm_campaign=pin-diario&utm_content=creer-un-site-web-avec-html-pub-erreurs |
+| https://zunrel.com/pins/erreurs/choisir-un-theme-shopify.jpg | Les erreurs à éviter : Comment choisir et installer un thème gratuit sur Shopify ? | À éviter : acheter un thème payant dès le départ. Guide gratuit, étape par étape. | Shopify : ouvrir sa boutique | https://zunrel.com/guides/choisir-un-theme-shopify/?utm_source=pinterest&utm_medium=social&utm_campaign=pin-diario&utm_content=choisir-un-theme-shopify-erreurs |
+| https://zunrel.com/pins/erreurs/creer-un-blog-avec-html-pub.jpg | Les erreurs à éviter : Comment créer un blog avec HTML Pub ? | À éviter : publier des articles sans image de couverture. Guide gratuit, étape par étape. | Landing pages : Leadpages et HTML Pub | https://zunrel.com/guides/creer-un-blog-avec-html-pub/?utm_source=pinterest&utm_medium=social&utm_campaign=pin-diario&utm_content=creer-un-blog-avec-html-pub-erreurs |
+| https://zunrel.com/pins/erreurs/creer-un-code-de-reduction-shopify.jpg | Les erreurs à éviter : Comment créer un code de réduction sur Shopify ? | À éviter : oublier « Limiter à une utilisation par client » pour un code de bienvenue. Guide gratuit, étape par étape. | Shopify : ouvrir sa boutique | https://zunrel.com/guides/creer-un-code-de-reduction-shopify/?utm_source=pinterest&utm_medium=social&utm_campaign=pin-diario&utm_content=creer-un-code-de-reduction-shopify-erreurs |
+
+### Dia 16 (erreurs)
+
+| Imagem | Título | Descrição | Painel | Link |
+|---|---|---|---|---|
+| https://zunrel.com/pins/erreurs/connecter-son-nom-de-domaine-leadpages.jpg | Les erreurs à éviter : Comment connecter son nom de domaine à Leadpages ? | À éviter : oublier l'enregistrement TXT. Guide gratuit, étape par étape. | Landing pages : Leadpages et HTML Pub | https://zunrel.com/guides/connecter-son-nom-de-domaine-leadpages/?utm_source=pinterest&utm_medium=social&utm_campaign=pin-diario&utm_content=connecter-son-nom-de-domaine-leadpages-erreurs |
+| https://zunrel.com/pins/erreurs/connecter-html-pub-a-shopify.jpg | Les erreurs à éviter : Comment relier HTML Pub ou Leadpages à Shopify ? | À éviter : croire que Leadpages compte les ventes Shopify. Guide gratuit, étape par étape. | Shopify : ouvrir sa boutique | https://zunrel.com/guides/connecter-html-pub-a-shopify/?utm_source=pinterest&utm_medium=social&utm_campaign=pin-diario&utm_content=connecter-html-pub-a-shopify-erreurs |
+| https://zunrel.com/pins/erreurs/modifier-l-adresse-d-une-page-leadpages.jpg | Les erreurs à éviter : Comment modifier l'adresse ou protéger une page par mot de passe ? | À éviter : changer l'adresse d'une page déjà partagée ou utilisée dans une publicité. Guide gratuit, étape par étape. | Landing pages : Leadpages et HTML Pub | https://zunrel.com/guides/modifier-l-adresse-d-une-page-leadpages/?utm_source=pinterest&utm_medium=social&utm_campaign=pin-diario&utm_content=modifier-l-adresse-d-une-page-leadpages-erreurs |
+| https://zunrel.com/pins/erreurs/attirer-des-clients-avec-une-landing-page.jpg | Les erreurs à éviter : Comment attirer des clients vers sa boutique Shopify avec une landing page ? | À éviter : mettre toute la boutique sur la page. Guide gratuit, étape par étape. | Shopify : ouvrir sa boutique | https://zunrel.com/guides/attirer-des-clients-avec-une-landing-page/?utm_source=pinterest&utm_medium=social&utm_campaign=pin-diario&utm_content=attirer-des-clients-avec-une-landing-page-erreurs |
+
+### Dia 17 (erreurs)
+
+| Imagem | Título | Descrição | Painel | Link |
+|---|---|---|---|---|
+| https://zunrel.com/pins/erreurs/recuperer-les-formulaires-html-pub.jpg | Les erreurs à éviter : Comment récupérer les contacts de ses formulaires ? | À éviter : envoyer le formulaire vers un service extérieur. Guide gratuit, étape par étape. | Landing pages : Leadpages et HTML Pub | https://zunrel.com/guides/recuperer-les-formulaires-html-pub/?utm_source=pinterest&utm_medium=social&utm_campaign=pin-diario&utm_content=recuperer-les-formulaires-html-pub-erreurs |
+| https://zunrel.com/pins/erreurs/creer-une-page-de-vente-pour-un-produit-shopify.jpg | Les erreurs à éviter : Comment créer une page de vente pour un produit Shopify ? | À éviter : plusieurs produits et plusieurs boutons sur la même page. Guide gratuit, étape par étape. | Shopify : ouvrir sa boutique | https://zunrel.com/guides/creer-une-page-de-vente-pour-un-produit-shopify/?utm_source=pinterest&utm_medium=social&utm_campaign=pin-diario&utm_content=creer-une-page-de-vente-pour-un-produit-shopify-erreurs |
+| https://zunrel.com/pins/erreurs/connecter-leadpages-a-son-outil-e-mail.jpg | Les erreurs à éviter : Comment envoyer ses contacts vers Mailchimp, Brevo ou son CRM ? | À éviter : ne pas tester. Guide gratuit, étape par étape. | Landing pages : Leadpages et HTML Pub | https://zunrel.com/guides/connecter-leadpages-a-son-outil-e-mail/?utm_source=pinterest&utm_medium=social&utm_campaign=pin-diario&utm_content=connecter-leadpages-a-son-outil-e-mail-erreurs |
+| https://zunrel.com/pins/erreurs/regler-l-expedition-shopify.jpg | Les erreurs à éviter : Comment régler les frais de livraison sur Shopify ? | À éviter : laisser le poids des produits à 0. Guide gratuit, étape par étape. | Shopify : ouvrir sa boutique | https://zunrel.com/guides/regler-l-expedition-shopify/?utm_source=pinterest&utm_medium=social&utm_campaign=pin-diario&utm_content=regler-l-expedition-shopify-erreurs |
+
+### Dia 18 (erreurs)
+
+| Imagem | Título | Descrição | Painel | Link |
+|---|---|---|---|---|
+| https://zunrel.com/pins/erreurs/recolter-des-e-mails-avant-un-lancement.jpg | Les erreurs à éviter : Comment récolter des e-mails avant un lancement ? | À éviter : demander le nom, le téléphone et la ville. Guide gratuit, étape par étape. | Landing pages : Leadpages et HTML Pub | https://zunrel.com/guides/recolter-des-e-mails-avant-un-lancement/?utm_source=pinterest&utm_medium=social&utm_campaign=pin-diario&utm_content=recolter-des-e-mails-avant-un-lancement-erreurs |
+| https://zunrel.com/pins/erreurs/rediger-les-politiques-shopify.jpg | Les erreurs à éviter : Comment ajouter ses conditions de vente et politiques sur Shopify ? | À éviter : garder le modèle tel quel. Guide gratuit, étape par étape. | Shopify : ouvrir sa boutique | https://zunrel.com/guides/rediger-les-politiques-shopify/?utm_source=pinterest&utm_medium=social&utm_campaign=pin-diario&utm_content=rediger-les-politiques-shopify-erreurs |
+| https://zunrel.com/pins/erreurs/ajouter-un-pop-up-d-inscription-leadpages.jpg | Les erreurs à éviter : Comment ajouter un pop-up d'inscription sur Leadpages ? | À éviter : un pop-up qui s'ouvre dès l'arrivée sur la page. Guide gratuit, étape par étape. | Landing pages : Leadpages et HTML Pub | https://zunrel.com/guides/ajouter-un-pop-up-d-inscription-leadpages/?utm_source=pinterest&utm_medium=social&utm_campaign=pin-diario&utm_content=ajouter-un-pop-up-d-inscription-leadpages-erreurs |
+| https://zunrel.com/pins/erreurs/creer-un-menu-shopify.jpg | Les erreurs à éviter : Comment modifier le menu de sa boutique Shopify ? | À éviter : un menu principal de dix liens ou plus. Guide gratuit, étape par étape. | Shopify : ouvrir sa boutique | https://zunrel.com/guides/creer-un-menu-shopify/?utm_source=pinterest&utm_medium=social&utm_campaign=pin-diario&utm_content=creer-un-menu-shopify-erreurs |
+
+### Dia 19 (erreurs)
+
+| Imagem | Título | Descrição | Painel | Link |
+|---|---|---|---|---|
+| https://zunrel.com/pins/erreurs/faire-un-test-ab-leadpages.jpg | Les erreurs à éviter : Comment faire un test A/B avec Leadpages ? | À éviter : changer plusieurs choses à la fois. Guide gratuit, étape par étape. | Landing pages : Leadpages et HTML Pub | https://zunrel.com/guides/faire-un-test-ab-leadpages/?utm_source=pinterest&utm_medium=social&utm_campaign=pin-diario&utm_content=faire-un-test-ab-leadpages-erreurs |
+| https://zunrel.com/pins/erreurs/ouvrir-sa-boutique-shopify-au-public.jpg | Les erreurs à éviter : Comment retirer le mot de passe de sa boutique Shopify ? | À éviter : ouvrir la boutique sans commande test. Guide gratuit, étape par étape. | Shopify : ouvrir sa boutique | https://zunrel.com/guides/ouvrir-sa-boutique-shopify-au-public/?utm_source=pinterest&utm_medium=social&utm_campaign=pin-diario&utm_content=ouvrir-sa-boutique-shopify-au-public-erreurs |
+| https://zunrel.com/pins/erreurs/lire-une-carte-de-chaleur-leadpages.jpg | Les erreurs à éviter : Comment lire une carte de chaleur (heatmap) dans Leadpages ? | À éviter : conclure avec trop peu de visites. Guide gratuit, étape par étape. | Landing pages : Leadpages et HTML Pub | https://zunrel.com/guides/lire-une-carte-de-chaleur-leadpages/?utm_source=pinterest&utm_medium=social&utm_campaign=pin-diario&utm_content=lire-une-carte-de-chaleur-leadpages-erreurs |
+| https://zunrel.com/pins/erreurs/creer-un-tunnel-de-vente-avec-leadpages-et-shopify-de-a-a-z.jpg | Les erreurs à éviter : Comment créer un tunnel de vente avec Leadpages et Shopify de A à Z ? | À éviter : envoyer le trafic directement sur Shopify sans capturer l'email d'abord. Guide gratuit, étape par étape. | Shopify : ouvrir sa boutique | https://zunrel.com/guides/creer-un-tunnel-de-vente-avec-leadpages-et-shopify-de-a-a-z/?utm_source=pinterest&utm_medium=social&utm_campaign=pin-diario&utm_content=creer-un-tunnel-de-vente-avec-leadpages-et-shopify-de-a-a-z-erreurs |
+
+### Dia 20 (erreurs)
+
+| Imagem | Título | Descrição | Painel | Link |
+|---|---|---|---|---|
+| https://zunrel.com/pins/erreurs/utiliser-smart-traffic-leadpages.jpg | Les erreurs à éviter : Comment fonctionne Smart Traffic dans Leadpages ? | À éviter : l'utiliser avec des variantes presque identiques. Guide gratuit, étape par étape. | Landing pages : Leadpages et HTML Pub | https://zunrel.com/guides/utiliser-smart-traffic-leadpages/?utm_source=pinterest&utm_medium=social&utm_campaign=pin-diario&utm_content=utiliser-smart-traffic-leadpages-erreurs |
+| https://zunrel.com/pins/erreurs/ameliorer-le-taux-de-conversion-de-ses-pages-de-a-a-z.jpg | Les erreurs à éviter : Comment améliorer le taux de conversion de ses landing pages de A à Z ? | À éviter : changer plusieurs éléments à la fois. Guide gratuit, étape par étape. | Landing pages : Leadpages et HTML Pub | https://zunrel.com/guides/ameliorer-le-taux-de-conversion-de-ses-pages-de-a-a-z/?utm_source=pinterest&utm_medium=social&utm_campaign=pin-diario&utm_content=ameliorer-le-taux-de-conversion-de-ses-pages-de-a-a-z-erreurs |
+| https://zunrel.com/pins/erreurs/publier-une-page-depuis-claude.jpg | Les erreurs à éviter : Comment publier une page HTML Pub directement depuis Claude ? | À éviter : ajouter une mauvaise adresse de connecteur. Guide gratuit, étape par étape. | Landing pages : Leadpages et HTML Pub | https://zunrel.com/guides/publier-une-page-depuis-claude/?utm_source=pinterest&utm_medium=social&utm_campaign=pin-diario&utm_content=publier-une-page-depuis-claude-erreurs |
+| https://zunrel.com/pins/erreurs/creer-une-pub-video-avec-ad-studio.jpg | Les erreurs à éviter : Comment créer une publicité vidéo avec Ad Studio ? | À éviter : lancer le rendu sans avoir bien relu le storyboard. Guide gratuit, étape par étape. | Landing pages : Leadpages et HTML Pub | https://zunrel.com/guides/creer-une-pub-video-avec-ad-studio/?utm_source=pinterest&utm_medium=social&utm_campaign=pin-diario&utm_content=creer-une-pub-video-avec-ad-studio-erreurs |

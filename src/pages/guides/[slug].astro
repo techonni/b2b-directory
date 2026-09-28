@@ -5,6 +5,7 @@ import ToolRow from "../../components/ToolRow.astro";
 import ShareButtons from "../../components/ShareButtons.astro";
 import NewsletterForm from "../../components/NewsletterForm.astro";
 import AffiliateCta from "../../components/AffiliateCta.astro";
+import NewsletterBar from "../../components/NewsletterBar.astro";
 import {
   formatDate,
   getGuide,
@@ -208,6 +209,11 @@ const howTo = {
   </section>
 
   <NewsletterForm tag={newsletterTag} />
+  <NewsletterBar
+    gift={isShop
+      ? "Recevez la checklist de lancement Shopify offerte, et les prochains guides."
+      : "Recevez la checklist pour lancer votre landing page, et les prochains guides."}
+  />
 
   {
     related.length > 0 ? (

@@ -13,6 +13,8 @@ export const GET: APIRoute = ({ site }) => {
     { path: "/offres/", lastmod: lastGuide },
     { path: "/newsletter/" },
     { path: "/newsletter/checklist-shopify/" },
+    { path: "/newsletter/checklist-leadpages/" },
+    { path: "/newsletter/modeles-landing-page/" },
     { path: "/faq/", lastmod: lastGuide },
     { path: "/a-propos/" },
     { path: "/kit-media/" },

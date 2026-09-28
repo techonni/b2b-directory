@@ -1,6 +1,7 @@
 // Plan du site pour Google : toutes les pages publiques de Zunrel.
 import type { APIRoute } from "astro";
-import { activeFormats, guides, themes, tools } from "../lib/guides";
+import { activeFormats, guides, themes, tools, getGuide } from "../lib/guides";
+import { translatedPath, translations } from "../lib/i18n";
 
 export const GET: APIRoute = ({ site }) => {
   const base = (site?.href ?? "https://zunrel.com/").replace(/\/$/, "");
@@ -23,6 +24,11 @@ export const GET: APIRoute = ({ site }) => {
     ...activeFormats().map((item) => ({ path: `/formats/${item.slug}/`, lastmod: lastGuide })),
     ...themes.map((theme) => ({ path: `/themes/${theme.slug}/` })),
     ...tools.map((tool) => ({ path: `/outils/${tool.slug}/` })),
+    { path: "/pt/" },
+    { path: "/en/" },
+    ...(["pt", "en"] as const).flatMap((lang) =>
+      translations[lang].map((item) => ({ path: translatedPath(lang, item.localSlug), lastmod: getGuide(item.slug)?.updatedOn })),
+    ),
   ];
 
   const urls = pages

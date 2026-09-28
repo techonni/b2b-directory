@@ -23,6 +23,7 @@ import {
 } from "../../lib/guides";
 import { href } from "../../lib/paths";
 import { imageSize } from "../../lib/image-size";
+import { guideAlternates } from "../../lib/i18n";
 
 export function getStaticPaths() {
   return guides.map((guide) => ({ params: { slug: guide.slug } }));
@@ -39,6 +40,7 @@ const isShop = guide.theme === "boutique";
 // Centre d'intérêt envoyé à Mailchimp avec l'inscription.
 const mainTool = guide.tools[0]?.slug;
 const newsletterTag: NewsletterTag = isShop ? "shopify" : mainTool === "leadpages" ? "leadpages" : "htmlpub";
+const alternates = guideAlternates(guide.slug);
 const format = formats.find((item) => item.format === guideFormat(guide));
 const howTo = {
   "@context": "https://schema.org",
@@ -60,6 +62,7 @@ const howTo = {
   description={seoDescription(guide)}
   image={`/pins/${guide.slug}.jpg`}
   type="article"
+  alternates={alternates}
   breadcrumbs={[
     { name: "Accueil", path: "/" },
     { name: "Guides", path: "/guides" },
@@ -91,6 +94,15 @@ const howTo = {
       ) : null
     }
     <p class="text-[13px] leading-5 text-[#a0a0a0]">Mis à jour le {formatDate(guide.updatedOn)}</p>
+    {
+      alternates
+        ? alternates.slice(1).map((item) => (
+            <a href={item.path} hreflang={item.lang} class="no-print text-[13px] leading-5 text-[#737373] hover:underline">
+              {item.lang === "pt" ? "Em português" : "In English"}
+            </a>
+          ))
+        : null
+    }
     <button
       type="button"
       data-print

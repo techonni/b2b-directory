@@ -1467,6 +1467,7 @@ export const guides: Guide[] = [
       "creer-sa-boutique-shopify",
       "essayer-shopify-gratuitement",
       "ajouter-un-produit-shopify",
+      "ajouter-des-variantes-shopify",
       "accepter-les-paiements-shopify",
       "attirer-des-clients-avec-une-landing-page",
     ],
@@ -1553,7 +1554,56 @@ export const guides: Guide[] = [
     pitfalls: ["Laisser le poids à 0 : les frais de livraison seront faux.", "Des photos de tailles différentes : la boutique paraît moins professionnelle."],
     tools: [{ slug: "shopify", why: "Produits illimités sur tous les forfaits." }],
     sources: [{ label: "Shopify : ajouter et mettre à jour des produits", url: "https://help.shopify.com/fr/manual/products/add-update-products" }],
-    related: ["creer-une-page-de-vente-pour-un-produit-shopify", "creer-sa-boutique-shopify", "creer-un-code-de-reduction-shopify", "regler-l-expedition-shopify"],
+    related: ["creer-une-page-de-vente-pour-un-produit-shopify", "creer-sa-boutique-shopify", "creer-un-code-de-reduction-shopify", "regler-l-expedition-shopify", "ajouter-des-variantes-shopify"],
+  },
+  {
+    slug: "ajouter-des-variantes-shopify",
+    question: "Comment ajouter des variantes (taille, couleur) à un produit Shopify ?",
+    summary: "Un seul produit, plusieurs tailles ou couleurs, chacune avec son prix, son stock et sa photo.",
+    theme: "boutique",
+    publishedOn: "2026-09-28",
+    updatedOn: "2026-09-28",
+    intro:
+      "Un t-shirt en trois tailles et deux couleurs, c'est un seul produit avec six variantes. Le client choisit sur la fiche produit, et vous suivez le stock de chaque variante.",
+    steps: [
+      {
+        title: "Ouvrez le produit",
+        text: "Dans le menu de gauche, cliquez sur « Produits », puis sur le produit à modifier, ou sur « Ajouter un produit » pour en créer un. Remplissez d'abord le titre, la description et les photos.",
+        image: { src: "/captures/shopify-produit.webp", alt: "Fiche « Ajouter un produit » dans l'administration Shopify" },
+      },
+      {
+        title: "Ajoutez une option",
+        text: "Descendez jusqu'à la section « Variantes » et cliquez sur « Ajouter des options comme la taille ou la couleur ». Dans « Nom de l'option », tapez par exemple « Taille ».",
+      },
+      {
+        title: "Entrez les valeurs",
+        text: "Dans « Valeurs de l'option », tapez une valeur par ligne : S, puis M, puis L. Cliquez sur « Terminé ». Ajoutez une deuxième option, comme « Couleur », de la même façon : Shopify crée toutes les combinaisons.\n\nUn produit peut avoir jusqu'à 3 options (par exemple taille, couleur et matière).",
+      },
+      {
+        title: "Réglez le prix et le stock de chaque variante",
+        text: "Shopify affiche la liste des variantes. Cliquez sur une variante pour changer son prix (un XL peut coûter plus cher), sa référence (SKU) et sa quantité en stock. Utilisez « Grouper par » pour modifier toutes les variantes d'une couleur d'un coup.",
+        image: { src: "/captures/shopify-prix.webp", alt: "Sections Prix et Stock, à remplir pour chaque variante" },
+      },
+      {
+        title: "Associez une photo à chaque couleur",
+        text: "Dans la liste des variantes, cliquez sur le carré d'image d'une variante et choisissez la photo qui correspond. Quand le client choisit « Bleu », la photo bleue s'affiche.",
+      },
+      {
+        title: "Enregistrez et vérifiez dans la boutique",
+        text: "Cliquez sur « Enregistrer », puis ouvrez le produit dans votre boutique : les sélecteurs de taille et de couleur apparaissent sur la fiche. Testez une variante en rupture de stock pour voir ce que voit le client.",
+      },
+    ],
+    pitfalls: [
+      "Créer un produit séparé pour chaque taille : le client ne voit plus les autres tailles et vos statistiques sont éparpillées.",
+      "Oublier le stock d'une variante : elle s'affiche disponible alors qu'elle ne l'est pas, ou reste bloquée à 0.",
+      "Laisser la même photo pour toutes les couleurs : le client ne voit pas ce qu'il achète.",
+    ],
+    tools: [{ slug: "shopify", why: "Jusqu'à 3 options par produit, sur tous les forfaits." }],
+    sources: [
+      { label: "Shopify : variantes de produit (aide)", url: "https://help.shopify.com/fr/manual/products/variants" },
+      { label: "Shopify : ajouter et mettre à jour des produits", url: "https://help.shopify.com/fr/manual/products/add-update-products" },
+    ],
+    related: ["ajouter-un-produit-shopify", "regler-l-expedition-shopify", "creer-un-code-de-reduction-shopify"],
   },
   {
     slug: "connecter-son-domaine-shopify",

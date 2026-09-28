@@ -5,6 +5,7 @@ import SiteHeader from "../components/SiteHeader.astro";
 import Breadcrumbs, { type Crumb } from "../components/Breadcrumbs.astro";
 import { href } from "../lib/paths";
 import { siteName, tagline } from "../lib/guides";
+import { locales, ui, type Lang } from "../lib/i18n";
 
 interface Props {
   title?: string;
@@ -13,6 +14,9 @@ interface Props {
   type?: string;
   // Fil d'Ariane affiché au-dessus du titre, avec ses données structurées BreadcrumbList.
   breadcrumbs?: Crumb[];
+  // Langue de la page (français par défaut) et versions dans les autres langues (hreflang).
+  lang?: Lang;
+  alternates?: { lang: Lang; path: string }[];
 }
 
 const {
@@ -21,7 +25,10 @@ const {
   image = "/pins/creer-sa-boutique-shopify.jpg",
   type = "website",
   breadcrumbs,
+  lang = "fr",
+  alternates,
 } = Astro.props;
+const t = ui[lang];
 const imageUrl = new URL(image, Astro.site);
 
 const documentTitle = title ? `${title} · ${siteName}` : `${siteName} · ${tagline}`;
@@ -40,7 +47,7 @@ const breadcrumbList = breadcrumbs && {
 ---
 
 <!doctype html>
-<html lang="fr" class="h-full antialiased">
+<html lang={lang} class="h-full antialiased">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -57,7 +64,15 @@ const breadcrumbList = breadcrumbs && {
     <meta property="og:image:width" content="1000" />
     <meta property="og:image:height" content="1500" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta property="og:locale" content="fr_FR" />
+    <meta property="og:locale" content={locales[lang]} />
+    {
+      alternates
+        ? [
+            ...alternates.map((item) => <link rel="alternate" hreflang={item.lang} href={new URL(item.path, Astro.site)} />),
+            <link rel="alternate" hreflang="x-default" href={new URL(alternates[0].path, Astro.site)} />,
+          ]
+        : null
+    }
     <meta name="p:domain_verify" content="485d0834fb682f692cd0c2e316b227a8" />
     {breadcrumbList ? <script type="application/ld+json" set:html={JSON.stringify(breadcrumbList)} /> : null}
     <slot name="head" />
@@ -79,23 +94,23 @@ const breadcrumbList = breadcrumbs && {
     <script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-KC42X29LL9"></script>
   </head>
   <body class="min-h-full bg-[#fbfbfb] text-[#171717]">
-    <SiteHeader />
+    <SiteHeader lang={lang} />
     <div class="mx-auto w-full max-w-[580px] px-5 min-[620px]:px-0">
       <main class="pt-16">
         {breadcrumbs ? <Breadcrumbs items={breadcrumbs} /> : null}
         <slot />
       </main>
-      <SiteFooter />
+      <SiteFooter lang={lang} />
     </div>
     <div
       id="zunrel-consent"
       hidden
       class="fixed inset-x-3 bottom-3 z-50 mx-auto max-w-[580px] rounded-lg border border-[#e5e5e5] bg-white p-4 text-sm shadow-lg"
     >
-      <p>Nous utilisons Google Analytics pour savoir quels guides sont utiles. Aucune publicité, aucun cookie sans votre accord.</p>
+      <p>{t.consent}</p>
       <div class="mt-3 flex gap-2">
-        <button type="button" data-consent="granted" class="rounded-md bg-[#171717] px-3 py-1.5 text-white">Accepter</button>
-        <button type="button" data-consent="denied" class="rounded-md border border-[#d4d4d4] px-3 py-1.5">Refuser</button>
+        <button type="button" data-consent="granted" class="rounded-md bg-[#171717] px-3 py-1.5 text-white">{t.accept}</button>
+        <button type="button" data-consent="denied" class="rounded-md border border-[#d4d4d4] px-3 py-1.5">{t.refuse}</button>
       </div>
     </div>
     <script is:inline>
@@ -117,7 +132,7 @@ const breadcrumbList = breadcrumbs && {
     <!-- Événements Google Analytics : clics affiliés, partages, PDF, newsletter -->
     <script is:inline>
       (function () {
-        var guide = (location.pathname.match(/^\/guides\/([^/]+)/) || [])[1] || "";
+        var guide = (location.pathname.match(/^\/(?:(?:pt|en)\/)?gui(?:de|a)s\/([^/]+)/) || [])[1] || "";
         document.addEventListener("click", function (event) {
           var el = event.target.closest && event.target.closest("a, button");
           if (!el) return;

@@ -1,16 +1,32 @@
 ---
 import DottedMark from "./DottedMark.astro";
 import { href } from "../lib/paths";
+import { listPath, ui, type Lang } from "../lib/i18n";
 
+interface Props {
+  lang?: Lang;
+}
+const { lang = "fr" } = Astro.props;
 const path = Astro.url.pathname;
-const links = [
+const frLinks = [
   { href: "/guides", label: "Guides" },
   { href: "/outils", label: "Outils" },
   { href: "/faq", label: "FAQ" },
   { href: "/a-propos", label: "À propos" },
 ];
+// Pages traduites : un lien vers la liste des guides de la langue, et un lien vers le site français.
+const links =
+  lang === "fr"
+    ? frLinks
+    : [
+        { href: listPath(lang), label: ui[lang].guides },
+        { href: "/", label: "Français" },
+      ];
+const homeHref = lang === "fr" ? "/" : listPath(lang);
 
 function isCurrent(target: string) {
+  if (target === "/") return false;
+  if (lang !== "fr") return path.startsWith(target);
   if (target === "/guides") return path.startsWith("/guides") || path.startsWith("/themes");
   return path.startsWith(target);
 }
@@ -18,7 +34,7 @@ function isCurrent(target: string) {
 
 <header class="px-5 py-6 sm:px-8">
   <div class="flex items-center justify-between">
-    <a href={href("/")} aria-label="Accueil" class="flex items-center gap-2 text-[#171717]">
+    <a href={href(homeHref)} aria-label={ui[lang].home} class="flex items-center gap-2 text-[#171717]">
       <DottedMark />
       <span class="text-[15px] font-semibold tracking-[-0.01em]">Zunrel</span>
     </a>

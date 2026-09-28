@@ -25,7 +25,9 @@ Data: 28/09/2026 (fim da sessão dos 20 passos). Responde ao Techonni em **portu
 - Botão **FR · US · PT** no topo de todas as páginas: leva à mesma página na outra língua quando existe.
 - **Cada guia novo sai nas 3 línguas no mesmo dia** (traduções em `src/lib/translations/pt.ts` e `en.ts`, mesmo número de etapas que o guia francês). Os guias antigos traduzem-se aos poucos, começando pelos mais visitados.
 - Preços: nunca pôr euros no inglês. O guia inglês de preços da Shopify está escondido (`hidden: true`) até termos os preços americanos (lote 1 do Chrome).
-- Newsletter: cada inscrito recebe a tag da língua da página (`lang-fr` 11404680, `lang-pt` 11404681, `lang-en` 11404682). Enviar uma campanha por língua só quando houver inscritos nessa língua, e só com o « oui » do Techonni (os textos do rodapé do modelo em PT/EN precisam da aprovação dele). O email de confirmação do Mailchimp fica em francês (limite do plano grátis).
+- **Os 3 assinantes atuais são emails de teste do Techonni.** Uma rotina diária (« Zunrel: aviso de novos inscritos na newsletter », `trig_017qJ8Bu58TjQ9LJzu8SXaSA`, 07:52 UTC) avisa-o quando houver inscritos reais. Não pagar o Mailchimp antes de haver inscritos.
+- Email de confirmação em 3 línguas (grátis): texto em `docs/newsletter/confirmacao-3-linguas.md`, a pôr pelo Chrome no lote 4.
+- Newsletter: cada inscrito recebe a tag da língua da página (`lang-fr` 11404680, `lang-pt` 11404681, `lang-en` 11404682). Enviar uma campanha por língua só quando houver inscritos nessa língua, e só com o « oui » do Techonni (os textos do rodapé do modelo em PT/EN precisam da aprovação dele). O email de confirmação passa a ter as 3 línguas no mesmo email (lote 4 do Chrome).
 
 ## Ferramentas desta máquina
 

@@ -73,6 +73,11 @@ Un seul lien dans votre bio Instagram ou TikTok ? Faites-en une page à vous : b
 Avec HTML Pub : un modèle « lien en bio », 3 à 5 boutons, un champ e-mail, et c'est en ligne.
 Comment faire : https://zunrel.com/guides/creer-une-page-lien-en-bio-avec-html-pub/?utm_source=SOURCE&utm_medium=social&utm_campaign=post-diario
 
+### Dia 12
+Un pop-up d'inscription qui s'ouvre au clic, pas dès l'arrivée : vos visiteurs lisent, puis s'inscrivent.
+Sur Leadpages : « Conversion Tools », « Pop-Ups », un seul champ e-mail, et un bouton qui l'ouvre. Testez aussi sur téléphone.
+Comment faire : https://zunrel.com/guides/ajouter-un-pop-up-d-inscription-leadpages/?utm_source=SOURCE&utm_medium=social&utm_campaign=post-diario
+
 ---
 
 ## Pinterest: 5 pins por dia
@@ -178,3 +183,9 @@ Guia novo de 28/09 (só este pin novo; os outros 4 pins do dia 10 em diante ser�
 | Imagem | Título | Descrição | Painel | Link |
 |---|---|---|---|---|
 | https://zunrel.com/pins/creer-une-page-lien-en-bio-avec-html-pub.jpg | Comment créer une page « lien en bio » avec HTML Pub ? | Un seul lien dans votre bio Instagram ou TikTok, qui mène à tous vos liens. Guide gratuit, étape par étape. | Landing pages : Leadpages et HTML Pub | https://zunrel.com/guides/creer-une-page-lien-en-bio-avec-html-pub/?utm_source=pinterest&utm_medium=social&utm_campaign=pin-diario&utm_content=creer-une-page-lien-en-bio-avec-html-pub |
+
+### Dia 12
+
+| Imagem | Título | Descrição | Painel | Link |
+|---|---|---|---|---|
+| https://zunrel.com/pins/ajouter-un-pop-up-d-inscription-leadpages.jpg | Comment ajouter un pop-up d'inscription sur Leadpages ? | Un pop-up qui s'ouvre au bon moment pour proposer votre cadeau ou votre newsletter. Guide gratuit, étape par étape. | Landing pages : Leadpages et HTML Pub | https://zunrel.com/guides/ajouter-un-pop-up-d-inscription-leadpages/?utm_source=pinterest&utm_medium=social&utm_campaign=pin-diario&utm_content=ajouter-un-pop-up-d-inscription-leadpages |

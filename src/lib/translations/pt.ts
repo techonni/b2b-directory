@@ -508,4 +508,43 @@ export const ptGuides: TranslatedGuide[] = [
       "Um endereço longo e complicado: fica cortado ou é mal copiado.",
     ],
   },
+  {
+    slug: "ajouter-un-pop-up-d-inscription-leadpages",
+    localSlug: "pop-up-de-inscricao-leadpages",
+    question: "Como adicionar um pop-up de inscrição na Leadpages?",
+    summary: "Uma janela que abre na hora certa para oferecer o seu brinde ou a sua newsletter, sem esconder a página toda.",
+    intro:
+      "Um pop-up é um pequeno formulário que abre por cima da página: ao clicar num botão, depois de alguns segundos ou quando o visitante está para sair. Na Leadpages, cria-se à parte e depois publica-se nas suas páginas ou no seu site.",
+    steps: [
+      {
+        title: "Crie o pop-up",
+        text: "No menu, abra « Conversion Tools », depois « Pop-Ups », e clique em « Create New Pop-Up ». Dê-lhe um nome claro (por exemplo « Checklist – guia grátis ») e clique em « Start Building ».",
+      },
+      {
+        title: "Escreva a oferta numa frase",
+        text: "Um título que diga o que a pessoa recebe (« Receba a checklist grátis »), uma frase de explicação, um só campo de e-mail e um botão de ação. Sem nome nem telefone: cada campo a mais faz perder inscritos.",
+      },
+      {
+        title: "Defina para onde vão os inscritos",
+        text: "Clique no formulário do pop-up: escolha a ferramenta de e-mail que recebe os contatos (Mailchimp, Brevo…) e o que acontece depois do envio (mensagem ou página de agradecimento). Adicione uma caixa de consentimento que não venha marcada.",
+      },
+      {
+        title: "Escolha quando abre",
+        text: "Clique em « Publish », no canto superior direito. Três formas de abrir: ao clicar num botão, link ou imagem; depois de um tempo (« timed »); ou quando o mouse vai para o topo da janela (« exit »). A mais respeitosa é o clique: foi o visitante que pediu.",
+      },
+      {
+        title: "Ligue-o à sua landing page",
+        text: "Na sua página Leadpages, selecione o botão e, nas opções de link, escolha abrir o pop-up. Para um pop-up com tempo ou de saída, copie o código dado por « Publish » e cole-o nas configurações da página, na parte de rastreamento / « Head Section Tracking Code ». Atualize a página.",
+      },
+      {
+        title: "Teste no computador e no celular",
+        text: "Abra a página publicada, abra o pop-up e inscreva-se com o seu próprio e-mail. Confira que o contato chega à sua ferramenta de e-mail. No celular, os pop-ups com tempo e de saída não abrem: mantenha sempre um botão visível.",
+      },
+    ],
+    pitfalls: [
+      "Um pop-up que abre assim que a página carrega: o visitante fecha sem ler, e o Google não gosta de janelas que tapam o conteúdo no celular.",
+      "Contar só com o pop-up de saída: não funciona no celular, de onde vem a maioria dos visitantes.",
+      "Não testar: um pop-up ligado à ferramenta de e-mail errada perde todos os inscritos.",
+    ],
+  },
 ];

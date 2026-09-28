@@ -118,6 +118,11 @@ Avant d'optimiser une landing page, il faut savoir d'où viennent les visiteurs.
 Sur Leadpages : copiez la balise Google Analytics 4, collez-la dans « Head Section Tracking Code », republiez. Vérifiez dans « Temps réel ».
 Comment faire : https://zunrel.com/guides/ajouter-google-analytics-a-une-page-leadpages/?utm_source=SOURCE&utm_medium=social&utm_campaign=post-diario
 
+### Dia 21
+Après l'inscription, votre visiteur voit « Thank you » et… rien d'autre ?
+Une vraie page de remerciement : dire quoi faire ensuite, livrer le cadeau tout de suite, et un seul bouton vers l'étape suivante.
+Comment la créer sur Leadpages : https://zunrel.com/guides/creer-une-page-de-remerciement-leadpages/?utm_source=SOURCE&utm_medium=social&utm_campaign=post-diario
+
 ---
 
 ## Pinterest: 5 pins por dia
@@ -249,6 +254,15 @@ Guia novo de 28/09 (também no `pinterest-agendar.csv`, 09/10).
 | Imagem | Título | Descrição | Painel | Link |
 |---|---|---|---|---|
 | https://zunrel.com/pins/ajouter-google-analytics-a-une-page-leadpages.jpg | Comment ajouter Google Analytics à une page Leadpages ? | Relier votre page à Google Analytics 4 pour savoir d'où viennent vos visiteurs. Guide gratuit, étape par étape. | Landing pages : Leadpages et HTML Pub | https://zunrel.com/guides/ajouter-google-analytics-a-une-page-leadpages/?utm_source=pinterest&utm_medium=social&utm_campaign=pin-diario&utm_content=ajouter-google-analytics-a-une-page-leadpages |
+
+
+### Dia 15
+
+Guia novo de 28/09 (também no `pinterest-agendar.csv`, 09/10).
+
+| Imagem | Título | Descrição | Painel | Link |
+|---|---|---|---|---|
+| https://zunrel.com/pins/creer-une-page-de-remerciement-leadpages.jpg | Comment créer une page de remerciement après un formulaire Leadpages ? | Dire merci, livrer le cadeau et proposer l'étape suivante. Guide gratuit, étape par étape. | Landing pages : Leadpages et HTML Pub | https://zunrel.com/guides/creer-une-page-de-remerciement-leadpages/?utm_source=pinterest&utm_medium=social&utm_campaign=pin-diario&utm_content=creer-une-page-de-remerciement-leadpages |
 
 
 ## Pins « erreurs à éviter » (2.ª imagem de cada guia): 4 por dia, além do pin do dia

@@ -477,7 +477,7 @@ export const ptGuides: TranslatedGuide[] = [
     steps: [
       {
         title: "Comece por um modelo « link na bio »",
-        text: "No ecrã « Create », clique em « Templates » e depois em « Browse all templates ». Escolha um modelo de página « link in bio », veja-o com « Preview » e clique em « Use ».",
+        text: "Na tela « Create », clique em « Templates » e depois em « Browse all templates ». Escolha um modelo de página « link in bio », veja-o com « Preview » e clique em « Use ».",
         alt: "Painel Templates com « Preview », « Use » e « Browse all templates »",
       },
       {

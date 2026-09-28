@@ -205,8 +205,8 @@ async function newsletter() {
   }
   await mc(`/campaigns/${id}/content`, { method: "PUT", body: { html } });
   fs.mkdirSync("newsletters", { recursive: true });
-  fs.writeFileSync(`newsletters/${date}.html`, html);
-  console.log(`Copie du HTML : newsletters/${date}.html`);
+  fs.writeFileSync(`newsletters/${date}-${id}.html`, html);
+  console.log(`Copie du HTML : newsletters/${date}-${id}.html`);
 
   const checklist = await mc(`/campaigns/${id}/send-checklist`);
   console.log(`Prête à l'envoi : ${checklist.is_ready ? "oui" : "non"}`);

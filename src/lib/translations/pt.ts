@@ -467,4 +467,45 @@ export const ptGuides: TranslatedGuide[] = [
       "Deixar a mesma foto para todas as cores: o cliente não vê o que está comprando.",
     ],
   },
+  {
+    slug: "creer-une-page-lien-en-bio-avec-html-pub",
+    localSlug: "pagina-link-na-bio-html-pub",
+    question: "Como criar uma página « link na bio » com o HTML Pub?",
+    summary: "Um só endereço na bio do Instagram ou do TikTok, que leva a todos os seus links, numa página sua.",
+    intro:
+      "O Instagram e o TikTok só aceitam um link na bio. Uma página « link na bio » junta todos: loja, vídeo, inscrição, contato. Com o HTML Pub, fica com o seu nome, as suas cores e pode recolher e-mails.",
+    steps: [
+      {
+        title: "Comece por um modelo « link na bio »",
+        text: "No ecrã « Create », clique em « Templates » e depois em « Browse all templates ». Escolha um modelo de página « link in bio », veja-o com « Preview » e clique em « Use ».",
+        alt: "Painel Templates com « Preview », « Use » e « Browse all templates »",
+      },
+      {
+        title: "Ponha a sua foto e uma frase",
+        text: "No topo: a sua foto ou o seu logo, o seu nome e uma frase que diga o que oferece. Pode pedir ao assistente: « Troca a foto pelo meu logo e escreve: bijuteria feita à mão ».",
+      },
+      {
+        title: "Adicione 3 a 5 botões",
+        text: "Um botão por link importante: a sua loja, o seu último vídeo, a sua página de inscrição, o seu contato. Ponha o mais importante primeiro, com um texto de ação: « Ver a loja », não « Link 1 ».",
+      },
+      {
+        title: "Adicione um formulário de inscrição",
+        text: "Peça ao assistente para adicionar um campo de e-mail debaixo dos botões. As respostas ficam guardadas no HTML Pub: os seus seguidores passam a ser contatos que pode encontrar depois.",
+      },
+      {
+        title: "Confira no celular e publique",
+        text: "Quase todos os visitantes chegam pelo celular. Clique no ícone de celular no canto inferior direito do editor, confira que cada botão é fácil de tocar e publique.",
+        alt: "Pré-visualização da página em celular no editor",
+      },
+      {
+        title: "Cole o endereço na sua bio",
+        text: "Escolha um endereço curto (por exemplo o seu nome), copie-o e cole-o no campo « Site » ou « Link » do seu perfil no Instagram ou no TikTok. Abra-o a partir do aplicativo para conferir.",
+      },
+    ],
+    pitfalls: [
+      "Pôr dez botões: o visitante já não sabe onde clicar. Fique pelo essencial.",
+      "Esquecer de atualizar a página: um botão para uma promoção que já acabou faz perder confiança.",
+      "Um endereço longo e complicado: fica cortado ou é mal copiado.",
+    ],
+  },
 ];

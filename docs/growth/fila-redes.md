@@ -68,6 +68,11 @@ Beaucoup de clients vérifient qu'ils peuvent vous écrire avant d'acheter.
 Sur Shopify, la page Contact avec formulaire est déjà prévue : une page, le modèle « contact », un lien dans le menu. Aucun code.
 Comment faire : https://zunrel.com/guides/ajouter-un-formulaire-de-contact-shopify/?utm_source=SOURCE&utm_medium=social&utm_campaign=post-diario
 
+### Dia 11
+Un seul lien dans votre bio Instagram ou TikTok ? Faites-en une page à vous : boutique, vidéo, inscription, contact.
+Avec HTML Pub : un modèle « lien en bio », 3 à 5 boutons, un champ e-mail, et c'est en ligne.
+Comment faire : https://zunrel.com/guides/creer-une-page-lien-en-bio-avec-html-pub/?utm_source=SOURCE&utm_medium=social&utm_campaign=post-diario
+
 ---
 
 ## Pinterest: 5 pins por dia
@@ -167,3 +172,9 @@ Guia novo de 28/09 (só este pin novo; os outros 4 pins do dia 10 em diante ser�
 | Imagem | Título | Descrição | Painel | Link |
 |---|---|---|---|---|
 | https://zunrel.com/pins/ajouter-un-formulaire-de-contact-shopify.jpg | Comment ajouter un formulaire de contact sur Shopify ? | Une page Contact avec formulaire, reliée au menu, sans code ni application. Guide gratuit, étape par étape. | Shopify : ouvrir sa boutique | https://zunrel.com/guides/ajouter-un-formulaire-de-contact-shopify/?utm_source=pinterest&utm_medium=social&utm_campaign=pin-diario&utm_content=ajouter-un-formulaire-de-contact-shopify |
+
+### Dia 11
+
+| Imagem | Título | Descrição | Painel | Link |
+|---|---|---|---|---|
+| https://zunrel.com/pins/creer-une-page-lien-en-bio-avec-html-pub.jpg | Comment créer une page « lien en bio » avec HTML Pub ? | Un seul lien dans votre bio Instagram ou TikTok, qui mène à tous vos liens. Guide gratuit, étape par étape. | Landing pages : Leadpages et HTML Pub | https://zunrel.com/guides/creer-une-page-lien-en-bio-avec-html-pub/?utm_source=pinterest&utm_medium=social&utm_campaign=pin-diario&utm_content=creer-une-page-lien-en-bio-avec-html-pub |

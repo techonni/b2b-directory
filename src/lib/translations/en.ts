@@ -470,4 +470,45 @@ export const enGuides: TranslatedGuide[] = [
       "Using the same photo for every color: shoppers can't see what they are buying.",
     ],
   },
+  {
+    slug: "creer-une-page-lien-en-bio-avec-html-pub",
+    localSlug: "link-in-bio-page-html-pub",
+    question: "How do I create a link-in-bio page with HTML Pub?",
+    summary: "One link in your Instagram or TikTok bio that leads to all your links, on a page you own.",
+    intro:
+      "Instagram and TikTok allow only one link in your bio. A link-in-bio page gathers them all: store, video, sign-up, contact. With HTML Pub, it carries your name and your colors, and it can collect emails.",
+    steps: [
+      {
+        title: "Start from a link-in-bio template",
+        text: "On the Create screen, click Templates, then Browse all templates. Pick a link-in-bio template, look at it with Preview, then click Use.",
+        alt: "Templates panel with Preview, Use and Browse all templates",
+      },
+      {
+        title: "Add your photo and one sentence",
+        text: "At the top: your photo or logo, your name, and one sentence about what you offer. You can ask the assistant: \"Replace the photo with my logo and write: handmade jewelry from Austin\".",
+      },
+      {
+        title: "Add 3 to 5 buttons",
+        text: "One button per important link: your store, your latest video, your sign-up page, your contact page. Put the most important first, with an action label: \"Shop now\", not \"Link 1\".",
+      },
+      {
+        title: "Add a sign-up form",
+        text: "Ask the assistant to add an email field below the buttons. Answers are saved in HTML Pub: your followers become contacts you can find later.",
+      },
+      {
+        title: "Check on your phone and publish",
+        text: "Almost every visitor comes from a phone. Click the mobile icon at the bottom right of the editor, make sure each button is easy to tap, then publish.",
+        alt: "Mobile preview of the page in the editor",
+      },
+      {
+        title: "Paste the link in your bio",
+        text: "Pick a short address (your name, for example), copy it, and paste it into the Website or Link field of your Instagram or TikTok profile. Open it from the app to check.",
+      },
+    ],
+    pitfalls: [
+      "Adding ten buttons: visitors no longer know where to tap. Keep the essentials.",
+      "Forgetting to update the page: a button to an expired sale hurts trust.",
+      "A long, complicated address: it gets cut off or mistyped.",
+    ],
+  },
 ];

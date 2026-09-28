@@ -68,6 +68,20 @@ export const newsletterFormUrl =
   "https://gmail.us9.list-manage.com/subscribe/post?u=13aa96838d6074fef23022e3e&id=893c08eb5d&f_id=0073d9e1f0";
 // Champ anti-robots du même formulaire Mailchimp (nom donné dans le code « embedded »).
 export const newsletterHoneypot = "b_13aa96838d6074fef23022e3e_893c08eb5d";
+// Centre d'intérêt choisi à l'inscription, envoyé dans un champ de l'audience Mailchimp.
+// Dans Mailchimp : Audience → Settings → Audience fields and *|MERGE|* tags → « Add a field »,
+// type « Radio buttons », étiquette (tag) INTERET, avec exactement les trois choix `value` ci-dessous.
+// On peut ensuite créer un segment par choix pour n'envoyer que les guides qui intéressent chacun.
+export const newsletterInterestField = "INTERET";
+export const newsletterInterests: { value: string; label: string; themes: string[] }[] = [
+  {
+    value: "Leadpages & HTML Pub",
+    label: "Leadpages & HTML Pub",
+    themes: ["choisir", "creer", "publier", "contacts", "optimiser", "ia"],
+  },
+  { value: "Shopify", label: "Shopify", themes: ["boutique"] },
+  { value: "Tout", label: "Tout", themes: [] },
+];
 
 const help = "https://support.leadpages.com/hc/en-us/articles/";
 const pricing = { label: "Leadpages : offres et tarifs", url: "https://leadpages.com/pricing" };

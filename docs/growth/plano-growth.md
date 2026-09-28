@@ -43,7 +43,7 @@ Uma pergunta por guia, só sobre Leadpages, HTML Pub e Shopify. Antes de escreve
 
 | Semana | Pergunta (FR) | Tema | Porquê |
 |---|---|---|---|
-| 1 | Comment ajouter des variantes (taille, couleur) à un produit Shopify ? | boutique | Pergunta muito comum logo depois de « ajouter un produit » |
+| 1 ✅ | Comment ajouter des variantes (taille, couleur) à un produit Shopify ? | boutique | Publicado a 28/09/2026 (`ajouter-des-variantes-shopify`) |
 | 2 | Comment ajouter un formulaire de contact sur Shopify ? | boutique | Página obrigatória para inspirar confiança |
 | 3 | Comment créer une page « lien en bio » avec HTML Pub ? | creer | Muito procurado por quem vende no Instagram e TikTok |
 | 4 | Comment ajouter un pop-up d'inscription sur Leadpages ? | contacts | Liga-se diretamente à recolha de emails |

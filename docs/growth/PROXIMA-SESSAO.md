@@ -1,75 +1,81 @@
 # Zunrel · Passagem para a próxima sessão do Claude
 
-> **Como usar:** abre uma sessão nova do Claude Code no projeto `techonni/zunrel` e escreve:
-> « Lê `docs/growth/PROXIMA-SESSAO.md` e começa pelo passo 2. Faz todos os passos nesta sessão, um a seguir ao outro; publica cada um (merge para `main`) e confirma no zunrel.com. »
+> **Como usar:** abre uma sessão nova do Claude Code no projeto `techonni/zunrel` e escreve só: **« continua »**.
+> O CLAUDE.md manda ler este ficheiro e fazer **todos** os passos da lista « Próxima sessão », um a seguir ao outro, publicando cada um.
+> Para o Claude no Chrome (Co-work): cola o conteúdo de `docs/growth/PROMPT-COWORK-CHROME.md`.
 
-Data: 28/09/2026 (atualizado depois do passo 1). Responde ao Techonni em **português**, com palavras simples. Os textos do site e dos emails são em **francês**.
+Data: 28/09/2026 (fim da sessão dos 20 passos). Responde ao Techonni em **português**, com palavras simples. Os textos do site e dos emails são em **francês**.
 
 ---
 
 ## Regras que não mudam
 
-1. **Publicar sempre.** Só o que está em `main` fica online (a Vercel publica `main`). No fim de cada tarefa: push → pull request → merge → confirmar que a produção na Vercel está `READY` → ver a página no zunrel.com com `web_fetch_vercel_url` (esta máquina não consegue abrir o zunrel.com diretamente).
-2. **Newsletter com visual bloqueado.** Ver `docs/newsletter/MODELE-FIGE.md`. Criar só com `scripts/mailchimp.mjs newsletter`. **Nunca enviar aos assinantes sem o « oui » do Techonni** para essa campanha. Os testes vão para `--to diaspinheiro5@icloud.com`.
-3. **A morada no rodapé dos emails fica como está** (decisão do Techonni).
-4. Só Leadpages, HTML Pub e Shopify. Site anónimo. Liens affiliés sempre assinalados. Nunca inventar preços nem links de afiliação.
-5. Antes de apagar algo, mostrar o id e o título.
+1. **Publicar sempre.** Só o que está em `main` fica online (a Vercel publica `main`). Em cada passo: push → a pré-visualização da branch fica `READY` → pull request → merge → produção `READY` → ver a página com `web_fetch_vercel_url` (esta máquina não abre o zunrel.com nem sites externos diretamente).
+2. **Fazer todos os passos de uma lista na mesma sessão** (regra no CLAUDE.md). O que precisar do Techonni fica « pronto, falta o Techonni » e passa-se ao seguinte.
+3. **Newsletter com visual bloqueado.** Ver `docs/newsletter/MODELE-FIGE.md`. Criar só com `scripts/mailchimp.mjs newsletter`. **Nunca enviar aos assinantes sem o « oui » do Techonni** para essa campanha.
+4. **A morada no rodapé dos emails fica como está.**
+5. Só Leadpages, HTML Pub e Shopify. Site anónimo. Links afiliados sempre assinalados. **Nunca inventar preços nem links de afiliação**: preços só com data e fonte (capturas das páginas oficiais).
+6. Antes de apagar algo, mostrar o id e o título.
+7. **Bloqueios de segurança do Claude Code:** mudar o CLAUDE.md e correr o script da newsletter (envia um email de teste) podem ser bloqueados. Não insistir por outro caminho: pedir ao Techonni para aprovar o pedido de permissão.
 
-## O que já está feito
+## Ferramentas desta máquina
 
-- **Passo 1 (links afiliados):** verificado; as fiches outil passam a dizer ao GA4 qual ferramenta foi clicada (`data-affiliate`). Nota: esta máquina não consegue abrir leadpages.com, shopify.com nem os links afiliados — para isso é preciso o Techonni.
-
-- **Mailchimp pela API:** chave `MAILCHIMP_API_KEY` (datacenter us9, expira por volta de 09/2027). Plano Free: 250 contactos, 500 envios por mês, sem agendamento.
-  - Lista `893c08eb5d` « Zunrel », língua `fr`, double opt-in ativo, remetente `Zunrel <contact@zunrel.com>`, domínio autenticado.
-  - Tags: `shopify` 11404677 · `leadpages` 11404678 · `htmlpub` 11404679.
-  - 4 rascunhos com o modelo aprovado, **ainda não enviados**:
-    - `ff4c739dc9` Ouvrez votre boutique Shopify de A à Z (aconselhado para o 1.º envio)
-    - `42198dabdc` 4 nouveaux guides pour préparer votre boutique Shopify
-    - `4cdfb81660` Créez votre landing page de A à Z
-    - `8fd430e3d8` Attirez plus de clients avec une landing page
-- **Script** `scripts/mailchimp.mjs`: `status`, `newsletter`, `report <id>`, `cleanup [--apply]`, `export`. Correr com `node --experimental-strip-types`.
-- **Site:** 38 guias; `/newsletter/` com escolha de tema (Shopify / Leadpages & HTML Pub / Tout → tags); brinde `/newsletter/checklist-shopify/`; `/newsletter/confirmee/`; FAQ; fil d'Ariane; pesquisa Pagefind; GA4 com eventos (`affiliate_click`, `sign_up`, `share`, `pdf_download`).
-- **Vercel:** equipa `team_wgtfY6T8u2diPfxnznOnKn6t`, projeto `prj_FcUDt9LY9iVD0NlgcC3HPK110WqH`.
-- **Plano anterior:** `docs/growth/plano-growth.md` (calendário de guias e textos para as redes).
-
-## Pendentes do lado do Techonni
-
-- [ ] Desligar o reCAPTCHA no Mailchimp (Audience → Settings → « Enable reCAPTCHA »).
-- [ ] Acrescentar o DMARC na Vercel, se ainda não existir: `_dmarc` · TXT · `v=DMARC1; p=none; rua=mailto:contact@zunrel.com`.
-- [ ] No iCloud: marcar os testes como « Não é lixo » e guardar contact@zunrel.com nos contactos.
-- [ ] Dizer qual newsletter enviar primeiro, e se vai para todos ou só para uma tag.
-- [ ] **Links afiliados** (ver `docs/growth/verificacao-links-afiliados.md`): mandar um link PartnerStack que leve ao **HTML Pub** (hoje o botão HTML Pub abre a Leadpages); abrir os 2 links numa janela privada e dizer onde chegam; ver se PartnerStack e Impact têm « deep links » para as páginas de preços; confirmar os preços dos botões (Shopify 3 dias + 1 €/mês durante 3 meses, Leadpages 7 dias); ver se os cliques aparecem nos painéis.
+- `node --experimental-strip-types scripts/check-guides.mjs`: verifica guias (slugs, capturas, pins, guias com menos de 2 links internos, guias com mais de 30 dias). Correr antes de cada publicação.
+- `node --experimental-strip-types scripts/make-pins.mjs --fonts <pasta Lato>`: cria as imagens Pinterest que faltam. A fonte Lato obtém-se com `git clone --depth 1 --filter=blob:none --sparse https://github.com/google/fonts && git sparse-checkout set ofl/lato` (a pasta `fonts/` está no `.gitignore`).
+- `npm install` não funciona (registo bloqueado): o teste real é a pré-visualização da Vercel.
+- `scripts/mailchimp.mjs status | newsletter | report | cleanup | export`.
 
 ---
 
-## 20 passos de growth marketing
+## Os 20 passos: estado a 28/09/2026
 
-### Dinheiro primeiro (afiliação)
-1. ✅ *Feito em 28/09/2026 (relatório em `docs/growth/verificacao-links-afiliados.md`; falta a parte do Techonni acima). Próxima sessão: começar pelo passo 2.* **Verificar todos os links de afiliação.** Em `src/lib/guides.ts`: `affiliateLink` (Leadpages/HTML Pub, PartnerStack) e `shopifyLink` (Shopify, Impact), e todos os `affiliateUrl`. Confirmar que cada botão « Essayer » dos guias, das fiches outil e da página inicial usa o link afiliado certo, com `rel="sponsored"`. Seguir os redirecionamentos para ver se chegam ao sítio certo (Leadpages vs HTML Pub). Listar os links diretos (não afiliados) que deviam ser afiliados. Confirmar com o Techonni no painel PartnerStack/Impact que os cliques estão a ser contados.
-2. **Pôr os botões afiliados no sítio certo.** Um botão claro no topo de cada guia (logo depois da intro) e outro no fim. Medir no GA4 (`affiliate_click` por guia) quais convertem.
-3. **Páginas de comparação e de preços** (as pesquisas que mais vendem): « Leadpages prix 2026 », « Shopify prix et frais », « HTML Pub vs Leadpages : lequel choisir ». Preços verificados no próprio dia.
-4. **Página « Meilleures offres du moment »** com os testes grátis e as promoções atuais (ex.: Shopify a 1 €/mês), atualizada todos os meses.
+| # | Passo | Estado |
+|---|---|---|
+| 1 | Verificar links afiliados | ✅ Feito. Os 2 links contam os cliques (confirmado pelo Techonni). Falta: link PartnerStack para o **HTML Pub** (hoje o botão HTML Pub abre a Leadpages). Relatório: `verificacao-links-afiliados.md` |
+| 2 | Botões afiliados no topo e no fim dos guias | ✅ No site. GA4 `affiliate_click` tem agora `placement` (haut, bas, fiche, offres, haut-pt…) |
+| 3 | Páginas de preços e comparação | ✅ `combien-coute-leadpages` e `combien-coute-shopify` (preços das capturas oficiais de 27/09, com data). « HTML Pub vs Leadpages » já existia (`choisir-entre-html-pub-et-leadpages`). ⚠️ A página inicial da Leadpages dizia « Plans start at $99/mo » a 28/09: confirmar a tabela de preços (tarefa C do Chrome) e corrigir se mudou |
+| 4 | Página « Meilleures offres du moment » | ✅ `/offres/`, ligada na página inicial e no rodapé. Atualizar todos os meses (`verifiedOn` em `src/pages/offres.astro`) |
+| 5 | Search Console: títulos e descrições | 🟡 Descrições mais longas em todos os guias (resumo + intro, até 160 caracteres). Campos `seoTitle` / `seoDescription` prontos. Falta: dados do Search Console (tarefa D do Chrome) para reescrever as páginas com muitas impressões e poucos cliques |
+| 6 | Um guia novo por semana | ✅ Semana 1: `ajouter-des-variantes-shopify`. Próximas: calendário em `plano-growth.md` (semanas 2 a 8). Capturas pedidas na tarefa G do Chrome |
+| 7 | Atualizar guias antigos todos os meses | ✅ Rotina pronta: `check-guides.mjs` lista os guias com mais de 30 dias. Nenhum está desatualizado hoje. Próxima revisão: **28/10/2026** (preços Shopify e Leadpages, `/offres/`) |
+| 8 | Links internos | ✅ Todos os 41 guias têm pelo menos 2 links internos |
+| 9 | Versões PT e EN | ✅ 10 guias em `/pt/` e `/en/`, com hreflang e ligações a partir dos guias franceses e da página inicial. Traduções em `src/lib/translations/` |
+| 10 | 1.ª newsletter | ⏳ Pronto, **falta o « oui »** do Techonni: `ff4c739dc9` para todos (3 assinantes) |
+| 11 | Ritmo quinzenal | 🟡 Calendário em `newsletter-plano.md`. O rascunho de 12/10 foi bloqueado pela segurança (envia um teste): comando pronto no ficheiro, precisa de aprovação |
+| 12 | Mais brindes | ✅ `/newsletter/checklist-leadpages/` e `/newsletter/modeles-landing-page/`. O formulário anuncia o brinde do tema do guia |
+| 13 | Barra discreta no fim do guia | ✅ Aparece depois de 60 % do guia, leva ao formulário, fecha por 14 dias, não aparece para inscritos |
+| 14 | Pinterest 3 pins/semana | 🟡 Todos os 41 guias têm imagem. Calendário até 30/12 em `calendario-redes.md`. **Falta publicar** (Techonni ou Claude no Chrome, tarefa I) |
+| 15 | Vídeos curtos | 🟡 Guiões 1-5 (doc) + 6-9 em `calendario-redes.md`, com datas e links UTM. **Falta montar e publicar** |
+| 16 | X / LinkedIn | 🟡 4 posts curtos prontos + artigos do doc « Articles X ». **Falta publicar** |
+| 17 | Fóruns | 🟡 5 respostas modelo e onde procurar em `calendario-redes.md`. **Falta publicar** (máx. 2 por dia) |
+| 18 | Painel semanal | ✅ Artifact « Painel Zunrel »: https://claude.ai/artifact/FTJHR5vDqKRrciAEooeY7X (1.ª semana registada: 3 assinantes). Preencher cada segunda-feira (tarefa J do Chrome) |
+| 19 | Velocidade | 🟡 Capturas com largura/altura (sem « saltos » na página); capturas leves (máx. 61 KB). Falta: dados `web_vital` do GA4 (tarefa E) para ver páginas lentas |
+| 20 | Backlinks | 🟡 Plano, 4 propostas de artigos e emails modelo em `backlinks.md`. Falta: lista de 10 blogs (tarefa K do Chrome) e envio dos emails pelo Techonni |
 
-### SEO (tráfego grátis)
-5. **Google Search Console:** ver as pesquisas com muitas impressões e poucos cliques, e reescrever o título e a descrição dessas páginas.
-6. **Um guia novo por semana** a partir do calendário em `plano-growth.md`, sempre com capturas de ecrã.
-7. **Atualizar os guias antigos** (preços, capturas, data) todos os meses. O Google favorece conteúdo recente.
-8. **Links internos:** cada guia novo recebe pelo menos 2 links de guias antigos. Verificar que não fica nenhum guia órfão.
-9. **Versões PT e EN** dos 10 guias mais visitados (Brasil/Portugal e mercado inglês).
+## Pendentes do lado do Techonni
 
-### Email (Mailchimp)
-10. **Enviar a 1.ª newsletter** com o « oui » do Techonni, e ler o relatório (`report`) 48 horas depois.
-11. **Ritmo quinzenal fixo**, segmentado por tag quando houver 50+ assinantes.
-12. **Mais brindes por tema:** checklist Leadpages (« Lancer sa première landing page ») e modelos de textos para landing pages. Um brinde por tema aumenta as inscrições.
-13. **Pop-up discreto de saída** ou barra no fim do guia, só em telemóvel e computador, sem incomodar a leitura.
+- [ ] **« oui »** para enviar `ff4c739dc9` (1.ª newsletter) a todos.
+- [ ] Aprovar o pedido de permissão para criar o rascunho da newsletter de 12/10 (comando em `newsletter-plano.md`).
+- [ ] Colar `PROMPT-COWORK-CHROME.md` no Claude do Chrome (tarefas A a K): links PartnerStack/Impact, preços de hoje, Search Console, GA4, reCAPTCHA, DMARC, capturas, publicações, painel, blogs.
+- [ ] Link PartnerStack que leve ao **HTML Pub**.
+- [ ] No iCloud: marcar os testes como « Não é lixo » e guardar contact@zunrel.com nos contactos.
 
-### Redes sociais e conteúdo
-14. **Pinterest:** publicar 3 pins por semana (os pins já estão em `public/pins/`), com links UTM.
-15. **Vídeos curtos sem rosto** (artifact « Zunrel — 5 vidéos courtes sans visage »): publicar no TikTok, YouTube Shorts e Instagram Reels, cada um a apontar para um guia.
-16. **Artigos no X/LinkedIn** (artifact « Articles X — Tutos Shopify et Leadpages »): 1 por semana, com link UTM.
-17. **Responder a perguntas reais** em fóruns e grupos francófonos (Reddit, grupos Facebook de lojistas), com a resposta completa e o guia como « pour aller plus loin ».
+## Próxima sessão (fazer tudo, por esta ordem)
 
-### Medir e melhorar
-18. **Painel semanal:** visitas (GA4), cliques afiliados, inscrições, comissões (PartnerStack/Impact). O Claude pode montá-lo como artifact.
-19. **Velocidade e Core Web Vitals:** ver os dados `web_vital` no GA4 e corrigir as páginas lentas (imagens, fontes).
-20. **Backlinks:** propor guias como convidado a blogs francófonos de e-commerce e marketing, e inscrever o Zunrel em diretórios de recursos Shopify e Leadpages. Pedir links a partir do kit média (`/kit-media/`).
+1. Ler `docs/growth/RESULTADOS-CHROME.md` se existir. Se não existir, dizer ao Techonni que falta correr o prompt do Chrome e seguir para o ponto 5.
+2. Com os resultados: corrigir preços (`combien-coute-*`, `/offres/`, botões), pôr o link HTML Pub em `affiliateUrl` da ferramenta `html-pub`, pôr deep links se existirem.
+3. Search Console: `seoTitle` / `seoDescription` nas 5 páginas com mais impressões e CTR mais baixo.
+4. GA4: ver `affiliate_click` por `placement` e `guide`; ver `web_vital` e corrigir páginas lentas. Registar a semana no Painel.
+5. Guia da semana 2 (« formulaire de contact Shopify ») com as capturas da tarefa G, pin com `make-pins.mjs`, 2 links internos.
+6. Newsletter: criar o rascunho de 12/10 (com aprovação) e enviar só com « oui ».
+7. Traduzir para PT e EN os guias novos que tiverem mais visitas.
+8. Atualizar este ficheiro, publicar e enviar ao Techonni.
+
+---
+
+## Referência
+
+- **Mailchimp:** chave `MAILCHIMP_API_KEY` (us9, expira ~09/2027). Plano Free: 250 contactos, 500 envios/mês, sem agendamento. Lista `893c08eb5d`, double opt-in, remetente `Zunrel <contact@zunrel.com>`. Tags: `shopify` 11404677 · `leadpages` 11404678 · `htmlpub` 11404679. Rascunhos: `ff4c739dc9`, `42198dabdc`, `4cdfb81660`, `8fd430e3d8`.
+- **Vercel:** equipa `team_wgtfY6T8u2diPfxnznOnKn6t`, projeto `prj_FcUDt9LY9iVD0NlgcC3HPK110WqH`.
+- **Site:** 41 guias FR + 10 PT + 10 EN; `/offres/`; 3 brindes; FAQ; pesquisa Pagefind; GA4 (`affiliate_click` com `placement`, `sign_up`, `share`, `pdf_download`, `newsletter_bar_click`, `web_vital`).
+- **Documentos:** `plano-growth.md` (calendário de guias), `calendario-redes.md`, `newsletter-plano.md`, `backlinks.md`, `verificacao-links-afiliados.md`, `PROMPT-COWORK-CHROME.md`.

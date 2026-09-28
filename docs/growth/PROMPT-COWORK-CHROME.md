@@ -65,8 +65,20 @@ Método: abre o ecrã, preenche um exemplo, captura e depois carrega em « Annul
 4. `shopify-commandes.webp`: Commandes → a lista de encomendas (se estiver vazia, o ecrã vazio serve), sem nomes de clientes.
 5. `leadpages-popup.webp`: no editor Leadpages, o ecrã de criação de um « Pop-up » (Leadboxes / Pop-ups), sem guardar.
 
+### I. Publicar a semana nas redes (só se o Techonni disser « publica »)
+Seguir `docs/growth/calendario-redes.md` no GitHub (`techonni/zunrel`), só as linhas desta semana:
+1. Pinterest: os 3 pins da semana, com a imagem `https://zunrel.com/pins/<slug>.jpg`, o título, a descrição e o link com UTM da tabela.
+2. X e LinkedIn: o post curto da semana.
+3. Não publicar vídeos (precisam de ser montados antes).
+
+### J. Painel Zunrel
+Abrir o artifact « Painel Zunrel » (https://claude.ai/artifact/FTJHR5vDqKRrciAEooeY7X) e registar a semana (segunda-feira) com os números das tarefas A, B e E: visitas, cliques afiliados, inscrições, assinantes Mailchimp, comissões PartnerStack e Impact, pins publicados.
+
+### K. Lista de blogs para backlinks
+Com as pesquisas de `docs/growth/backlinks.md` (secção 1), encontrar **10 blogs ou páginas de recursos francófonos** de e-commerce ou marketing, ativos (artigo publicado nos últimos 3 meses). Para cada um: nome, endereço, se aceita artigos convidados (página « contact » ou « proposer un article »), email público de contacto, e o título de um artigo recente. Não enviar nenhum email.
+
 ### H. Enviar os resultados para o GitHub
-1. Escreve um ficheiro **`RESULTADOS-CHROME.md`** com uma secção por tarefa (A a G): o que encontraste, os números, os links gerados, os preços com a data e o URL, e o que ficou bloqueado e porquê.
+1. Escreve um ficheiro **`RESULTADOS-CHROME.md`** com uma secção por tarefa (A a G, e I a K): o que encontraste, os números, os links gerados, os preços com a data e o URL, e o que ficou bloqueado e porquê.
 2. Abre `https://github.com/techonni/zunrel/upload/main/docs/growth`, envia `RESULTADOS-CHROME.md` e as capturas das tabelas de preços (tarefa C). Mensagem de commit: `Add Chrome results (dashboards, prices, captures)`. Escolhe « Commit directly to the main branch ».
 3. Abre `https://github.com/techonni/zunrel/upload/main/public/captures` e envia as capturas da tarefa G. Mensagem: `Add captures for upcoming guides`.
 4. No fim, diz ao Techonni em português, numa lista curta: o que ficou feito, o que ficou bloqueado, e que já pode dizer ao Claude da cloud « Lê `docs/growth/RESULTADOS-CHROME.md` ».

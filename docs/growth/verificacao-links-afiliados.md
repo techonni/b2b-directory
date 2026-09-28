@@ -37,3 +37,9 @@ Só há **2 links de afiliação**, definidos uma vez em `src/lib/guides.ts`:
 4. **Preços nos botões por confirmar hoje.** O botão Shopify diz « 3 jours gratuits, puis 1 € par mois pendant 3 mois » e o da Leadpages « 7 jours ». Não consegui abrir as páginas oficiais para confirmar.
    → Confirmar em shopify.com/fr/tarifs e leadpages.com/pricing (ou mandar-me uma captura).
 5. **Cliques contados?** → No PartnerStack e na Impact, ver se aparecem cliques nos últimos 30 dias e comparar com o evento `affiliate_click` no GA4.
+
+## Atualização 28/09/2026 (lote 2 do Chrome)
+
+- **HTML Pub (PartnerStack):** não existe link próprio. Painel « Liens personnalisés »: « La création de liens est désactivée pour l'instant ». O botão HTML Pub continua a usar o link Leadpages (a página de preços mostra as ofertas HTML Pub).
+- **Shopify (Impact, programa 13624):** 30 dias: 2 cliques, 0 vendas. Deep link novo para https://www.shopify.com/fr/tarifs: `https://shopify.pxf.io/KBdaZa` (em `shopifyPricingLink`, usado em `combien-coute-shopify` e `choisir-son-forfait-shopify`).
+- **Leadpages (PartnerStack):** 85 cliques no total, 14 em 90 dias, 0 inscrições, 0 € de comissões.

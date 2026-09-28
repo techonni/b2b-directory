@@ -17,6 +17,8 @@ import {
   getTheme,
   getTool,
   guides,
+  shopifyPricingGuides,
+  shopifyPricingLink,
   type Guide,
   type NewsletterTag,
   type Tool,
@@ -37,6 +39,7 @@ const tools = guide.tools
 const related = getRelatedGuides(guide);
 
 const isShop = guide.theme === "boutique";
+const shopHref = shopifyPricingGuides.includes(guide.slug) ? shopifyPricingLink : undefined;
 // Centre d'intérêt envoyé à Mailchimp avec l'inscription.
 const mainTool = guide.tools[0]?.slug;
 const newsletterTag: NewsletterTag = isShop ? "shopify" : mainTool === "leadpages" ? "leadpages" : "htmlpub";
@@ -118,7 +121,7 @@ const howTo = {
     });
   </script>
 
-  <AffiliateCta shop={isShop} placement="haut" />
+  <AffiliateCta shop={isShop} placement="haut" shopHref={shopHref} />
 
   <section class="mt-10 rounded-[6px] border border-[#e5e5e5] bg-white p-6">
     <h2 class="text-[15px] font-medium leading-5 text-[#171717]">
@@ -171,7 +174,7 @@ const howTo = {
     </ol>
   </section>
 
-  <AffiliateCta shop={isShop} placement="bas" />
+  <AffiliateCta shop={isShop} placement="bas" shopHref={shopHref} />
 
   {
     guide.pitfalls.length > 0 ? (

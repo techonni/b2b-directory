@@ -776,4 +776,115 @@ export const ptGuides: TranslatedGuide[] = [
       "Pôr demasiados links: um só botão principal converte melhor.",
     ],
   },
+  {
+    slug: "vendre-sur-instagram-avec-shopify",
+    localSlug: "vender-no-instagram-com-shopify",
+    question: "Como vender no Instagram com a Shopify?",
+    summary: "Ligar a loja ao Instagram, marcar os produtos nas publicações e manter um link na bio que vende.",
+    intro:
+      "O Instagram é muitas vezes a primeira fonte de visitantes de uma loja que começa. Com a aplicação oficial da Meta para a Shopify, os seus produtos entram num catálogo que pode marcar nas publicações. Enquanto isso, um bom link na bio já chega para vender.",
+    steps: [
+      {
+        title: "Passe a conta do Instagram a conta profissional",
+        text: "Na aplicação do Instagram, abra as configurações da conta e mude para uma conta profissional (« Empresa » ou « Criador de conteúdo »). Ligue-a a uma página do Facebook: a Meta precisa dela para o catálogo de produtos.",
+      },
+      {
+        title: "Instale a aplicação Facebook & Instagram",
+        text: "No painel da Shopify, abra a App Store da Shopify e procure « Facebook & Instagram », publicada pela Meta. Instale-a: é adicionada como canal de vendas, sem custo.",
+      },
+      {
+        title: "Ligue as suas contas Meta",
+        text: "No canal Facebook & Instagram, siga o assistente: a sua conta do Facebook, a sua conta Meta Business (Business Manager), a sua página do Facebook e a sua conta profissional do Instagram. Aceite os termos e inicie a sincronização do catálogo.",
+      },
+      {
+        title: "Confira as fichas dos produtos",
+        text: "Só os produtos ativos, com foto, preço e descrição, passam bem para o catálogo. Escolha na aplicação que produtos partilhar: comece pelos mais vendidos em vez do catálogo inteiro.",
+      },
+      {
+        title: "Marque os produtos nas publicações",
+        text: "Quando a Meta aprovar a sua conta (pode levar alguns dias), pode marcar os produtos nas publicações e nos stories, como se marca uma pessoa. Um toque na etiqueta mostra o preço e leva à ficha do produto. Conforme o país, algumas funções de compra não estão disponíveis: a aplicação mostra o que existe para si.",
+      },
+      {
+        title: "Mantenha um link na bio que vende",
+        text: "Enquanto espera a aprovação, ou além dela: ponha na bio um só link para uma página que reúna a loja, a oferta do momento e a inscrição por e-mail. Junte parâmetros UTM a esse link para ver no Google Analytics o que o Instagram lhe traz.",
+      },
+    ],
+    pitfalls: [
+      "Partilhar o catálogo inteiro de uma vez com fichas incompletas: os produtos sem foto ou sem preço são recusados.",
+      "Contar só com as etiquetas de produto: dependem da aprovação da Meta e do país. O link na bio funciona logo.",
+      "Mandar os visitantes do Instagram para a página inicial: um link direto para o produto ou uma página dedicada converte melhor.",
+    ],
+  },
+  {
+    slug: "ajouter-un-produit-shopify",
+    localSlug: "adicionar-produto-shopify",
+    question: "Como adicionar um produto na Shopify?",
+    summary: "Título, fotos, preço, quantidade e envio: a ficha do produto bem preenchida.",
+    intro:
+      "Uma boa ficha de produto faz vender. A Shopify guia-o campo a campo, e as alterações guardadas aparecem logo na loja. (Os nomes dos botões podem variar um pouco conforme a língua do painel.)",
+    steps: [
+      {
+        title: "Abra « Adicionar produto »",
+        text: "No menu da esquerda, clique em « Produtos » e depois em « Adicionar produto ».",
+        alt: "Formulário « Adicionar produto »: título, descrição, multimédia (painel em francês)",
+      },
+      {
+        title: "Escreva o título e a descrição",
+        text: "Um título claro e uma descrição que responda às perguntas do comprador: material, tamanho, uso, prazo de entrega.",
+      },
+      {
+        title: "Junte as fotos",
+        text: "Na secção de multimédia, clique para carregar os ficheiros. Imagens, vídeos e modelos 3D são aceites.",
+      },
+      {
+        title: "Defina o preço e a quantidade",
+        text: "Indique o preço e, se quiser, um preço de comparação (o preço antes do desconto). Na parte do inventário, escreva a quantidade disponível.",
+        alt: "Secções Preço e Inventário da ficha do produto (painel em francês)",
+      },
+      {
+        title: "Configure o envio e as variantes",
+        text: "Para um produto físico, indique o peso. Junte variantes (tamanho, cor) se precisar. Para um ficheiro digital, desative « Produto físico ».",
+      },
+      {
+        title: "Escolha o estado e guarde",
+        text: "O estado « Ativo » torna o produto visível. Clique em « Guardar » (ou « Salvar »).",
+      },
+    ],
+    pitfalls: ["Deixar o peso a 0: os custos de envio ficam errados.", "Fotos de tamanhos diferentes: a loja parece menos profissional."],
+  },
+  {
+    slug: "choisir-un-theme-shopify",
+    localSlug: "escolher-tema-gratis-shopify",
+    question: "Como escolher e instalar um tema grátis na Shopify?",
+    summary: "Encontrar um tema grátis na Theme Store, experimentá-lo e publicá-lo.",
+    intro:
+      "O tema decide a aparência da sua loja. A Shopify tem temas grátis, criados e mantidos pela própria Shopify: são o melhor ponto de partida.",
+    steps: [
+      {
+        title: "Abra a Theme Store",
+        text: "Vá a themes.shopify.com ou, no painel, a « Loja virtual » (ou « Loja online ») e depois « Temas ». No filtro « Price », marque « Free » para ver só os temas grátis.",
+        alt: "Theme Store da Shopify filtrada nos temas grátis: Horizon, Colorblock, Tinker",
+      },
+      {
+        title: "Filtre conforme a sua atividade",
+        text: "Use o filtro « Industry » (roupa, beleza, casa, alimentação…) e olhe sobretudo para a forma como o tema mostra os produtos, não para as fotos de demonstração.",
+      },
+      {
+        title: "Adicione o tema à sua loja",
+        text: "Abra a ficha do tema e clique em « Adicionar ». Vai para a sua biblioteca de temas, sem substituir o que está online.",
+      },
+      {
+        title: "Pré-visualize e personalize",
+        text: "Clique em « Personalizar »: junte o seu logo, as cores, as fontes e as secções da página inicial. Veja também a pré-visualização no smartphone.",
+      },
+      {
+        title: "Publique-o",
+        text: "Quando tudo estiver bem, clique em « Publicar ». Só um tema está online de cada vez; o antigo fica na biblioteca e pode voltar atrás.",
+      },
+    ],
+    pitfalls: [
+      "Comprar um tema pago logo no início: os temas grátis chegam para uma primeira loja.",
+      "Publicar sem ver como fica no smartphone, quando a maioria das visitas vem do smartphone.",
+    ],
+  },
 ];

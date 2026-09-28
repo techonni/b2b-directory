@@ -70,14 +70,16 @@ const labelWords: Record<OtherLang, [RegExp, string][]> = {
     [/ajouter une page de contact/, "adicionar uma página de contato"], [/modifier les menus/, "editar os menus"],
     [/variantes de produit/, "variantes de produto"], [/ajouter et mettre à jour des produits/, "adicionar e atualizar produtos"],
     [/créer et modifier des pages/, "criar e editar páginas"], [/traiter les commandes/, "processar pedidos"], [/: commandes$/, ": pedidos"],
-    [/^Shopify: réductions en pourcentage ou montant fixe$/, "Ajuda Shopify: descontos em percentagem ou valor fixo"], [/zones et tarifs d'expédition/, "zonas e tarifas de envio"], [/tarifs d'expédition/, "tarifas de envio"]],
+    [/^Shopify: réductions en pourcentage ou montant fixe$/, "Ajuda Shopify: descontos em percentagem ou valor fixo"], [/zones et tarifs d'expédition/, "zonas e tarifas de envio"], [/tarifs d'expédition/, "tarifas de envio"],
+    [/ajouter et prévisualiser des thèmes/, "adicionar e pré-visualizar temas"], [/publier un thème/, "publicar um tema"]],
   en: [[/ \(aide\)/, " (help)"], [/codes de réduction/, "discount codes"], [/utiliser le créateur de pages IA/, "using the AI page builder"],
     [/connecter un domaine/, "connecting a custom domain"], [/Connecter votre domaine \(nouveau Leadpages\)/, "Leadpages: connect your domain"],
     [/accepter des achats Shopify/, "accept Shopify purchases"], [/^Aide Shopify/, "Shopify Help"],
     [/ajouter une page de contact/, "add a contact page"], [/modifier les menus/, "edit menus"],
     [/variantes de produit/, "product variants"], [/ajouter et mettre à jour des produits/, "add and update products"],
     [/créer et modifier des pages/, "creating and editing pages"], [/traiter les commandes/, "fulfilling orders"], [/: commandes$/, ": orders"],
-    [/^Shopify: réductions en pourcentage ou montant fixe$/, "Shopify Help: percentage or fixed amount discounts"], [/zones et tarifs d'expédition/, "setting up shipping zones and rates"], [/tarifs d'expédition/, "shipping rates"]],
+    [/^Shopify: réductions en pourcentage ou montant fixe$/, "Shopify Help: percentage or fixed amount discounts"], [/zones et tarifs d'expédition/, "setting up shipping zones and rates"], [/tarifs d'expédition/, "shipping rates"],
+    [/ajouter et prévisualiser des thèmes/, "adding and previewing themes"], [/publier un thème/, "publishing a theme"]],
 };
 
 export function localizeSource(lang: OtherLang, source: { label: string; url: string }) {

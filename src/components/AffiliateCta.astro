@@ -7,14 +7,16 @@ import { affiliateLink, shopifyLink } from "../lib/guides";
 interface Props {
   shop: boolean;
   placement: "haut" | "bas";
+  // Autre lien affilié pour ce guide (par exemple la page des tarifs Shopify).
+  shopHref?: string;
 }
 
-const { shop, placement } = Astro.props;
+const { shop, placement, shopHref } = Astro.props;
 
 // Textes alignés sur ce que les pages officielles affichent (vérifié le 28/09/2026).
 const cta = shop
   ? {
-      href: shopifyLink,
+      href: shopHref ?? shopifyLink,
       tool: "shopify",
       short: "Pour suivre ce guide, il vous faut une boutique Shopify : l'inscription est gratuite, puis 1 € par mois avec l'offre de lancement.",
       text: "Shopify se lance gratuitement, puis l'offre de lancement continue à 1 € par mois. Vous pouvez tout préparer avant de payer.",

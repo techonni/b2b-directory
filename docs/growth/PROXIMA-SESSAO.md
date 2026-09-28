@@ -82,6 +82,8 @@ Data: 28/09/2026 (2.ª sessão do dia: guia da semana 2). Responde ao Techonni e
 | 4. GA4 e Painel | ⏳ Bloqueado: espera o lote 3 do Chrome. |
 | 5. Guia da semana 2 | ✅ `ajouter-un-formulaire-de-contact-shopify` em FR + PT (`formulario-de-contato-shopify`) + EN (`add-contact-form-shopify`), pin, ligado a partir de `creer-un-menu-shopify` e `rediger-les-politiques-shopify`. Post e pin no dia 10 de `fila-redes.md`. |
 | 6. Newsletter 12/10 | ⏳ Bloqueado outra vez pela segurança do Claude Code (envia um email de teste). **Falta o Techonni:** aprovar o pedido quando aparecer, ou acrescentar uma regra de permissão para `node --experimental-strip-types scripts/mailchimp.mjs newsletter`. Os preços do email dependem do lote 1. |
+| 5b. Guia da semana 3 (adiantado) | ✅ `creer-une-page-lien-en-bio-avec-html-pub` em FR + PT (`pagina-link-na-bio-html-pub`) + EN (`link-in-bio-page-html-pub`), pin, post e pin no dia 11 de `fila-redes.md`. |
+| Chrome em pausa | ⏸️ O Techonni atingiu o limite de uso do Co-work a 28/09. **Não pedir nada ao Chrome** até ele dizer que voltou. O lote 1 fica à espera em `CHROME-PROXIMO.md`. |
 | 7. Traduções | ✅ `ajouter-des-variantes-shopify` também em PT e EN. Sem dados de visitas ainda (lote 3) para escolher os seguintes. |
 
 ## Próxima sessão (fazer tudo, por esta ordem)
@@ -90,7 +92,7 @@ Data: 28/09/2026 (2.ª sessão do dia: guia da semana 2). Responde ao Techonni e
 2. Com os resultados: corrigir preços (`combien-coute-*`, `/offres/`, botões), pôr o link HTML Pub em `affiliateUrl` da ferramenta `html-pub`, pôr deep links se existirem.
 3. Search Console: `seoTitle` / `seoDescription` nas 5 páginas com mais impressões e CTR mais baixo.
 4. GA4: ver `affiliate_click` por `placement` e `guide`; ver `web_vital` e corrigir páginas lentas. Registar a semana no Painel.
-5. Guia da semana 3 (ver `plano-growth.md`) em FR, PT e EN, pin com `make-pins.mjs`, 2 links internos. Quando chegar `shopify-page-contact.webp` (lote 5), pô-la no passo 1 do guia do formulário de contacto.
+5. Guia da semana 4 (« pop-up d'inscription Leadpages », ver `plano-growth.md`) em FR, PT e EN, pin com `make-pins.mjs`, 2 links internos. Quando chegar `shopify-page-contact.webp` (lote 5), pô-la no passo 1 do guia do formulário de contacto.
 6. Newsletter: criar o rascunho de 12/10 (com aprovação) e enviar só com « oui ».
 7. Traduzir para PT e EN os guias com mais visitas (dados do lote 3).
 8. Antes do fim do dia 9 de `fila-redes.md`: novas imagens de pins para os dias 10+ (4 por dia além do guia novo).
@@ -112,5 +114,5 @@ Os prompts de `prompts-chrome/` e o `PROMPT-COWORK-CHROME.md` ficam só como arq
 
 - **Mailchimp:** chave `MAILCHIMP_API_KEY` (us9, expira ~09/2027). Plano Free: 250 contactos, 500 envios/mês, sem agendamento. Lista `893c08eb5d`, double opt-in, remetente `Zunrel <contact@zunrel.com>`. Tags: `shopify` 11404677 · `leadpages` 11404678 · `htmlpub` 11404679. Rascunhos: `ff4c739dc9`, `42198dabdc`, `4cdfb81660`, `8fd430e3d8`.
 - **Vercel:** equipa `team_wgtfY6T8u2diPfxnznOnKn6t`, projeto `prj_FcUDt9LY9iVD0NlgcC3HPK110WqH`.
-- **Site:** 42 guias FR + 12 PT + 12 EN; `/offres/`; 3 brindes; FAQ; pesquisa Pagefind; GA4 (`affiliate_click` com `placement`, `sign_up`, `share`, `pdf_download`, `newsletter_bar_click`, `web_vital`).
+- **Site:** 43 guias FR + 13 PT + 13 EN; `/offres/`; 3 brindes; FAQ; pesquisa Pagefind; GA4 (`affiliate_click` com `placement`, `sign_up`, `share`, `pdf_download`, `newsletter_bar_click`, `web_vital`).
 - **Documentos:** `plano-growth.md` (calendário de guias), `calendario-redes.md`, `newsletter-plano.md`, `backlinks.md`, `verificacao-links-afiliados.md`, `PROMPT-COWORK-CHROME.md`.

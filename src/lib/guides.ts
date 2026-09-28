@@ -519,7 +519,53 @@ export const guides: Guide[] = [
     ],
     tools: [{ slug: "html-pub", why: "Modèles de landing pages, portfolios et pages « lien en bio »." }],
     sources: [{ label: "HTML Pub : créer et modifier des pages", url: `${help}43966022984461--HTMLPub-Creating-and-Editing-Pages` }],
-    related: ["creer-sa-landing-page-leadpages-de-a-a-z", "creer-une-landing-page-avec-l-ia", "creer-un-site-web-avec-html-pub"],
+    related: ["creer-sa-landing-page-leadpages-de-a-a-z", "creer-une-landing-page-avec-l-ia", "creer-une-page-lien-en-bio-avec-html-pub", "creer-un-site-web-avec-html-pub"],
+  },
+  {
+    slug: "creer-une-page-lien-en-bio-avec-html-pub",
+    question: "Comment créer une page « lien en bio » avec HTML Pub ?",
+    summary: "Une seule adresse dans votre bio Instagram ou TikTok, qui mène à tous vos liens, sur une page à vous.",
+    theme: "creer",
+    publishedOn: "2026-09-28",
+    updatedOn: "2026-09-28",
+    intro:
+      "Instagram et TikTok n'acceptent qu'un lien dans la bio. Une page « lien en bio » les regroupe tous : boutique, vidéo, inscription, contact. Avec HTML Pub, elle est à votre nom, à vos couleurs, et peut recueillir des e-mails.",
+    steps: [
+      {
+        title: "Partez d'un modèle « lien en bio »",
+        text: "Sur l'écran « Create », cliquez sur « Templates », puis « Browse all templates ». Choisissez un modèle de page « lien en bio », regardez-le avec « Preview », puis cliquez sur « Use ».",
+        image: { src: "/captures/modele.webp", alt: "Panneau Templates avec « Preview », « Use » et « Browse all templates »" },
+      },
+      {
+        title: "Mettez votre photo et une phrase",
+        text: "En haut : votre photo ou votre logo, votre nom, et une phrase qui dit ce que vous proposez. Vous pouvez demander à l'assistant de le faire : « Remplace la photo par mon logo et écris : bijoux faits main à Lyon ».",
+      },
+      {
+        title: "Ajoutez 3 à 5 boutons",
+        text: "Un bouton par lien important : votre boutique, votre dernière vidéo, votre page d'inscription, votre contact. Mettez le plus important en premier, avec un texte d'action : « Voir la boutique », pas « Lien 1 ».",
+      },
+      {
+        title: "Ajoutez un formulaire d'inscription",
+        text: "Demandez à l'assistant d'ajouter un champ e-mail sous les boutons. Les réponses sont enregistrées dans HTML Pub : vos abonnés deviennent des contacts que vous pouvez retrouver.",
+      },
+      {
+        title: "Vérifiez sur téléphone et publiez",
+        text: "Presque tous les visiteurs viennent de leur téléphone. Cliquez sur l'icône mobile en bas à droite de l'éditeur, vérifiez que chaque bouton est facile à toucher, puis publiez.",
+        image: { src: "/captures/apercu-mobile.webp", alt: "Aperçu mobile de la page dans l'éditeur" },
+      },
+      {
+        title: "Collez l'adresse dans votre bio",
+        text: "Choisissez une adresse courte (par exemple votre nom), copiez-la, puis collez-la dans le champ « Site web » ou « Lien » de votre profil Instagram ou TikTok. Ouvrez-la depuis l'application pour vérifier.",
+      },
+    ],
+    pitfalls: [
+      "Mettre dix boutons : le visiteur ne sait plus où cliquer. Gardez l'essentiel.",
+      "Oublier de mettre la page à jour : un bouton vers une promotion terminée fait perdre confiance.",
+      "Une adresse longue et compliquée : elle est coupée ou mal recopiée.",
+    ],
+    tools: [{ slug: "html-pub", why: "Modèles « lien en bio », formulaires et domaine personnalisé." }],
+    sources: [{ label: "HTML Pub : créer et modifier des pages", url: `${help}43966022984461--HTMLPub-Creating-and-Editing-Pages` }],
+    related: ["partir-d-un-modele-leadpages", "recuperer-les-formulaires-html-pub", "modifier-l-adresse-d-une-page-leadpages"],
   },
   {
     slug: "publier-du-html-sur-html-pub",
@@ -788,7 +834,7 @@ export const guides: Guide[] = [
     ],
     tools: [{ slug: "html-pub", why: "Réponses de formulaires enregistrées automatiquement." }],
     sources: [{ label: "HTML Pub : récupérer les réponses de formulaires", url: `${help}43967816644493--HTMLPub-Collecting-Form-Submissions` }],
-    related: ["connecter-leadpages-a-son-outil-e-mail", "creer-une-landing-page-avec-l-ia", "recolter-des-e-mails-avant-un-lancement"],
+    related: ["connecter-leadpages-a-son-outil-e-mail", "creer-une-landing-page-avec-l-ia", "recolter-des-e-mails-avant-un-lancement", "creer-une-page-lien-en-bio-avec-html-pub"],
   },
   {
     slug: "connecter-leadpages-a-son-outil-e-mail",

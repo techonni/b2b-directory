@@ -60,12 +60,14 @@ const labelWords: Record<OtherLang, [RegExp, string][]> = {
     [/connecter un domaine/, "conectar um domínio"], [/Connecter votre domaine \(nouveau Leadpages\)/, "Leadpages: conectar o seu domínio"],
     [/accepter des achats Shopify/, "aceitar compras Shopify"], [/^Aide Shopify/, "Ajuda Shopify"],
     [/ajouter une page de contact/, "adicionar uma página de contato"], [/modifier les menus/, "editar os menus"],
-    [/variantes de produit/, "variantes de produto"], [/ajouter et mettre à jour des produits/, "adicionar e atualizar produtos"]],
+    [/variantes de produit/, "variantes de produto"], [/ajouter et mettre à jour des produits/, "adicionar e atualizar produtos"],
+    [/créer et modifier des pages/, "criar e editar páginas"]],
   en: [[/ \(aide\)/, " (help)"], [/codes de réduction/, "discount codes"], [/utiliser le créateur de pages IA/, "using the AI page builder"],
     [/connecter un domaine/, "connecting a custom domain"], [/Connecter votre domaine \(nouveau Leadpages\)/, "Leadpages: connect your domain"],
     [/accepter des achats Shopify/, "accept Shopify purchases"], [/^Aide Shopify/, "Shopify Help"],
     [/ajouter une page de contact/, "add a contact page"], [/modifier les menus/, "edit menus"],
-    [/variantes de produit/, "product variants"], [/ajouter et mettre à jour des produits/, "add and update products"]],
+    [/variantes de produit/, "product variants"], [/ajouter et mettre à jour des produits/, "add and update products"],
+    [/créer et modifier des pages/, "creating and editing pages"]],
 };
 
 export function localizeSource(lang: OtherLang, source: { label: string; url: string }) {

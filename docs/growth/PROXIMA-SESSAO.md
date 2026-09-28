@@ -68,7 +68,7 @@ Data: 28/09/2026 (6.ª sessão do dia: resultados do lote 3, lote 2 de novo para
 
 - [x] **Impact:** sessão iniciada no Chrome (confirmado pelo Chrome a 28/09).
 
-- [ ] Pinterest: pinterest.com → menu do perfil → Configurações → **Criar Pins em massa** → carregar `pinterest-agendar.csv` (descarregar em https://github.com/techonni/zunrel/blob/main/docs/growth/pinterest-agendar.csv, botão « Download raw file »). Só depois da mensagem do Claude Code a 29/09 (« já podes carregar »): antes disso as imagens novas ainda não estão online. Se um painel não existir, o Pinterest cria-o sozinho.
+- [ ] Pinterest: pinterest.com → menu do perfil → Configurações → **Criar Pins em massa** → carregar `pinterest-agendar.csv` (descarregar em https://github.com/techonni/zunrel/blob/main/docs/growth/pinterest-agendar.csv, botão « Download raw file »). **Já pode ser carregado** (28/09: todas as imagens do CSV estão online, 94 pins de 30/09 a 09/10). O Chrome **não** publica pins: o CSV agenda-os todos de uma vez. Se um painel não existir, o Pinterest cria-o sozinho.
 - [x] Frase do Co-work: não é preciso mudar nada. A correção está no ficheiro que o Co-work lê (`CHROME-PROXIMO.md`).
 - [ ] Link PartnerStack que leve ao **HTML Pub**.
 - [ ] Se ainda vir « b2b-directory » na app do Claude no Mac: é uma pasta antiga no computador. No Finder, apagar (ou renomear para `zunrel`) a pasta `b2b-directory`, e na app do Claude escolher sempre o repositório `techonni/zunrel`. No GitHub e na Vercel já não existe nada com esse nome.

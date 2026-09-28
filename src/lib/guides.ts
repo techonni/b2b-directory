@@ -36,6 +36,10 @@ export type Guide = {
   // « express » (par défaut) : une question, l'essentiel en 30 secondes.
   // « complet » : un projet de A à Z, long et riche en captures.
   format?: GuideFormat;
+  // Facultatif, pour Google : titre et description propres à la recherche (Search Console).
+  // Sans eux, le titre est la question et la description est construite par `seoDescription`.
+  seoTitle?: string;
+  seoDescription?: string;
 };
 
 export type GuideFormat = "express" | "complet";
@@ -2293,4 +2297,18 @@ export function logoPath(tool: Tool) {
   if (tool.logo.direct) return tool.logo.src;
   const ext = tool.logo.src.split("?")[0].split(".").pop() ?? "png";
   return `/logos/${tool.slug}.${ext}`;
+}
+
+// Description pour Google (idéalement 120 à 160 caractères) : le résumé, complété par les
+// premières phrases de l'intro tant que l'ensemble reste sous 160 caractères.
+export function seoDescription(guide: Guide) {
+  if (guide.seoDescription) return guide.seoDescription;
+  let text = guide.summary;
+  const sentences = guide.intro.match(/[^.!?]+[.!?]+/g) ?? [];
+  for (const sentence of sentences) {
+    const next = `${text} ${sentence.trim()}`;
+    if (next.length > 160) break;
+    text = next;
+  }
+  return text;
 }

@@ -8,6 +8,7 @@ import AffiliateCta from "../../components/AffiliateCta.astro";
 import {
   formatDate,
   getGuide,
+  seoDescription,
   getRelatedGuides,
   formats,
   guideFormat,
@@ -53,8 +54,8 @@ const howTo = {
 ---
 
 <Base
-  title={guide.question}
-  description={guide.summary}
+  title={guide.seoTitle ?? guide.question}
+  description={seoDescription(guide)}
   image={`/pins/${guide.slug}.jpg`}
   type="article"
   breadcrumbs={[

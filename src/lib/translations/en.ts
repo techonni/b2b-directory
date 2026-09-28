@@ -665,4 +665,118 @@ export const enGuides: TranslatedGuide[] = [
       "Ignoring privacy rules: tell visitors you use analytics in your privacy policy, and ask for consent where the law requires it.",
     ],
   },
+  {
+    slug: "creer-un-code-de-reduction-shopify",
+    localSlug: "create-discount-code-shopify",
+    question: "How to create a discount code on Shopify?",
+    summary: "A promo code as a percentage or a fixed amount, with its conditions and limits.",
+    intro:
+      "A discount code helps trigger a first order. On Shopify, it takes a few minutes to create and applies at checkout.",
+    steps: [
+      {
+        title: "Open « Discounts »",
+        text: "In the left menu, click « Discounts », then « Create discount ».",
+      },
+      {
+        title: "Choose the discount type",
+        text: "Four choices: « Amount off products », « Buy X get Y », « Amount off order » or « Free shipping ». For a welcome code, pick « Amount off order ».",
+      },
+      {
+        title: "Write the code and its value",
+        text: "Keep the « Discount code » method, type a code that is easy to remember (for example WELCOME10), then choose « Percentage » or « Fixed amount » and the value. The summary on the right updates right away.",
+        alt: "« Create discount » form with the code BIENVENUE10 and 10 % off the order (French interface)",
+      },
+      {
+        title: "Set the conditions",
+        text: "« Eligibility »: all customers or only some. « Minimum purchase requirements »: a minimum amount or number of items. « Maximum discount uses »: limit the total number of uses, or one use per customer.",
+      },
+      {
+        title: "Pick the dates and save",
+        text: "Set a start date and, if you want, an end date. Click « Save »: the code shows up in the list of discounts.",
+      },
+    ],
+    pitfalls: [
+      "Forgetting « Limit to one use per customer » on a welcome code: it can then be used on every order.",
+      "Sharing the code without testing it in a test order.",
+    ],
+  },
+  {
+    slug: "regler-l-expedition-shopify",
+    localSlug: "set-up-shipping-rates-shopify",
+    question: "How to set up shipping rates on Shopify?",
+    summary: "Shipping zones, flat or weight-based rates, and free shipping over a set amount.",
+    intro:
+      "Shipping rates are set once, by shipping zone. Simple, fair rates keep customers from abandoning their cart at checkout.",
+    steps: [
+      {
+        title: "Open « Shipping and delivery »",
+        text: "In the admin, click « Settings » at the bottom left, then « Shipping and delivery ». The « General » shipping profile applies to all your products: that is the one you will set up.",
+        alt: "Settings > Shipping and delivery: general profile, estimated delivery dates and packages (French interface)",
+      },
+      {
+        title: "Create your shipping zones",
+        text: "A zone groups the places that share the same rates. Start simple: one zone for the United States, then one for Canada or other countries if you ship abroad. A customer from a place with no zone cannot place an order.",
+      },
+      {
+        title: "Add a rate to each zone",
+        text: "In a zone, click « Add rate ». Give it a clear name the customer will see at checkout, like « Standard shipping (3 to 5 business days) », then a price. A flat rate is the easiest to understand.",
+      },
+      {
+        title: "Add conditions if needed",
+        text: "Click « Add conditions » so a rate depends on the weight of the items or the order price. Example: a « Free shipping » rate at $0, only for orders of $50 or more. That is often what makes customers add one more item to their cart.",
+      },
+      {
+        title: "Enter your usual package",
+        text: "In « Packages », enter the dimensions and weight of your most common box. With each product's weight, Shopify can then work out the real weight of each order.",
+      },
+      {
+        title: "Test at checkout",
+        text: "Place a test order with an address in each zone and look at the rates offered. Also check the free shipping threshold, just below and just above the amount.",
+      },
+    ],
+    pitfalls: [
+      "Leaving product weights at 0: weight-based rates become wrong.",
+      "Forgetting a place where you want to sell: its customers are blocked at checkout.",
+      "Offering too many different rates: the customer hesitates instead of paying.",
+    ],
+  },
+  {
+    slug: "creer-une-page-de-remerciement-leadpages",
+    localSlug: "thank-you-page-leadpages",
+    question: "How to create a thank-you page after a Leadpages form?",
+    summary: "The page shown after sign-up: say thanks, deliver the freebie and offer the next step.",
+    intro:
+      "After filling in your form, visitors should see right away that their sign-up worked. A thank-you page reassures them, tells them what to do next and lets you count your sign-ups precisely.",
+    steps: [
+      {
+        title: "Create a new page from a template",
+        text: "In Leadpages, create a new landing page. In the template gallery, filter on thank-you pages (« Thank You ») and pick a simple template. Give it a clear name, for example « Thanks – checklist ».",
+      },
+      {
+        title: "Write a short, useful message",
+        text: "A headline that confirms (« You're in! »), then what happens next: « Open the email we just sent to confirm your address. » Remind them to check their spam folder.",
+      },
+      {
+        title: "Deliver the promised freebie",
+        text: "If you promised a guide or a checklist, add a « Download » button that links to the file. Visitors get it right away, without waiting for the email.",
+      },
+      {
+        title: "Offer the next step",
+        text: "Make the most of this moment of trust: a link to your Shopify store with a welcome code, an intro video or your social accounts. One main button, not five.",
+      },
+      {
+        title: "Publish it and connect it to the form",
+        text: "Publish the thank-you page. Then open the page that holds the form, click the form and look for what happens after submission (« After submitting » or « Form actions », depending on the version). Choose to show a Leadpages page and select your thank-you page. Update the form page.",
+      },
+      {
+        title: "Test and count your sign-ups",
+        text: "Sign up with your own address: you should land on the thank-you page and the contact should reach your email tool. Each visit to this page is a sign-up: in Google Analytics, you can make it a key event to track your conversions.",
+      },
+    ],
+    pitfalls: [
+      "Keeping the default « Thank you » message: visitors do not know what to do next.",
+      "Forgetting to update the form page after choosing the thank-you page: the old setting stays live.",
+      "Adding too many links: one main button converts better.",
+    ],
+  },
 ];

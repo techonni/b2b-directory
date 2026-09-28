@@ -49,7 +49,7 @@ Uma pergunta por guia, só sobre Leadpages, HTML Pub e Shopify. Antes de escreve
 | 4 ✅ | Comment ajouter un pop-up d'inscription sur Leadpages ? | contacts | Publicado a 28/09/2026 (`ajouter-un-pop-up-d-inscription-leadpages`) |
 | 5 | Comment suivre ses commandes et expédier sur Shopify ? ✅ 28/09 | boutique | Passo seguinte depois da primeira venda |
 | 6 ✅ | Comment ajouter Google Analytics à une page Leadpages ? (28/09, `ajouter-google-analytics-a-une-page-leadpages`) | optimiser | Medir antes de otimizar |
-| 7 | Comment créer une page de remerciement après un formulaire Leadpages ? | contacts | Melhora as conversões e a entrega de brindes |
+| 7 ✅ | Comment créer une page de remerciement après un formulaire Leadpages ? (28/09, `creer-une-page-de-remerciement-leadpages`) | contacts | Melhora as conversões e a entrega de brindes |
 | 8 | Comment vendre sur Instagram avec Shopify ? | boutique | Tráfego grátis para as boutiques novas |
 
 ## Textos para as redes (passo 8)

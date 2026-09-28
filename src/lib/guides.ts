@@ -878,7 +878,7 @@ export const guides: Guide[] = [
       { slug: "leadpages", why: "Plus d'intégrations et des webhooks." },
     ],
     sources: [{ label: "HTML Pub : connecter des intégrations", url: `${help}43967898431757--HTMLPub-Connecting-Integrations` }],
-    related: ["recuperer-les-formulaires-html-pub", "recolter-des-e-mails-avant-un-lancement", "ajouter-un-pop-up-d-inscription-leadpages"],
+    related: ["recuperer-les-formulaires-html-pub", "recolter-des-e-mails-avant-un-lancement", "creer-une-page-de-remerciement-leadpages", "ajouter-un-pop-up-d-inscription-leadpages"],
   },
 
   {
@@ -928,9 +928,53 @@ export const guides: Guide[] = [
     sources: [
       { label: "CNIL : la prospection commerciale par courrier électronique", url: "https://www.cnil.fr/fr/la-prospection-commerciale-par-courrier-electronique" },
     ],
-    related: ["recuperer-les-formulaires-html-pub", "connecter-leadpages-a-son-outil-e-mail", "creer-une-landing-page-avec-l-ia", "ajouter-un-pop-up-d-inscription-leadpages"],
+    related: ["recuperer-les-formulaires-html-pub", "connecter-leadpages-a-son-outil-e-mail", "creer-une-page-de-remerciement-leadpages", "creer-une-landing-page-avec-l-ia", "ajouter-un-pop-up-d-inscription-leadpages"],
   },
 
+  {
+    slug: "creer-une-page-de-remerciement-leadpages",
+    question: "Comment créer une page de remerciement après un formulaire Leadpages ?",
+    summary: "La page qui s'affiche après l'inscription : dire merci, livrer le cadeau et proposer l'étape suivante.",
+    theme: "contacts",
+    publishedOn: "2026-09-28",
+    updatedOn: "2026-09-28",
+    intro:
+      "Après avoir rempli votre formulaire, le visiteur doit voir tout de suite que son inscription a marché. Une page de remerciement le rassure, lui dit quoi faire ensuite et vous permet de compter précisément vos inscriptions.",
+    steps: [
+      {
+        title: "Créez une nouvelle page à partir d'un modèle",
+        text: "Dans Leadpages, créez une nouvelle landing page. Dans la galerie de modèles, filtrez sur les pages de remerciement (« Thank You ») et choisissez un modèle simple. Donnez-lui un nom clair, par exemple « Merci – checklist ».",
+      },
+      {
+        title: "Écrivez un message court et utile",
+        text: "Un titre qui confirme (« C'est bon, vous êtes inscrit ! »), puis ce qui va se passer : « Ouvrez l'e-mail que nous venons d'envoyer pour confirmer votre adresse. » Pensez à dire de regarder dans les indésirables.",
+      },
+      {
+        title: "Livrez le cadeau promis",
+        text: "Si vous avez promis un guide ou une checklist, mettez un bouton « Télécharger » qui mène au fichier. Le visiteur l'obtient tout de suite, sans attendre l'e-mail.",
+      },
+      {
+        title: "Proposez l'étape suivante",
+        text: "Profitez de ce moment où le visiteur vous fait confiance : un lien vers votre boutique Shopify avec un code de bienvenue, une vidéo de présentation ou vos réseaux sociaux. Un seul bouton principal, pas cinq.",
+      },
+      {
+        title: "Publiez-la et reliez-la au formulaire",
+        text: "Publiez la page de remerciement. Puis ouvrez la page qui contient le formulaire, cliquez sur le formulaire et cherchez ce qui se passe après l'envoi (« After submitting » ou « Form actions », selon la version). Choisissez d'afficher une page Leadpages et sélectionnez votre page de remerciement. Mettez la page du formulaire à jour.",
+      },
+      {
+        title: "Testez et comptez vos inscriptions",
+        text: "Inscrivez-vous avec votre propre adresse : vous devez arriver sur la page de remerciement et le contact doit arriver dans votre outil e-mail. Chaque visite de cette page correspond à une inscription : avec Google Analytics, vous pouvez en faire un événement clé pour suivre vos conversions.",
+      },
+    ],
+    pitfalls: [
+      "Laisser le message par défaut « Thank you » : le visiteur ne sait pas quoi faire ensuite.",
+      "Oublier de mettre à jour la page du formulaire après avoir choisi la page de remerciement : l'ancien réglage reste en ligne.",
+      "Mettre trop de liens : un seul bouton principal convertit mieux.",
+    ],
+    tools: [{ slug: "leadpages", why: "Des modèles de pages de remerciement et le choix de l'action après l'envoi du formulaire." }],
+    sources: [{ label: "Centre d'aide Leadpages", url: "https://support.leadpages.com/hc/en-us" }],
+    related: ["recolter-des-e-mails-avant-un-lancement", "connecter-leadpages-a-son-outil-e-mail", "ajouter-google-analytics-a-une-page-leadpages"],
+  },
   {
     slug: "ajouter-un-pop-up-d-inscription-leadpages",
     question: "Comment ajouter un pop-up d'inscription sur Leadpages ?",

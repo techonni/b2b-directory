@@ -662,4 +662,118 @@ export const ptGuides: TranslatedGuide[] = [
       "Esquecer o consentimento: a LGPD (Brasil) e o RGPD (Europa) pedem que o visitante seja informado e, na Europa, que aceite os cookies de medição.",
     ],
   },
+  {
+    slug: "creer-un-code-de-reduction-shopify",
+    localSlug: "codigo-de-desconto-shopify",
+    question: "Como criar um código de desconto na Shopify?",
+    summary: "Um código promocional em percentagem ou valor fixo, com as suas condições e limites.",
+    intro:
+      "Um código de desconto ajuda a conseguir uma primeira compra. Na Shopify, cria-se em poucos minutos e aplica-se no momento do pagamento. (Os nomes dos botões podem variar um pouco conforme a língua do painel.)",
+    steps: [
+      {
+        title: "Abra « Descontos »",
+        text: "No menu da esquerda, clique em « Descontos » e depois em « Criar desconto ».",
+      },
+      {
+        title: "Escolha o tipo de desconto",
+        text: "Há quatro opções: desconto nos produtos, « Compre X e ganhe Y », desconto no pedido ou envio grátis. Para um código de boas-vindas, escolha o desconto no pedido.",
+      },
+      {
+        title: "Escreva o código e o valor",
+        text: "Mantenha o método « Código de desconto », escreva um código fácil de lembrar (por exemplo BEMVINDO10) e escolha « Percentagem » ou « Valor fixo » e o valor. O resumo à direita atualiza-se logo.",
+        alt: "Formulário « Criar desconto » com o código BIENVENUE10 e 10 % de desconto no pedido (painel em francês)",
+      },
+      {
+        title: "Defina as condições",
+        text: "Elegibilidade: todos os clientes ou só alguns. Requisitos mínimos de compra: um valor ou número de artigos mínimo. Utilizações máximas: limite o número total de utilizações ou uma só por cliente.",
+      },
+      {
+        title: "Escolha as datas e guarde",
+        text: "Indique uma data de início e, se quiser, uma data de fim. Clique em « Guardar » (ou « Salvar »): o código aparece na lista de descontos.",
+      },
+    ],
+    pitfalls: [
+      "Esquecer de limitar a uma utilização por cliente num código de boas-vindas: pode ser usado em todas as compras.",
+      "Divulgar o código sem o testar numa encomenda de teste.",
+    ],
+  },
+  {
+    slug: "regler-l-expedition-shopify",
+    localSlug: "custos-de-envio-shopify",
+    question: "Como configurar os custos de envio na Shopify?",
+    summary: "Zonas de envio, preços fixos ou por peso, e envio grátis a partir de um valor.",
+    intro:
+      "Os custos de envio configuram-se uma só vez, por zona. Preços simples e justos evitam que o cliente desista no momento de pagar.",
+    steps: [
+      {
+        title: "Abra « Envio e entrega »",
+        text: "No painel, clique em « Configurações », em baixo à esquerda, e depois em « Envio e entrega ». O perfil geral aplica-se a todos os produtos: é esse que vai configurar.",
+        alt: "Configurações > Envio e entrega: perfil geral, datas de entrega estimadas e embalagens (painel em francês)",
+      },
+      {
+        title: "Crie as suas zonas de envio",
+        text: "Uma zona junta os países com os mesmos preços. Comece simples: uma zona para o seu país e, se envia para fora, uma zona para os países vizinhos. Um cliente de um país sem zona não consegue comprar.",
+      },
+      {
+        title: "Junte um preço a cada zona",
+        text: "Numa zona, clique em « Adicionar tarifa ». Dê-lhe um nome claro que o cliente vai ver no pagamento, como « Entrega em casa (3 a 5 dias) », e um preço. Um preço fixo é o mais fácil de entender.",
+      },
+      {
+        title: "Junte condições se precisar",
+        text: "Clique em « Adicionar condições » para que um preço dependa do peso dos artigos ou do valor do pedido. Exemplo: uma tarifa « Envio grátis » a 0, só para pedidos a partir de 50. Muitas vezes é isso que leva o cliente a pôr mais um artigo no carrinho.",
+      },
+      {
+        title: "Indique a sua embalagem habitual",
+        text: "Em « Embalagens », escreva as medidas e o peso da sua caixa mais usada. Com o peso de cada produto, a Shopify calcula assim o peso real de cada pedido.",
+      },
+      {
+        title: "Teste no pagamento",
+        text: "Faça um pedido de teste com um endereço de cada zona e veja os preços propostos. Confira também o limite do envio grátis, logo abaixo e logo acima do valor.",
+      },
+    ],
+    pitfalls: [
+      "Deixar o peso dos produtos a 0: os preços por peso ficam errados.",
+      "Esquecer um país onde quer vender: os clientes desse país ficam bloqueados no pagamento.",
+      "Propor demasiados preços diferentes: o cliente hesita em vez de pagar.",
+    ],
+  },
+  {
+    slug: "creer-une-page-de-remerciement-leadpages",
+    localSlug: "pagina-de-agradecimento-leadpages",
+    question: "Como criar uma página de agradecimento depois de um formulário Leadpages?",
+    summary: "A página que aparece depois da inscrição: agradecer, entregar o brinde e propor o passo seguinte.",
+    intro:
+      "Depois de preencher o formulário, o visitante tem de ver logo que a inscrição funcionou. Uma página de agradecimento tranquiliza-o, diz-lhe o que fazer a seguir e permite-lhe contar as inscrições com precisão.",
+    steps: [
+      {
+        title: "Crie uma página nova a partir de um modelo",
+        text: "Na Leadpages, crie uma nova landing page. Na galeria de modelos, filtre pelas páginas de agradecimento (« Thank You ») e escolha um modelo simples. Dê-lhe um nome claro, por exemplo « Obrigado – checklist ».",
+      },
+      {
+        title: "Escreva uma mensagem curta e útil",
+        text: "Um título que confirme (« Pronto, está inscrito! ») e o que vai acontecer: « Abra o e-mail que enviamos agora para confirmar o seu endereço. » Peça também para ver a pasta de spam.",
+      },
+      {
+        title: "Entregue o brinde prometido",
+        text: "Se prometeu um guia ou uma checklist, ponha um botão « Descarregar » (ou « Baixar ») que leve ao ficheiro. O visitante recebe-o logo, sem esperar pelo e-mail.",
+      },
+      {
+        title: "Proponha o passo seguinte",
+        text: "Aproveite este momento de confiança: um link para a sua loja Shopify com um código de boas-vindas, um vídeo de apresentação ou as suas redes sociais. Um só botão principal, não cinco.",
+      },
+      {
+        title: "Publique-a e ligue-a ao formulário",
+        text: "Publique a página de agradecimento. Depois abra a página que tem o formulário, clique no formulário e procure o que acontece depois do envio (« After submitting » ou « Form actions », conforme a versão). Escolha mostrar uma página Leadpages e selecione a sua página de agradecimento. Atualize a página do formulário.",
+      },
+      {
+        title: "Teste e conte as inscrições",
+        text: "Inscreva-se com o seu próprio e-mail: deve chegar à página de agradecimento e o contato deve chegar à sua ferramenta de e-mail. Cada visita a esta página corresponde a uma inscrição: no Google Analytics, pode torná-la um evento principal para acompanhar as conversões.",
+      },
+    ],
+    pitfalls: [
+      "Deixar a mensagem padrão « Thank you »: o visitante não sabe o que fazer a seguir.",
+      "Esquecer de atualizar a página do formulário depois de escolher a página de agradecimento: a configuração antiga continua online.",
+      "Pôr demasiados links: um só botão principal converte melhor.",
+    ],
+  },
 ];

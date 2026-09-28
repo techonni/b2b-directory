@@ -13,13 +13,13 @@
 
 ---
 
-## Lote atual: Lote 3 · Google
+## Lote atual: Lote 2 · afiliação (PartnerStack + Impact)
 
-Sites: search.google.com/search-console e analytics.google.com (propriedade zunrel.com).
+Sites: partnerstack.com e impact.com (a sessão no Impact já está iniciada neste Chrome).
 
-1. Search Console → « Desempenho » → « Resultados da pesquisa », últimos 3 meses: copia as 30 primeiras **consultas** e as 30 primeiras **páginas**, com cliques, impressões, CTR e posição média.
-2. GA4 → últimos 28 dias: as 15 páginas mais vistas (visualizações e utilizadores), e o tráfego por canal (« Aquisição de tráfego »: Organic Search, Direct, Organic Social, Referral…).
-3. GA4 → « Eventos », últimos 28 dias: o total de `affiliate_click`, `sign_up`, `share`, `pdf_download`, `newsletter_bar_click` e `web_vital`. Se der, abre `affiliate_click` e copia a repartição por `placement` e por `guide`.
+1. **PartnerStack**, programa Leadpages: existe um link ou uma opção « custom link / deep link » que leve ao **HTML Pub** (htmlpub.com)? Se sim, copia o link completo e a página de destino. Se não, copia o texto exato que o painel mostra sobre links.
+2. **Impact**, programa Shopify: cliques, vendas e comissões dos **últimos 30 dias** (só números, sem nomes nem emails de clientes).
+3. **Impact**: é possível criar um link para https://www.shopify.com/fr/tarifs (deep link)? Se sim, cria-o e copia-o. Não mudes nada no perfil.
 
 Guarda o resultado como explicado acima (passo 4).
 
@@ -27,8 +27,9 @@ Guarda o resultado como explicado acima (passo 4).
 
 ## Fila (o Claude Code passa o próximo para « Lote atual » depois de ler o resultado)
 
-- Lote 2b · afiliação (só depois de o Techonni iniciar sessão no Impact no Chrome): (1) PartnerStack: existe um link ou « custom link / deep link » que leve ao **HTML Pub** (htmlpub.com)? Copia o link ou o texto exato do painel; (2) Impact: cliques, vendas e comissões dos últimos 30 dias; (3) Impact: é possível criar um link para https://www.shopify.com/fr/tarifs? Copia-o. (O lote 2 ficou meio feito na rotina diária de 28/09: PartnerStack 85 cliques no total, 14 em 90 dias, 0 inscrições, 0 € de comissões; Impact bloqueado sem sessão.)
+- Lote 3b · Search Console (a partir de 30/09: a 28/09 ainda estava « a processar os dados »): Desempenho → Resultados da pesquisa, últimos 3 meses, 30 consultas e 30 páginas (cliques, impressões, CTR, posição). Se ainda estiver a processar: Indexação → Páginas (quantas indexadas e não indexadas, e os motivos) e Sitemaps (estado de sitemap.xml).
 - Lote 4 · Mailchimp e Vercel: (1) desligar o reCAPTCHA (aprovado pelo Techonni); (2) mudar o email de confirmação da inscrição para o texto em 3 línguas de `docs/newsletter/confirmacao-3-linguas.md` — **perguntar ao Techonni « posso mudar? » antes de guardar**; (3) ver se existe o registo DNS `_dmarc` na Vercel (sem criar nem apagar).
 - Lote 5 · capturas Shopify (só o admin Shopify): `shopify-variantes.webp`, `shopify-page-contact.webp`, `shopify-commandes.webp`, enviadas para `public/captures/` no GitHub.
 - Lote 5b · capturas Leadpages (só o painel Leadpages): `leadpages-popup.webp` (« Conversion Tools » → « Pop-Ups » → « Create New Pop-Up » → editor do pop-up, **sem guardar nem publicar**) `leadpages-popup-publish.webp` (o painel « Publish » com as opções de abertura, sem publicar) e `leadpages-tracking.webp` (editor de uma página → « Settings » → a parte « Analytics » / « Tracking Codes » com o campo « Head Section Tracking Code », sem colar nada nem guardar), enviadas para `public/captures/` no GitHub. Anotar em `RESULTADOS-CHROME.md` se os nomes dos menus forem diferentes.
+- Lote 5c · capturas Leadpages (só o painel Leadpages): `leadpages-merci.webp` (galeria de modelos filtrada em « Thank You », sem criar nada) e `leadpages-form-apres-envoi.webp` (numa página com formulário: clicar no formulário e mostrar as opções do que acontece depois do envio, sem guardar), enviadas para `public/captures/` no GitHub. Anotar os nomes exatos das opções em `RESULTADOS-CHROME.md`.
 - Lote 6 · blogs: 10 blogs francófonos de e-commerce para backlinks (Google + os sites dos blogs; só ler).

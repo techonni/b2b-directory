@@ -51,3 +51,6 @@ Claude in Chrome freezes on long jobs (it did on 2026-09-28 with an 11-task prom
 - At the start of every session (on « continua »), read `RESULTADOS-CHROME.md`, use the new results, then move the next batch from the queue into « Lote atual » in `CHROME-PROXIMO.md` (max 3 tasks, 2 sites) and publish it, so Chrome always has its next batch ready.
 - Claude in Chrome only reads dashboards, takes captures and posts on social media. It never edits the site's code, never merges, and never edits files written by Claude Code. The two never work at the same time.
 - Do not ask Techonni to paste `.md` files or prompts: everything goes through these two files.
+- **Daily routine** (asked by Techonni on 2026-09-28): `docs/growth/CHROME-DIARIO.md` — A) one post a day on X and LinkedIn, B) check Impact and PartnerStack (profile, new affiliate links, unanswered messages answered only with Techonni's « oui »), C) 5 Pinterest pins a day for existing guides. Each part is a separate batch, and Chrome must announce the day's plan and wait for his « sim » before using any cloud time.
+- Claude Code keeps `docs/growth/fila-redes.md` stocked at least 7 days ahead (posts and pins; new pin images with `scripts/make-pins.mjs` when the queue runs out), and adds any new affiliate links Chrome finds to the site.
+

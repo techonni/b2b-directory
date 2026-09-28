@@ -134,7 +134,7 @@ export const guides: Guide[] = [
       { slug: "leadpages", why: "Pour tester et améliorer vos conversions." },
     ],
     sources: [pricing],
-    related: ["choisir-entre-leadpages-et-shopify", "essayer-leadpages-gratuitement", "changer-ou-annuler-son-offre-leadpages"],
+    related: ["combien-coute-leadpages", "choisir-entre-leadpages-et-shopify", "essayer-leadpages-gratuitement", "changer-ou-annuler-son-offre-leadpages"],
   },
   {
     slug: "essayer-leadpages-gratuitement",
@@ -178,7 +178,7 @@ export const guides: Guide[] = [
       { slug: "html-pub", why: "Essai de 7 jours aussi, pour l'offre la moins chère." },
     ],
     sources: [pricing],
-    related: ["choisir-entre-html-pub-et-leadpages", "creer-une-landing-page-avec-l-ia"],
+    related: ["combien-coute-leadpages", "choisir-entre-html-pub-et-leadpages", "creer-une-landing-page-avec-l-ia"],
   },
   {
     slug: "changer-ou-annuler-son-offre-leadpages",
@@ -265,6 +265,52 @@ export const guides: Guide[] = [
     ],
     sources: [pricing, { label: "Shopify : tarifs", url: "https://www.shopify.com/fr/tarifs" }],
     related: ["choisir-entre-html-pub-et-leadpages", "attirer-des-clients-avec-une-landing-page", "creer-sa-boutique-shopify"],
+  },
+
+  {
+    slug: "combien-coute-leadpages",
+    question: "Combien coûte Leadpages (et HTML Pub) en 2026 ?",
+    summary: "Les prix des offres HTML Pub et Leadpages, mensuels et annuels, et celle à choisir selon votre besoin.",
+    theme: "choisir",
+    publishedOn: "2026-09-28",
+    updatedOn: "2026-09-28",
+    intro:
+      "HTML Pub et Leadpages sont vendus sur la même page de tarifs, en dollars. Voici les prix relevés sur cette page le 27 septembre 2026, et comment payer le moins cher possible.",
+    steps: [
+      {
+        title: "Les offres HTML Pub, pour publier",
+        text: "Au 27 septembre 2026, en paiement annuel : Pro coûte 16 $ par mois (20 $ en paiement mensuel) et Business 26,42 $ par mois (33 $ en mensuel). Une offre Starter, plus petite, existe aussi : son prix est affiché sur la même page.\n\nHTML Pub sert à publier des landing pages, des sites et des blogs sur votre domaine, avec l'assistant IA. Il n'a pas de tests A/B.",
+        image: { src: "/captures/choisir-offre.webp", alt: "Page des tarifs : HTML Pub Pro à 16 $/mois et Business à 26,42 $/mois, Leadpages Grow à 53,58 $/mois et Optimize à 108 $/mois, en paiement annuel" },
+      },
+      {
+        title: "Les offres Leadpages, pour convertir plus",
+        text: "Au 27 septembre 2026, en paiement annuel : Grow coûte 53,58 $ par mois (67 $ en mensuel) et Optimize 108 $ par mois (135 $ en mensuel). L'offre Scale, la plus complète, est au-dessus.\n\nGrow ajoute les tests A/B. Optimize ajoute Smart Traffic et les cartes de chaleur. La page d'accueil de Leadpages annonce aussi des offres « à partir de 99 $ par mois » : lisez toujours la page des tarifs le jour même.",
+      },
+      {
+        title: "Payez à l'année pour économiser 20 %",
+        text: "Le bouton « Monthly / Annual » en haut de la page des tarifs change tous les prix. Le paiement annuel revient environ 20 % moins cher, mais vous payez l'année d'un coup. Commencez en mensuel si vous n'êtes pas sûr de garder l'outil.",
+      },
+      {
+        title: "Essayez 7 jours avant de payer",
+        text: "Chaque offre s'essaie gratuitement pendant 7 jours, avec toutes ses fonctions. Une carte est demandée, mais rien n'est prélevé avant la fin de l'essai. Notez la date de fin dans votre agenda.",
+        image: { src: "/captures/essai-gratuit.webp", alt: "Boutons « Start 7-Day Free Trial » sur chaque offre" },
+      },
+      {
+        title: "Choisissez selon votre trafic",
+        text: "Vous démarrez, sans beaucoup de visiteurs ? HTML Pub Pro suffit. Vous faites déjà de la publicité et voulez comparer deux versions d'une page ? Leadpages Grow. Vous avez beaucoup de trafic et voulez que l'outil optimise tout seul ? Optimize.",
+      },
+    ],
+    pitfalls: [
+      "Comparer un prix annuel avec un prix mensuel : vérifiez la position du bouton « Monthly / Annual ».",
+      "Payer Optimize sans avoir assez de visiteurs pour que les tests et les cartes de chaleur servent à quelque chose.",
+      "Oublier que les prix sont en dollars : votre banque ajoute parfois des frais de change.",
+    ],
+    tools: [
+      { slug: "html-pub", why: "L'offre la moins chère, pour publier." },
+      { slug: "leadpages", why: "Tests A/B, Smart Traffic et cartes de chaleur." },
+    ],
+    sources: [pricing],
+    related: ["choisir-entre-html-pub-et-leadpages", "essayer-leadpages-gratuitement", "changer-ou-annuler-son-offre-leadpages"],
   },
 
   // ——— Créer une page ———
@@ -1164,7 +1210,7 @@ export const guides: Guide[] = [
     pitfalls: ["Oublier qu'après 3 mois à 1 €, le forfait passe au prix normal.", "Passer l'essai à tout configurer sans ajouter un seul produit : on ne voit pas le vrai fonctionnement."],
     tools: [{ slug: "shopify", why: "3 jours gratuits, puis 1 €/mois pendant 3 mois." }],
     sources: [{ label: "Shopify : tarifs", url: "https://www.shopify.com/fr/tarifs" }],
-    related: ["choisir-entre-leadpages-et-shopify", "choisir-son-forfait-shopify", "creer-sa-boutique-shopify"],
+    related: ["combien-coute-shopify", "choisir-entre-leadpages-et-shopify", "choisir-son-forfait-shopify", "creer-sa-boutique-shopify"],
   },
   {
     slug: "choisir-son-forfait-shopify",
@@ -1197,7 +1243,53 @@ export const guides: Guide[] = [
     pitfalls: ["Prendre Advanced dès le départ sans en avoir besoin.", "Oublier le coût des applications payantes, qui s'ajoute au forfait."],
     tools: [{ slug: "shopify", why: "Quatre forfaits, de l'indépendant à la grande entreprise." }],
     sources: [{ label: "Shopify : tarifs", url: "https://www.shopify.com/fr/tarifs" }],
-    related: ["essayer-shopify-gratuitement", "accepter-les-paiements-shopify"],
+    related: ["combien-coute-shopify", "essayer-shopify-gratuitement", "accepter-les-paiements-shopify"],
+  },
+  {
+    slug: "combien-coute-shopify",
+    question: "Combien coûte Shopify en 2026 : forfaits et frais ?",
+    summary: "Le prix des forfaits Shopify, l'offre à 1 €, les frais par vente et les coûts qu'on oublie.",
+    theme: "boutique",
+    publishedOn: "2026-09-28",
+    updatedOn: "2026-09-28",
+    intro:
+      "Le prix de Shopify, c'est le forfait, plus des frais sur chaque vente, plus les applications que vous ajoutez. Voici les chiffres relevés sur la page des tarifs le 27 septembre 2026 (affichage en Belgique).",
+    steps: [
+      {
+        title: "L'offre de départ : 3 jours gratuits, puis 1 € par mois",
+        text: "Au 27 septembre 2026, Shopify affiche 3 jours d'essai gratuit, puis 1 € par mois pendant 3 mois. Après ces 3 mois, le prix normal du forfait choisi commence.",
+        image: { src: "/captures/shopify-essai.webp", alt: "Page Tarification de Shopify : 3 jours d'essai gratuit, puis 1 €/mois pendant 3 mois" },
+      },
+      {
+        title: "Le prix des quatre forfaits",
+        text: "En paiement annuel : Basic 19 € par mois, Grow 56 € par mois, Advanced 289 € par mois, et Plus à partir de 2 100 € par mois. En paiement mensuel, Basic coûte 27 € par mois.\n\nPour une personne seule qui démarre, Basic suffit presque toujours.",
+        image: { src: "/captures/shopify-offres.webp", alt: "Forfaits Shopify en paiement annuel : Basic 19 €/mois, Grow 56 €/mois, Advanced 289 €/mois, Plus à partir de 2 100 €/mois" },
+      },
+      {
+        title: "Les frais sur chaque vente",
+        text: "Avec Shopify Payments, chaque paiement par carte coûte des frais : sur Basic, à partir de 1,8 % + 0,30 € par vente (tarif affiché en Belgique le 27 septembre 2026). Ces frais baissent quand le forfait monte.\n\nSi vous utilisez un autre prestataire de paiement à la place de Shopify Payments, Shopify ajoute des frais de transaction, jusqu'à 2 % sur Basic.",
+        image: { src: "/captures/shopify-paiements.webp", alt: "Réglages Paiements : Shopify Payments activé et PayPal en fournisseur supplémentaire" },
+      },
+      {
+        title: "Les coûts qu'on oublie",
+        text: "Les applications payantes s'ajoutent au forfait, souvent par mois. Un nom de domaine se paie à part, chaque année. Un thème payant se paie une fois. Faites la somme avant de choisir.",
+      },
+      {
+        title: "Mensuel ou annuel ?",
+        text: "Le paiement annuel revient moins cher chaque mois, mais vous engage pour un an. Commencez en mensuel pendant l'offre à 1 €, puis passez à l'annuel quand la boutique vend.",
+      },
+    ],
+    pitfalls: [
+      "Oublier la date de fin des 3 mois à 1 € : le prix normal commence sans prévenir.",
+      "Désactiver Shopify Payments sans savoir que Shopify ajoute alors des frais de transaction.",
+      "Compter seulement le forfait et oublier les applications payantes.",
+    ],
+    tools: [{ slug: "shopify", why: "Quatre forfaits, de l'indépendant à la grande entreprise." }],
+    sources: [
+      { label: "Shopify : tarifs", url: "https://www.shopify.com/fr/tarifs" },
+      { label: "Shopify Payments (aide)", url: "https://help.shopify.com/fr/manual/payments/shopify-payments" },
+    ],
+    related: ["choisir-son-forfait-shopify", "essayer-shopify-gratuitement", "accepter-les-paiements-shopify"],
   },
   {
     slug: "creer-sa-boutique-shopify-de-a-a-z",

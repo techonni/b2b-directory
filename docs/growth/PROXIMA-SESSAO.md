@@ -19,6 +19,14 @@ Data: 28/09/2026 (fim da sessão dos 20 passos). Responde ao Techonni em **portu
 7. **Chrome e Claude Code nunca ao mesmo tempo.** O Chrome só lê painéis, tira capturas e publica nas redes; o código e o site são só do Claude Code.
 8. **Bloqueios de segurança do Claude Code:** mudar o CLAUDE.md e correr o script da newsletter (envia um email de teste) podem ser bloqueados. Não insistir por outro caminho: pedir ao Techonni para aprovar o pedido de permissão.
 
+## Três línguas (decisão do Techonni a 28/09/2026)
+
+- **Francês** (principal), **inglês para os EUA** (dólares, inglês americano, leis americanas) e **português neutro** (serve Brasil e Portugal: sem « telemóvel », « ecrã », « equipa », « registo »…).
+- Botão **FR · US · PT** no topo de todas as páginas: leva à mesma página na outra língua quando existe.
+- **Cada guia novo sai nas 3 línguas no mesmo dia** (traduções em `src/lib/translations/pt.ts` e `en.ts`, mesmo número de etapas que o guia francês). Os guias antigos traduzem-se aos poucos, começando pelos mais visitados.
+- Preços: nunca pôr euros no inglês. O guia inglês de preços da Shopify está escondido (`hidden: true`) até termos os preços americanos (lote 1 do Chrome).
+- Newsletter: cada inscrito recebe a tag da língua da página (`lang-fr` 11404680, `lang-pt` 11404681, `lang-en` 11404682). Enviar uma campanha por língua só quando houver inscritos nessa língua, e só com o « oui » do Techonni (os textos do rodapé do modelo em PT/EN precisam da aprovação dele). O email de confirmação do Mailchimp fica em francês (limite do plano grátis).
+
 ## Ferramentas desta máquina
 
 - `node --experimental-strip-types scripts/check-guides.mjs`: verifica guias (slugs, capturas, pins, guias com menos de 2 links internos, guias com mais de 30 dias). Correr antes de cada publicação.

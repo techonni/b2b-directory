@@ -22,7 +22,7 @@ export const ptGuides: TranslatedGuide[] = [
       },
       {
         title: "Prepare o essencial durante os 3 dias",
-        text: "Adicione um ou dois produtos, escolha um tema e veja as definições de pagamento. Vai perceber depressa se a ferramenta lhe serve.",
+        text: "Adicione um ou dois produtos, escolha um tema e veja as configurações de pagamento. Você logo vai saber se a ferramenta serve para você.",
       },
       {
         title: "Escolha um plano para continuar",
@@ -44,15 +44,15 @@ export const ptGuides: TranslatedGuide[] = [
     question: "Leadpages ou Shopify: qual escolher?",
     summary: "Páginas que convertem, uma loja completa, ou as duas juntas.",
     intro:
-      "A Leadpages (e o HTML Pub) serve para criar páginas que transformam visitantes em contactos ou clientes. A Shopify serve para gerir uma loja: produtos, stock, pagamentos e envios.",
+      "A Leadpages (e o HTML Pub) serve para criar páginas que transformam visitantes em inscritos ou clientes. A Shopify serve para administrar uma loja: produtos, inventário, pagamentos e envios.",
     steps: [
       {
         title: "Vende vários produtos? Escolha a Shopify",
-        text: "Catálogo, stock, variantes, portes, impostos, encomendas e devoluções: a Shopify trata de tudo isso. A Leadpages não foi feita para gerir uma loja.",
+        text: "Catálogo, inventário, variantes, custos de envio, impostos, pedidos e devoluções: a Shopify cuida de tudo isso. A Leadpages não foi feita para administrar uma loja.",
         alt: "Os planos Shopify Basic, Grow, Advanced e Plus",
       },
       {
-        title: "Quer recolher contactos? Escolha a Leadpages ou o HTML Pub",
+        title: "Quer captar e-mails de clientes? Escolha a Leadpages ou o HTML Pub",
         text: "Página de inscrição, página de espera antes de um lançamento, webinar, guia gratuito: basta uma landing page com um formulário, sem loja.",
         alt: "As ofertas HTML Pub e Leadpages lado a lado",
       },
@@ -70,7 +70,7 @@ export const ptGuides: TranslatedGuide[] = [
       },
     ],
     pitfalls: [
-      "Construir uma loja inteira na Leadpages: gerir encomendas e stock torna-se rapidamente impossível.",
+      "Construir uma loja inteira na Leadpages: administrar pedidos e inventário fica impossível muito rápido.",
       "Enviar um anúncio para a página inicial da loja em vez de uma página centrada numa só oferta.",
     ],
   },
@@ -80,7 +80,7 @@ export const ptGuides: TranslatedGuide[] = [
     question: "Como escolher entre HTML Pub e Leadpages?",
     summary: "Publicar de forma simples ou otimizar as conversões: a oferta certa para a sua necessidade.",
     intro:
-      "O HTML Pub e a Leadpages vêm da mesma empresa e usam o mesmo motor. O HTML Pub serve para publicar. A Leadpages junta tudo o que ajuda a converter mais visitantes.",
+      "O HTML Pub e a Leadpages vêm da mesma empresa e usam o mesmo motor. O HTML Pub serve para publicar. A Leadpages acrescenta tudo o que ajuda a converter mais visitantes.",
     steps: [
       {
         title: "Pergunte-se o que quer fazer",
@@ -88,12 +88,12 @@ export const ptGuides: TranslatedGuide[] = [
       },
       {
         title: "Veja as três ofertas HTML Pub",
-        text: "Starter: 5 páginas e 1 domínio. Pro: 25 páginas, 1 blog e acesso API, para um criador sozinho. Business: 50 páginas, 2 domínios e 2 blogs, para uma pequena equipa ou agência. A publicação a partir do Claude está incluída em todas as ofertas.",
+        text: "Starter: 5 páginas e 1 domínio. Pro: 25 páginas, 1 blog e acesso API, para um criador sozinho. Business: 50 páginas, 2 domínios e 2 blogs, para pequenas empresas ou agências. A publicação a partir do Claude está incluída em todas as ofertas.",
         alt: "Página de preços: as ofertas HTML Pub (Publish) e Leadpages (Optimize) lado a lado",
       },
       {
         title: "Veja as três ofertas Leadpages",
-        text: "Grow junta os testes A/B manuais, a substituição dinâmica de texto e o enriquecimento de contactos. Optimize junta o Smart Traffic, os mapas de calor e a personalização automática. Scale junta a otimização automática completa e um suporte dedicado.",
+        text: "Grow acrescenta os testes A/B manuais, a substituição dinâmica de texto e o enriquecimento dos dados de clientes. Optimize acrescenta o Smart Traffic, os mapas de calor e a personalização automática. Scale acrescenta a otimização automática completa e um suporte dedicado.",
       },
       {
         title: "Comece pequeno",
@@ -101,7 +101,7 @@ export const ptGuides: TranslatedGuide[] = [
       },
       {
         title: "Confirme o preço no próprio dia",
-        text: "Os preços mudam com as promoções e com a faturação mensal ou anual (cerca de 20 % menos por ano). Consulte a página de preços antes de escolher.",
+        text: "Os preços mudam com as promoções e com o pagamento mensal ou anual (cerca de 20 % menos por ano). Consulte a página de preços antes de escolher.",
       },
     ],
     pitfalls: [
@@ -119,7 +119,7 @@ export const ptGuides: TranslatedGuide[] = [
     steps: [
       {
         title: "Escolha a oferta a testar",
-        text: "Na página de preços, escolha a faturação mensal ou anual e depois a oferta que lhe interessa. Teste aquela que pensa mesmo manter: o teste dá acesso a todas as suas funções.",
+        text: "Na página de preços, escolha o pagamento mensal ou anual e depois a oferta que lhe interessa. Teste aquela que pensa mesmo manter: o teste dá acesso a todas as suas funções.",
       },
       {
         title: "Clique em « Start 7-Day Free Trial »",
@@ -132,11 +132,11 @@ export const ptGuides: TranslatedGuide[] = [
       },
       {
         title: "Use o teste a sério",
-        text: "Crie uma página real, ligue o seu domínio e a sua ferramenta de e-mail. Vai perceber depressa se a ferramenta lhe serve.",
+        text: "Crie uma página real, conecte o seu domínio e a sua ferramenta de e-mail. Você logo vai saber se a ferramenta serve para você.",
       },
       {
         title: "Mantenha ou cancele",
-        text: "Se gostar, não faça nada: a assinatura começa. Se não, cancele antes do 7.º dia nas definições da conta. As suas páginas ficam guardadas.",
+        text: "Se gostar, não faça nada: a assinatura começa. Se não, cancele antes do 7.º dia nas configurações da conta. As suas páginas continuam salvas.",
       },
     ],
     pitfalls: [
@@ -148,14 +148,14 @@ export const ptGuides: TranslatedGuide[] = [
     slug: "creer-une-landing-page-avec-l-ia",
     localSlug: "criar-landing-page-com-ia",
     question: "Como criar uma landing page com a IA da Leadpages?",
-    summary: "Descrever a página, deixar a IA construí-la e depois melhorá-la a conversar.",
+    summary: "Descrever a página, deixar a IA construí-la e depois melhorá-la numa conversa.",
     intro:
       "O assistente de criação (Piper, o « Page Agent ») constrói uma página a partir de uma simples descrição. Depois corrige-a a falar com ele, como numa conversa.",
     steps: [
       {
-        title: "Abra o ecrã de criação",
+        title: "Abra a página de criação",
         text: "No menu da esquerda, clique em « Create ». O Piper pergunta « What are you making? »: escolha « Landing page ».",
-        alt: "Ecrã Create: o Piper pergunta « What are you making? »",
+        alt: "Página Create: o Piper pergunta « What are you making? »",
       },
       {
         title: "Descreva a página com precisão",
@@ -164,7 +164,7 @@ export const ptGuides: TranslatedGuide[] = [
       },
       {
         title: "Escolha as imagens",
-        text: "O Piper pergunta o que usar nas imagens: as suas, imagens geradas por IA (mais créditos) ou nenhuma por agora. O custo estimado em créditos aparece em cima à direita. « Skip images for now » é a opção mais económica.",
+        text: "O Piper pergunta o que usar nas imagens: as suas, imagens geradas por IA (mais créditos) ou nenhuma por agora. O custo estimado em créditos aparece no canto superior direito. « Skip images for now » é a opção que gasta menos créditos.",
         alt: "Escolha das imagens com a estimativa de créditos",
       },
       {
@@ -178,13 +178,13 @@ export const ptGuides: TranslatedGuide[] = [
         alt: "Construção da página, etapa a etapa",
       },
       {
-        title: "Corrija a conversar",
+        title: "Corrija numa conversa",
         text: "Clique em « Open in editor ». No campo « Ask Piper to edit this page… », peça uma alteração de cada vez. O Piper lista o que mudou e os créditos usados.",
         alt: "Editor: o Piper aplica uma alteração pedida",
       },
       {
-        title: "Verifique no telemóvel e publique",
-        text: "Os ícones em baixo à direita do editor mostram a página em computador, tablet e telemóvel. Para a pôr online, mantenha o endereço gratuito em pubhtml.com ou ligue o seu domínio (« Where should this live? »). Depois, « Update » publica as alterações.",
+        title: "Verifique no smartphone e publique",
+        text: "Os ícones no canto inferior direito do editor mostram a página em computador, tablet e smartphone. Para a pôr online, mantenha o endereço gratuito em pubhtml.com ou conecte o seu domínio (« Where should this live? »). Depois, « Update » publica as alterações.",
         alt: "Escolha do endereço de publicação: gratuito ou o seu domínio",
       },
     ],
@@ -207,7 +207,7 @@ export const ptGuides: TranslatedGuide[] = [
       },
       {
         title: "Conheça a administração",
-        text: "O menu da esquerda reúne tudo: encomendas, produtos, clientes, descontos, loja online e definições. A página inicial mostra o estado da loja e uma barra para pedir ajuda ao Sidekick.",
+        text: "O menu da esquerda reúne tudo: pedidos, produtos, clientes, descontos, loja online e configurações. A página inicial mostra o estado da loja e uma barra para pedir ajuda ao Sidekick.",
         alt: "Página inicial da administração Shopify com o menu e o Sidekick",
       },
       {
@@ -216,19 +216,19 @@ export const ptGuides: TranslatedGuide[] = [
       },
       {
         title: "Escolha um tema",
-        text: "Na loja online, escolha um tema e personalize as cores, o logótipo e a página inicial.",
+        text: "Na loja online, escolha um tema e personalize as cores, o logo e a página inicial.",
       },
       {
         title: "Configure pagamentos e envios",
-        text: "Nas definições, configure os pagamentos, os envios e os impostos do seu país.",
+        text: "Nas configurações, defina os pagamentos, os envios e os impostos do seu país.",
       },
       {
         title: "Ponha a loja online",
-        text: "Escolha um plano, ligue o seu domínio e retire a palavra-passe da loja para a abrir ao público.",
+        text: "Escolha um plano, conecte o seu domínio e retire a senha da loja para a abrir ao público.",
       },
     ],
     pitfalls: [
-      "Abrir a loja sem testar uma encomenda do princípio ao fim.",
+      "Abrir a loja sem testar um pedido do começo ao fim.",
       "Esquecer as páginas legais (condições de venda, reembolso, privacidade).",
     ],
   },
@@ -238,7 +238,7 @@ export const ptGuides: TranslatedGuide[] = [
     question: "Quanto custa a Shopify em 2026: planos e taxas?",
     summary: "O preço dos planos Shopify, a oferta de 1 €, as taxas por venda e os custos que se esquecem.",
     intro:
-      "O preço da Shopify é o plano, mais taxas em cada venda, mais as aplicações que junta. Estes valores foram vistos na página de preços a 27 de setembro de 2026, na Bélgica: no seu país podem ser diferentes.",
+      "O preço da Shopify é o plano, mais taxas em cada venda, mais os aplicativos que você adiciona. Estes valores foram vistos na página de preços a 27 de setembro de 2026, na Bélgica: no seu país podem ser diferentes.",
     steps: [
       {
         title: "A oferta de partida: 3 dias grátis, depois 1 € por mês",
@@ -253,7 +253,7 @@ export const ptGuides: TranslatedGuide[] = [
       {
         title: "As taxas em cada venda",
         text: "Com o Shopify Payments, cada pagamento com cartão tem uma taxa: no Basic, a partir de 1,8 % + 0,30 € por venda (valor visto na Bélgica a 27 de setembro de 2026). Estas taxas descem quando o plano sobe.\n\nSe usar outro prestador de pagamento em vez do Shopify Payments, a Shopify junta taxas de transação, até 2 % no Basic.",
-        alt: "Definições de pagamentos: Shopify Payments ativo e PayPal como prestador adicional",
+        alt: "Configurações de pagamentos: Shopify Payments ativo e PayPal como prestador adicional",
       },
       {
         title: "Os custos que se esquecem",
@@ -266,7 +266,7 @@ export const ptGuides: TranslatedGuide[] = [
     ],
     pitfalls: [
       "Esquecer o fim dos 3 meses a 1 €: o preço normal começa sem aviso.",
-      "Desativar o Shopify Payments sem saber que a Shopify junta então taxas de transação.",
+      "Desativar o Shopify Payments sem saber que a Shopify cobra então taxas de transação.",
       "Contar só o plano e esquecer as aplicações pagas.",
     ],
   },
@@ -276,25 +276,25 @@ export const ptGuides: TranslatedGuide[] = [
     question: "Como atrair clientes para a sua loja Shopify com uma landing page?",
     summary: "Uma página simples, uma oferta clara, um formulário e depois um link para a loja.",
     intro:
-      "Uma landing page apresenta uma só oferta a um só público. Transforma os visitantes que chegam das redes ou de um anúncio em contactos e, depois, em clientes da sua loja.",
+      "Uma landing page apresenta uma só oferta a um só público. Transforma os visitantes que chegam das redes ou de um anúncio em inscritos e, depois, em clientes da sua loja.",
     steps: [
       {
         title: "Escolha uma só oferta",
-        text: "Um produto de destaque ou um desconto de boas-vindas. Crie primeiro o código na Shopify, por exemplo 10 % na primeira encomenda: é a razão para deixar o e-mail.",
+        text: "Um produto de destaque ou um desconto de boas-vindas. Crie primeiro o código na Shopify, por exemplo 10 % no primeiro pedido: é a razão para deixar o e-mail.",
         alt: "Código de boas-vindas BIENVENUE10 criado na Shopify",
       },
       {
         title: "Crie a página com a IA",
         text: "No HTML Pub ou na Leadpages, clique em « Create » e descreva a página: o produto, o público, a oferta e o botão pretendido. Mantenha um título curto, três vantagens e uma foto do produto.",
-        alt: "Ecrã Create: o assistente pergunta « What are you making? »",
+        alt: "Página Create: o assistente pergunta « What are you making? »",
       },
       {
-        title: "Junte um formulário e um botão",
-        text: "Um formulário para recolher o e-mail em troca do código, e um botão que leva ao produto ou à loja Shopify.",
+        title: "Adicione um formulário e um botão",
+        text: "Um formulário para captar o e-mail em troca do código, e um botão que leva ao produto ou à loja Shopify.",
       },
       {
-        title: "Ligue a página às suas ferramentas",
-        text: "Em « Connectors », envie os contactos para a sua ferramenta de e-mail e ligue a Shopify para ter os clientes no mesmo sítio.",
+        title: "Conecte a página às suas ferramentas",
+        text: "Em « Connectors », envie os inscritos para a sua ferramenta de e-mail e conecte a Shopify para ter os clientes no mesmo lugar.",
         alt: "Conector Shopify no HTML Pub",
       },
       {
@@ -310,11 +310,11 @@ export const ptGuides: TranslatedGuide[] = [
   },
   {
     slug: "recolter-des-e-mails-avant-un-lancement",
-    localSlug: "recolher-emails-antes-do-lancamento",
-    question: "Como recolher e-mails antes de um lançamento?",
-    summary: "Uma página de espera, um formulário de e-mail, uma boa razão para se inscrever e os contactos na sua ferramenta de e-mail.",
+    localSlug: "captar-emails-antes-do-lancamento",
+    question: "Como captar e-mails antes de um lançamento?",
+    summary: "Uma página de espera, um formulário de e-mail, uma boa razão para se inscrever e os inscritos na sua ferramenta de e-mail.",
     intro:
-      "Antes de lançar um produto, uma página de espera permite juntar pessoas interessadas. No dia do lançamento escreve-lhes: são os seus primeiros clientes.",
+      "Antes de lançar um produto, uma página de espera permite reunir pessoas interessadas. No dia do lançamento escreve-lhes: são os seus primeiros clientes.",
     steps: [
       {
         title: "Dê uma razão para se inscreverem",
@@ -326,8 +326,8 @@ export const ptGuides: TranslatedGuide[] = [
         alt: "Descrição de uma página de espera com formulário de e-mail no assistente de IA do HTML Pub",
       },
       {
-        title: "Junte o consentimento",
-        text: "Para enviar e-mails comerciais a particulares é preciso o acordo deles. Junte uma caixa de seleção não marcada e uma frase que diga para que serve o e-mail e como anular a inscrição.",
+        title: "Peça o consentimento",
+        text: "Para enviar e-mails comerciais a particulares é preciso o acordo deles. Adicione uma caixa de seleção desmarcada e uma frase que diga para que serve o e-mail e como cancelar a inscrição.",
       },
       {
         title: "Encontre os inscritos",
@@ -336,8 +336,8 @@ export const ptGuides: TranslatedGuide[] = [
       },
       {
         title: "Envie-os para a sua ferramenta de e-mail",
-        text: "Em « Connectors », ligue o Mailchimp, o Brevo ou outra ferramenta para que cada inscrito chegue lá automaticamente. Prepare um e-mail de boas-vindas e o e-mail do dia do lançamento.",
-        alt: "Página Connectors com as aplicações de e-mail a ligar",
+        text: "Em « Connectors », conecte o Mailchimp, o Brevo ou outra ferramenta para que cada inscrito chegue lá automaticamente. Prepare um e-mail de boas-vindas e o e-mail do dia do lançamento.",
+        alt: "Página Connectors com os aplicativos de e-mail para conectar",
       },
     ],
     pitfalls: [
@@ -348,8 +348,8 @@ export const ptGuides: TranslatedGuide[] = [
   },
   {
     slug: "connecter-son-nom-de-domaine-leadpages",
-    localSlug: "ligar-dominio-leadpages",
-    question: "Como ligar o seu domínio à Leadpages?",
+    localSlug: "conectar-dominio-leadpages",
+    question: "Como conectar o seu domínio à Leadpages?",
     summary: "Mostrar as suas páginas no seu próprio endereço, com HTTPS incluído.",
     intro:
       "Por defeito, as suas páginas têm um endereço HTML Pub. Com o seu próprio domínio inspiram mais confiança. O certificado de segurança (HTTPS) é gratuito.",
@@ -374,7 +374,7 @@ export const ptGuides: TranslatedGuide[] = [
       },
       {
         title: "Senão, configure o DNS à mão",
-        text: "No fornecedor do domínio, junte os registos indicados pela Leadpages: um CNAME para www (ou o seu subdomínio), um TXT para a segurança e, para o domínio principal, dois registos A. Copie os valores mostrados na sua conta.",
+        text: "No fornecedor do domínio, adicione as entradas DNS indicadas pela Leadpages: um CNAME para www (ou o seu subdomínio), um TXT para a segurança e, para o domínio principal, duas entradas A. Copie os valores mostrados na sua conta.",
       },
       {
         title: "Espere pela ativação",
@@ -382,7 +382,7 @@ export const ptGuides: TranslatedGuide[] = [
       },
     ],
     pitfalls: [
-      "Esquecer o registo TXT: sem ele, o HTTPS não fica ativo.",
+      "Esquecer a entrada TXT: sem ele, o HTTPS não fica ativo.",
       "Alterar o domínio principal quando outro site já o usa: prefira um subdomínio.",
     ],
   },

@@ -4,7 +4,9 @@
 import Base from "../layouts/Base.astro";
 import { affiliateLink, getGuide, shopifyLink, type Guide } from "../lib/guides";
 import { imageSize } from "../lib/image-size";
+import NewsletterForm from "./NewsletterForm.astro";
 import {
+  localizeSource,
   getTranslation,
   guideAlternates,
   listPath,
@@ -26,9 +28,12 @@ const guide = getGuide(item.slug) as Guide;
 const shop = guide.theme === "boutique";
 const other: OtherLang = lang === "pt" ? "en" : "pt";
 const otherItem = getTranslation(other, item.slug);
+const sources = guide.sources
+  .map((source) => localizeSource(lang, source))
+  .filter((source): source is { label: string; url: string } => source !== null);
 const related = translations[lang].filter((entry) => entry.slug !== item.slug).slice(0, 4);
 const minutes = Math.max(1, Math.round(item.steps.map((step) => step.text).join(" ").split(/\s+/).length / 200));
-const date = new Intl.DateTimeFormat(lang === "pt" ? "pt-PT" : "en-GB", { day: "numeric", month: "long", year: "numeric" }).format(
+const date = new Intl.DateTimeFormat(lang === "pt" ? "pt-BR" : "en-US", { day: "numeric", month: "long", year: "numeric" }).format(
   new Date(guide.updatedOn),
 );
 const cta = shop
@@ -40,7 +45,7 @@ const howTo = {
   "@type": "HowTo",
   name: item.question,
   description: item.summary,
-  inLanguage: lang === "pt" ? "pt-PT" : "en-GB",
+  inLanguage: lang === "pt" ? "pt" : "en-US",
   step: item.steps.map((step, index) => ({ "@type": "HowToStep", position: index + 1, name: step.title, text: step.text })),
 };
 ---
@@ -160,11 +165,11 @@ const howTo = {
   }
 
   {
-    guide.sources.length > 0 ? (
+    sources.length > 0 ? (
       <section class="mt-14">
         <h2 class="text-[13px] leading-5 text-[#737373]">{t.sources}</h2>
         <ul class="mt-4 space-y-2">
-          {guide.sources.map((source) => (
+          {sources.map((source) => (
             <li>
               <a href={source.url} target="_blank" rel="noopener" class="text-[15px] font-medium leading-6 text-[#171717] hover:underline">
                 {source.label} ↗
@@ -175,6 +180,8 @@ const howTo = {
       </section>
     ) : null
   }
+
+  <NewsletterForm lang={lang} tag={shop ? "shopify" : "leadpages"} />
 
   <section class="mt-14">
     <h2 class="text-[13px] leading-5 text-[#737373]">{t.readNext}</h2>

@@ -94,7 +94,7 @@ const breadcrumbList = breadcrumbs && {
     <script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-KC42X29LL9"></script>
   </head>
   <body class="min-h-full bg-[#fbfbfb] text-[#171717]">
-    <SiteHeader lang={lang} />
+    <SiteHeader lang={lang} alternates={alternates} />
     <div class="mx-auto w-full max-w-[580px] px-5 min-[620px]:px-0">
       <main class="pt-16">
         {breadcrumbs ? <Breadcrumbs items={breadcrumbs} /> : null}

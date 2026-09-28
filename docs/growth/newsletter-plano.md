@@ -1,5 +1,7 @@
 # Newsletter: plano de envios (passos 10 e 11)
 
+> ⏸️ **Newsletter em pausa até haver um inscrito real** (decisão do Techonni a 28/09/2026). Inscrito real = email que **não** contém « dario » nem « zunrel ». Até lá: não planear, não criar rascunhos, não agendar, não testar, e **nunca perguntar ao Techonni pelo « oui » nem por permissões** para a newsletter. A rotina diária `trig_017qJ8Bu58TjQ9LJzu8SXaSA` avisa-o quando chegar o primeiro inscrito real. O calendário abaixo só volta a valer depois disso.
+
 Atualizado a 28/09/2026. Estado da lista (`scripts/mailchimp.mjs status`): **3 assinantes**, 0 envios este mês (limite 500), plano Free sem agendamento (cada envio é feito à mão, no dia).
 
 Regras: modelo visual fixo (`docs/newsletter/MODELE-FIGE.md`), só com `scripts/mailchimp.mjs newsletter`, e **nunca enviar aos assinantes sem o « oui » do Techonni** para essa campanha.

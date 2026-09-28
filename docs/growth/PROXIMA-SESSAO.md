@@ -10,6 +10,7 @@ Data: 28/09/2026 (2.ª sessão do dia: guia da semana 2). Responde ao Techonni e
 
 ## Regras que não mudam
 
+0. **Newsletter em pausa até haver um inscrito real** (decisão do Techonni a 28/09/2026). Inscrito real = email que **não** contém « dario » nem « zunrel ». Até lá: não planear, não criar rascunhos, não agendar, não testar, e **nunca perguntar ao Techonni pelo « oui » nem por permissões** para a newsletter. A rotina diária `trig_017qJ8Bu58TjQ9LJzu8SXaSA` avisa-o quando chegar o primeiro inscrito real.
 1. **Publicar sempre.** Só o que está em `main` fica online (a Vercel publica `main`). Em cada passo: push → a pré-visualização da branch fica `READY` → pull request → merge → produção `READY` → ver a página com `web_fetch_vercel_url` (esta máquina não abre o zunrel.com nem sites externos diretamente).
 2. **Fazer todos os passos de uma lista na mesma sessão** (regra no CLAUDE.md). O que precisar do Techonni fica « pronto, falta o Techonni » e passa-se ao seguinte.
 3. **Newsletter com visual bloqueado.** Ver `docs/newsletter/MODELE-FIGE.md`. Criar só com `scripts/mailchimp.mjs newsletter`. **Nunca enviar aos assinantes sem o « oui » do Techonni** para essa campanha.
@@ -51,8 +52,8 @@ Data: 28/09/2026 (2.ª sessão do dia: guia da semana 2). Responde ao Techonni e
 | 7 | Atualizar guias antigos todos os meses | ✅ Rotina pronta: `check-guides.mjs` lista os guias com mais de 30 dias. Nenhum está desatualizado hoje. Próxima revisão: **28/10/2026** (preços Shopify e Leadpages, `/offres/`) |
 | 8 | Links internos | ✅ Todos os 41 guias têm pelo menos 2 links internos |
 | 9 | Versões PT e EN | ✅ 12 guias em `/pt/` e `/en/`, com hreflang e ligações a partir dos guias franceses e da página inicial. Traduções em `src/lib/translations/` |
-| 10 | 1.ª newsletter | ⏳ Pronto, **falta o « oui »** do Techonni: `ff4c739dc9` para todos (3 assinantes) |
-| 11 | Ritmo quinzenal | 🟡 Calendário em `newsletter-plano.md`. O rascunho de 12/10 foi bloqueado pela segurança (envia um teste): comando pronto no ficheiro, precisa de aprovação |
+| 10 | 1.ª newsletter | ⏸️ Em pausa até haver um inscrito real (rascunho `ff4c739dc9` guardado) |
+| 11 | Ritmo quinzenal | ⏸️ Em pausa até haver um inscrito real |
 | 12 | Mais brindes | ✅ `/newsletter/checklist-leadpages/` e `/newsletter/modeles-landing-page/`. O formulário anuncia o brinde do tema do guia |
 | 13 | Barra discreta no fim do guia | ✅ Aparece depois de 60 % do guia, leva ao formulário, fecha por 14 dias, não aparece para inscritos |
 | 14 | Pinterest 3 pins/semana | 🟡 Todos os 41 guias têm imagem. Calendário até 30/12 em `calendario-redes.md`. **Falta publicar** (Techonni ou Claude no Chrome, tarefa I) |
@@ -65,8 +66,6 @@ Data: 28/09/2026 (2.ª sessão do dia: guia da semana 2). Responde ao Techonni e
 
 ## Pendentes do lado do Techonni
 
-- [ ] **« oui »** para enviar `ff4c739dc9` (1.ª newsletter) a todos.
-- [ ] Aprovar o pedido de permissão para criar o rascunho da newsletter de 12/10 (comando em `newsletter-plano.md`).
 - [ ] Uma só vez: guardar nas instruções do projeto do Co-work a frase de arranque (ver « Claude no Chrome » abaixo). Depois, dizer « continua » no Chrome (lote 1: preços).
 - [ ] Link PartnerStack que leve ao **HTML Pub**.
 - [ ] No iCloud: marcar os testes como « Não é lixo » e guardar contact@zunrel.com nos contactos.
@@ -81,7 +80,7 @@ Data: 28/09/2026 (2.ª sessão do dia: guia da semana 2). Responde ao Techonni e
 | 3. Search Console | ⏳ Bloqueado: espera o lote 3 do Chrome. |
 | 4. GA4 e Painel | ⏳ Bloqueado: espera o lote 3 do Chrome. |
 | 5. Guia da semana 2 | ✅ `ajouter-un-formulaire-de-contact-shopify` em FR + PT (`formulario-de-contato-shopify`) + EN (`add-contact-form-shopify`), pin, ligado a partir de `creer-un-menu-shopify` e `rediger-les-politiques-shopify`. Post e pin no dia 10 de `fila-redes.md`. |
-| 6. Newsletter 12/10 | ⏳ Bloqueado outra vez pela segurança do Claude Code (envia um email de teste). **Falta o Techonni:** aprovar o pedido quando aparecer, ou acrescentar uma regra de permissão para `node --experimental-strip-types scripts/mailchimp.mjs newsletter`. Os preços do email dependem do lote 1. |
+| 6. Newsletter 12/10 | ⏸️ Cancelado: newsletter em pausa até haver um inscrito real (regra 0). |
 | 5b. Guia da semana 3 (adiantado) | ✅ `creer-une-page-lien-en-bio-avec-html-pub` em FR + PT (`pagina-link-na-bio-html-pub`) + EN (`link-in-bio-page-html-pub`), pin, post e pin no dia 11 de `fila-redes.md`. |
 | Chrome em pausa | ⏸️ O Techonni atingiu o limite de uso do Co-work a 28/09. **Não pedir nada ao Chrome** até ele dizer que voltou. O lote 1 fica à espera em `CHROME-PROXIMO.md`. |
 | 7. Traduções | ✅ `ajouter-des-variantes-shopify` também em PT e EN. Sem dados de visitas ainda (lote 3) para escolher os seguintes. |
@@ -93,7 +92,7 @@ Data: 28/09/2026 (2.ª sessão do dia: guia da semana 2). Responde ao Techonni e
 3. Search Console: `seoTitle` / `seoDescription` nas 5 páginas com mais impressões e CTR mais baixo.
 4. GA4: ver `affiliate_click` por `placement` e `guide`; ver `web_vital` e corrigir páginas lentas. Registar a semana no Painel.
 5. Guia da semana 4 (« pop-up d'inscription Leadpages », ver `plano-growth.md`) em FR, PT e EN, pin com `make-pins.mjs`, 2 links internos. Quando chegar `shopify-page-contact.webp` (lote 5), pô-la no passo 1 do guia do formulário de contacto.
-6. Newsletter: criar o rascunho de 12/10 (com aprovação) e enviar só com « oui ».
+6. Newsletter: **nada** enquanto não houver inscrito real (regra 0). Não perguntar ao Techonni.
 7. Traduzir para PT e EN os guias com mais visitas (dados do lote 3).
 8. Antes do fim do dia 9 de `fila-redes.md`: novas imagens de pins para os dias 10+ (4 por dia além do guia novo).
 9. Atualizar este ficheiro, publicar e enviar ao Techonni.

@@ -25,6 +25,8 @@ Consult these guides before working on related tasks:
 
 The newsletter design is **frozen** (validated by Techonni on 2026-09-28). Do not change its look without his explicit approval: see `docs/newsletter/MODELE-FIGE.md`. Build newsletters only with `scripts/mailchimp.mjs newsletter`. Never send to subscribers without his explicit « oui » for that campaign.
 
+**Paused until there is a real subscriber** (Techonni, 2026-09-28): a real subscriber is one whose email contains neither « dario » nor « zunrel ». Until then, do not plan, draft, schedule or test newsletters, and never ask him for a « oui » or for permission to send. The daily routine `trig_017qJ8Bu58TjQ9LJzu8SXaSA` tells him when the first real subscriber arrives.
+
 ## Publishing
 
 Work is only live on zunrel.com once it is merged into `main` (Vercel deploys `main`). Every session must finish by merging its branch into `main` and checking the production deployment is `READY`.

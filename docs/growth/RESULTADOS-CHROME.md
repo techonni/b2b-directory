@@ -2,6 +2,21 @@
 
 O Claude no Chrome acrescenta cada lote **no topo**, logo abaixo desta linha. O Claude Code lê este ficheiro no início de cada sessão.
 
+## Lote 2 · 28 de setembro de 2026 · afiliação (PartnerStack + Impact)
+
+**1. PartnerStack — programa Leadpages: link para o HTML Pub (htmlpub.com)?**
+Não. Não existe link nem opção « custom link / deep link » que leve ao HTML Pub. Só aparecem os links genéricos da Leadpages (« Liens par défaut » e « Liens recommandés »). Texto exato do painel na parte « Liens personnalisés »: « La création de liens est désactivée pour l'instant ». URL: https://dash.partnerstack.com/leadpages/links
+
+**2. Impact — programa Shopify (ID 13624), relatório « Performance par Brand »**
+Últimos 30 dias (29 ago – 28 set 2026): 2 cliques · 0 ações (vendas). A coluna de comissões não aparece neste relatório; sem ações não há comissão.
+Últimos 7 dias (22 – 28 set 2026): 2 cliques · 0 ações.
+Aviso do Impact: os relatórios não são em tempo real (as últimas 3 horas podem faltar). URL: https://app.impact.com/secure/mediapartner/report/viewReport.report?handle=partner_performance_by_program
+
+**3. Impact — deep link para https://www.shopify.com/fr/tarifs**
+Sim, criado no widget « Créer un lien » (marca Shopify): https://shopify.pxf.io/KBdaZa — nada mudado no perfil.
+
+Nota: a sessão do Impact expirou no fim deste lote (a página voltou a pedir login). A parte Impact da rotina diária fica para amanhã.
+
 ## Lote 3 · 28 de setembro de 2026 · Google
 
 **1. Search Console (Performance, últimos 3 meses)**

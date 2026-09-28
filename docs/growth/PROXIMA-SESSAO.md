@@ -66,8 +66,8 @@ Data: 28/09/2026 (3.ª sessão do dia: limpeza « b2b », guia da semana 4, pins
 
 ## Pendentes do lado do Techonni
 
-- [ ] Pinterest: pinterest.com → menu do perfil → Configurações → **Criar Pins em massa** → carregar `pinterest-agendar.csv` (descarregar em https://github.com/techonni/zunrel/blob/main/docs/growth/pinterest-agendar.csv, botão « Download raw file »). Carregar **no dia 29/09** (depois das 06:00 UTC: o Claude Code relança a publicação da Vercel às 05:45 UTC com uma mensagem agendada, e as imagens novas ficam online).
-- [ ] Uma só vez: guardar (ou substituir) nas instruções do projeto do Co-work a frase de arranque nova (ver « Claude no Chrome » abaixo). Depois, dizer « continua » no Chrome (lote 1: preços).
+- [ ] Pinterest: pinterest.com → menu do perfil → Configurações → **Criar Pins em massa** → carregar `pinterest-agendar.csv` (descarregar em https://github.com/techonni/zunrel/blob/main/docs/growth/pinterest-agendar.csv, botão « Download raw file »). Só depois da mensagem do Claude Code a 29/09 (« já podes carregar »): antes disso as imagens novas ainda não estão online. Se um painel não existir, o Pinterest cria-o sozinho.
+- [x] Frase do Co-work: não é preciso mudar nada. A correção está no ficheiro que o Co-work lê (`CHROME-PROXIMO.md`).
 - [ ] Link PartnerStack que leve ao **HTML Pub**.
 - [ ] Se ainda vir « b2b-directory » na app do Claude no Mac: é uma pasta antiga no computador. No Finder, apagar (ou renomear para `zunrel`) a pasta `b2b-directory`, e na app do Claude escolher sempre o repositório `techonni/zunrel`. No GitHub e na Vercel já não existe nada com esse nome.
 - [ ] No iCloud: marcar os testes como « Não é lixo » e guardar contact@zunrel.com nos contactos.
@@ -99,7 +99,7 @@ Data: 28/09/2026 (3.ª sessão do dia: limpeza « b2b », guia da semana 4, pins
 | 7. Traduções | ⏳ Espera os dados de visitas (lote 3). |
 | Pinterest de uma vez | ✅ `docs/growth/pinterest-agendar.csv` (pedido do Techonni: todos os pins, 10 por dia): **88 pins** = a imagem normal + a imagem « erreurs » de cada um dos 44 guias, de 30/09 a 08/10, das 06:00 às 19:30 UTC. Tudo em **francês**: cada pin leva ao guia francês (`/guides/<slug>/`), nunca a `/pt/` ou `/en/` (as imagens são em francês). UTM `utm_campaign=pin-csv`. Não há conector do Claude para o Pinterest, por isso o carregamento é um clique do Techonni. Próximo CSV antes de 08/10 (guias novos + imagens novas). Os pins das tabelas de `fila-redes.md` ficam todos dentro deste CSV: o Chrome não publica pins. |
 | Vercel: limite diário | ⚠️ A 28/09 às 05:30 UTC a Vercel recusou a publicação: « Deployment rate limited — retry in 24 hours » (plano Hobby: máx. 100 publicações por dia). O merge foi feito; o site só é atualizado com a próxima publicação. **Próxima sessão:** ver se a produção ficou `READY` com o commit de `main`; se não, relançar com `create_deployment` em `main`. Publicar menos vezes por dia (juntar os passos num só PR). |
-| Co-work: perguntas fora do « continua » | ✅ Corrigido em `CHROME-PROXIMO.md` (« Regra n.º 1 »: « continua » = fazer o Lote atual, sem outras perguntas; a rotina diária só depois, com uma única pergunta) e em `CHROME-DIARIO.md`. A causa: o passo 0 mandava o Co-work propor a rotina diária antes de tudo. **Falta o Techonni:** atualizar a frase nas instruções do projeto do Co-work (ver « Claude no Chrome » abaixo). |
+| Co-work: perguntas fora do « continua » | ✅ Corrigido em `CHROME-PROXIMO.md` (« Regra n.º 1 »: « continua » = fazer o Lote atual, sem outras perguntas; a rotina diária só depois, com uma única pergunta) e em `CHROME-DIARIO.md`. A causa: o passo 0 mandava o Co-work propor a rotina diária antes de tudo. Nada a fazer do lado do Techonni. |
 | 8. Pins dos dias 10+ | ✅ 2.ª imagem para cada um dos 44 guias (« Les erreurs à éviter », fundo escuro) em `public/pins/erreurs/`, criada com `make-pins.mjs --variant erreurs`. Na fila: 4 por dia, dias 10 a 20. |
 
 ## Próxima sessão (fazer tudo, por esta ordem)

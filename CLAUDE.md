@@ -28,3 +28,7 @@ The newsletter design is **frozen** (validated by Techonni on 2026-09-28). Do no
 ## Publishing
 
 Work is only live on zunrel.com once it is merged into `main` (Vercel deploys `main`). Every session must finish by merging its branch into `main` and checking the production deployment is `READY`.
+
+## End of session
+
+Techonni prefers a Markdown handoff file. Before ending a session, update `docs/growth/PROXIMA-SESSAO.md` (state, rules, what is pending on his side, next steps), merge it into `main`, and send him the file. Start each new session by reading it.

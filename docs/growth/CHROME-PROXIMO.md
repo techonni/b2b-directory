@@ -25,6 +25,6 @@ Sites: shopify.com e leadpages.com.
 
 - Lote 2 · afiliação: PartnerStack (link para htmlpub.com se existir; cliques e comissões 30 dias) + Impact (link para shopify.com/fr/tarifs se existir; cliques e comissões 30 dias).
 - Lote 3 · Google: Search Console (30 consultas e 30 páginas, 3 meses) + GA4 (15 páginas mais vistas, totais dos eventos, tráfego por canal, 28 dias).
-- Lote 4 · Mailchimp e Vercel: desligar o reCAPTCHA (aprovado pelo Techonni) + ver se existe o registo DNS `_dmarc` (sem criar nem apagar).
+- Lote 4 · Mailchimp e Vercel: (1) desligar o reCAPTCHA (aprovado pelo Techonni); (2) mudar o email de confirmação da inscrição para o texto em 3 línguas de `docs/newsletter/confirmacao-3-linguas.md` — **perguntar ao Techonni « posso mudar? » antes de guardar**; (3) ver se existe o registo DNS `_dmarc` na Vercel (sem criar nem apagar).
 - Lote 5 · capturas Shopify (só o admin Shopify): `shopify-variantes.webp`, `shopify-page-contact.webp`, `shopify-commandes.webp`, enviadas para `public/captures/` no GitHub.
 - Lote 6 · blogs: 10 blogs francófonos de e-commerce para backlinks (Google + os sites dos blogs; só ler).

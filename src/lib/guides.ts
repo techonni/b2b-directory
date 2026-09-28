@@ -67,6 +67,14 @@ export const newsletterFormUrl =
   "https://gmail.us9.list-manage.com/subscribe/post?u=13aa96838d6074fef23022e3e&id=893c08eb5d&f_id=0073d9e1f0";
 // Champ anti-robots du même formulaire Mailchimp (nom donné dans le code « embedded »).
 export const newsletterHoneypot = "b_13aa96838d6074fef23022e3e_893c08eb5d";
+// Tags Mailchimp par centre d'intérêt (Audience → Tags). Envoyés avec l'inscription pour
+// pouvoir écrire plus tard seulement aux personnes intéressées par un outil.
+export const newsletterTags = {
+  shopify: "11404677",
+  leadpages: "11404678",
+  htmlpub: "11404679",
+} as const;
+export type NewsletterTag = keyof typeof newsletterTags;
 
 const help = "https://support.leadpages.com/hc/en-us/articles/";
 const pricing = { label: "Leadpages : offres et tarifs", url: "https://leadpages.com/pricing" };
@@ -124,7 +132,7 @@ export const guides: Guide[] = [
       { slug: "leadpages", why: "Pour tester et améliorer vos conversions." },
     ],
     sources: [pricing],
-    related: ["essayer-leadpages-gratuitement", "changer-ou-annuler-son-offre-leadpages"],
+    related: ["choisir-entre-leadpages-et-shopify", "essayer-leadpages-gratuitement", "changer-ou-annuler-son-offre-leadpages"],
   },
   {
     slug: "essayer-leadpages-gratuitement",
@@ -413,7 +421,7 @@ export const guides: Guide[] = [
       { slug: "leadpages", why: "Même assistant, avec plus de crédits." },
     ],
     sources: [{ label: "HTML Pub : utiliser le créateur de pages IA", url: `${help}43967499549965--HTMLPub-Using-the-AI-Page-Builder` }],
-    related: ["partir-d-un-modele-leadpages", "recuperer-les-formulaires-html-pub"],
+    related: ["creer-sa-landing-page-leadpages-de-a-a-z", "partir-d-un-modele-leadpages", "recuperer-les-formulaires-html-pub"],
   },
   {
     slug: "partir-d-un-modele-leadpages",
@@ -453,7 +461,7 @@ export const guides: Guide[] = [
     ],
     tools: [{ slug: "html-pub", why: "Modèles de landing pages, portfolios et pages « lien en bio »." }],
     sources: [{ label: "HTML Pub : créer et modifier des pages", url: `${help}43966022984461--HTMLPub-Creating-and-Editing-Pages` }],
-    related: ["creer-une-landing-page-avec-l-ia", "creer-un-site-web-avec-html-pub"],
+    related: ["creer-sa-landing-page-leadpages-de-a-a-z", "creer-une-landing-page-avec-l-ia", "creer-un-site-web-avec-html-pub"],
   },
   {
     slug: "publier-du-html-sur-html-pub",
@@ -530,12 +538,12 @@ export const guides: Guide[] = [
     ],
     tools: [{ slug: "html-pub", why: "Sites multipages inclus dans toutes les offres payantes." }],
     sources: [{ label: "HTML Pub : utiliser les sites", url: `${help}43969561553549--HTMLPub-Using-Sites` }],
-    related: ["creer-un-blog-avec-html-pub", "connecter-son-nom-de-domaine-leadpages"],
+    related: ["publier-du-html-sur-html-pub", "creer-un-blog-avec-html-pub", "connecter-son-nom-de-domaine-leadpages"],
   },
   {
     slug: "creer-un-blog-avec-html-pub",
     question: "Comment créer un blog avec HTML Pub ?",
-    summary: "Créer le blog, écrire un article et le publier.",
+    summary: "Créer le blog sur HTML Pub, écrire un premier article et le publier sur votre site, étape par étape.",
     theme: "creer",
     updatedOn: "2026-09-26",
     intro:
@@ -965,7 +973,7 @@ export const guides: Guide[] = [
     ],
     tools: [{ slug: "html-pub", why: "Connecteur Claude inclus dans toutes les offres." }],
     sources: [{ label: "HTML Pub : connecteur MCP pour Claude", url: `${help}43969915496845--HTMLPub-Using-the-Claude-MCP-Connector` }, pricing],
-    related: ["creer-une-landing-page-avec-l-ia", "creer-une-pub-video-avec-ad-studio"],
+    related: ["publier-du-html-sur-html-pub", "creer-une-landing-page-avec-l-ia", "creer-une-pub-video-avec-ad-studio"],
   },
   {
     slug: "creer-une-pub-video-avec-ad-studio",
@@ -1040,7 +1048,7 @@ export const guides: Guide[] = [
     pitfalls: ["Oublier qu'après 3 mois à 1 €, le forfait passe au prix normal.", "Passer l'essai à tout configurer sans ajouter un seul produit : on ne voit pas le vrai fonctionnement."],
     tools: [{ slug: "shopify", why: "3 jours gratuits, puis 1 €/mois pendant 3 mois." }],
     sources: [{ label: "Shopify : tarifs", url: "https://www.shopify.com/fr/tarifs" }],
-    related: ["choisir-son-forfait-shopify", "creer-sa-boutique-shopify"],
+    related: ["choisir-entre-leadpages-et-shopify", "choisir-son-forfait-shopify", "creer-sa-boutique-shopify"],
   },
   {
     slug: "choisir-son-forfait-shopify",
@@ -1252,7 +1260,7 @@ export const guides: Guide[] = [
   {
     slug: "creer-sa-boutique-shopify",
     question: "Comment créer sa boutique Shopify ?",
-    summary: "De l'inscription à la boutique en ligne, dans l'ordre.",
+    summary: "De l'inscription à la boutique en ligne : compte, thème, produits et paiements, dans l'ordre.",
     theme: "boutique",
     updatedOn: "2026-09-27",
     popular: true,
@@ -1329,7 +1337,7 @@ export const guides: Guide[] = [
     pitfalls: ["Laisser le poids à 0 : les frais de livraison seront faux.", "Des photos de tailles différentes : la boutique paraît moins professionnelle."],
     tools: [{ slug: "shopify", why: "Produits illimités sur tous les forfaits." }],
     sources: [{ label: "Shopify : ajouter et mettre à jour des produits", url: "https://help.shopify.com/fr/manual/products/add-update-products" }],
-    related: ["creer-sa-boutique-shopify", "creer-un-code-de-reduction-shopify"],
+    related: ["creer-une-page-de-vente-pour-un-produit-shopify", "creer-sa-boutique-shopify", "creer-un-code-de-reduction-shopify"],
   },
   {
     slug: "connecter-son-domaine-shopify",
@@ -1365,7 +1373,7 @@ export const guides: Guide[] = [
     pitfalls: ["Supprimer d'anciens enregistrements DNS utilisés par vos e-mails.", "Oublier que le renouvellement du domaine se fait chez votre hébergeur, pas chez Shopify."],
     tools: [{ slug: "shopify", why: "Domaine personnalisé et SSL gratuit inclus." }],
     sources: [{ label: "Shopify : connecter un domaine tiers", url: "https://help.shopify.com/fr/manual/domains/add-a-domain/connecting-domains" }],
-    related: ["creer-sa-boutique-shopify", "connecter-son-nom-de-domaine-leadpages"],
+    related: ["ouvrir-sa-boutique-shopify-au-public", "creer-sa-boutique-shopify", "connecter-son-nom-de-domaine-leadpages"],
   },
   {
     slug: "accepter-les-paiements-shopify",
@@ -1402,7 +1410,7 @@ export const guides: Guide[] = [
     pitfalls: ["Utiliser un autre prestataire à la place de Shopify Payments sans savoir que Shopify ajoute des frais de transaction (jusqu'à 2 % sur Basic).", "Ne pas activer Bancontact alors que vos clients sont en Belgique."],
     tools: [{ slug: "shopify", why: "Shopify Payments inclus, frais dégressifs selon le forfait." }],
     sources: [{ label: "Shopify Payments (aide)", url: "https://help.shopify.com/fr/manual/payments/shopify-payments" }, { label: "Shopify : tarifs", url: "https://www.shopify.com/fr/tarifs" }],
-    related: ["choisir-son-forfait-shopify", "ajouter-un-produit-shopify"],
+    related: ["ouvrir-sa-boutique-shopify-au-public", "choisir-son-forfait-shopify", "ajouter-un-produit-shopify"],
   },  {
     slug: "choisir-un-theme-shopify",
     question: "Comment choisir et installer un thème gratuit sur Shopify ?",
@@ -1530,7 +1538,7 @@ export const guides: Guide[] = [
       { label: "Leadpages : accepter des achats Shopify", url: `${help}4407720741517-Accept-Shopify-purchases-with-Leadpages` },
       { label: "Leadpages : intégration Shopify", url: "https://leadpages.com/integrations/shopify" },
     ],
-    related: ["attirer-des-clients-avec-une-landing-page", "connecter-leadpages-a-son-outil-e-mail"],
+    related: ["creer-une-page-de-vente-pour-un-produit-shopify", "attirer-des-clients-avec-une-landing-page", "connecter-leadpages-a-son-outil-e-mail"],
   },
   {
     slug: "attirer-des-clients-avec-une-landing-page",

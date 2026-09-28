@@ -86,6 +86,8 @@ Data: 28/09/2026 (fim da sessão dos 20 passos). Responde ao Techonni em **portu
 
 ## Claude no Chrome
 
+**Rotina diária** (`CHROME-DIARIO.md`): A) X + LinkedIn, B) Impact + PartnerStack, C) 5 pins Pinterest. O Chrome pergunta sempre antes de começar. O conteúdo está em `fila-redes.md` (9 dias preparados a 28/09): manter sempre 7 dias de avanço.
+
 Frase a guardar **uma vez** nas instruções do projeto do Co-work (ou a colar uma única vez):
 
 > Quando eu disser « continua », abre https://github.com/techonni/zunrel/blob/main/docs/growth/CHROME-PROXIMO.md e faz exatamente o que lá está (no máximo 3 tarefas e 2 sites). Responde-me em português.

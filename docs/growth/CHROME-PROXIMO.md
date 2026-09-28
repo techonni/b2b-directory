@@ -1,6 +1,7 @@
 # Próximo trabalho do Claude no Chrome (Co-work)
 
 > **Para o Claude no Chrome, quando o Techonni disser « continua »:**
+> 0. Primeiro, se a rotina diária ainda não foi feita hoje, propõe-na ao Techonni seguindo `docs/growth/CHROME-DIARIO.md` (e espera o « sim »). Depois, se ele quiser, faz o lote abaixo.
 > 1. Faz só o **Lote atual** abaixo: no máximo 3 tarefas e 2 sites (o GitHub, usado só para guardar o resultado, não conta).
 > 2. Regras: só ler e copiar; não comprar, não mudar planos, não apagar, não enviar emails; nunca inventar números; sem dados pessoais (nome, email, nome da loja).
 > 3. Guarda o resultado: abre https://github.com/techonni/zunrel/edit/main/docs/growth/RESULTADOS-CHROME.md, acrescenta **no topo** uma secção `## Lote N · data` com o que encontraste (números, textos exatos, URL de cada informação, e o que ficou bloqueado e porquê). Mensagem de commit « Chrome: lote N », « Commit directly to the main branch ».

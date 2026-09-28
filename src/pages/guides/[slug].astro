@@ -17,6 +17,7 @@ import {
   getTool,
   guides,
   type Guide,
+  type NewsletterTag,
   type Tool,
 } from "../../lib/guides";
 import { href } from "../../lib/paths";
@@ -33,6 +34,9 @@ const tools = guide.tools
 const related = getRelatedGuides(guide);
 
 const isShop = guide.theme === "boutique";
+// Centre d'intérêt envoyé à Mailchimp avec l'inscription.
+const mainTool = guide.tools[0]?.slug;
+const newsletterTag: NewsletterTag = isShop ? "shopify" : mainTool === "leadpages" ? "leadpages" : "htmlpub";
 const format = formats.find((item) => item.format === guideFormat(guide));
 const cta = isShop
   ? {
@@ -213,7 +217,7 @@ const howTo = {
     <ShareButtons title={guide.question} slug={guide.slug} />
   </section>
 
-  <NewsletterForm />
+  <NewsletterForm tag={newsletterTag} />
 
   {
     related.length > 0 ? (

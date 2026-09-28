@@ -24,7 +24,7 @@ X: https://x.com/techonni/status/2104627234313023715
 
 B · Impact e PartnerStack
 Impact.com: bloqueado, sem sessão iniciada e sem credenciais guardadas nesta sessão do Chrome; não tentei entrar. Falta o Techonni iniciar sessão (ou ligar o login) para eu conseguir verificar da próxima vez.
-PartnerStack: perfil de rede 100% completo. Candidatura à rede PartnerStack continua Rejeitada (não entro em programas novos, mas os já aprovados continuam ativos). Programa Leadpages ativo: 85 cliques no total, 14 cliques nos últimos 90 dias, 0 inscrições, 0,00€ em comissões pendentes e 0,00€ pagas. Sem mensagens novas por responder. Sem programas ou links de afiliação novosencontrados.
+PartnerStack: perfil de rede 100% completo. Candidatura à rede PartnerStack continua Rejeitada (não entro em programas novos, mas os já aprovados continuam ativos). Programa Leadpages ativo: 85 cliques no total, 14 cliques nos últimos 90 dias, 0 inscrições, 0,00€ em comissões pendentes e 0,00€ pagas. Sem mensagens novas por responder. Sem programas ou links de afiliação novos encontrados.
 
 ## Lote 1 · 28 de setembro de 2026
 

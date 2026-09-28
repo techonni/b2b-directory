@@ -87,6 +87,11 @@ const howTo = {
       ) : null
     }
     <p class="text-[13px] leading-5 text-[#a0a0a0]">Lecture : {readingMinutes(guide)} min</p>
+    {
+      guide.publishedOn && guide.publishedOn !== guide.updatedOn ? (
+        <p class="text-[13px] leading-5 text-[#a0a0a0]">Publié le {formatDate(guide.publishedOn)}</p>
+      ) : null
+    }
     <p class="text-[13px] leading-5 text-[#a0a0a0]">Mis à jour le {formatDate(guide.updatedOn)}</p>
     <button
       type="button"

@@ -74,11 +74,15 @@ const howTo = {
   ]}
 >
   <script type="application/ld+json" slot="head" set:html={JSON.stringify(howTo)} />
+  <meta slot="head" data-pagefind-meta="summary[content]" content={guide.summary} />
+  <meta slot="head" data-pagefind-meta="minutes[content]" content={String(readingMinutes(guide))} />
+  <meta slot="head" data-pagefind-filter="theme[content]" content={theme?.name ?? ""} />
 
   <p class="print-only hidden text-[13px] leading-5 text-[#737373]">Zunrel · zunrel.com/guides/{guide.slug}/</p>
+  <div data-pagefind-body>
   <h1 class="text-[26px] font-semibold leading-8 tracking-[-0.015em] text-[#171717]">{guide.question}</h1>
   <p class="mt-4 text-[15px] leading-6 text-[#666666]">{guide.intro}</p>
-  <div class="mt-4 flex flex-wrap items-center gap-x-4 gap-y-2">
+  <div data-pagefind-ignore class="mt-4 flex flex-wrap items-center gap-x-4 gap-y-2">
     {
       format ? (
         <a href={href(`/formats/${format.slug}`)} class="no-print text-[13px] leading-5 text-[#737373] hover:underline">
@@ -122,7 +126,7 @@ const howTo = {
         </p>
       ) : null
     }
-    <a href="#etapes" class="no-print mt-4 inline-block text-[14px] font-medium leading-5 text-[#171717] hover:underline">
+    <a href="#etapes" data-pagefind-ignore class="no-print mt-4 inline-block text-[14px] font-medium leading-5 text-[#171717] hover:underline">
       Voir le détail avec les captures ↓
     </a>
   </section>
@@ -157,7 +161,7 @@ const howTo = {
     </ol>
   </section>
 
-  <section class="mt-14 rounded-[6px] bg-[#f3f3f3] p-6">
+  <section data-pagefind-ignore class="mt-14 rounded-[6px] bg-[#f3f3f3] p-6">
     <h2 class="text-[15px] font-medium leading-5 text-[#171717]">Essayer par vous-même</h2>
     <p class="mt-3 text-[14px] leading-6 text-[#666666]">
       {cta.text}
@@ -217,6 +221,8 @@ const howTo = {
       </section>
     ) : null
   }
+
+  </div>
 
   <section class="no-print mt-14">
     <ShareButtons title={guide.question} slug={guide.slug} />

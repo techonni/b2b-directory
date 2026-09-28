@@ -420,7 +420,7 @@ export const guides: Guide[] = [
       { label: "HTML Pub : connecter des intégrations", url: `${help}43967898431757--HTMLPub-Connecting-Integrations` },
       { label: "CNIL : la prospection commerciale par courrier électronique", url: "https://www.cnil.fr/fr/la-prospection-commerciale-par-courrier-electronique" },
     ],
-    related: ["creer-une-landing-page-avec-l-ia", "recolter-des-e-mails-avant-un-lancement", "faire-un-test-ab-leadpages"],
+    related: ["creer-une-landing-page-avec-l-ia", "recolter-des-e-mails-avant-un-lancement", "faire-un-test-ab-leadpages", "partir-d-un-modele-leadpages", "modifier-l-adresse-d-une-page-leadpages"],
   },
   {
     slug: "creer-une-landing-page-avec-l-ia",
@@ -478,7 +478,7 @@ export const guides: Guide[] = [
       { slug: "leadpages", why: "Même assistant, avec plus de crédits." },
     ],
     sources: [{ label: "HTML Pub : utiliser le créateur de pages IA", url: `${help}43967499549965--HTMLPub-Using-the-AI-Page-Builder` }],
-    related: ["creer-sa-landing-page-leadpages-de-a-a-z", "partir-d-un-modele-leadpages", "recuperer-les-formulaires-html-pub"],
+    related: ["creer-sa-landing-page-leadpages-de-a-a-z", "partir-d-un-modele-leadpages", "recuperer-les-formulaires-html-pub", "publier-une-page-depuis-claude"],
   },
   {
     slug: "partir-d-un-modele-leadpages",
@@ -555,7 +555,7 @@ export const guides: Guide[] = [
     ],
     tools: [{ slug: "html-pub", why: "Publication de HTML sans crédits IA." }],
     sources: [{ label: "HTML Pub : bien démarrer", url: `${help}43965947894413--HTMLPub-Getting-Started-with-HTMLPub` }],
-    related: ["connecter-son-nom-de-domaine-leadpages", "recuperer-les-formulaires-html-pub"],
+    related: ["connecter-son-nom-de-domaine-leadpages", "recuperer-les-formulaires-html-pub", "creer-un-blog-avec-html-pub", "publier-une-page-depuis-claude"],
   },
   {
     slug: "creer-un-site-web-avec-html-pub",
@@ -788,7 +788,7 @@ export const guides: Guide[] = [
     ],
     tools: [{ slug: "html-pub", why: "Réponses de formulaires enregistrées automatiquement." }],
     sources: [{ label: "HTML Pub : récupérer les réponses de formulaires", url: `${help}43967816644493--HTMLPub-Collecting-Form-Submissions` }],
-    related: ["connecter-leadpages-a-son-outil-e-mail", "creer-une-landing-page-avec-l-ia"],
+    related: ["connecter-leadpages-a-son-outil-e-mail", "creer-une-landing-page-avec-l-ia", "recolter-des-e-mails-avant-un-lancement"],
   },
   {
     slug: "connecter-leadpages-a-son-outil-e-mail",
@@ -832,7 +832,7 @@ export const guides: Guide[] = [
       { slug: "leadpages", why: "Plus d'intégrations et des webhooks." },
     ],
     sources: [{ label: "HTML Pub : connecter des intégrations", url: `${help}43967898431757--HTMLPub-Connecting-Integrations` }],
-    related: ["recuperer-les-formulaires-html-pub"],
+    related: ["recuperer-les-formulaires-html-pub", "recolter-des-e-mails-avant-un-lancement"],
   },
 
   {
@@ -1001,7 +1001,7 @@ export const guides: Guide[] = [
     ],
     tools: [{ slug: "leadpages", why: "Smart Traffic dès Optimize, optimisation automatique complète avec Scale." }],
     sources: [{ label: "Leadpages : tests A/B et Smart Traffic", url: "https://leadpages.com/product/ab-testing" }, pricing],
-    related: ["faire-un-test-ab-leadpages"],
+    related: ["faire-un-test-ab-leadpages", "lire-une-carte-de-chaleur-leadpages"],
   },
   {
     slug: "ameliorer-le-taux-de-conversion-de-ses-pages-de-a-a-z",
@@ -1511,7 +1511,7 @@ export const guides: Guide[] = [
     pitfalls: ["Ouvrir la boutique sans avoir testé une commande de bout en bout.", "Oublier les pages légales (conditions de vente, remboursement, confidentialité)."],
     tools: [{ slug: "shopify", why: "Boutique en ligne complète, avec assistant IA intégré." }],
     sources: [{ label: "Centre d'aide Shopify", url: "https://help.shopify.com/fr" }, { label: "Shopify : tarifs", url: "https://www.shopify.com/fr/tarifs" }],
-    related: ["creer-sa-boutique-shopify-de-a-a-z", "ajouter-un-produit-shopify", "creer-un-tunnel-de-vente-avec-leadpages-et-shopify-de-a-a-z"],
+    related: ["creer-sa-boutique-shopify-de-a-a-z", "ajouter-un-produit-shopify", "creer-un-tunnel-de-vente-avec-leadpages-et-shopify-de-a-a-z", "connecter-son-domaine-shopify", "choisir-un-theme-shopify"],
   },
   {
     slug: "ajouter-un-produit-shopify",
@@ -1553,7 +1553,7 @@ export const guides: Guide[] = [
     pitfalls: ["Laisser le poids à 0 : les frais de livraison seront faux.", "Des photos de tailles différentes : la boutique paraît moins professionnelle."],
     tools: [{ slug: "shopify", why: "Produits illimités sur tous les forfaits." }],
     sources: [{ label: "Shopify : ajouter et mettre à jour des produits", url: "https://help.shopify.com/fr/manual/products/add-update-products" }],
-    related: ["creer-une-page-de-vente-pour-un-produit-shopify", "creer-sa-boutique-shopify", "creer-un-code-de-reduction-shopify"],
+    related: ["creer-une-page-de-vente-pour-un-produit-shopify", "creer-sa-boutique-shopify", "creer-un-code-de-reduction-shopify", "regler-l-expedition-shopify"],
   },
   {
     slug: "connecter-son-domaine-shopify",
@@ -1671,7 +1671,7 @@ export const guides: Guide[] = [
       { label: "Shopify : publier un thème", url: "https://help.shopify.com/fr/manual/online-store/themes/managing-themes/publishing-themes" },
       { label: "Shopify Theme Store", url: "https://themes.shopify.com/themes?price%5B%5D=free" },
     ],
-    related: ["creer-sa-boutique-shopify", "ajouter-un-produit-shopify"],
+    related: ["creer-sa-boutique-shopify", "ajouter-un-produit-shopify", "creer-un-menu-shopify"],
   },
   {
     slug: "creer-un-code-de-reduction-shopify",
@@ -1759,7 +1759,7 @@ export const guides: Guide[] = [
       { label: "Leadpages : accepter des achats Shopify", url: `${help}4407720741517-Accept-Shopify-purchases-with-Leadpages` },
       { label: "Leadpages : intégration Shopify", url: "https://leadpages.com/integrations/shopify" },
     ],
-    related: ["creer-une-page-de-vente-pour-un-produit-shopify", "attirer-des-clients-avec-une-landing-page", "connecter-leadpages-a-son-outil-e-mail"],
+    related: ["creer-une-page-de-vente-pour-un-produit-shopify", "attirer-des-clients-avec-une-landing-page", "connecter-leadpages-a-son-outil-e-mail", "creer-un-tunnel-de-vente-avec-leadpages-et-shopify-de-a-a-z"],
   },
   {
     slug: "attirer-des-clients-avec-une-landing-page",
@@ -1810,7 +1810,7 @@ export const guides: Guide[] = [
       { label: "Leadpages : accepter des achats Shopify", url: `${help}4407720741517-Accept-Shopify-purchases-with-Leadpages` },
       { label: "Shopify : codes de réduction", url: "https://help.shopify.com/fr/manual/discounts/discount-types/percentage-fixed-amount" },
     ],
-    related: ["creer-un-code-de-reduction-shopify", "connecter-html-pub-a-shopify", "creer-une-landing-page-avec-l-ia"],
+    related: ["creer-un-code-de-reduction-shopify", "connecter-html-pub-a-shopify", "creer-une-landing-page-avec-l-ia", "creer-une-pub-video-avec-ad-studio", "creer-un-tunnel-de-vente-avec-leadpages-et-shopify-de-a-a-z"],
   },
   {
     slug: "creer-une-page-de-vente-pour-un-produit-shopify",

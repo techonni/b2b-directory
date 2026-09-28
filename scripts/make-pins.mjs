@@ -4,11 +4,13 @@
 // et la liste des étapes.
 //
 // Lancer :
-//   node --experimental-strip-types scripts/make-pins.mjs [--fonts <dossier Lato>] [--chrome <chemin>] [--force] [slug…]
+//   node --experimental-strip-types scripts/make-pins.mjs [--fonts <dossier Lato>] [--chrome <chemin>] [--force] [--variant erreurs] [slug…]
+// --variant erreurs : deuxième épingle par guide (fond sombre, les erreurs à éviter au lieu des étapes),
+// dans public/pins/erreurs/<slug>.jpg, pour varier les épingles d'un même guide sur Pinterest.
 // Le dossier des polices doit contenir Lato-Black.ttf, Lato-Bold.ttf et Lato-Regular.ttf
 // (dépôt google/fonts, dossier ofl/lato).
 import { spawn } from "node:child_process";
-import { copyFileSync, existsSync, mkdtempSync, writeFileSync } from "node:fs";
+import { copyFileSync, existsSync, mkdirSync, mkdtempSync, writeFileSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
 
@@ -22,7 +24,10 @@ const option = (name, fallback) => {
 };
 const fonts = option("--fonts", join(root, "fonts"));
 const chrome = option("--chrome", "/opt/pw-browsers/chromium");
+const variant = option("--variant", "");
 const force = args.includes("--force");
+const outDir = join(root, "public/pins", variant);
+mkdirSync(outDir, { recursive: true });
 const only = args.filter((arg) => !arg.startsWith("--"));
 
 const work = mkdtempSync(join(tmpdir(), "zunrel-pins-"));
@@ -55,8 +60,18 @@ function html(guide) {
   const shop = guide.theme === "boutique";
   const badge = shop ? "Shopify" : guide.slug.includes("html-pub") ? "HTML Pub" : "Leadpages";
   const image = guide.steps.find((step) => step.image)?.image;
-  const steps = guide.steps.slice(0, 5).map((step) => escape(step.title));
-  const colors = shop
+  const errors = variant === "erreurs";
+  const shorten = (text) => {
+    const head = text.split(/ : |: | \(|, alors que /)[0].replace(/\.$/, "");
+    return head.length > 125 ? `${head.slice(0, 122).replace(/[\s,]+\S*$/, "")}…` : head;
+  };
+  // Au plus 3 erreurs, et moins si elles sont longues, pour tenir dans la carte.
+  const pitfalls = guide.pitfalls.slice(0, 3).map(shorten);
+  while (pitfalls.length > 1 && pitfalls.join("").length > 190) pitfalls.pop();
+  const steps = errors ? pitfalls.map(escape) : guide.steps.slice(0, 5).map((step) => escape(step.title));
+  const colors = errors
+    ? { bg: shop ? "#0b2e24" : "#1e1446", text: "#ffffff", hl: shop ? "#0b2e24" : "#1e1446", hlBg: "#ffd166", badgeBg: "#ffd166", badgeText: "#171717", card: "#ffffff", cardText: "#171717", dot: "#e5484d", foot: "#666666" }
+    : shop
     ? { bg: "#0f5c46", text: "#ffffff", hl: "#86e3b5", badgeBg: "#ffffff", badgeText: "#0f5c46", card: "#ffffff", cardText: "#171717", dot: "#0f5c46", foot: "#666666" }
     : { bg: "#efeafd", text: "#1e1446", hl: "#ffffff", hlBg: "#5b3df5", badgeBg: "#5b3df5", badgeText: "#ffffff", card: "#ffffff", cardText: "#1e1446", dot: "#5b3df5", foot: "#666666" };
   const dots = Array.from({ length: 12 }, (_, i) => {
@@ -80,6 +95,8 @@ h1{position:absolute;top:160px;left:70px;right:70px;font-weight:900;font-size:${
 .card ol{list-style:none;padding:0;margin:0}
 .card li{display:flex;align-items:center;gap:20px;font-weight:700;font-size:31px;line-height:1.2;margin-bottom:22px}
 .card li span{flex:none;width:48px;height:48px;border-radius:50%;background:${colors.dot};color:#fff;font-size:22px;display:flex;align-items:center;justify-content:center}
+.kicker{font-weight:900;font-size:26px;letter-spacing:1px;text-transform:uppercase;color:${colors.dot};margin-bottom:24px}
+${errors ? ".card li{font-size:27px;margin-bottom:18px}" : ""}
 .foot{position:absolute;left:50px;right:50px;bottom:40px;border-top:1px solid #e5e5e5;padding-top:24px;display:flex;justify-content:space-between;align-items:center}
 .foot small{font-size:26px;color:${colors.foot}}
 .foot b{font-weight:900;font-size:34px}
@@ -87,13 +104,13 @@ h1{position:absolute;top:160px;left:70px;right:70px;font-weight:900;font-size:${
 <div class="top"><div class="brand"><svg width="44" height="44" viewBox="0 0 24 24">${dots}</svg>Zunrel</div><div class="badge">${badge}</div></div>
 <h1>${title(guide)}</h1>
 ${image ? `<div class="shot"><img src="file://${join(root, "public", image.src)}"></div>` : ""}
-<div class="card"><ol>${steps.slice(0, 4).map((step, i) => `<li><span>${i + 1}</span>${step}</li>`).join("")}</ol>
+<div class="card">${errors ? '<p class="kicker">Les erreurs à éviter</p>' : ""}<ol>${steps.slice(0, 4).map((step, i) => `<li><span>${errors ? "✕" : i + 1}</span>${step}</li>`).join("")}</ol>
 <div class="foot"><small>Guide gratuit, étape par étape</small><b>zunrel.com</b></div></div>
 </body></html>`;
 }
 
 const targets = guides.filter(
-  (guide) => (only.length ? only.includes(guide.slug) : true) && (force || !existsSync(join(root, "public/pins", `${guide.slug}.jpg`))),
+  (guide) => (only.length ? only.includes(guide.slug) : true) && (force || !existsSync(join(outDir, `${guide.slug}.jpg`))),
 );
 if (!targets.length) {
   console.log("Toutes les épingles existent déjà.");
@@ -139,8 +156,8 @@ for (const guide of targets) {
     sessionId,
   );
   const { data } = await send("Page.captureScreenshot", { format: "jpeg", quality: 85, clip: { x: 0, y: 0, width: 1000, height: 1500, scale: 1 } }, sessionId);
-  writeFileSync(join(root, "public/pins", `${guide.slug}.jpg`), Buffer.from(data, "base64"));
-  console.log(`épingle créée : public/pins/${guide.slug}.jpg`);
+  writeFileSync(join(outDir, `${guide.slug}.jpg`), Buffer.from(data, "base64"));
+  console.log(`épingle créée : ${join("public/pins", variant, `${guide.slug}.jpg`)}`);
 }
 
 socket.close();

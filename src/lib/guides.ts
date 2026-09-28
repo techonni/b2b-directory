@@ -279,16 +279,16 @@ export const guides: Guide[] = [
     publishedOn: "2026-09-28",
     updatedOn: "2026-09-28",
     intro:
-      "HTML Pub et Leadpages sont vendus sur la même page de tarifs, en dollars. Voici les prix relevés sur cette page le 27 septembre 2026, et comment payer le moins cher possible.",
+      "HTML Pub et Leadpages sont vendus sur la même page de tarifs, en dollars. Voici les prix relevés sur cette page le 28 septembre 2026, et comment payer le moins cher possible.",
     steps: [
       {
         title: "Les offres HTML Pub, pour publier",
-        text: "Au 27 septembre 2026, en paiement annuel : Pro coûte 16 $ par mois (20 $ en paiement mensuel) et Business 26,42 $ par mois (33 $ en mensuel). Une offre Starter, plus petite, existe aussi : son prix est affiché sur la même page.\n\nHTML Pub sert à publier des landing pages, des sites et des blogs sur votre domaine, avec l'assistant IA. Il n'a pas de tests A/B.",
+        text: "Au 28 septembre 2026, en paiement annuel : Starter coûte 5,58 $ par mois (7 $ en paiement mensuel), Pro 16 $ par mois (20 $ en mensuel) et Business 26,42 $ par mois (33 $ en mensuel).\n\nHTML Pub sert à publier des landing pages, des sites et des blogs sur votre domaine, avec l'assistant IA. Il n'a pas de tests A/B.",
         image: { src: "/captures/choisir-offre.webp", alt: "Page des tarifs : HTML Pub Pro à 16 $/mois et Business à 26,42 $/mois, Leadpages Grow à 53,58 $/mois et Optimize à 108 $/mois, en paiement annuel" },
       },
       {
         title: "Les offres Leadpages, pour convertir plus",
-        text: "Au 27 septembre 2026, en paiement annuel : Grow coûte 53,58 $ par mois (67 $ en mensuel) et Optimize 108 $ par mois (135 $ en mensuel). L'offre Scale, la plus complète, est au-dessus.\n\nGrow ajoute les tests A/B. Optimize ajoute Smart Traffic et les cartes de chaleur. La page d'accueil de Leadpages annonce aussi des offres « à partir de 99 $ par mois » : lisez toujours la page des tarifs le jour même.",
+        text: "Au 28 septembre 2026, en paiement annuel : Grow coûte 53,58 $ par mois (67 $ en mensuel), Optimize 108 $ par mois (135 $ en mensuel) et Scale, la plus complète, 216,83 $ par mois (271 $ en mensuel).\n\nGrow ajoute les tests A/B. Optimize ajoute Smart Traffic et les cartes de chaleur. Les prix changent parfois : lisez toujours la page des tarifs le jour même.",
       },
       {
         title: "Payez à l'année pour économiser 20 %",
@@ -1351,11 +1351,11 @@ export const guides: Guide[] = [
     publishedOn: "2026-09-28",
     updatedOn: "2026-09-28",
     intro:
-      "Le prix de Shopify, c'est le forfait, plus des frais sur chaque vente, plus les applications que vous ajoutez. Voici les chiffres relevés sur la page des tarifs le 27 septembre 2026 (affichage en Belgique).",
+      "Le prix de Shopify, c'est le forfait, plus des frais sur chaque vente, plus les applications que vous ajoutez. Voici les chiffres relevés sur la page des tarifs le 28 septembre 2026 (mêmes prix affichés en Belgique et au Portugal).",
     steps: [
       {
         title: "L'offre de départ : 3 jours gratuits, puis 1 € par mois",
-        text: "Au 27 septembre 2026, Shopify affiche 3 jours d'essai gratuit, puis 1 € par mois pendant 3 mois. Après ces 3 mois, le prix normal du forfait choisi commence.",
+        text: "Au 28 septembre 2026, Shopify affiche 3 jours d'essai gratuit, puis 1 € par mois pendant 3 mois. Après ces 3 mois, le prix normal du forfait choisi commence.",
         image: { src: "/captures/shopify-essai.webp", alt: "Page Tarification de Shopify : 3 jours d'essai gratuit, puis 1 €/mois pendant 3 mois" },
       },
       {
@@ -2104,7 +2104,54 @@ export const guides: Guide[] = [
       { label: "Aide Shopify : zones et tarifs d'expédition", url: "https://help.shopify.com/fr/manual/fulfillment/setup/shipping-rates/setting-up-shipping-rates" },
       { label: "Aide Shopify : tarifs d'expédition", url: "https://help.shopify.com/fr/manual/fulfillment/setup/shipping-rates" },
     ],
-    related: ["ajouter-un-produit-shopify", "creer-sa-boutique-shopify-de-a-a-z", "rediger-les-politiques-shopify"],
+    related: ["ajouter-un-produit-shopify", "suivre-ses-commandes-et-expedier-shopify", "creer-sa-boutique-shopify-de-a-a-z", "rediger-les-politiques-shopify"],
+  },
+  {
+    slug: "suivre-ses-commandes-et-expedier-shopify",
+    question: "Comment suivre ses commandes et expédier sur Shopify ?",
+    summary: "De la nouvelle commande au colis livré : vérifier, préparer, expédier avec un numéro de suivi et prévenir le client.",
+    theme: "boutique",
+    publishedOn: "2026-09-28",
+    updatedOn: "2026-09-28",
+    intro:
+      "Votre première vente est arrivée : bravo ! Il reste à expédier le colis et à dire au client où il en est. Dans Shopify, tout se passe dans « Commandes » : chaque commande passe de « Non traitée » à « Traitée » quand vous l'expédiez, et le client reçoit son numéro de suivi par e-mail.",
+    steps: [
+      {
+        title: "Ouvrez la liste des commandes",
+        text: "Dans l'administration, cliquez sur « Commandes ». Chaque ligne montre le client, le total, l'état du paiement (par exemple « Payée ») et l'état du traitement (« Non traitée » tant que rien n'est expédié). Utilisez l'onglet ou le filtre « Non traitées » pour voir seulement les commandes à préparer.",
+      },
+      {
+        title: "Vérifiez la commande avant de préparer",
+        text: "Cliquez sur la commande. Vérifiez les articles et leurs variantes (taille, couleur), le mode de livraison choisi par le client et son adresse. Si l'adresse semble incomplète, écrivez au client avant d'expédier : un colis renvoyé coûte deux fois la livraison.",
+      },
+      {
+        title: "Préparez et envoyez le colis",
+        text: "Emballez les articles et déposez le colis chez votre transporteur (La Poste, Colissimo, Mondial Relay…). Gardez le numéro de suivi qu'il vous donne. Selon votre pays et votre forfait, Shopify permet aussi d'acheter l'étiquette directement dans la commande.",
+      },
+      {
+        title: "Marquez la commande comme traitée",
+        text: "Dans la commande, cliquez sur « Traiter les articles ». Collez le numéro de suivi : Shopify reconnaît souvent le transporteur tout seul, sinon choisissez-le dans la liste. Laissez cochée la case qui envoie la notification d'expédition au client, puis validez. La commande passe à « Traitée ».",
+      },
+      {
+        title: "Laissez le client suivre son colis",
+        text: "Le client reçoit un e-mail de confirmation d'expédition avec le lien de suivi. Le numéro reste visible dans la commande : en cas de question, ouvrez la commande et regardez le suivi avant de répondre. Les modèles de ces e-mails se trouvent dans « Paramètres », puis « Notifications ».",
+      },
+      {
+        title: "Gérez un retour ou un remboursement",
+        text: "Si le client renvoie un article, ouvrez la commande et utilisez « Retour » ou « Rembourser » selon le cas. Remboursez sur le même moyen de paiement que l'achat, et suivez les règles écrites dans votre politique de retour.",
+      },
+    ],
+    pitfalls: [
+      "Expédier sans marquer la commande comme traitée : le client ne reçoit ni e-mail ni numéro de suivi, et vous perdez le fil de ce qui est parti.",
+      "Oublier de vérifier l'adresse : un colis renvoyé coûte deux fois la livraison.",
+      "Promettre un délai de livraison qu'on ne tient pas : écrivez des délais réalistes dans vos réglages d'expédition et vos politiques.",
+    ],
+    tools: [{ slug: "shopify", why: "Commandes, numéros de suivi et e-mails d'expédition inclus dans tous les forfaits." }],
+    sources: [
+      { label: "Aide Shopify : traiter les commandes", url: "https://help.shopify.com/fr/manual/fulfillment/fulfilling-orders" },
+      { label: "Aide Shopify : commandes", url: "https://help.shopify.com/fr/manual/orders" },
+    ],
+    related: ["regler-l-expedition-shopify", "rediger-les-politiques-shopify", "ouvrir-sa-boutique-shopify-au-public"],
   },
   {
     slug: "rediger-les-politiques-shopify",
@@ -2244,7 +2291,7 @@ export const guides: Guide[] = [
       { label: "Aide Shopify : protection par mot de passe", url: "https://help.shopify.com/fr/manual/online-store/themes/os/customize/password-page" },
       { label: "Aide Shopify : préférences de la boutique en ligne", url: "https://help.shopify.com/fr/manual/online-store/setting-up/preferences" },
     ],
-    related: ["choisir-son-forfait-shopify", "connecter-son-domaine-shopify", "creer-sa-boutique-shopify-de-a-a-z"],
+    related: ["choisir-son-forfait-shopify", "connecter-son-domaine-shopify", "suivre-ses-commandes-et-expedier-shopify", "creer-sa-boutique-shopify-de-a-a-z"],
   },
   {
     slug: "creer-un-tunnel-de-vente-avec-leadpages-et-shopify-de-a-a-z",

@@ -550,4 +550,80 @@ export const enGuides: TranslatedGuide[] = [
       "Skipping the test: a pop-up connected to the wrong email tool loses every signup.",
     ],
   },
+  {
+    slug: "combien-coute-leadpages",
+    localSlug: "how-much-does-leadpages-cost",
+    question: "How much does Leadpages (and HTML Pub) cost in 2026?",
+    summary: "HTML Pub and Leadpages plan prices, monthly and yearly, and which one to pick for your needs.",
+    intro:
+      "HTML Pub and Leadpages are sold on the same pricing page, in US dollars. Here are the prices shown on that page on September 28, 2026, and how to pay as little as possible.",
+    steps: [
+      {
+        title: "HTML Pub plans, to publish",
+        text: "On September 28, 2026, billed yearly: Starter costs $5.58 a month ($7 billed monthly), Pro $16 a month ($20 monthly) and Business $26.42 a month ($33 monthly).\n\nHTML Pub publishes landing pages, websites and blogs on your own domain, with the AI assistant. It has no A/B testing.",
+        alt: "Pricing page: HTML Pub Pro at $16/month and Business at $26.42/month, Leadpages Grow at $53.58/month and Optimize at $108/month, billed yearly",
+      },
+      {
+        title: "Leadpages plans, to convert more",
+        text: "On September 28, 2026, billed yearly: Grow costs $53.58 a month ($67 billed monthly), Optimize $108 a month ($135 monthly) and Scale, the most complete, $216.83 a month ($271 monthly).\n\nGrow adds A/B testing. Optimize adds Smart Traffic and heatmaps. Prices change from time to time: always check the pricing page on the day.",
+      },
+      {
+        title: "Pay yearly to save 20 %",
+        text: "The « Monthly / Annual » switch at the top of the pricing page changes every price. Paying yearly is about 20 % cheaper, but you pay for the whole year up front. Start monthly if you are not sure you will keep the tool.",
+      },
+      {
+        title: "Try it for 7 days before paying",
+        text: "Every plan can be tried free for 7 days, with all its features. A card is required, but nothing is charged before the trial ends. Put the end date in your calendar.",
+        alt: "« Start 7-Day Free Trial » buttons on each plan",
+      },
+      {
+        title: "Choose based on your traffic",
+        text: "Just starting, without many visitors? HTML Pub Pro is enough. Already running ads and want to compare two versions of a page? Leadpages Grow. Lots of traffic and you want the tool to optimize on its own? Optimize.",
+      },
+    ],
+    pitfalls: [
+      "Comparing a yearly price with a monthly one: check where the « Monthly / Annual » switch is set.",
+      "Paying for Optimize without enough visitors for tests and heatmaps to be useful.",
+      "Forgetting the trial end date: the first payment is charged automatically on day 7.",
+    ],
+  },
+  {
+    slug: "suivre-ses-commandes-et-expedier-shopify",
+    localSlug: "track-orders-and-ship-shopify",
+    question: "How to track orders and ship them on Shopify?",
+    summary: "From a new order to a delivered package: check, pack, ship with a tracking number and keep the customer informed.",
+    intro:
+      "Your first sale came in: congratulations! Now you need to ship the package and tell the customer where it is. In Shopify, it all happens in « Orders »: each order goes from « Unfulfilled » to « Fulfilled » when you ship it, and the customer gets the tracking number by email.",
+    steps: [
+      {
+        title: "Open the order list",
+        text: "In the admin, click « Orders ». Each row shows the customer, the total, the payment status (for example « Paid ») and the fulfillment status (« Unfulfilled » until something ships). Use the « Unfulfilled » tab or filter to see only the orders to prepare.",
+      },
+      {
+        title: "Check the order before packing",
+        text: "Click the order. Check the items and their variants (size, color), the shipping method the customer chose and the address. If the address looks incomplete, email the customer before shipping: a returned package costs you shipping twice.",
+      },
+      {
+        title: "Pack and send the package",
+        text: "Pack the items and drop the package off with your carrier (USPS, UPS, FedEx…). Keep the tracking number it gives you. Depending on your country and plan, Shopify also lets you buy the shipping label right from the order.",
+      },
+      {
+        title: "Mark the order as fulfilled",
+        text: "In the order, click « Fulfill items ». Paste the tracking number: Shopify often detects the carrier on its own, otherwise pick it from the list. Leave the box that sends the shipping notification to the customer checked, then confirm. The order moves to « Fulfilled ».",
+      },
+      {
+        title: "Let the customer track the package",
+        text: "The customer receives a shipping confirmation email with the tracking link. The number stays visible in the order: if they have a question, open the order and check tracking before replying. The templates for these emails are in « Settings », then « Notifications ».",
+      },
+      {
+        title: "Handle a return or a refund",
+        text: "If the customer sends an item back, open the order and use « Return » or « Refund » as needed. Refund to the same payment method used for the purchase, and follow the rules in your return policy.",
+      },
+    ],
+    pitfalls: [
+      "Shipping without marking the order as fulfilled: the customer gets no email and no tracking number, and you lose track of what has shipped.",
+      "Not checking the address: a returned package costs you shipping twice.",
+      "Promising a delivery time you cannot keep: write realistic times in your shipping settings and policies.",
+    ],
+  },
 ];

@@ -547,4 +547,80 @@ export const ptGuides: TranslatedGuide[] = [
       "Não testar: um pop-up ligado à ferramenta de e-mail errada perde todos os inscritos.",
     ],
   },
+  {
+    slug: "combien-coute-leadpages",
+    localSlug: "quanto-custa-leadpages",
+    question: "Quanto custa a Leadpages (e o HTML Pub) em 2026?",
+    summary: "Os preços das ofertas HTML Pub e Leadpages, mensais e anuais, e qual escolher conforme a sua necessidade.",
+    intro:
+      "O HTML Pub e a Leadpages são vendidos na mesma página de preços, em dólares americanos. Estes são os preços vistos nessa página a 28 de setembro de 2026, e como pagar o menos possível.",
+    steps: [
+      {
+        title: "As ofertas HTML Pub, para publicar",
+        text: "A 28 de setembro de 2026, com pagamento anual: o Starter custa 5,58 US$ por mês (7 US$ no pagamento mensal), o Pro 16 US$ por mês (20 US$ no mensal) e o Business 26,42 US$ por mês (33 US$ no mensal).\n\nO HTML Pub serve para publicar landing pages, sites e blogs no seu domínio, com o assistente de IA. Não tem testes A/B.",
+        alt: "Página de preços: HTML Pub Pro a 16 US$/mês e Business a 26,42 US$/mês, Leadpages Grow a 53,58 US$/mês e Optimize a 108 US$/mês, com pagamento anual",
+      },
+      {
+        title: "As ofertas Leadpages, para converter mais",
+        text: "A 28 de setembro de 2026, com pagamento anual: o Grow custa 53,58 US$ por mês (67 US$ no mensal), o Optimize 108 US$ por mês (135 US$ no mensal) e o Scale, o mais completo, 216,83 US$ por mês (271 US$ no mensal).\n\nO Grow acrescenta os testes A/B. O Optimize acrescenta o Smart Traffic e os mapas de calor. Os preços mudam de vez em quando: veja sempre a página de preços no próprio dia.",
+      },
+      {
+        title: "Pague por ano para poupar 20 %",
+        text: "O botão « Monthly / Annual », no topo da página de preços, muda todos os preços. O pagamento anual fica cerca de 20 % mais barato, mas paga o ano todo de uma vez. Comece com o mensal se ainda não sabe se vai ficar com a ferramenta.",
+      },
+      {
+        title: "Experimente 7 dias antes de pagar",
+        text: "Cada oferta pode ser testada grátis durante 7 dias, com todas as funções. É pedido um cartão, mas nada é cobrado antes do fim do teste. Anote a data de fim na sua agenda.",
+        alt: "Botões « Start 7-Day Free Trial » em cada oferta",
+      },
+      {
+        title: "Escolha conforme o seu tráfego",
+        text: "Acabou de começar e ainda tem poucos visitantes? O HTML Pub Pro chega. Já faz publicidade e quer comparar duas versões de uma página? Leadpages Grow. Tem muito tráfego e quer que a ferramenta otimize sozinha? Optimize.",
+      },
+    ],
+    pitfalls: [
+      "Comparar um preço anual com um preço mensal: veja a posição do botão « Monthly / Annual ».",
+      "Pagar o Optimize sem visitantes suficientes para que os testes e os mapas de calor sirvam para alguma coisa.",
+      "Esquecer que os preços são em dólares: o seu banco pode cobrar uma taxa de câmbio (e, no Brasil, IOF).",
+    ],
+  },
+  {
+    slug: "suivre-ses-commandes-et-expedier-shopify",
+    localSlug: "pedidos-e-envios-shopify",
+    question: "Como acompanhar os pedidos e fazer os envios na Shopify?",
+    summary: "Do pedido novo ao pacote entregue: verificar, preparar, enviar com um código de rastreio e avisar o cliente.",
+    intro:
+      "Chegou a sua primeira venda: parabéns! Falta enviar o pacote e dizer ao cliente onde ele está. Na Shopify, tudo se passa em « Pedidos »: cada pedido passa de « Não processado » a « Processado » quando o envia, e o cliente recebe o código de rastreio por e-mail. (Os nomes dos botões podem variar um pouco conforme a língua do painel.)",
+    steps: [
+      {
+        title: "Abra a lista de pedidos",
+        text: "No painel, clique em « Pedidos ». Cada linha mostra o cliente, o total, o estado do pagamento (por exemplo « Pago ») e o estado do processamento (« Não processado » enquanto nada foi enviado). Use a aba ou o filtro « Não processados » para ver só os pedidos a preparar.",
+      },
+      {
+        title: "Verifique o pedido antes de preparar",
+        text: "Clique no pedido. Verifique os artigos e as variantes (tamanho, cor), o modo de entrega escolhido pelo cliente e o endereço. Se o endereço parecer incompleto, escreva ao cliente antes de enviar: um pacote devolvido custa duas vezes o frete.",
+      },
+      {
+        title: "Prepare e envie o pacote",
+        text: "Embale os artigos e entregue o pacote à sua transportadora (Correios, CTT…). Guarde o código de rastreio que ela lhe dá. Conforme o país e o plano, a Shopify também permite comprar a etiqueta diretamente no pedido.",
+      },
+      {
+        title: "Marque o pedido como processado",
+        text: "No pedido, clique em « Processar itens ». Cole o código de rastreio: a Shopify reconhece muitas vezes a transportadora sozinha; se não, escolha-a na lista. Deixe marcada a caixa que envia o aviso de envio ao cliente e confirme. O pedido passa a « Processado ».",
+      },
+      {
+        title: "Deixe o cliente acompanhar o pacote",
+        text: "O cliente recebe um e-mail de confirmação de envio com o link de rastreio. O código fica visível no pedido: se houver uma pergunta, abra o pedido e veja o rastreio antes de responder. Os modelos destes e-mails estão em « Configurações », depois « Notificações ».",
+      },
+      {
+        title: "Trate uma devolução ou um reembolso",
+        text: "Se o cliente devolver um artigo, abra o pedido e use « Devolução » ou « Reembolsar », conforme o caso. Reembolse no mesmo meio de pagamento da compra e siga as regras escritas na sua política de devolução.",
+      },
+    ],
+    pitfalls: [
+      "Enviar sem marcar o pedido como processado: o cliente não recebe e-mail nem código de rastreio, e perde a noção do que já saiu.",
+      "Não verificar o endereço: um pacote devolvido custa duas vezes o frete.",
+      "Prometer um prazo de entrega que não consegue cumprir: escreva prazos realistas nas configurações de envio e nas políticas.",
+    ],
+  },
 ];

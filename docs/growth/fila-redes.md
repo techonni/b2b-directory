@@ -78,6 +78,41 @@ Un pop-up d'inscription qui s'ouvre au clic, pas dès l'arrivée : vos visiteurs
 Sur Leadpages : « Conversion Tools », « Pop-Ups », un seul champ e-mail, et un bouton qui l'ouvre. Testez aussi sur téléphone.
 Comment faire : https://zunrel.com/guides/ajouter-un-pop-up-d-inscription-leadpages/?utm_source=SOURCE&utm_medium=social&utm_campaign=post-diario
 
+### Dia 13
+Votre première commande Shopify est arrivée. Et maintenant ?
+Vérifiez l'adresse, expédiez, puis cliquez sur « Traiter les articles » avec le numéro de suivi : le client reçoit un e-mail et peut suivre son colis.
+Le pas à pas : https://zunrel.com/guides/suivre-ses-commandes-et-expedier-shopify/?utm_source=SOURCE&utm_medium=social&utm_campaign=post-diario
+
+### Dia 14
+HTML Pub coûte à partir de 5,58 $ par mois en paiement annuel (Starter). Leadpages Grow, avec les tests A/B : 53,58 $ par mois.
+Payer à l'année fait économiser environ 20 %, et chaque offre s'essaie 7 jours.
+Tous les prix, relevés le 28 septembre 2026 : https://zunrel.com/guides/combien-coute-leadpages/?utm_source=SOURCE&utm_medium=social&utm_campaign=post-diario
+
+### Dia 15
+Un code promo de bienvenue, c'est 2 minutes sur Shopify : « Réductions », un pourcentage ou un montant, une date de fin.
+Ajoutez une limite d'utilisation : un code partagé partout peut coûter cher.
+Comment faire : https://zunrel.com/guides/creer-un-code-de-reduction-shopify/?utm_source=SOURCE&utm_medium=social&utm_campaign=post-diario
+
+### Dia 16
+Vos contacts restent dans Leadpages ? Ils ne reçoivent donc rien.
+Reliez votre page à Mailchimp, Brevo ou votre CRM : chaque nouvelle inscription arrive dans la bonne liste, automatiquement.
+Le guide : https://zunrel.com/guides/connecter-leadpages-a-son-outil-e-mail/?utm_source=SOURCE&utm_medium=social&utm_campaign=post-diario
+
+### Dia 17
+Avant de retirer le mot de passe de votre boutique Shopify : passez une commande test de bout en bout.
+Paiement, e-mail de confirmation, frais de livraison : c'est le seul moyen de voir ce que verra votre premier client.
+La liste des vérifications : https://zunrel.com/guides/ouvrir-sa-boutique-shopify-au-public/?utm_source=SOURCE&utm_medium=social&utm_campaign=post-diario
+
+### Dia 18
+Un test A/B = une seule différence entre deux pages. Le titre, ou le bouton, ou l'image. Pas les trois.
+Sinon, vous ne saurez jamais ce qui a fait la différence.
+Comment faire un test A/B avec Leadpages : https://zunrel.com/guides/faire-un-test-ab-leadpages/?utm_source=SOURCE&utm_medium=social&utm_campaign=post-diario
+
+### Dia 19
+Vous avez déjà une page HTML toute prête ? Pas besoin de la refaire.
+Sur HTML Pub, collez le code ou déposez le fichier .html : elle est en ligne, sans crédits IA.
+Comment faire : https://zunrel.com/guides/publier-du-html-sur-html-pub/?utm_source=SOURCE&utm_medium=social&utm_campaign=post-diario
+
 ---
 
 ## Pinterest: 5 pins por dia
@@ -191,6 +226,15 @@ Guia novo de 28/09 (só este pin novo; os outros 4 pins do dia 10 em diante ser�
 | Imagem | Título | Descrição | Painel | Link |
 |---|---|---|---|---|
 | https://zunrel.com/pins/ajouter-un-pop-up-d-inscription-leadpages.jpg | Comment ajouter un pop-up d'inscription sur Leadpages ? | Un pop-up qui s'ouvre au bon moment pour proposer votre cadeau ou votre newsletter. Guide gratuit, étape par étape. | Landing pages : Leadpages et HTML Pub | https://zunrel.com/guides/ajouter-un-pop-up-d-inscription-leadpages/?utm_source=pinterest&utm_medium=social&utm_campaign=pin-diario&utm_content=ajouter-un-pop-up-d-inscription-leadpages |
+
+
+### Dia 13
+
+Guia novo de 28/09 (também no `pinterest-agendar.csv`, 08/10).
+
+| Imagem | Título | Descrição | Painel | Link |
+|---|---|---|---|---|
+| https://zunrel.com/pins/suivre-ses-commandes-et-expedier-shopify.jpg | Comment suivre ses commandes et expédier sur Shopify ? | De la nouvelle commande au colis livré, avec le numéro de suivi. Guide gratuit, étape par étape. | Shopify : ouvrir sa boutique | https://zunrel.com/guides/suivre-ses-commandes-et-expedier-shopify/?utm_source=pinterest&utm_medium=social&utm_campaign=pin-diario&utm_content=suivre-ses-commandes-et-expedier-shopify |
 
 
 ## Pins « erreurs à éviter » (2.ª imagem de cada guia): 4 por dia, além do pin do dia

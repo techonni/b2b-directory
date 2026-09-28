@@ -13,19 +13,20 @@
 
 ---
 
-## Lote atual: Lote 1 · preços de hoje
+## Lote atual: Lote 2 · afiliação
 
-Sites: shopify.com e leadpages.com.
+Sites: partnerstack.com (painel da Leadpages / HTML Pub) e impact.com (painel da Shopify).
 
-1. Abre https://www.shopify.com/fr/tarifs e depois https://www.shopify.com/pricing (versão dos EUA, em dólares). Em cada uma, copia exatamente: a duração do teste grátis, a oferta de lançamento (preço e quantos meses), e o preço de Basic, Grow e Advanced no pagamento mensal e no anual.
-2. Abre https://leadpages.com/pricing e copia, para as ofertas HTML Pub (Starter, Pro, Business) e Leadpages (Grow, Optimize, Scale): o preço mensal e o anual, e a duração do teste grátis.
-3. Guarda o resultado como explicado acima (passo 3).
+1. No PartnerStack: procura um link de afiliado que leve ao **HTML Pub** (htmlpub.com ou a página HTML Pub da Leadpages). Se existir, copia o link completo e a página de destino. Se não existir, escreve « não existe » e o texto exato que o painel mostra sobre links personalizados / deep links.
+2. No PartnerStack e no Impact: copia os cliques, as inscrições/vendas e as comissões dos **últimos 30 dias** (só os números, sem nomes nem emails de clientes).
+3. No Impact: vê se é possível criar um link para https://www.shopify.com/fr/tarifs (deep link). Se sim, copia o link. Não mudes nada no perfil.
+
+Guarda o resultado como explicado acima (passo 4).
 
 ---
 
 ## Fila (o Claude Code passa o próximo para « Lote atual » depois de ler o resultado)
 
-- Lote 2 · afiliação: PartnerStack (link para htmlpub.com se existir; cliques e comissões 30 dias) + Impact (link para shopify.com/fr/tarifs se existir; cliques e comissões 30 dias).
 - Lote 3 · Google: Search Console (30 consultas e 30 páginas, 3 meses) + GA4 (15 páginas mais vistas, totais dos eventos, tráfego por canal, 28 dias).
 - Lote 4 · Mailchimp e Vercel: (1) desligar o reCAPTCHA (aprovado pelo Techonni); (2) mudar o email de confirmação da inscrição para o texto em 3 línguas de `docs/newsletter/confirmacao-3-linguas.md` — **perguntar ao Techonni « posso mudar? » antes de guardar**; (3) ver se existe o registo DNS `_dmarc` na Vercel (sem criar nem apagar).
 - Lote 5 · capturas Shopify (só o admin Shopify): `shopify-variantes.webp`, `shopify-page-contact.webp`, `shopify-commandes.webp`, enviadas para `public/captures/` no GitHub.

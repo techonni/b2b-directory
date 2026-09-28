@@ -63,6 +63,11 @@ Des modèles de textes pour votre landing page : titre, sous-titre, avantages, b
 Remplacez ce qui est entre crochets, collez dans l'éditeur, publiez.
 Gratuit : https://zunrel.com/newsletter/modeles-landing-page/?utm_source=SOURCE&utm_medium=social&utm_campaign=post-diario
 
+### Dia 10
+Beaucoup de clients vérifient qu'ils peuvent vous écrire avant d'acheter.
+Sur Shopify, la page Contact avec formulaire est déjà prévue : une page, le modèle « contact », un lien dans le menu. Aucun code.
+Comment faire : https://zunrel.com/guides/ajouter-un-formulaire-de-contact-shopify/?utm_source=SOURCE&utm_medium=social&utm_campaign=post-diario
+
 ---
 
 ## Pinterest: 5 pins por dia
@@ -154,3 +159,11 @@ Imagem: descarregar o link da coluna « Imagem ». Nunca criar um guia novo para
 | Imagem | Título | Descrição | Painel | Link |
 |---|---|---|---|---|
 | https://zunrel.com/pins/creer-une-pub-video-avec-ad-studio.jpg | Comment créer une publicité vidéo avec Ad Studio ? | Une image de départ, un storyboard, puis la vidéo finale, en validant chaque étape. Guide gratuit, étape par étape. | Landing pages : Leadpages et HTML Pub | https://zunrel.com/guides/creer-une-pub-video-avec-ad-studio/?utm_source=pinterest&utm_medium=social&utm_campaign=pin-diario&utm_content=creer-une-pub-video-avec-ad-studio |
+
+### Dia 10
+
+Guia novo de 28/09 (só este pin novo; os outros 4 pins do dia 10 em diante serão imagens novas dos guias existentes, criadas pelo Claude Code antes do fim do dia 9).
+
+| Imagem | Título | Descrição | Painel | Link |
+|---|---|---|---|---|
+| https://zunrel.com/pins/ajouter-un-formulaire-de-contact-shopify.jpg | Comment ajouter un formulaire de contact sur Shopify ? | Une page Contact avec formulaire, reliée au menu, sans code ni application. Guide gratuit, étape par étape. | Shopify : ouvrir sa boutique | https://zunrel.com/guides/ajouter-un-formulaire-de-contact-shopify/?utm_source=pinterest&utm_medium=social&utm_campaign=pin-diario&utm_content=ajouter-un-formulaire-de-contact-shopify |

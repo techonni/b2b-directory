@@ -1,9 +1,9 @@
 # Zunrel · Passagem para a próxima sessão do Claude
 
 > **Como usar:** abre uma sessão nova do Claude Code no projeto `techonni/zunrel` e escreve:
-> « Lê `docs/growth/PROXIMA-SESSAO.md` e começa pelo passo 1. Faz um passo de cada vez, publica tudo (merge para `main`) e confirma no zunrel.com. »
+> « Lê `docs/growth/PROXIMA-SESSAO.md` e começa pelo passo 2. Faz um passo de cada vez, publica tudo (merge para `main`) e confirma no zunrel.com. »
 
-Data: 28/09/2026. Responde ao Techonni em **português**, com palavras simples. Os textos do site e dos emails são em **francês**.
+Data: 28/09/2026 (atualizado depois do passo 1). Responde ao Techonni em **português**, com palavras simples. Os textos do site e dos emails são em **francês**.
 
 ---
 
@@ -16,6 +16,8 @@ Data: 28/09/2026. Responde ao Techonni em **português**, com palavras simples. 
 5. Antes de apagar algo, mostrar o id e o título.
 
 ## O que já está feito
+
+- **Passo 1 (links afiliados):** verificado; as fiches outil passam a dizer ao GA4 qual ferramenta foi clicada (`data-affiliate`). Nota: esta máquina não consegue abrir leadpages.com, shopify.com nem os links afiliados — para isso é preciso o Techonni.
 
 - **Mailchimp pela API:** chave `MAILCHIMP_API_KEY` (datacenter us9, expira por volta de 09/2027). Plano Free: 250 contactos, 500 envios por mês, sem agendamento.
   - Lista `893c08eb5d` « Zunrel », língua `fr`, double opt-in ativo, remetente `Zunrel <contact@zunrel.com>`, domínio autenticado.
@@ -36,13 +38,14 @@ Data: 28/09/2026. Responde ao Techonni em **português**, com palavras simples. 
 - [ ] Acrescentar o DMARC na Vercel, se ainda não existir: `_dmarc` · TXT · `v=DMARC1; p=none; rua=mailto:contact@zunrel.com`.
 - [ ] No iCloud: marcar os testes como « Não é lixo » e guardar contact@zunrel.com nos contactos.
 - [ ] Dizer qual newsletter enviar primeiro, e se vai para todos ou só para uma tag.
+- [ ] **Links afiliados** (ver `docs/growth/verificacao-links-afiliados.md`): mandar um link PartnerStack que leve ao **HTML Pub** (hoje o botão HTML Pub abre a Leadpages); abrir os 2 links numa janela privada e dizer onde chegam; ver se PartnerStack e Impact têm « deep links » para as páginas de preços; confirmar os preços dos botões (Shopify 3 dias + 1 €/mês durante 3 meses, Leadpages 7 dias); ver se os cliques aparecem nos painéis.
 
 ---
 
 ## 20 passos de growth marketing
 
 ### Dinheiro primeiro (afiliação)
-1. **Verificar todos os links de afiliação.** Em `src/lib/guides.ts`: `affiliateLink` (Leadpages/HTML Pub, PartnerStack) e `shopifyLink` (Shopify, Impact), e todos os `affiliateUrl`. Confirmar que cada botão « Essayer » dos guias, das fiches outil e da página inicial usa o link afiliado certo, com `rel="sponsored"`. Seguir os redirecionamentos para ver se chegam ao sítio certo (Leadpages vs HTML Pub). Listar os links diretos (não afiliados) que deviam ser afiliados. Confirmar com o Techonni no painel PartnerStack/Impact que os cliques estão a ser contados.
+1. ✅ *Feito em 28/09/2026 (relatório em `docs/growth/verificacao-links-afiliados.md`; falta a parte do Techonni acima). Próxima sessão: começar pelo passo 2.* **Verificar todos os links de afiliação.** Em `src/lib/guides.ts`: `affiliateLink` (Leadpages/HTML Pub, PartnerStack) e `shopifyLink` (Shopify, Impact), e todos os `affiliateUrl`. Confirmar que cada botão « Essayer » dos guias, das fiches outil e da página inicial usa o link afiliado certo, com `rel="sponsored"`. Seguir os redirecionamentos para ver se chegam ao sítio certo (Leadpages vs HTML Pub). Listar os links diretos (não afiliados) que deviam ser afiliados. Confirmar com o Techonni no painel PartnerStack/Impact que os cliques estão a ser contados.
 2. **Pôr os botões afiliados no sítio certo.** Um botão claro no topo de cada guia (logo depois da intro) e outro no fim. Medir no GA4 (`affiliate_click` por guia) quais convertem.
 3. **Páginas de comparação e de preços** (as pesquisas que mais vendem): « Leadpages prix 2026 », « Shopify prix et frais », « HTML Pub vs Leadpages : lequel choisir ». Preços verificados no próprio dia.
 4. **Página « Meilleures offres du moment »** com os testes grátis e as promoções atuais (ex.: Shopify a 1 €/mês), atualizada todos os meses.

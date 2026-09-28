@@ -15,6 +15,7 @@
     "@fontsource-variable/geist": "^5.3.0",
     "@tailwindcss/vite": "^4.3.3",
     "astro": "^7.3.5",
+    "astro-pagefind": "^2.0.1",
     "tailwindcss": "^4.3.3"
   },
   "allowScripts": {

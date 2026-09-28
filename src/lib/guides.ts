@@ -24,6 +24,7 @@ export type Guide = {
   question: string;
   summary: string;
   theme: string;
+  publishedOn: string;
   updatedOn: string;
   intro: string;
   steps: Step[];
@@ -96,6 +97,7 @@ export const guides: Guide[] = [
     question: "Comment choisir entre HTML Pub et Leadpages ?",
     summary: "Publier simplement ou optimiser ses conversions : la bonne offre selon votre besoin.",
     theme: "choisir",
+    publishedOn: "2026-09-27",
     updatedOn: "2026-09-27",
     popular: true,
     intro:
@@ -139,6 +141,7 @@ export const guides: Guide[] = [
     question: "Comment essayer Leadpages gratuitement ?",
     summary: "L'essai de 7 jours, ce qu'il contient et comment ne pas être débité.",
     theme: "choisir",
+    publishedOn: "2026-09-26",
     updatedOn: "2026-09-26",
     popular: true,
     intro:
@@ -182,6 +185,7 @@ export const guides: Guide[] = [
     question: "Comment changer d'offre ou annuler son abonnement Leadpages ?",
     summary: "Monter ou descendre d'offre, arrêter l'abonnement, et ce que deviennent vos pages.",
     theme: "choisir",
+    publishedOn: "2026-09-26",
     updatedOn: "2026-09-26",
     intro:
       "Vous pouvez changer d'offre ou annuler à tout moment, sans pénalité. Seul le propriétaire du compte peut gérer la facturation.",
@@ -221,6 +225,7 @@ export const guides: Guide[] = [
     question: "Leadpages ou Shopify : lequel choisir ?",
     summary: "Des pages qui convertissent, une boutique complète, ou les deux ensemble.",
     theme: "choisir",
+    publishedOn: "2026-09-27",
     updatedOn: "2026-09-27",
     popular: true,
     intro:
@@ -269,6 +274,7 @@ export const guides: Guide[] = [
     summary: "Le guide complet : de l'essai gratuit à une page en ligne qui récolte des contacts, avec chaque écran.",
     theme: "creer",
     format: "complet",
+    publishedOn: "2026-09-27",
     updatedOn: "2026-09-27",
     popular: true,
     intro:
@@ -371,6 +377,7 @@ export const guides: Guide[] = [
     question: "Comment créer une landing page avec l'IA de Leadpages ?",
     summary: "Décrire sa page, laisser l'IA la construire, puis l'améliorer en discutant.",
     theme: "creer",
+    publishedOn: "2026-09-26",
     updatedOn: "2026-09-26",
     popular: true,
     intro:
@@ -428,6 +435,7 @@ export const guides: Guide[] = [
     question: "Comment partir d'un modèle dans Leadpages ?",
     summary: "Choisir un modèle prêt à l'emploi et l'adapter à votre activité.",
     theme: "creer",
+    publishedOn: "2026-09-26",
     updatedOn: "2026-09-26",
     intro:
       "Un modèle vous évite de partir d'une page blanche. Vous gardez la structure qui fonctionne et vous remplacez les textes, les images et les couleurs.",
@@ -468,6 +476,7 @@ export const guides: Guide[] = [
     question: "Comment publier une page HTML déjà prête sur HTML Pub ?",
     summary: "Coller du code ou déposer un fichier .html, sans dépenser de crédits IA.",
     theme: "creer",
+    publishedOn: "2026-09-26",
     updatedOn: "2026-09-26",
     intro:
       "Vous avez déjà une page en HTML, faite par vous ou par une IA ? HTML Pub la met en ligne en quelques secondes. Cette méthode ne consomme pas de crédits.",
@@ -503,6 +512,7 @@ export const guides: Guide[] = [
     question: "Comment créer un site de plusieurs pages avec HTML Pub ?",
     summary: "Une page d'accueil, puis les autres pages qui reprennent le même menu et le même style.",
     theme: "creer",
+    publishedOn: "2026-09-26",
     updatedOn: "2026-09-26",
     intro:
       "Un site regroupe plusieurs pages sous un même domaine, avec un menu commun. L'IA crée d'abord la page d'accueil, puis chaque page quand vous le demandez.",
@@ -545,6 +555,7 @@ export const guides: Guide[] = [
     question: "Comment créer un blog avec HTML Pub ?",
     summary: "Créer le blog sur HTML Pub, écrire un premier article et le publier sur votre site, étape par étape.",
     theme: "creer",
+    publishedOn: "2026-09-26",
     updatedOn: "2026-09-26",
     intro:
       "Un blog attire des visiteurs depuis Google et les réseaux. Avec HTML Pub, il se crée en une minute et les articles sont en ligne dès que vous les publiez.",
@@ -593,6 +604,7 @@ export const guides: Guide[] = [
     question: "Comment connecter son nom de domaine à Leadpages ?",
     summary: "Afficher vos pages sur votre propre adresse, avec le HTTPS offert.",
     theme: "publier",
+    publishedOn: "2026-09-26",
     updatedOn: "2026-09-26",
     popular: true,
     intro:
@@ -644,6 +656,7 @@ export const guides: Guide[] = [
     question: "Comment modifier l'adresse ou protéger une page par mot de passe ?",
     summary: "Le titre, l'adresse (slug), le mot de passe et les étiquettes d'une page.",
     theme: "publier",
+    publishedOn: "2026-09-26",
     updatedOn: "2026-09-26",
     intro:
       "Chaque page a quelques réglages simples, dans le menu « … » de sa carte, dans « Pages ». Ils servent à avoir une adresse lisible, à cacher une page en préparation ou à ranger vos pages.",
@@ -691,6 +704,7 @@ export const guides: Guide[] = [
     question: "Comment récupérer les contacts de ses formulaires ?",
     summary: "Voir les réponses, les exporter en CSV et les supprimer si besoin.",
     theme: "contacts",
+    publishedOn: "2026-09-26",
     updatedOn: "2026-09-26",
     popular: true,
     intro:
@@ -731,6 +745,7 @@ export const guides: Guide[] = [
     question: "Comment envoyer ses contacts vers Mailchimp, Brevo ou son CRM ?",
     summary: "Connecter une intégration pour que chaque nouveau contact arrive au bon endroit.",
     theme: "contacts",
+    publishedOn: "2026-09-26",
     updatedOn: "2026-09-26",
     intro:
       "Un connecteur envoie chaque réponse de formulaire vers un autre outil, sans copier-coller. HTML Pub en propose plus de 20 : Mailchimp, Brevo, MailerLite, Kit, ActiveCampaign, HubSpot, Pipedrive, Slack, Zapier, Stripe…",
@@ -775,6 +790,7 @@ export const guides: Guide[] = [
     question: "Comment récolter des e-mails avant un lancement ?",
     summary: "Une page d'attente, un formulaire e-mail, une bonne raison de s'inscrire, et vos contacts dans votre outil e-mail.",
     theme: "contacts",
+    publishedOn: "2026-09-27",
     updatedOn: "2026-09-27",
     popular: true,
     intro:
@@ -825,6 +841,7 @@ export const guides: Guide[] = [
     question: "Comment faire un test A/B avec Leadpages ?",
     summary: "Comparer deux versions d'une page et garder celle qui convertit le mieux.",
     theme: "optimiser",
+    publishedOn: "2026-09-26",
     updatedOn: "2026-09-26",
     popular: true,
     intro:
@@ -865,6 +882,7 @@ export const guides: Guide[] = [
     question: "Comment lire une carte de chaleur (heatmap) dans Leadpages ?",
     summary: "Voir où vos visiteurs cliquent, jusqu'où ils descendent et ce qu'ils lisent.",
     theme: "optimiser",
+    publishedOn: "2026-09-26",
     updatedOn: "2026-09-26",
     intro:
       "Une carte de chaleur colore votre page selon l'activité des visiteurs. Elle est incluse dans les offres Leadpages Optimize et Scale, sans code à installer.",
@@ -904,6 +922,7 @@ export const guides: Guide[] = [
     question: "Comment fonctionne Smart Traffic dans Leadpages ?",
     summary: "L'IA envoie chaque visiteur vers la version de page qui a le plus de chances de lui plaire.",
     theme: "optimiser",
+    publishedOn: "2026-09-26",
     updatedOn: "2026-09-26",
     intro:
       "Un test A/B classique partage le trafic à égalité. Smart Traffic, lui, choisit pour chaque visiteur la variante la plus susceptible de le convertir. Il est inclus à partir de Leadpages Optimize.",
@@ -1035,6 +1054,7 @@ export const guides: Guide[] = [
     question: "Comment publier une page HTML Pub directement depuis Claude ?",
     summary: "Connecter HTML Pub à Claude pour créer et modifier vos pages en discutant.",
     theme: "ia",
+    publishedOn: "2026-09-27",
     updatedOn: "2026-09-27",
     intro:
       "HTML Pub a un connecteur pour Claude (MCP). Une fois connecté, vous demandez une page à Claude et il la publie dans votre compte.",
@@ -1074,6 +1094,7 @@ export const guides: Guide[] = [
     question: "Comment créer une publicité vidéo avec Ad Studio ?",
     summary: "Une image de départ, un storyboard, puis la vidéo finale, en validant chaque étape.",
     theme: "ia",
+    publishedOn: "2026-09-26",
     updatedOn: "2026-09-26",
     intro:
       "Ad Studio transforme une courte description en publicité. Il propose des pubs centrées sur le produit ou au style UGC, avec un créateur généré par IA. Il est réservé aux offres Leadpages Optimize et Scale.",
@@ -1112,6 +1133,7 @@ export const guides: Guide[] = [
     question: "Comment essayer Shopify gratuitement ?",
     summary: "L'essai de 3 jours, puis 1 € par mois pendant 3 mois : comment en profiter.",
     theme: "boutique",
+    publishedOn: "2026-09-27",
     updatedOn: "2026-09-27",
     popular: true,
     intro:
@@ -1149,6 +1171,7 @@ export const guides: Guide[] = [
     question: "Comment choisir son forfait Shopify ?",
     summary: "Basic, Grow, Advanced ou Plus : lequel prendre selon votre activité.",
     theme: "boutique",
+    publishedOn: "2026-09-27",
     updatedOn: "2026-09-27",
     intro:
       "Shopify propose quatre forfaits. Pour démarrer seul, Basic suffit presque toujours. Les forfaits plus chers servent surtout aux équipes et aux gros volumes.",
@@ -1182,6 +1205,7 @@ export const guides: Guide[] = [
     summary: "Le guide complet : de l'inscription à la première vente, avec chaque écran de l'administration.",
     theme: "boutique",
     format: "complet",
+    publishedOn: "2026-09-27",
     updatedOn: "2026-09-27",
     popular: true,
     intro:
@@ -1356,6 +1380,7 @@ export const guides: Guide[] = [
     question: "Comment créer sa boutique Shopify ?",
     summary: "De l'inscription à la boutique en ligne : compte, thème, produits et paiements, dans l'ordre.",
     theme: "boutique",
+    publishedOn: "2026-09-27",
     updatedOn: "2026-09-27",
     popular: true,
     intro:
@@ -1397,6 +1422,7 @@ export const guides: Guide[] = [
     question: "Comment ajouter un produit sur Shopify ?",
     summary: "Titre, photos, prix, stock et expédition : la fiche produit remplie correctement.",
     theme: "boutique",
+    publishedOn: "2026-09-27",
     updatedOn: "2026-09-27",
     intro:
       "Une bonne fiche produit fait vendre. Shopify vous guide champ par champ ; les changements enregistrés s'affichent tout de suite dans la boutique.",
@@ -1438,6 +1464,7 @@ export const guides: Guide[] = [
     question: "Comment connecter son nom de domaine à Shopify ?",
     summary: "Utiliser votre propre adresse au lieu de l'adresse en myshopify.com.",
     theme: "boutique",
+    publishedOn: "2026-09-27",
     updatedOn: "2026-09-27",
     intro:
       "Chaque boutique a une adresse gratuite en .myshopify.com. Avec votre propre domaine, elle inspire plus confiance. Le certificat SSL (HTTPS) est gratuit.",
@@ -1474,6 +1501,7 @@ export const guides: Guide[] = [
     question: "Comment accepter les paiements sur Shopify ?",
     summary: "Shopify Payments, Bancontact, PayPal : les réglages et les frais à connaître.",
     theme: "boutique",
+    publishedOn: "2026-09-27",
     updatedOn: "2026-09-27",
     intro:
       "Shopify Payments permet d'accepter les cartes, Bancontact, Apple Pay et d'autres moyens de paiement sans prestataire externe. C'est aussi ce qui évite les frais de transaction supplémentaires.",
@@ -1510,6 +1538,7 @@ export const guides: Guide[] = [
     question: "Comment choisir et installer un thème gratuit sur Shopify ?",
     summary: "Trouver un thème gratuit dans la Theme Store, l'essayer, puis le publier.",
     theme: "boutique",
+    publishedOn: "2026-09-27",
     updatedOn: "2026-09-27",
     intro:
       "Le thème décide de l'apparence de votre boutique. Shopify propose des thèmes gratuits, conçus et maintenus par Shopify : c'est le meilleur point de départ.",
@@ -1553,6 +1582,7 @@ export const guides: Guide[] = [
     question: "Comment créer un code de réduction sur Shopify ?",
     summary: "Un code promo en pourcentage ou en montant fixe, avec ses conditions et ses limites.",
     theme: "boutique",
+    publishedOn: "2026-09-27",
     updatedOn: "2026-09-27",
     intro:
       "Un code de réduction aide à déclencher une première commande. Sur Shopify, il se crée en quelques minutes et s'applique au moment du paiement.",
@@ -1594,6 +1624,7 @@ export const guides: Guide[] = [
     question: "Comment relier HTML Pub ou Leadpages à Shopify ?",
     summary: "Le connecteur Shopify de HTML Pub, et les boutons qui envoient vers votre boutique.",
     theme: "boutique",
+    publishedOn: "2026-09-27",
     updatedOn: "2026-09-27",
     intro:
       "Vos pages HTML Pub ou Leadpages attirent les visiteurs, Shopify encaisse les ventes. Deux liens sont possibles : le connecteur Shopify, et des boutons qui mènent au paiement Shopify.",
@@ -1639,6 +1670,7 @@ export const guides: Guide[] = [
     question: "Comment attirer des clients vers sa boutique Shopify avec une landing page ?",
     summary: "Une page simple, une offre claire, un formulaire, puis un lien vers votre boutique.",
     theme: "boutique",
+    publishedOn: "2026-09-27",
     updatedOn: "2026-09-27",
     popular: true,
     intro:
@@ -1689,6 +1721,7 @@ export const guides: Guide[] = [
     question: "Comment créer une page de vente pour un produit Shopify ?",
     summary: "Une page d'une seule offre, créée avec l'IA de HTML Pub, qui envoie vers votre produit Shopify.",
     theme: "boutique",
+    publishedOn: "2026-09-27",
     updatedOn: "2026-09-27",
     intro:
       "Une fiche produit Shopify montre le produit ; une page de vente le raconte. Elle sert surtout quand vous faites de la publicité ou des vidéos pour un produit précis.",
@@ -1736,6 +1769,7 @@ export const guides: Guide[] = [
     question: "Comment régler les frais de livraison sur Shopify ?",
     summary: "Zones de livraison, tarifs fixes ou selon le poids, et livraison gratuite dès un montant.",
     theme: "boutique",
+    publishedOn: "2026-09-27",
     updatedOn: "2026-09-27",
     intro:
       "Les frais de livraison se règlent une seule fois, par zone de livraison. Des tarifs simples et justes évitent les paniers abandonnés au moment de payer.",
@@ -1786,6 +1820,7 @@ export const guides: Guide[] = [
     question: "Comment ajouter ses conditions de vente et politiques sur Shopify ?",
     summary: "Retours, conditions de service, expédition, coordonnées et mentions légales, affichées au paiement.",
     theme: "boutique",
+    publishedOn: "2026-09-27",
     updatedOn: "2026-09-27",
     intro:
       "Les politiques rassurent l'acheteur et sont exigées par la loi pour vendre en ligne. Shopify les affiche au paiement ; il reste à les écrire et à les mettre dans le menu.",
@@ -1832,6 +1867,7 @@ export const guides: Guide[] = [
     question: "Comment modifier le menu de sa boutique Shopify ?",
     summary: "Ajouter, renommer, déplacer des liens et créer un menu déroulant.",
     theme: "boutique",
+    publishedOn: "2026-09-27",
     updatedOn: "2026-09-27",
     intro:
       "Le menu aide le visiteur à trouver vos produits en un clic. Shopify en crée deux au départ : le menu principal, en haut, et le menu du pied de page.",
@@ -1874,6 +1910,7 @@ export const guides: Guide[] = [
     question: "Comment retirer le mot de passe de sa boutique Shopify ?",
     summary: "Ouvrir la boutique au public en désactivant le mode privé, et ce qu'il faut vérifier avant.",
     theme: "boutique",
+    publishedOn: "2026-09-27",
     updatedOn: "2026-09-27",
     intro:
       "Une nouvelle boutique Shopify est protégée par un mot de passe : personne ne peut acheter. Pour l'ouvrir, il faut d'abord choisir un forfait, puis désactiver le mode privé.",

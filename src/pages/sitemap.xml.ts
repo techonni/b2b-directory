@@ -12,6 +12,7 @@ export const GET: APIRoute = ({ site }) => {
     { path: "/outils/" },
     { path: "/newsletter/" },
     { path: "/newsletter/checklist-shopify/" },
+    { path: "/faq/", lastmod: lastGuide },
     { path: "/a-propos/" },
     { path: "/kit-media/" },
     { path: "/conditions-d-utilisation/" },

@@ -2,7 +2,7 @@
 // La clé est lue dans la variable d'environnement MAILCHIMP_API_KEY (jamais écrite dans un fichier).
 //
 //   node --experimental-strip-types scripts/mailchimp.mjs status
-//   node --experimental-strip-types scripts/mailchimp.mjs newsletter <slug> <slug>… --subject "…" [--intro "…"] [--campaign <id>] [--tag shopify]
+//   node --experimental-strip-types scripts/mailchimp.mjs newsletter <slug> <slug>… --subject "…" [--intro "…"] [--campaign <id>] [--tag shopify] [--to <e-mail de test>]
 //   node --experimental-strip-types scripts/mailchimp.mjs report <campaign_id>
 //   node --experimental-strip-types scripts/mailchimp.mjs cleanup [--apply]
 //   node --experimental-strip-types scripts/mailchimp.mjs export
@@ -102,7 +102,8 @@ function utm(url, campaign) {
 
 // Modèle fixe aux couleurs du « Zunrel Design System » (artifact Claude) :
 // noir et blanc, texte #171717, boutons charbon #262626, fond #fbfbfb, cartes blanches bordées #e5e5e5,
-// rayon 8px, police Geist (repli : police système), logo 12 points hébergé sur zunrel.com.
+// rayon 8px, police Geist (repli : police système). Logo : le caractère ◌ (cercle en pointillés),
+// du texte et non une image, pour qu'il s'affiche même quand la messagerie bloque les images.
 // Liens suivis avec UTM. Pas d'image décorative : rien n'est bloqué par les messageries.
 export function renderNewsletter({ subject, intro, items, campaign }) {
   const font = "'Geist','Geist Variable',-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif";
@@ -138,7 +139,7 @@ export function renderNewsletter({ subject, intro, items, campaign }) {
     <tr><td style="padding:0 0 40px 0;">
       <a href="${esc(utm("/", campaign))}" style="text-decoration:none;">
         <table role="presentation" cellpadding="0" cellspacing="0"><tr>
-          <td style="padding:0 8px 0 0;vertical-align:middle;"><img src="${SITE}/email/zunrel-mark.png" width="24" height="24" alt="" style="display:block;border:0;"></td>
+          <td style="padding:0 8px 0 0;vertical-align:middle;font-size:24px;line-height:24px;color:#171717;">&#9676;</td>
           <td style="vertical-align:middle;font-family:${font};font-size:15px;line-height:20px;font-weight:600;letter-spacing:-0.01em;color:#171717;">Zunrel</td>
         </tr></table>
       </a>
@@ -151,8 +152,12 @@ export function renderNewsletter({ subject, intro, items, campaign }) {
         <a href="${esc(utm("/guides/", campaign))}" style="color:#171717;font-weight:500;">zunrel.com/guides →</a></p>
     </td></tr>
     <tr><td style="border-top:1px solid #e5e5e5;padding:24px 0 0 0;">
-      <p style="margin:0;font-family:${font};font-size:13px;line-height:20px;color:#a0a0a0;">Site indépendant, non édité par Leadpages ni Shopify. Les liens vers Leadpages, HTML Pub et Shopify présents dans les guides sont des liens affiliés : ils ne changent pas le prix pour vous.</p>
-      <!-- Désinscription et adresse postale : pied de page ajouté automatiquement par Mailchimp. -->
+      <p style="margin:0 0 12px 0;font-family:${font};font-size:13px;line-height:20px;color:#a0a0a0;">Site indépendant, non édité par Leadpages ni Shopify. Les liens vers Leadpages, HTML Pub et Shopify présents dans les guides sont des liens affiliés : ils ne changent pas le prix pour vous.</p>
+      <!-- Pied de page obligatoire (désinscription, adresse postale, badge du forfait gratuit), sans afficher l'adresse du destinataire. -->
+      <p style="margin:0 0 12px 0;font-family:${font};font-size:13px;line-height:20px;color:#a0a0a0;">Vous recevez cet e-mail car vous vous êtes inscrit sur zunrel.com. Une question ? <a href="mailto:contact@zunrel.com" style="color:#737373;">contact@zunrel.com</a><br>
+        <a href="*|UNSUB|*" style="color:#737373;">Se désinscrire</a> · <a href="*|UPDATE_PROFILE|*" style="color:#737373;">Changer mes préférences</a></p>
+      <p style="margin:0 0 16px 0;font-family:${font};font-size:13px;line-height:20px;color:#a0a0a0;">*|LIST:ADDRESSLINE|*</p>
+      *|IF:REWARDS|* *|REWARDS|* *|END:IF|*
     </td></tr>
   </table>
 </td></tr></table>
@@ -213,9 +218,9 @@ async function newsletter() {
   for (const item of checklist.items) if (item.type !== "success") console.log(`  - ${item.type} : ${item.heading} · ${item.details}`);
 
   if (!a["no-test"]) {
-    const { email } = await mc("/?fields=email");
+    const email = a.to || (await mc("/?fields=email")).email;
     await mc(`/campaigns/${id}/actions/test`, { method: "POST", body: { test_emails: [email], send_type: "html" } });
-    console.log("E-mail de test envoyé à l'adresse du compte (vérifier aussi les spams).");
+    console.log(`E-mail de test envoyé à ${a.to ? a.to : "l'adresse du compte"} (vérifier aussi les spams).`);
   }
   console.log("Rien n'a été envoyé aux abonnés. Envoi réel seulement après le « oui » de Techonni.");
 }

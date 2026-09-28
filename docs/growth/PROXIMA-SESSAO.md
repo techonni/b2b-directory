@@ -75,7 +75,7 @@ Data: 28/09/2026 (2.ª sessão do dia: guia da semana 2). Responde ao Techonni e
 
 | Passo | Estado |
 |---|---|
-| « b2b » | ✅ Explicado: não há segundo repositório. O `package.json` ainda tinha o nome do modelo inicial, `b2b-directory`; o Co-work lia esse nome. Mudado para `zunrel`. Na Vercel também só existe o projeto `zunrel` para este site. |
+| « b2b » | ✅ Explicado: não há segundo repositório. O `package.json` ainda tinha o nome do modelo inicial, `b2b-directory`; o Co-work lia esse nome. Mudado para `zunrel`. Na Vercel também só existe o projeto `zunrel` para este site. Novo endereço `zunrel-com.vercel.app` (redireciona para zunrel.com; `zunrel.vercel.app` já é de outra pessoa). **Falta o Techonni:** apagar `b2b-directory-eight.vercel.app` em Vercel → projeto zunrel → Settings → Domains (as ferramentas do Claude Code não conseguem remover domínios). |
 | 1. Resultados do Chrome | ⏳ Ainda nenhum lote em `RESULTADOS-CHROME.md`. O lote 1 (preços) continua como « Lote atual ». **Falta o Techonni** dizer « continua » no Chrome. |
 | 2. Preços, link HTML Pub | ⏳ Bloqueado: espera o lote 1 (preços) e o lote 2 (PartnerStack) do Chrome. |
 | 3. Search Console | ⏳ Bloqueado: espera o lote 3 do Chrome. |

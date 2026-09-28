@@ -100,37 +100,58 @@ function utm(url, campaign) {
   return u.toString();
 }
 
-// Modèle fixe : texte seul (pas d'image = rien de bloqué par les messageries), liens suivis avec UTM.
+// Modèle fixe aux couleurs du « Zunrel Design System » (artifact Claude) :
+// noir et blanc, texte #171717, boutons charbon #262626, fond #fbfbfb, cartes blanches bordées #e5e5e5,
+// rayon 8px, police Geist (repli : police système), logo 12 points hébergé sur zunrel.com.
+// Liens suivis avec UTM. Pas d'image décorative : rien n'est bloqué par les messageries.
 export function renderNewsletter({ subject, intro, items, campaign }) {
-  const rows = items
-    .map(
-      (guide, index) => `
-        <tr><td style="padding:0 0 28px 0;">
-          <p style="margin:0 0 6px 0;font-size:13px;line-height:20px;color:#737373;">${index + 1}.</p>
-          <a href="${esc(utm(`/guides/${guide.slug}/`, campaign))}" style="font-size:17px;line-height:24px;font-weight:600;color:#171717;text-decoration:none;">${esc(guide.question)}</a>
-          <p style="margin:6px 0 10px 0;font-size:15px;line-height:23px;color:#555555;">${esc(guide.summary)}</p>
-          <a href="${esc(utm(`/guides/${guide.slug}/`, campaign))}" style="font-size:14px;line-height:20px;color:#171717;text-decoration:underline;">Lire le guide →</a>
-        </td></tr>`,
-    )
+  const font = "'Geist','Geist Variable',-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif";
+  const cards = items
+    .map((guide, index) => {
+      const link = esc(utm(`/guides/${guide.slug}/`, campaign));
+      return `
+    <tr><td style="padding:0 0 16px 0;">
+      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#ffffff;border:1px solid #e5e5e5;border-radius:8px;">
+        <tr><td style="padding:24px;">
+          <p style="margin:0 0 8px 0;font-family:${font};font-size:13px;line-height:20px;color:#737373;">Guide ${index + 1}</p>
+          <a href="${link}" style="font-family:${font};font-size:20px;line-height:26px;font-weight:600;color:#171717;text-decoration:none;">${esc(guide.question)}</a>
+          <p style="margin:8px 0 20px 0;font-family:${font};font-size:16px;line-height:24px;color:#666666;">${esc(guide.summary)}</p>
+          <table role="presentation" cellpadding="0" cellspacing="0"><tr>
+            <td style="background:#262626;border-radius:8px;">
+              <a href="${link}" style="display:inline-block;padding:12px 20px;font-family:${font};font-size:14px;line-height:20px;font-weight:500;color:#ffffff;text-decoration:none;">Lire le guide</a>
+            </td>
+          </tr></table>
+        </td></tr>
+      </table>
+    </td></tr>`;
+    })
     .join("");
   return `<!doctype html>
-<html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>${esc(subject)}</title></head>
+<html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light"><meta name="supported-color-schemes" content="light">
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&display=swap" rel="stylesheet">
+<title>${esc(subject)}</title></head>
 <body style="margin:0;padding:0;background:#fbfbfb;">
-<span style="display:none;max-height:0;overflow:hidden;">*|MC_PREVIEW_TEXT|*</span>
-<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#fbfbfb;"><tr><td align="center" style="padding:32px 16px;">
-  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="max-width:560px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;">
-    <tr><td style="padding:0 0 28px 0;">
-      <a href="${esc(utm("/", campaign))}" style="font-size:15px;font-weight:600;color:#171717;text-decoration:none;">Zunrel</a>
+<span style="display:none;max-height:0;overflow:hidden;mso-hide:all;">*|MC_PREVIEW_TEXT|*</span>
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#fbfbfb;"><tr><td align="center" style="padding:40px 16px;">
+  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="max-width:580px;">
+    <tr><td style="padding:0 0 40px 0;">
+      <a href="${esc(utm("/", campaign))}" style="text-decoration:none;">
+        <table role="presentation" cellpadding="0" cellspacing="0"><tr>
+          <td style="padding:0 8px 0 0;vertical-align:middle;"><img src="${SITE}/email/zunrel-mark.png" width="24" height="24" alt="" style="display:block;border:0;"></td>
+          <td style="vertical-align:middle;font-family:${font};font-size:15px;line-height:20px;font-weight:600;letter-spacing:-0.01em;color:#171717;">Zunrel</td>
+        </tr></table>
+      </a>
     </td></tr>
-    <tr><td style="padding:0 0 12px 0;"><h1 style="margin:0;font-size:22px;line-height:28px;color:#171717;">${esc(subject)}</h1></td></tr>
-    <tr><td style="padding:0 0 32px 0;"><p style="margin:0;font-size:15px;line-height:23px;color:#555555;">${esc(intro)}</p></td></tr>
-    ${rows}
-    <tr><td style="padding:4px 0 32px 0;">
-      <p style="margin:0;font-size:15px;line-height:23px;color:#555555;">Tous les guides, classés par thème :
-        <a href="${esc(utm("/guides/", campaign))}" style="color:#171717;">zunrel.com/guides</a></p>
+    <tr><td style="padding:0 0 12px 0;"><h1 style="margin:0;font-family:${font};font-size:26px;line-height:32px;font-weight:600;color:#171717;">${esc(subject)}</h1></td></tr>
+    <tr><td style="padding:0 0 32px 0;"><p style="margin:0;font-family:${font};font-size:16px;line-height:24px;color:#666666;">${esc(intro)}</p></td></tr>
+    ${cards}
+    <tr><td style="padding:16px 0 40px 0;">
+      <p style="margin:0;font-family:${font};font-size:16px;line-height:24px;color:#666666;">Tous les guides Leadpages, HTML Pub et Shopify :
+        <a href="${esc(utm("/guides/", campaign))}" style="color:#171717;font-weight:500;">zunrel.com/guides →</a></p>
     </td></tr>
-    <tr><td style="border-top:1px solid #e5e5e5;padding:20px 0 0 0;font-size:12px;line-height:18px;color:#a0a0a0;">
-      <p style="margin:0;">Certains liens vers Leadpages, HTML Pub et Shopify présents dans les guides sont des liens affiliés : ils ne changent pas le prix pour vous. Zunrel est un site indépendant.</p>
+    <tr><td style="border-top:1px solid #e5e5e5;padding:24px 0 0 0;">
+      <p style="margin:0;font-family:${font};font-size:13px;line-height:20px;color:#a0a0a0;">Site indépendant, non édité par Leadpages ni Shopify. Les liens vers Leadpages, HTML Pub et Shopify présents dans les guides sont des liens affiliés : ils ne changent pas le prix pour vous.</p>
       <!-- Désinscription et adresse postale : pied de page ajouté automatiquement par Mailchimp. -->
     </td></tr>
   </table>

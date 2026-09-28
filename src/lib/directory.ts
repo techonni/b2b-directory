@@ -27,7 +27,7 @@ export type Category = {
   featured: boolean;
 };
 
-export const curator = "Your Name";
+export const curator = "Zunrel";
 
 export const categories: Category[] = [
   {

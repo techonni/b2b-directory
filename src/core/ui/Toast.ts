@@ -1,7 +1,6 @@
 import { Container, Graphics, type Text } from 'pixi.js';
 import gsap from 'gsap';
-import { C, isLight } from '../theme';
-import { ledgeColor } from './Button';
+import { C } from '../theme';
 import { makeText } from '../text';
 
 /** Aviso curto no topo (ganho, perda, saldo insuficiente…). */
@@ -19,13 +18,12 @@ export class Toast extends Container {
     this.visible = false;
   }
 
-  show(text: string, color: number = C.text, textColor?: number): void {
+  show(text: string, color: number = C.btnSecondary, textColor: number = C.text): void {
     this.caption.text = text;
-    this.caption.style.fill = textColor ?? (isLight(color) ? C.text : C.white);
+    this.caption.style.fill = textColor;
     const w = this.caption.width + 40;
     const h = 44;
-    this.bg.clear().roundRect(-w / 2, -h / 2 + 5, w, h, h / 2).fill(ledgeColor(color));
-    this.bg.roundRect(-w / 2, -h / 2, w, h, h / 2).fill(color);
+    this.bg.clear().roundRect(-w / 2, -h / 2, w, h, h / 2).fill(color);
     this.tl?.kill();
     this.visible = true;
     this.tl = gsap

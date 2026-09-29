@@ -99,7 +99,7 @@ export class HomePage extends Page {
     ];
     const sw = m ? w / 3 : 140;
     stats.forEach(([big, small], i) => {
-      const b = makeText(big, { fontSize: m ? 26 : 32, fontWeight: '900', fill: C.reward });
+      const b = makeText(big, { fontSize: m ? 24 : 28, fontWeight: '800', fill: C.text });
       const s = makeText(small, { fontSize: 13, fontWeight: '600', fill: C.textMuted });
       b.position.set(x + i * sw, by);
       s.position.set(x + i * sw, by + (m ? 32 : 38));
@@ -122,7 +122,7 @@ export class HomePage extends Page {
     a2.layout(artCardW, artCardH);
     const frame = (t: Thumb) => {
       const f = new Container();
-      f.addChild(new Graphics().roundRect(-6, -6, artCardW + 12, artCardH + 12, R.panel + 4).fill(C.bgPanel).stroke({ width: 2, color: C.border, alignment: 1 }), t);
+      f.addChild(new Graphics().roundRect(-6, -6, artCardW + 12, artCardH + 12, R.panel + 4).fill(C.bgPanel), t);
       return f;
     };
     const f2 = frame(a2);
@@ -198,7 +198,7 @@ export class HomePage extends Page {
       const baseY = m ? stackY : y + Math.floor(i / cols) * (cardH + gap);
       stackY += height + gap;
       card.position.set(x + (i % cols) * (cw + gap), baseY);
-      bg.roundRect(0, 0, cw, m ? cards[i].height : cardH, R.panel).fill(C.bgPanel).stroke({ width: 2, color: C.border, alignment: 1 });
+      bg.roundRect(0, 0, cw, m ? cards[i].height : cardH, R.panel).fill(C.bgPanel);
       if (!m) {
         card.eventMode = 'static';
         card.on('pointerover', () => gsap.to(card, { y: baseY - 4, duration: 0.2 }));
@@ -220,10 +220,10 @@ export class HomePage extends Page {
     FEATURES.forEach((f, i) => {
       const tile = new Container();
       tile.position.set(x + (i % fcols) * (fw + gap), y + Math.floor(i / fcols) * (fh + 16));
-      const bg = new Graphics().roundRect(0, 0, fw, fh, R.panel).fill(C.bgPanel).stroke({ width: 2, color: C.border, alignment: 1 });
+      const bg = new Graphics().roundRect(0, 0, fw, fh, R.panel).fill(C.bgPanel);
       const circle = new Graphics().circle(0, 0, 22).fill(C.bgAddon);
       circle.position.set(40, m ? fh / 2 : 44);
-      const ic = makeText(f.icon, { fontSize: 20, fontWeight: '800', fill: C.btnPrimary });
+      const ic = makeText(f.icon, { fontSize: 20, fontWeight: '800', fill: C.text });
       ic.anchor.set(0.5);
       ic.position.copyFrom(circle.position);
       const t = makeText(f.title, { fontSize: 18, fontWeight: '700', fill: C.text });

@@ -54,7 +54,7 @@ export class Drawer extends Container {
   layout(W: number, H: number): void {
     this.panelW = Math.min(320, W * 0.86);
     const w = this.panelW;
-    this.backdrop.clear().rect(0, 0, W, H).fill({ color: C.night, alpha: 0.45 });
+    this.backdrop.clear().rect(0, 0, W, H).fill({ color: 0x000000, alpha: 0.55 });
     this.backdrop.hitArea = new Rectangle(0, 0, W, H);
     this.bg.clear().rect(0, 0, w, H).fill(C.bgPanel);
     this.panel.hitArea = new Rectangle(0, 0, w, H);

@@ -60,7 +60,7 @@ export class NavBar extends Container {
       this.items.push({ tab, view, icon, label, w: 0 });
     }
     this.badge.addChild(new Graphics().circle(0, 0, 10).fill(C.down));
-    this.badgeText = makeText('', { fontSize: 12, fontWeight: '800', fill: C.white });
+    this.badgeText = makeText('', { fontSize: 12, fontWeight: '800', fill: C.text });
     this.badgeText.anchor.set(0.5);
     this.badge.addChild(this.badgeText);
     this.badge.visible = false;
@@ -118,7 +118,7 @@ export class NavBar extends Container {
       const on = it.tab === this.active;
       it.icon.clear();
       if (it.tab === 'trade') {
-        if (on) ICONS.trade(it.icon, C.white);
+        if (on) ICONS.trade(it.icon, C.text);
         else {
           it.icon.moveTo(-5, 8).lineTo(-5, -8).moveTo(-9, -4).lineTo(-5, -8).lineTo(-1, -4);
           it.icon.moveTo(5, -8).lineTo(5, 8).moveTo(1, 4).lineTo(5, 8).lineTo(9, 4);
@@ -133,7 +133,7 @@ export class NavBar extends Container {
     if (this.horizontal) {
       const it = this.items.find((i) => i.tab === this.active);
       if (it) {
-        this.pill.roundRect(it.view.x - 16, NavBar.ROW_H / 2 - 20, it.w + 4, 40, 20).fill(C.bgPanel).stroke({ width: 2, color: C.border, alignment: 1 });
+        this.pill.roundRect(it.view.x - 16, NavBar.ROW_H / 2 - 20, it.w + 4, 40, 20).fill(C.bgPanel);
       }
     }
   }

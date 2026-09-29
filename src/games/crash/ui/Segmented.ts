@@ -38,7 +38,7 @@ export class Segmented extends Container {
     const n = this.labels.length;
     const segW = (w - 10) / n;
     this.bg.clear().roundRect(0, 0, w, h, h / 2).fill(C.bgInput);
-    this.knob.clear().roundRect(0, 0, segW, h - 10, (h - 10) / 2).fill(C.white).stroke({ width: 2, color: C.face, alignment: 1 });
+    this.knob.clear().roundRect(0, 0, segW, h - 10, (h - 10) / 2).fill(C.bgAddon);
     this.knob.position.set(5 + this.index * segW, 5);
     this.labels.forEach((t, i) => {
       t.position.set(5 + segW * (i + 0.5), h / 2);

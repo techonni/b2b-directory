@@ -1,9 +1,12 @@
 import { Container, Graphics, Rectangle, type Text } from 'pixi.js';
 import gsap from 'gsap';
-import { C, R } from '../theme';
+import { C, R, ledgeOf } from '../theme';
 import { makeText } from '../text';
 import { sound } from '../audio/Sound';
 import { scrollGesture } from './ScrollBox';
+
+/** Altura da base sólida ("ledge") que colapsa ao toque. */
+const LEDGE = 6;
 
 export interface ButtonOptions {
   label: string;
@@ -20,7 +23,9 @@ export class Button extends Container {
   onTap: (() => void) | null = null;
   readonly caption: Text;
   private readonly body = new Container();
+  private readonly face = new Container();
   private readonly bg = new Graphics();
+  private readonly ledge = new Graphics();
   private w: number;
   private h: number;
   private color: number;
@@ -33,16 +38,17 @@ export class Button extends Container {
     this.h = o.height;
     this.color = o.color ?? C.btnPrimary;
     this.radius = o.radius ?? R.btn;
-    this.caption = makeText(o.label, { fontSize: o.fontSize ?? 18, fontWeight: '600', fill: o.textColor ?? C.text });
+    this.caption = makeText(o.label, { fontSize: o.fontSize ?? 18, fontWeight: '800', fill: o.textColor ?? Button.textOn(this.color) });
     this.caption.anchor.set(0.5);
-    this.body.addChild(this.bg, this.caption);
+    this.face.addChild(this.bg, this.caption);
+    this.body.addChild(this.ledge, this.face);
     this.addChild(this.body);
 
     this.eventMode = 'static';
     this.cursor = 'pointer';
-    const release = () => gsap.to(this.body.scale, { x: 1, y: 1, duration: 0.18, ease: 'back.out(3)' });
+    const release = () => gsap.to(this.face, { y: 0, duration: 0.14, ease: 'back.out(3)' });
     this.on('pointerdown', () => {
-      if (this.enabled) gsap.to(this.body.scale, { x: 0.96, y: 0.96, duration: 0.08 });
+      if (this.enabled) gsap.to(this.face, { y: LEDGE - 1, duration: 0.07 });
     });
     this.on('pointerup', release);
     this.on('pointerupoutside', release);
@@ -64,7 +70,11 @@ export class Button extends Container {
     if (this.caption.text !== text) this.caption.text = text;
   }
 
-  setColor(color: number, textColor: number = C.text): void {
+  private static textOn(color: number): number {
+    return color === C.btnSecondary ? C.text : C.white;
+  }
+
+  setColor(color: number, textColor: number = Button.textOn(color)): void {
     this.color = color;
     this.caption.style.fill = textColor;
     this.redraw();
@@ -77,7 +87,11 @@ export class Button extends Container {
   }
 
   private redraw(): void {
-    this.bg.clear().roundRect(-this.w / 2, -this.h / 2, this.w, this.h, this.radius).fill(this.color);
+    const fh = this.h - LEDGE;
+    const r = Math.min(this.radius, fh / 2);
+    this.ledge.clear().roundRect(-this.w / 2, -this.h / 2 + LEDGE, this.w, fh, r).fill(ledgeOf(this.color));
+    this.bg.clear().roundRect(-this.w / 2, -this.h / 2, this.w, fh, r).fill(this.color);
+    this.caption.y = -LEDGE / 2;
     this.body.position.set(this.w / 2, this.h / 2);
     this.hitArea = new Rectangle(0, 0, this.w, this.h);
   }

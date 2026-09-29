@@ -70,7 +70,7 @@ export class Chart extends Container {
 
   constructor() {
     super();
-    this.tagText = makeText('', { fontSize: 17, fontWeight: '700', fill: C.text });
+    this.tagText = makeText('', { fontSize: 17, fontWeight: '700', fill: C.white });
     this.tagText.anchor.set(0.5);
     this.tag.addChild(this.tagBg, this.tagText);
     for (let i = 0; i < 8; i++) {
@@ -213,7 +213,7 @@ export class Chart extends Container {
       const bg = lab.children[0] as Graphics;
       const t = lab.children[1] as Text;
       t.text = `${p.dir === 'up' ? '▲' : '▼'} ${fmtCountdown(Math.max(0, p.expiry - nowT))}`;
-      t.style.fill = p.dir === 'up' ? C.winText : C.text;
+      t.style.fill = p.dir === 'up' ? C.white : C.white;
       bg.clear().roundRect(-6, -3, t.width + 12, 22, 11).fill(col);
       lab.position.set(x0 + 10 + (i % 3) * 86, y - 26);
     });

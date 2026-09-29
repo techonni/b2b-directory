@@ -35,6 +35,10 @@ class Site {
   async start(): Promise<void> {
     const dpr = Math.min(window.devicePixelRatio || 1, 2);
     setDevicePixelRatio(dpr);
+    await Promise.race([
+      Promise.all([500, 700, 800, 900].map((w) => document.fonts.load(`${w} 16px Rubik`))),
+      new Promise((r) => setTimeout(r, 1500)),
+    ]).catch(() => undefined);
     await this.app.init({ resizeTo: window, background: C.bgBase, antialias: true, autoDensity: true, resolution: dpr });
     document.body.appendChild(this.app.canvas);
     sound.init();

@@ -11,7 +11,7 @@ const multStyle = (outline: number) =>
     fontFamily: FONT,
     fontSize: 76,
     fontWeight: '900',
-    fill: C.text,
+    fill: C.white,
     stroke: { color: outline, width: 7, join: 'round' },
     dropShadow: { color: outline, distance: 6, angle: Math.PI / 2, blur: 0, alpha: 1 },
     padding: 12,
@@ -243,6 +243,7 @@ export class CrashView extends Container {
     const h = crashed ? 54 : 48;
     this.statusBg.clear().roundRect(-w / 2, -h / 2, w, h, h / 2).fill(crashed ? C.loss : C.btnSecondary);
     this.statusText.style.fontSize = crashed ? 22 : 17;
+    this.statusText.style.fill = crashed ? C.white : C.text;
     this.bar.clear();
     this.bar.visible = !crashed;
     this.status.y = crashed ? this.mult.y + 78 : this.mult.y;

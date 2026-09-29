@@ -21,12 +21,12 @@ function marketIcon(): { view: Container; badge: Text } {
     g.rect(i * 6 + 1.5, 26 - h / 2 - 3, 1, h + 6).fill(C.textMuted);
   });
   g.rect(44, 8, 2, 38).fill(C.textMuted);
-  const pill = new Graphics().roundRect(-2, -6, 34, 18, 5).fill(C.bgStage);
-  const badge = makeText('100', { fontSize: 11, fontWeight: '700', fill: C.text });
+  const pill = new Graphics().roundRect(-2, -6, 34, 18, 5).fill(C.text);
+  const badge = makeText('100', { fontSize: 11, fontWeight: '700', fill: C.white });
   badge.anchor.set(0.5);
   badge.position.set(15, 3);
   const dot = new Graphics().circle(40, 2, 8).fill(C.btnPrimary);
-  const s = makeText('1s', { fontSize: 9, fontWeight: '700', fill: C.text });
+  const s = makeText('1s', { fontSize: 9, fontWeight: '700', fill: C.white });
   s.anchor.set(0.5);
   s.position.set(40, 2);
   view.addChild(g, pill, badge, dot, s);
@@ -116,14 +116,14 @@ export class TradeView extends Container {
     this.w = w;
     this.h = h;
     this.wide = wide;
-    (this.plus.getChildByLabel('bg') as Graphics).clear().roundRect(0, 0, 64, TOP_H, R.panel).fill(C.bgPanel);
+    (this.plus.getChildByLabel('bg') as Graphics).clear().roundRect(0, 0, 64, TOP_H, R.panel).fill(C.bgPanel).stroke({ width: 2, color: C.border, alignment: 1 });
     this.plus.hitArea = new Rectangle(0, 0, 64, TOP_H);
     this.plus.children[1].position.set(32, TOP_H / 2);
     this.card.x = 74;
     this.layoutCard();
 
     const pw = wide ? TradeView.SIDE_W : w;
-    this.panelBg.clear().roundRect(0, 0, pw, PANEL_H, R.panel).fill(C.bgPanel);
+    this.panelBg.clear().roundRect(0, 0, pw, PANEL_H, R.panel).fill(C.bgPanel).stroke({ width: 2, color: C.border, alignment: 1 });
     const inner = pw - 32;
     this.dir.position.set(16, 16);
     this.dir.layout(inner, 56);
@@ -147,7 +147,7 @@ export class TradeView extends Container {
 
   private layoutCard(): void {
     const cw = (this.wide ? this.w - TradeView.SIDE_W - 16 : this.w) - 74;
-    this.cardBg.clear().roundRect(0, 0, cw, TOP_H, R.panel).fill(C.bgPanel);
+    this.cardBg.clear().roundRect(0, 0, cw, TOP_H, R.panel).fill(C.bgPanel).stroke({ width: 2, color: C.border, alignment: 1 });
     this.card.hitArea = new Rectangle(0, 0, cw, TOP_H);
     this.icon.view.position.set(18, 10);
     this.marketName.position.set(82, 10);

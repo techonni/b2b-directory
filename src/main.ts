@@ -1,4 +1,4 @@
-import { Application, Container } from 'pixi.js';
+import { Application, Assets, Container } from 'pixi.js';
 import gsap from 'gsap';
 import { C } from './core/theme';
 import { setDevicePixelRatio, updateTextResolutions } from './core/text';
@@ -38,6 +38,20 @@ class Site {
     await this.app.init({ resizeTo: window, background: C.bgBase, antialias: true, autoDensity: true, resolution: dpr });
     document.body.appendChild(this.app.canvas);
     sound.init();
+    // Rubik (fonte do brand kit), carregada pelo Pixi antes de criar qualquer texto.
+    const weights = ['500', '600', '700', '800', '900'];
+    try {
+      await Assets.load([
+        { alias: 'rubik', src: '/fonts/rubik-latin.woff2', data: { family: 'Rubik', weights } },
+        {
+          alias: 'rubik-ext',
+          src: '/fonts/rubik-latin-ext.woff2',
+          data: { family: 'Rubik', weights, unicodeRange: 'U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF' },
+        },
+      ]);
+    } catch {
+      /* sem a fonte, o texto usa a fonte do sistema */
+    }
 
     this.pages.home = new HomePage();
     this.pages.about = new AboutPage();

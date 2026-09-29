@@ -25,17 +25,39 @@ export function speaker(g: Graphics, muted: boolean, color: number = C.text): Gr
   return g;
 }
 
-/** Marca zunrel: quadrado azul com "z" + palavra. */
+/** Gota da mascote (caminho do brand kit, viewBox 204×257), com os dois olhos-pílula brancos. */
+export function dropMark(height = 40): Container {
+  const c = new Container();
+  const g = new Graphics()
+    .moveTo(25.8, 88.7)
+    .lineTo(92.8, 11.6)
+    .quadraticCurveTo(102, 1, 111.2, 11.6)
+    .lineTo(178.2, 88.7)
+    .arc(102, 155, 101, -0.716, 3.858)
+    .closePath()
+    .fill(C.drop);
+  const pill = (cx: number, cy: number, w: number, h: number, rot: number) => {
+    const p = new Graphics().roundRect(-w / 2, -h / 2, w, h, w / 2).fill(C.white);
+    p.position.set(cx, cy);
+    p.rotation = rot;
+    return p;
+  };
+  c.addChild(g, pill(120.5, 114, 18, 32, -0.49), pill(164, 103.5, 15, 31, -0.45));
+  c.scale.set(height / 257);
+  return c;
+}
+
+/** Marca zunrel: gota + palavra em Rubik 900 com o ponto laranja do kit. Origem: meio da altura, à esquerda. */
 export function logo(size = 28): Container {
   const c = new Container();
-  const box = size * 1.25;
-  c.addChild(new Graphics().roundRect(0, -box / 2, box, box, box * 0.28).fill(C.btnPrimary));
-  const z = makeText('z', { fontSize: size, fontWeight: '900', fontStyle: 'italic', fill: C.text });
-  z.anchor.set(0.5);
-  z.position.set(box / 2 - 1, -2);
-  const word = makeText('zunrel', { fontSize: size, fontWeight: '800', fontStyle: 'italic', fill: C.text, letterSpacing: -0.5 });
+  const mark = dropMark(size * 1.45);
+  mark.position.set(0, -size * 0.78);
+  const word = makeText('zunrel', { fontSize: size, fontWeight: '900', fill: C.text, letterSpacing: -0.6 });
   word.anchor.set(0, 0.5);
-  word.position.set(box + 10, -1);
-  c.addChild(z, word);
+  word.position.set(size * 1.3, 0);
+  const dot = makeText('.', { fontSize: size, fontWeight: '900', fill: C.reward });
+  dot.anchor.set(0, 0.5);
+  dot.position.set(word.x + word.width, 0);
+  c.addChild(mark, word, dot);
   return c;
 }

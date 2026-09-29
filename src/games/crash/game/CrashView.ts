@@ -6,14 +6,15 @@ import { fmtMult } from '../format';
 import { HistoryBar } from '../ui/HistoryBar';
 import { multiplierAt } from './CrashEngine';
 
-const multStyle = (outline: number) =>
+// Tipo "Display" do kit: Rubik 900, com o degrau sólido por baixo.
+const multStyle = (fill: number, ledge: number) =>
   new TextStyle({
     fontFamily: FONT,
-    fontSize: 76,
+    fontSize: 78,
     fontWeight: '900',
-    fill: C.text,
-    stroke: { color: outline, width: 7, join: 'round' },
-    dropShadow: { color: outline, distance: 6, angle: Math.PI / 2, blur: 0, alpha: 1 },
+    fill,
+    letterSpacing: -2,
+    dropShadow: { color: ledge, distance: 6, angle: Math.PI / 2, blur: 0, alpha: 1 },
     padding: 12,
   });
 
@@ -35,8 +36,8 @@ export class CrashView extends Container {
   private readonly footLeft: Text;
   private readonly footRight: Text;
 
-  private readonly blueStyle = multStyle(C.multBlue);
-  private readonly redStyle = multStyle(C.multRed);
+  private readonly blueStyle = multStyle(C.multBlue, C.multBlueLedge);
+  private readonly redStyle = multStyle(C.multRed, C.multRedLedge);
   private readonly lineGrad = new FillGradient({
     start: { x: 0, y: 0.5 },
     end: { x: 1, y: 0.5 },
@@ -67,8 +68,8 @@ export class CrashView extends Container {
     this.mult.style = this.blueStyle;
     this.mult.anchor.set(0.5);
 
-    const glow = new Graphics().circle(0, 0, 20).fill({ color: C.text, alpha: 0.12 });
-    const core = new Graphics().circle(0, 0, 12).fill(C.text);
+    const glow = new Graphics().circle(0, 0, 20).fill({ color: C.multBlue, alpha: 0.18 });
+    const core = new Graphics().circle(0, 0, 12).fill(C.multBlue).stroke({ width: 3, color: C.white });
     this.ball.addChild(glow, core);
     gsap.to(glow.scale, { x: 1.35, y: 1.35, duration: 0.7, repeat: -1, yoyo: true, ease: 'sine.inOut' });
 
@@ -86,7 +87,7 @@ export class CrashView extends Container {
 
   layout(w: number, h: number, squareBottom: boolean): void {
     this.w = w;
-    this.bg.clear().roundRect(0, 0, w, h, R.panel).fill(C.bgStage);
+    this.bg.clear().roundRect(0, 0, w, h, R.panel).fill(C.bgStage).stroke({ width: 2, color: C.border, alignment: 1 });
     if (squareBottom) this.bg.rect(0, h - R.panel, w, R.panel).fill(C.bgStage);
 
     this.history.position.set(16, 16);
@@ -243,6 +244,7 @@ export class CrashView extends Container {
     const h = crashed ? 54 : 48;
     this.statusBg.clear().roundRect(-w / 2, -h / 2, w, h, h / 2).fill(crashed ? C.loss : C.btnSecondary);
     this.statusText.style.fontSize = crashed ? 22 : 17;
+    this.statusText.style.fill = crashed ? C.white : C.text;
     this.bar.clear();
     this.bar.visible = !crashed;
     this.status.y = crashed ? this.mult.y + 78 : this.mult.y;

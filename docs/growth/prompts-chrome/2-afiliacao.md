@@ -1,4 +1,0 @@
-1. No painel PartnerStack, programa Leadpages: procura se é possível criar um link de parceiro com outra página de destino (« custom link », « deep link », « destination URL »). Se sim, gera (só gerar) um link para https://htmlpub.com e copia-o. Anota também os cliques, inscrições e comissões dos últimos 30 dias.
-2. No painel Impact, programa Shopify: há opção de link para uma página escolhida? Se sim, gera um link para https://www.shopify.com/fr/tarifs e copia-o. Anota os cliques, ações e comissões dos últimos 30 dias.
-
-Regras: só ler e copiar; não comprar, não mudar planos, não apagar, não enviar nada; nunca inventar números; sem dados pessoais (nome, email, nome da loja). No fim, responde ao Techonni em português com o resultado numa lista curta, com a data e o endereço (URL) de cada informação. Não envies nada para o GitHub: o Techonni cola a tua resposta ao Claude Code.

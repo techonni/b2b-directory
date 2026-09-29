@@ -38,7 +38,7 @@ export class AboutPage extends Page {
       const t = makeText(title, { fontSize: 20, fontWeight: '700', fill: C.text });
       const d = makeText(text, { fontSize: 17, fontWeight: '500', fill: C.textMuted, wordWrap: true, wordWrapWidth: maxW - 40, lineHeight: 27 });
       const h = d.height + 76;
-      const bg = new Graphics().roundRect(x, y, maxW, h, R.panel).fill(C.bgPanel).stroke({ width: 2, color: C.border, alignment: 1 });
+      const bg = new Graphics().roundRect(x, y, maxW, h, R.panel).fill(C.bgPanel);
       t.position.set(x + 20, y + 20);
       d.position.set(x + 20, y + 54);
       c.addChild(bg, t, d);

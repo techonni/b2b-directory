@@ -1,6 +1,6 @@
 import { Container, Graphics, Rectangle, type Text } from 'pixi.js';
 import gsap from 'gsap';
-import { C, LEDGE, R, isLight, tint } from '../theme';
+import { C, R } from '../theme';
 import { makeText } from '../text';
 import { sound } from '../audio/Sound';
 import { scrollGesture } from './ScrollBox';
@@ -15,27 +15,15 @@ export interface ButtonOptions {
   radius?: number;
 }
 
-/** Cor do degrau: azul claro no principal, cinza nos claros, tom mais claro nos restantes. */
-export function ledgeColor(color: number): number {
-  if (color === C.btnPrimary) return C.btnPrimaryLedge;
-  if (isLight(color)) return C.borderStrong;
-  return tint(color, 0.55);
-}
-
-/**
- * Botão do brand kit: cara colorida sobre um degrau sólido de 6px que "afunda" ao carregar (GSAP).
- * A posição é o canto superior esquerdo; o degrau fica por baixo da altura pedida.
- */
+/** Botão Pixi com efeito de pressão em GSAP. A posição é o canto superior esquerdo. */
 export class Button extends Container {
   onTap: (() => void) | null = null;
   readonly caption: Text;
-  private readonly ledge = new Graphics();
-  private readonly face = new Container();
+  private readonly body = new Container();
   private readonly bg = new Graphics();
   private w: number;
   private h: number;
   private color: number;
-  private textColor: number | null;
   private radius: number;
   private enabled = true;
 
@@ -44,18 +32,17 @@ export class Button extends Container {
     this.w = o.width;
     this.h = o.height;
     this.color = o.color ?? C.btnPrimary;
-    this.textColor = o.textColor ?? null;
     this.radius = o.radius ?? R.btn;
-    this.caption = makeText(o.label, { fontSize: o.fontSize ?? 18, fontWeight: '800', fill: C.white });
+    this.caption = makeText(o.label, { fontSize: o.fontSize ?? 18, fontWeight: '600', fill: o.textColor ?? C.text });
     this.caption.anchor.set(0.5);
-    this.face.addChild(this.bg, this.caption);
-    this.addChild(this.ledge, this.face);
+    this.body.addChild(this.bg, this.caption);
+    this.addChild(this.body);
 
     this.eventMode = 'static';
     this.cursor = 'pointer';
-    const release = () => gsap.to(this.face, { y: 0, duration: 0.12, ease: 'power2.out' });
+    const release = () => gsap.to(this.body.scale, { x: 1, y: 1, duration: 0.18, ease: 'back.out(3)' });
     this.on('pointerdown', () => {
-      if (this.enabled) gsap.to(this.face, { y: LEDGE - 1, duration: 0.06 });
+      if (this.enabled) gsap.to(this.body.scale, { x: 0.96, y: 0.96, duration: 0.08 });
     });
     this.on('pointerup', release);
     this.on('pointerupoutside', release);
@@ -77,9 +64,9 @@ export class Button extends Container {
     if (this.caption.text !== text) this.caption.text = text;
   }
 
-  setColor(color: number, textColor?: number): void {
+  setColor(color: number, textColor: number = C.text): void {
     this.color = color;
-    this.textColor = textColor ?? null;
+    this.caption.style.fill = textColor;
     this.redraw();
   }
 
@@ -90,12 +77,8 @@ export class Button extends Container {
   }
 
   private redraw(): void {
-    const light = isLight(this.color);
-    this.ledge.clear().roundRect(0, LEDGE, this.w, this.h, this.radius).fill(ledgeColor(this.color));
-    this.bg.clear().roundRect(0, 0, this.w, this.h, this.radius).fill(this.color);
-    if (light) this.bg.stroke({ width: 2, color: C.border, alignment: 1 });
-    this.caption.style.fill = this.textColor ?? (light ? C.text : C.white);
-    this.caption.position.set(this.w / 2, this.h / 2);
-    this.hitArea = new Rectangle(0, 0, this.w, this.h + LEDGE);
+    this.bg.clear().roundRect(-this.w / 2, -this.h / 2, this.w, this.h, this.radius).fill(this.color);
+    this.body.position.set(this.w / 2, this.h / 2);
+    this.hitArea = new Rectangle(0, 0, this.w, this.h);
   }
 }

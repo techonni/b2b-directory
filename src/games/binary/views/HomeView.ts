@@ -47,7 +47,7 @@ export class HomeView extends Container {
     this.rows = this.feed.markets.map((m, i) => {
       const row = new Container();
       row.y = i * (ROW_H + 10);
-      const bg = new Graphics().roundRect(0, 0, this.w, ROW_H, R.panel).fill(C.bgPanel).stroke({ width: 2, color: C.border, alignment: 1 });
+      const bg = new Graphics().roundRect(0, 0, this.w, ROW_H, R.panel).fill(C.bgPanel);
       const badge = new Graphics().roundRect(16, 20, 48, 44, 10).fill(C.btnSecondary);
       const bt = makeText(m.def.badge, { fontSize: 16, fontWeight: '800', fill: C.text });
       bt.anchor.set(0.5);

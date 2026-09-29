@@ -178,6 +178,13 @@ Data: 28/09/2026 (7.ª sessão do dia: resultados dos lotes 2, P e 4; link Shopi
 | 7. Traduções | ✅ `ajouter-un-produit-shopify` (PT `adicionar-produto-shopify`, EN `add-product-shopify`) e `choisir-un-theme-shopify` (PT `escolher-tema-gratis-shopify`, EN `choose-free-theme-shopify`). |
 | 8. Redes | ✅ Posts até ao dia 22. |
 
+## App iOS (29/09/2026)
+
+- Nova app nativa **SwiftUI** em `ios/Zunrel/`, feita a partir do design `Zunrel App.dc.html` (Claude Design, artifact `0f24fcfb-2800-4425-b1a4-1cd8cd45bdad`). Ecrãs: Accueil, Parcourir, Recherche, Chat, Profil, login/inscrição, tema escuro/claro. Dados de exemplo, sem backend. Fontes Sora e JetBrains Mono incluídas. Instruções em `ios/README.md`.
+- Estado: **pronto, falta o Techonni**: abrir `ios/Zunrel/Zunrel.xcodeproj` no Xcode 16+ do Mac e correr no simulador (não foi compilada aqui, não há Xcode). Se der erro, colar o erro numa sessão e escrever « corrige a app iOS ».
+- A pasta `ios/` não afeta o site (o Astro ignora-a).
+- App Store: o design é de casino com dinheiro real → a Apple exige licença de jogo e conta de empresa. Só como protótipo por agora.
+
 ## Próxima sessão (fazer tudo, por esta ordem)
 
 0. Ver se a produção da Vercel está `READY` com o último commit de `main` (a 28/09 houve um « rate limit »).

@@ -40,7 +40,7 @@ export class TradeView extends Container {
     { label: 'Sobe', color: C.up },
     { label: 'Desce', color: C.down },
   ]);
-  readonly duration = new Tile('Duração');
+  readonly duration = new Tile('Duração', true, false);
   readonly stake = new Tile('Aposta');
   readonly payout = new Tile('Pagamento', false);
   readonly buy = new Button({ label: 'Comprar', width: 300, height: 56, fontSize: 20 });

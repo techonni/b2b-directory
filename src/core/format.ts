@@ -1,9 +1,9 @@
-const money = new Intl.NumberFormat('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+// Coins: ponto decimal e sem vírgula nos milhares (ex.: 10000.00).
+const money = new Intl.NumberFormat('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2, useGrouping: false });
 const pad = (n: number) => String(n).padStart(2, '0');
 
 export const fmt = (n: number): string => money.format(n);
 export const fmtMult = (m: number): string => `${m.toFixed(2)}×`;
-export const fmtEur = (n: number): string => `€${money.format(n)}`;
 export const fmtSigned = (n: number): string => `${n > 0 ? '+' : n < 0 ? '−' : ''}${money.format(Math.abs(n))}`;
 export const fmtQuote = (q: number, decimals: number): string => q.toFixed(decimals);
 

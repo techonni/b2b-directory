@@ -182,7 +182,8 @@ Data: 28/09/2026 (7.ª sessão do dia: resultados dos lotes 2, P e 4; link Shopi
 
 - Nova app nativa **SwiftUI** em `ios/Zunrel/`, feita a partir do design `Zunrel App.dc.html` (Claude Design, artifact `0f24fcfb-2800-4425-b1a4-1cd8cd45bdad`). Ecrãs: Accueil, Parcourir, Recherche, Chat, Profil, login/inscrição, tema escuro/claro. Dados de exemplo, sem backend. Fontes Sora e JetBrains Mono incluídas. Instruções em `ios/README.md`.
 - Estado: **pronto, falta o Techonni**: abrir `ios/Zunrel/Zunrel.xcodeproj` no Xcode 16+ do Mac e correr no simulador (não foi compilada aqui, não há Xcode). Se der erro, colar o erro numa sessão e escrever « corrige a app iOS ».
-- A pasta `ios/` não afeta o site (o Astro ignora-a).
+- **Versão Expo (iPhone + Android, sem Xcode)** em `mobile/` — a recomendada. Ver no telemóvel: Expo Go + `cd mobile && npm run setup && npm start` no Mac (instruções em `mobile/README.md`). Estado: **pronto, falta o Techonni** (não foi corrida aqui: a rede da nuvem bloqueia o npm). Publicar: EAS (`npx eas-cli build` / `submit`).
+- As pastas `ios/` e `mobile/` não afetam o site (excluídas no `tsconfig.json`; o Astro não as usa).
 - App Store: o design é de casino com dinheiro real → a Apple exige licença de jogo e conta de empresa. Só como protótipo por agora.
 
 ## Próxima sessão (fazer tudo, por esta ordem)

@@ -1,0 +1,25 @@
+{
+  "expo": {
+    "name": "zunrel",
+    "slug": "zunrel",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "automatic",
+    "backgroundColor": "#121017",
+    "splash": {
+      "backgroundColor": "#121017"
+    },
+    "ios": {
+      "bundleIdentifier": "com.zunrel.app",
+      "supportsTablet": false
+    },
+    "android": {
+      "package": "com.zunrel.app",
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/icon.png",
+        "backgroundColor": "#121017"
+      }
+    }
+  }
+}

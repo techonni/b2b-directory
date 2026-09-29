@@ -5,38 +5,6 @@ import { makeText } from '../core/text';
 import { Button } from '../core/ui/Button';
 import { Page } from './Page';
 import { BinaryThumb, CrashThumb, type Thumb } from './thumbs';
-import type { Route } from './Header';
-
-interface GameInfo {
-  route: Route;
-  title: string;
-  desc: string;
-  tags: string[];
-  thumb: () => Thumb;
-}
-
-const GAMES: GameInfo[] = [
-  {
-    route: 'crash',
-    title: 'Crash',
-    desc: 'O multiplicador sobe até rebentar. Retira a tempo — à mão ou com retirada automática.',
-    tags: ['RTP 99%', 'Solo', 'Rondas de 5 s'],
-    thumb: () => new CrashThumb(),
-  },
-  {
-    route: 'binary',
-    title: 'Binary',
-    desc: 'Sobe ou desce? Opções "tudo ou nada" sobre EUR/USD, GBP/USD e USD/JPY, com gráfico ao vivo.',
-    tags: ['Forex', 'Binary +85%', 'Turbo +80%'],
-    thumb: () => new BinaryThumb(),
-  },
-];
-
-const FEATURES = [
-  { icon: '€', title: 'Só demo', text: 'Créditos fictícios. Não há depósitos, levantamentos nem dinheiro real.' },
-  { icon: '▶', title: 'Sem registo', text: 'Abre e joga. O saldo fica guardado no teu browser.' },
-  { icon: '⚡', title: '100% canvas', text: 'Feito com PixiJS, GSAP, TypeScript e Howler.js, a 60 fps.' },
-];
 
 function pill(text: string, color: number = C.btnSecondary, textColor: number = C.text): Container {
   const c = new Container();
@@ -47,7 +15,7 @@ function pill(text: string, color: number = C.btnSecondary, textColor: number = 
   return c;
 }
 
-/** Página inicial: destaque, grelha de jogos e vantagens. */
+/** Página inicial: destaque com os dois jogos animados e rodapé. */
 export class HomePage extends Page {
   private thumbs: Thumb[] = [];
 
@@ -137,108 +105,9 @@ export class HomePage extends Page {
     gsap.from([kicker, h1, lead, play1, play2], { alpha: 0, y: '+=16', duration: 0.6, stagger: 0.06, ease: 'power3.out' });
     gsap.from(art, { alpha: 0, x: art.x + 30, duration: 0.8, ease: 'power3.out' });
 
-    y = Math.max(textBottom, artY + artH) + (m ? 48 : 88);
+    y = Math.max(textBottom, artY + artH) + (m ? 16 : 32);
 
-    // ---------- Jogos ----------
-    const h2 = makeText('Os nossos jogos', { fontSize: m ? 26 : 32, fontWeight: '800', fill: C.text });
-    h2.position.set(x, y);
-    const sub = makeText('Rápidos, bonitos e feitos para o telemóvel e para o computador.', {
-      fontSize: 16,
-      fontWeight: '500',
-      fill: C.textMuted,
-      wordWrap: true,
-      wordWrapWidth: w,
-    });
-    sub.position.set(x, y + (m ? 38 : 46));
-    c.addChild(h2, sub);
-    y = sub.y + sub.height + 24;
-
-    const cols = m ? 1 : 2;
-    const gap = 24;
-    const cw = (w - gap * (cols - 1)) / cols;
-    const thumbH = m ? 190 : 250;
-    // Monta os cartões primeiro para medir o texto; a altura final é a maior da linha.
-    const cards = GAMES.map((g) => {
-      const card = new Container();
-      const bg = new Graphics();
-      const thumb = g.thumb();
-      thumb.layout(cw - 24, thumbH);
-      thumb.position.set(12, 12);
-      const title = makeText(g.title, { fontSize: 24, fontWeight: '800', fill: C.text });
-      title.position.set(20, thumbH + 28);
-      const desc = makeText(g.desc, { fontSize: 15, fontWeight: '500', fill: C.textMuted, wordWrap: true, wordWrapWidth: cw - 40, lineHeight: 22 });
-      desc.position.set(20, thumbH + 66);
-      const tags = new Container();
-      let tx = 0;
-      let ty = 0;
-      const tagsW = m ? cw - 40 : cw - 170;
-      for (const t of g.tags) {
-        const p = pill(t);
-        if (tx > 0 && tx + p.width > tagsW) {
-          tx = 0;
-          ty += 36;
-        }
-        p.position.set(tx, ty);
-        tx += p.width + 8;
-        tags.addChild(p);
-      }
-      const rowY = desc.y + desc.height + 20;
-      tags.position.set(20, rowY + (m ? 0 : 8));
-      const play = new Button({ label: 'Jogar', width: m ? cw - 40 : 120, height: 44, fontSize: 16 });
-      play.position.set(m ? 20 : cw - 140, m ? rowY + ty + 28 + 16 : rowY);
-      play.onTap = () => this.onNavigate?.(g.route);
-      card.addChild(bg, thumb, title, desc, tags, play);
-      this.thumbs.push(thumb);
-      return { card, bg, height: play.y + 44 + 20 };
-    });
-    const cardH = Math.max(...cards.map((k) => k.height));
-    let stackY = y;
-    cards.forEach(({ card, bg, height }, i) => {
-      // Telemóvel: cartões empilhados com a sua própria altura; computador: grelha.
-      const baseY = m ? stackY : y + Math.floor(i / cols) * (cardH + gap);
-      stackY += height + gap;
-      card.position.set(x + (i % cols) * (cw + gap), baseY);
-      bg.roundRect(0, 0, cw, m ? cards[i].height : cardH, R.panel).fill(C.bgPanel);
-      if (!m) {
-        card.eventMode = 'static';
-        card.on('pointerover', () => gsap.to(card, { y: baseY - 4, duration: 0.2 }));
-        card.on('pointerout', () => gsap.to(card, { y: baseY, duration: 0.2 }));
-      }
-      c.addChild(card);
-    });
-    y += m ? cards.reduce((sum, k) => sum + k.height + gap, 0) : Math.ceil(GAMES.length / cols) * (cardH + gap);
-    y += m ? 24 : 56;
-
-    // ---------- Vantagens ----------
-    const fcols = m ? 1 : 3;
-    const fw = (w - gap * (fcols - 1)) / fcols;
-    const probe = FEATURES.map((f) =>
-      makeText(f.text, { fontSize: 15, fontWeight: '500', fill: C.textMuted, wordWrap: true, wordWrapWidth: m ? fw - 100 : fw - 40, lineHeight: 21 }),
-    );
-    const fh = Math.max(...probe.map((d) => d.height)) + (m ? 72 : 134);
-    probe.forEach((d) => d.destroy());
-    FEATURES.forEach((f, i) => {
-      const tile = new Container();
-      tile.position.set(x + (i % fcols) * (fw + gap), y + Math.floor(i / fcols) * (fh + 16));
-      const bg = new Graphics().roundRect(0, 0, fw, fh, R.panel).fill(C.bgPanel);
-      const circle = new Graphics().circle(0, 0, 22).fill(C.bgAddon);
-      circle.position.set(40, m ? fh / 2 : 44);
-      const ic = makeText(f.icon, { fontSize: 20, fontWeight: '800', fill: C.text });
-      ic.anchor.set(0.5);
-      ic.position.copyFrom(circle.position);
-      const t = makeText(f.title, { fontSize: 18, fontWeight: '700', fill: C.text });
-      const d = makeText(f.text, { fontSize: 15, fontWeight: '500', fill: C.textMuted, wordWrap: true, wordWrapWidth: m ? fw - 100 : fw - 40, lineHeight: 21 });
-      if (m) {
-        t.position.set(80, 22);
-        d.position.set(80, 50);
-      } else {
-        t.position.set(20, 84);
-        d.position.set(20, 114);
-      }
-      tile.addChild(bg, circle, ic, t, d);
-      c.addChild(tile);
-    });
-    return y + Math.ceil(FEATURES.length / fcols) * (fh + 16);
+    return y;
   }
 
   tick(dt: number): void {

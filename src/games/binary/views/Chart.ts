@@ -70,7 +70,7 @@ export class Chart extends Container {
 
   constructor() {
     super();
-    this.tagText = makeText('', { fontSize: 17, fontWeight: '700', fill: C.text });
+    this.tagText = makeText('', { fontSize: 17, fontWeight: '700', fill: C.onColor });
     this.tagText.anchor.set(0.5);
     this.tag.addChild(this.tagBg, this.tagText);
     for (let i = 0; i < 8; i++) {

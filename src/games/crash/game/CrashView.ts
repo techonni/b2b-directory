@@ -11,7 +11,7 @@ const multStyle = (outline: number) =>
     fontFamily: FONT,
     fontSize: 76,
     fontWeight: '900',
-    fill: C.text,
+    fill: C.onColor,
     stroke: { color: outline, width: 7, join: 'round' },
     dropShadow: { color: outline, distance: 6, angle: Math.PI / 2, blur: 0, alpha: 1 },
     padding: 12,

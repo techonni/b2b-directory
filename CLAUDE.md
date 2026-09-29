@@ -29,7 +29,7 @@ The newsletter design is **frozen** (validated by Techonni on 2026-09-28). Do no
 
 ## Publishing
 
-Work is only live on zunrel.com once it is merged into `main` (Vercel deploys `main`). Every session must finish by merging its branch into `main` and checking the production deployment is `READY`.
+Work is only live on zunrel.com once it is merged into `main`. Since 2026-09-29 the site is hosted on **Cloudflare Pages** (project `zunrel`, deploys `main` on every push; DNS of zunrel.com is on Cloudflare). Vercel Hobby forbids affiliate sites, so Vercel is no longer used. Every session must finish by merging into `main`, then checking the new pages on https://zunrel.com (HTTP 200). The Cloudflare connector cannot read Pages deployments: check the live site instead.
 
 ## End of session
 
@@ -47,7 +47,7 @@ When the handoff file (or Techonni) gives a list of steps, **carry out every ste
 ## Working without Chrome (Techonni, 2026-09-28)
 
 Co-work / Claude in Chrome is **stopped** (credits run out too fast). Do not write new batches in `CHROME-PROXIMO.md`; do everything from Claude Code, and move to local work on the Mac app when cloud credits run out.
-- Site visits: Vercel Web Analytics (enabled 2026-09-28) read with the Vercel tool `aggregate_pageviews` (project `prj_FcUDt9LY9iVD0NlgcC3HPK110WqH`).
+- Site visits: Google Analytics 4 (`G-KC42X29LL9`), and Cloudflare Web Analytics once Techonni enables it in the dashboard. Vercel Web Analytics was removed on 2026-09-29.
 - Mailchimp: API and connector from here.
 - Pinterest: Claude Code prepares `docs/growth/pinterest-agendar-N.csv`; Techonni uploads it (Settings → Bulk create Pins) every ~10 days.
 - X / LinkedIn: Claude Code keeps the week's posts ready in `docs/growth/fila-redes.md`; Techonni copies them.

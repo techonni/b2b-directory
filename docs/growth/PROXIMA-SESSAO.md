@@ -10,6 +10,23 @@ Data: 28/09/2026 (7.ª sessão do dia: resultados dos lotes 2, P e 4; link Shopi
 
 ---
 
+## Mudança para a Cloudflare (29/09/2026)
+
+- O zunrel.com passou da Vercel para o **Cloudflare Pages** (projeto `zunrel`, publica `main` a cada push). Motivo: o plano grátis da Vercel proíbe sites de afiliação.
+- DNS do zunrel.com na Cloudflare (nameservers adam/jasmine.ns.cloudflare.com). Registos do e-mail iCloud (2 MX, SPF, apple-domain, DKIM `sig1._domainkey`, DMARC) e `google-site-verification` confirmados a 29/09. **Nunca os apagar.**
+- Redirecionamentos antigos: `public/_redirects` (formato Cloudflare). `vercel.json` já não é usado.
+- Estatísticas: GA4. Vercel Web Analytics foi retirado. Cloudflare Web Analytics: falta o Techonni ativar no painel.
+- Segundo site: **pieceworth.com** (luxo, em inglês), repositório privado `techonni/pieceworth`, pasta `/Users/techonni/pieceworth`, também no Cloudflare Pages.
+
+### Pendentes do Techonni (Cloudflare)
+- [ ] Apagar na Cloudflare os 3 registos antigos da Vercel: os dois A `*` e o `_domainconnect`.
+- [ ] Redirecionar www.zunrel.com para zunrel.com (Rules → Redirect Rules), como fazia a Vercel.
+- [ ] Ativar Cloudflare Web Analytics para zunrel.com e pieceworth.com.
+- [ ] Daqui a 2 dias: na Vercel, pausar ou apagar o projeto `zunrel` (o domínio continua registado na Vercel; só a renovação é paga lá).
+- [ ] Pieceworth: enviar os 4 links de afiliação da Impact e o código de verificação do site na Impact.
+
+---
+
 ## Regras que não mudam
 
 0. **Newsletter em pausa até haver um inscrito real** (decisão do Techonni a 28/09/2026). Inscrito real = email que **não** contém « dario » nem « zunrel ». Até lá: não planear, não criar rascunhos, não agendar, não testar, e **nunca perguntar ao Techonni pelo « oui » nem por permissões** para a newsletter. A rotina diária `trig_017qJ8Bu58TjQ9LJzu8SXaSA` avisa-o quando chegar o primeiro inscrito real.

@@ -163,7 +163,7 @@ export class CrashGame implements GameScene {
     if (wide) {
       const panelW = 360;
       const cardH = bottom - top;
-      this.card.roundRect(ox + PAD, top, panelW, cardH, R.panel).fill(C.bgPanel);
+      this.card.roundRect(ox + PAD, top, panelW, cardH, R.panel).fill(C.bgPanel).stroke({ width: 2, color: C.border, alignment: 1 });
       this.panel.position.set(ox + PAD * 2, top + PAD);
       this.panel.layout(panelW - PAD * 2);
       this.scene.position.set(ox + PAD + panelW + 12, top);
@@ -172,7 +172,7 @@ export class CrashGame implements GameScene {
       const panelH = ControlsPanel.HEIGHT + PAD * 2;
       const stageH = Math.max(260, bottom - top - panelH);
       const cardW = contentW - PAD * 2;
-      this.card.roundRect(ox + PAD, top, cardW, stageH + panelH, R.panel).fill(C.bgPanel);
+      this.card.roundRect(ox + PAD, top, cardW, stageH + panelH, R.panel).fill(C.bgPanel).stroke({ width: 2, color: C.border, alignment: 1 });
       this.scene.position.set(ox + PAD, top);
       this.scene.layout(cardW, stageH, true);
       this.panel.position.set(ox + PAD * 2, top + stageH + PAD);

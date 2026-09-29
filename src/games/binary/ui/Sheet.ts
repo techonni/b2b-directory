@@ -40,7 +40,7 @@ export class Sheet extends Container {
   layout(screenW: number, screenH: number, contentX: number, contentW: number): void {
     this.screenH = screenH;
     this.contentW = contentW;
-    this.backdrop.clear().rect(0, 0, screenW, screenH).fill({ color: 0x000000, alpha: 0.55 });
+    this.backdrop.clear().rect(0, 0, screenW, screenH).fill({ color: C.night, alpha: 0.45 });
     this.backdrop.hitArea = new Rectangle(0, 0, screenW, screenH);
     this.panel.x = contentX;
     if (this.isOpen) this.panel.y = screenH - this.panelH;
@@ -87,7 +87,7 @@ export class Sheet extends Container {
       this.rows.addChild(row);
     });
     this.panelH = 60 + items.length * ROW_H + 20;
-    this.bg.clear().roundRect(0, 0, w, this.panelH + R.panel, R.panel).fill(C.bgPanel);
+    this.bg.clear().roundRect(0, 0, w, this.panelH + R.panel, R.panel).fill(C.bgPanel).stroke({ width: 2, color: C.border, alignment: 1 });
     this.bg.roundRect(w / 2 - 22, 8, 44, 4, 2).fill(C.btnSecondary);
     this.title.position.set(px, 24);
     this.panel.hitArea = new Rectangle(0, 0, w, this.panelH);

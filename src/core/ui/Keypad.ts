@@ -73,7 +73,7 @@ export class Keypad extends Container {
 
   layout(screenW: number, screenH: number, contentX: number, contentW: number): void {
     this.screenH = screenH;
-    this.backdrop.clear().rect(0, 0, screenW, screenH).fill({ color: 0x000000, alpha: 0.55 });
+    this.backdrop.clear().rect(0, 0, screenW, screenH).fill({ color: C.night, alpha: 0.45 });
     this.backdrop.hitArea = new Rectangle(0, 0, screenW, screenH);
 
     const w = contentW;
@@ -81,7 +81,7 @@ export class Keypad extends Container {
     this.sheet.x = contentX;
     this.sheet.y = this.isOpen ? screenH - h : screenH;
     this.sheet.hitArea = new Rectangle(0, 0, w, h);
-    this.sheetBg.clear().roundRect(0, 0, w, h + R.panel, R.panel).fill(C.bgPanel);
+    this.sheetBg.clear().roundRect(0, 0, w, h + R.panel, R.panel).fill(C.bgPanel).stroke({ width: 2, color: C.border, alignment: 1 });
     this.sheetBg.roundRect(w / 2 - 22, 8, 44, 4, 2).fill(C.btnSecondary);
 
     const px = 16;
@@ -97,7 +97,9 @@ export class Keypad extends Container {
       const col = i % 3;
       const row = Math.floor(i / 3);
       k.view.position.set(px + col * (keyW + GAP) + keyW / 2, top + row * (KEY_H + GAP) + KEY_H / 2);
-      k.bg.clear().roundRect(-keyW / 2, -KEY_H / 2, keyW, KEY_H, R.input).fill(k.key === '⌫' || k.key === '.' ? C.bgAddon : C.btnSecondary);
+      const fill = k.key === '⌫' || k.key === '.' ? C.bgAddon : C.white;
+      k.bg.clear().roundRect(-keyW / 2, -KEY_H / 2 + 4, keyW, KEY_H, R.input).fill(C.borderStrong);
+      k.bg.roundRect(-keyW / 2, -KEY_H / 2, keyW, KEY_H, R.input).fill(fill).stroke({ width: 2, color: C.border, alignment: 1 });
       k.view.hitArea = new Rectangle(-keyW / 2, -KEY_H / 2, keyW, KEY_H);
     });
     this.done.setSize(inner, 52);

@@ -54,7 +54,7 @@ export class MenuView extends Container {
 
   private row(c: Container, label: string, sub: string, y: number): void {
     c.removeChildren().forEach((ch) => ch.destroy());
-    const bg = new Graphics().roundRect(0, 0, this.w, 72, R.panel).fill(C.bgPanel);
+    const bg = new Graphics().roundRect(0, 0, this.w, 72, R.panel).fill(C.bgPanel).stroke({ width: 2, color: C.border, alignment: 1 });
     const t = makeText(label, { fontSize: 17, fontWeight: '700', fill: C.text });
     t.position.set(18, 14);
     const s = makeText(sub, { fontSize: 14, fontWeight: '500', fill: C.textMuted });
@@ -69,7 +69,7 @@ export class MenuView extends Container {
     const x = this.w - 72;
     this.track.clear().roundRect(x, 22, 52, 30, 15).fill(on ? C.btnPrimary : C.btnSecondary);
     const kx = on ? x + 37 : x + 15;
-    this.knob.clear().circle(0, 0, 11).fill(C.text);
+    this.knob.clear().circle(0, 0, 11).fill(C.white).stroke({ width: 2, color: C.borderStrong });
     this.knob.y = 37;
     if (animate) gsap.to(this.knob, { x: kx, duration: 0.25, ease: 'power3.out' });
     else this.knob.x = kx;

@@ -23,7 +23,7 @@ export class CrashThumb extends Container implements Thumb {
   private readonly bg = new Graphics();
   private readonly area = new Graphics();
   private readonly line = new Graphics();
-  private readonly ball = new Graphics().circle(0, 0, 8).fill(C.text);
+  private readonly ball = new Graphics().circle(0, 0, 8).fill(C.multBlue).stroke({ width: 2, color: C.white });
   private readonly mult: Text;
   private readonly pills = new Graphics();
   private readonly pillTexts: Text[] = [];
@@ -47,9 +47,9 @@ export class CrashThumb extends Container implements Thumb {
     this.mult = makeText('1.00×', {
       fontSize: 40,
       fontWeight: '900',
-      fill: C.text,
-      stroke: { color: C.multBlue, width: 5, join: 'round' },
-      dropShadow: { color: C.multBlue, distance: 4, angle: Math.PI / 2, blur: 0, alpha: 1 },
+      fill: C.multBlue,
+      letterSpacing: -1,
+      dropShadow: { color: C.multBlueLedge, distance: 4, angle: Math.PI / 2, blur: 0, alpha: 1 },
       padding: 8,
     });
     this.mult.anchor.set(0.5);
@@ -64,7 +64,7 @@ export class CrashThumb extends Container implements Thumb {
   layout(w: number, h: number): void {
     this.w = w;
     this.h = h;
-    this.bg.clear().roundRect(0, 0, w, h, R.panel).fill(C.bgStage);
+    this.bg.clear().roundRect(0, 0, w, h, R.panel).fill(C.bgStage).stroke({ width: 2, color: C.border, alignment: 1 });
     this.pills.clear();
     this.pillTexts.forEach((t, i) => {
       const pw = 64;
@@ -82,8 +82,8 @@ export class CrashThumb extends Container implements Thumb {
       if (this.dead <= 0) {
         this.t = 0;
         this.crashAt = 1.3 + Math.random() * 3;
-        this.mult.style.stroke = { color: C.multBlue, width: 5, join: 'round' };
-        this.mult.style.dropShadow = { color: C.multBlue, distance: 4, angle: Math.PI / 2, blur: 0, alpha: 1 };
+        this.mult.style.fill = C.multBlue;
+        this.mult.style.dropShadow = { color: C.multBlueLedge, distance: 4, angle: Math.PI / 2, blur: 0, alpha: 1 };
       }
       return;
     }
@@ -92,8 +92,8 @@ export class CrashThumb extends Container implements Thumb {
     if (m >= this.crashAt) {
       m = this.crashAt;
       this.dead = 1400;
-      this.mult.style.stroke = { color: C.multRed, width: 5, join: 'round' };
-      this.mult.style.dropShadow = { color: C.multRed, distance: 4, angle: Math.PI / 2, blur: 0, alpha: 1 };
+      this.mult.style.fill = C.multRed;
+      this.mult.style.dropShadow = { color: C.multRedLedge, distance: 4, angle: Math.PI / 2, blur: 0, alpha: 1 };
     }
     this.mult.text = fmtMult(Math.floor(m * 100) / 100);
     const x0 = 18;
@@ -140,7 +140,7 @@ export class BinaryThumb extends Container implements Thumb {
   constructor() {
     super();
     for (let i = 0; i < 40; i++) this.pts.push(this.walk());
-    this.tagText = makeText('', { fontSize: 13, fontWeight: '700', fill: C.text });
+    this.tagText = makeText('', { fontSize: 13, fontWeight: '800', fill: C.white });
     this.tagText.anchor.set(0.5);
     this.addChild(this.bg, this.grid, this.area, this.entry, this.line, this.dot, this.tag, this.tagText);
   }
@@ -153,7 +153,7 @@ export class BinaryThumb extends Container implements Thumb {
   layout(w: number, h: number): void {
     this.w = w;
     this.h = h;
-    this.bg.clear().roundRect(0, 0, w, h, R.panel).fill(C.bgStage);
+    this.bg.clear().roundRect(0, 0, w, h, R.panel).fill(C.bgStage).stroke({ width: 2, color: C.border, alignment: 1 });
     this.grid.clear();
     for (let i = 1; i < 4; i++) this.grid.moveTo(14, (h * i) / 4).lineTo(w - 70, (h * i) / 4);
     this.grid.stroke({ width: 1, color: C.grid });

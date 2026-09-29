@@ -26,7 +26,7 @@ function marketIcon(): { view: Container; badge: Text } {
   badge.anchor.set(0.5);
   badge.position.set(15, 3);
   const dot = new Graphics().circle(40, 2, 8).fill(C.btnPrimary);
-  const s = makeText('1s', { fontSize: 9, fontWeight: '700', fill: C.onColor });
+  const s = makeText('1s', { fontSize: 9, fontWeight: '700', fill: C.text });
   s.anchor.set(0.5);
   s.position.set(40, 2);
   view.addChild(g, pill, badge, dot, s);

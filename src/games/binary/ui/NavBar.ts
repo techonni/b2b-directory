@@ -60,7 +60,7 @@ export class NavBar extends Container {
       this.items.push({ tab, view, icon, label, w: 0 });
     }
     this.badge.addChild(new Graphics().circle(0, 0, 10).fill(C.down));
-    this.badgeText = makeText('', { fontSize: 12, fontWeight: '800', fill: C.onColor });
+    this.badgeText = makeText('', { fontSize: 12, fontWeight: '800', fill: C.text });
     this.badgeText.anchor.set(0.5);
     this.badge.addChild(this.badgeText);
     this.badge.visible = false;

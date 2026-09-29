@@ -30,7 +30,7 @@ export function logo(size = 28): Container {
   const c = new Container();
   const box = size * 1.25;
   c.addChild(new Graphics().roundRect(0, -box / 2, box, box, box * 0.28).fill(C.btnPrimary));
-  const z = makeText('z', { fontSize: size, fontWeight: '900', fontStyle: 'italic', fill: C.onColor });
+  const z = makeText('z', { fontSize: size, fontWeight: '900', fontStyle: 'italic', fill: C.text });
   z.anchor.set(0.5);
   z.position.set(box / 2 - 1, -2);
   const word = makeText('zunrel', { fontSize: size, fontWeight: '800', fontStyle: 'italic', fill: C.text, letterSpacing: -0.5 });

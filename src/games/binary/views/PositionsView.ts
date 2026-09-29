@@ -1,7 +1,7 @@
 import { Container, Graphics, type Text } from 'pixi.js';
 import { C, R } from '../theme';
 import { makeText } from '../text';
-import { fmtCountdown, fmtEur, fmtQuote, fmtSigned } from '../format';
+import { fmt, fmtCountdown, fmtQuote, fmtSigned } from '../format';
 import type { Feed } from '../market/Market';
 import type { Book, Position } from '../market/Trades';
 import { ScrollBox } from '../ui/ScrollBox';
@@ -44,8 +44,8 @@ export class PositionsView extends Container {
     const items = open ? this.book.open.slice().reverse() : this.book.closed;
     const pnl = this.book.closed.reduce((s, p) => s + (p.pnl ?? 0), 0);
     this.summary.text = open
-      ? `${items.length} contrato(s) aberto(s) · em jogo ${fmtEur(items.reduce((s, p) => s + p.stake, 0))}`
-      : `${items.length} fechado(s) · resultado ${fmtSigned(pnl)} EUR`;
+      ? `${items.length} contrato(s) aberto(s) · em jogo ${fmt(items.reduce((s, p) => s + p.stake, 0))} C`
+      : `${items.length} fechado(s) · resultado ${fmtSigned(pnl)} C`;
 
     const c = this.list.content;
     c.removeChildren().forEach((ch) => ch.destroy({ children: true }));
@@ -82,7 +82,7 @@ export class PositionsView extends Container {
       fill: C.text,
     });
     name.position.set(20, 14);
-    const dir = makeText(`${up ? '▲ Sobe' : '▼ Desce'}  ·  ${fmtEur(p.stake)} → ${fmtEur(p.payout)}`, {
+    const dir = makeText(`${up ? '▲ Sobe' : '▼ Desce'}  ·  ${fmt(p.stake)} → ${fmt(p.payout)} C`, {
       fontSize: 14,
       fontWeight: '600',
       fill: up ? C.up : C.down,

@@ -3,10 +3,11 @@ import gsap from 'gsap';
 import { C } from './theme';
 import { makeText } from './text';
 import type { GameScene } from '../../core/scene';
-import { clamp, fmt, fmtDuration, fmtEur, fmtSigned } from './format';
+import { clamp, fmt, fmtDuration, fmtSigned } from './format';
+import { coinIcon } from '../../core/icons';
 import { sound } from './audio/Sound';
 import { Feed } from './market/Market';
-import { Book, TRADE_TYPES, type Direction, type Position } from './market/Trades';
+import { Book, START_BALANCE, TRADE_TYPES, type Direction, type Position } from './market/Trades';
 import { Button } from './ui/Button';
 import { Keypad } from './ui/Keypad';
 import { NavBar, type Tab } from './ui/NavBar';
@@ -32,7 +33,7 @@ export class BinaryGame implements GameScene {
 
   private readonly header = new Container();
   private readonly headerBg = new Graphics();
-  private readonly avatar = new Container();
+  private readonly coin = coinIcon(26);
   private readonly accountLabel: Text;
   private readonly balanceText: Text;
   private readonly resetBtn = new Button({ label: 'Repor', width: 104, height: 52, color: C.btnSecondary, fontSize: 18 });
@@ -68,18 +69,13 @@ export class BinaryGame implements GameScene {
 
   /** Monta a cena (chamado uma vez, logo após o construtor). */
   private setup(): void {
-    const av = new Graphics().roundRect(0, 0, 50, 50, 12).fill(C.btnPrimary);
-    const avT = makeText('ZB', { fontSize: 20, fontWeight: '800', fill: C.text });
-    avT.anchor.set(0.5);
-    avT.position.set(25, 25);
-    this.avatar.addChild(av, avT);
-    this.header.addChild(this.headerBg, this.avatar, this.accountLabel, this.balanceText, this.resetBtn);
+    this.header.addChild(this.headerBg, this.coin, this.accountLabel, this.balanceText, this.resetBtn);
     this.resetBtn.onTap = () => this.resetAccount();
 
     this.root.addChild(this.home, this.trade, this.positions, this.menu, this.header, this.nav, this.toast, this.sheet, this.keypad);
     this.wire();
     this.shown.v = this.book.balance;
-    this.balanceText.text = `${fmt(this.book.balance)} EUR`;
+    this.balanceText.text = fmt(this.book.balance);
 
     this.showTab('trade', false);
     this.syncTrade();
@@ -169,9 +165,10 @@ export class BinaryGame implements GameScene {
     const innerW = contentW - PAD * 2;
 
     this.headerBg.clear().rect(0, 0, W, HEADER_H).fill(C.bgBase);
-    this.avatar.position.set(ox + PAD + 4, 18);
-    this.accountLabel.position.set(ox + PAD + 70, 16);
-    this.balanceText.position.set(ox + PAD + 70, 40);
+    // Saldo em Coins, com a moeda C amarela como no Crash.
+    this.accountLabel.position.set(ox + PAD + 4, 16);
+    this.coin.position.set(ox + PAD + 4 + 13, 55);
+    this.balanceText.position.set(ox + PAD + 4 + 34, 40);
     this.resetBtn.position.set(ox + contentW - PAD - 104, 18);
 
     let top = HEADER_H;
@@ -235,25 +232,25 @@ export class BinaryGame implements GameScene {
     this.trade.chart.setMarket(m);
     this.trade.chart.setPositions(this.book.open);
     this.trade.duration.setValue(fmtDuration(this.durations[ty.id]));
-    this.trade.stake.setValue(`€${fmt(this.stake).replace(/\.00$/, '')}`);
-    this.trade.payout.setValue(fmtEur(this.stake * (1 + ty.profit)));
+    this.trade.stake.setValue(fmt(this.stake));
+    this.trade.payout.setValue(fmt(this.stake * (1 + ty.profit)));
     this.trade.buy.setText(`Comprar · +${Math.round(ty.profit * 100)}%`);
   }
 
   private editStake(): void {
     let value = this.stake;
     this.keypad.open({
-      title: 'Aposta (EUR)',
+      title: 'Aposta (Coins)',
       value: String(this.stake),
       onChange: (s) => {
         value = Number(s || '0');
-        this.trade.stake.setValue(`€${s || '0'}`);
-        this.trade.payout.setValue(fmtEur(value * (1 + this.type.profit)));
+        this.trade.stake.setValue(s || '0');
+        this.trade.payout.setValue(fmt(value * (1 + this.type.profit)));
       },
       onClose: () => {
         if (value < MIN_STAKE || value > MAX_STAKE) {
           sound.play('error');
-          this.toast.show(`Aposta entre €${MIN_STAKE} e €${fmt(MAX_STAKE)}`, C.loss);
+          this.toast.show(`Aposta entre ${MIN_STAKE} e ${MAX_STAKE}`, C.loss);
         }
         this.stake = clamp(Math.round(value * 100) / 100, MIN_STAKE, MAX_STAKE);
         this.syncTrade();
@@ -269,7 +266,7 @@ export class BinaryGame implements GameScene {
       return;
     }
     sound.play('buy');
-    this.toast.show(`${p.dir === 'up' ? '▲ Sobe' : '▼ Desce'} · ${fmtEur(p.stake)} · ${fmtDuration(p.expiry - p.start)}`, C.btnPrimary);
+    this.toast.show(`${p.dir === 'up' ? '▲ Sobe' : '▼ Desce'} · ${fmt(p.stake)} · ${fmtDuration(p.expiry - p.start)}`, C.btnPrimary);
   }
 
   private onSecond(sec: number): void {
@@ -284,10 +281,10 @@ export class BinaryGame implements GameScene {
   private onSettle(p: Position): void {
     if (p.result === 'win') {
       sound.play('win');
-      this.toast.show(`Ganhaste ${fmtSigned(p.pnl ?? 0)} EUR`, C.win, C.winText);
+      this.toast.show(`Ganhaste ${fmtSigned(p.pnl ?? 0)}`, C.win, C.winText);
     } else if (p.result === 'loss') {
       sound.play('loss');
-      this.toast.show(`Perdeste ${fmtEur(p.stake)}`, C.loss);
+      this.toast.show(`Perdeste ${fmt(p.stake)}`, C.loss);
     } else {
       sound.play('tie');
       this.toast.show('Empate · aposta devolvida');
@@ -296,7 +293,7 @@ export class BinaryGame implements GameScene {
 
   private resetAccount(): void {
     this.book.reset();
-    this.toast.show('Saldo demo reposto: 10,000.00 EUR', C.btnPrimary);
+    this.toast.show(`Saldo demo reposto: ${fmt(START_BALANCE)}`, C.btnPrimary);
   }
 
   private animateBalance(): void {
@@ -304,7 +301,7 @@ export class BinaryGame implements GameScene {
       v: this.book.balance,
       duration: 0.6,
       ease: 'power2.out',
-      onUpdate: () => (this.balanceText.text = `${fmt(this.shown.v)} EUR`),
+      onUpdate: () => (this.balanceText.text = fmt(this.shown.v)),
     });
   }
 }

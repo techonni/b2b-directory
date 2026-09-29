@@ -47,7 +47,7 @@ export class MenuView extends Container {
     this.row(this.soundRow, 'Som', 'Efeitos sonoros (Howler.js)', 56);
     this.soundRow.addChild(this.track, this.knob);
     this.paintSwitch(false);
-    this.row(this.resetRow, 'Repor saldo demo', 'Volta a 10,000.00 EUR', 56 + 84);
+    this.row(this.resetRow, 'Repor saldo demo', 'Volta a 10000.00 Coins', 56 + 84);
     this.about.style.wordWrapWidth = w - 8;
     this.about.position.set(4, 56 + 2 * 84 + 12);
   }

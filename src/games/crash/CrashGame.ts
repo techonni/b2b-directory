@@ -12,6 +12,8 @@ import { Wallet } from './game/Wallet';
 import { ControlsPanel } from './ui/ControlsPanel';
 import { Keypad } from './ui/Keypad';
 import { Toast } from './ui/Toast';
+import { Button } from './ui/Button';
+import { START_BALANCE } from './game/Wallet';
 
 interface Bet {
   amount: number;
@@ -33,6 +35,7 @@ export class CrashGame implements GameScene {
   private readonly headerBg = new Graphics();
   private readonly logo: Text;
   private readonly balancePill = new Container();
+  private readonly resetBtn = new Button({ label: 'Repor', width: 88, height: 44, color: C.btnSecondary, fontSize: 16 });
   private readonly balanceBg = new Graphics();
   private readonly balanceText: Text;
   private readonly card = new Graphics();
@@ -120,15 +123,20 @@ export class CrashGame implements GameScene {
     this.balancePill.addChild(coin);
     this.balancePill.eventMode = 'static';
     this.balancePill.cursor = 'pointer';
-    this.balancePill.on('pointertap', () => {
-      if (this.wallet.balance < 1 && !this.bet && !this.queued) {
-        this.wallet.refill();
-        this.toast.show('Saldo demo reposto', C.btnPrimary);
-      } else {
-        this.toast.show('Créditos demo — sem dinheiro real');
-      }
-    });
-    this.header.addChild(this.headerBg, this.logo, this.balancePill);
+    this.balancePill.on('pointertap', () => this.toast.show('Créditos demo — sem dinheiro real'));
+    this.resetBtn.onTap = () => this.resetWallet();
+    this.header.addChild(this.headerBg, this.logo, this.resetBtn, this.balancePill);
+  }
+
+  /** Repõe o saldo demo (só sem aposta em jogo, para não baralhar a ronda). */
+  private resetWallet(): void {
+    if ((this.bet && !this.bet.cashed) || this.queued || this.autoOn) {
+      sound.play('error');
+      this.toast.show('Termina a aposta antes de repor', C.loss);
+      return;
+    }
+    this.wallet.refill();
+    this.toast.show(`Saldo demo reposto: ${fmt(START_BALANCE)}`, C.btnPrimary);
   }
 
   /** Layout responsivo: coluna única no telemóvel, duas colunas em ecrãs largos. */
@@ -182,6 +190,7 @@ export class CrashGame implements GameScene {
     const coin = this.balancePill.getChildByLabel('coin');
     if (coin) coin.position.set(-w + 24, 0);
     this.balancePill.position.set(right, HEADER_H / 2);
+    this.resetBtn.position.set(right - w - 10 - 88, HEADER_H / 2 - 22);
   }
 
   private animateBalance(to: number): void {

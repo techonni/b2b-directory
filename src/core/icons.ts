@@ -2,6 +2,16 @@ import { Container, Graphics } from 'pixi.js';
 import { C } from './theme';
 import { makeText } from './text';
 
+/** Moeda dourada com "C" (Coins demo), usada no Crash e no Binary. */
+export function coinIcon(size = 26): Container {
+  const c = new Container();
+  c.addChild(new Graphics().circle(0, 0, size / 2).fill(C.coin));
+  const t = makeText('C', { fontSize: size * 0.55, fontWeight: '800', fill: C.coinText });
+  t.anchor.set(0.5);
+  c.addChild(t);
+  return c;
+}
+
 /** Altifalante com ondas (som ligado) ou com um X (som desligado). */
 export function speaker(g: Graphics, muted: boolean, color: number = C.text): Graphics {
   g.clear();

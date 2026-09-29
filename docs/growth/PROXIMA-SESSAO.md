@@ -15,13 +15,13 @@ Data: 28/09/2026 (7.ª sessão do dia: resultados dos lotes 2, P e 4; link Shopi
 - O zunrel.com passou da Vercel para o **Cloudflare Pages** (projeto `zunrel`, publica `main` a cada push). Motivo: o plano grátis da Vercel proíbe sites de afiliação.
 - DNS do zunrel.com na Cloudflare (nameservers adam/jasmine.ns.cloudflare.com). Registos do e-mail iCloud (2 MX, SPF, apple-domain, DKIM `sig1._domainkey`, DMARC) e `google-site-verification` confirmados a 29/09. **Nunca os apagar.**
 - Redirecionamentos antigos: `public/_redirects` (formato Cloudflare). `vercel.json` já não é usado.
-- Estatísticas: GA4. Vercel Web Analytics foi retirado. Cloudflare Web Analytics: falta o Techonni ativar no painel.
+- Estatísticas: GA4 e Cloudflare Web Analytics (ativo desde 29/09; ver no painel Cloudflare). Vercel Web Analytics foi retirado.
 - Segundo site: **pieceworth.com** (luxo, em inglês), repositório privado `techonni/pieceworth`, pasta `/Users/techonni/pieceworth`, também no Cloudflare Pages.
 
 ### Pendentes do Techonni (Cloudflare)
-- [ ] Apagar na Cloudflare os 3 registos antigos da Vercel: os dois A `*` e o `_domainconnect`.
-- [ ] Redirecionar www.zunrel.com para zunrel.com (Rules → Redirect Rules), como fazia a Vercel.
-- [ ] Ativar Cloudflare Web Analytics para zunrel.com e pieceworth.com.
+- [x] Registos antigos da Vercel apagados na Cloudflare (29/09).
+- [x] www.zunrel.com → zunrel.com em 301 (Redirect Rule « www para zunrel.com », 29/09).
+- [x] Cloudflare Web Analytics ativo nos 2 sites (29/09).
 - [ ] Daqui a 2 dias: na Vercel, pausar ou apagar o projeto `zunrel` (o domínio continua registado na Vercel; só a renovação é paga lá).
 - [ ] Pieceworth: enviar os 4 links de afiliação da Impact e o código de verificação do site na Impact.
 

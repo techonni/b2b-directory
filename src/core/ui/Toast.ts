@@ -18,7 +18,7 @@ export class Toast extends Container {
     this.visible = false;
   }
 
-  show(text: string, color: number = C.btnSecondary, textColor: number = C.onColor): void {
+  show(text: string, color: number = C.btnSecondary, textColor: number = C.text): void {
     this.caption.text = text;
     this.caption.style.fill = textColor;
     const w = this.caption.width + 40;

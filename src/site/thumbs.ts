@@ -47,7 +47,7 @@ export class CrashThumb extends Container implements Thumb {
     this.mult = makeText('1.00×', {
       fontSize: 40,
       fontWeight: '900',
-      fill: C.onColor,
+      fill: C.text,
       stroke: { color: C.multBlue, width: 5, join: 'round' },
       dropShadow: { color: C.multBlue, distance: 4, angle: Math.PI / 2, blur: 0, alpha: 1 },
       padding: 8,
@@ -140,7 +140,7 @@ export class BinaryThumb extends Container implements Thumb {
   constructor() {
     super();
     for (let i = 0; i < 40; i++) this.pts.push(this.walk());
-    this.tagText = makeText('', { fontSize: 13, fontWeight: '700', fill: C.onColor });
+    this.tagText = makeText('', { fontSize: 13, fontWeight: '700', fill: C.text });
     this.tagText.anchor.set(0.5);
     this.addChild(this.bg, this.grid, this.area, this.entry, this.line, this.dot, this.tag, this.tagText);
   }

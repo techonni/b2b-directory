@@ -69,7 +69,7 @@ export class MenuView extends Container {
     const x = this.w - 72;
     this.track.clear().roundRect(x, 22, 52, 30, 15).fill(on ? C.btnPrimary : C.btnSecondary);
     const kx = on ? x + 37 : x + 15;
-    this.knob.clear().circle(0, 0, 11).fill(C.onColor);
+    this.knob.clear().circle(0, 0, 11).fill(C.text);
     this.knob.y = 37;
     if (animate) gsap.to(this.knob, { x: kx, duration: 0.25, ease: 'power3.out' });
     else this.knob.x = kx;

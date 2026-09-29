@@ -5,8 +5,7 @@ Implementação nativa do design `Zunrel App.dc.html` (Claude Design).
 ## Abrir e correr
 1. Mac com **Xcode 16** ou mais recente (iOS 17+).
 2. Abrir `ios/Zunrel/Zunrel.xcodeproj`.
-3. (Opcional) pôr as fontes em `Zunrel/Fonts/` — ver `LEIA-ME.md` nessa pasta.
-4. Escolher um simulador (ex. iPhone 16) e carregar ▶︎.
+3. Escolher um simulador (ex. iPhone 16) e carregar ▶︎.
 
 Para correr num iPhone real: Xcode → target *Zunrel* → *Signing & Capabilities* → escolher a tua *Team*.
 
@@ -15,6 +14,9 @@ Para correr num iPhone real: Xcode → target *Zunrel* → *Signing & Capabiliti
 - Login / inscrição em folha inferior, com validação (pseudo ≥ 3, e-mail, palavra-passe ≥ 8).
 - Tema escuro / claro, toast, saldo e avatar no cabeçalho.
 - Dados de exemplo (jogos, chat) como no design — não há backend.
+
+## Fontes
+Sora e JetBrains Mono (licença OFL) já estão em `Zunrel/Fonts/`, convertidas das fontes do design (subconjunto latino, pesos variáveis).
 
 ## Estrutura
 - `Zunrel/Theme.swift` — cores, fontes, riscas `oklch` dos visuais.

@@ -9,6 +9,7 @@ import { Tile } from '../ui/Tile';
 import { Chart } from './Chart';
 
 const TOP_H = 72;
+const AUTO_W = 116;
 const PANEL_H = 16 + 56 + 16 + 76 + 16 + 56 + 18;
 
 /** Ícone do mercado: mini-velas, número do índice e bolinha "1s". */
@@ -44,6 +45,7 @@ export class TradeView extends Container {
   readonly stake = new Tile('Aposta');
   readonly payout = new Tile('Pagamento', false);
   readonly buy = new Button({ label: 'Comprar', width: 300, height: 56, fontSize: 20 });
+  readonly auto = new Button({ label: 'Auto', width: AUTO_W, height: 56, color: C.btnSecondary, fontSize: 20 });
 
   onPickMarket: (() => void) | null = null;
   onPickType: (() => void) | null = null;
@@ -95,7 +97,7 @@ export class TradeView extends Container {
       this.onPickType?.();
     });
 
-    this.panel.addChild(this.panelBg, this.dir, this.duration, this.stake, this.payout, this.buy);
+    this.panel.addChild(this.panelBg, this.dir, this.duration, this.stake, this.payout, this.buy, this.auto);
     this.addChild(this.plus, this.card, this.chart, this.panel);
     this.chart.onExpand = () => this.toggleExpand();
   }
@@ -133,7 +135,8 @@ export class TradeView extends Container {
       t.layout(tw, 76);
     });
     this.buy.position.set(16, 16 + 56 + 16 + 76 + 16);
-    this.buy.setSize(inner, 56);
+    this.buy.setSize(inner - AUTO_W - 12, 56);
+    this.auto.position.set(16 + inner - AUTO_W, 16 + 56 + 16 + 76 + 16);
 
     gsap.killTweensOf(this.chartH);
     this.chartH.v = this.targetChartH();

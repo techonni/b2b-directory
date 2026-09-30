@@ -58,6 +58,7 @@ export class Watchlist extends Container {
       price.anchor.set(1, 0);
       chg.anchor.set(1, 0);
       sym.position.set(14, 9);
+      name.label = 'name';
       name.position.set(14, 28);
       view.addChild(bg, sym, name, price, chg);
       onTap(view, () => {
@@ -151,6 +152,10 @@ export class Watchlist extends Container {
       r.view.position.set(8, y);
       r.view.hitArea = new Rectangle(0, 0, this.w - 16, ROW_H);
       r.price.position.set(this.w - 16 - 14, 9);
+      const nm = r.view.getChildByLabel('name')!;
+      nm.scale.set(1);
+      const room = this.w - 16 - 14 - 84 - 14;
+      if (nm.width > room) nm.scale.set(room / nm.width);
       r.chg.position.set(this.w - 16 - 14, 29);
       this.paintRow(r);
       y += ROW_H + 2;

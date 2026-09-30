@@ -88,7 +88,19 @@ class SoundManager {
     // iPhone/iPad: sem isto o Web Audio fica mudo com o botão lateral em modo silencioso.
     const nav = navigator as Navigator & { audioSession?: { type: string } };
     if (nav.audioSession) nav.audioSession.type = 'playback';
-    document.addEventListener('visibilitychange', () => Howler.mute(this.muted || document.hidden));
+    document.addEventListener('visibilitychange', () => {
+      Howler.mute(this.muted || document.hidden);
+      if (!document.hidden) this.resume();
+    });
+    // O áudio pode ficar suspenso/interrompido (iPhone ao bloquear o ecrã, outra app a tocar…):
+    // retoma-o em qualquer toque ou tecla, que é quando o browser o permite.
+    for (const ev of ['pointerdown', 'touchend', 'keydown']) window.addEventListener(ev, () => this.resume(), { capture: true, passive: true });
+  }
+
+  /** Retoma o contexto de áudio se não estiver a correr. */
+  private resume(): void {
+    const ctx = Howler.ctx;
+    if (ctx && ctx.state !== 'running') ctx.resume().catch(() => undefined);
   }
 
   init(): void {
@@ -103,6 +115,7 @@ class SoundManager {
   play(name: SfxName, volume = 1): void {
     const h = this.sfx[name];
     if (!h) return;
+    this.resume();
     const id = h.play();
     h.volume(volume, id);
   }

@@ -1,7 +1,6 @@
 import type { Market } from './Market';
 
 export type Side = 'buy' | 'sell';
-export type OrderKind = 'market' | 'limit' | 'stop';
 
 export interface Holding {
   qty: number;
@@ -11,22 +10,13 @@ export interface Holding {
   sl?: number;
 }
 
-export interface Pending {
-  id: number;
-  symId: string;
-  side: Side;
-  kind: 'limit' | 'stop';
-  amount: number;
-  price: number;
-}
-
 export interface Fill {
   symId: string;
   side: Side;
   qty: number;
   price: number;
   pnl?: number;
-  reason: 'manual' | 'auto' | 'limit' | 'stop' | 'tp' | 'sl';
+  reason: 'manual' | 'auto' | 'tp' | 'sl';
 }
 
 export const START_CASH = 100_000;
@@ -37,20 +27,17 @@ const SL = 0.02;
 interface Saved {
   cash: number;
   hold: Record<string, Holding>;
-  pending: Pending[];
 }
 
 /**
  * Carteira demo (Coins fictícios): só posições compradas, sem alavancagem.
- * Ordens a mercado, limite e stop; take profit / stop loss por posição.
+ * Ordens a mercado; take profit / stop loss por posição.
  */
 export class Account {
   cash = START_CASH;
   hold: Record<string, Holding> = {};
-  pending: Pending[] = [];
   onChange: (() => void) | null = null;
   onFill: ((f: Fill) => void) | null = null;
-  private nextId = 1;
 
   constructor(private readonly market: Market) {
     try {
@@ -58,8 +45,6 @@ export class Account {
       if (s && Number.isFinite(s.cash)) {
         this.cash = s.cash;
         this.hold = s.hold ?? {};
-        this.pending = s.pending ?? [];
-        this.nextId = this.pending.reduce((m, p) => Math.max(m, p.id), 0) + 1;
       }
     } catch {
       /* ignorar */
@@ -102,26 +87,8 @@ export class Account {
     return null;
   }
 
-  place(o: Omit<Pending, 'id'>): string | null {
-    if (!(o.amount > 0)) return 'Indica um valor';
-    if (!(o.price > 0)) return 'Indica um preço';
-    if (o.side === 'buy' && o.amount > this.cash) return 'Saldo insuficiente';
-    if (o.side === 'sell' && this.qty(o.symId) <= 0) return `Sem posição em ${o.symId}`;
-    this.pending.push({ ...o, id: this.nextId++ });
-    this.save();
-    return null;
-  }
-
-  /** Chamado a cada segundo: ordens pendentes, take profit e stop loss. */
+  /** Chamado a cada segundo: take profit e stop loss. */
   check(): void {
-    for (const o of [...this.pending]) {
-      const p = this.market.get(o.symId).price;
-      const hit =
-        o.kind === 'limit' ? (o.side === 'buy' ? p <= o.price : p >= o.price) : o.side === 'buy' ? p >= o.price : p <= o.price;
-      if (!hit) continue;
-      this.pending = this.pending.filter((x) => x !== o);
-      if (this.trade(o.symId, o.side, Math.min(o.amount, o.side === 'buy' ? this.cash : Infinity), o.kind)) this.save();
-    }
     for (const [id, h] of Object.entries(this.hold)) {
       const p = this.market.get(id).price;
       if (h.tp && p >= h.tp) this.close(id, h.qty, 'tp');
@@ -132,7 +99,6 @@ export class Account {
   reset(): void {
     this.cash = START_CASH;
     this.hold = {};
-    this.pending = [];
     this.save();
   }
 
@@ -153,7 +119,7 @@ export class Account {
 
   private save(): void {
     try {
-      localStorage.setItem(KEY, JSON.stringify({ cash: this.cash, hold: this.hold, pending: this.pending } satisfies Saved));
+      localStorage.setItem(KEY, JSON.stringify({ cash: this.cash, hold: this.hold } satisfies Saved));
     } catch {
       /* ignorar */
     }

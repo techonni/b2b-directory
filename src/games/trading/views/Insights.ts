@@ -34,8 +34,8 @@ export class Insights extends Container {
     start: { x: 0, y: 0 },
     end: { x: 0, y: 1 },
     colorStops: [
-      { offset: 0, color: '#1d2a22' },
-      { offset: 1, color: '#070908' },
+      { offset: 0, color: '#243a52' },
+      { offset: 1, color: '#111f2b' },
     ],
   });
   private cur: Instrument | null = null;
@@ -97,8 +97,8 @@ export class Insights extends Container {
     tags.y = showArt ? ah + 12 : 0;
     this.tags.clear();
     let x = tag(this.tags, this.tagTexts[0], i.id, T.text, T.rowSel, 0);
-    x = tag(this.tags, this.tagTexts[1], strong ? 'Forte' : 'Moderado', 0x1a1400, T.coin, x);
-    tag(this.tags, this.tagTexts[2], up ? 'Positivo' : 'Negativo', up ? 0x04150a : 0xffffff, up ? T.green : T.red, x);
+    x = tag(this.tags, this.tagTexts[1], strong ? 'Forte' : 'Moderado', T.onGreen, T.coin, x);
+    tag(this.tags, this.tagTexts[2], up ? 'Positivo' : 'Negativo', up ? T.onGreen : 0xffffff, up ? T.green : T.red, x);
 
     const d = i.def.dec;
     this.headline.text = up
@@ -132,9 +132,9 @@ export class Insights extends Container {
     const mw = w * 0.64;
     const my = h * 0.14;
     const mh = h * 0.6;
-    g.roundRect(mx, my, mw, mh, 6).fill(0x0b0d0c).stroke({ width: 2, color: 0x2a2e2c });
-    g.rect(w / 2 - 6, my + mh, 12, h * 0.12).fill(0x2a2e2c);
-    g.roundRect(w / 2 - 30, my + mh + h * 0.12, 60, 4, 2).fill(0x2a2e2c);
+    g.roundRect(mx, my, mw, mh, 6).fill(T.bg).stroke({ width: 2, color: T.border });
+    g.rect(w / 2 - 6, my + mh, 12, h * 0.12).fill(T.border);
+    g.roundRect(w / 2 - 30, my + mh + h * 0.12, 60, 4, 2).fill(T.border);
     // Velas
     const n = 14;
     const cw = (mw - 24) / n;

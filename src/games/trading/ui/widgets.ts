@@ -148,7 +148,7 @@ export class Check extends Container {
     g.position.set(8, 0);
     if (this.checked) {
       g.roundRect(-8, -8, 16, 16, 4).fill(T.green);
-      g.moveTo(-4, 0).lineTo(-1, 3).lineTo(4, -3).stroke({ width: 2, color: 0x06200c, cap: 'round', join: 'round' });
+      g.moveTo(-4, 0).lineTo(-1, 3).lineTo(4, -3).stroke({ width: 2, color: T.onGreen, cap: 'round', join: 'round' });
     } else g.roundRect(-7.5, -7.5, 15, 15, 4).stroke({ width: 1.2, color: T.borderHi });
     this.caption.style.fill = this.checked ? T.text : T.muted;
   }

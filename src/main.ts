@@ -14,6 +14,7 @@ const TITLES: Record<Route, string> = {
   home: 'zunrel — jogos originais HTML5',
   crash: 'Crash — zunrel',
   binary: 'Binary — zunrel',
+  trading: 'Trading — zunrel',
   about: 'Sobre — zunrel',
 };
 
@@ -66,7 +67,7 @@ class Site {
 
   private fromHash(): Route {
     const h = location.hash.replace(/^#\/?/, '');
-    return (['crash', 'binary', 'about'] as Route[]).includes(h as Route) ? (h as Route) : 'home';
+    return (['crash', 'binary', 'trading', 'about'] as Route[]).includes(h as Route) ? (h as Route) : 'home';
   }
 
   private navigate(r: Route): void {
@@ -81,6 +82,7 @@ class Site {
     let g: GameScene | undefined;
     if (r === 'crash') g = new (await import('./games/crash/CrashGame')).CrashGame();
     if (r === 'binary') g = new (await import('./games/binary/BinaryGame')).BinaryGame();
+    if (r === 'trading') g = new (await import('./games/trading/TradingGame')).TradingGame();
     if (!g) return undefined;
     this.games[r] = g;
     g.view.visible = false;

@@ -55,6 +55,12 @@ export class BinaryGame implements GameScene {
   private durations: Record<string, number> = { binary: 60, turbo: 30 };
   private stake = 2;
 
+  /** Modo automático: repete a compra com as definições atuais quando o contrato anterior fecha. */
+  private autoOn = false;
+  private autoLeft = 0;
+  private autoPosId: number | null = null;
+  private autoNext: gsap.core.Tween | null = null;
+
   constructor() {
     this.positions = new PositionsView(this.feed, this.book);
     this.home = new HomeView(this.feed);
@@ -122,6 +128,7 @@ export class BinaryGame implements GameScene {
       );
     t.stake.onTap = () => this.editStake();
     t.buy.onTap = () => this.buy();
+    t.auto.onTap = () => (this.autoOn ? this.stopAuto('Auto parado') : this.pickAuto());
 
     this.nav.onSelect = (tab) => this.showTab(tab, true);
     this.home.onSelect = (id) => {
@@ -269,6 +276,62 @@ export class BinaryGame implements GameScene {
     this.toast.show(`${p.dir === 'up' ? '▲ Sobe' : '▼ Desce'} · ${fmt(p.stake)} · ${fmtDuration(p.expiry - p.start)}`, C.btnPrimary);
   }
 
+  private pickAuto(): void {
+    const counts = [5, 10, 25, 50, 100, Infinity];
+    this.sheet.open(
+      'Modo automático',
+      counts.map((n) => ({
+        label: Number.isFinite(n) ? `${n} negociações` : 'Sem limite',
+        sub: 'Mesmo mercado, direção, duração e aposta',
+      })),
+      (i) => this.startAuto(counts[i]),
+    );
+  }
+
+  private startAuto(count: number): void {
+    this.autoOn = true;
+    this.autoLeft = count;
+    this.autoBuy();
+  }
+
+  private autoBuy(): void {
+    this.autoNext = null;
+    if (!this.autoOn) return;
+    if (this.autoLeft <= 0) return this.stopAuto('Auto concluído');
+    const p = this.book.buy(this.marketId, this.type, this.dir, this.stake, this.durations[this.type.id]);
+    if (!p) {
+      sound.play('error');
+      return this.stopAuto('Auto parado: saldo insuficiente', C.loss);
+    }
+    sound.play('buy');
+    this.autoPosId = p.id;
+    this.autoLeft--;
+    this.syncAuto();
+  }
+
+  private stopAuto(msg?: string, color: number = C.btnPrimary): void {
+    const wasOn = this.autoOn;
+    this.autoOn = false;
+    this.autoPosId = null;
+    this.autoNext?.kill();
+    this.autoNext = null;
+    this.syncAuto();
+    if (wasOn && msg) this.toast.show(msg, color);
+  }
+
+  private syncAuto(): void {
+    const b = this.trade.auto;
+    if (!this.autoOn) {
+      b.setText('Auto');
+      b.setColor(C.btnSecondary);
+      return;
+    }
+    // Conta o contrato em curso + os que faltam.
+    const left = this.autoLeft + (this.autoPosId !== null ? 1 : 0);
+    b.setText(Number.isFinite(left) ? `Parar · ${left}` : 'Parar');
+    b.setColor(C.loss);
+  }
+
   private onSecond(sec: number): void {
     this.book.settleDue(sec);
     const m = this.feed.get(this.marketId);
@@ -279,6 +342,11 @@ export class BinaryGame implements GameScene {
   }
 
   private onSettle(p: Position): void {
+    if (this.autoOn && p.id === this.autoPosId) {
+      this.autoPosId = null;
+      this.syncAuto();
+      this.autoNext = gsap.delayedCall(1, () => this.autoBuy());
+    }
     if (p.result === 'win') {
       sound.play('win');
       this.toast.show(`Ganhaste ${fmtSigned(p.pnl ?? 0)}`, C.win, C.winText);
@@ -292,6 +360,7 @@ export class BinaryGame implements GameScene {
   }
 
   private resetAccount(): void {
+    this.stopAuto();
     this.book.reset();
     this.toast.show(`Saldo demo reposto: ${fmt(START_BALANCE)}`, C.btnPrimary);
   }

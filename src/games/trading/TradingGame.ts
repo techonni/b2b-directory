@@ -2,6 +2,7 @@ import { Container, Graphics } from 'pixi.js';
 import gsap from 'gsap';
 import type { GameScene } from '../../core/scene';
 import { sound } from '../../core/audio/Sound';
+import { C } from '../../core/theme';
 import { Keypad } from '../../core/ui/Keypad';
 import { Toast } from '../../core/ui/Toast';
 import { fmtSigned } from '../../core/format';
@@ -20,6 +21,7 @@ import { Watchlist } from './views/Watchlist';
 /** Altura de referência e largura mínima (layout desktop, ocupa o ecrã todo). */
 const REF_H = 860;
 const MIN_W = 1200;
+const BOTTOM_GAP = 16;
 const WATCH_W = 296;
 const SIDE_W = 312;
 const FAST = 5;
@@ -294,8 +296,9 @@ export class TradingGame implements GameScene {
     this.root.scale.set(s);
     this.root.position.set(0, 0);
     this.DW = W / s;
-    this.DH = H / s;
-    this.backdrop.clear().rect(0, 0, W, H).fill(T.bg);
+    // Espaço em baixo, como no Crash e no Binary.
+    this.DH = (H - BOTTOM_GAP) / s;
+    this.backdrop.clear().rect(0, 0, W, H).fill(C.bgBase);
     this.build();
   }
 
@@ -303,7 +306,7 @@ export class TradingGame implements GameScene {
   private build(): void {
     const { DW, DH } = this;
     this.frameMask.clear().rect(0, 0, DW, DH).fill(0xffffff);
-    this.frame.clear();
+    this.frame.clear().rect(0, DH - 1, DW, 1).fill(T.border);
 
     this.rail.layout(DH);
     this.watch.position.set(Rail.W, 0);

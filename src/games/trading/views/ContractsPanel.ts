@@ -7,12 +7,14 @@ import type { Book, Position } from '../../binary/market/Trades';
 import { Tabs, txt } from '../ui/widgets';
 
 const ROW_H = 52;
+/** Início da lista (por baixo dos separadores grandes). */
+const TOP = 120;
 
 /** Contratos abertos (com tempo e estado) e histórico. */
 export class ContractsPanel extends Container {
   /** Contratos abertos pelo modo automático (para a etiqueta "auto"). */
   readonly autoIds = new Set<number>();
-  private readonly tabs = new Tabs(['Abertos', 'Histórico'], { size: 15 });
+  private readonly tabs = new Tabs(['Abertos', 'Histórico'], { size: 26 });
   private readonly bg = new Graphics();
   private readonly rowsBg = new Graphics();
   private readonly rows: Text[][] = [];
@@ -36,8 +38,8 @@ export class ContractsPanel extends Container {
     this.h = h;
     this.bg.clear().rect(0, 0, w, 1).fill(T.border);
     this.tabs.position.set(20, 16);
-    this.tabs.layout(w - 40, 44);
-    const n = Math.max(0, Math.floor((h - 76) / ROW_H));
+    this.tabs.layout(w - 40, 88);
+    const n = Math.max(0, Math.floor((h - TOP) / ROW_H));
     while (this.rows.length < n) {
       const r = [txt('', 15, T.text, '700'), txt('', 13, T.muted, '500'), txt('', 16, T.text, '700'), txt('', 13, T.muted, '500')];
       r[2].anchor.set(1, 0);
@@ -45,14 +47,14 @@ export class ContractsPanel extends Container {
       this.addChild(...r);
       this.rows.push(r);
     }
-    this.empty.position.set(w / 2, 104);
+    this.empty.position.set(w / 2, TOP + 28);
     this.refresh();
   }
 
   refresh(): void {
     const open = this.tabs.index === 0;
     const list: Position[] = open ? [...this.book.open].reverse() : this.book.closed;
-    const n = Math.min(list.length, Math.floor((this.h - 76) / ROW_H));
+    const n = Math.min(list.length, Math.floor((this.h - TOP) / ROW_H));
     this.empty.text = open ? 'Sem contratos abertos' : 'Ainda sem histórico';
     this.empty.visible = list.length === 0;
     const g = this.rowsBg.clear();
@@ -63,7 +65,7 @@ export class ContractsPanel extends Container {
       if (!vis) return;
       const m = this.feed.get(p.marketId);
       const dec = m.def.decimals;
-      const y = 76 + i * ROW_H;
+      const y = TOP + i * ROW_H;
       g.roundRect(12, y, this.w - 24, ROW_H - 6, 12).fill(T.input);
       const up = p.dir === 'up';
       r[0].text = `${up ? '▲ Sobe' : '▼ Desce'} · ${m.def.name}${this.autoIds.has(p.id) ? ' · auto' : ''}`;

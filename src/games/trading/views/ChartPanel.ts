@@ -4,6 +4,7 @@ import { sound } from '../../../core/audio/Sound';
 import { T } from '../theme';
 import { compact, dayMonth, fullDate, hhmm, num, pct } from '../format';
 import { TF_SEC, TIMEFRAMES, type Instrument, type Timeframe } from '../market/Market';
+import type { Contract } from '../market/Account';
 import { icon } from '../ui/icons';
 import { IconButton, onTap, txt } from '../ui/widgets';
 
@@ -54,7 +55,7 @@ class Pill extends Container {
 /** Cabeçalho do símbolo, barra de ferramentas e gráfico de área em tempo real. */
 export class ChartPanel extends Container {
   onExpand: (() => void) | null = null;
-  tf: Timeframe = '1D';
+  tf: Timeframe = '1m';
 
   private readonly bg = new Graphics();
   private readonly sym: Text;
@@ -94,6 +95,9 @@ export class ChartPanel extends Container {
   });
 
   private readonly autoBadge = new Pill(11, T.green, T.onGreen);
+  private readonly cLines = new Graphics();
+  private readonly cPills: Pill[] = [];
+  private contracts: Contract[] = [];
   private inst!: Instrument;
   private readonly shown = { v: 0 };
   /** false = velas (predefinido); true = linha com área. */
@@ -156,7 +160,7 @@ export class ChartPanel extends Container {
     this.expBtn.onTap = () => this.onExpand?.();
     this.addChild(this.lineBtn, this.indBtn, this.camBtn, this.expBtn);
 
-    this.plot.addChild(this.grid, this.area, this.sma, this.line, this.marks, ...this.markPills, this.hover, this.lastPill, this.hoverDate, this.hoverPrice, this.flash);
+    this.plot.addChild(this.grid, this.area, this.sma, this.line, this.marks, ...this.markPills, this.cLines, this.hover, this.lastPill, this.hoverDate, this.hoverPrice, this.flash);
     for (let i = 0; i < 8; i++) {
       const t = txt('', 11, T.muted, '500');
       t.anchor.set(0, 0.5);
@@ -240,6 +244,11 @@ export class ChartPanel extends Container {
   }
 
   /** Etiqueta "AUTO" a piscar junto ao símbolo enquanto o modo automático está ligado. */
+  /** Contratos abertos (desenhados como linhas de entrada com contagem decrescente). */
+  setContracts(list: Contract[]): void {
+    this.contracts = list;
+  }
+
   setAuto(on: boolean): void {
     this.autoBadge.visible = on;
     gsap.killTweensOf(this.autoBadge);
@@ -410,6 +419,28 @@ export class ChartPanel extends Container {
     this.lastPill.caption.style.fill = upDay ? T.onGreen : 0xffffff;
     this.lastPill.position.set(W + this.lastPill.width / 2 + 4, ly);
     for (const t of this.yLabels) if (t.visible && Math.abs(t.y - ly) < 14) t.visible = false;
+
+    // Contratos abertos neste par: linha na cotação de entrada + etiqueta com o tempo que falta
+    const cl = this.cLines.clear();
+    const mine = this.contracts.filter((c) => c.symId === this.inst.id).slice(-6);
+    while (this.cPills.length < mine.length) {
+      const p = new Pill(12, T.green, T.onGreen);
+      this.cPills.push(p);
+      this.plot.addChild(p);
+    }
+    this.cPills.forEach((p, j) => {
+      const c = mine[j];
+      p.visible = !!c;
+      if (!c) return;
+      const up = c.dir === 'up';
+      const y = Math.round(Math.min(H - 4, Math.max(top, Y(c.entry)))) + 0.5;
+      dashH(cl, 0, W, y, 6, 4);
+      cl.stroke({ width: 1.5, color: up ? T.greenText : T.redText, alpha: 0.9 });
+      const left = Math.max(0, Math.ceil((c.expiry - now) / 1000));
+      p.set(`${up ? '▲' : '▼'} ${num(c.stake)} · ${Math.floor(left / 60)}:${String(left % 60).padStart(2, '0')}`, up ? T.green : T.red);
+      p.caption.style.fill = up ? T.onGreen : 0xffffff;
+      p.position.set(12 + p.width / 2 + j * 4, y - 14);
+    });
 
     // Cursor com OHLC
     const hv = this.hover.clear();

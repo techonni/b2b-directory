@@ -34,12 +34,13 @@ export const DEFS: InstDef[] = [
   { id: 'CAD/JPY', name: 'Dólar canadiano / Iene', kind: 'forex', price: 111.173, chg: -0.05, dec: 3, vol: 0.00009 },
   { id: 'USD/SGD', name: 'Dólar americano / Dólar de Singapura', kind: 'forex', price: 1.34702, chg: 0.11, dec: 4, vol: 0.00009 },
   { id: 'USD/MXN', name: 'Dólar americano / Peso mexicano', kind: 'forex', price: 17.0512, chg: -0.42, dec: 4, vol: 0.00009 },
-  { id: 'Oil-Crude', name: 'Crude Oil Spot', kind: 'commodity', price: 223.89, chg: 1.12, dec: 3, vol: 0.0005, icon: { bg: 0x0a0a0a, fg: 0xffffff, glyph: 'drop' } },
-  { id: 'Oil-Brent', name: 'Brent Oil Spot', kind: 'commodity', price: 93.722, chg: 1.19, dec: 3, vol: 0.0005, icon: { bg: 0x0a0a0a, fg: 0xffffff, glyph: 'drop' } },
-  { id: 'Gold', name: 'Gold Spot', kind: 'commodity', price: 223.89, chg: -0.7, dec: 2, vol: 0.0003, icon: { bg: 0xf2b632, fg: 0x5a3b00, glyph: 'Au' } },
-  { id: 'Silver', name: 'Silver Spot', kind: 'commodity', price: 26.34, chg: 0.76, dec: 2, vol: 0.0004, icon: { bg: 0xc9ced3, fg: 0x2b3036, glyph: 'Ag' } },
-  { id: 'BTC/USD', name: 'Bitcoin to US Dollar', kind: 'crypto', price: 67250.5, chg: 0.05, dec: 2, vol: 0.0008, icon: { bg: 0xf7931a, fg: 0xffffff, glyph: '₿' } },
-  { id: 'ETH/USD', name: 'Ethereum to US Dollar', kind: 'crypto', price: 3480.2, chg: -0.4, dec: 2, vol: 0.0009, icon: { bg: 0x627eea, fg: 0xffffff, glyph: 'Ξ' } },
+  { id: 'EUR/CAD', name: 'Euro / Dólar canadiano', kind: 'forex', price: 1.47812, chg: 0.12, dec: 4, vol: 0.00009 },
+  { id: 'GBP/AUD', name: 'Libra / Dólar australiano', kind: 'forex', price: 1.94361, chg: -0.22, dec: 4, vol: 0.00009 },
+  { id: 'AUD/NZD', name: 'Dólar australiano / Dólar neozelandês', kind: 'forex', price: 1.09264, chg: 0.09, dec: 4, vol: 0.00009 },
+  { id: 'NZD/JPY', name: 'Dólar neozelandês / Iene', kind: 'forex', price: 90.652, chg: 0.28, dec: 3, vol: 0.00009 },
+  { id: 'CHF/JPY', name: 'Franco suíço / Iene', kind: 'forex', price: 167.614, chg: 0.05, dec: 3, vol: 0.00009 },
+  { id: 'EUR/NZD', name: 'Euro / Dólar neozelandês', kind: 'forex', price: 1.81247, chg: -0.19, dec: 4, vol: 0.00009 },
+  { id: 'USD/ZAR', name: 'Dólar americano / Rand', kind: 'forex', price: 18.3462, chg: -0.36, dec: 4, vol: 0.00009 },
 ];
 
 export type Timeframe = '1m' | '15m' | '1H' | '4H' | '1D' | '1W' | '1M';
@@ -169,7 +170,8 @@ export class Instrument {
     let s = this.series.get(tf);
     if (!s) {
       const rnd = seeded(`${this.id}:${tf}`);
-      const sigma = Math.min(0.005, this.def.vol * Math.sqrt(TF_SEC[tf]) * 0.06);
+      // Mesma escala do mercado ao vivo (cada vela nova junta TF_STEP segundos).
+      const sigma = this.def.vol * Math.sqrt(TF_STEP[tf]) * 0.9;
       const closes = [this.price];
       let p = this.price;
       let trend = 0;
@@ -221,10 +223,6 @@ export class Market {
 
   get forex(): Instrument[] {
     return this.all.filter((i) => i.def.kind === 'forex');
-  }
-
-  get others(): Instrument[] {
-    return this.all.filter((i) => i.def.kind !== 'forex');
   }
 
   update(dtMs: number): void {

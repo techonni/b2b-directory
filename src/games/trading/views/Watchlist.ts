@@ -91,6 +91,11 @@ export class Watchlist extends Container {
     this.place();
   }
 
+  /** A escrever na pesquisa (as setas não abrem contratos). */
+  get typing(): boolean {
+    return this.focused;
+  }
+
   select(id: string): void {
     this.selected = id;
     for (const r of this.rows) this.paintRow(r);

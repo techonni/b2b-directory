@@ -3,7 +3,6 @@ import type { GameScene } from '../../core/scene';
 import { sound } from '../../core/audio/Sound';
 import { C } from '../../core/theme';
 import { Keypad } from '../../core/ui/Keypad';
-import { Toast } from '../../core/ui/Toast';
 import { fmtDuration, fmtSigned } from '../../core/format';
 import { Feed } from '../binary/market/Market';
 import { Book, type Direction, type Position } from '../binary/market/Trades';
@@ -12,6 +11,7 @@ import { Sheet } from '../binary/ui/Sheet';
 import { T } from './theme';
 import { num } from './format';
 import { BOOK_KEY, PAIRS, PLUS, START_BALANCE } from './market/Market';
+import { ResultToast } from './ui/ResultToast';
 import { ContractsPanel } from './views/ContractsPanel';
 import { OrderPanel } from './views/OrderPanel';
 import { PairBar } from './views/PairBar';
@@ -38,8 +38,6 @@ export class TradingGame implements GameScene {
   private readonly book = new Book(this.feed, BOOK_KEY);
 
   private readonly backdrop = new Graphics();
-  private readonly frame = new Graphics();
-  private readonly frameMask = new Graphics();
   private readonly app = new Container();
   private readonly centerBg = new Graphics();
   private readonly bar = new PairBar(this.feed.markets);
@@ -50,7 +48,7 @@ export class TradingGame implements GameScene {
   private readonly contracts = new ContractsPanel(this.book, this.feed);
   private readonly sheet = new Sheet();
   private readonly keypad = new Keypad();
-  private readonly toast = new Toast();
+  private readonly toast = new ResultToast();
 
   private active = false;
   private expanded = false;
@@ -71,8 +69,7 @@ export class TradingGame implements GameScene {
     this.view.addChild(this.backdrop, this.root);
     this.side.addChild(this.sideBg, this.order, this.contracts);
     this.app.addChild(this.centerBg, this.bar, this.chart, this.side);
-    this.root.addChild(this.app, this.frameMask, this.frame, this.toast, this.sheet, this.keypad);
-    this.app.mask = this.frameMask;
+    this.root.addChild(this.app, this.toast, this.sheet, this.keypad);
     this.wire();
     this.select(this.selId);
     this.syncAccount();
@@ -169,7 +166,7 @@ export class TradingGame implements GameScene {
     if (m.last.t === sec) this.chart.onTick();
     this.bar.refresh(m);
     this.contracts.refresh();
-    if (this.active && this.book.open.some((p) => p.expiry - sec <= 3 && p.expiry - sec > 0)) sound.play('beep', 0.6);
+    if (this.active && this.book.open.some((p) => p.expiry - sec <= 10 && p.expiry - sec > 0)) sound.play('beep', 0.6);
     if (this.autoOn) this.autoStep();
   }
 
@@ -277,8 +274,6 @@ export class TradingGame implements GameScene {
   /** Barra de pares + gráfico do Binary (centro) | painel de negociação + contratos (direita). */
   private build(): void {
     const { DW, DH } = this;
-    this.frameMask.clear().rect(0, 0, DW, DH).fill(0xffffff);
-    this.frame.clear();
 
     const ex = this.expanded;
     this.side.visible = !ex;
@@ -297,6 +292,6 @@ export class TradingGame implements GameScene {
     const kw = 440;
     this.keypad.layout(DW, DH, (DW - kw) / 2, kw);
     this.sheet.layout(DW, DH, (DW - kw) / 2, kw);
-    this.toast.position.set(cw / 2, 150);
+    this.toast.place(cw / 2, PairBar.HEIGHT + 70);
   }
 }

@@ -6,7 +6,7 @@ import { Segmented } from '../../binary/ui/Segmented';
 import { Tile } from '../../binary/ui/Tile';
 import { T } from '../theme';
 import { num } from '../format';
-import { PROFIT } from '../market/Account';
+import { PLUS } from '../market/Market';
 import { txt } from '../ui/widgets';
 
 /**
@@ -35,7 +35,7 @@ export class OrderPanel extends Container {
   private readonly market = new Container();
   private readonly marketBg = new Graphics();
   private readonly marketText: Text;
-  private readonly buy = new Button({ label: `Comprar · +${Math.round(PROFIT * 100)}%`, width: 300, height: 60, fontSize: 21 });
+  private readonly buy = new Button({ label: `Comprar · +${Math.round(PLUS.profit * 100)}%`, width: 300, height: 60, fontSize: 21 });
   private readonly auto = new Button({ label: '▶  Modo automático', width: 300, height: 60, color: T.btnGray, fontSize: 19 });
   private readonly autoStatus: Text;
   private readonly autoDot = new Graphics();

@@ -50,9 +50,13 @@ export class Book {
   onSettle: ((p: Position) => void) | null = null;
   private nextId = 1;
 
-  constructor(private readonly feed: Feed) {
+  /** `key`: onde a carteira é guardada (o Binary + tem a sua). */
+  constructor(
+    private readonly feed: Feed,
+    private readonly key: string = KEY,
+  ) {
     try {
-      const s = JSON.parse(localStorage.getItem(KEY) ?? 'null') as Saved | null;
+      const s = JSON.parse(localStorage.getItem(this.key) ?? 'null') as Saved | null;
       if (s && Number.isFinite(s.balance)) {
         // Contratos que ficaram abertos ao fechar a app são anulados e a aposta devolvida.
         this.balance = s.balance + (s.open ?? []).reduce((sum, p) => sum + p.stake, 0);
@@ -121,7 +125,7 @@ export class Book {
 
   private save(): void {
     try {
-      localStorage.setItem(KEY, JSON.stringify({ balance: this.balance, closed: this.closed, open: this.open } satisfies Saved));
+      localStorage.setItem(this.key, JSON.stringify({ balance: this.balance, closed: this.closed, open: this.open } satisfies Saved));
     } catch {
       /* ignorar */
     }

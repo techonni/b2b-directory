@@ -12,7 +12,7 @@ export const LINKS: { route: Route; label: string }[] = [
   { route: 'home', label: 'Início' },
   { route: 'crash', label: 'Crash' },
   { route: 'binary', label: 'Binary' },
-  { route: 'trading', label: 'Trading' },
+  { route: 'trading', label: 'Binary +' },
   { route: 'about', label: 'Sobre' },
 ];
 

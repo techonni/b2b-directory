@@ -14,7 +14,7 @@ const TITLES: Record<Route, string> = {
   home: 'zunrel — jogos originais HTML5',
   crash: 'Crash — zunrel',
   binary: 'Binary — zunrel',
-  trading: 'Trading — zunrel',
+  trading: 'Binary + — zunrel',
   about: 'Sobre — zunrel',
 };
 

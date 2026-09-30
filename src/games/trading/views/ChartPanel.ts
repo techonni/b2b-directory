@@ -3,13 +3,13 @@ import gsap from 'gsap';
 import { sound } from '../../../core/audio/Sound';
 import { T } from '../theme';
 import { compact, dayMonth, fullDate, hhmm, num, pct } from '../format';
-import { CHART_POINTS, TF_SEC, TIMEFRAMES, type Instrument, type Timeframe } from '../market/Market';
+import { TF_SEC, TIMEFRAMES, type Instrument, type Timeframe } from '../market/Market';
 import { icon } from '../ui/icons';
 import { IconButton, onTap, txt } from '../ui/widgets';
 
 const HEAD_H = 76;
 const TOOL_H = 44;
-const AXIS_R = 62;
+const AXIS_R = 74;
 const AXIS_B = 30;
 
 function dashH(g: Graphics, x1: number, x2: number, y: number, dash = 3, gap = 4): void {
@@ -75,27 +75,29 @@ export class ChartPanel extends Container {
   private readonly line = new Graphics();
   private readonly sma = new Graphics();
   private readonly marks = new Graphics();
-  private readonly markPills = [new Pill(11, T.green, 0x04150a), new Pill(11, T.green, 0x04150a)];
+  private readonly markPills = [new Pill(11, T.green, T.onGreen), new Pill(11, T.green, T.onGreen)];
   private readonly yLabels: Text[] = [];
   private readonly xLabels: Text[] = [];
-  private readonly lastPill = new Pill(11, T.green, 0x04150a);
+  private readonly lastPill = new Pill(11, T.green, T.onGreen);
   private readonly hover = new Graphics();
-  private readonly hoverDate = new Pill(11, 0x2c302e, T.text);
-  private readonly hoverPrice = new Pill(11, 0x2c302e, T.text);
+  private readonly hoverDate = new Pill(11, T.rowSel, T.text);
+  private readonly hoverPrice = new Pill(11, T.rowSel, T.text);
   private readonly flash = new Graphics();
   private readonly grad = new FillGradient({
     start: { x: 0, y: 0 },
     end: { x: 0, y: 1 },
     colorStops: [
-      { offset: 0, color: 'rgba(56,209,90,0.30)' },
-      { offset: 0.7, color: 'rgba(56,209,90,0.06)' },
-      { offset: 1, color: 'rgba(56,209,90,0)' },
+      { offset: 0, color: 'rgba(107,221,74,0.28)' },
+      { offset: 0.7, color: 'rgba(107,221,74,0.05)' },
+      { offset: 1, color: 'rgba(107,221,74,0)' },
     ],
   });
 
+  private readonly autoBadge = new Pill(11, T.green, T.onGreen);
   private inst!: Instrument;
   private readonly shown = { v: 0 };
-  private showArea = true;
+  /** false = velas (predefinido); true = linha com área. */
+  private lineMode = false;
   private showSma = false;
   private hoverX: number | null = null;
   private w = 700;
@@ -107,7 +109,9 @@ export class ChartPanel extends Container {
     this.sym = txt('', 24, T.text, '700');
     this.exch = txt('', 13, T.muted, '500');
     this.nameText = txt('', 13, T.muted, '500');
-    this.addChild(this.bg, this.sym, this.exch, this.nameText);
+    this.autoBadge.set('● AUTO');
+    this.autoBadge.visible = false;
+    this.addChild(this.bg, this.sym, this.exch, this.nameText, this.autoBadge);
     for (const [key, label] of [
       ['open', 'Abertura'],
       ['chg', 'Variação'],
@@ -133,7 +137,8 @@ export class ChartPanel extends Container {
       this.addChild(t);
     }
     this.lineBtn.onTap = () => {
-      this.showArea = !this.showArea;
+      this.lineMode = !this.lineMode;
+      icon('line', this.lineMode ? T.text : T.muted, this.lineBtn.glyph);
       this.draw();
     };
     const indIcon = icon('indicators', T.muted);
@@ -180,7 +185,7 @@ export class ChartPanel extends Container {
     const changed = this.inst !== inst;
     this.inst = inst;
     this.sym.text = inst.id;
-    this.exch.text = `/ ${inst.def.kind === 'stock' ? 'NASDAQ' : inst.def.kind === 'crypto' ? 'CRIPTO' : 'SPOT'} · DEMO`;
+    this.exch.text = `/ ${inst.def.kind === 'forex' ? 'FOREX' : inst.def.kind === 'crypto' ? 'CRIPTO' : 'SPOT'} · DEMO`;
     this.nameText.text = inst.def.name;
     this.shown.v = inst.price;
     this.layoutHead();
@@ -219,6 +224,8 @@ export class ChartPanel extends Container {
     this.sym.position.set(20, this.narrow ? 12 : 14);
     this.exch.position.set(20 + this.sym.width + 8, this.sym.y + 9);
     this.nameText.position.set(20, this.sym.y + 34);
+    const ex = this.exch.visible ? this.exch.x + this.exch.width : this.sym.x + this.sym.width;
+    this.autoBadge.position.set(ex + 14 + this.autoBadge.width / 2, this.sym.y + 16);
     this.exch.visible = !this.narrow;
     const shown = this.narrow ? ['chg', 'high'] : ['open', 'chg', 'high', 'low', 'vol'];
     let x = w - 20;
@@ -230,6 +237,14 @@ export class ChartPanel extends Container {
       s.value.position.set(x, 38);
       x -= Math.max(this.narrow ? 64 : 76, s.value.width + 22);
     }
+  }
+
+  /** Etiqueta "AUTO" a piscar junto ao símbolo enquanto o modo automático está ligado. */
+  setAuto(on: boolean): void {
+    this.autoBadge.visible = on;
+    gsap.killTweensOf(this.autoBadge);
+    this.autoBadge.alpha = 1;
+    if (on) gsap.to(this.autoBadge, { alpha: 0.45, duration: 0.7, repeat: -1, yoyo: true });
   }
 
   setTf(tf: Timeframe): void {
@@ -278,35 +293,42 @@ export class ChartPanel extends Container {
   draw(): void {
     if (!this.inst) return;
     const src = this.inst.chart(this.tf);
-    const pts = src.slice();
-    pts[pts.length - 1] = this.shown.v;
+    const bars = src.map((b) => ({ ...b }));
+    const last = bars[bars.length - 1];
+    last.c = this.shown.v;
+    last.h = Math.max(last.h, last.c);
+    last.l = Math.min(last.l, last.c);
+    const closes = bars.map((b) => b.c);
     const W = this.w - AXIS_R;
     const H = this.h - HEAD_H - TOOL_H - AXIS_B;
     if (W < 50 || H < 50) return;
     let lo = Infinity;
     let hi = -Infinity;
-    for (const p of pts) {
-      lo = Math.min(lo, p);
-      hi = Math.max(hi, p);
+    for (const b of bars) {
+      lo = Math.min(lo, this.lineMode ? b.c : b.l);
+      hi = Math.max(hi, this.lineMode ? b.c : b.h);
     }
-    const padV = (hi - lo) * 0.12 || hi * 0.001;
+    const padV = (hi - lo) * 0.1 || hi * 0.001;
     lo -= padV;
     hi += padV;
-    const top = 16;
-    const X = (i: number) => (i / (CHART_POINTS - 1)) * W;
+    const top = 34;
+    const n = bars.length;
+    const slot = W / n;
+    const X = (i: number) => (i + 0.5) * slot;
     const Y = (p: number) => top + (1 - (p - lo) / (hi - lo)) * (H - top);
+    const dec = this.inst.def.dec;
 
     // Grelha e eixo dos preços
     const g = this.grid.clear();
     const step = niceStep(hi - lo, 5);
     let k = 0;
-    const dec = step < 1 ? Math.min(3, Math.ceil(-Math.log10(step))) : 0;
+    const labelDec = Math.max(2, Math.min(dec, Math.ceil(-Math.log10(step)) + 1));
     for (let v = Math.ceil(lo / step) * step; v <= hi && k < this.yLabels.length; v += step, k++) {
       dashH(g, 0, W, Math.round(Y(v)) + 0.5);
       const t = this.yLabels[k];
       t.visible = true;
-      t.text = num(v, Math.max(dec, 2));
-      t.position.set(W + 12, Y(v));
+      t.text = num(v, labelDec);
+      t.position.set(W + 10, Y(v));
     }
     for (; k < this.yLabels.length; k++) this.yLabels[k].visible = false;
     g.stroke({ width: 1, color: T.grid });
@@ -315,79 +337,95 @@ export class ChartPanel extends Container {
     // Eixo do tempo
     const now = Date.now();
     const sec = TF_SEC[this.tf];
-    const nX = Math.max(3, Math.min(this.xLabels.length, Math.floor(W / 80)));
+    const timeOf = (i: number) => new Date(now - (n - 1 - i) * sec * 1000);
+    const nX = Math.max(3, Math.min(this.xLabels.length, Math.floor(W / 90)));
     this.xLabels.forEach((t, j) => {
       t.visible = j < nX;
       if (!t.visible) return;
-      const idx = Math.round(((j + 0.5) / nX) * (CHART_POINTS - 1));
-      const d = new Date(now - (CHART_POINTS - 1 - idx) * sec * 1000);
+      const idx = Math.round(((j + 0.5) / nX) * (n - 1));
+      const d = timeOf(idx);
       t.text = sec < 86400 ? hhmm(d) : sec === 86400 ? String(d.getDate()) : dayMonth(d);
       t.position.set(X(idx), H + 9);
     });
 
-    // Área + linha
-    this.area.clear();
-    if (this.showArea) {
-      this.area.moveTo(0, H);
-      pts.forEach((p, i) => this.area.lineTo(X(i), Y(p)));
-      this.area.lineTo(W, H).closePath().fill(this.grad);
+    // Velas (ou linha com área)
+    const a = this.area.clear();
+    const l = this.line.clear();
+    if (this.lineMode) {
+      a.moveTo(X(0), H);
+      closes.forEach((c, i) => a.lineTo(X(i), Y(c)));
+      a.lineTo(X(n - 1), H).closePath().fill(this.grad);
+      closes.forEach((c, i) => (i ? l.lineTo(X(i), Y(c)) : l.moveTo(X(0), Y(c))));
+      l.stroke({ width: 1.8, color: T.greenText, join: 'round' });
+    } else {
+      const bw = Math.max(2, Math.min(14, slot * 0.62));
+      for (const up of [true, false]) {
+        const color = up ? T.greenText : T.redText;
+        bars.forEach((b, i) => {
+          if (b.c >= b.o !== up) return;
+          const x = X(i);
+          const y1 = Y(Math.max(b.o, b.c));
+          const y2 = Y(Math.min(b.o, b.c));
+          a.rect(Math.round(x) - 0.5, Y(b.h), 1, Y(b.l) - Y(b.h));
+          a.rect(x - bw / 2, y1, bw, Math.max(1, y2 - y1));
+        });
+        a.fill(color);
+      }
     }
-    this.line.clear();
-    pts.forEach((p, i) => (i ? this.line.lineTo(X(i), Y(p)) : this.line.moveTo(0, Y(p))));
-    this.line.stroke({ width: 1.6, color: T.greenText, join: 'round' });
 
     // Média móvel (Indicadores)
     this.sma.clear();
     if (this.showSma) {
-      const n = 14;
-      for (let i = n; i < pts.length; i++) {
-        let s = 0;
-        for (let j = i - n; j < i; j++) s += pts[j];
-        const y = Y(s / n);
-        if (i === n) this.sma.moveTo(X(i), y);
+      const p = 14;
+      for (let i = p; i < n; i++) {
+        let sum = 0;
+        for (let j = i - p + 1; j <= i; j++) sum += closes[j];
+        const y = Y(sum / p);
+        if (i === p) this.sma.moveTo(X(i), y);
         else this.sma.lineTo(X(i), y);
       }
-      this.sma.stroke({ width: 1.4, color: T.coin, alpha: 0.85 });
+      this.sma.stroke({ width: 1.6, color: T.coin, alpha: 0.9 });
     }
 
     // Marcadores: variação desde dois pontos do histórico até agora
     const m = this.marks.clear();
     [0.45, 0.8].forEach((f, j) => {
-      const idx = Math.round(f * (CHART_POINTS - 1));
+      const idx = Math.round(f * (n - 1));
       const x = Math.round(X(idx)) + 0.5;
-      dashV(m, x, top + 12, H);
-      const change = ((pts[pts.length - 1] - pts[idx]) / pts[idx]) * 100;
+      dashV(m, x, top - 6, H);
+      const change = ((last.c - closes[idx]) / closes[idx]) * 100;
       const pill = this.markPills[j];
       pill.set(pct(change), change >= 0 ? T.green : T.red);
-      pill.caption.style.fill = change >= 0 ? 0x04150a : 0xffffff;
-      pill.position.set(x, top + 2);
+      pill.caption.style.fill = change >= 0 ? T.onGreen : 0xffffff;
+      pill.position.set(x, top - 18);
     });
-    m.stroke({ width: 1, color: T.greenText, alpha: 0.6 });
+    m.stroke({ width: 1, color: T.muted, alpha: 0.5 });
 
-    // Último preço (esconde a etiqueta do eixo que ficaria por baixo)
-    const ly = Y(pts[pts.length - 1]);
-    for (const t of this.yLabels) if (t.visible && Math.abs(t.y - ly) < 14) t.visible = false;
-    m.circle(W, ly, 3.5).fill(T.greenText);
-    this.lastPill.set(num(pts[pts.length - 1], this.inst.def.dec), this.inst.chg >= 0 ? T.green : T.red);
-    this.lastPill.caption.style.fill = this.inst.chg >= 0 ? 0x04150a : 0xffffff;
+    // Último preço: linha tracejada até ao eixo e etiqueta
+    const ly = Y(last.c);
+    const upDay = this.inst.chg >= 0;
+    dashH(m, 0, W, Math.round(ly) + 0.5, 2, 3);
+    m.stroke({ width: 1, color: upDay ? T.greenText : T.redText, alpha: 0.7 });
+    this.lastPill.set(num(last.c, dec), upDay ? T.green : T.red);
+    this.lastPill.caption.style.fill = upDay ? T.onGreen : 0xffffff;
     this.lastPill.position.set(W + this.lastPill.width / 2 + 4, ly);
+    for (const t of this.yLabels) if (t.visible && Math.abs(t.y - ly) < 14) t.visible = false;
 
-    // Cursor
+    // Cursor com OHLC
     const hv = this.hover.clear();
     const on = this.hoverX !== null && this.hoverX >= 0 && this.hoverX <= W;
     this.hoverDate.visible = this.hoverPrice.visible = on;
     if (on) {
-      const idx = Math.round((this.hoverX! / W) * (CHART_POINTS - 1));
+      const idx = Math.max(0, Math.min(n - 1, Math.floor(this.hoverX! / slot)));
+      const b = bars[idx];
       const x = X(idx);
-      const y = Y(pts[idx]);
+      const y = Y(b.c);
       dashV(hv, x, 0, H);
       dashH(hv, 0, W, y);
       hv.stroke({ width: 1, color: T.muted, alpha: 0.6 });
-      hv.circle(x, y, 4).fill(T.text).circle(x, y, 7).fill({ color: T.text, alpha: 0.18 });
-      const d = new Date(now - (CHART_POINTS - 1 - idx) * sec * 1000);
-      this.hoverDate.set(fullDate(d));
+      this.hoverDate.set(`${fullDate(timeOf(idx))}  ·  A ${num(b.o, dec)}  M ${num(b.h, dec)}  m ${num(b.l, dec)}  F ${num(b.c, dec)}`);
       this.hoverDate.position.set(Math.min(W - this.hoverDate.width / 2, Math.max(this.hoverDate.width / 2, x)), H - 16);
-      this.hoverPrice.set(num(pts[idx], this.inst.def.dec));
+      this.hoverPrice.set(num(b.c, dec));
       this.hoverPrice.position.set(W + this.hoverPrice.width / 2 + 4, y);
       for (const t of this.yLabels) if (t.visible && Math.abs(t.y - y) < 14) t.visible = false;
     }

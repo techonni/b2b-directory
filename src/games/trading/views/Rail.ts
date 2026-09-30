@@ -40,7 +40,7 @@ export class Rail extends Container {
     this.gear.addChild(icon('gear'));
     this.gear.hitArea = new Rectangle(-20, -20, 40, 40);
     onTap(this.gear, () => this.onReset?.());
-    const ring = new Graphics().circle(0, 0, 17).fill(0x3a3f3d).stroke({ width: 1.5, color: T.borderHi });
+    const ring = new Graphics().circle(0, 0, 17).fill(T.rowSel).stroke({ width: 1.5, color: T.borderHi });
     const ini = txt('JR', 12, T.text, '700');
     ini.anchor.set(0.5);
     this.avatar.addChild(ring, ini);

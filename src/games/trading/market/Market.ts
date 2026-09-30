@@ -1,4 +1,4 @@
-export type Kind = 'stock' | 'commodity' | 'crypto';
+export type Kind = 'forex' | 'commodity' | 'crypto';
 
 export interface InstDef {
   id: string;
@@ -17,23 +17,23 @@ export interface InstDef {
 
 // Preços fictícios, só para a demo (Coins).
 export const DEFS: InstDef[] = [
-  { id: 'AAPL', name: 'Apple Inc.', kind: 'stock', price: 145.86, chg: 1.2, dec: 2, vol: 0.0005 },
-  { id: 'MSFT', name: 'Microsoft Corporation', kind: 'stock', price: 299.35, chg: -0.7, dec: 2, vol: 0.0004 },
-  { id: 'GOOGL', name: 'Alphabet Inc.', kind: 'stock', price: 334.57, chg: 0.45, dec: 2, vol: 0.0005 },
-  { id: 'SBUX', name: 'Starbucks Corporation', kind: 'stock', price: 106.0, chg: 1.43, dec: 2, vol: 0.0006 },
-  { id: 'AMZN', name: 'Amazon.com, Inc.', kind: 'stock', price: 278.05, chg: -0.3, dec: 2, vol: 0.0005 },
-  { id: 'TSLA', name: 'Tesla, Inc.', kind: 'stock', price: 688.99, chg: 3.9, dec: 2, vol: 0.0011 },
-  { id: 'NFLX', name: 'Netflix, Inc.', kind: 'stock', price: 515.24, chg: -1.15, dec: 2, vol: 0.0007 },
-  { id: 'NVDA', name: 'NVIDIA Corporation', kind: 'stock', price: 220.8, chg: 2.55, dec: 2, vol: 0.0009 },
-  { id: 'DIS', name: 'The Walt Disney Company', kind: 'stock', price: 175.67, chg: 0.8, dec: 2, vol: 0.0005 },
-  { id: 'PYPL', name: 'PayPal Holdings, Inc.', kind: 'stock', price: 280.14, chg: -0.55, dec: 2, vol: 0.0006 },
-  { id: 'INTC', name: 'Intel Corporation', kind: 'stock', price: 53.42, chg: 0.1, dec: 2, vol: 0.0006 },
-  { id: 'CSCO', name: 'Cisco Systems, Inc.', kind: 'stock', price: 58.67, chg: -0.2, dec: 2, vol: 0.0004 },
-  { id: 'ADBE', name: 'Adobe Inc.', kind: 'stock', price: 630.15, chg: 1.75, dec: 2, vol: 0.0006 },
-  { id: 'CRM', name: 'Salesforce, Inc.', kind: 'stock', price: 248.13, chg: 0.65, dec: 2, vol: 0.0006 },
-  { id: 'V', name: 'Visa Inc.', kind: 'stock', price: 230.76, chg: 1.1, dec: 2, vol: 0.0004 },
-  { id: 'ORCL', name: 'Oracle Corporation', kind: 'stock', price: 85.23, chg: -0.1, dec: 2, vol: 0.0005 },
-  { id: 'UBER', name: 'Uber Technologies, Inc.', kind: 'stock', price: 44.12, chg: 0.9, dec: 2, vol: 0.0008 },
+  { id: 'EUR/USD', name: 'Euro / Dólar americano', kind: 'forex', price: 1.08524, chg: 0.21, dec: 4, vol: 0.00009 },
+  { id: 'GBP/USD', name: 'Libra / Dólar americano', kind: 'forex', price: 1.27143, chg: 0.35, dec: 4, vol: 0.00009 },
+  { id: 'USD/JPY', name: 'Dólar americano / Iene', kind: 'forex', price: 151.423, chg: -0.18, dec: 3, vol: 0.00009 },
+  { id: 'USD/CHF', name: 'Dólar americano / Franco suíço', kind: 'forex', price: 0.90314, chg: -0.27, dec: 4, vol: 0.00009 },
+  { id: 'AUD/USD', name: 'Dólar australiano / Dólar americano', kind: 'forex', price: 0.65421, chg: 0.52, dec: 4, vol: 0.00009 },
+  { id: 'USD/CAD', name: 'Dólar americano / Dólar canadiano', kind: 'forex', price: 1.36208, chg: -0.12, dec: 4, vol: 0.00009 },
+  { id: 'NZD/USD', name: 'Dólar neozelandês / Dólar americano', kind: 'forex', price: 0.59873, chg: 0.44, dec: 4, vol: 0.00009 },
+  { id: 'EUR/GBP', name: 'Euro / Libra', kind: 'forex', price: 0.85357, chg: -0.14, dec: 4, vol: 0.00009 },
+  { id: 'EUR/JPY', name: 'Euro / Iene', kind: 'forex', price: 164.332, chg: 0.06, dec: 3, vol: 0.00009 },
+  { id: 'GBP/JPY', name: 'Libra / Iene', kind: 'forex', price: 192.515, chg: 0.17, dec: 3, vol: 0.00009 },
+  { id: 'EUR/CHF', name: 'Euro / Franco suíço', kind: 'forex', price: 0.98011, chg: -0.06, dec: 4, vol: 0.00009 },
+  { id: 'AUD/JPY', name: 'Dólar australiano / Iene', kind: 'forex', price: 99.054, chg: 0.34, dec: 3, vol: 0.00009 },
+  { id: 'EUR/AUD', name: 'Euro / Dólar australiano', kind: 'forex', price: 1.65882, chg: -0.31, dec: 4, vol: 0.00009 },
+  { id: 'GBP/CHF', name: 'Libra / Franco suíço', kind: 'forex', price: 1.14824, chg: 0.08, dec: 4, vol: 0.00009 },
+  { id: 'CAD/JPY', name: 'Dólar canadiano / Iene', kind: 'forex', price: 111.173, chg: -0.05, dec: 3, vol: 0.00009 },
+  { id: 'USD/SGD', name: 'Dólar americano / Dólar de Singapura', kind: 'forex', price: 1.34702, chg: 0.11, dec: 4, vol: 0.00009 },
+  { id: 'USD/MXN', name: 'Dólar americano / Peso mexicano', kind: 'forex', price: 17.0512, chg: -0.42, dec: 4, vol: 0.00009 },
   { id: 'Oil-Crude', name: 'Crude Oil Spot', kind: 'commodity', price: 223.89, chg: 1.12, dec: 3, vol: 0.0005, icon: { bg: 0x0a0a0a, fg: 0xffffff, glyph: 'drop' } },
   { id: 'Oil-Brent', name: 'Brent Oil Spot', kind: 'commodity', price: 93.722, chg: 1.19, dec: 3, vol: 0.0005, icon: { bg: 0x0a0a0a, fg: 0xffffff, glyph: 'drop' } },
   { id: 'Gold', name: 'Gold Spot', kind: 'commodity', price: 223.89, chg: -0.7, dec: 2, vol: 0.0003, icon: { bg: 0xf2b632, fg: 0x5a3b00, glyph: 'Au' } },
@@ -48,7 +48,15 @@ export const TIMEFRAMES: Timeframe[] = ['1m', '15m', '1H', '4H', '1D', '1W', '1M
 export const TF_SEC: Record<Timeframe, number> = { '1m': 60, '15m': 900, '1H': 3600, '4H': 14400, '1D': 86400, '1W': 604800, '1M': 2592000 };
 /** Um ponto novo entra no gráfico a cada N segundos reais (para se ver o mercado a mexer). */
 const TF_STEP: Record<Timeframe, number> = { '1m': 2, '15m': 3, '1H': 4, '4H': 5, '1D': 6, '1W': 8, '1M': 10 };
-export const CHART_POINTS = 150;
+export const CHART_POINTS = 80;
+
+/** Uma vela: abertura, máximo, mínimo, fecho. */
+export interface Bar {
+  o: number;
+  h: number;
+  l: number;
+  c: number;
+}
 
 function gauss(): number {
   const u = 1 - Math.random();
@@ -87,7 +95,7 @@ export class Instrument {
   readonly live: number[] = [];
   readonly prints: Print[] = [];
   private readonly target: number;
-  private readonly series = new Map<Timeframe, { pts: number[]; age: number }>();
+  private readonly series = new Map<Timeframe, { bars: Bar[]; age: number }>();
 
   constructor(readonly def: InstDef) {
     this.price = def.price;
@@ -111,7 +119,7 @@ export class Instrument {
 
   get spread(): number {
     const tick = 10 ** -this.def.dec;
-    return Math.max(tick, Math.round((this.price * 0.00018) / tick) * tick);
+    return Math.max(tick, Math.round((this.price * (this.def.kind === 'forex' ? 0.00006 : 0.00018)) / tick) * tick);
   }
 
   get bid(): number {
@@ -142,35 +150,49 @@ export class Instrument {
     if (this.live.length > 120) this.live.shift();
     for (const [tf, s] of this.series) {
       s.age++;
+      const p = this.price;
       if (s.age >= TF_STEP[tf]) {
         s.age = 0;
-        s.pts.push(this.price);
-        s.pts.shift();
+        s.bars.push({ o: p, h: p, l: p, c: p });
+        s.bars.shift();
+      } else {
+        const b = s.bars[s.bars.length - 1];
+        b.c = p;
+        b.h = Math.max(b.h, p);
+        b.l = Math.min(b.l, p);
       }
-      s.pts[s.pts.length - 1] = this.price;
     }
   }
 
-  /** Histórico do gráfico para um intervalo (gerado na primeira vez e depois vivo). */
-  chart(tf: Timeframe): number[] {
+  /** Velas do gráfico para um intervalo (geradas na primeira vez e depois vivas). */
+  chart(tf: Timeframe): Bar[] {
     let s = this.series.get(tf);
     if (!s) {
       const rnd = seeded(`${this.id}:${tf}`);
       const sigma = Math.min(0.005, this.def.vol * Math.sqrt(TF_SEC[tf]) * 0.06);
-      const pts = [this.price];
+      const closes = [this.price];
       let p = this.price;
       let trend = 0;
-      for (let i = 1; i < CHART_POINTS; i++) {
+      for (let i = 1; i < CHART_POINTS + 1; i++) {
         trend = trend * 0.92 + (rnd() - 0.5) * sigma * 0.3;
         const g = (rnd() + rnd() + rnd() - 1.5) * 1.4;
         p /= Math.exp(sigma * g + trend);
-        pts.unshift(p);
+        closes.unshift(p);
       }
-      s = { pts, age: 0 };
+      const bars: Bar[] = [];
+      for (let i = 1; i < closes.length; i++) {
+        const o = closes[i - 1];
+        const c = closes[i];
+        bars.push({ o, c, h: Math.max(o, c) * (1 + rnd() * sigma * 0.9), l: Math.min(o, c) * (1 - rnd() * sigma * 0.9) });
+      }
+      s = { bars, age: 0 };
       this.series.set(tf, s);
     }
-    s.pts[s.pts.length - 1] = this.price;
-    return s.pts;
+    const last = s.bars[s.bars.length - 1];
+    last.c = this.price;
+    last.h = Math.max(last.h, this.price);
+    last.l = Math.min(last.l, this.price);
+    return s.bars;
   }
 
   /** Livro de ordens sintético à volta do preço. */
@@ -197,12 +219,12 @@ export class Market {
     return this.all.find((i) => i.id === id) ?? this.all[0];
   }
 
-  get stocks(): Instrument[] {
-    return this.all.filter((i) => i.def.kind === 'stock');
+  get forex(): Instrument[] {
+    return this.all.filter((i) => i.def.kind === 'forex');
   }
 
   get others(): Instrument[] {
-    return this.all.filter((i) => i.def.kind !== 'stock');
+    return this.all.filter((i) => i.def.kind !== 'forex');
   }
 
   update(dtMs: number): void {

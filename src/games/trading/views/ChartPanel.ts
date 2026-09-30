@@ -55,6 +55,8 @@ class Pill extends Container {
 /** Cabeçalho do símbolo, barra de ferramentas e gráfico de área em tempo real. */
 export class ChartPanel extends Container {
   onExpand: (() => void) | null = null;
+  onPair: ((id: string) => void) | null = null;
+  private readonly chips: { id: string; view: Container; bg: Graphics; t: Text }[] = [];
   tf: Timeframe = '1m';
 
   private readonly bg = new Graphics();
@@ -185,6 +187,32 @@ export class ChartPanel extends Container {
     this.addChild(this.plot);
   }
 
+  /** Pares na barra de ferramentas (cabem os que houver espaço até à câmara). */
+  setPairs(ids: string[]): void {
+    for (const id of ids) {
+      const view = new Container();
+      const bg = new Graphics();
+      const t = txt(id, 13, T.muted, '700');
+      t.position.set(12, (30 - t.height) / 2);
+      view.addChild(bg, t);
+      onTap(view, () => this.onPair?.(id));
+      view.on('pointerover', () => id !== this.inst?.id && (t.style.fill = T.text));
+      view.on('pointerout', () => this.paintChips());
+      this.chips.push({ id, view, bg, t });
+      this.addChild(view);
+    }
+  }
+
+  private paintChips(): void {
+    for (const c of this.chips) {
+      const sel = c.id === this.inst?.id;
+      const w = c.t.width + 24;
+      c.bg.clear().roundRect(0, 0, w, 30, 8).fill(sel ? T.primary : T.input).stroke({ width: 1, color: sel ? T.primary : T.border });
+      c.t.style.fill = sel ? T.text : T.muted;
+      c.view.hitArea = new Rectangle(0, 0, w, 30);
+    }
+  }
+
   setInstrument(inst: Instrument): void {
     const changed = this.inst !== inst;
     this.inst = inst;
@@ -192,6 +220,7 @@ export class ChartPanel extends Container {
     this.exch.text = `/ ${inst.def.kind === 'forex' ? 'FOREX' : inst.def.kind === 'crypto' ? 'CRIPTO' : 'SPOT'} · DEMO`;
     this.nameText.text = inst.def.name;
     this.shown.v = inst.price;
+    this.paintChips();
     this.layoutHead();
     this.refresh();
     if (changed) gsap.fromTo(this.plot, { alpha: 0.2 }, { alpha: 1, duration: 0.35 });
@@ -214,6 +243,16 @@ export class ChartPanel extends Container {
     this.lineBtn.position.set(x + 8, ty);
     this.indBtn.position.set(x + 38, ty);
     this.indBtn.visible = !this.narrow;
+    // Pares: da direita de "Indicadores" até à câmara
+    let px = x + 38 + 118;
+    const limit = w - 84;
+    this.paintChips();
+    for (const c of this.chips) {
+      const cw = c.t.width + 24;
+      c.view.visible = px + cw <= limit;
+      c.view.position.set(px, ty - 15);
+      px += cw + 6;
+    }
     this.camBtn.position.set(w - 60, ty);
     this.expBtn.position.set(w - 24, ty);
     this.paintTf(false);

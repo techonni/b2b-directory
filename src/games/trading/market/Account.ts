@@ -21,7 +21,7 @@ export interface Contract {
 export const START_CASH = 10_000;
 /** Lucro fixo de um contrato ganho. */
 export const PROFIT = 0.85;
-export const DURATIONS = [30, 60, 120, 300];
+export const DURATIONS = [30, 60, 120, 300, 600, 900];
 const KEY = 'zunrel-trading:v2';
 
 interface Saved {

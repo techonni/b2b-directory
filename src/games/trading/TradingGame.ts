@@ -2,7 +2,6 @@ import { Container, Graphics } from 'pixi.js';
 import gsap from 'gsap';
 import type { GameScene } from '../../core/scene';
 import { sound } from '../../core/audio/Sound';
-import { C } from '../../core/theme';
 import { Keypad } from '../../core/ui/Keypad';
 import { Toast } from '../../core/ui/Toast';
 import { fmtSigned } from '../../core/format';
@@ -18,9 +17,9 @@ import { Rail, type RailItem } from './views/Rail';
 import { Screener } from './views/Screener';
 import { Watchlist } from './views/Watchlist';
 
-/** Tamanho fixo da "janela" desktop (é escalada para caber, sem esticar na vertical). */
-const DW = 1440;
-const DH = 860;
+/** Altura de referência e largura mínima (layout desktop, ocupa o ecrã todo). */
+const REF_H = 860;
+const MIN_W = 1200;
 const WATCH_W = 296;
 const SIDE_W = 312;
 const FAST = 5;
@@ -70,6 +69,9 @@ export class TradingGame implements GameScene {
   private amount = 10_000;
   private W = 1400;
   private H = 900;
+  /** Tamanho lógico da app (depois da escala). */
+  private DW = 1440;
+  private DH = 860;
 
   private autoOn = false;
   private autoTrades = 0;
@@ -85,6 +87,8 @@ export class TradingGame implements GameScene {
     this.app.mask = this.frameMask;
     this.wire();
     this.select(this.selId);
+    this.watch.refresh();
+    this.screener.refresh();
     this.syncAccount();
     this.order.amount.set(num(this.amount));
     this.order.setAuto(false, 'Desligado');
@@ -283,20 +287,23 @@ export class TradingGame implements GameScene {
 
   // ---------- Layout ----------
 
-  /** Escala a janela para caber no espaço disponível, centrada, mantendo a proporção. */
+  /** Ocupa o espaço todo por baixo do cabeçalho; a escala segue a altura (com largura mínima). */
   private fit(): void {
     const { W, H } = this;
-    const pad = W < 700 ? 8 : 24;
-    const s = Math.min((W - pad * 2) / DW, (H - pad * 2) / DH, 1.25);
+    const s = Math.min(H / REF_H, W / MIN_W, 1.25);
     this.root.scale.set(s);
-    this.root.position.set(Math.round((W - DW * s) / 2), Math.round((H - DH * s) / 2));
-    this.backdrop.clear().rect(0, 0, W, H).fill(C.bgBase);
+    this.root.position.set(0, 0);
+    this.DW = W / s;
+    this.DH = H / s;
+    this.backdrop.clear().rect(0, 0, W, H).fill(T.bg);
+    this.build();
   }
 
-  /** Monta os painéis dentro da janela (tamanho fixo DW × DH). */
+  /** Monta os painéis no tamanho lógico DW × DH. */
   private build(): void {
-    this.frameMask.clear().roundRect(0, 0, DW, DH, 20).fill(0xffffff);
-    this.frame.clear().roundRect(0, 0, DW, DH, 20).stroke({ width: 1.5, color: T.border });
+    const { DW, DH } = this;
+    this.frameMask.clear().rect(0, 0, DW, DH).fill(0xffffff);
+    this.frame.clear();
 
     this.rail.layout(DH);
     this.watch.position.set(Rail.W, 0);

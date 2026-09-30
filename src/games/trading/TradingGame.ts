@@ -4,61 +4,59 @@ import { sound } from '../../core/audio/Sound';
 import { C } from '../../core/theme';
 import { Keypad } from '../../core/ui/Keypad';
 import { Toast } from '../../core/ui/Toast';
-import { fmtSigned } from '../../core/format';
+import { fmtDuration, fmtSigned } from '../../core/format';
+import { Feed } from '../binary/market/Market';
+import { Book, type Direction, type Position } from '../binary/market/Trades';
+import { Chart } from '../binary/views/Chart';
+import { Sheet } from '../binary/ui/Sheet';
 import { T } from './theme';
 import { num } from './format';
-import { Account, DURATIONS, PROFIT, START_CASH, type Contract, type Dir } from './market/Account';
-import { Market } from './market/Market';
-import { ChartPanel } from './views/ChartPanel';
+import { BOOK_KEY, PAIRS, PLUS, START_BALANCE } from './market/Market';
 import { ContractsPanel } from './views/ContractsPanel';
 import { OrderPanel } from './views/OrderPanel';
-import { Sheet } from '../binary/ui/Sheet';
-import { fmtDuration } from '../../core/format';
+import { PairBar } from './views/PairBar';
 
 /** Altura de referência e largura mínima (layout desktop, ocupa o ecrã todo). */
 const REF_H = 860;
 const MIN_W = 1100;
 const BOTTOM_GAP = 16;
 const SIDE_W = 420;
+const PAD = 16;
 const FAST = 5;
 const SLOW = 20;
-
-/** Visível no ecrã (ele e todos os pais). */
-function shown(c: Container | null): boolean {
-  for (; c; c = c.parent) if (!c.visible) return false;
-  return true;
-}
 
 const sma = (a: number[], n: number) => a.slice(-n).reduce((s, x) => s + x, 0) / n;
 
 /**
- * zunrel Trading: binary trading em formato desktop, com muitos pares de forex.
- * Contratos Sobe / Desce com vencimento, gráfico de velas e modo automático.
+ * zunrel Binary +: o Binary em formato desktop, com muitos mais pares de forex.
+ * Usa o mesmo motor, gráfico e contratos do Binary; tem modo automático.
  */
 export class TradingGame implements GameScene {
   readonly view = new Container();
   private readonly root = new Container();
-  private readonly market = new Market();
-  private readonly account = new Account(this.market);
+  private readonly feed = new Feed(PAIRS);
+  private readonly book = new Book(this.feed, BOOK_KEY);
 
   private readonly backdrop = new Graphics();
   private readonly frame = new Graphics();
   private readonly frameMask = new Graphics();
   private readonly app = new Container();
+  private readonly centerBg = new Graphics();
+  private readonly bar = new PairBar(this.feed.markets);
+  private readonly chart = new Chart();
   private readonly side = new Container();
   private readonly sideBg = new Graphics();
-  private readonly sheet = new Sheet();
-  private secs = 60;
-  private readonly chart = new ChartPanel();
   private readonly order = new OrderPanel();
-  private readonly contracts = new ContractsPanel(this.account);
+  private readonly contracts = new ContractsPanel(this.book, this.feed);
+  private readonly sheet = new Sheet();
   private readonly keypad = new Keypad();
   private readonly toast = new Toast();
 
   private active = false;
   private expanded = false;
-  private selId = 'EUR/USD';
+  private selId = PAIRS[0].id;
   private stake = 10;
+  private secs = 60;
   private W = 1400;
   private H = 900;
   private DW = 1440;
@@ -72,16 +70,14 @@ export class TradingGame implements GameScene {
   constructor() {
     this.view.addChild(this.backdrop, this.root);
     this.side.addChild(this.sideBg, this.order, this.contracts);
-    this.app.addChild(this.chart, this.side);
+    this.app.addChild(this.centerBg, this.bar, this.chart, this.side);
     this.root.addChild(this.app, this.frameMask, this.frame, this.toast, this.sheet, this.keypad);
     this.app.mask = this.frameMask;
     this.wire();
     this.select(this.selId);
-    this.chart.setPairs(this.market.forex.map((i) => i.id));
-    this.select(this.selId);
-    this.order.duration.setValue(fmtDuration(this.secs));
     this.syncAccount();
     this.setStake(this.stake);
+    this.order.duration.setValue(fmtDuration(this.secs));
     this.order.setAuto(false, 'Desligado');
     this.build();
   }
@@ -96,15 +92,16 @@ export class TradingGame implements GameScene {
     this.active = active;
   }
 
-  update(dt: number): void {
-    this.market.update(dt);
-    if (this.active && shown(this.chart)) this.chart.draw();
+  /** O mercado continua a correr fora do ecrã para liquidar contratos a tempo. */
+  update(_dt: number, active: boolean): void {
+    this.feed.update();
+    if (active) this.chart.draw();
   }
 
   // ---------- Ligações ----------
 
   private wire(): void {
-    this.chart.onPair = (id) => this.select(id);
+    this.bar.onPick = (id) => this.select(id);
     this.chart.onExpand = () => {
       this.expanded = !this.expanded;
       this.build();
@@ -112,9 +109,9 @@ export class TradingGame implements GameScene {
 
     const o = this.order;
     o.onReset = () => {
-      this.account.reset();
+      this.book.reset();
       if (this.autoOn) this.setAuto(false);
-      this.toast.show(`Conta demo reposta: ${num(START_CASH)} Coins`, T.btnGray);
+      this.toast.show(`Saldo demo reposto: ${num(START_BALANCE)}`, C.btnPrimary);
     };
     o.stake.onTap = () => {
       let value = this.stake;
@@ -124,7 +121,7 @@ export class TradingGame implements GameScene {
         onChange: (s) => {
           value = Number(s || '0');
           o.stake.setValue(s || '0');
-          o.payout.setValue(num(value * (1 + PROFIT)));
+          o.payout.setValue(num(value * (1 + PLUS.profit)));
         },
         onClose: () => this.setStake(Number.isFinite(value) ? value : this.stake),
       });
@@ -132,9 +129,9 @@ export class TradingGame implements GameScene {
     o.duration.onTap = () =>
       this.sheet.open(
         'Duração',
-        DURATIONS.map((d) => ({ label: fmtDuration(d), selected: d === this.secs })),
+        PLUS.durations.map((d) => ({ label: fmtDuration(d), selected: d === this.secs })),
         (i) => {
-          this.secs = DURATIONS[i];
+          this.secs = PLUS.durations[i];
           o.duration.setValue(fmtDuration(this.secs));
         },
       );
@@ -142,9 +139,9 @@ export class TradingGame implements GameScene {
     o.onBuy = () => this.open(o.dir.index === 0 ? 'up' : 'down');
     o.onAuto = () => this.setAuto(!this.autoOn);
 
-    this.market.onTick = () => this.onSecond();
-    this.account.onChange = () => this.syncAccount();
-    this.account.onSettle = (c) => this.onSettle(c);
+    this.feed.onTick = (sec) => this.onSecond(sec);
+    this.book.onChange = () => this.syncAccount();
+    this.book.onSettle = (p) => this.onSettle(p);
 
     window.addEventListener('keydown', (e) => {
       if (!this.active || this.keypad.isOpen || this.sheet.isOpen) return;
@@ -159,65 +156,67 @@ export class TradingGame implements GameScene {
   private select(id: string): void {
     if (id !== this.selId) this.autoPrev = null;
     this.selId = id;
-    const inst = this.market.get(id);
-    this.chart.setInstrument(inst);
-    if (this.autoOn) this.order.setAuto(true, `A analisar ${id}…`, T.greenText);
+    const m = this.feed.get(id);
+    this.bar.select(m);
+    this.chart.setMarket(m);
+    this.chart.setPositions(this.book.open);
+    if (this.autoOn) this.order.setAuto(true, `A analisar ${m.def.name}…`, T.greenText);
   }
 
-  private onSecond(): void {
-    this.account.settleDue();
-    this.chart.refresh();
+  private onSecond(sec: number): void {
+    this.book.settleDue(sec);
+    const m = this.feed.get(this.selId);
+    if (m.last.t === sec) this.chart.onTick();
+    this.bar.refresh(m);
     this.contracts.refresh();
-    if (this.active && this.account.open.some((c) => c.expiry - Date.now() <= 3000)) sound.play('beep', 0.5);
+    if (this.active && this.book.open.some((p) => p.expiry - sec <= 3 && p.expiry - sec > 0)) sound.play('beep', 0.6);
     if (this.autoOn) this.autoStep();
   }
 
   private syncAccount(): void {
-    this.order.setBalance(this.account.cash);
-    this.chart.setContracts(this.account.open);
+    this.order.setBalance(this.book.balance);
+    this.chart.setPositions(this.book.open);
     this.contracts.refresh();
   }
 
   private setStake(v: number): void {
-    this.stake = Math.max(1, Math.round(v * 100) / 100);
+    this.stake = Math.min(2000, Math.max(1, Math.round(v * 100) / 100));
     this.order.stake.setValue(num(this.stake));
-    this.order.payout.setValue(num(this.stake * (1 + PROFIT)));
-  }
-
-  private get seconds(): number {
-    return this.secs;
+    this.order.payout.setValue(num(this.stake * (1 + PLUS.profit)));
   }
 
   // ---------- Contratos ----------
 
-  private open(dir: Dir, auto = false): boolean {
-    const r = this.account.buy(this.selId, dir, this.stake, this.seconds, auto);
-    if (typeof r === 'string') {
+  private open(dir: Direction, auto = false): boolean {
+    const p = this.book.buy(this.selId, PLUS, dir, this.stake, this.secs);
+    if (!p) {
       sound.play('error');
-      this.toast.show(r, T.red);
+      this.toast.show('Saldo insuficiente', C.loss);
       return false;
     }
-    sound.play(dir === 'up' ? 'up' : 'down');
-    const s = this.seconds;
-    this.toast.show(`${auto ? 'Auto · ' : ''}${dir === 'up' ? '▲ Sobe' : '▼ Desce'} · ${this.selId} · ${num(r.stake)} · ${s < 60 ? `${s}s` : `${s / 60}m`}`, dir === 'up' ? T.green : T.red, dir === 'up' ? T.onGreen : 0xffffff);
+    if (auto) this.contracts.autoIds.add(p.id);
+    this.contracts.refresh();
+    sound.play('buy');
+    const name = this.feed.get(this.selId).def.name;
+    this.toast.show(`${auto ? 'Auto · ' : ''}${dir === 'up' ? '▲ Sobe' : '▼ Desce'} · ${name} · ${num(p.stake)} · ${fmtDuration(this.secs)}`, C.btnPrimary);
     return true;
   }
 
-  private onSettle(c: Contract): void {
-    if (c.auto) {
+  private onSettle(p: Position): void {
+    if (this.contracts.autoIds.has(p.id)) {
       this.autoTrades++;
-      this.autoPnl += c.pnl ?? 0;
+      this.autoPnl += p.pnl ?? 0;
       if (this.autoOn) this.syncAutoStatus();
     }
-    if (c.result === 'win') {
+    if (p.result === 'win') {
       sound.play('win');
-      this.toast.show(`Ganhaste ${fmtSigned(c.pnl ?? 0)} · ${c.symId}`, T.green, T.onGreen);
-    } else if (c.result === 'loss') {
+      this.toast.show(`Ganhaste ${fmtSigned(p.pnl ?? 0)}`, C.win, C.winText);
+    } else if (p.result === 'loss') {
       sound.play('loss');
-      this.toast.show(`Perdeste ${num(c.stake)} · ${c.symId}`, T.red);
+      this.toast.show(`Perdeste ${num(p.stake)}`, C.loss);
     } else {
       sound.play('tie');
-      this.toast.show('Empate · aposta devolvida', T.btnGray);
+      this.toast.show('Empate · aposta devolvida');
     }
   }
 
@@ -230,17 +229,18 @@ export class TradingGame implements GameScene {
   private setAuto(on: boolean): void {
     this.autoOn = on;
     this.autoPrev = null;
+    const name = this.feed.get(this.selId).def.name;
     if (on) {
       this.autoTrades = 0;
       this.autoPnl = 0;
       sound.play('launch');
-      this.toast.show(`Modo automático ligado · ${this.selId}`, T.green, T.onGreen);
-      this.order.setAuto(true, `A analisar ${this.selId}…`, T.greenText);
+      this.toast.show(`Modo automático ligado · ${name}`, C.win, C.winText);
+      this.order.setAuto(true, `A analisar ${name}…`, T.greenText);
     } else {
-      this.toast.show(`Modo automático desligado · ${this.autoTrades} ${this.autoTrades === 1 ? 'contrato' : 'contratos'}`, T.btnGray);
+      this.toast.show(`Modo automático desligado · ${this.autoTrades} ${this.autoTrades === 1 ? 'contrato' : 'contratos'}`);
       this.order.setAuto(false, 'Desligado');
     }
-    this.chart.setAuto(on);
+    this.bar.setAuto(on);
   }
 
   private syncAutoStatus(): void {
@@ -250,12 +250,12 @@ export class TradingGame implements GameScene {
   }
 
   private autoStep(): void {
-    const inst = this.market.get(this.selId);
-    const bull = sma(inst.live, FAST) > sma(inst.live, SLOW);
+    const qs = this.feed.get(this.selId).ticks.map((t) => t.q);
+    const bull = sma(qs, FAST) > sma(qs, SLOW);
     const crossed = this.autoPrev !== null && bull !== this.autoPrev;
     const first = this.autoPrev === null;
     this.autoPrev = bull;
-    if (this.account.open.some((c) => c.auto)) return;
+    if (this.book.open.some((p) => this.contracts.autoIds.has(p.id))) return;
     if (!crossed && !first) return;
     if (!this.open(bull ? 'up' : 'down', true)) this.setAuto(false);
   }
@@ -274,22 +274,22 @@ export class TradingGame implements GameScene {
     this.build();
   }
 
-  /** Lista de pares | gráfico grande | painel de negociação + contratos. */
+  /** Barra de pares + gráfico do Binary (centro) | painel de negociação + contratos (direita). */
   private build(): void {
     const { DW, DH } = this;
     this.frameMask.clear().rect(0, 0, DW, DH).fill(0xffffff);
-    this.frame.clear().rect(0, DH - 1, DW, 1).fill(T.border);
+    this.frame.clear();
 
-    // Expandido: só o gráfico.
     const ex = this.expanded;
     this.side.visible = !ex;
-    const left = 0;
-    const cw = DW - left - (ex ? 0 : SIDE_W);
-    this.chart.position.set(left, 0);
-    this.chart.layout(cw, DH);
+    const cw = DW - (ex ? 0 : SIDE_W);
+    this.centerBg.clear().rect(0, 0, cw, DH).fill(C.bgBase);
+    this.bar.layout(cw);
+    this.chart.position.set(PAD, PairBar.HEIGHT);
+    this.chart.layout(cw - PAD * 2, DH - PairBar.HEIGHT - PAD);
 
     this.side.position.set(DW - SIDE_W, 0);
-    this.sideBg.clear().rect(0, 0, SIDE_W, DH).fill(T.panel).rect(0, 0, 1, DH).fill(T.border);
+    this.sideBg.clear().rect(0, 0, SIDE_W, DH).fill(T.panel);
     this.order.layout(SIDE_W);
     this.contracts.position.set(0, OrderPanel.HEIGHT);
     this.contracts.layout(SIDE_W, DH - OrderPanel.HEIGHT);
@@ -297,6 +297,6 @@ export class TradingGame implements GameScene {
     const kw = 440;
     this.keypad.layout(DW, DH, (DW - kw) / 2, kw);
     this.sheet.layout(DW, DH, (DW - kw) / 2, kw);
-    this.toast.position.set(left + cw / 2, 150);
+    this.toast.position.set(cw / 2, 150);
   }
 }

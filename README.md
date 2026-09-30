@@ -29,7 +29,7 @@ src/site/               cabeçalho, menu lateral, páginas Início e Sobre, mini
 src/core/               tema, texto, formatação, som (Howler.js), botões, teclado numérico, scroll
 src/games/crash/        jogo Crash (cena GameScene)
 src/games/binary/       jogo Binary (cena GameScene)
-src/games/trading/      Trading: binary trading desktop com pares forex (cena GameScene)
+src/games/trading/      Binary +: o Binary em formato desktop, com mais pares forex (cena GameScene)
 ```
 
 Cada jogo implementa `GameScene` (`src/core/scene.ts`) e desenha-se no espaço abaixo do cabeçalho do site. Os sons são sintetizados em código e tocados com Howler.js (sem ficheiros áudio).

@@ -12,14 +12,14 @@ import { Market } from './market/Market';
 import { ChartPanel } from './views/ChartPanel';
 import { ContractsPanel } from './views/ContractsPanel';
 import { OrderPanel } from './views/OrderPanel';
-import { Watchlist } from './views/Watchlist';
+import { Sheet } from '../binary/ui/Sheet';
+import { fmtDuration } from '../../core/format';
 
 /** Altura de referência e largura mínima (layout desktop, ocupa o ecrã todo). */
 const REF_H = 860;
 const MIN_W = 1100;
 const BOTTOM_GAP = 16;
-const WATCH_W = 300;
-const SIDE_W = 360;
+const SIDE_W = 420;
 const FAST = 5;
 const SLOW = 20;
 
@@ -47,7 +47,8 @@ export class TradingGame implements GameScene {
   private readonly app = new Container();
   private readonly side = new Container();
   private readonly sideBg = new Graphics();
-  private readonly watch = new Watchlist(this.market.forex);
+  private readonly sheet = new Sheet();
+  private secs = 60;
   private readonly chart = new ChartPanel();
   private readonly order = new OrderPanel();
   private readonly contracts = new ContractsPanel(this.account);
@@ -71,12 +72,14 @@ export class TradingGame implements GameScene {
   constructor() {
     this.view.addChild(this.backdrop, this.root);
     this.side.addChild(this.sideBg, this.order, this.contracts);
-    this.app.addChild(this.chart, this.side, this.watch);
-    this.root.addChild(this.app, this.frameMask, this.frame, this.toast, this.keypad);
+    this.app.addChild(this.chart, this.side);
+    this.root.addChild(this.app, this.frameMask, this.frame, this.toast, this.sheet, this.keypad);
     this.app.mask = this.frameMask;
     this.wire();
     this.select(this.selId);
-    this.watch.refresh();
+    this.chart.setPairs(this.market.forex.map((i) => i.id));
+    this.select(this.selId);
+    this.order.duration.setValue(fmtDuration(this.secs));
     this.syncAccount();
     this.setStake(this.stake);
     this.order.setAuto(false, 'Desligado');
@@ -91,8 +94,6 @@ export class TradingGame implements GameScene {
 
   setActive(active: boolean): void {
     this.active = active;
-    this.watch.keysOn = active;
-    if (!active) this.watch.focus(false);
   }
 
   update(dt: number): void {
@@ -103,7 +104,7 @@ export class TradingGame implements GameScene {
   // ---------- Ligações ----------
 
   private wire(): void {
-    this.watch.onSelect = (id) => this.select(id);
+    this.chart.onPair = (id) => this.select(id);
     this.chart.onExpand = () => {
       this.expanded = !this.expanded;
       this.build();
@@ -115,23 +116,30 @@ export class TradingGame implements GameScene {
       if (this.autoOn) this.setAuto(false);
       this.toast.show(`Conta demo reposta: ${num(START_CASH)} Coins`, T.btnGray);
     };
-    o.onPct = (p) => this.setStake(Math.floor(this.account.cash * p * 100) / 100);
-    o.onEditAmount = () => {
+    o.stake.onTap = () => {
       let value = this.stake;
       this.keypad.open({
         title: 'Aposta (Coins)',
         value: String(this.stake),
         onChange: (s) => {
           value = Number(s || '0');
-          o.amount.set(s || '0');
-          o.setPayout(value * (1 + PROFIT));
+          o.stake.setValue(s || '0');
+          o.payout.setValue(num(value * (1 + PROFIT)));
         },
         onClose: () => this.setStake(Number.isFinite(value) ? value : this.stake),
       });
     };
-    o.duration.onChange = () => sound.play('click');
-    o.onUp = () => this.open('up');
-    o.onDown = () => this.open('down');
+    o.duration.onTap = () =>
+      this.sheet.open(
+        'Duração',
+        DURATIONS.map((d) => ({ label: fmtDuration(d), selected: d === this.secs })),
+        (i) => {
+          this.secs = DURATIONS[i];
+          o.duration.setValue(fmtDuration(this.secs));
+        },
+      );
+    o.dir.onChange = (i) => sound.play(i === 0 ? 'up' : 'down');
+    o.onBuy = () => this.open(o.dir.index === 0 ? 'up' : 'down');
     o.onAuto = () => this.setAuto(!this.autoOn);
 
     this.market.onTick = () => this.onSecond();
@@ -139,9 +147,10 @@ export class TradingGame implements GameScene {
     this.account.onSettle = (c) => this.onSettle(c);
 
     window.addEventListener('keydown', (e) => {
-      if (!this.active || this.keypad.isOpen || this.watch.typing) return;
-      if (e.key === 'ArrowUp') this.open('up');
-      else if (e.key === 'ArrowDown') this.open('down');
+      if (!this.active || this.keypad.isOpen || this.sheet.isOpen) return;
+      if (e.key === 'ArrowUp') this.order.dir.select(0);
+      else if (e.key === 'ArrowDown') this.order.dir.select(1);
+      else if (e.key === 'Enter') this.open(this.order.dir.index === 0 ? 'up' : 'down');
       else return;
       e.preventDefault();
     });
@@ -152,13 +161,11 @@ export class TradingGame implements GameScene {
     this.selId = id;
     const inst = this.market.get(id);
     this.chart.setInstrument(inst);
-    this.watch.select(id);
     if (this.autoOn) this.order.setAuto(true, `A analisar ${id}…`, T.greenText);
   }
 
   private onSecond(): void {
     this.account.settleDue();
-    this.watch.refresh();
     this.chart.refresh();
     this.contracts.refresh();
     if (this.active && this.account.open.some((c) => c.expiry - Date.now() <= 3000)) sound.play('beep', 0.5);
@@ -173,12 +180,12 @@ export class TradingGame implements GameScene {
 
   private setStake(v: number): void {
     this.stake = Math.max(1, Math.round(v * 100) / 100);
-    this.order.amount.set(num(this.stake));
-    this.order.setPayout(this.stake * (1 + PROFIT));
+    this.order.stake.setValue(num(this.stake));
+    this.order.payout.setValue(num(this.stake * (1 + PROFIT)));
   }
 
   private get seconds(): number {
-    return DURATIONS[this.order.duration.index];
+    return this.secs;
   }
 
   // ---------- Contratos ----------
@@ -275,10 +282,8 @@ export class TradingGame implements GameScene {
 
     // Expandido: só o gráfico.
     const ex = this.expanded;
-    this.watch.visible = this.side.visible = !ex;
-    const left = ex ? 0 : WATCH_W;
-    this.watch.position.set(0, 0);
-    this.watch.layout(WATCH_W, DH);
+    this.side.visible = !ex;
+    const left = 0;
     const cw = DW - left - (ex ? 0 : SIDE_W);
     this.chart.position.set(left, 0);
     this.chart.layout(cw, DH);
@@ -291,6 +296,7 @@ export class TradingGame implements GameScene {
 
     const kw = 440;
     this.keypad.layout(DW, DH, (DW - kw) / 2, kw);
+    this.sheet.layout(DW, DH, (DW - kw) / 2, kw);
     this.toast.position.set(left + cw / 2, 150);
   }
 }

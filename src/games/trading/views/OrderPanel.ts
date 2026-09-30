@@ -1,197 +1,112 @@
-import { Container, Graphics, Rectangle, type Text } from 'pixi.js';
+import { Container, Graphics, type Text } from 'pixi.js';
 import gsap from 'gsap';
 import { Button } from '../../../core/ui/Button';
 import { coinIcon } from '../../../core/icons';
+import { Segmented } from '../../binary/ui/Segmented';
+import { Tile } from '../../binary/ui/Tile';
 import { T } from '../theme';
 import { num } from '../format';
-import { DURATIONS, PROFIT } from '../market/Account';
-import { icon } from '../ui/icons';
-import { Tabs, onTap, txt } from '../ui/widgets';
+import { PROFIT } from '../market/Account';
+import { txt } from '../ui/widgets';
 
-const fmtDur = (s: number) => (s < 60 ? `${s}s` : `${s / 60}m`);
-
-/** Campo da aposta com moeda (abre o teclado numérico ao tocar). */
-class Field extends Container {
-  onTap: (() => void) | null = null;
-  private readonly bg = new Graphics();
-  private readonly coin = coinIcon(26);
-  readonly value: Text;
-  private w = 200;
-  static readonly H = 56;
-
-  constructor() {
-    super();
-    this.value = txt('', 22, T.text, '700');
-    this.addChild(this.bg, this.coin, this.value);
-    onTap(this, () => {
-      gsap.fromTo(this.bg, { alpha: 0.6 }, { alpha: 1, duration: 0.3 });
-      this.onTap?.();
-    });
-  }
-
-  layout(w: number): void {
-    this.w = w;
-    const h = Field.H;
-    this.bg.clear().roundRect(0, 0, w, h, 14).fill(T.input).stroke({ width: 1.5, color: T.border });
-    this.coin.position.set(16 + 13, h / 2);
-    this.value.position.set(16 + 26 + 12, (h - this.value.height) / 2);
-    this.hitArea = new Rectangle(0, 0, w, h);
-  }
-
-  set(v: string): void {
-    this.value.text = v;
-    const room = this.w - 54 - 16;
-    this.value.scale.set(1);
-    if (this.value.width > room) this.value.scale.set(room / this.value.width);
-  }
-}
-
-/** Painel de negociação binária: saldo, mercado, duração, aposta, Sobe / Desce e modo automático. */
+/**
+ * Painel de negociação com a mesma UI do Binary: Sobe / Desce, Duração · Aposta · Pagamento,
+ * botão Comprar grande e modo automático.
+ */
 export class OrderPanel extends Container {
-  static readonly HEIGHT = 624;
-  onUp: (() => void) | null = null;
-  onDown: (() => void) | null = null;
-  onPct: ((p: number) => void) | null = null;
-  onEditAmount: (() => void) | null = null;
+  static readonly HEIGHT = 560;
+  onBuy: (() => void) | null = null;
   onAuto: (() => void) | null = null;
   onReset: (() => void) | null = null;
 
-  readonly duration = new Tabs(DURATIONS.map(fmtDur), { size: 16 });
-  readonly amount = new Field();
+  readonly dir = new Segmented([
+    { label: 'Sobe', color: T.greenText },
+    { label: 'Desce', color: T.redText },
+  ]);
+  readonly duration = new Tile('Duração', true, false);
+  readonly stake = new Tile('Aposta');
+  readonly payout = new Tile('Pagamento', false);
 
   private readonly bg = new Graphics();
   private readonly acc: Text;
   private readonly coin = coinIcon(34);
   private readonly balance: Text;
-  private readonly reset = new Button({ label: 'Repor', width: 88, height: 40, color: T.btnGray, fontSize: 15 });
+  private readonly reset = new Button({ label: 'Repor', width: 104, height: 52, color: T.btnGray, fontSize: 18 });
   private readonly market = new Container();
   private readonly marketBg = new Graphics();
   private readonly marketText: Text;
-  private readonly durLabel: Text;
-  private readonly stakeLabel: Text;
-  private readonly pcts: Button[];
-  private readonly pencil = new Container();
-  private readonly payLabel: Text;
-  private readonly payValue: Text;
-  private readonly payCoin = coinIcon(20);
-  private readonly up = new Button({ label: '▲  Sobe', width: 140, height: 68, color: T.green, textColor: T.onGreen, fontSize: 22 });
-  private readonly down = new Button({ label: '▼  Desce', width: 140, height: 68, color: T.red, fontSize: 22 });
-  private readonly auto = new Button({ label: '▶  Modo automático', width: 276, height: 54, color: T.primary, fontSize: 17 });
+  private readonly buy = new Button({ label: `Comprar · +${Math.round(PROFIT * 100)}%`, width: 300, height: 60, fontSize: 21 });
+  private readonly auto = new Button({ label: '▶  Modo automático', width: 300, height: 60, color: T.btnGray, fontSize: 19 });
   private readonly autoStatus: Text;
   private readonly autoDot = new Graphics();
-  private w = 340;
+  private w = 360;
 
   constructor() {
     super();
-    this.acc = txt('Conta demo', 14, T.muted, '600');
+    this.acc = txt('Conta demo', 15, T.muted, '600');
     this.balance = txt('', 28, T.text, '800');
     this.reset.onTap = () => this.onReset?.();
 
-    this.marketText = txt('Mercado', 17, T.text, '700');
+    this.marketText = txt('Mercado', 18, T.text, '700');
     this.marketText.anchor.set(0.5);
     this.market.addChild(this.marketBg, this.marketText);
 
-    this.durLabel = txt('Duração', 14, T.muted, '600');
-    this.stakeLabel = txt('Aposta', 14, T.muted, '600');
-    this.pcts = [25, 50, 75, 100].map((p) => {
-      const b = new Button({ label: `${p}%`, width: 60, height: 42, color: T.btnGray, radius: 12, fontSize: 16 });
-      b.onTap = () => this.onPct?.(p / 100);
-      return b;
-    });
-    const pbg = new Graphics();
-    pbg.label = 'bg';
-    this.pencil.addChild(pbg, icon('pencil', T.text));
-    onTap(this.pencil, () => this.onEditAmount?.());
-
-    this.payLabel = txt(`Pagamento · lucro +${Math.round(PROFIT * 100)}%`, 14, T.muted, '600');
-    this.payValue = txt('', 20, T.greenText, '800');
-    this.payValue.anchor.set(1, 0.5);
-
-    this.autoStatus = txt('Desligado', 14, T.muted, '600');
+    this.autoStatus = txt('Desligado', 15, T.muted, '600');
     this.autoStatus.anchor.set(0.5, 0);
 
-    this.amount.onTap = () => this.onEditAmount?.();
-    this.up.onTap = () => this.onUp?.();
-    this.down.onTap = () => this.onDown?.();
+    this.buy.onTap = () => this.onBuy?.();
     this.auto.onTap = () => this.onAuto?.();
 
-    this.addChild(this.bg, this.acc, this.coin, this.balance, this.reset, this.market, this.durLabel, this.duration, this.stakeLabel, this.amount);
-    this.addChild(...this.pcts, this.pencil, this.payLabel, this.payCoin, this.payValue, this.up, this.down, this.auto, this.autoDot, this.autoStatus);
+    this.addChild(this.bg, this.acc, this.coin, this.balance, this.reset, this.market, this.dir, this.duration, this.stake, this.payout);
+    this.addChild(this.buy, this.auto, this.autoDot, this.autoStatus);
   }
 
   layout(w: number): void {
     this.w = w;
     const px = 20;
     const inner = w - px * 2;
-    this.bg.clear().rect(0, 86, w, 1).fill(T.border);
+    this.bg.clear().rect(0, 92, w, 1).fill(T.border);
 
     // Saldo com moeda grande
     this.acc.position.set(px, 14);
-    this.coin.position.set(px + 17, 56);
-    this.balance.position.set(px + 34 + 12, 56 - this.balance.height / 2);
-    this.reset.position.set(w - px - 88, 36);
+    this.coin.position.set(px + 17, 60);
+    this.balance.position.set(px + 34 + 12, 60 - this.balance.height / 2);
+    this.reset.position.set(w - px - 104, 22);
 
     // "Mercado" a toda a largura
-    let y = 104;
-    this.marketBg.clear().roundRect(0, 0, inner, 48, 14).fill(T.rowSel).stroke({ width: 1.5, color: T.borderHi });
-    this.marketText.position.set(inner / 2, 24);
+    let y = 110;
+    this.marketBg.clear().roundRect(0, 0, inner, 52, 14).fill(T.rowSel);
+    this.marketText.position.set(inner / 2, 26);
     this.market.position.set(px, y);
-    y += 48 + 18;
+    y += 52 + 16;
 
-    this.durLabel.position.set(px, y);
-    y += 24;
-    this.duration.position.set(px, y);
-    this.duration.layout(inner, 48);
-    y += 48 + 18;
-
-    this.stakeLabel.position.set(px, y);
-    y += 24;
-    this.amount.position.set(px, y);
-    this.amount.layout(inner);
-    y += Field.H + 10;
-    const pw = 46;
-    const bw = (inner - pw - 4 * 8) / 4;
-    this.pcts.forEach((b, i) => {
-      b.position.set(px + i * (bw + 8), y);
-      b.setSize(bw, 42);
+    this.dir.position.set(px, y);
+    this.dir.layout(inner, 60);
+    y += 60 + 16;
+    const tw = (inner - 2 * 10) / 3;
+    [this.duration, this.stake, this.payout].forEach((t, i) => {
+      t.position.set(px + i * (tw + 10), y);
+      t.layout(tw, 80);
     });
-    (this.pencil.getChildByLabel('bg') as Graphics).clear().roundRect(0, 0, pw, 42, 12).fill(T.btnGray);
-    this.pencil.children[1].position.set(pw / 2, 21);
-    this.pencil.hitArea = new Rectangle(0, 0, pw, 42);
-    this.pencil.position.set(w - px - pw, y);
-    y += 42 + 18;
-
-    this.payLabel.position.set(px, y + 2);
-    this.payValue.position.set(w - px, y + 11);
-    this.payCoin.position.set(w - px - this.payValue.width - 16, y + 11);
-    y += 36;
-
-    const hw = (inner - 12) / 2;
-    this.up.position.set(px, y);
-    this.up.setSize(hw, 68);
-    this.down.position.set(px + hw + 12, y);
-    this.down.setSize(hw, 68);
-    y += 68 + 12;
+    y += 80 + 16;
+    this.buy.position.set(px, y);
+    this.buy.setSize(inner, 60);
+    y += 60 + 12;
     this.auto.position.set(px, y);
-    this.auto.setSize(inner, 54);
-    y += 54 + 10;
+    this.auto.setSize(inner, 60);
+    y += 60 + 12;
     this.autoStatus.position.set(w / 2 + 8, y);
-    this.autoDot.position.set(w / 2 + 8 - this.autoStatus.width / 2 - 12, y + 9);
+    this.autoDot.position.set(w / 2 + 8 - this.autoStatus.width / 2 - 12, y + 10);
   }
 
   setBalance(v: number): void {
     this.balance.text = num(v);
   }
 
-  setPayout(v: number): void {
-    this.payValue.text = num(v);
-    this.payCoin.x = this.w - 20 - this.payValue.width - 16;
-  }
-
   /** Estado do modo automático: botão, luz e texto. */
   setAuto(on: boolean, status: string, color: number = T.muted): void {
     this.auto.setText(on ? '■  Parar modo automático' : '▶  Modo automático');
-    this.auto.setColor(on ? T.btnGray : T.primary);
+    this.auto.setColor(on ? T.red : T.btnGray);
     this.autoStatus.text = status;
     this.autoStatus.style.fill = color;
     this.autoDot.clear().circle(0, 0, 5).fill(on ? T.greenText : T.dim);

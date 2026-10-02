@@ -36,6 +36,9 @@ export class CrashEngine {
   flightMs = 0;
   private crashPoint = rollCrashPoint();
 
+  /** Se definido, escolhe o ponto de crash quando a ronda arranca (ex.: 3 ganhos em cada 5 apostas). */
+  pickCrash: (() => number | null) | null = null;
+
   constructor(private readonly on: EngineEvents) {}
 
   /** Tempo restante da fase atual (útil para a contagem decrescente). */
@@ -49,7 +52,11 @@ export class CrashEngine {
     this.elapsed += dtMs;
     switch (this.phase) {
       case 'countdown':
-        if (this.elapsed >= this.countdownMs) this.enter('running');
+        if (this.elapsed >= this.countdownMs) {
+          const forced = this.pickCrash?.();
+          if (forced) this.crashPoint = Math.max(1, Math.floor(forced * 100) / 100);
+          this.enter('running');
+        }
         break;
       case 'running': {
         const m = multiplierAt(this.elapsed);

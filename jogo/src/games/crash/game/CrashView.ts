@@ -119,7 +119,7 @@ export class CrashView extends Container {
 
   setRound(round: number, profit: number): void {
     const sign = profit > 0 ? '+' : profit < 0 ? '−' : '';
-    this.footLeft.text = `Ronda #${round} · RTP 99%`;
+    this.footLeft.text = `Ronda #${round} · Demo`;
     this.footRight.text = `Sessão ${sign}${Math.abs(profit).toFixed(2)}`;
     this.footRight.style.fill = profit > 0 ? C.win : C.textMuted;
   }

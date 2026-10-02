@@ -1,0 +1,79 @@
+---
+import Base from "../layouts/Base.astro";
+import { href } from "../lib/paths";
+
+const updatedOn = "27 septembre 2026";
+const sections = [
+  {
+    title: "Objet du site",
+    body: [
+      "Zunrel publie des guides pratiques, gratuits, pour utiliser Leadpages, HTML Pub et Shopify. En consultant le site, vous acceptez les présentes conditions.",
+    ],
+  },
+  {
+    title: "Nature des informations",
+    body: [
+      "Les guides sont fournis à titre d'information générale. Ils ne constituent pas un conseil juridique, fiscal, comptable ou financier.",
+      "Les outils évoluent vite : noms de boutons, fonctions, prix et conditions peuvent changer après la date de mise à jour indiquée en haut de chaque guide. Vérifiez toujours sur le site officiel de l'outil avant de décider.",
+    ],
+  },
+  {
+    title: "Indépendance et liens affiliés",
+    body: [
+      "Zunrel est un site indépendant. Il n'est ni édité, ni sponsorisé, ni validé par Leadpages, HTML Pub ou Shopify.",
+      "Certains liens vers ces outils sont des liens affiliés. Si vous vous inscrivez ou achetez par ces liens, Zunrel peut recevoir une commission, sans aucun coût supplémentaire pour vous. Ces liens sont signalés par la mention « Lien affilié ». Les commissions n'influencent pas le contenu : les limites de chaque offre sont toujours indiquées.",
+    ],
+  },
+  {
+    title: "Liens vers d'autres sites",
+    body: [
+      "Les guides renvoient vers des sites externes (aide officielle, pages de tarifs, inscription). Zunrel n'est pas responsable de leur contenu, de leurs prix ni de leurs conditions. Votre relation contractuelle avec un outil (abonnement, paiement, remboursement) se fait directement avec son éditeur.",
+    ],
+  },
+  {
+    title: "Responsabilité",
+    body: [
+      "Zunrel fait de son mieux pour que les informations soient exactes et à jour, sans pouvoir le garantir. L'utilisation des informations du site se fait sous votre propre responsabilité. Zunrel ne peut être tenu responsable d'un dommage direct ou indirect lié à leur utilisation, dans les limites prévues par la loi.",
+    ],
+  },
+  {
+    title: "Propriété intellectuelle",
+    body: [
+      "Les textes, la mise en page et les captures d'écran annotées de Zunrel sont protégés. Vous pouvez citer un court extrait avec un lien vers la page d'origine. Toute copie complète ou reproduction commerciale demande une autorisation préalable.",
+      "Leadpages, HTML Pub, Shopify et les autres noms et logos cités appartiennent à leurs propriétaires respectifs. Ils sont utilisés uniquement pour identifier les outils présentés.",
+    ],
+  },
+  {
+    title: "Données personnelles et cookies",
+    body: [
+      "Le site ne demande aucun compte. Une mesure d'audience (Google Analytics 4) n'est activée qu'après votre accord dans le bandeau affiché à la première visite ; sans accord, aucun cookie de mesure n'est déposé. Votre choix est enregistré dans votre navigateur et vous pouvez l'effacer à tout moment en supprimant les données du site.",
+      "Les liens affiliés peuvent déposer un cookie chez l'outil concerné (Leadpages, Shopify ou leur plateforme d'affiliation) lorsque vous cliquez dessus, selon leurs propres règles de confidentialité.",
+    ],
+  },
+  {
+    title: "Modifications et droit applicable",
+    body: [
+      "Ces conditions peuvent être mises à jour ; la date de dernière modification figure en haut de cette page. Elles sont soumises au droit belge.",
+    ],
+  },
+];
+---
+
+<Base title="Conditions d'utilisation" description="Les règles d'utilisation de Zunrel : nature des guides, liens affiliés, responsabilité et données personnelles.">
+  <h1 class="text-[22px] font-semibold leading-7 text-[#171717]">Conditions d'utilisation</h1>
+  <p class="mt-2 text-[13px] leading-5 text-[#a0a0a0]">Dernière mise à jour : {updatedOn}</p>
+  {
+    sections.map((section) => (
+      <section class="mt-10">
+        <h2 class="text-[15px] font-medium leading-5 text-[#171717]">{section.title}</h2>
+        <div class="mt-3 space-y-3 text-[15px] leading-6 text-[#666666]">
+          {section.body.map((paragraph) => <p>{paragraph}</p>)}
+        </div>
+      </section>
+    ))
+  }
+  <p class="mt-10 text-[15px] leading-6 text-[#666666]">
+    Voir aussi : <a href={href("/a-propos")} class="text-[#171717] underline underline-offset-2">À propos</a> ·
+    <a href={href("/kit-media")} class="text-[#171717] underline underline-offset-2">Kit média</a>
+  </p>
+</Base>

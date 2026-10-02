@@ -1,0 +1,39 @@
+---
+import Base from "../../layouts/Base.astro";
+import GuideRow from "../../components/GuideRow.astro";
+import { activeFormats, guidesInFormat, guidesInTheme, themes, guideFormat } from "../../lib/guides";
+import { href } from "../../lib/paths";
+
+export function getStaticPaths() {
+  return activeFormats().map((item) => ({ params: { format: item.slug }, props: { item } }));
+}
+
+const { item } = Astro.props;
+const total = guidesInFormat(item.format).length;
+---
+
+<Base
+  title={item.name}
+  description={item.blurb}
+  breadcrumbs={[{ name: "Accueil", path: "/" }, { name: "Guides", path: "/guides" }, { name: item.name }]}
+>
+  <h1 class="text-[26px] font-semibold leading-8 tracking-[-0.015em] text-[#171717]">{item.name}</h1>
+  <p class="mt-4 text-[15px] leading-6 text-[#666666]">{item.blurb}</p>
+  <p class="mt-2 text-[13px] leading-5 text-[#a0a0a0]">{total} {total === 1 ? "guide" : "guides"}</p>
+  {
+    themes.map((theme) => {
+      const list = guidesInTheme(theme.slug).filter((guide) => guideFormat(guide) === item.format);
+      if (list.length === 0) return null;
+      return (
+        <section class="mt-14">
+          <a href={href(`/themes/${theme.slug}`)} class="text-[13px] leading-5 text-[#737373] hover:underline">
+            {theme.name}
+          </a>
+          <div class="mt-5 space-y-8">
+            {list.map((guide) => <GuideRow guide={guide} />)}
+          </div>
+        </section>
+      );
+    })
+  }
+</Base>

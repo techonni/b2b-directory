@@ -91,10 +91,9 @@ export class Feed {
   private lastSecond: number;
   onTick: ((t: number) => void) | null = null;
 
-  /** `defs`: pares a simular (o Binary usa MARKETS; o Binary + usa mais pares). */
-  constructor(defs: MarketDef[] = MARKETS) {
+  constructor() {
     this.lastSecond = Math.floor(Date.now() / 1000);
-    this.markets = defs.map((d) => new Market(d, this.lastSecond));
+    this.markets = MARKETS.map((d) => new Market(d, this.lastSecond));
   }
 
   get now(): number {

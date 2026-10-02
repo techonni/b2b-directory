@@ -6,13 +6,12 @@ import { logo, speaker } from '../core/icons';
 import { sound } from '../core/audio/Sound';
 import { Button } from '../core/ui/Button';
 
-export type Route = 'home' | 'crash' | 'binary' | 'trading' | 'about';
+export type Route = 'home' | 'crash' | 'binary' | 'about';
 
 export const LINKS: { route: Route; label: string }[] = [
   { route: 'home', label: 'Início' },
   { route: 'crash', label: 'Crash' },
   { route: 'binary', label: 'Binary' },
-  { route: 'trading', label: 'Binary +' },
   { route: 'about', label: 'Sobre' },
 ];
 

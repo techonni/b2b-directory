@@ -4,6 +4,12 @@ import gsap from 'gsap';
 /** Estado partilhado: o último gesto foi um arrasto de scroll (os botões ignoram o toque). */
 export const scrollGesture = { dragged: false };
 
+// Cada toque novo começa "limpo": sem isto, depois de arrastar uma lista, os botões
+// (ex.: Repor) ignoravam toques até se tocar outra vez numa lista.
+if (typeof window !== 'undefined') {
+  window.addEventListener('pointerdown', () => (scrollGesture.dragged = false), { capture: true });
+}
+
 /** Área com scroll vertical (arrastar com o dedo ou roda do rato), com máscara. */
 export class ScrollBox extends Container {
   readonly content = new Container();

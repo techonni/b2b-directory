@@ -15,6 +15,8 @@ import { Keypad } from './ui/Keypad';
 import { Toast } from './ui/Toast';
 import { Button } from './ui/Button';
 import { START_BALANCE } from './game/Wallet';
+import { AccountClient } from './account';
+import { AccountSheet, fmtAccount } from './ui/AccountSheet';
 
 interface Bet {
   amount: number;
@@ -66,6 +68,12 @@ export class CrashGame implements GameScene {
   private readonly panel: ControlsPanel;
   private readonly keypad = new Keypad();
   private readonly toast = new Toast();
+  /** Conta (número + PIN) para guardar o saldo no servidor. */
+  private readonly account = new AccountClient();
+  private readonly accountSheet = new AccountSheet();
+  private readonly accountBtn = new Container();
+  private readonly accountIcon = new Graphics();
+  private wide = false;
 
   private readonly wallet = new Wallet();
   private readonly engine: CrashEngine;
@@ -115,7 +123,7 @@ export class CrashGame implements GameScene {
     );
 
     this.buildHeader();
-    this.root.addChild(this.card, this.scene, this.panel, this.help, this.header, this.toast, this.keypad, this.helpSheet);
+    this.root.addChild(this.card, this.scene, this.panel, this.help, this.header, this.accountSheet, this.toast, this.keypad, this.helpSheet);
 
     this.panel.play.onTap = () => this.onPlay();
     this.panel.mode.onChange = (i) => {
@@ -125,7 +133,11 @@ export class CrashGame implements GameScene {
     this.panel.amount.onFocus = () => this.edit('amount');
     this.panel.cashout.onFocus = () => this.edit('cashout');
 
-    this.wallet.onChange = (b) => this.animateBalance(b);
+    this.wallet.onChange = (b) => {
+      this.animateBalance(b);
+      this.account.saveSoon(b);
+    };
+    this.wireAccount();
     this.shownBalance.v = this.wallet.balance;
     this.balanceText.text = fmt(this.wallet.balance);
 
@@ -187,7 +199,97 @@ export class CrashGame implements GameScene {
       this.helpSheet.visible = true;
       gsap.fromTo(this.helpSheet, { alpha: 0 }, { alpha: 1, duration: 0.25 });
     });
-    this.header.addChild(this.headerBg, this.logo, this.soundBtn, this.helpBtn, this.resetBtn, this.balancePill);
+    this.drawAccountIcon();
+    this.accountBtn.addChild(this.accountIcon);
+    round(this.accountBtn, () => {
+      sound.play('click');
+      this.openAccount();
+    });
+    this.header.addChild(this.headerBg, this.logo, this.accountBtn, this.soundBtn, this.helpBtn, this.resetBtn, this.balancePill);
+  }
+
+  // ---------- Conta ----------
+
+  /** Ícone de pessoa (verde quando há sessão iniciada). */
+  private drawAccountIcon(): void {
+    const color = this.account.session ? C.win : C.text;
+    this.accountIcon.clear().circle(0, -5, 5).stroke({ width: 2.2, color });
+    this.accountIcon.arc(0, 11, 9, Math.PI * 1.08, Math.PI * 1.92).stroke({ width: 2.2, color, cap: 'round' });
+  }
+
+  private busy(): boolean {
+    return !!((this.bet && !this.bet.cashed) || this.queued || this.autoOn);
+  }
+
+  private openAccount(): void {
+    const s = this.account.session;
+    this.accountSheet.open(s ? { kind: 'in', account: s.account } : { kind: 'out' });
+  }
+
+  /** Pede um número no teclado numérico (só algarismos). */
+  private askDigits(title: string): Promise<string | null> {
+    return new Promise((resolve) => {
+      let value = '';
+      this.keypad.open({
+        title,
+        value: '',
+        onChange: (v) => (value = v.replace(/\D/g, '')),
+        onClose: () => resolve(value || null),
+      });
+    });
+  }
+
+  private wireAccount(): void {
+    const sheet = this.accountSheet;
+    sheet.onCreate = async () => {
+      const pin = await this.askDigits('Escolhe um PIN (4 a 8 algarismos)');
+      if (!pin) return;
+      if (!/^\d{4,8}$/.test(pin)) return this.accountError('O PIN tem de ter 4 a 8 algarismos');
+      try {
+        await this.account.register(pin, this.wallet.balance);
+        this.drawAccountIcon();
+        sound.play('cashout');
+        sheet.open({ kind: 'created', account: this.account.session!.account });
+      } catch (e) {
+        this.accountError((e as Error).message);
+      }
+    };
+    sheet.onLogin = async () => {
+      if (this.busy()) return this.accountError('Termina a aposta antes de entrar');
+      const acc = await this.askDigits('Número da conta (8 algarismos)');
+      if (!acc) return;
+      const pin = await this.askDigits('PIN');
+      if (!pin) return;
+      try {
+        const balance = await this.account.login(acc, pin);
+        this.wallet.load(balance);
+        this.drawAccountIcon();
+        sound.play('cashout');
+        sheet.close();
+        this.toast.show(`Conta ${fmtAccount(acc)} · saldo ${fmt(balance)}`, C.btnPrimary);
+      } catch (e) {
+        this.accountError((e as Error).message);
+      }
+    };
+    sheet.onLogout = async () => {
+      await this.account.logout();
+      this.drawAccountIcon();
+      sheet.close();
+      this.toast.show('Saíste da conta. O saldo continua guardado nela.');
+    };
+    // Sessão guardada: vai buscar o saldo da conta ao abrir o jogo.
+    if (this.account.session) {
+      void this.account.me().then((balance) => {
+        this.drawAccountIcon();
+        if (balance === null || this.busy()) return;
+        this.wallet.load(balance);
+      });
+    }
+  }
+
+  private accountError(msg: string): void {
+    sound.play('error');
+    this.toast.show(msg, C.loss);
   }
 
   /** Repõe o saldo demo (só sem aposta em jogo, para não baralhar a ronda). */
@@ -204,6 +306,7 @@ export class CrashGame implements GameScene {
   /** Layout responsivo: coluna única no telemóvel, duas colunas em ecrãs largos. */
   private layout(sw: number, sh: number): void {
     const wide = sw / sh > 1.05 && sw >= 700;
+    this.wide = wide;
     const designH = wide ? 680 : 800;
     let scale = sw / 400;
     if (wide || sh / scale < designH) scale = sh / designH;
@@ -247,6 +350,7 @@ export class CrashGame implements GameScene {
       const cx = ox + contentW - PAD - 30;
       this.soundBtn.position.set(cx, top + 30);
       this.helpBtn.position.set(cx - 52, top + 30);
+      this.accountBtn.position.set(cx - 104, top + 30);
     }
     if (wide) {
       const hw = 360 - PAD * 2;
@@ -266,6 +370,7 @@ export class CrashGame implements GameScene {
     this.helpSheetBg.roundRect((W - sw2) / 2, (H - sh2) / 2, sw2, sh2, R.panel).fill(C.bgPanel);
     this.helpSheetTitle.position.set((W - sw2) / 2 + 20, (H - sh2) / 2 + 20);
     this.helpSheetText.position.set((W - sw2) / 2 + 20, (H - sh2) / 2 + 56);
+    this.accountSheet.layout(W, H);
     this.toast.position.set(this.scene.x + this.scene.stageWidth / 2, this.scene.y + this.scene.noticeY);
     this.keypad.layout(W, H, ox, contentW);
   }
@@ -281,6 +386,7 @@ export class CrashGame implements GameScene {
     this.resetBtn.position.set(right - w - 10 - 88, HEADER_H / 2 - 22);
     // Computador: som ao lado do Repor. Telemóvel: som e "?" no canto do ecrã do jogo (ver layout).
     this.soundBtn.position.set(right - w - 10 - 88 - 10 - 22, HEADER_H / 2);
+    if (this.wide) this.accountBtn.position.set(this.soundBtn.x - 52, HEADER_H / 2);
   }
 
   private animateBalance(to: number): void {

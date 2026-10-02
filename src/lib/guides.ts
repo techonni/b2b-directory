@@ -52,7 +52,7 @@ export type Tool = {
   themes: string[];
   goodFor: string;
   watchOut: string;
-  // Icône officielle de la marque, servie via /logos/<slug> (voir vercel.json).
+  // Icône officielle de la marque (chargée depuis le site de la marque avec `direct: true`).
   // `direct: true` : l'image est chargée depuis le site de la marque (quand le proxy est refusé).
   logo?: { src: string; fit?: "cover" | "contain"; zoom?: number; direct?: boolean };
 };
@@ -315,7 +315,7 @@ export const guides: Guide[] = [
   {
     slug: "creer-sa-landing-page-leadpages-de-a-a-z",
     question: "Comment créer sa première landing page Leadpages de A à Z ?",
-    summary: "Le guide complet : de l'essai gratuit à une page en ligne qui récolte des contacts, avec chaque écran.",
+    summary: "Le guide complet : de l'essai gratuit à une page en ligne qui récolte des contacts, étape par étape.",
     theme: "creer",
     format: "complet",
     publishedOn: "2026-09-27",
@@ -1417,7 +1417,7 @@ export const guides: Guide[] = [
   {
     slug: "creer-sa-boutique-shopify-de-a-a-z",
     question: "Comment créer sa boutique Shopify de A à Z ?",
-    summary: "Le guide complet : de l'inscription à la première vente, avec chaque écran de l'administration.",
+    summary: "Le guide complet : de l'inscription à la première vente, étape par étape.",
     theme: "boutique",
     format: "complet",
     publishedOn: "2026-09-27",
@@ -2542,7 +2542,7 @@ export function formatDate(iso: string) {
   }).format(new Date(`${iso}T00:00:00Z`));
 }
 
-// Chemin public du logo (proxy Vercel défini dans vercel.json).
+// Chemin public du logo (les logos actuels sont tous en `direct`).
 export function logoPath(tool: Tool) {
   if (!tool.logo) return undefined;
   if (tool.logo.direct) return tool.logo.src;

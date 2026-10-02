@@ -10,7 +10,7 @@ interface Props {
 const { title, slug } = Astro.props;
 const site = Astro.site ?? new URL("https://zunrel.com");
 const pageUrl = new URL(`/guides/${slug}/`, site);
-const pinImage = new URL(`/pins/${slug}.jpg`, site).toString();
+const pinImage = new URL(`/pins/minimal/${slug}.jpg`, site).toString();
 
 function withUtm(source: string) {
   const url = new URL(pageUrl);

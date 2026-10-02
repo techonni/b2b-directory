@@ -25,6 +25,9 @@ interface Bet {
 const HEADER_H = 64;
 const PAD = 16;
 const MIN_TARGET = 1.01;
+/** Em cada 5 apostas: 3 ganham e 2 perdem (ordem baralhada). Só créditos fictícios. */
+const WINS_PER_5 = 3;
+const rand = () => crypto.getRandomValues(new Uint32Array(1))[0] / 2 ** 32;
 const HELP =
   '1. Escolhe o montante e o multiplicador em "Retirar em".\n' +
   '2. Carrega em Apostar antes da ronda começar.\n' +
@@ -75,12 +78,15 @@ export class CrashGame implements GameScene {
   private autoOn = false;
   private profit = 0;
   private lastTick = 0;
+  /** Resultados ainda por sair neste bloco de 5 apostas (true = ganha). */
+  private bag: boolean[] = [];
 
   constructor() {
     this.engine = new CrashEngine({
       phase: (p) => this.onPhase(p),
       tick: (m) => this.onTick(m),
     });
+    this.engine.pickCrash = () => this.pickCrash();
     this.logo = makeText('Crash', { fontSize: 26, fontWeight: '800', fill: C.text });
     this.logo.anchor.set(0, 0.5);
     this.balanceText = makeText('', { fontSize: 17, fontWeight: '700', fill: C.text });
@@ -332,6 +338,28 @@ export class CrashGame implements GameScene {
       this.bet = null;
     }
     this.refresh();
+  }
+
+  /**
+   * Com aposta em jogo: tira o resultado do saco (3 ganhos e 2 perdas por cada 5 apostas).
+   * Ganho → o crash acontece bem depois do "Retirar em"; perda → antes dele.
+   * Sem aposta, a ronda segue aleatória.
+   */
+  private pickCrash(): number | null {
+    const b = this.bet;
+    if (!b || b.cashed) return null;
+    if (!this.bag.length) {
+      this.bag = Array.from({ length: 5 }, (_, i) => i < WINS_PER_5);
+      for (let i = this.bag.length - 1; i > 0; i--) {
+        const j = Math.floor(rand() * (i + 1));
+        [this.bag[i], this.bag[j]] = [this.bag[j], this.bag[i]];
+      }
+    }
+    const win = this.bag.pop()!;
+    const t = Math.max(MIN_TARGET, b.target);
+    if (win) return t * (1.15 + rand() * 1.5);
+    // Perda: rebenta entre 1.00 e um pouco antes do alvo.
+    return 1 + rand() * Math.max(0, (t - 1) * 0.85);
   }
 
   private onTick(m: number): void {

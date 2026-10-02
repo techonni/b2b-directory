@@ -935,6 +935,162 @@ export const ptGuides: TranslatedGuide[] = [
     ],
   },
   {
+    slug: "creer-une-collection-shopify",
+    localSlug: "criar-colecao-shopify",
+    question: "Como criar uma coleção de produtos na Shopify?",
+    summary: "Agrupar os produtos por categoria, à mão ou automaticamente, e mostrá-los no menu da loja.",
+    intro:
+      "Uma coleção é uma secção da sua loja: « Velas », « Novidades », « Promoções ». Ajuda o cliente a encontrar o que procura e deixa você destacar produtos no menu ou na página inicial.",
+    steps: [
+      {
+        title: "Abra as coleções",
+        text: "No painel da Shopify, clique em « Produtos », depois em « Coleções » e em « Criar coleção ».",
+      },
+      {
+        title: "Dê um título e uma descrição",
+        text: "O título aparece na loja: curto e claro (« Velas perfumadas »). Junte uma frase de descrição e uma imagem: aparecem no topo da página da coleção e ajudam o Google a entendê-la.",
+      },
+      {
+        title: "Escolha manual ou automatizada",
+        text: "« Manual »: você adiciona cada produto, ideal para uma pequena seleção (« Favoritos »). « Automatizada »: você define condições (por exemplo o tipo de produto é « Vela », ou a etiqueta contém « promoção ») e a Shopify adiciona sozinha os produtos que correspondem, incluindo os novos.",
+      },
+      {
+        title: "Adicione os produtos e a ordem",
+        text: "Numa coleção manual, procure e adicione os produtos. Numa automatizada, confira a lista. Depois escolha a ordem: mais vendidos, preço, mais recentes ou ordem manual.",
+      },
+      {
+        title: "Confira a disponibilidade e salve",
+        text: "Na parte « Canais de vendas » (ou « Disponibilidade »), confirme que a coleção está disponível na loja virtual. Clique em « Salvar ».",
+      },
+      {
+        title: "Junte-a ao menu",
+        text: "Vá a « Loja virtual » > « Menus », abra o menu principal e adicione um link para a coleção. Ela aparece agora na navegação da loja.",
+      },
+    ],
+    pitfalls: [
+      "Criar uma coleção por produto: muitas secções quase vazias perdem o cliente. Melhor 3 a 6 coleções bem cheias.",
+      "Uma coleção automatizada com condições largas demais: entram produtos sem relação. Confira a lista depois de cada produto novo.",
+      "Esquecer de a pôr no menu: ninguém a encontra.",
+    ],
+  },
+  {
+    slug: "creer-une-page-webinaire-leadpages",
+    localSlug: "pagina-de-webinar-leadpages",
+    question: "Como criar uma página de inscrição num webinar com a Leadpages?",
+    summary: "Partir de um modelo de webinar, apresentar o tema em três pontos, juntar um formulário e uma contagem regressiva e confirmar a inscrição.",
+    intro:
+      "Um webinar é uma ótima forma de captar contatos qualificados: os inscritos dão o e-mail para aprender algo concreto. A Leadpages tem modelos feitos para isso, com formulário e contagem regressiva.",
+    steps: [
+      {
+        title: "Parta de um modelo de webinar",
+        text: "Na Leadpages, crie uma nova landing page e filtre os modelos pela categoria webinar. Veja a pré-visualização no celular e escolha um modelo simples: título, promessa, data, formulário.",
+      },
+      {
+        title: "Escreva um título que promete um resultado",
+        text: "O título diz o que o inscrito vai saber fazer depois: « Abrir a sua loja Shopify num fim de semana », e não « Webinar Shopify ». Logo abaixo: a data, a hora com o fuso horário e a duração.",
+      },
+      {
+        title: "Resuma o conteúdo em três pontos",
+        text: "Três tópicos chegam: o que se vai ver, para quem é, e com o que se sai. Junte uma linha sobre você (sem foto, se preferir ficar discreto) para dizer porque vale a pena ouvir.",
+      },
+      {
+        title: "Configure o formulário de inscrição",
+        text: "Fique com o nome e o e-mail, nada mais. Ligue o formulário à sua ferramenta de e-mail ou de webinar para os inscritos receberem o link. Junte uma caixa de consentimento por marcar se vai enviar outros e-mails.",
+      },
+      {
+        title: "Junte uma contagem regressiva",
+        text: "Um elemento « Countdown » com a data e a hora do webinar lembra que as vagas ou o evento têm fim. Ponha-o perto do botão de inscrição.",
+      },
+      {
+        title: "Prepare a página de confirmação e publique",
+        text: "Depois da inscrição, leve a uma página de agradecimento: « Está inscrito! Ponha a data na sua agenda » e o lembrete da hora. Publique, inscreva-se você mesmo e confira que o e-mail de confirmação chega.",
+      },
+    ],
+    pitfalls: [
+      "Um formulário longo demais (telefone, empresa, cargo): cada campo a mais faz perder inscritos.",
+      "Esquecer o fuso horário: parte dos inscritos entra uma hora atrasada.",
+      "Não enviar lembrete na véspera e uma hora antes: muitos inscritos esquecem de aparecer.",
+    ],
+  },
+  {
+    slug: "creer-une-carte-cadeau-shopify",
+    localSlug: "vale-presente-shopify",
+    question: "Como vender vales-presente (cartões-presente) na Shopify?",
+    summary: "Criar um produto vale-presente com vários valores, destacá-lo nas festas e acompanhar os cartões usados.",
+    intro:
+      "O vale-presente é o presente perfeito de última hora, e traz muitas vezes um cliente novo à loja. Na Shopify é um produto à parte: o cliente escolhe um valor, paga e recebe um código por e-mail.",
+    steps: [
+      {
+        title: "Abra os cartões-presente",
+        text: "No painel da Shopify, clique em « Produtos », depois em « Cartões-presente » e em « Adicionar produto de cartão-presente ».",
+      },
+      {
+        title: "Dê um título, uma descrição e uma imagem",
+        text: "Por exemplo « Vale-presente Velas Luz ». Na descrição, diga como se usa (online, válido em toda a loja). Junte uma imagem clara do cartão: é ela que o cliente vê na loja.",
+      },
+      {
+        title: "Defina os valores",
+        text: "A Shopify propõe valores padrão. Troque-os pelos seus, por exemplo 20, 50 e 100, junte mais com « Adicionar valor » ou apague com o caixote do lixo. O cliente não pode escrever um valor livre: escolhe entre estes.",
+      },
+      {
+        title: "Salve e confira a disponibilidade",
+        text: "Clique em « Salvar ». Confirme que o vale está disponível na loja virtual e junte-o a uma coleção ou ao menu (por exemplo « Ideias de presentes »).",
+      },
+      {
+        title: "Teste a compra e o e-mail",
+        text: "Faça um pedido de teste: o cliente recebe um e-mail com o código do cartão, para usar no pagamento. Releia essa mensagem nas configurações de notificações e ajuste o texto se precisar.",
+      },
+      {
+        title: "Acompanhe os cartões usados",
+        text: "Em « Produtos » > « Cartões-presente » vê cada cartão vendido, o saldo e a data de validade, se houver. Também pode criar um cartão à mão para compensar um cliente.",
+      },
+    ],
+    pitfalls: [
+      "Pôr data de validade sem ver as regras do seu país: a validade dos vales-presente é regulada em vários países.",
+      "Esquecer de o destacar: escondido no fundo do catálogo, não vende. Mostre-o em dezembro e antes das festas.",
+      "Não testar o e-mail: um código mal apresentado faz o cliente achar que o cartão não chegou.",
+    ],
+  },
+  {
+    slug: "creer-une-page-de-tarifs-html-pub",
+    localSlug: "pagina-de-precos-html-pub",
+    question: "Como criar uma página de preços com o HTML Pub?",
+    summary: "Mostrar as suas ofertas lado a lado, com o que está incluído e um botão por oferta, sem escrever código.",
+    intro:
+      "Uma página de preços clara responde à pergunta que todos fazem antes de comprar: quanto, e pelo quê? Com o assistente de IA do HTML Pub, você descreve, ele constrói, e depois ajusta conversando.",
+    steps: [
+      {
+        title: "Prepare as ofertas no papel",
+        text: "Duas ou três ofertas, não mais. Para cada uma: um nome, um preço, uma frase « para quem » e três a cinco coisas incluídas. Escolha a oferta que mais quer vender: ela vai ficar em destaque.",
+      },
+      {
+        title: "Abra a criação de páginas",
+        text: "No HTML Pub, clique em « Create » no menu da esquerda e escolha « Landing page ». Se já tem um site no HTML Pub, junte antes uma página a esse site para manter o mesmo menu.",
+      },
+      {
+        title: "Descreva a página ao assistente",
+        text: "Cole as suas ofertas e peça: « Uma página de preços com três colunas, a do meio em destaque com o selo Mais escolhida, um botão por oferta e uma FAQ curta por baixo. » Envie.",
+      },
+      {
+        title: "Ligue cada botão",
+        text: "Cada botão deve levar ao sítio certo: a página do produto na Shopify, o pagamento ou um formulário de contato. Peça ao assistente para pôr os seus links e clique em cada um na pré-visualização para conferir.",
+      },
+      {
+        title: "Junte uma FAQ curta",
+        text: "Quatro ou cinco perguntas que travam a compra: « Posso mudar de oferta? », « Como é o pagamento? », « Há fidelização? ». Uma resposta curta e honesta para cada.",
+      },
+      {
+        title: "Veja no celular e publique",
+        text: "No celular, as colunas ficam umas por baixo das outras: a oferta em destaque deve continuar bem visível. Confira, publique e junte a página ao menu do seu site.",
+      },
+    ],
+    pitfalls: [
+      "Ofertas demais: acima de três, o visitante hesita e sai sem escolher.",
+      "Preços sem o que está incluído: o visitante não consegue comparar.",
+      "Esconder custos (envio, impostos, fidelização): é a primeira causa de abandono na hora de pagar.",
+    ],
+  },
+  {
     slug: "ajouter-un-produit-shopify",
     localSlug: "adicionar-produto-shopify",
     question: "Como adicionar um produto na Shopify?",

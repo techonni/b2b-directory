@@ -312,7 +312,7 @@ export const guides: Guide[] = [
       { slug: "leadpages", why: "Tests A/B, Smart Traffic et cartes de chaleur." },
     ],
     sources: [pricing],
-    related: ["choisir-entre-html-pub-et-leadpages", "essayer-leadpages-gratuitement", "changer-ou-annuler-son-offre-leadpages"],
+    related: ["choisir-entre-html-pub-et-leadpages", "essayer-leadpages-gratuitement", "changer-ou-annuler-son-offre-leadpages", "creer-une-page-de-tarifs-html-pub"],
   },
 
   // ——— Créer une page ———
@@ -618,7 +618,7 @@ export const guides: Guide[] = [
     ],
     tools: [{ slug: "html-pub", why: "Sites multipages inclus dans toutes les offres payantes." }],
     sources: [{ label: "HTML Pub : utiliser les sites", url: `${help}43969561553549--HTMLPub-Using-Sites` }],
-    related: ["publier-du-html-sur-html-pub", "creer-un-blog-avec-html-pub", "connecter-son-nom-de-domaine-leadpages"],
+    related: ["publier-du-html-sur-html-pub", "creer-un-blog-avec-html-pub", "connecter-son-nom-de-domaine-leadpages", "creer-une-page-de-tarifs-html-pub"],
   },
   {
     slug: "creer-un-blog-avec-html-pub",
@@ -938,7 +938,7 @@ export const guides: Guide[] = [
     ],
     tools: [{ slug: "leadpages", why: "Des modèles de pages de remerciement et le choix de l'action après l'envoi du formulaire." }],
     sources: [{ label: "Centre d'aide Leadpages", url: "https://support.leadpages.com/hc/en-us" }],
-    related: ["recolter-des-e-mails-avant-un-lancement", "connecter-leadpages-a-son-outil-e-mail", "ajouter-google-analytics-a-une-page-leadpages"],
+    related: ["recolter-des-e-mails-avant-un-lancement", "connecter-leadpages-a-son-outil-e-mail", "ajouter-google-analytics-a-une-page-leadpages", "creer-une-page-webinaire-leadpages"],
   },
   {
     slug: "ajouter-un-pop-up-d-inscription-leadpages",
@@ -1627,7 +1627,7 @@ export const guides: Guide[] = [
     pitfalls: ["Laisser le poids à 0 : les frais de livraison seront faux.", "Des photos de tailles différentes : la boutique paraît moins professionnelle."],
     tools: [{ slug: "shopify", why: "Produits illimités sur tous les forfaits." }],
     sources: [{ label: "Shopify : ajouter et mettre à jour des produits", url: "https://help.shopify.com/fr/manual/products/add-update-products" }],
-    related: ["creer-une-page-de-vente-pour-un-produit-shopify", "creer-sa-boutique-shopify", "creer-un-code-de-reduction-shopify", "regler-l-expedition-shopify", "ajouter-des-variantes-shopify", "vendre-sur-instagram-avec-shopify", "ajouter-des-avis-clients-shopify"],
+    related: ["creer-une-page-de-vente-pour-un-produit-shopify", "creer-sa-boutique-shopify", "creer-un-code-de-reduction-shopify", "regler-l-expedition-shopify", "ajouter-des-variantes-shopify", "vendre-sur-instagram-avec-shopify", "ajouter-des-avis-clients-shopify", "creer-une-collection-shopify"],
   },
   {
     slug: "vendre-sur-instagram-avec-shopify",
@@ -1770,7 +1770,7 @@ export const guides: Guide[] = [
       { label: "Leadpages : le compte à rebours (Classic Builder)", url: `${help}216961598--Classic-Builder-The-countdown-widget` },
       { label: "Leadpages : l'élément compte à rebours (Page Studio)", url: `${help}42901399616781--Page-Studio-The-countdown-element` },
     ],
-    related: ["ameliorer-le-taux-de-conversion-de-ses-pages-de-a-a-z", "ajouter-un-pop-up-d-inscription-leadpages", "faire-un-test-ab-leadpages"],
+    related: ["ameliorer-le-taux-de-conversion-de-ses-pages-de-a-a-z", "ajouter-un-pop-up-d-inscription-leadpages", "faire-un-test-ab-leadpages", "creer-une-page-webinaire-leadpages"],
   },
   {
     slug: "creer-une-page-bientot-disponible-html-pub",
@@ -1862,6 +1862,193 @@ export const guides: Guide[] = [
       { label: "Shopify App Store : avis produits", url: "https://apps.shopify.com/search?q=product%20reviews" },
     ],
     related: ["ajouter-un-produit-shopify", "creer-une-page-de-vente-pour-un-produit-shopify", "relancer-les-paniers-abandonnes-shopify"],
+  },
+  {
+    slug: "creer-une-collection-shopify",
+    question: "Comment créer une collection de produits sur Shopify ?",
+    summary: "Regrouper vos produits par catégorie, à la main ou automatiquement, et les montrer dans le menu de la boutique.",
+    theme: "boutique",
+    publishedOn: "2026-10-02",
+    updatedOn: "2026-10-02",
+    intro:
+      "Une collection, c'est un rayon de votre boutique : « Bougies », « Nouveautés », « Soldes ». Elle aide le client à trouver ce qu'il cherche et vous permet de mettre en avant des produits dans le menu ou sur la page d'accueil.",
+    steps: [
+      {
+        title: "Ouvrez les collections",
+        text: "Dans l'administration Shopify, cliquez sur « Produits », puis sur « Collections », et enfin sur « Créer une collection ».",
+      },
+      {
+        title: "Donnez un titre et une description",
+        text: "Le titre s'affiche sur la boutique : faites court et clair (« Bougies parfumées »). Ajoutez une phrase de description et une image : elles apparaissent en haut de la page de la collection et aident Google à la comprendre.",
+      },
+      {
+        title: "Choisissez manuelle ou automatisée",
+        text: "« Manuelle » : vous ajoutez chaque produit vous-même, idéal pour une petite sélection (« Coups de cœur »). « Automatisée » : vous fixez des conditions (par exemple le type de produit est « Bougie », ou l'étiquette contient « soldes ») et Shopify ajoute tout seul les produits qui correspondent, y compris les nouveaux.",
+      },
+      {
+        title: "Ajoutez les produits et réglez l'ordre",
+        text: "Pour une collection manuelle, cherchez et ajoutez les produits. Pour une automatisée, vérifiez la liste obtenue. Choisissez ensuite l'ordre d'affichage : meilleures ventes, prix, plus récents, ou ordre manuel.",
+      },
+      {
+        title: "Vérifiez la disponibilité et enregistrez",
+        text: "Dans la partie « Canaux de vente » (ou « Disponibilité »), vérifiez que la collection est disponible sur la boutique en ligne. Cliquez sur « Enregistrer ».",
+      },
+      {
+        title: "Ajoutez-la au menu",
+        text: "Allez dans « Boutique en ligne » > « Menus », ouvrez le menu principal et ajoutez un lien vers la collection. Elle apparaît maintenant dans la navigation de votre boutique.",
+      },
+    ],
+    pitfalls: [
+      "Créer une collection par produit : trop de rayons presque vides perdent le client. Mieux vaut 3 à 6 collections bien remplies.",
+      "Une collection automatisée avec des conditions trop larges : des produits sans rapport y entrent. Vérifiez la liste après chaque ajout de produit.",
+      "Oublier de l'ajouter au menu : personne ne la trouve.",
+    ],
+    tools: [{ slug: "shopify", why: "Collections manuelles et automatisées sur tous les forfaits." }],
+    sources: [{ label: "Aide Shopify : créer des collections", url: "https://help.shopify.com/fr/manual/products/collections" }],
+    related: ["ajouter-un-produit-shopify", "creer-un-menu-shopify", "ajouter-des-variantes-shopify", "creer-une-carte-cadeau-shopify"],
+  },
+  {
+    slug: "creer-une-page-webinaire-leadpages",
+    question: "Comment créer une page d'inscription à un webinaire avec Leadpages ?",
+    seoTitle: "Créer une page d'inscription à un webinaire Leadpages",
+    summary: "Partir d'un modèle webinaire, présenter le sujet en trois points, ajouter un formulaire et un compte à rebours, puis confirmer l'inscription.",
+    theme: "contacts",
+    publishedOn: "2026-10-02",
+    updatedOn: "2026-10-02",
+    intro:
+      "Un webinaire est une excellente façon de récolter des contacts qualifiés : les inscrits donnent leur e-mail pour apprendre quelque chose de précis. Leadpages a des modèles prévus pour ça, avec formulaire et compte à rebours.",
+    steps: [
+      {
+        title: "Partez d'un modèle webinaire",
+        text: "Dans Leadpages, créez une nouvelle landing page et filtrez les modèles sur la catégorie webinaire. Regardez l'aperçu sur téléphone, puis choisissez un modèle simple : titre, promesse, date, formulaire.",
+      },
+      {
+        title: "Écrivez un titre qui promet un résultat",
+        text: "Le titre dit ce que l'inscrit saura faire après : « Ouvrir sa boutique Shopify en un week-end », pas « Webinaire Shopify ». Juste en dessous : la date, l'heure avec le fuseau horaire, et la durée.",
+      },
+      {
+        title: "Résumez le contenu en trois points",
+        text: "Trois puces suffisent : ce que l'on va voir, pour qui c'est, et ce que l'on repart avec. Ajoutez une ligne sur vous (sans photo si vous préférez rester discret) pour dire pourquoi vous écouter.",
+      },
+      {
+        title: "Réglez le formulaire d'inscription",
+        text: "Gardez le prénom et l'e-mail, pas plus. Reliez le formulaire à votre outil e-mail ou à votre outil de webinaire pour que les inscrits reçoivent le lien. Ajoutez une case de consentement non cochée si vous comptez leur envoyer d'autres e-mails.",
+      },
+      {
+        title: "Ajoutez un compte à rebours",
+        text: "Un élément « Countdown » réglé sur la date et l'heure du webinaire rappelle que les places ou l'événement ont une fin. Placez-le près du bouton d'inscription.",
+      },
+      {
+        title: "Préparez la page de confirmation et publiez",
+        text: "Après l'inscription, envoyez vers une page de remerciement : « C'est noté ! Ajoutez la date à votre agenda » et le rappel de l'heure. Publiez, inscrivez-vous vous-même et vérifiez que l'e-mail de confirmation arrive.",
+      },
+    ],
+    pitfalls: [
+      "Un formulaire trop long (téléphone, entreprise, fonction) : chaque champ en plus fait perdre des inscrits.",
+      "Oublier le fuseau horaire : une partie des inscrits se connecte une heure trop tard.",
+      "Ne pas envoyer de rappel la veille et une heure avant : beaucoup d'inscrits oublient de venir.",
+    ],
+    tools: [{ slug: "leadpages", why: "Modèles webinaire, formulaires, compte à rebours et page de remerciement." }],
+    sources: [
+      { label: "Leadpages : modèles de pages webinaire", url: "https://leadpages.com/templates/category/webinar" },
+      { label: "Leadpages : le compte à rebours (Classic Builder)", url: `${help}216961598--Classic-Builder-The-countdown-widget` },
+    ],
+    related: ["ajouter-un-compte-a-rebours-leadpages", "creer-une-page-de-remerciement-leadpages", "connecter-leadpages-a-son-outil-e-mail"],
+  },
+  {
+    slug: "creer-une-carte-cadeau-shopify",
+    question: "Comment vendre des cartes-cadeaux sur Shopify ?",
+    summary: "Créer un produit carte-cadeau avec plusieurs montants, le mettre en avant pour les fêtes et suivre les cartes utilisées.",
+    theme: "boutique",
+    publishedOn: "2026-10-02",
+    updatedOn: "2026-10-02",
+    intro:
+      "La carte-cadeau est le cadeau de dernière minute parfait, et elle amène souvent un nouveau client dans votre boutique. Sur Shopify, c'est un produit à part : le client choisit un montant, paie, et reçoit un code par e-mail.",
+    steps: [
+      {
+        title: "Ouvrez les cartes-cadeaux",
+        text: "Dans l'administration Shopify, cliquez sur « Produits », puis sur « Cartes-cadeaux », et enfin sur « Ajouter un produit carte-cadeau ».",
+      },
+      {
+        title: "Donnez un titre, une description et une image",
+        text: "Par exemple « Carte-cadeau Bougies Lumière ». Dans la description, dites comment elle s'utilise (en ligne, valable sur toute la boutique). Ajoutez une image claire de la carte : c'est elle que le client voit dans la boutique.",
+      },
+      {
+        title: "Réglez les montants",
+        text: "Shopify propose des montants par défaut (les « valeurs »). Remplacez-les par les vôtres, par exemple 20, 50 et 100, ajoutez-en avec « Ajouter une valeur » ou supprimez-en avec la corbeille. Le client ne peut pas saisir un montant libre : il choisit parmi ces valeurs.",
+      },
+      {
+        title: "Enregistrez et vérifiez la disponibilité",
+        text: "Cliquez sur « Enregistrer ». Vérifiez que la carte-cadeau est disponible sur la boutique en ligne, puis ajoutez-la à une collection ou au menu (par exemple « Idées cadeaux »).",
+      },
+      {
+        title: "Testez l'achat et l'e-mail",
+        text: "Passez une commande de test : le client reçoit un e-mail avec le code de la carte, qu'il pourra saisir au paiement. Relisez ce message dans les réglages des notifications et adaptez le texte si besoin.",
+      },
+      {
+        title: "Suivez les cartes utilisées",
+        text: "Dans « Produits » > « Cartes-cadeaux », vous voyez chaque carte vendue, son solde et sa date d'expiration éventuelle. Vous pouvez aussi créer une carte à la main pour dédommager un client.",
+      },
+    ],
+    pitfalls: [
+      "Fixer une date d'expiration sans vérifier les règles de votre pays : la durée de validité des cartes-cadeaux est encadrée dans plusieurs pays.",
+      "Oublier de la mettre en avant : rangée au fond du catalogue, elle ne se vend pas. Montrez-la en décembre et avant les fêtes.",
+      "Ne pas tester l'e-mail : un code mal présenté fait croire au client que la carte n'est pas arrivée.",
+    ],
+    tools: [{ slug: "shopify", why: "Produits cartes-cadeaux intégrés, avec suivi des soldes." }],
+    sources: [
+      { label: "Aide Shopify : ajouter des produits cartes-cadeaux", url: "https://help.shopify.com/fr/manual/products/gift-card-products/add-update-gift-card-products" },
+      { label: "Aide Shopify : créer une carte-cadeau à la main", url: "https://help.shopify.com/fr/manual/products/gift-card-products/issue-gift-card" },
+    ],
+    related: ["creer-un-code-de-reduction-shopify", "ajouter-un-produit-shopify", "creer-une-collection-shopify"],
+  },
+  {
+    slug: "creer-une-page-de-tarifs-html-pub",
+    question: "Comment créer une page de tarifs avec HTML Pub ?",
+    seoDescription: "Créer une page de tarifs claire avec l'IA de HTML Pub : deux ou trois offres côte à côte, ce qui est inclus, un bouton par offre et une FAQ.",
+    summary: "Présenter vos offres côte à côte, avec ce qui est inclus et un bouton par offre, sans écrire de code.",
+    theme: "creer",
+    publishedOn: "2026-10-02",
+    updatedOn: "2026-10-02",
+    intro:
+      "Une page de tarifs claire répond à la question que tout le monde se pose avant d'acheter : combien, et pour quoi ? Avec l'assistant IA de HTML Pub, vous la décrivez et il la construit, puis vous l'ajustez en discutant.",
+    steps: [
+      {
+        title: "Préparez vos offres sur papier",
+        text: "Deux ou trois offres, pas plus. Pour chacune : un nom, un prix, une phrase « pour qui », et trois à cinq choses incluses. Choisissez l'offre que vous voulez vendre le plus : elle sera mise en avant.",
+      },
+      {
+        title: "Ouvrez l'écran de création",
+        text: "Dans HTML Pub, cliquez sur « Create » dans le menu de gauche, puis choisissez « Landing page ». Si vous avez déjà un site HTML Pub, ajoutez plutôt une page à ce site pour garder le même menu.",
+      },
+      {
+        title: "Décrivez la page à l'assistant",
+        text: "Collez vos offres et demandez : « Une page de tarifs avec trois colonnes, l'offre du milieu mise en avant avec le badge Le plus choisi, un bouton par offre, et une courte FAQ en dessous. » Envoyez.",
+      },
+      {
+        title: "Reliez chaque bouton",
+        text: "Chaque bouton doit mener au bon endroit : la fiche produit Shopify, la page de paiement ou un formulaire de contact. Demandez à l'assistant de mettre vos liens, puis cliquez sur chacun dans l'aperçu pour vérifier.",
+      },
+      {
+        title: "Ajoutez une FAQ courte",
+        text: "Quatre ou cinq questions qui bloquent l'achat : « Puis-je changer d'offre ? », « Comment se passe le paiement ? », « Y a-t-il un engagement ? ». Une réponse courte et honnête à chacune.",
+      },
+      {
+        title: "Vérifiez sur téléphone et publiez",
+        text: "Sur téléphone, les colonnes passent l'une sous l'autre : l'offre mise en avant doit rester bien visible. Vérifiez, publiez, puis ajoutez la page au menu de votre site.",
+      },
+    ],
+    pitfalls: [
+      "Trop d'offres : au-delà de trois, le visiteur hésite et repart sans choisir.",
+      "Des prix sans ce qui est inclus : le visiteur ne peut pas comparer.",
+      "Cacher les frais (livraison, taxes, engagement) : c'est la première cause d'abandon au moment de payer.",
+    ],
+    tools: [{ slug: "html-pub", why: "Assistant IA pour construire la page, sites et domaine personnalisé." }],
+    sources: [
+      { label: "HTML Pub : utiliser le créateur de pages IA", url: `${help}43967499549965--HTMLPub-Using-the-AI-Page-Builder` },
+      { label: "HTML Pub : utiliser les sites", url: `${help}43969561553549--HTMLPub-Using-Sites` },
+    ],
+    related: ["creer-un-site-web-avec-html-pub", "creer-une-page-de-vente-pour-un-produit-shopify", "creer-une-landing-page-avec-l-ia"],
   },
   {
     slug: "ajouter-des-variantes-shopify",
@@ -2115,7 +2302,7 @@ export const guides: Guide[] = [
     sources: [
       { label: "Shopify : réductions en pourcentage ou montant fixe", url: "https://help.shopify.com/fr/manual/discounts/discount-types/percentage-fixed-amount" },
     ],
-    related: ["attirer-des-clients-avec-une-landing-page", "accepter-les-paiements-shopify", "relancer-les-paniers-abandonnes-shopify"],
+    related: ["attirer-des-clients-avec-une-landing-page", "accepter-les-paiements-shopify", "relancer-les-paniers-abandonnes-shopify", "creer-une-carte-cadeau-shopify"],
   },
   {
     slug: "connecter-html-pub-a-shopify",
@@ -2437,7 +2624,7 @@ export const guides: Guide[] = [
     ],
     tools: [{ slug: "shopify", why: "Menus et sous-menus modifiables sans code." }],
     sources: [{ label: "Aide Shopify : modifier les menus", url: "https://help.shopify.com/fr/manual/online-store/menus-and-links/editing-menus" }],
-    related: ["choisir-un-theme-shopify", "rediger-les-politiques-shopify", "ajouter-un-formulaire-de-contact-shopify", "creer-sa-boutique-shopify"],
+    related: ["choisir-un-theme-shopify", "rediger-les-politiques-shopify", "ajouter-un-formulaire-de-contact-shopify", "creer-sa-boutique-shopify", "creer-une-collection-shopify"],
   },
   {
     slug: "ouvrir-sa-boutique-shopify-au-public",

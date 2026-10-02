@@ -39,7 +39,7 @@ O script **nunca envia para os assinantes**. Cria o rascunho, envia um teste par
 
 ## Calendário de guias (passo 6)
 
-Uma pergunta por guia, só sobre Leadpages, HTML Pub e Shopify. Antes de escrever: confirmar preços e textos da interface no próprio dia e tirar pelo menos uma captura de ecrã.
+Uma pergunta por guia, só sobre Leadpages, HTML Pub e Shopify. Antes de escrever: confirmar preços e textos da interface no próprio dia. **Sem capturas de ecrã** (decisão de 02/10).
 
 | Semana | Pergunta (FR) | Tema | Porquê |
 |---|---|---|---|
@@ -55,6 +55,14 @@ Uma pergunta por guia, só sobre Leadpages, HTML Pub e Shopify. Antes de escreve
 | 10 ✅ | Comment ajouter un compte à rebours sur une page Leadpages ? (02/10, `ajouter-un-compte-a-rebours-leadpages`) | optimiser | Urgência para lançamentos e promoções |
 | 11 ✅ | Comment créer une page « bientôt disponible » (coming soon) avec HTML Pub ? (02/10, `creer-une-page-bientot-disponible-html-pub`) | creer | Antes do lançamento, capta e-mails |
 | 12 ✅ | Comment ajouter des avis clients sur Shopify ? (02/10, `ajouter-des-avis-clients-shopify`) | boutique | Confiança = conversões |
+| 13 ✅ | Comment créer une collection de produits sur Shopify ? (02/10, `creer-une-collection-shopify`) | boutique | Organizar a loja e o menu |
+| 14 ✅ | Comment créer une page d'inscription à un webinaire avec Leadpages ? (02/10, `creer-une-page-webinaire-leadpages`) | contacts | Contactos qualificados |
+| 15 ✅ | Comment vendre des cartes-cadeaux sur Shopify ? (02/10, `creer-une-carte-cadeau-shopify`) | boutique | Vendas de fim de ano |
+| 16 ✅ | Comment créer une page de tarifs avec HTML Pub ? (02/10, `creer-une-page-de-tarifs-html-pub`) | creer | Página que vende |
+| 17 | Comment traduire sa boutique Shopify dans une autre langue ? | boutique | Vender noutros países |
+| 18 | Comment ajouter une vidéo sur une landing page Leadpages ? | creer | Mais confiança na página |
+| 19 | Comment préparer sa boutique Shopify pour le Black Friday ? | boutique | Época forte (fim de novembro) |
+| 20 | Comment créer un formulaire en plusieurs étapes sur Leadpages ? | contacts | Mais inscrições em formulários longos |
 
 ## Textos para as redes (passo 8)
 

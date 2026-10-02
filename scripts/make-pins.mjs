@@ -4,6 +4,7 @@
 //
 // Lancer :
 //   node --experimental-strip-types scripts/make-pins.mjs [--fonts <dossier Lato>] [--chrome <chemin>] [--force] [--variant erreurs] [slug…]
+// --variant minimal : troisième épingle sobre, dans public/pins/minimal/<slug>.jpg.
 // --variant erreurs : deuxième épingle par guide (fond sombre, les erreurs à éviter au lieu des étapes),
 // dans public/pins/erreurs/<slug>.jpg, pour varier les épingles d'un même guide sur Pinterest.
 // Le dossier des polices doit contenir Lato-Black.ttf, Lato-Bold.ttf et Lato-Regular.ttf
@@ -60,7 +61,35 @@ const title = (guide) => {
   return escape(raw).replace(/\[([^\]]+)\]/g, '<span class="hl">$1</span>');
 };
 
+// --variant minimal : troisième épingle, sobre (fond clair, titre et résumé), comme la capa du X.
+function minimal(guide) {
+  const badge = guide.theme === "boutique" ? "Shopify" : guide.slug.includes("html-pub") ? "HTML Pub" : "Leadpages";
+  const dots = Array.from({ length: 12 }, (_, i) => {
+    const a = (i / 12) * 2 * Math.PI;
+    return `<circle cx="${12 + 8.1 * Math.sin(a)}" cy="${12 - 8.1 * Math.cos(a)}" r="1.25" fill="#171717"/>`;
+  }).join("");
+  const plain = title(guide).replace(/<[^>]+>/g, "").replace(/ ([?!:])/g, "&nbsp;$1");
+  return `<!doctype html><html><head><meta charset="utf-8"><style>
+@font-face{font-family:Lato;font-weight:900;src:url("file://${fonts}/Lato-Black.ttf")}
+@font-face{font-family:Lato;font-weight:400;src:url("file://${fonts}/Lato-Regular.ttf")}
+*{box-sizing:border-box;margin:0}
+body{width:1000px;height:1500px;background:#fafafa;color:#171717;font-family:Lato,sans-serif;position:relative;overflow:hidden}
+.mark{position:absolute;top:110px;left:90px}
+.badge{position:absolute;top:122px;right:90px;font-size:26px;color:#737373;border:2px solid #d4d4d4;border-radius:30px;padding:10px 26px}
+.mid{position:absolute;left:90px;right:90px;top:50%;transform:translateY(-50%)}
+h1{font-weight:900;font-size:${plain.length > 60 ? 82 : 96}px;line-height:1.08;letter-spacing:-2px}
+p{margin-top:48px;font-size:36px;line-height:1.4;color:#737373}
+.foot{position:absolute;left:90px;right:90px;bottom:100px;display:flex;justify-content:space-between;font-size:30px;color:#a0a0a0}
+.foot b{color:#171717;font-weight:900}
+</style></head><body>
+<svg class="mark" width="72" height="72" viewBox="0 0 24 24">${dots}</svg><div class="badge">${badge}</div>
+<div class="mid"><h1>${plain}</h1><p>${escape(guide.summary)}</p></div>
+<div class="foot"><span>Guide gratuit, étape par étape</span><b>zunrel.com</b></div>
+</body></html>`;
+}
+
 function html(guide) {
+  if (variant === "minimal") return minimal(guide);
   const shop = guide.theme === "boutique";
   const badge = shop ? "Shopify" : guide.slug.includes("html-pub") ? "HTML Pub" : "Leadpages";
   const errors = variant === "erreurs";

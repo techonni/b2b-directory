@@ -1,0 +1,9 @@
+# game.zunrel.com (Cloudflare Pages, projeto zunrel-jogo): contas para guardar o saldo demo.
+name = "zunrel-jogo"
+pages_build_output_dir = "./dist"
+compatibility_date = "2026-09-01"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "zunrel-jogo"
+database_id = "f40d7347-b67d-443f-8eff-8e61da41c7da"

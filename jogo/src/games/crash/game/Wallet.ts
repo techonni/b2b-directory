@@ -26,6 +26,11 @@ export class Wallet {
     this.set(this.balance + amount);
   }
 
+  /** Saldo vindo da conta (servidor). */
+  load(balance: number): void {
+    this.set(balance);
+  }
+
   refill(): void {
     this.set(START_BALANCE);
   }

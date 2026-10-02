@@ -13,10 +13,10 @@ import { Wallet } from './game/Wallet';
 import { ControlsPanel } from './ui/ControlsPanel';
 import { Keypad } from './ui/Keypad';
 import { Toast } from './ui/Toast';
-import { Button } from './ui/Button';
 import { START_BALANCE } from './game/Wallet';
 import { AccountClient } from './account';
 import { AccountSheet, fmtAccount } from './ui/AccountSheet';
+import { Menu, type MenuItem } from './ui/Menu';
 
 interface Bet {
   amount: number;
@@ -46,14 +46,12 @@ export class CrashGame implements GameScene {
   private readonly headerBg = new Graphics();
   private readonly logo: Text;
   private readonly balancePill = new Container();
-  private readonly resetBtn = new Button({ label: 'Repor', width: 88, height: 44, color: C.btnSecondary, fontSize: 16 });
   private readonly balanceBg = new Graphics();
   private readonly balanceText: Text;
-  /** Botão de som (ligar/desligar) no cabeçalho. */
-  private readonly soundBtn = new Container();
-  private readonly soundIcon = new Graphics();
-  /** Telemóvel: botão "?" que abre o "Como jogar". */
-  private readonly helpBtn = new Container();
+  /** Botão ☰: abre o menu com conta, som, repor saldo e "Como jogar". */
+  private readonly menuBtn = new Container();
+  private readonly menuDot = new Graphics();
+  private readonly menu = new Menu();
   /** Computador: "Como jogar" no espaço livre por baixo dos controlos. */
   private readonly help = new Container();
   private readonly helpTitle: Text;
@@ -71,9 +69,8 @@ export class CrashGame implements GameScene {
   /** Conta (número + PIN) para guardar o saldo no servidor. */
   private readonly account = new AccountClient();
   private readonly accountSheet = new AccountSheet();
-  private readonly accountBtn = new Container();
-  private readonly accountIcon = new Graphics();
-  private wide = false;
+  private W = 400;
+  private H = 800;
 
   private readonly wallet = new Wallet();
   private readonly engine: CrashEngine;
@@ -123,7 +120,7 @@ export class CrashGame implements GameScene {
     );
 
     this.buildHeader();
-    this.root.addChild(this.card, this.scene, this.panel, this.help, this.header, this.accountSheet, this.toast, this.keypad, this.helpSheet);
+    this.root.addChild(this.card, this.scene, this.panel, this.help, this.header, this.menu, this.accountSheet, this.toast, this.keypad, this.helpSheet);
 
     this.panel.play.onTap = () => this.onPlay();
     this.panel.mode.onChange = (i) => {
@@ -173,48 +170,73 @@ export class CrashGame implements GameScene {
     this.balancePill.eventMode = 'static';
     this.balancePill.cursor = 'pointer';
     this.balancePill.on('pointertap', () => this.toast.show('Créditos demo — sem dinheiro real'));
-    this.resetBtn.onTap = () => this.resetWallet();
-    const round = (c: Container, onTap: () => void) => {
-      c.addChildAt(new Graphics().roundRect(-22, -22, 44, 44, R.input).fill(C.bgInput), 0);
-      c.eventMode = 'static';
-      c.cursor = 'pointer';
-      c.hitArea = new Rectangle(-22, -22, 44, 44);
-      c.on('pointertap', () => {
-        onTap();
-        gsap.fromTo(c.scale, { x: 0.85, y: 0.85 }, { x: 1, y: 1, duration: 0.3, ease: 'back.out(3)' });
-      });
-    };
-    this.soundBtn.addChild(speaker(this.soundIcon, sound.muted));
-    round(this.soundBtn, () => {
-      sound.toggleMute();
-      if (!sound.muted) sound.play('click');
-      this.toast.show(sound.muted ? 'Som desligado' : 'Som ligado');
-    });
-    sound.onMuteChange = (m) => speaker(this.soundIcon, m);
-    const q = makeText('?', { fontSize: 22, fontWeight: '800', fill: C.text });
-    q.anchor.set(0.5);
-    this.helpBtn.addChild(q);
-    round(this.helpBtn, () => {
+    const bars = new Graphics();
+    for (const y of [-7, 0, 7]) bars.roundRect(-10, y - 1.25, 20, 2.5, 1.25).fill(C.text);
+    this.menuBtn.addChild(new Graphics().roundRect(-22, -22, 44, 44, R.input).fill(C.bgInput), bars, this.menuDot);
+    this.menuDot.circle(14, -14, 5).fill(C.win).stroke({ width: 2, color: C.bgBase });
+    this.menuBtn.eventMode = 'static';
+    this.menuBtn.cursor = 'pointer';
+    this.menuBtn.hitArea = new Rectangle(-22, -22, 44, 44);
+    this.menuBtn.on('pointertap', () => {
       sound.play('click');
-      this.helpSheet.visible = true;
-      gsap.fromTo(this.helpSheet, { alpha: 0 }, { alpha: 1, duration: 0.25 });
+      gsap.fromTo(this.menuBtn.scale, { x: 0.85, y: 0.85 }, { x: 1, y: 1, duration: 0.3, ease: 'back.out(3)' });
+      if (this.menu.isOpen) this.menu.close();
+      else this.openMenu();
     });
     this.drawAccountIcon();
-    this.accountBtn.addChild(this.accountIcon);
-    round(this.accountBtn, () => {
-      sound.play('click');
-      this.openAccount();
-    });
-    this.header.addChild(this.headerBg, this.logo, this.accountBtn, this.soundBtn, this.helpBtn, this.resetBtn, this.balancePill);
+    this.header.addChild(this.headerBg, this.logo, this.balancePill, this.menuBtn);
   }
 
   // ---------- Conta ----------
 
-  /** Ícone de pessoa (verde quando há sessão iniciada). */
+  /** Ponto verde no ☰ quando há sessão iniciada. */
   private drawAccountIcon(): void {
-    const color = this.account.session ? C.win : C.text;
-    this.accountIcon.clear().circle(0, -5, 5).stroke({ width: 2.2, color });
-    this.accountIcon.arc(0, 11, 9, Math.PI * 1.08, Math.PI * 1.92).stroke({ width: 2.2, color, cap: 'round' });
+    this.menuDot.visible = !!this.account.session;
+  }
+
+  private openMenu(): void {
+    const s = this.account.session;
+    const color = s ? C.win : C.text;
+    const items: MenuItem[] = [
+      {
+        label: s ? `Conta ${fmtAccount(s.account)}` : 'Entrar / Criar conta',
+        icon: (g) => {
+          g.circle(0, -5, 5).stroke({ width: 2.2, color });
+          g.arc(0, 11, 9, Math.PI * 1.08, Math.PI * 1.92).stroke({ width: 2.2, color, cap: 'round' });
+        },
+        onTap: () => this.openAccount(),
+      },
+      {
+        label: sound.muted ? 'Ligar som' : 'Desligar som',
+        icon: (g) => void speaker(g, sound.muted),
+        onTap: () => {
+          sound.toggleMute();
+          if (!sound.muted) sound.play('click');
+          this.toast.show(sound.muted ? 'Som desligado' : 'Som ligado');
+        },
+      },
+      {
+        label: 'Repor saldo',
+        icon: (g) => {
+          g.arc(0, 0, 8, -Math.PI * 0.35, Math.PI * 1.45).stroke({ width: 2.2, color: C.text, cap: 'round' });
+          g.poly([4, -12, 10, -6, 2, -4]).fill(C.text);
+        },
+        onTap: () => this.resetWallet(),
+      },
+      {
+        label: 'Como jogar',
+        icon: (g) => {
+          g.circle(0, 0, 10).stroke({ width: 2.2, color: C.text });
+          g.moveTo(-3.5, -3).arc(0, -3, 3.5, Math.PI, Math.PI * 2.3).lineTo(0, 3).stroke({ width: 2.2, color: C.text, cap: 'round' });
+          g.circle(0, 6.5, 1.4).fill(C.text);
+        },
+        onTap: () => {
+          this.helpSheet.visible = true;
+          gsap.fromTo(this.helpSheet, { alpha: 0 }, { alpha: 1, duration: 0.25 });
+        },
+      },
+    ];
+    this.menu.open(items, this.menuBtn.x + 22, HEADER_H - 4, this.W, this.H);
   }
 
   private busy(): boolean {
@@ -306,12 +328,13 @@ export class CrashGame implements GameScene {
   /** Layout responsivo: coluna única no telemóvel, duas colunas em ecrãs largos. */
   private layout(sw: number, sh: number): void {
     const wide = sw / sh > 1.05 && sw >= 700;
-    this.wide = wide;
     const designH = wide ? 680 : 800;
     let scale = sw / 400;
     if (wide || sh / scale < designH) scale = sh / designH;
     const W = sw / scale;
     const H = sh / scale;
+    this.W = W;
+    this.H = H;
     this.root.scale.set(scale);
 
     const contentW = Math.min(W, wide ? 1200 / scale : 480);
@@ -320,7 +343,9 @@ export class CrashGame implements GameScene {
     // Cabeçalho
     this.headerBg.clear().rect(0, 0, W, HEADER_H).fill(C.bgBase);
     this.logo.position.set(ox + PAD + 4, HEADER_H / 2);
-    this.layoutBalance(ox + contentW - PAD);
+    this.menuBtn.position.set(ox + contentW - PAD - 22, HEADER_H / 2);
+    this.layoutBalance(ox + contentW - PAD - 44 - 10);
+    this.menu.close();
 
     const top = HEADER_H + 4;
     const bottom = H - PAD;
@@ -343,15 +368,8 @@ export class CrashGame implements GameScene {
       this.panel.position.set(ox + PAD * 2, top + stageH + PAD);
       this.panel.layout(cardW - PAD * 2);
     }
-    // Como jogar: no computador, no espaço livre do cartão dos controlos; no telemóvel, botão "?".
+    // Como jogar: no computador, no espaço livre do cartão dos controlos; também no menu ☰.
     this.help.visible = wide;
-    this.helpBtn.visible = !wide;
-    if (!wide) {
-      const cx = ox + contentW - PAD - 30;
-      this.soundBtn.position.set(cx, top + 30);
-      this.helpBtn.position.set(cx - 52, top + 30);
-      this.accountBtn.position.set(cx - 104, top + 30);
-    }
     if (wide) {
       const hw = 360 - PAD * 2;
       this.helpText.style.wordWrapWidth = hw;
@@ -383,10 +401,6 @@ export class CrashGame implements GameScene {
     const coin = this.balancePill.getChildByLabel('coin');
     if (coin) coin.position.set(-w + 24, 0);
     this.balancePill.position.set(right, HEADER_H / 2);
-    this.resetBtn.position.set(right - w - 10 - 88, HEADER_H / 2 - 22);
-    // Computador: som ao lado do Repor. Telemóvel: som e "?" no canto do ecrã do jogo (ver layout).
-    this.soundBtn.position.set(right - w - 10 - 88 - 10 - 22, HEADER_H / 2);
-    if (this.wide) this.accountBtn.position.set(this.soundBtn.x - 52, HEADER_H / 2);
   }
 
   private animateBalance(to: number): void {

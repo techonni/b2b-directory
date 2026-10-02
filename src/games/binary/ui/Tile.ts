@@ -50,11 +50,12 @@ export class Tile extends Container {
     }
   }
 
-  /** Valor + moeda C centrados na caixa. */
+  /** Moeda C + valor centrados na caixa. */
   private placeValue(): void {
     const coinW = this.coin.visible ? 22 + 6 : 0;
     const x = (this.w - (this.value.width + coinW)) / 2;
-    this.value.position.set(x, 38);
-    this.coin.position.set(x + this.value.width + 6 + 11, 38 + this.value.height / 2);
+    // Moeda C à esquerda do valor.
+    this.coin.position.set(x + 11, 38 + this.value.height / 2);
+    this.value.position.set(x + coinW, 38);
   }
 }

@@ -1,9 +1,8 @@
-import { Container, Graphics, Rectangle, type Text } from 'pixi.js';
+import { Container, Graphics, type Text } from 'pixi.js';
 import gsap from 'gsap';
 import { C, R } from './theme';
 import { makeText } from './text';
 import { coinIcon } from './icons';
-import { speaker } from '../../core/icons';
 import type { GameScene } from '../../core/scene';
 import { sound } from './audio/Sound';
 import { clamp, floor2, fmt, fmtMult } from './format';
@@ -24,16 +23,6 @@ interface Bet {
 
 const HEADER_H = 64;
 const PAD = 16;
-const HELP_H = 92;
-const HELP_H_MOBILE = 150;
-const HELP_WIDE =
-  '1. Escolhe o montante e o multiplicador em "Retirar em".   2. Carrega em Apostar antes da ronda começar.\n' +
-  '3. Se o multiplicador chegar ao teu "Retirar em" (ou carregares em Retirar), ganhas montante × multiplicador; se rebentar antes, perdes a aposta. Créditos fictícios.';
-const HELP_MOBILE =
-  '1. Escolhe o montante e o multiplicador em "Retirar em".\n' +
-  '2. Carrega em Apostar antes da ronda começar.\n' +
-  '3. Se o multiplicador chegar ao teu "Retirar em" (ou carregares em Retirar), ganhas montante × multiplicador; se rebentar antes, perdes a aposta.\n' +
-  'Créditos fictícios, sem dinheiro real.';
 const MIN_TARGET = 1.01;
 const MAX_TARGET = 1_000_000;
 
@@ -49,14 +38,6 @@ export class CrashGame implements GameScene {
   private readonly resetBtn = new Button({ label: 'Repor', width: 88, height: 44, color: C.btnSecondary, fontSize: 16 });
   private readonly balanceBg = new Graphics();
   private readonly balanceText: Text;
-  /** Botão de som (ligar/desligar), como no cabeçalho do site. */
-  private readonly soundBtn = new Container();
-  private readonly soundIcon = new Graphics();
-  /** "Como jogar" em baixo do jogo. */
-  private readonly help = new Container();
-  private readonly helpBg = new Graphics();
-  private readonly helpTitle: Text;
-  private readonly helpText: Text;
   private readonly card = new Graphics();
   private readonly scene = new CrashView();
   private readonly panel: ControlsPanel;
@@ -84,9 +65,6 @@ export class CrashGame implements GameScene {
     this.logo.anchor.set(0, 0.5);
     this.balanceText = makeText('', { fontSize: 17, fontWeight: '700', fill: C.text });
     this.balanceText.anchor.set(1, 0.5);
-    this.helpTitle = makeText('Como jogar', { fontSize: 16, fontWeight: '800', fill: C.text });
-    this.helpText = makeText(HELP_MOBILE, { fontSize: 13, fontWeight: '500', fill: C.textMuted, wordWrap: true, lineHeight: 17 });
-    this.help.addChild(this.helpBg, this.helpTitle, this.helpText);
 
     this.panel = new ControlsPanel(
       [
@@ -100,7 +78,7 @@ export class CrashGame implements GameScene {
     );
 
     this.buildHeader();
-    this.root.addChild(this.card, this.scene, this.panel, this.help, this.header, this.toast, this.keypad);
+    this.root.addChild(this.card, this.scene, this.panel, this.header, this.toast, this.keypad);
 
     this.panel.play.onTap = () => this.onPlay();
     this.panel.mode.onChange = (i) => {
@@ -147,19 +125,7 @@ export class CrashGame implements GameScene {
     this.balancePill.cursor = 'pointer';
     this.balancePill.on('pointertap', () => this.toast.show('Créditos demo — sem dinheiro real'));
     this.resetBtn.onTap = () => this.resetWallet();
-    const sbg = new Graphics().roundRect(-22, -22, 44, 44, R.input).fill(C.bgInput);
-    this.soundBtn.addChild(sbg, speaker(this.soundIcon, sound.muted));
-    this.soundBtn.eventMode = 'static';
-    this.soundBtn.cursor = 'pointer';
-    this.soundBtn.hitArea = new Rectangle(-22, -22, 44, 44);
-    this.soundBtn.on('pointertap', () => {
-      sound.toggleMute();
-      if (!sound.muted) sound.play('click');
-      this.toast.show(sound.muted ? 'Som desligado' : 'Som ligado');
-      gsap.fromTo(this.soundBtn.scale, { x: 0.85, y: 0.85 }, { x: 1, y: 1, duration: 0.3, ease: 'back.out(3)' });
-    });
-    sound.onMuteChange = (m) => speaker(this.soundIcon, m);
-    this.header.addChild(this.headerBg, this.logo, this.soundBtn, this.resetBtn, this.balancePill);
+    this.header.addChild(this.headerBg, this.logo, this.resetBtn, this.balancePill);
   }
 
   /** Repõe o saldo demo (só sem aposta em jogo, para não baralhar a ronda). */
@@ -176,8 +142,7 @@ export class CrashGame implements GameScene {
   /** Layout responsivo: coluna única no telemóvel, duas colunas em ecrãs largos. */
   private layout(sw: number, sh: number): void {
     const wide = sw / sh > 1.05 && sw >= 700;
-    const helpH = wide ? HELP_H : HELP_H_MOBILE;
-    const designH = (wide ? 680 : 800) + helpH;
+    const designH = wide ? 680 : 800;
     let scale = sw / 400;
     if (wide || sh / scale < designH) scale = sh / designH;
     const W = sw / scale;
@@ -193,7 +158,7 @@ export class CrashGame implements GameScene {
     this.layoutBalance(ox + contentW - PAD);
 
     const top = HEADER_H + 4;
-    const bottom = H - PAD - helpH;
+    const bottom = H - PAD;
     this.card.clear();
     if (wide) {
       const panelW = 360;
@@ -213,17 +178,6 @@ export class CrashGame implements GameScene {
       this.panel.position.set(ox + PAD * 2, top + stageH + PAD);
       this.panel.layout(cardW - PAD * 2);
     }
-    // Como jogar
-    const hw = contentW - PAD * 2;
-    this.helpText.text = wide ? HELP_WIDE : HELP_MOBILE;
-    this.helpText.style.wordWrapWidth = hw - 32;
-    this.help.position.set(ox + PAD, bottom + 10);
-    this.helpBg.clear().roundRect(0, 0, hw, helpH - 10, R.panel).fill(C.bgPanel);
-    this.helpTitle.position.set(16, 10);
-    this.helpText.position.set(16, 32);
-    const room = helpH - 10 - 32 - 6;
-    this.helpText.scale.set(1);
-    if (this.helpText.height > room) this.helpText.scale.set(room / this.helpText.height);
     this.toast.position.set(this.scene.x + this.scene.stageWidth / 2, this.scene.y + this.scene.noticeY);
     this.keypad.layout(W, H, ox, contentW);
   }
@@ -237,7 +191,6 @@ export class CrashGame implements GameScene {
     if (coin) coin.position.set(-w + 24, 0);
     this.balancePill.position.set(right, HEADER_H / 2);
     this.resetBtn.position.set(right - w - 10 - 88, HEADER_H / 2 - 22);
-    this.soundBtn.position.set(right - w - 10 - 88 - 10 - 22, HEADER_H / 2);
   }
 
   private animateBalance(to: number): void {

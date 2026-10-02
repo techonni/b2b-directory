@@ -1,8 +1,9 @@
-import { Container, Graphics, type Text } from 'pixi.js';
+import { Container, Graphics, Rectangle, type Text } from 'pixi.js';
 import gsap from 'gsap';
 import { C, R } from './theme';
 import { makeText } from './text';
 import { coinIcon } from './icons';
+import { speaker } from '../../core/icons';
 import type { GameScene } from '../../core/scene';
 import { sound } from './audio/Sound';
 import { clamp, floor2, fmt, fmtMult } from './format';
@@ -24,6 +25,11 @@ interface Bet {
 const HEADER_H = 64;
 const PAD = 16;
 const MIN_TARGET = 1.01;
+const HELP =
+  '1. Escolhe o montante e o multiplicador em "Retirar em".\n' +
+  '2. Carrega em Apostar antes da ronda começar.\n' +
+  '3. Se o multiplicador chegar ao teu "Retirar em" (ou carregares em Retirar), ganhas montante × multiplicador; se rebentar antes, perdes a aposta.\n' +
+  'Créditos fictícios, sem dinheiro real.';
 const MAX_TARGET = 1_000_000;
 
 /** Crash embutido no site zunrel. */
@@ -38,6 +44,20 @@ export class CrashGame implements GameScene {
   private readonly resetBtn = new Button({ label: 'Repor', width: 88, height: 44, color: C.btnSecondary, fontSize: 16 });
   private readonly balanceBg = new Graphics();
   private readonly balanceText: Text;
+  /** Botão de som (ligar/desligar) no cabeçalho. */
+  private readonly soundBtn = new Container();
+  private readonly soundIcon = new Graphics();
+  /** Telemóvel: botão "?" que abre o "Como jogar". */
+  private readonly helpBtn = new Container();
+  /** Computador: "Como jogar" no espaço livre por baixo dos controlos. */
+  private readonly help = new Container();
+  private readonly helpTitle: Text;
+  private readonly helpText: Text;
+  /** Telemóvel: janela com o "Como jogar". */
+  private readonly helpSheet = new Container();
+  private readonly helpSheetBg = new Graphics();
+  private readonly helpSheetTitle: Text;
+  private readonly helpSheetText: Text;
   private readonly card = new Graphics();
   private readonly scene = new CrashView();
   private readonly panel: ControlsPanel;
@@ -65,6 +85,17 @@ export class CrashGame implements GameScene {
     this.logo.anchor.set(0, 0.5);
     this.balanceText = makeText('', { fontSize: 17, fontWeight: '700', fill: C.text });
     this.balanceText.anchor.set(1, 0.5);
+    const helpStyle = { fontSize: 14, fontWeight: '500', fill: C.textMuted, wordWrap: true, lineHeight: 20 } as const;
+    this.helpTitle = makeText('Como jogar', { fontSize: 16, fontWeight: '800', fill: C.text });
+    this.helpText = makeText(HELP, helpStyle);
+    this.help.addChild(this.helpTitle, this.helpText);
+    this.helpSheetTitle = makeText('Como jogar', { fontSize: 20, fontWeight: '800', fill: C.text });
+    this.helpSheetText = makeText(HELP, { ...helpStyle, fontSize: 16, lineHeight: 23 });
+    this.helpSheet.addChild(this.helpSheetBg, this.helpSheetTitle, this.helpSheetText);
+    this.helpSheet.visible = false;
+    this.helpSheet.eventMode = 'static';
+    this.helpSheet.cursor = 'pointer';
+    this.helpSheet.on('pointertap', () => (this.helpSheet.visible = false));
 
     this.panel = new ControlsPanel(
       [
@@ -78,7 +109,7 @@ export class CrashGame implements GameScene {
     );
 
     this.buildHeader();
-    this.root.addChild(this.card, this.scene, this.panel, this.header, this.toast, this.keypad);
+    this.root.addChild(this.card, this.scene, this.panel, this.help, this.header, this.toast, this.keypad, this.helpSheet);
 
     this.panel.play.onTap = () => this.onPlay();
     this.panel.mode.onChange = (i) => {
@@ -125,7 +156,32 @@ export class CrashGame implements GameScene {
     this.balancePill.cursor = 'pointer';
     this.balancePill.on('pointertap', () => this.toast.show('Créditos demo — sem dinheiro real'));
     this.resetBtn.onTap = () => this.resetWallet();
-    this.header.addChild(this.headerBg, this.logo, this.resetBtn, this.balancePill);
+    const round = (c: Container, onTap: () => void) => {
+      c.addChildAt(new Graphics().roundRect(-22, -22, 44, 44, R.input).fill(C.bgInput), 0);
+      c.eventMode = 'static';
+      c.cursor = 'pointer';
+      c.hitArea = new Rectangle(-22, -22, 44, 44);
+      c.on('pointertap', () => {
+        onTap();
+        gsap.fromTo(c.scale, { x: 0.85, y: 0.85 }, { x: 1, y: 1, duration: 0.3, ease: 'back.out(3)' });
+      });
+    };
+    this.soundBtn.addChild(speaker(this.soundIcon, sound.muted));
+    round(this.soundBtn, () => {
+      sound.toggleMute();
+      if (!sound.muted) sound.play('click');
+      this.toast.show(sound.muted ? 'Som desligado' : 'Som ligado');
+    });
+    sound.onMuteChange = (m) => speaker(this.soundIcon, m);
+    const q = makeText('?', { fontSize: 22, fontWeight: '800', fill: C.text });
+    q.anchor.set(0.5);
+    this.helpBtn.addChild(q);
+    round(this.helpBtn, () => {
+      sound.play('click');
+      this.helpSheet.visible = true;
+      gsap.fromTo(this.helpSheet, { alpha: 0 }, { alpha: 1, duration: 0.25 });
+    });
+    this.header.addChild(this.headerBg, this.logo, this.soundBtn, this.helpBtn, this.resetBtn, this.balancePill);
   }
 
   /** Repõe o saldo demo (só sem aposta em jogo, para não baralhar a ronda). */
@@ -178,6 +234,32 @@ export class CrashGame implements GameScene {
       this.panel.position.set(ox + PAD * 2, top + stageH + PAD);
       this.panel.layout(cardW - PAD * 2);
     }
+    // Como jogar: no computador, no espaço livre do cartão dos controlos; no telemóvel, botão "?".
+    this.help.visible = wide;
+    this.helpBtn.visible = !wide;
+    if (!wide) {
+      const cx = ox + contentW - PAD - 30;
+      this.soundBtn.position.set(cx, top + 30);
+      this.helpBtn.position.set(cx - 52, top + 30);
+    }
+    if (wide) {
+      const hw = 360 - PAD * 2;
+      this.helpText.style.wordWrapWidth = hw;
+      this.helpTitle.position.set(0, 0);
+      this.helpText.position.set(0, 26);
+      const free = bottom - (top + PAD + ControlsPanel.HEIGHT + 24) - PAD;
+      const needed = 26 + this.helpText.height;
+      this.help.scale.set(Math.min(1, free / needed));
+      this.help.visible = free > 60;
+      this.help.position.set(ox + PAD * 2, bottom - PAD - needed * this.help.scale.y);
+    }
+    const sw2 = Math.min(contentW - PAD * 2, 440);
+    this.helpSheetText.style.wordWrapWidth = sw2 - 40;
+    const sh2 = 20 + 30 + this.helpSheetText.height + 24;
+    this.helpSheetBg.clear().rect(0, 0, W, H).fill({ color: 0x000000, alpha: 0.55 });
+    this.helpSheetBg.roundRect((W - sw2) / 2, (H - sh2) / 2, sw2, sh2, R.panel).fill(C.bgPanel);
+    this.helpSheetTitle.position.set((W - sw2) / 2 + 20, (H - sh2) / 2 + 20);
+    this.helpSheetText.position.set((W - sw2) / 2 + 20, (H - sh2) / 2 + 56);
     this.toast.position.set(this.scene.x + this.scene.stageWidth / 2, this.scene.y + this.scene.noticeY);
     this.keypad.layout(W, H, ox, contentW);
   }
@@ -191,6 +273,8 @@ export class CrashGame implements GameScene {
     if (coin) coin.position.set(-w + 24, 0);
     this.balancePill.position.set(right, HEADER_H / 2);
     this.resetBtn.position.set(right - w - 10 - 88, HEADER_H / 2 - 22);
+    // Computador: som ao lado do Repor. Telemóvel: som e "?" no canto do ecrã do jogo (ver layout).
+    this.soundBtn.position.set(right - w - 10 - 88 - 10 - 22, HEADER_H / 2);
   }
 
   private animateBalance(to: number): void {

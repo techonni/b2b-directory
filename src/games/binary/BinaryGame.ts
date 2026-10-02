@@ -14,6 +14,7 @@ import { NavBar, type Tab } from './ui/NavBar';
 import { Sheet } from './ui/Sheet';
 import { Toast } from './ui/Toast';
 import { HomeView } from './views/HomeView';
+import { MarketList } from './views/MarketList';
 import { MenuView } from './views/MenuView';
 import { PositionsView } from './views/PositionsView';
 import { TradeView } from './views/TradeView';
@@ -42,6 +43,9 @@ export class BinaryGame implements GameScene {
   private readonly trade = new TradeView();
   private readonly positions: PositionsView;
   private readonly home: HomeView;
+  /** Pares à esquerda do gráfico (só no computador). */
+  private readonly pairs: MarketList;
+  private wide = false;
   private readonly menu = new MenuView();
   private readonly nav = new NavBar();
   private readonly sheet = new Sheet();
@@ -64,6 +68,7 @@ export class BinaryGame implements GameScene {
   constructor() {
     this.positions = new PositionsView(this.feed, this.book);
     this.home = new HomeView(this.feed);
+    this.pairs = new MarketList(this.feed);
     this.accountLabel = makeText('Conta demo', { fontSize: 16, fontWeight: '500', fill: C.textMuted });
     this.balanceText = makeText('', { fontSize: 23, fontWeight: '700', fill: C.text });
     this.setup();
@@ -78,12 +83,13 @@ export class BinaryGame implements GameScene {
     this.header.addChild(this.headerBg, this.coin, this.accountLabel, this.balanceText, this.resetBtn);
     this.resetBtn.onTap = () => this.resetAccount();
 
-    this.root.addChild(this.home, this.trade, this.positions, this.menu, this.header, this.nav, this.toast, this.sheet, this.keypad);
+    this.root.addChild(this.home, this.pairs, this.trade, this.positions, this.menu, this.header, this.nav, this.toast, this.sheet, this.keypad);
     this.wire();
     this.shown.v = this.book.balance;
     this.balanceText.text = fmt(this.book.balance);
 
     this.showTab('trade', false);
+    this.pairs.select(this.marketId);
     this.syncTrade();
   }
 
@@ -131,6 +137,7 @@ export class BinaryGame implements GameScene {
     t.auto.onTap = () => (this.autoOn ? this.stopAuto('Auto parado') : this.pickAuto());
 
     this.nav.onSelect = (tab) => this.showTab(tab, true);
+    this.pairs.onSelect = (id) => this.selectMarket(id);
     this.home.onSelect = (id) => {
       this.selectMarket(id);
       this.nav.select('trade', true);
@@ -167,7 +174,7 @@ export class BinaryGame implements GameScene {
     const H = sh / scale;
     this.root.scale.set(scale);
 
-    const contentW = Math.min(W, wide ? 1200 / scale : 480);
+    const contentW = Math.min(W, wide ? 1500 / scale : 480);
     const ox = (W - contentW) / 2;
     const innerW = contentW - PAD * 2;
 
@@ -192,9 +199,14 @@ export class BinaryGame implements GameScene {
     // Listas e menu ficam legíveis no computador (largura limitada, centradas).
     const listW = wide ? Math.min(innerW, 760) : innerW;
     const listX = ox + PAD + (innerW - listW) / 2;
-    this.trade.position.set(ox + PAD, top);
+    // Computador: pares à esquerda e o resto do separador "Negociar" ao lado.
+    this.wide = wide;
+    const pw = wide ? MarketList.WIDTH + 16 : 0;
+    this.pairs.position.set(ox + PAD, top);
+    this.trade.position.set(ox + PAD + pw, top);
     for (const v of [this.positions, this.home, this.menu]) v.position.set(listX, top);
-    this.trade.layout(innerW, bottom - top, wide);
+    this.trade.layout(innerW - pw, bottom - top, wide);
+    this.pairs.visible = wide && this.tab === 'trade';
     this.positions.layout(listW, bottom - top);
     this.home.layout(listW, bottom - top);
     this.menu.layout(listW);
@@ -211,6 +223,7 @@ export class BinaryGame implements GameScene {
     this.tab = tab;
     const views: Record<Tab, Container> = { trade: this.trade, positions: this.positions, home: this.home, menu: this.menu };
     for (const [k, v] of Object.entries(views)) v.visible = k === tab;
+    this.pairs.visible = this.wide && tab === 'trade';
     if (tab === 'positions') this.positions.refresh();
     if (tab === 'home') this.home.refresh();
     if (animate) gsap.fromTo(views[tab], { alpha: 0 }, { alpha: 1, duration: 0.25 });
@@ -226,6 +239,7 @@ export class BinaryGame implements GameScene {
 
   private selectMarket(id: string): void {
     this.marketId = id;
+    this.pairs.select(id);
     this.syncTrade();
   }
 
@@ -338,6 +352,7 @@ export class BinaryGame implements GameScene {
     if (m.last.t === sec) this.trade.chart.onTick();
     if (this.active && this.book.open.some((p) => p.expiry - sec <= 3 && p.expiry - sec > 0)) sound.play('beep', 0.6);
     if (this.tab === 'home') this.home.refresh();
+    if (this.pairs.visible) this.pairs.refresh();
     if (this.tab === 'positions') this.positions.refresh();
   }
 

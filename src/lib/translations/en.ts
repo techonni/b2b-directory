@@ -927,7 +927,7 @@ export const enGuides: TranslatedGuide[] = [
     slug: "creer-sa-landing-page-leadpages-de-a-a-z",
     localSlug: "create-leadpages-landing-page-complete-guide",
     question: "How do you create your first Leadpages landing page from start to finish?",
-    summary: "The complete guide: from the free trial to a live page that collects leads, with every screen.",
+    summary: "The complete guide: from the free trial to a live page that collects leads, step by step.",
     intro:
       "This guide follows the real order of a first landing page: plan the offer, build the page with AI, review it, publish it on your domain, then collect and track leads. Plan on half a day, during the 7-day free trial.",
     steps: [
@@ -1511,7 +1511,7 @@ export const enGuides: TranslatedGuide[] = [
     slug: "creer-sa-boutique-shopify-de-a-a-z",
     localSlug: "create-shopify-store-complete-guide",
     question: "How do you create your Shopify store from start to finish?",
-    summary: "The complete guide: from sign-up to your first sale, with every admin screen.",
+    summary: "The complete guide: from sign-up to your first sale, step by step.",
     intro:
       "This guide follows the real order of a first store: prepare, sign up, fill the store, set up selling, test, then open to the public. Plan on a day of work, spread over the free trial.",
     steps: [

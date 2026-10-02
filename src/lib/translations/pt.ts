@@ -924,7 +924,7 @@ export const ptGuides: TranslatedGuide[] = [
     slug: "creer-sa-landing-page-leadpages-de-a-a-z",
     localSlug: "criar-landing-page-leadpages-completo",
     question: "Como criar a sua primeira landing page Leadpages do início ao fim?",
-    summary: "O guia completo: do teste grátis a uma página online que capta contatos, com cada tela.",
+    summary: "O guia completo: do teste grátis a uma página online que capta contatos, passo a passo.",
     intro:
       "Este guia segue a ordem real de uma primeira landing page: preparar a oferta, criar a página com IA, revê-la, publicá-la no seu domínio, depois captar e acompanhar os contatos. Conte meio dia de trabalho, durante os 7 dias de teste grátis.",
     steps: [
@@ -1508,7 +1508,7 @@ export const ptGuides: TranslatedGuide[] = [
     slug: "creer-sa-boutique-shopify-de-a-a-z",
     localSlug: "criar-loja-shopify-completo",
     question: "Como criar a sua loja Shopify do início ao fim?",
-    summary: "O guia completo: da inscrição à primeira venda, com cada tela da administração.",
+    summary: "O guia completo: da inscrição à primeira venda, passo a passo.",
     intro:
       "Este guia segue a ordem real de uma primeira loja: preparar, inscrever-se, encher a loja, configurar a venda, testar e abrir ao público. Conte um dia de trabalho, distribuído pelos 3 dias de teste grátis.",
     steps: [

@@ -10,6 +10,17 @@ Data: 28/09/2026 (7.ª sessão do dia: resultados dos lotes 2, P e 4; link Shopi
 
 ---
 
+## Sessão de 02/10/2026: o que foi feito
+
+- **Site de jogos retirado.** De 29/09 a 02/10 o `main` teve um site de jogos (PRs #61 a #79). O PR #80 repôs o site de afiliação (estado do PR #60). Os jogos continuam no histórico do git.
+- **Como o zunrel.com é servido:** o Worker `zunrel` da Cloudflare só reencaminha para `zunrel.pages.dev` (Cloudflare Pages, publica `main`). **Nunca correr `wrangler deploy`**: substituía esse reencaminhamento. O `wrangler.jsonc` foi apagado.
+- **Botão PDF em todos os guias:** FR « Télécharger en PDF », PT « Baixar em PDF », EN « Download as PDF » (evento GA4 `pdf_download`).
+- **Guia da semana 9** publicado em FR, PT e EN: `relancer-les-paniers-abandonnes-shopify` (PT `recuperar-carrinhos-abandonados-shopify`, EN `abandoned-cart-email-shopify`), 2 pins, entradas em `pinterest-agendar-2.csv` (11/10).
+- **Guias sem capturas (decisão do Techonni a 02/10):** todas as capturas foram retiradas dos guias, a pasta `public/captures/` foi apagada e os textos que falavam de capturas foram mudados. **Não voltar a pôr imagens nos passos dos guias** nem pedir capturas ao Techonni. Os pins novos saem só com título e passos (os pins antigos ficam como estão).
+- Traduções: os 49 guias estão todos em PT e EN (só o guia EN de preços da Shopify continua escondido).
+
+---
+
 ## Mudança para a Cloudflare (29/09/2026)
 
 - O zunrel.com passou da Vercel para o **Cloudflare Pages** (projeto `zunrel`, publica `main` a cada push). Motivo: o plano grátis da Vercel proíbe sites de afiliação.
@@ -30,7 +41,7 @@ Data: 28/09/2026 (7.ª sessão do dia: resultados dos lotes 2, P e 4; link Shopi
 ## Regras que não mudam
 
 0. **Newsletter em pausa até haver um inscrito real** (decisão do Techonni a 28/09/2026). Inscrito real = email que **não** contém « dario » nem « zunrel ». Até lá: não planear, não criar rascunhos, não agendar, não testar, e **nunca perguntar ao Techonni pelo « oui » nem por permissões** para a newsletter. A rotina diária `trig_017qJ8Bu58TjQ9LJzu8SXaSA` avisa-o quando chegar o primeiro inscrito real.
-1. **Publicar sempre.** Só o que está em `main` fica online (a Vercel publica `main`). Em cada passo: push → a pré-visualização da branch fica `READY` → pull request → merge → produção `READY` → ver a página com `web_fetch_vercel_url` (esta máquina não abre o zunrel.com nem sites externos diretamente).
+1. **Publicar sempre.** Só o que está em `main` fica online (o Cloudflare Pages publica `main`). Em cada passo: `npm run build` → push → pull request → merge → ver a página no zunrel.com (a sessão na nuvem não abre o zunrel.com: pedir ao Techonni para confirmar).
 2. **Fazer todos os passos de uma lista na mesma sessão** (regra no CLAUDE.md). O que precisar do Techonni fica « pronto, falta o Techonni » e passa-se ao seguinte.
 3. **Newsletter com visual bloqueado.** Ver `docs/newsletter/MODELE-FIGE.md`. Criar só com `scripts/mailchimp.mjs newsletter`. **Nunca enviar aos assinantes sem o « oui » do Techonni** para essa campanha.
 4. **A morada no rodapé dos emails fica como está.**
@@ -87,7 +98,6 @@ Data: 28/09/2026 (7.ª sessão do dia: resultados dos lotes 2, P e 4; link Shopi
 
 - [x] Vercel Web Analytics ativado (28/09).
 - [x] Trabalho local na app Claude do Mac (29/09): projeto em `/Users/techonni/zunrel`, `npm install` e `npm run build` funcionam aqui, `git push` também (conta techonni). Servidor local: `npx astro dev --background` → http://localhost:4321.
-- [ ] 5 guias sem captura (remerciement, pop-up, Google Analytics, Instagram, encomendas): o Techonni decidiu deixar para mais tarde.
 
 - [x] **Impact:** sessão iniciada no Chrome (confirmado pelo Chrome a 28/09).
 
@@ -180,16 +190,13 @@ Data: 28/09/2026 (7.ª sessão do dia: resultados dos lotes 2, P e 4; link Shopi
 
 ## Próxima sessão (fazer tudo, por esta ordem)
 
-0. Ver se a produção da Vercel está `READY` com o último commit de `main` (a 28/09 houve um « rate limit »).
-1. **Sem Chrome.** Ler as visitas na Vercel (`aggregate_pageviews`, por `requestPath` e por `referrerHostname`, 7 dias). Só ler `RESULTADOS-CHROME.md` se o Techonni disser que o Chrome voltou. Se houver resultados novos, passar o lote seguinte da fila para « Lote atual » em `CHROME-PROXIMO.md` (máx. 3 tarefas, 2 sites) e publicar. Se não houver resultados novos, seguir para o ponto 5.
-2. Capturas: pôr cada captura no passo certo do guia (lista no ponto 5) e refazer os pins desses guias com `make-pins.mjs --force` (e `--variant erreurs --force`).
-3. Search Console (lote 3b, a partir de 30/09): `seoTitle` / `seoDescription` nas 5 páginas com mais impressões e CTR mais baixo.
-4. GA4: próxima leitura na semana de 05/10 (pedir num lote com o Search Console): `affiliate_click` por `placement` e `guide`; `web_vital` por página.
-5. Guia da semana 9 (« e-mail aux clients qui abandonnent leur panier sur Shopify », ver `plano-growth.md`), pins em `pinterest-agendar-2.csv` em FR, PT e EN, pin normal + pin `--variant erreurs`, 2 links internos, pins no CSV. Capturas quando chegarem: `shopify-page-contact.webp` (lote 5, passo 1 do guia do formulário), `shopify-commandes.webp` (lote 5, passo 1 do guia das encomendas + refazer os pins), `leadpages-popup.webp` e `leadpages-popup-publish.webp` (lote 5b, passos 1 e 4 do guia do pop-up), `leadpages-tracking.webp` (lote 5b, passo 3 do guia Google Analytics), `leadpages-merci.webp` e `leadpages-form-apres-envoi.webp` (lote 5c, passos 1 e 5 do guia da página de agradecimento). Corrigir os nomes dos menus se forem outros.
-6. Newsletter: **nada** enquanto não houver inscrito real (regra 0). Não perguntar ao Techonni.
-7. Traduzir para PT e EN mais 2 guias (os mais visitados quando houver dados; senão `ouvrir-sa-boutique-shopify-au-public` e `faire-un-test-ab-leadpages`).
-8. `fila-redes.md` tem posts até ao dia 22 e pins até ao dia 20: manter 7 dias de avanço. Antes de 09/10: completar `pinterest-agendar-2.csv` (a partir de 10/10, 10 por dia, máx. 15) com os guias novos e imagens novas (3.ª variante de pin) e pô-lo num lote do Chrome.
-9. Atualizar este ficheiro, publicar e enviar ao Techonni.
+1. Ler as visitas (GA4 ou Cloudflare Web Analytics, se o Techonni o tiver ativado): páginas mais vistas e de onde vêm.
+2. Search Console (quando o Techonni der os dados): `seoTitle` / `seoDescription` nas 5 páginas com mais impressões e CTR mais baixo.
+3. GA4, semana de 05/10: `affiliate_click` por `placement` e `guide`; `web_vital` por página; `pdf_download`.
+4. Guia da semana 10 (« compte à rebours sur une page Leadpages », ver `plano-growth.md`) em FR, PT e EN, sem capturas, com 2 pins e 2 links internos, pins no CSV.
+5. Newsletter: **nada** enquanto não houver inscrito real (regra 0). Não perguntar ao Techonni.
+6. `fila-redes.md`: manter 7 dias de avanço. Antes de 09/10: completar `pinterest-agendar-2.csv` (a partir de 10/10, 10 por dia, máx. 15) com os guias novos.
+7. Atualizar este ficheiro, publicar e enviar ao Techonni.
 
 ---
 

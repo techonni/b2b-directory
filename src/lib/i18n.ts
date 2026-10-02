@@ -1,5 +1,5 @@
 // Versions portugaise (/pt/) et anglaise (/en/) des guides les plus lus.
-// Le français reste la langue principale : une traduction reprend les captures, les sources et
+// Le français reste la langue principale : une traduction reprend les sources et
 // les outils du guide français (même `slug`) et ne contient que le texte.
 import { ptGuides } from "./translations/pt";
 import { enGuides } from "./translations/en";
@@ -14,7 +14,7 @@ export type TranslatedGuide = {
   summary: string;
   intro: string;
   // Même nombre d'étapes, dans le même ordre que le guide français.
-  steps: { title: string; text: string; alt?: string }[];
+  steps: { title: string; text: string }[];
   pitfalls: string[];
   // Pas encore publié (par exemple : prix à vérifier pour ce pays).
   hidden?: boolean;
@@ -114,11 +114,11 @@ export const ui = {
     listIntro:
       "Todos os guias do Zunrel, traduzidos do francês: Leadpages, HTML Pub e Shopify, passo a passo.",
     uiNote:
-      "As capturas mostram a interface usada no guia original (Shopify em francês, Leadpages em inglês). Na sua conta, os botões aparecem na sua língua.",
+      "Os nomes dos botões vêm do guia original (Shopify em francês, Leadpages em inglês). Na sua conta, os botões aparecem na sua língua.",
     stepByStep: "Passo a passo",
     inShort: "O essencial em 30 segundos",
     avoid: "A evitar:",
-    seeDetail: "Ver o detalhe com as capturas ↓",
+    seeDetail: "Ver o passo a passo ↓",
     downloadPdf: "Baixar em PDF",
     pitfalls: "Erros frequentes",
     sources: "Fontes oficiais",
@@ -155,11 +155,11 @@ export const ui = {
     listIntro:
       "Every Zunrel guide, translated from French: Leadpages, HTML Pub and Shopify, step by step.",
     uiNote:
-      "Screenshots show the interface used in the original guide (Shopify in French, Leadpages in English). In your account, buttons appear in your language.",
+      "Button names come from the original guide (Shopify in French, Leadpages in English). In your account, buttons appear in your language.",
     stepByStep: "Step by step",
     inShort: "The essentials in 30 seconds",
     avoid: "Avoid:",
-    seeDetail: "See the details with screenshots ↓",
+    seeDetail: "See the step-by-step ↓",
     downloadPdf: "Download as PDF",
     pitfalls: "Common mistakes",
     sources: "Official sources",

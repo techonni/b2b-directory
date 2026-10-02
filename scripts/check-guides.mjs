@@ -1,5 +1,5 @@
 // Vérifie le contenu des guides sans construire le site (le registre npm est parfois bloqué) :
-// syntaxe de src/lib/guides.ts, slugs `related` et `tools`, captures, épingles Pinterest,
+// syntaxe de src/lib/guides.ts, slugs `related` et `tools`, épingles Pinterest,
 // guides qui ont moins de 2 liens internes, et guides à remettre à jour (plus de 30 jours).
 // Lancer : node --experimental-strip-types scripts/check-guides.mjs
 import { copyFileSync, existsSync, mkdtempSync } from "node:fs";
@@ -26,10 +26,6 @@ for (const guide of guides) {
     else if (slug !== guide.slug) inbound[slug]++;
   }
   for (const tool of guide.tools) if (!toolSlugs.has(tool.slug)) errors.push(`${guide.slug} : outil inconnu ${tool.slug}`);
-  for (const step of guide.steps) {
-    if (step.image && !existsSync(join(root, "public", step.image.src))) errors.push(`${guide.slug} : image absente ${step.image.src}`);
-  }
-  if (!guide.steps.some((step) => step.image)) warnings.push(`${guide.slug} : aucune capture`);
   if (!existsSync(join(root, "public/pins", `${guide.slug}.jpg`))) warnings.push(`${guide.slug} : pas d'épingle Pinterest`);
 }
 

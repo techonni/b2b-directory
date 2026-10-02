@@ -40,7 +40,7 @@ Techonni prefers a Markdown handoff file. Before ending a session, update `docs/
 When the handoff file (or Techonni) gives a list of steps, **carry out every step in the same session**, one after the other, without stopping after the first one to ask whether to continue. Do not read « un passo de cada vez » as « one step per session »: it means finish, publish and check each step before starting the next one.
 
 - Publish as you go (merge into `main`, production `READY`, check zunrel.com) so nothing is lost if the session stops.
-- For a step that needs Techonni (his dashboards, social accounts, his « oui », screenshots from his Chrome), do everything that can be done from here (texts, files, pages, instructions), mark it « prêt, falta o Techonni », and move on to the next step.
+- For a step that needs Techonni (his dashboards, social accounts, his « oui »), do everything that can be done from here (texts, files, pages, instructions), mark it « prêt, falta o Techonni », and move on to the next step.
 - Only stop early if a step is truly blocked by a decision that is his to make; even then, do the other steps first.
 - At the end, the handoff file lists every step with its status (feito / pronto, falta o Techonni / bloqueado e porquê).
 
@@ -51,7 +51,7 @@ Co-work / Claude in Chrome is **stopped** (credits run out too fast). Do not wri
 - Mailchimp: API and connector from here.
 - Pinterest: Claude Code prepares `docs/growth/pinterest-agendar-N.csv`; Techonni uploads it (Settings → Bulk create Pins) every ~10 days.
 - X / LinkedIn: Claude Code keeps the week's posts ready in `docs/growth/fila-redes.md`; Techonni copies them.
-- Screenshots, PartnerStack, Impact, Search Console: Techonni, only when he wants (about once a month). Guides can be published without screenshots.
+- Guides have no screenshots (Techonni, 2026-10-02): never add images to guide steps. PartnerStack, Impact, Search Console: Techonni, only when he wants (about once a month).
 The Chrome sections below are kept only as history.
 
 ## Working with Claude in Chrome (Co-work) — paused

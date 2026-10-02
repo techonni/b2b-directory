@@ -825,6 +825,119 @@ export const enGuides: TranslatedGuide[] = [
     ],
   },
   {
+    slug: "ajouter-un-compte-a-rebours-leadpages",
+    localSlug: "countdown-timer-leadpages",
+    question: "How to add a countdown timer to a Leadpages page?",
+    summary: "A timer that shows when a sale ends or a webinar starts, set to a fixed date or per visitor.",
+    intro:
+      "A countdown reminds visitors that an offer ends: a sale, a closing signup, a webinar about to start. Leadpages has a ready-made « Countdown » element, no code needed.",
+    steps: [
+      {
+        title: "Open the page in the editor",
+        text: "In Leadpages, open the landing page and click « Edit ». Pick where the timer helps most: near the offer headline or right above the call-to-action button.",
+      },
+      {
+        title: "Add the « Countdown » element",
+        text: "From the editor's list of elements (widgets), drag « Countdown » to the chosen spot. A timer with days, hours, minutes and seconds appears on the page.",
+      },
+      {
+        title: "Choose the timer type",
+        text: "Click the timer to open its settings. « Standard » counts down to a fixed date and time, the same for everyone: ideal for a webinar or the end of a sale. « Evergreen » starts on each person's first visit (for example 2 days): useful for a welcome offer.",
+      },
+      {
+        title: "Set the date, time and time zone",
+        text: "For a « Standard » timer, enter the end date and time and check the time zone: being off by one hour is enough to upset visitors. For « Evergreen », enter the length in days, hours and minutes.",
+      },
+      {
+        title: "Decide what happens at zero",
+        text: "When the timer hits zero, it stops. Plan what comes next: update the page or redirect it to an « offer closed » page, and remove the offer button if it no longer applies.",
+      },
+      {
+        title: "Adjust the style and test on mobile",
+        text: "Change the colors so the timer stands out without overpowering the headline. Switch to mobile preview: on a small screen, the timer should fit on one line or wrap cleanly. Update the page.",
+      },
+    ],
+    pitfalls: [
+      "A fake countdown that restarts on every visit while the offer never ends: it's deceptive, and the FTC treats fake urgency as a deceptive practice.",
+      "Forgetting the time zone: the sale « ends » an hour early or late for some visitors.",
+      "Leaving the page live after the end with the timer at zero and a button that still works.",
+    ],
+  },
+  {
+    slug: "creer-une-page-bientot-disponible-html-pub",
+    localSlug: "coming-soon-page-html-pub",
+    question: "How to create a coming soon page with HTML Pub?",
+    summary: "A simple page that announces your project and collects emails before launch, built with AI in a few minutes.",
+    intro:
+      "Before opening a store or launching an offer, a coming soon page announces what's next and collects emails from curious visitors. With HTML Pub's AI assistant, you build it from one description.",
+    steps: [
+      {
+        title: "Open the create screen",
+        text: "In HTML Pub, click « Create » in the left menu. When the assistant asks what you're making, choose « Landing page ».",
+      },
+      {
+        title: "Describe the page in a few lines",
+        text: "Give the project name, what it offers, the launch date if you know it, your colors and what you want: « Coming soon page for my candle store, a headline, one sentence, an email field, launching in November. » Send.",
+      },
+      {
+        title: "Keep one goal: the signup",
+        text: "A coming soon page doesn't need a menu or ten sections. Ask the assistant for a headline, one compelling sentence, an email field and a button. Give a reason to sign up: be the first to know, or a launch discount.",
+      },
+      {
+        title: "Check the form",
+        text: "Form submissions are saved in HTML Pub. Send yourself a test signup and check that it arrives. If you use an email tool, connect it so every signup lands there automatically.",
+      },
+      {
+        title: "Publish on a simple address",
+        text: "Check the page on your phone, then publish. If you have a domain, use it: the coming soon page holds the address until the store or site is ready.",
+      },
+      {
+        title: "Plan launch day",
+        text: "On the day, replace the page with the real sales page (or redirect to the store), then email everyone who signed up. They're your first customers: they were waiting to hear from you.",
+      },
+    ],
+    pitfalls: [
+      "A page with no reason to sign up: « stay in the loop » isn't enough. Promise something concrete.",
+      "Announcing a launch date you can't keep: « in November » beats a missed exact day.",
+      "Collecting emails and never writing: by launch, people have forgotten who you are. One email every two weeks is enough.",
+    ],
+  },
+  {
+    slug: "ajouter-des-avis-clients-shopify",
+    localSlug: "add-product-reviews-shopify",
+    question: "How to add customer reviews on Shopify?",
+    summary: "Install a reviews app, show star ratings on product pages and ask for a review after every order.",
+    intro:
+      "Reviews reassure visitors who don't know you yet. Shopify retired its official reviews app in 2024, so you use an app from the Shopify App Store; several have a free plan.",
+    steps: [
+      {
+        title: "Choose a reviews app",
+        text: "In your Shopify admin, open the Shopify App Store and search « product reviews ». Check the free plan, other merchants' ratings and the « Built for Shopify » badge. Judge.me, for example, has a free plan with unlimited reviews.",
+      },
+      {
+        title: "Install it and set the language",
+        text: "Click « Install » and accept the permissions. In the app settings, choose the language of what customers see (form, emails, stars).",
+      },
+      {
+        title: "Show reviews on the product page",
+        text: "Go to « Online Store » > « Themes » and click « Customize ». Open a product template, click « Add block » and, under « Apps », choose the app's reviews block. Place it below the description, add the star rating block under the title too, then save.",
+      },
+      {
+        title: "Ask for a review after every order",
+        text: "Turn on the app's review request email, sent a few days after delivery. Give customers time to receive and use the product: 7 to 14 days depending on what you sell.",
+      },
+      {
+        title: "Moderate and reply",
+        text: "Choose whether reviews go live right away or after you approve them. Reply to negative reviews calmly and with a fix: visitors mostly read your answer.",
+      },
+    ],
+    pitfalls: [
+      "Making up reviews or only showing the good ones: the FTC bans fake reviews and review suppression, and customers can tell.",
+      "Offering a discount only for a positive review: the reward must be the same whatever the rating, and disclosed.",
+      "Installing several reviews apps at once: they slow your store down and show stars twice.",
+    ],
+  },
+  {
     slug: "ajouter-un-produit-shopify",
     localSlug: "add-product-shopify",
     question: "How to add a product on Shopify?",

@@ -76,7 +76,8 @@ const labelWords: Record<OtherLang, [RegExp, string][]> = {
     [/variantes de produit/, "variantes de produto"], [/ajouter et mettre à jour des produits/, "adicionar e atualizar produtos"],
     [/créer et modifier des pages/, "criar e editar páginas"], [/traiter les commandes/, "processar pedidos"], [/: commandes$/, ": pedidos"],
     [/^Shopify: réductions en pourcentage ou montant fixe$/, "Ajuda Shopify: descontos em percentagem ou valor fixo"], [/zones et tarifs d'expédition/, "zonas e tarifas de envio"], [/tarifs d'expédition/, "tarifas de envio"],
-    [/ajouter et prévisualiser des thèmes/, "adicionar e pré-visualizar temas"], [/publier un thème/, "publicar um tema"]],
+    [/ajouter et prévisualiser des thèmes/, "adicionar e pré-visualizar temas"], [/publier un thème/, "publicar um tema"],
+    [/récupérer les paiements abandonnés/, "recuperar checkouts abandonados"], [/automatisations de marketing/, "automações de marketing"]],
   en: [[/connecter un domaine tiers/, "connecting a third-party domain"], [/ajouter des produits/, "add products"], [/ajouter les politiques de la boutique/, "add store policies"], [/protection par mot de passe/, "password protection"], [/préférences de la boutique en ligne/, "online store preferences"], [/bien démarrer/, "getting started"], [/connecter des intégrations/, "connecting integrations"], [/connecteur MCP pour Claude/, "Claude MCP connector"], [/créer des pubs vidéo dans Ad Studio/, "video ads in Ad Studio"], [/offres et facturation/, "plans and billing"], [/récupérer les réponses de formulaires/, "collecting form submissions"], [/réglages de page/, "page settings"], [/utiliser les blogs/, "using blogs"], [/utiliser les sites/, "using sites"], [/cartes de chaleur/, "heatmaps"], [/créer un pop-up/, "create a pop-up"], [/publier un pop-up/, "publish a pop-up"], [/intégration Shopify/, "Shopify integration"], [/intégrations/, "integrations"], [/tests A\/B et Smart Traffic/, "A/B testing and Smart Traffic"], [/tests A\/B/, "A/B testing"], [/conversion analytics/, "conversion analytics"], 
     [/ \(aide\)/, " (help)"], [/codes de réduction/, "discount codes"], [/utiliser le créateur de pages IA/, "using the AI page builder"],
     [/connecter un domaine/, "connecting a custom domain"], [/Connecter votre domaine \(nouveau Leadpages\)/, "Leadpages: connect your domain"],
@@ -85,7 +86,8 @@ const labelWords: Record<OtherLang, [RegExp, string][]> = {
     [/variantes de produit/, "product variants"], [/ajouter et mettre à jour des produits/, "add and update products"],
     [/créer et modifier des pages/, "creating and editing pages"], [/traiter les commandes/, "fulfilling orders"], [/: commandes$/, ": orders"],
     [/^Shopify: réductions en pourcentage ou montant fixe$/, "Shopify Help: percentage or fixed amount discounts"], [/zones et tarifs d'expédition/, "setting up shipping zones and rates"], [/tarifs d'expédition/, "shipping rates"],
-    [/ajouter et prévisualiser des thèmes/, "adding and previewing themes"], [/publier un thème/, "publishing a theme"]],
+    [/ajouter et prévisualiser des thèmes/, "adding and previewing themes"], [/publier un thème/, "publishing a theme"],
+    [/récupérer les paiements abandonnés/, "recovering abandoned checkouts"], [/automatisations de marketing/, "marketing automations"]],
 };
 
 export function localizeSource(lang: OtherLang, source: { label: string; url: string }) {
@@ -117,7 +119,7 @@ export const ui = {
     inShort: "O essencial em 30 segundos",
     avoid: "A evitar:",
     seeDetail: "Ver o detalhe com as capturas ↓",
-    downloadPdf: "Descarregar em PDF",
+    downloadPdf: "Baixar em PDF",
     pitfalls: "Erros frequentes",
     sources: "Fontes oficiais",
     readNext: "Ler a seguir",

@@ -819,6 +819,45 @@ export const enGuides: TranslatedGuide[] = [
     ],
   },
   {
+    slug: "relancer-les-paniers-abandonnes-shopify",
+    localSlug: "abandoned-cart-email-shopify",
+    question: "How to email customers who abandon their cart on Shopify?",
+    summary: "Turn on Shopify's automatic email, pick the right delay and follow up by hand on your biggest carts.",
+    intro:
+      "Many visitors fill their cart, start checkout, then leave. Shopify keeps these abandoned checkouts and can automatically send an email with a link that brings the customer back to their cart, with no paid app.",
+    steps: [
+      {
+        title: "Open the abandoned checkouts list",
+        text: "In your Shopify admin, click « Orders », then « Abandoned checkouts ». You see every customer who entered their email at checkout without completing the order, with what was in their cart.\n\nThe email status column shows whether a reminder has been sent, and the recovery status shows whether the customer bought in the end.",
+      },
+      {
+        title: "Turn on the automatic email",
+        text: "Go to « Apps » > « Messaging », then « Automations ». On Shopify's abandoned checkout automation, click « Show actions » > « Edit settings » and select sending abandoned checkout emails automatically.",
+      },
+      {
+        title: "Choose who gets the email and when",
+        text: "In « Send to », choose who receives it: only customers subscribed to your marketing emails, or everyone who abandoned checkout. In « Send after », choose the delay (for example 1 hour, 6 hours, 10 hours or 24 hours).\n\nA short delay (a few hours) reaches customers while they are still thinking about the purchase. Save.",
+      },
+      {
+        title: "Customize the message",
+        text: "Open the email template to add your logo, your colors and text that sounds like you. Keep one clear button back to the cart: that is what brings the customer back.\n\nTo give a nudge, you can add a discount code to the text, but not every time: otherwise customers learn to abandon on purpose.",
+      },
+      {
+        title: "Follow up by hand on big carts",
+        text: "For an important cart, open it in « Abandoned checkouts » and send the recovery email yourself from the checkout page. You can add a personal note or answer a shipping question.",
+      },
+      {
+        title: "Measure what the reminders bring in",
+        text: "Check « Abandoned checkouts » every week: the recovery status shows which carts turned into orders. If few customers come back, try another delay or a clearer subject line before adding a discount.",
+      },
+    ],
+    pitfalls: [
+      "Emailing everyone without checking the rules where you sell: some countries require consent before a marketing email. If in doubt, keep « subscribed to marketing ».",
+      "Putting a discount in every reminder: customers start waiting for the email before they buy.",
+      "Not testing: place an order yourself up to checkout with your email, leave, and check that the email arrives and the link reopens the cart.",
+    ],
+  },
+  {
     slug: "ajouter-un-produit-shopify",
     localSlug: "add-product-shopify",
     question: "How to add a product on Shopify?",

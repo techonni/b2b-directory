@@ -1791,6 +1791,55 @@ export const guides: Guide[] = [
     related: ["creer-une-page-lien-en-bio-avec-html-pub", "ajouter-un-produit-shopify", "creer-un-code-de-reduction-shopify"],
   },
   {
+    slug: "relancer-les-paniers-abandonnes-shopify",
+    question: "Comment envoyer un e-mail aux clients qui abandonnent leur panier sur Shopify ?",
+    seoTitle: "Relancer les paniers abandonnés sur Shopify (e-mail automatique)",
+    summary: "Activer l'e-mail automatique de Shopify, choisir le bon délai et relancer à la main les paniers les plus importants.",
+    theme: "boutique",
+    publishedOn: "2026-10-02",
+    updatedOn: "2026-10-02",
+    intro:
+      "Beaucoup de visiteurs remplissent leur panier, commencent le paiement, puis partent. Shopify garde ces paiements abandonnés et peut envoyer tout seul un e-mail avec un lien qui ramène le client à son panier, sans application payante.",
+    steps: [
+      {
+        title: "Ouvrez la liste des paiements abandonnés",
+        text: "Dans l'administration Shopify, cliquez sur « Commandes », puis sur « Paiements abandonnés ». Vous voyez chaque client qui a laissé son adresse e-mail au paiement sans terminer sa commande, avec le contenu de son panier.\n\nLa colonne de l'état de l'e-mail indique si une relance est déjà partie, et l'état de récupération si le client a finalement acheté.",
+      },
+      {
+        title: "Activez l'e-mail automatique",
+        text: "Allez dans « Applications » > « Messaging », puis « Automatisations ». Sur l'automatisation des paiements abandonnés de Shopify, cliquez sur « Afficher les actions » > « Modifier les paramètres » et cochez l'envoi automatique des e-mails de paiement abandonné.",
+      },
+      {
+        title: "Choisissez à qui et quand l'e-mail part",
+        text: "Dans « Envoyer à », choisissez qui reçoit l'e-mail : seulement les clients abonnés à vos e-mails marketing, ou tous ceux qui ont abandonné leur paiement. Dans « Envoyer après », choisissez le délai (par exemple 1 heure, 6 heures, 10 heures ou 24 heures).\n\nUn délai court (quelques heures) touche le client pendant qu'il pense encore à son achat. Enregistrez.",
+      },
+      {
+        title: "Personnalisez le message",
+        text: "Ouvrez le modèle de l'e-mail pour ajouter votre logo, vos couleurs et un texte qui vous ressemble. Gardez un seul bouton bien visible vers le panier : c'est lui qui ramène le client.\n\nPour donner un coup de pouce, vous pouvez ajouter un code de réduction dans le texte, mais pas à chaque fois : sinon les clients apprennent à abandonner exprès.",
+      },
+      {
+        title: "Relancez à la main les gros paniers",
+        text: "Pour un panier important, ouvrez-le dans « Paiements abandonnés » et envoyez vous-même l'e-mail de récupération depuis la page du paiement. Vous pouvez y ajouter un mot personnel ou répondre à une question sur la livraison.",
+      },
+      {
+        title: "Mesurez ce que les relances rapportent",
+        text: "Revenez dans « Paiements abandonnés » chaque semaine : l'état de récupération montre les paniers qui ont fini en commande. Si peu de clients reviennent, essayez un autre délai ou un objet d'e-mail plus clair avant d'ajouter une réduction.",
+      },
+    ],
+    pitfalls: [
+      "Envoyer l'e-mail à tout le monde sans vérifier les règles de votre pays : en Europe, une relance commerciale à un client qui n'a pas accepté vos e-mails peut poser problème. Dans le doute, gardez « abonnés au marketing ».",
+      "Mettre une réduction dans chaque relance : vos clients finissent par attendre l'e-mail avant d'acheter.",
+      "Ne pas tester : passez vous-même une commande jusqu'au paiement avec votre e-mail, quittez, et vérifiez que l'e-mail arrive et que le lien rouvre bien le panier.",
+    ],
+    tools: [{ slug: "shopify", why: "E-mail de paiement abandonné inclus dans Shopify Messaging, sans application payante." }],
+    sources: [
+      { label: "Aide Shopify : récupérer les paiements abandonnés", url: "https://help.shopify.com/fr/manual/promoting-marketing/create-marketing/abandoned-checkouts" },
+      { label: "Aide Shopify : automatisations de marketing (Shopify Messaging)", url: "https://help.shopify.com/fr/manual/promoting-marketing/create-marketing/shopify-messaging/marketing-automations" },
+      { label: "CNIL : la prospection commerciale par courrier électronique", url: "https://www.cnil.fr/fr/la-prospection-commerciale-par-courrier-electronique" },
+    ],
+    related: ["creer-un-code-de-reduction-shopify", "suivre-ses-commandes-et-expedier-shopify", "vendre-sur-instagram-avec-shopify"],
+  },
+  {
     slug: "ajouter-des-variantes-shopify",
     question: "Comment ajouter des variantes (taille, couleur) à un produit Shopify ?",
     summary: "Un seul produit, plusieurs tailles ou couleurs, chacune avec son prix, son stock et sa photo.",
@@ -2048,7 +2097,7 @@ export const guides: Guide[] = [
     sources: [
       { label: "Shopify : réductions en pourcentage ou montant fixe", url: "https://help.shopify.com/fr/manual/discounts/discount-types/percentage-fixed-amount" },
     ],
-    related: ["attirer-des-clients-avec-une-landing-page", "accepter-les-paiements-shopify"],
+    related: ["attirer-des-clients-avec-une-landing-page", "accepter-les-paiements-shopify", "relancer-les-paniers-abandonnes-shopify"],
   },
   {
     slug: "connecter-html-pub-a-shopify",
@@ -2291,7 +2340,7 @@ export const guides: Guide[] = [
       { label: "Aide Shopify : traiter les commandes", url: "https://help.shopify.com/fr/manual/fulfillment/fulfilling-orders" },
       { label: "Aide Shopify : commandes", url: "https://help.shopify.com/fr/manual/orders" },
     ],
-    related: ["regler-l-expedition-shopify", "rediger-les-politiques-shopify", "ouvrir-sa-boutique-shopify-au-public"],
+    related: ["regler-l-expedition-shopify", "rediger-les-politiques-shopify", "ouvrir-sa-boutique-shopify-au-public", "relancer-les-paniers-abandonnes-shopify"],
   },
   {
     slug: "rediger-les-politiques-shopify",

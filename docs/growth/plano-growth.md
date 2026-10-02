@@ -51,7 +51,7 @@ Uma pergunta por guia, só sobre Leadpages, HTML Pub e Shopify. Antes de escreve
 | 6 ✅ | Comment ajouter Google Analytics à une page Leadpages ? (28/09, `ajouter-google-analytics-a-une-page-leadpages`) | optimiser | Medir antes de otimizar |
 | 7 ✅ | Comment créer une page de remerciement après un formulaire Leadpages ? (28/09, `creer-une-page-de-remerciement-leadpages`) | contacts | Melhora as conversões e a entrega de brindes |
 | 8 ✅ | Comment vendre sur Instagram avec Shopify ? (28/09, `vendre-sur-instagram-avec-shopify`) | boutique | Tráfego grátis para as boutiques novas |
-| 9 | Comment envoyer un e-mail aux clients qui abandonnent leur panier sur Shopify ? | boutique | Recupera vendas perdidas, funcionalidade incluída |
+| 9 ✅ | Comment envoyer un e-mail aux clients qui abandonnent leur panier sur Shopify ? (02/10, `relancer-les-paniers-abandonnes-shopify`) | boutique | Recupera vendas perdidas, funcionalidade incluída |
 | 10 | Comment ajouter un compte à rebours sur une page Leadpages ? | optimiser | Urgência para lançamentos e promoções |
 | 11 | Comment créer une page « bientôt disponible » (coming soon) avec HTML Pub ? | creer | Antes do lançamento, capta e-mails |
 | 12 | Comment ajouter des avis clients sur Shopify ? | boutique | Confiança = conversões |

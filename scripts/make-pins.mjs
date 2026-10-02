@@ -51,6 +51,7 @@ const titles = {
   "ajouter-google-analytics-a-une-page-leadpages": "[Google Analytics] sur Leadpages",
   "creer-une-page-de-remerciement-leadpages": "Une page [Merci] qui convertit",
   "vendre-sur-instagram-avec-shopify": "Vendre sur [Instagram] avec Shopify",
+  "relancer-les-paniers-abandonnes-shopify": "Relancer les [paniers abandonnés] sur Shopify",
   "creer-une-page-lien-en-bio-avec-html-pub": "Votre page [lien en bio] Instagram et TikTok",
 };
 

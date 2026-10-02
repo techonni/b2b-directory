@@ -816,6 +816,45 @@ export const ptGuides: TranslatedGuide[] = [
     ],
   },
   {
+    slug: "relancer-les-paniers-abandonnes-shopify",
+    localSlug: "recuperar-carrinhos-abandonados-shopify",
+    question: "Como enviar um e-mail aos clientes que abandonam o carrinho na Shopify?",
+    summary: "Ativar o e-mail automático da Shopify, escolher o atraso certo e contactar à mão os carrinhos mais importantes.",
+    intro:
+      "Muitos visitantes enchem o carrinho, começam o pagamento e depois saem. A Shopify guarda esses checkouts abandonados e pode enviar sozinha um e-mail com um link que leva o cliente de volta ao carrinho, sem aplicação paga.",
+    steps: [
+      {
+        title: "Abra a lista de checkouts abandonados",
+        text: "No painel da Shopify, clique em « Pedidos » e depois em « Checkouts abandonados ». Você vê cada cliente que deixou o e-mail no pagamento sem terminar o pedido, com o conteúdo do carrinho.\n\nA coluna do estado do e-mail mostra se já saiu uma mensagem, e o estado de recuperação mostra se o cliente acabou por comprar.",
+      },
+      {
+        title: "Ative o e-mail automático",
+        text: "Vá a « Apps » > « Messaging » e depois « Automações ». Na automação de checkouts abandonados da Shopify, clique em « Mostrar ações » > « Editar configurações » e marque o envio automático dos e-mails de checkout abandonado.",
+      },
+      {
+        title: "Escolha para quem e quando o e-mail sai",
+        text: "Em « Enviar para », escolha quem recebe o e-mail: só os clientes inscritos nos seus e-mails de marketing, ou todos os que abandonaram o pagamento. Em « Enviar após », escolha o atraso (por exemplo 1 hora, 6 horas, 10 horas ou 24 horas).\n\nUm atraso curto (poucas horas) chega ao cliente enquanto ele ainda pensa na compra. Salve.",
+      },
+      {
+        title: "Personalize a mensagem",
+        text: "Abra o modelo do e-mail para adicionar o seu logo, as suas cores e um texto com a sua cara. Mantenha um só botão bem visível para o carrinho: é ele que traz o cliente de volta.\n\nPara dar um empurrão, pode pôr um código de desconto no texto, mas não sempre: senão os clientes aprendem a abandonar de propósito.",
+      },
+      {
+        title: "Contacte à mão os carrinhos grandes",
+        text: "Para um carrinho importante, abra-o em « Checkouts abandonados » e envie você mesmo o e-mail de recuperação a partir da página do checkout. Pode juntar uma palavra pessoal ou responder a uma dúvida sobre a entrega.",
+      },
+      {
+        title: "Meça o que os e-mails trazem",
+        text: "Volte a « Checkouts abandonados » todas as semanas: o estado de recuperação mostra os carrinhos que viraram pedido. Se poucos clientes voltam, experimente outro atraso ou um assunto de e-mail mais claro antes de dar um desconto.",
+      },
+    ],
+    pitfalls: [
+      "Enviar o e-mail a toda a gente sem ver as regras do seu país: na Europa (e no Brasil, com a LGPD), uma mensagem comercial a quem não aceitou os seus e-mails pode dar problemas. Na dúvida, fique com « inscritos no marketing ».",
+      "Pôr um desconto em todos os e-mails: os clientes passam a esperar pelo e-mail antes de comprar.",
+      "Não testar: faça você mesmo um pedido até ao pagamento com o seu e-mail, saia, e confirme que o e-mail chega e que o link reabre o carrinho.",
+    ],
+  },
+  {
     slug: "ajouter-un-produit-shopify",
     localSlug: "adicionar-produto-shopify",
     question: "Como adicionar um produto na Shopify?",

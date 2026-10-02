@@ -822,6 +822,119 @@ export const ptGuides: TranslatedGuide[] = [
     ],
   },
   {
+    slug: "ajouter-un-compte-a-rebours-leadpages",
+    localSlug: "contagem-regressiva-leadpages",
+    question: "Como adicionar uma contagem regressiva numa página Leadpages?",
+    summary: "Um cronômetro que mostra o fim de uma promoção ou a hora de um webinar, com data fixa ou para cada visitante.",
+    intro:
+      "Uma contagem regressiva lembra ao visitante que a oferta tem fim: uma promoção, inscrições que fecham, um webinar que começa. A Leadpages tem um elemento « Countdown » pronto a usar, sem código.",
+    steps: [
+      {
+        title: "Abra a página no editor",
+        text: "Na Leadpages, abra a landing page e clique em « Edit ». Escolha onde o cronômetro é mais útil: perto do título da oferta ou logo acima do botão de ação.",
+      },
+      {
+        title: "Adicione o elemento « Countdown »",
+        text: "Na lista de elementos (widgets) do editor, arraste « Countdown » para o lugar escolhido. Aparece um cronômetro com dias, horas, minutos e segundos.",
+      },
+      {
+        title: "Escolha o tipo de cronômetro",
+        text: "Clique no cronômetro para abrir as configurações. « Standard » conta até uma data e hora fixas, iguais para todos: ideal para um webinar ou o fim de uma promoção. « Evergreen » começa na primeira visita de cada pessoa (por exemplo 2 dias): útil para uma oferta de boas-vindas.",
+      },
+      {
+        title: "Defina a data, a hora e o fuso",
+        text: "Num cronômetro « Standard », insira a data e a hora de fim e confira o fuso horário: um erro de uma hora basta para irritar os visitantes. Em « Evergreen », insira a duração em dias, horas e minutos.",
+      },
+      {
+        title: "Decida o que acontece no zero",
+        text: "Quando chega a zero, o cronômetro para. Prepare o depois: atualize a página ou redirecione-a para uma página « oferta encerrada », e tire o botão da oferta se ela já não vale.",
+      },
+      {
+        title: "Ajuste o estilo e teste no celular",
+        text: "Mude as cores para o cronômetro se ver sem tapar o título. Veja a pré-visualização mobile: numa tela pequena, o cronômetro deve caber numa linha ou dobrar bem. Atualize a página.",
+      },
+    ],
+    pitfalls: [
+      "Uma falsa contagem que recomeça a cada visita quando a oferta nunca acaba: é enganoso e proibido pelas regras de práticas comerciais (na Europa e no Brasil).",
+      "Esquecer o fuso horário: a promoção « acaba » uma hora cedo ou tarde demais para parte dos visitantes.",
+      "Deixar a página online depois do fim com o cronômetro a zero e um botão que ainda funciona.",
+    ],
+  },
+  {
+    slug: "creer-une-page-bientot-disponible-html-pub",
+    localSlug: "pagina-em-breve-html-pub",
+    question: "Como criar uma página « em breve » com o HTML Pub?",
+    summary: "Uma página simples que anuncia o seu projeto e capta e-mails antes do lançamento, criada com IA em poucos minutos.",
+    intro:
+      "Antes de abrir uma loja ou lançar uma oferta, uma página « em breve » (coming soon) anuncia o que vem aí e capta os e-mails dos curiosos. Com o assistente de IA do HTML Pub, cria-se com uma descrição.",
+    steps: [
+      {
+        title: "Abra a criação de páginas",
+        text: "No HTML Pub, clique em « Create » no menu da esquerda. Quando o assistente perguntar o que está a fazer, escolha « Landing page ».",
+      },
+      {
+        title: "Descreva a página em poucas linhas",
+        text: "Diga o nome do projeto, o que ele traz, a data de lançamento se já souber, as suas cores e o que quer: « Página em breve para a minha loja de velas, um título, uma frase, um campo de e-mail, lançamento em novembro. » Envie.",
+      },
+      {
+        title: "Mantenha um só objetivo: a inscrição",
+        text: "Uma página « em breve » não precisa de menu nem de dez secções. Peça ao assistente um título, uma frase que dê vontade, um campo de e-mail e um botão. Dê uma razão para se inscrever: saber primeiro, ou um desconto de lançamento.",
+      },
+      {
+        title: "Confira o formulário",
+        text: "As respostas do formulário ficam guardadas no HTML Pub. Faça uma inscrição de teste e veja se chega. Se usa uma ferramenta de e-mail, ligue-a para cada inscrito entrar lá sozinho.",
+      },
+      {
+        title: "Publique num endereço simples",
+        text: "Veja a página no celular e publique. Se tem um domínio, use-o: a página « em breve » ocupa o endereço enquanto a loja ou o site não estão prontos.",
+      },
+      {
+        title: "Prepare o dia do lançamento",
+        text: "No dia, troque a página pela verdadeira página de vendas (ou redirecione para a loja) e escreva a todos os inscritos. São os seus primeiros clientes: estavam à espera da sua mensagem.",
+      },
+    ],
+    pitfalls: [
+      "Uma página sem razão para se inscrever: « fique por dentro » não chega. Prometa algo concreto.",
+      "Anunciar uma data de lançamento que não cumpre: melhor « em novembro » do que um dia exato falhado.",
+      "Captar e-mails e nunca escrever: no lançamento, os inscritos já esqueceram quem você é. Uma mensagem a cada 15 dias basta.",
+    ],
+  },
+  {
+    slug: "ajouter-des-avis-clients-shopify",
+    localSlug: "avaliacoes-de-clientes-shopify",
+    question: "Como adicionar avaliações de clientes na Shopify?",
+    summary: "Instalar uma aplicação de avaliações, mostrar as estrelas nas páginas de produto e pedir uma avaliação depois de cada pedido.",
+    intro:
+      "As avaliações dão confiança aos visitantes que ainda não o conhecem. A Shopify já não tem uma aplicação oficial de avaliações desde 2024: usa-se uma aplicação da Shopify App Store, e várias têm plano grátis.",
+    steps: [
+      {
+        title: "Escolha uma aplicação de avaliações",
+        text: "No painel da Shopify, abra a Shopify App Store e procure « product reviews ». Veja o plano grátis, as avaliações de outros lojistas e o selo « Built for Shopify ». A Judge.me, por exemplo, tem um plano grátis com avaliações ilimitadas.",
+      },
+      {
+        title: "Instale e escolha a língua",
+        text: "Clique em « Instalar » e aceite as permissões. Nas configurações da aplicação, escolha a língua dos textos que os clientes veem (formulário, e-mails, estrelas).",
+      },
+      {
+        title: "Mostre as avaliações na página de produto",
+        text: "Vá a « Loja virtual » > « Temas » e clique em « Personalizar ». Abra um modelo de produto, clique em « Adicionar bloco » e, na parte « Apps », escolha o bloco de avaliações da aplicação. Ponha-o por baixo da descrição, junte também o bloco de estrelas por baixo do título e salve.",
+      },
+      {
+        title: "Peça uma avaliação depois de cada pedido",
+        text: "Ative na aplicação o e-mail de pedido de avaliação, enviado alguns dias depois da entrega. Dê ao cliente tempo de receber e usar o produto: 7 a 14 dias, conforme o que vende.",
+      },
+      {
+        title: "Modere e responda",
+        text: "Escolha se as avaliações saem logo ou depois da sua validação. Responda às avaliações negativas com calma e uma solução: os visitantes leem sobretudo a resposta.",
+      },
+    ],
+    pitfalls: [
+      "Inventar avaliações ou mostrar só as boas: é proibido (prática comercial enganosa) e os clientes percebem.",
+      "Dar um desconto só em troca de uma avaliação positiva: a recompensa tem de ser igual qualquer que seja a avaliação, e deve ser indicada.",
+      "Instalar várias aplicações de avaliações ao mesmo tempo: deixam a loja lenta e mostram estrelas em dobro.",
+    ],
+  },
+  {
     slug: "ajouter-un-produit-shopify",
     localSlug: "adicionar-produto-shopify",
     question: "Como adicionar um produto na Shopify?",

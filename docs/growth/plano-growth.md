@@ -52,9 +52,9 @@ Uma pergunta por guia, só sobre Leadpages, HTML Pub e Shopify. Antes de escreve
 | 7 ✅ | Comment créer une page de remerciement après un formulaire Leadpages ? (28/09, `creer-une-page-de-remerciement-leadpages`) | contacts | Melhora as conversões e a entrega de brindes |
 | 8 ✅ | Comment vendre sur Instagram avec Shopify ? (28/09, `vendre-sur-instagram-avec-shopify`) | boutique | Tráfego grátis para as boutiques novas |
 | 9 ✅ | Comment envoyer un e-mail aux clients qui abandonnent leur panier sur Shopify ? (02/10, `relancer-les-paniers-abandonnes-shopify`) | boutique | Recupera vendas perdidas, funcionalidade incluída |
-| 10 | Comment ajouter un compte à rebours sur une page Leadpages ? | optimiser | Urgência para lançamentos e promoções |
-| 11 | Comment créer une page « bientôt disponible » (coming soon) avec HTML Pub ? | creer | Antes do lançamento, capta e-mails |
-| 12 | Comment ajouter des avis clients sur Shopify ? | boutique | Confiança = conversões |
+| 10 ✅ | Comment ajouter un compte à rebours sur une page Leadpages ? (02/10, `ajouter-un-compte-a-rebours-leadpages`) | optimiser | Urgência para lançamentos e promoções |
+| 11 ✅ | Comment créer une page « bientôt disponible » (coming soon) avec HTML Pub ? (02/10, `creer-une-page-bientot-disponible-html-pub`) | creer | Antes do lançamento, capta e-mails |
+| 12 ✅ | Comment ajouter des avis clients sur Shopify ? (02/10, `ajouter-des-avis-clients-shopify`) | boutique | Confiança = conversões |
 
 ## Textos para as redes (passo 8)
 

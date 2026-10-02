@@ -52,6 +52,9 @@ const titles = {
   "creer-une-page-de-remerciement-leadpages": "Une page [Merci] qui convertit",
   "vendre-sur-instagram-avec-shopify": "Vendre sur [Instagram] avec Shopify",
   "relancer-les-paniers-abandonnes-shopify": "Relancer les [paniers abandonnés] sur Shopify",
+  "ajouter-un-compte-a-rebours-leadpages": "Un [compte à rebours] sur Leadpages",
+  "creer-une-page-bientot-disponible-html-pub": "Une page [bientôt disponible] avec HTML Pub",
+  "ajouter-des-avis-clients-shopify": "Des [avis clients] sur Shopify",
   "creer-une-page-lien-en-bio-avec-html-pub": "Votre page [lien en bio] Instagram et TikTok",
 };
 

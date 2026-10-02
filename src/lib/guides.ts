@@ -536,7 +536,7 @@ export const guides: Guide[] = [
     ],
     tools: [{ slug: "html-pub", why: "Modèles « lien en bio », formulaires et domaine personnalisé." }],
     sources: [{ label: "HTML Pub : créer et modifier des pages", url: `${help}43966022984461--HTMLPub-Creating-and-Editing-Pages` }],
-    related: ["partir-d-un-modele-leadpages", "vendre-sur-instagram-avec-shopify", "recuperer-les-formulaires-html-pub", "modifier-l-adresse-d-une-page-leadpages"],
+    related: ["partir-d-un-modele-leadpages", "vendre-sur-instagram-avec-shopify", "recuperer-les-formulaires-html-pub", "modifier-l-adresse-d-une-page-leadpages", "creer-une-page-bientot-disponible-html-pub"],
   },
   {
     slug: "publier-du-html-sur-html-pub",
@@ -879,7 +879,7 @@ export const guides: Guide[] = [
     sources: [
       { label: "CNIL : la prospection commerciale par courrier électronique", url: "https://www.cnil.fr/fr/la-prospection-commerciale-par-courrier-electronique" },
     ],
-    related: ["recuperer-les-formulaires-html-pub", "connecter-leadpages-a-son-outil-e-mail", "creer-une-page-de-remerciement-leadpages", "creer-une-landing-page-avec-l-ia", "ajouter-un-pop-up-d-inscription-leadpages"],
+    related: ["recuperer-les-formulaires-html-pub", "connecter-leadpages-a-son-outil-e-mail", "creer-une-page-de-remerciement-leadpages", "creer-une-landing-page-avec-l-ia", "ajouter-un-pop-up-d-inscription-leadpages", "creer-une-page-bientot-disponible-html-pub"],
   },
 
   {
@@ -971,7 +971,7 @@ export const guides: Guide[] = [
       { label: "Leadpages : créer un pop-up", url: `${help}115000438247-Create-a-pop-up` },
       { label: "Leadpages : publier un pop-up", url: `${help}115000463348-Publish-your-pop-up` },
     ],
-    related: ["recolter-des-e-mails-avant-un-lancement", "connecter-leadpages-a-son-outil-e-mail", "creer-sa-landing-page-leadpages-de-a-a-z"],
+    related: ["recolter-des-e-mails-avant-un-lancement", "connecter-leadpages-a-son-outil-e-mail", "creer-sa-landing-page-leadpages-de-a-a-z", "ajouter-un-compte-a-rebours-leadpages"],
   },
 
   // ——— Optimiser ———
@@ -1060,7 +1060,7 @@ export const guides: Guide[] = [
     ],
     tools: [{ slug: "leadpages", why: "Tests A/B dès Grow, sans limite de trafic." }],
     sources: [{ label: "Leadpages : tests A/B", url: "https://leadpages.com/product/ab-testing" }, pricing],
-    related: ["utiliser-smart-traffic-leadpages", "lire-une-carte-de-chaleur-leadpages", "ajouter-google-analytics-a-une-page-leadpages", "ameliorer-le-taux-de-conversion-de-ses-pages-de-a-a-z"],
+    related: ["utiliser-smart-traffic-leadpages", "lire-une-carte-de-chaleur-leadpages", "ajouter-google-analytics-a-une-page-leadpages", "ameliorer-le-taux-de-conversion-de-ses-pages-de-a-a-z", "ajouter-un-compte-a-rebours-leadpages"],
   },
   {
     slug: "lire-une-carte-de-chaleur-leadpages",
@@ -1606,7 +1606,7 @@ export const guides: Guide[] = [
     pitfalls: ["Laisser le poids à 0 : les frais de livraison seront faux.", "Des photos de tailles différentes : la boutique paraît moins professionnelle."],
     tools: [{ slug: "shopify", why: "Produits illimités sur tous les forfaits." }],
     sources: [{ label: "Shopify : ajouter et mettre à jour des produits", url: "https://help.shopify.com/fr/manual/products/add-update-products" }],
-    related: ["creer-une-page-de-vente-pour-un-produit-shopify", "creer-sa-boutique-shopify", "creer-un-code-de-reduction-shopify", "regler-l-expedition-shopify", "ajouter-des-variantes-shopify", "vendre-sur-instagram-avec-shopify"],
+    related: ["creer-une-page-de-vente-pour-un-produit-shopify", "creer-sa-boutique-shopify", "creer-un-code-de-reduction-shopify", "regler-l-expedition-shopify", "ajouter-des-variantes-shopify", "vendre-sur-instagram-avec-shopify", "ajouter-des-avis-clients-shopify"],
   },
   {
     slug: "vendre-sur-instagram-avec-shopify",
@@ -1702,6 +1702,143 @@ export const guides: Guide[] = [
       { label: "CNIL : la prospection commerciale par courrier électronique", url: "https://www.cnil.fr/fr/la-prospection-commerciale-par-courrier-electronique" },
     ],
     related: ["creer-un-code-de-reduction-shopify", "suivre-ses-commandes-et-expedier-shopify", "vendre-sur-instagram-avec-shopify"],
+  },
+  {
+    slug: "ajouter-un-compte-a-rebours-leadpages",
+    question: "Comment ajouter un compte à rebours sur une page Leadpages ?",
+    summary: "Un minuteur qui montre la fin d'une promotion ou l'heure d'un webinaire, réglé à une date fixe ou pour chaque visiteur.",
+    theme: "optimiser",
+    publishedOn: "2026-10-02",
+    updatedOn: "2026-10-02",
+    intro:
+      "Un compte à rebours rappelle au visiteur qu'une offre a une fin : une promotion, des inscriptions qui ferment, un webinaire qui commence. Leadpages a un élément « Countdown » prêt à l'emploi, sans code.",
+    steps: [
+      {
+        title: "Ouvrez la page dans l'éditeur",
+        text: "Dans Leadpages, ouvrez la landing page voulue et cliquez sur « Edit ». Repérez l'endroit où le minuteur sera le plus utile : près du titre de l'offre ou juste au-dessus du bouton d'action.",
+      },
+      {
+        title: "Ajoutez l'élément « Countdown »",
+        text: "Dans la liste des éléments (widgets) de l'éditeur, faites glisser « Countdown » à l'endroit choisi. Un minuteur avec jours, heures, minutes et secondes apparaît sur la page.",
+      },
+      {
+        title: "Choisissez le type de minuteur",
+        text: "Cliquez sur le minuteur pour ouvrir ses réglages. « Standard » compte jusqu'à une date et une heure fixes, les mêmes pour tout le monde : idéal pour un webinaire ou une fin de promotion. « Evergreen » démarre à la première visite de chaque personne (par exemple 2 jours) : utile pour une offre de bienvenue.",
+      },
+      {
+        title: "Réglez la date, l'heure et le fuseau",
+        text: "Pour un minuteur « Standard », entrez la date et l'heure de fin, et vérifiez le fuseau horaire : une erreur d'une heure suffit à fâcher les visiteurs. Pour « Evergreen », entrez la durée en jours, heures et minutes.",
+      },
+      {
+        title: "Décidez de ce qui se passe à zéro",
+        text: "Quand le minuteur arrive à zéro, il s'arrête. Prévoyez la suite : mettez à jour la page ou redirigez-la vers une page « offre terminée », et retirez le bouton de l'offre si elle n'est plus valable.",
+      },
+      {
+        title: "Adaptez le style et testez sur téléphone",
+        text: "Changez les couleurs pour que le minuteur se voie sans écraser le titre. Passez en aperçu mobile : sur un petit écran, le minuteur doit tenir sur une ligne ou se replier proprement. Mettez la page à jour.",
+      },
+    ],
+    pitfalls: [
+      "Un faux compte à rebours qui recommence à chaque visite alors que l'offre ne finit jamais : c'est trompeur, et c'est interdit pour les pratiques commerciales en Europe.",
+      "Oublier le fuseau horaire : la promotion « finit » une heure trop tôt ou trop tard pour une partie des visiteurs.",
+      "Laisser la page en ligne après la fin avec un minuteur à zéro et un bouton qui marche encore.",
+    ],
+    tools: [{ slug: "leadpages", why: "Élément « Countdown » inclus, à date fixe ou « evergreen »." }],
+    sources: [
+      { label: "Leadpages : le compte à rebours (Classic Builder)", url: `${help}216961598--Classic-Builder-The-countdown-widget` },
+      { label: "Leadpages : l'élément compte à rebours (Page Studio)", url: `${help}42901399616781--Page-Studio-The-countdown-element` },
+    ],
+    related: ["ameliorer-le-taux-de-conversion-de-ses-pages-de-a-a-z", "ajouter-un-pop-up-d-inscription-leadpages", "faire-un-test-ab-leadpages"],
+  },
+  {
+    slug: "creer-une-page-bientot-disponible-html-pub",
+    question: "Comment créer une page « bientôt disponible » avec HTML Pub ?",
+    summary: "Une page simple qui annonce votre projet et récolte des e-mails avant le lancement, créée avec l'IA en quelques minutes.",
+    theme: "creer",
+    publishedOn: "2026-10-02",
+    updatedOn: "2026-10-02",
+    intro:
+      "Avant d'ouvrir une boutique ou de lancer une offre, une page « bientôt disponible » (coming soon) annonce ce qui arrive et récolte les e-mails des curieux. Avec l'assistant IA de HTML Pub, elle se crée en une description.",
+    steps: [
+      {
+        title: "Ouvrez l'écran de création",
+        text: "Dans HTML Pub, cliquez sur « Create » dans le menu de gauche. Quand l'assistant demande ce que vous faites, choisissez « Landing page ».",
+      },
+      {
+        title: "Décrivez la page en quelques lignes",
+        text: "Indiquez le nom du projet, ce qu'il apporte, la date de lancement si vous la connaissez, vos couleurs et ce que vous voulez : « Page bientôt disponible pour ma boutique de bougies, un titre, une phrase, un champ e-mail, une date de lancement en novembre. » Envoyez.",
+      },
+      {
+        title: "Gardez un seul objectif : l'inscription",
+        text: "Une page « bientôt disponible » n'a pas besoin de menu ni de dix sections. Demandez à l'assistant de garder un titre, une phrase qui donne envie, un champ e-mail et un bouton. Ajoutez une raison de s'inscrire : être prévenu en premier, ou une réduction de lancement.",
+      },
+      {
+        title: "Vérifiez le formulaire",
+        text: "Les réponses du formulaire sont enregistrées dans HTML Pub. Envoyez-vous une inscription de test et vérifiez qu'elle arrive bien. Si vous utilisez un outil e-mail, connectez-le pour que chaque inscrit y arrive tout seul.",
+      },
+      {
+        title: "Publiez sur une adresse simple",
+        text: "Vérifiez la page sur téléphone, puis publiez-la. Si vous avez un nom de domaine, utilisez-le : la page « bientôt disponible » occupe l'adresse en attendant la boutique ou le site.",
+      },
+      {
+        title: "Préparez le jour du lancement",
+        text: "Le jour J, remplacez la page par la vraie page de vente (ou redirigez vers la boutique), puis écrivez à tous les inscrits. Ce sont vos premiers clients : ils attendaient votre message.",
+      },
+    ],
+    pitfalls: [
+      "Une page sans raison de s'inscrire : « restez informé » ne suffit pas. Promettez quelque chose de concret.",
+      "Annoncer une date de lancement qu'on ne tient pas : mieux vaut « en novembre » qu'un jour précis manqué.",
+      "Récolter des e-mails et ne jamais écrire : au lancement, les inscrits ont oublié qui vous êtes. Un message tous les 15 jours suffit.",
+    ],
+    tools: [{ slug: "html-pub", why: "Assistant IA, formulaires et domaine personnalisé." }],
+    sources: [
+      { label: "HTML Pub : utiliser le créateur de pages IA", url: `${help}43967499549965--HTMLPub-Using-the-AI-Page-Builder` },
+      { label: "HTML Pub : créer et modifier des pages", url: `${help}43966022984461--HTMLPub-Creating-and-Editing-Pages` },
+    ],
+    related: ["recolter-des-e-mails-avant-un-lancement", "creer-une-landing-page-avec-l-ia", "recuperer-les-formulaires-html-pub"],
+  },
+  {
+    slug: "ajouter-des-avis-clients-shopify",
+    question: "Comment ajouter des avis clients sur Shopify ?",
+    summary: "Installer une application d'avis, afficher les étoiles sur les fiches produit et demander un avis après chaque commande.",
+    theme: "boutique",
+    publishedOn: "2026-10-02",
+    updatedOn: "2026-10-02",
+    intro:
+      "Les avis rassurent les visiteurs qui ne vous connaissent pas encore. Shopify n'a plus d'application d'avis officielle depuis 2024 : on passe par une application du Shopify App Store, dont plusieurs ont une formule gratuite.",
+    steps: [
+      {
+        title: "Choisissez une application d'avis",
+        text: "Dans l'administration Shopify, ouvrez le Shopify App Store et cherchez « avis produits » (product reviews). Regardez la formule gratuite, les avis des autres marchands et la mention « Built for Shopify ». Judge.me, par exemple, a une formule gratuite avec avis illimités.",
+      },
+      {
+        title: "Installez-la et réglez la langue",
+        text: "Cliquez sur « Installer » et acceptez les autorisations. Dans les réglages de l'application, choisissez le français pour les textes vus par vos clients (formulaire, e-mails, étoiles).",
+      },
+      {
+        title: "Affichez les avis sur la fiche produit",
+        text: "Allez dans « Boutique en ligne » > « Thèmes » et cliquez sur « Personnaliser ». Ouvrez un modèle de produit, cliquez sur « Ajouter un bloc » et, dans la partie « Applications », choisissez le bloc d'avis de l'application. Placez-le sous la description, ajoutez aussi le bloc d'étoiles sous le titre, puis enregistrez.",
+      },
+      {
+        title: "Demandez un avis après chaque commande",
+        text: "Activez dans l'application l'e-mail de demande d'avis, envoyé quelques jours après la livraison. Laissez au client le temps de recevoir et d'utiliser le produit : 7 à 14 jours selon ce que vous vendez.",
+      },
+      {
+        title: "Modérez et répondez",
+        text: "Choisissez si les avis sont publiés tout de suite ou après votre validation. Répondez aux avis négatifs avec calme et une solution : les visiteurs lisent surtout la réponse.",
+      },
+    ],
+    pitfalls: [
+      "Inventer des avis ou n'afficher que les bons : c'est interdit (pratique commerciale trompeuse) et les clients le sentent.",
+      "Offrir une réduction seulement en échange d'un avis positif : la contrepartie doit être la même quel que soit l'avis, et le signaler.",
+      "Installer plusieurs applications d'avis à la fois : elles ralentissent la boutique et affichent des étoiles en double.",
+    ],
+    tools: [{ slug: "shopify", why: "Blocs d'application dans l'éditeur de thème, sans code." }],
+    sources: [
+      { label: "Aide Shopify : applications dans les thèmes", url: "https://help.shopify.com/fr/manual/online-store/themes/customizing-themes/apps" },
+      { label: "Shopify App Store : avis produits", url: "https://apps.shopify.com/search?q=product%20reviews" },
+    ],
+    related: ["ajouter-un-produit-shopify", "creer-une-page-de-vente-pour-un-produit-shopify", "relancer-les-paniers-abandonnes-shopify"],
   },
   {
     slug: "ajouter-des-variantes-shopify",
@@ -2089,7 +2226,7 @@ export const guides: Guide[] = [
       { label: "Leadpages : accepter des achats Shopify", url: `${help}4407720741517-Accept-Shopify-purchases-with-Leadpages` },
       { label: "Shopify : ajouter des produits", url: "https://help.shopify.com/fr/manual/products/add-update-products" },
     ],
-    related: ["connecter-html-pub-a-shopify", "attirer-des-clients-avec-une-landing-page", "creer-un-code-de-reduction-shopify"],
+    related: ["connecter-html-pub-a-shopify", "attirer-des-clients-avec-une-landing-page", "creer-un-code-de-reduction-shopify", "ajouter-des-avis-clients-shopify"],
   },
   {
     slug: "regler-l-expedition-shopify",

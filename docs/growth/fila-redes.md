@@ -128,6 +128,26 @@ Vos abonnés Instagram aiment vos produits, mais ne savent pas où les acheter ?
 Avec l'application Facebook & Instagram de Meta sur Shopify, vous identifiez vos produits dans vos posts. Et en attendant la validation : un seul lien en bio, qui vend.
 Comment faire : https://zunrel.com/guides/vendre-sur-instagram-avec-shopify/?utm_source=SOURCE&utm_medium=social&utm_campaign=post-diario
 
+### Dia 23
+Un client remplit son panier, commence le paiement… et part.
+Shopify peut lui envoyer tout seul un e-mail avec un lien vers son panier, sans application payante. Le réglage tient en 2 minutes : à qui, et après combien d'heures.
+Comment l'activer : https://zunrel.com/guides/relancer-les-paniers-abandonnes-shopify/?utm_source=SOURCE&utm_medium=social&utm_campaign=post-diario
+
+### Dia 24
+Une promotion sans date de fin, c'est une promotion qu'on remet à plus tard.
+Sur Leadpages, l'élément « Countdown » affiche un vrai compte à rebours : date fixe pour un webinaire, ou durée par visiteur pour une offre de bienvenue. Jamais de faux minuteur.
+Comment faire : https://zunrel.com/guides/ajouter-un-compte-a-rebours-leadpages/?utm_source=SOURCE&utm_medium=social&utm_campaign=post-diario
+
+### Dia 25
+Votre boutique n'est pas prête ? Commencez quand même à récolter des e-mails.
+Une page « bientôt disponible » : un titre, une phrase, un champ e-mail, une raison de s'inscrire. Avec l'IA de HTML Pub, elle est en ligne en quelques minutes.
+Comment la créer : https://zunrel.com/guides/creer-une-page-bientot-disponible-html-pub/?utm_source=SOURCE&utm_medium=social&utm_campaign=post-diario
+
+### Dia 26
+Un visiteur qui ne vous connaît pas regarde d'abord les avis.
+Sur Shopify : une application d'avis (plusieurs sont gratuites), les étoiles sous le titre du produit, et une demande d'avis 7 à 14 jours après la livraison.
+Comment faire : https://zunrel.com/guides/ajouter-des-avis-clients-shopify/?utm_source=SOURCE&utm_medium=social&utm_campaign=post-diario
+
 ---
 
 ## Pinterest: 5 pins por dia

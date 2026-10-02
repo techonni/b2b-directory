@@ -18,7 +18,10 @@ Data: 28/09/2026 (7.ª sessão do dia: resultados dos lotes 2, P e 4; link Shopi
 - **Guia da semana 9** publicado em FR, PT e EN: `relancer-les-paniers-abandonnes-shopify` (PT `recuperar-carrinhos-abandonados-shopify`, EN `abandoned-cart-email-shopify`), 2 pins, entradas em `pinterest-agendar-2.csv` (11/10).
 - **Guias sem capturas (decisão do Techonni a 02/10):** todas as capturas foram retiradas dos guias, a pasta `public/captures/` foi apagada e os textos que falavam de capturas foram mudados. **Não voltar a pôr imagens nos passos dos guias** nem pedir capturas ao Techonni. Os pins novos saem só com título e passos (os pins antigos ficam como estão).
 - **Pinterest retomado:** 3.ª variante de pins, minimalista (`make-pins.mjs --variant minimal`, em `public/pins/minimal/`, 49 imagens). `pinterest-agendar-2.csv` pronto: 53 pins de 10/10 a 15/10, 10 por dia. Carregado a 02/10: 51 pins criados; os 2 com título repetido (Instagram e carrinhos abandonados, minimal) vão em `pinterest-agendar-2b.csv`. **Regra do Pinterest: cada título só pode aparecer uma vez no mesmo CSV** (e no máximo 100 caracteres).
-- Traduções: os 49 guias estão todos em PT e EN (só o guia EN de preços da Shopify continua escondido).
+- **Guias das semanas 10, 11 e 12** publicados em FR, PT e EN: `ajouter-un-compte-a-rebours-leadpages`, `creer-une-page-bientot-disponible-html-pub`, `ajouter-des-avis-clients-shopify` (3 pins cada: normal, erreurs, minimal). O calendário de `plano-growth.md` está todo feito: **escrever as semanas 13 a 16** na próxima sessão.
+- **Arrumação:** resumos dos guias completos sem « chaque écran »; imagem de partilha (og:image) e botão Pinterest passam a usar `pins/minimal/`; apagados `vercel.json`, `lib/`, `directory.ts`, `marks.ts`, `BrandIcon`, `SubscribeForm`.
+- **Redes:** posts X/LinkedIn até ao Dia 26 em `fila-redes.md` (carrinhos abandonados, compte à rebours, bientôt disponible, avis). `pinterest-agendar-3.csv` pronto: 9 pins, 3 por dia, de 16/10 a 18/10. **Falta o Techonni carregá-lo.**
+- Traduções: os 52 guias estão todos em PT e EN (só o guia EN de preços da Shopify continua escondido).
 
 ---
 
@@ -194,9 +197,9 @@ Data: 28/09/2026 (7.ª sessão do dia: resultados dos lotes 2, P e 4; link Shopi
 1. Ler as visitas (GA4 ou Cloudflare Web Analytics, se o Techonni o tiver ativado): páginas mais vistas e de onde vêm.
 2. Search Console (quando o Techonni der os dados): `seoTitle` / `seoDescription` nas 5 páginas com mais impressões e CTR mais baixo.
 3. GA4, semana de 05/10: `affiliate_click` por `placement` e `guide`; `web_vital` por página; `pdf_download`.
-4. Guia da semana 10 (« compte à rebours sur une page Leadpages », ver `plano-growth.md`) em FR, PT e EN, sem capturas, com 2 pins e 2 links internos, pins no CSV.
+4. Escrever as semanas 13 a 16 em `plano-growth.md` e publicar o guia da semana 13 em FR, PT e EN, sem capturas, com 3 pins (normal, erreurs, minimal) e 2 links internos.
 5. Newsletter: **nada** enquanto não houver inscrito real (regra 0). Não perguntar ao Techonni.
-6. `fila-redes.md`: manter 7 dias de avanço. Antes de 15/10: preparar `pinterest-agendar-3.csv` (a partir de 16/10, 10 por dia, máx. 15) com os guias novos e uma 4.ª variante de imagem.
+6. `fila-redes.md` tem posts até ao Dia 26: manter 7 dias de avanço. Antes de 18/10: `pinterest-agendar-4.csv` (a partir de 19/10) com os guias novos e uma 4.ª variante de imagem. **Títulos sempre únicos no mesmo CSV, máx. 100 caracteres.**
 7. Atualizar este ficheiro, publicar e enviar ao Techonni.
 
 ---

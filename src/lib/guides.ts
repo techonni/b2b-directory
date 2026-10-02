@@ -100,6 +100,7 @@ export const guides: Guide[] = [
   {
     slug: "choisir-entre-html-pub-et-leadpages",
     question: "Comment choisir entre HTML Pub et Leadpages ?",
+    seoDescription: "HTML Pub pour publier simplement, Leadpages pour tester et optimiser vos conversions : comparez les deux offres et choisissez selon votre besoin.",
     summary: "Publier simplement ou optimiser ses conversions : la bonne offre selon votre besoin.",
     theme: "choisir",
     publishedOn: "2026-09-27",
@@ -186,6 +187,7 @@ export const guides: Guide[] = [
   {
     slug: "changer-ou-annuler-son-offre-leadpages",
     question: "Comment changer d'offre ou annuler son abonnement Leadpages ?",
+    seoTitle: "Changer d'offre ou annuler son abonnement Leadpages",
     summary: "Monter ou descendre d'offre, arrêter l'abonnement, et ce que deviennent vos pages.",
     theme: "choisir",
     publishedOn: "2026-09-26",
@@ -225,6 +227,7 @@ export const guides: Guide[] = [
   {
     slug: "choisir-entre-leadpages-et-shopify",
     question: "Leadpages ou Shopify : lequel choisir ?",
+    seoDescription: "Leadpages crée des pages qui convertissent, Shopify gère une boutique complète. Comment choisir, et quand utiliser les deux ensemble.",
     summary: "Des pages qui convertissent, une boutique complète, ou les deux ensemble.",
     theme: "choisir",
     publishedOn: "2026-09-27",
@@ -270,6 +273,7 @@ export const guides: Guide[] = [
   {
     slug: "combien-coute-leadpages",
     question: "Combien coûte Leadpages (et HTML Pub) en 2026 ?",
+    seoDescription: "Les prix des offres HTML Pub et Leadpages, mensuels et annuels, relevés sur la page officielle, et laquelle choisir selon votre besoin.",
     summary: "Les prix des offres HTML Pub et Leadpages, mensuels et annuels, et celle à choisir selon votre besoin.",
     theme: "choisir",
     publishedOn: "2026-09-28",
@@ -315,6 +319,8 @@ export const guides: Guide[] = [
   {
     slug: "creer-sa-landing-page-leadpages-de-a-a-z",
     question: "Comment créer sa première landing page Leadpages de A à Z ?",
+    seoTitle: "Créer sa première landing page Leadpages de A à Z",
+    seoDescription: "Le guide complet pour créer sa première landing page Leadpages : essai gratuit, modèle, textes, formulaire et mise en ligne, étape par étape.",
     summary: "Le guide complet : de l'essai gratuit à une page en ligne qui récolte des contacts, étape par étape.",
     theme: "creer",
     format: "complet",
@@ -407,6 +413,7 @@ export const guides: Guide[] = [
   {
     slug: "creer-une-landing-page-avec-l-ia",
     question: "Comment créer une landing page avec l'IA de Leadpages ?",
+    seoDescription: "Décrivez votre page, laissez l'assistant IA de Leadpages la construire, puis améliorez-la en discutant. Le pas à pas, des crédits au choix du style.",
     summary: "Décrire sa page, laisser l'IA la construire, puis l'améliorer en discutant.",
     theme: "creer",
     publishedOn: "2026-09-26",
@@ -576,6 +583,7 @@ export const guides: Guide[] = [
   {
     slug: "creer-un-site-web-avec-html-pub",
     question: "Comment créer un site de plusieurs pages avec HTML Pub ?",
+    seoDescription: "Créer un site de plusieurs pages avec HTML Pub : une page d'accueil, puis les autres pages avec le même menu et le même style, étape par étape.",
     summary: "Une page d'accueil, puis les autres pages qui reprennent le même menu et le même style.",
     theme: "creer",
     publishedOn: "2026-09-26",
@@ -710,6 +718,8 @@ export const guides: Guide[] = [
   {
     slug: "modifier-l-adresse-d-une-page-leadpages",
     question: "Comment modifier l'adresse ou protéger une page par mot de passe ?",
+    seoTitle: "Modifier l'adresse d'une page ou la protéger",
+    seoDescription: "Changer le titre et l'adresse (slug) d'une page Leadpages, la protéger par mot de passe et la ranger avec des étiquettes, pas à pas.",
     summary: "Le titre, l'adresse (slug), le mot de passe et les étiquettes d'une page.",
     theme: "publier",
     publishedOn: "2026-09-26",
@@ -795,6 +805,8 @@ export const guides: Guide[] = [
   {
     slug: "connecter-leadpages-a-son-outil-e-mail",
     question: "Comment envoyer ses contacts vers Mailchimp, Brevo ou son CRM ?",
+    seoTitle: "Envoyer ses contacts vers Mailchimp, Brevo ou un CRM",
+    seoDescription: "Connecter Leadpages ou HTML Pub à Mailchimp, Brevo ou votre CRM pour que chaque nouveau contact arrive au bon endroit, sans export manuel.",
     summary: "Connecter une intégration pour que chaque nouveau contact arrive au bon endroit.",
     theme: "contacts",
     publishedOn: "2026-09-26",
@@ -885,6 +897,8 @@ export const guides: Guide[] = [
   {
     slug: "creer-une-page-de-remerciement-leadpages",
     question: "Comment créer une page de remerciement après un formulaire Leadpages ?",
+    seoTitle: "Créer une page de remerciement sur Leadpages",
+    seoDescription: "La page qui s'affiche après l'inscription sur Leadpages : dire merci, livrer le cadeau tout de suite et proposer l'étape suivante.",
     summary: "La page qui s'affiche après l'inscription : dire merci, livrer le cadeau et proposer l'étape suivante.",
     theme: "contacts",
     publishedOn: "2026-09-28",
@@ -1025,6 +1039,7 @@ export const guides: Guide[] = [
   {
     slug: "faire-un-test-ab-leadpages",
     question: "Comment faire un test A/B avec Leadpages ?",
+    seoDescription: "Faire un test A/B avec Leadpages : créer deux versions d'une page, partager le trafic, attendre assez de visites et garder la meilleure.",
     summary: "Comparer deux versions d'une page et garder celle qui convertit le mieux.",
     theme: "optimiser",
     publishedOn: "2026-09-26",
@@ -1065,6 +1080,7 @@ export const guides: Guide[] = [
   {
     slug: "lire-une-carte-de-chaleur-leadpages",
     question: "Comment lire une carte de chaleur (heatmap) dans Leadpages ?",
+    seoTitle: "Lire une carte de chaleur (heatmap) dans Leadpages",
     summary: "Voir où vos visiteurs cliquent, jusqu'où ils descendent et ce qu'ils lisent.",
     theme: "optimiser",
     publishedOn: "2026-09-26",
@@ -1139,6 +1155,7 @@ export const guides: Guide[] = [
   {
     slug: "ameliorer-le-taux-de-conversion-de-ses-pages-de-a-a-z",
     question: "Comment améliorer le taux de conversion de ses landing pages de A à Z ?",
+    seoTitle: "Améliorer le taux de conversion d'une landing page",
     summary:
       "Guide complet pour analyser, optimiser et augmenter le taux de conversion de vos landing pages Leadpages et HTML Pub, étape par étape.",
     theme: "optimiser",
@@ -1228,6 +1245,7 @@ export const guides: Guide[] = [
   {
     slug: "publier-une-page-depuis-claude",
     question: "Comment publier une page HTML Pub directement depuis Claude ?",
+    seoTitle: "Publier une page HTML Pub depuis Claude",
     summary: "Connecter HTML Pub à Claude pour créer et modifier vos pages en discutant.",
     theme: "ia",
     publishedOn: "2026-09-27",
@@ -1374,6 +1392,7 @@ export const guides: Guide[] = [
   {
     slug: "combien-coute-shopify",
     question: "Combien coûte Shopify en 2026 : forfaits et frais ?",
+    seoDescription: "Le prix des forfaits Shopify, l'offre de lancement, les frais sur chaque vente et les coûts qu'on oublie (domaine, applications), avec la date du relevé.",
     summary: "Le prix des forfaits Shopify, l'offre à 1 €, les frais par vente et les coûts qu'on oublie.",
     theme: "boutique",
     publishedOn: "2026-09-28",
@@ -1417,6 +1436,7 @@ export const guides: Guide[] = [
   {
     slug: "creer-sa-boutique-shopify-de-a-a-z",
     question: "Comment créer sa boutique Shopify de A à Z ?",
+    seoDescription: "Le guide complet pour créer sa boutique Shopify : inscription, thème, produits, livraison, paiements, politiques, domaine, jusqu'à la première vente.",
     summary: "Le guide complet : de l'inscription à la première vente, étape par étape.",
     theme: "boutique",
     format: "complet",
@@ -1530,6 +1550,7 @@ export const guides: Guide[] = [
   {
     slug: "creer-sa-boutique-shopify",
     question: "Comment créer sa boutique Shopify ?",
+    seoDescription: "Créer sa boutique Shopify dans le bon ordre : compte, thème, premiers produits et paiements, puis ouverture au public. Le guide pour débutants.",
     summary: "De l'inscription à la boutique en ligne : compte, thème, produits et paiements, dans l'ordre.",
     theme: "boutique",
     publishedOn: "2026-09-27",
@@ -1657,7 +1678,7 @@ export const guides: Guide[] = [
   {
     slug: "relancer-les-paniers-abandonnes-shopify",
     question: "Comment envoyer un e-mail aux clients qui abandonnent leur panier sur Shopify ?",
-    seoTitle: "Relancer les paniers abandonnés sur Shopify (e-mail automatique)",
+    seoTitle: "Relancer les paniers abandonnés sur Shopify",
     summary: "Activer l'e-mail automatique de Shopify, choisir le bon délai et relancer à la main les paniers les plus importants.",
     theme: "boutique",
     publishedOn: "2026-10-02",
@@ -1706,6 +1727,7 @@ export const guides: Guide[] = [
   {
     slug: "ajouter-un-compte-a-rebours-leadpages",
     question: "Comment ajouter un compte à rebours sur une page Leadpages ?",
+    seoTitle: "Ajouter un compte à rebours sur Leadpages",
     summary: "Un minuteur qui montre la fin d'une promotion ou l'heure d'un webinaire, réglé à une date fixe ou pour chaque visiteur.",
     theme: "optimiser",
     publishedOn: "2026-10-02",
@@ -1753,6 +1775,7 @@ export const guides: Guide[] = [
   {
     slug: "creer-une-page-bientot-disponible-html-pub",
     question: "Comment créer une page « bientôt disponible » avec HTML Pub ?",
+    seoTitle: "Créer une page « bientôt disponible » avec HTML Pub",
     summary: "Une page simple qui annonce votre projet et récolte des e-mails avant le lancement, créée avec l'IA en quelques minutes.",
     theme: "creer",
     publishedOn: "2026-10-02",
@@ -1843,6 +1866,8 @@ export const guides: Guide[] = [
   {
     slug: "ajouter-des-variantes-shopify",
     question: "Comment ajouter des variantes (taille, couleur) à un produit Shopify ?",
+    seoTitle: "Ajouter des variantes (taille, couleur) sur Shopify",
+    seoDescription: "Un seul produit Shopify, plusieurs tailles ou couleurs : créer les options, régler le prix, le stock et la photo de chaque variante.",
     summary: "Un seul produit, plusieurs tailles ou couleurs, chacune avec son prix, son stock et sa photo.",
     theme: "boutique",
     publishedOn: "2026-09-28",
@@ -1890,6 +1915,7 @@ export const guides: Guide[] = [
   {
     slug: "ajouter-un-formulaire-de-contact-shopify",
     question: "Comment ajouter un formulaire de contact sur Shopify ?",
+    seoDescription: "Ajouter une page « Contact » avec formulaire sur Shopify, la relier au menu et vérifier que les messages arrivent bien dans votre boîte.",
     summary: "Une page « Contact » avec formulaire, reliée au menu, et des messages qui arrivent bien dans votre boîte.",
     theme: "boutique",
     publishedOn: "2026-09-28",
@@ -1973,6 +1999,7 @@ export const guides: Guide[] = [
   {
     slug: "accepter-les-paiements-shopify",
     question: "Comment accepter les paiements sur Shopify ?",
+    seoDescription: "Activer Shopify Payments, Bancontact et PayPal sur votre boutique : les réglages à faire, les vérifications demandées et les frais à connaître.",
     summary: "Shopify Payments, Bancontact, PayPal : les réglages et les frais à connaître.",
     theme: "boutique",
     publishedOn: "2026-09-27",
@@ -2008,6 +2035,7 @@ export const guides: Guide[] = [
   },  {
     slug: "choisir-un-theme-shopify",
     question: "Comment choisir et installer un thème gratuit sur Shopify ?",
+    seoTitle: "Choisir et installer un thème gratuit Shopify",
     summary: "Trouver un thème gratuit dans la Theme Store, l'essayer, puis le publier.",
     theme: "boutique",
     publishedOn: "2026-09-27",
@@ -2092,6 +2120,7 @@ export const guides: Guide[] = [
   {
     slug: "connecter-html-pub-a-shopify",
     question: "Comment relier HTML Pub ou Leadpages à Shopify ?",
+    seoDescription: "Relier vos pages HTML Pub ou Leadpages à votre boutique Shopify : le connecteur Shopify de HTML Pub et les boutons qui mènent au produit.",
     summary: "Le connecteur Shopify de HTML Pub, et les boutons qui envoient vers votre boutique.",
     theme: "boutique",
     publishedOn: "2026-09-27",
@@ -2137,6 +2166,7 @@ export const guides: Guide[] = [
   {
     slug: "attirer-des-clients-avec-une-landing-page",
     question: "Comment attirer des clients vers sa boutique Shopify avec une landing page ?",
+    seoTitle: "Attirer des clients Shopify avec une landing page",
     summary: "Une page simple, une offre claire, un formulaire, puis un lien vers votre boutique.",
     theme: "boutique",
     publishedOn: "2026-09-27",
@@ -2185,6 +2215,8 @@ export const guides: Guide[] = [
   {
     slug: "creer-une-page-de-vente-pour-un-produit-shopify",
     question: "Comment créer une page de vente pour un produit Shopify ?",
+    seoTitle: "Créer une page de vente pour un produit Shopify",
+    seoDescription: "Une page d'une seule offre, créée avec l'IA de HTML Pub, qui présente votre produit et envoie vers sa fiche Shopify pour payer.",
     summary: "Une page d'une seule offre, créée avec l'IA de HTML Pub, qui envoie vers votre produit Shopify.",
     theme: "boutique",
     publishedOn: "2026-09-27",
@@ -2231,6 +2263,7 @@ export const guides: Guide[] = [
   {
     slug: "regler-l-expedition-shopify",
     question: "Comment régler les frais de livraison sur Shopify ?",
+    seoDescription: "Régler la livraison sur Shopify : zones, tarifs fixes ou selon le poids, livraison gratuite dès un montant, et le test avant d'ouvrir.",
     summary: "Zones de livraison, tarifs fixes ou selon le poids, et livraison gratuite dès un montant.",
     theme: "boutique",
     publishedOn: "2026-09-27",
@@ -2325,6 +2358,8 @@ export const guides: Guide[] = [
   {
     slug: "rediger-les-politiques-shopify",
     question: "Comment ajouter ses conditions de vente et politiques sur Shopify ?",
+    seoTitle: "Ajouter ses conditions de vente sur Shopify",
+    seoDescription: "Ajouter retours, conditions de service, expédition, coordonnées et mentions légales sur Shopify, affichés au paiement et dans le pied de page.",
     summary: "Retours, conditions de service, expédition, coordonnées et mentions légales, affichées au paiement.",
     theme: "boutique",
     publishedOn: "2026-09-27",
@@ -2407,6 +2442,7 @@ export const guides: Guide[] = [
   {
     slug: "ouvrir-sa-boutique-shopify-au-public",
     question: "Comment retirer le mot de passe de sa boutique Shopify ?",
+    seoDescription: "Retirer le mot de passe de sa boutique Shopify pour l'ouvrir au public, et la liste de ce qu'il faut vérifier avant le grand jour.",
     summary: "Ouvrir la boutique au public en désactivant le mode privé, et ce qu'il faut vérifier avant.",
     theme: "boutique",
     publishedOn: "2026-09-27",
@@ -2449,6 +2485,7 @@ export const guides: Guide[] = [
   {
     slug: "creer-un-tunnel-de-vente-avec-leadpages-et-shopify-de-a-a-z",
     question: "Comment créer un tunnel de vente avec Leadpages et Shopify de A à Z ?",
+    seoTitle: "Tunnel de vente Leadpages + Shopify de A à Z",
     summary:
       "Guide complet pour construire un tunnel de vente qui capture des contacts avec Leadpages et les transforme en clients sur Shopify, étape par étape.",
     theme: "boutique",
@@ -2599,6 +2636,15 @@ export function guidesInTheme(slug: string) {
 
 export function popularGuides() {
   return guides.filter((guide) => guide.popular);
+}
+
+// Les guides les plus récents (date de publication), pour la page d'accueil.
+export function latestGuides(count = 4) {
+  return guides
+    .map((guide, index) => ({ guide, index }))
+    .sort((a, b) => (b.guide.publishedOn ?? "").localeCompare(a.guide.publishedOn ?? "") || b.index - a.index)
+    .slice(0, count)
+    .map(({ guide }) => guide);
 }
 
 export function guidesUsingTool(slug: string) {

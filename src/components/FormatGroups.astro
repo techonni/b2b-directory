@@ -1,0 +1,30 @@
+---
+// Guides d'un thème rangés par format : d'abord les guides express, puis les guides complets.
+import GuideRow from "./GuideRow.astro";
+import { formats, guideFormat, type Guide } from "../lib/guides";
+import { href } from "../lib/paths";
+
+interface Props {
+  guides: Guide[];
+}
+
+const { guides } = Astro.props;
+const groups = formats
+  .map((item) => ({ item, list: guides.filter((guide) => guideFormat(guide) === item.format) }))
+  .filter((group) => group.list.length > 0);
+---
+
+<div class="space-y-10">
+  {
+    groups.map(({ item, list }) => (
+      <div>
+        <a href={href(`/formats/${item.slug}`)} class="text-[13px] font-medium leading-5 text-[#171717] hover:underline">
+          {item.name} <span class="font-normal text-[#a0a0a0]">· {list.length}</span>
+        </a>
+        <div class="mt-5 space-y-8">
+          {list.map((guide) => <GuideRow guide={guide} />)}
+        </div>
+      </div>
+    ))
+  }
+</div>

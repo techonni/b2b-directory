@@ -1,6 +1,6 @@
 ---
 import Base from "../../layouts/Base.astro";
-import GuideRow from "../../components/GuideRow.astro";
+import FormatGroups from "../../components/FormatGroups.astro";
 import ToolRow from "../../components/ToolRow.astro";
 import { getTheme, guidesInTheme, themes, tools, type Theme } from "../../lib/guides";
 
@@ -21,8 +21,8 @@ const themeTools = tools.filter((tool) => tool.themes.includes(theme.slug));
   <h1 class="text-[22px] font-semibold leading-7 text-[#171717]">{theme.name}</h1>
   <p class="mt-4 text-[15px] leading-6 text-[#737373]">{theme.blurb}</p>
 
-  <div class="mt-14 space-y-8">
-    {list.map((guide) => <GuideRow guide={guide} />)}
+  <div class="mt-14">
+    <FormatGroups guides={list} />
   </div>
 
   {

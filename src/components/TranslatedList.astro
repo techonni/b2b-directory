@@ -1,6 +1,7 @@
 ---
 // Liste des guides traduits d'une langue (/pt/ ou /en/).
 import Base from "../layouts/Base.astro";
+import { getGuide, guideFormat, type Guide } from "../lib/guides";
 import { translatedPath, translations, ui, type OtherLang } from "../lib/i18n";
 
 interface Props {
@@ -9,6 +10,13 @@ interface Props {
 const { lang } = Astro.props;
 const t = ui[lang];
 const items = translations[lang];
+const groups = (["express", "complet"] as const)
+  .map((format) => ({
+    format,
+    title: format === "express" ? t.quickGuides : t.completeGuides,
+    list: items.filter((item) => guideFormat(getGuide(item.slug) as Guide) === format),
+  }))
+  .filter((group) => group.list.length > 0);
 ---
 
 <Base
@@ -23,16 +31,23 @@ const items = translations[lang];
 >
   <h1 class="text-[26px] font-semibold leading-8 tracking-[-0.015em] text-[#171717]">{t.listTitle}</h1>
   <p class="mt-4 text-[15px] leading-6 text-[#666666]">{t.listIntro}</p>
-  <div class="mt-12 space-y-8">
-    {
-      items.map((item) => (
-        <a href={translatedPath(lang, item.localSlug)} class="group block">
-          <span class="block text-[15px] font-medium leading-5 text-[#171717] group-hover:underline">{item.question} →</span>
-          <span class="mt-1 block text-[14px] leading-5 text-[#737373]">{item.summary}</span>
-        </a>
-      ))
-    }
-  </div>
+  {
+    groups.map((group) => (
+      <section class="mt-12">
+        <h2 class="text-[13px] font-medium leading-5 text-[#171717]">
+          {group.title} <span class="font-normal text-[#a0a0a0]">· {group.list.length}</span>
+        </h2>
+        <div class="mt-5 space-y-8">
+          {group.list.map((item) => (
+            <a href={translatedPath(lang, item.localSlug)} class="group block">
+              <span class="block text-[15px] font-medium leading-5 text-[#171717] group-hover:underline">{item.question} →</span>
+              <span class="mt-1 block text-[14px] leading-5 text-[#737373]">{item.summary}</span>
+            </a>
+          ))}
+        </div>
+      </section>
+    ))
+  }
   <p class="mt-12 text-[14px] leading-6">
     <a href="/" hreflang="fr" class="text-[#171717] underline underline-offset-4 hover:text-black">Zunrel en français</a>
     ·

@@ -1,0 +1,100 @@
+---
+import Base from "../layouts/Base.astro";
+import { href } from "../lib/paths";
+import { guides, guidesInFormat, themes, tools } from "../lib/guides";
+
+const express = guidesInFormat("express").length;
+const complet = guidesInFormat("complet").length;
+const withCaptures = guides.filter((guide) => guide.steps.some((step) => step.image)).length;
+const activeThemes = themes.filter((theme) => guides.some((guide) => guide.theme === theme.slug));
+
+const stats = [
+  { value: String(guides.length), label: "guides publiés" },
+  { value: String(complet), label: complet > 1 ? "guides complets (A à Z)" : "guide complet (A à Z)" },
+  { value: String(withCaptures), label: "guides illustrés de captures" },
+  { value: String(tools.length), label: "outils couverts" },
+];
+
+const facts = [
+  {
+    title: "Ce que fait Zunrel",
+    body: "Zunrel publie des guides « comment faire », étape par étape, en français, pour créer ses pages avec Leadpages et HTML Pub, puis vendre en ligne avec Shopify. Chaque guide répond à une seule question qu'un débutant tape sur Google, avec les étapes dans l'ordre réel, les erreurs fréquentes, des captures d'écran de l'interface et les liens vers l'aide officielle.",
+  },
+  {
+    title: "Audience",
+    body: "Des francophones qui lancent ou développent une activité en ligne : indépendants, auto-entrepreneurs, créateurs, petites entreprises (1 à 100 personnes). Principalement en Europe francophone (France, Belgique, Suisse). Ils arrivent avec une intention précise : choisir un outil, l'essayer, le configurer.",
+  },
+  {
+    title: "Formats",
+    body: `Guides express (${express}) : l'essentiel se lit en 30 secondes. Guides complets (${complet}) : un projet de A à Z, plus de 10 minutes de lecture et de nombreuses captures. Chaque guide existe aussi en épingle Pinterest verticale et peut être imprimé ou enregistré en PDF.`,
+  },
+  {
+    title: "Diffusion",
+    body: "Référencement naturel (Google : sitemap, données structurées HowTo) et Pinterest (compte zunrel, une épingle par guide). Pas de publicité payante ni d'achat de trafic.",
+  },
+];
+
+const principles = [
+  "Liens affiliés toujours signalés, avec rel=\"sponsored\".",
+  "Les limites de chaque offre sont écrites noir sur blanc, même quand elles ne vendent pas.",
+  "Prix, libellés et fonctions vérifiés sur l'interface réelle à chaque mise à jour, avec la date indiquée.",
+  "Pas d'avis inventés, pas de faux témoignages, pas de promesses de revenus.",
+  "Aucune utilisation de marque par enchère sur le nom (brand bidding) ni de coupons non autorisés.",
+];
+---
+
+<Base title="Kit média" description="Zunrel en bref : audience, formats, diffusion et principes, pour les programmes partenaires.">
+  <h1 class="text-[22px] font-semibold leading-7 text-[#171717]">Kit média</h1>
+  <p class="mt-4 text-[15px] leading-6 text-[#737373]">
+    Zunrel en bref, pour les programmes partenaires et les marques. Les chiffres ci-dessous sont calculés
+    automatiquement à partir du contenu publié.
+  </p>
+
+  <div class="mt-10 grid grid-cols-2 gap-3 min-[640px]:grid-cols-4">
+    {
+      stats.map((stat) => (
+        <div class="rounded-[6px] bg-[#f3f3f3] p-4">
+          <p class="text-[22px] font-semibold leading-7 text-[#171717]">{stat.value}</p>
+          <p class="mt-1 text-[13px] leading-5 text-[#737373]">{stat.label}</p>
+        </div>
+      ))
+    }
+  </div>
+
+  {
+    facts.map((fact) => (
+      <section class="mt-10">
+        <h2 class="text-[15px] font-medium leading-5 text-[#171717]">{fact.title}</h2>
+        <p class="mt-3 text-[15px] leading-6 text-[#666666]">{fact.body}</p>
+      </section>
+    ))
+  }
+
+  <section class="mt-10">
+    <h2 class="text-[15px] font-medium leading-5 text-[#171717]">Outils et rubriques couverts</h2>
+    <p class="mt-3 text-[15px] leading-6 text-[#666666]">
+      {tools.map((tool) => tool.name).join(", ")}. Rubriques : {activeThemes.map((theme) => theme.name).join(", ")}.
+    </p>
+  </section>
+
+  <section class="mt-10">
+    <h2 class="text-[15px] font-medium leading-5 text-[#171717]">Nos principes</h2>
+    <ul class="mt-3 list-disc space-y-2 pl-5 text-[15px] leading-6 text-[#666666]">
+      {principles.map((item) => <li>{item}</li>)}
+    </ul>
+  </section>
+
+  <section class="mt-10">
+    <h2 class="text-[15px] font-medium leading-5 text-[#171717]">Travailler avec Zunrel</h2>
+    <p class="mt-3 text-[15px] leading-6 text-[#666666]">
+      Zunrel travaille en affiliation (partage de revenus, idéalement récurrent) avec des outils SaaS utiles aux
+      petites entreprises, via PartnerStack et Impact. Pour une proposition, utilisez la messagerie de votre
+      programme sur l'une de ces plateformes. Des guides dédiés en portugais et en anglais sont prévus.
+    </p>
+  </section>
+
+  <p class="mt-10 text-[15px] leading-6 text-[#666666]">
+    Voir aussi : <a href={href("/a-propos")} class="text-[#171717] underline underline-offset-2">À propos</a> ·
+    <a href={href("/conditions-d-utilisation")} class="text-[#171717] underline underline-offset-2">Conditions d'utilisation</a>
+  </p>
+</Base>

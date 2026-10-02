@@ -1,0 +1,128 @@
+---
+// Cadeau de la newsletter : modèles de textes à copier pour une landing page
+// (titre, sous-titre, avantages, bouton, formulaire, page de remerciement).
+// Imprimable en PDF comme les checklists.
+import Base from "../../layouts/Base.astro";
+import NewsletterForm from "../../components/NewsletterForm.astro";
+import { href } from "../../lib/paths";
+
+const sections = [
+  {
+    title: "1. Le titre",
+    tip: "Le résultat que le visiteur obtient, pas le nom de votre produit. Une seule idée, moins de 12 mots.",
+    models: [
+      "[Résultat] en [durée], même si [obstacle].",
+      "Le guide gratuit pour [résultat] sans [effort ou coût].",
+      "[Nombre] étapes pour [résultat] avant [date ou événement].",
+      "Arrêtez de [problème]. Commencez à [résultat].",
+    ],
+    example: "Votre première vente en 30 jours, même si vous partez de zéro.",
+  },
+  {
+    title: "2. Le sous-titre",
+    tip: "Qui est concerné et ce qu'il reçoit, en une phrase.",
+    models: [
+      "Pour les [public] qui veulent [objectif] : [ce que contient l'offre].",
+      "[Offre] : [bénéfice 1], [bénéfice 2] et [bénéfice 3], en [format].",
+    ],
+    example: "Pour les créateurs qui lancent leur boutique : une checklist de 10 étapes, à cocher en une soirée.",
+  },
+  {
+    title: "3. Les trois avantages",
+    tip: "Commencez chaque ligne par un verbe. Parlez de ce que le visiteur gagne, pas de vos fonctions.",
+    models: [
+      "Gagnez [temps ou argent] grâce à [moyen].",
+      "Évitez [erreur fréquente] qui [conséquence].",
+      "Sachez exactement [quoi faire] à chaque étape.",
+    ],
+    example: "Évitez les 3 erreurs qui bloquent la première commande.",
+  },
+  {
+    title: "4. Le bouton",
+    tip: "Le bouton dit ce qui se passe au clic, à la première personne. Jamais « Envoyer » ni « Valider ».",
+    models: ["Je reçois [le cadeau]", "Je veux [résultat]", "Réserver ma place", "Voir les offres", "Commencer gratuitement"],
+    example: "Je reçois la checklist",
+  },
+  {
+    title: "5. Le formulaire",
+    tip: "Un seul champ (l'e-mail) quand c'est possible. Une case de consentement non cochée pour les e-mails commerciaux.",
+    models: [
+      "Texte au-dessus : « Recevez [cadeau] directement dans votre boîte mail. »",
+      "Texte sous le bouton : « Pas de spam. Désinscription en un clic. »",
+      "Case de consentement : « J'accepte de recevoir les e-mails de [marque]. Je peux me désinscrire à tout moment. »",
+    ],
+    example: "Recevez la checklist directement dans votre boîte mail.",
+  },
+  {
+    title: "6. La page de remerciement",
+    tip: "Dites quoi faire maintenant, et proposez une seule action suivante.",
+    models: [
+      "« Merci ! Ouvrez l'e-mail que nous venons d'envoyer à votre adresse et cliquez sur le bouton pour confirmer. »",
+      "« En attendant, [action suivante : lire un guide, suivre la page, voir l'offre]. »",
+    ],
+    example: "Merci ! Votre checklist arrive par e-mail. En attendant, découvrez comment choisir votre forfait.",
+  },
+  {
+    title: "7. La preuve et l'urgence (sans mentir)",
+    tip: "Seulement des faits vrais : de vrais avis, une vraie date limite, un vrai nombre de places.",
+    models: [
+      "« Déjà [nombre] [personnes] inscrites. »",
+      "« Offre valable jusqu'au [date]. »",
+      "« [Prénom], [métier] : “[avis réel, court]” »",
+    ],
+    example: "Offre de lancement valable jusqu'au 31 octobre.",
+  },
+];
+---
+
+<Base
+  title="Modèles de textes pour landing page"
+  description="Titres, sous-titres, avantages, boutons, formulaire et page de remerciement : des modèles de textes à copier pour votre landing page Leadpages ou HTML Pub. À imprimer en PDF."
+>
+  <h1 class="text-[22px] font-semibold leading-7 text-[#171717]">Modèles de textes pour landing page</h1>
+  <p class="mt-4 text-[15px] leading-6 text-[#666666]">
+    Des phrases à compléter pour chaque bloc d'une landing page, dans l'ordre de la page. Remplacez ce qui est entre
+    [crochets], puis collez le texte dans l'éditeur de Leadpages ou de HTML Pub, ou donnez-le à l'assistant IA.
+  </p>
+  <div class="mt-6">
+    <button
+      type="button"
+      data-print
+      class="no-print inline-flex h-[30px] items-center gap-1.5 rounded-[4px] border border-[#e5e5e5] bg-white px-3 text-[13px] font-medium text-[#171717] hover:bg-[#f3f3f3]"
+    >
+      <svg aria-hidden="true" width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2v8M4.5 6.5 8 10l3.5-3.5M3 13h10" /></svg>
+      Télécharger en PDF
+    </button>
+  </div>
+  <script>
+    document.querySelectorAll("[data-print]").forEach((button) => {
+      button.addEventListener("click", () => window.print());
+    });
+  </script>
+
+  <div class="mt-10 space-y-6">
+    {
+      sections.map((section) => (
+        <section class="rounded-[6px] border border-[#e5e5e5] bg-white p-5">
+          <h2 class="text-[15px] font-medium leading-6 text-[#171717]">{section.title}</h2>
+          <p class="mt-1 text-[14px] leading-6 text-[#666666]">{section.tip}</p>
+          <ul class="mt-3 list-disc space-y-1.5 pl-5 text-[15px] leading-6 text-[#404040]">
+            {section.models.map((model) => <li>{model}</li>)}
+          </ul>
+          <p class="mt-3 text-[14px] leading-6 text-[#666666]">
+            <span class="font-medium text-[#171717]">Exemple :</span> {section.example}
+          </p>
+        </section>
+      ))
+    }
+  </div>
+
+  <p class="mt-10 text-[15px] leading-6 text-[#666666]">
+    Pour construire la page elle-même, suivez
+    <a href={href("/guides/creer-sa-landing-page-leadpages-de-a-a-z")} class="text-[#171717] underline underline-offset-4 hover:text-black">le guide complet Leadpages de A à Z</a>
+    ou la
+    <a href={href("/newsletter/checklist-leadpages")} class="text-[#171717] underline underline-offset-4 hover:text-black">checklist de lancement d'une landing page</a>.
+  </p>
+
+  <NewsletterForm tag="leadpages" />
+</Base>

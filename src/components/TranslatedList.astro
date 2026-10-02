@@ -1,0 +1,41 @@
+---
+// Liste des guides traduits d'une langue (/pt/ ou /en/).
+import Base from "../layouts/Base.astro";
+import { translatedPath, translations, ui, type OtherLang } from "../lib/i18n";
+
+interface Props {
+  lang: OtherLang;
+}
+const { lang } = Astro.props;
+const t = ui[lang];
+const items = translations[lang];
+---
+
+<Base
+  lang={lang}
+  title={t.listTitle}
+  description={t.listIntro}
+  alternates={[
+    { lang: "fr", path: "/" },
+    { lang: "pt", path: "/pt/" },
+    { lang: "en", path: "/en/" },
+  ]}
+>
+  <h1 class="text-[26px] font-semibold leading-8 tracking-[-0.015em] text-[#171717]">{t.listTitle}</h1>
+  <p class="mt-4 text-[15px] leading-6 text-[#666666]">{t.listIntro}</p>
+  <div class="mt-12 space-y-8">
+    {
+      items.map((item) => (
+        <a href={translatedPath(lang, item.localSlug)} class="group block">
+          <span class="block text-[15px] font-medium leading-5 text-[#171717] group-hover:underline">{item.question} →</span>
+          <span class="mt-1 block text-[14px] leading-5 text-[#737373]">{item.summary}</span>
+        </a>
+      ))
+    }
+  </div>
+  <p class="mt-12 text-[14px] leading-6">
+    <a href="/" hreflang="fr" class="text-[#171717] underline underline-offset-4 hover:text-black">Zunrel en français</a>
+    ·
+    <a href={lang === "pt" ? "/en/" : "/pt/"} hreflang={lang === "pt" ? "en" : "pt"} class="text-[#171717] underline underline-offset-4 hover:text-black">{t.otherLang}</a>
+  </p>
+</Base>

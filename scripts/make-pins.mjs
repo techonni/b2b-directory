@@ -55,6 +55,10 @@ const titles = {
   "ajouter-un-compte-a-rebours-leadpages": "Un [compte à rebours] sur Leadpages",
   "creer-une-page-bientot-disponible-html-pub": "Une page [bientôt disponible] avec HTML Pub",
   "ajouter-des-avis-clients-shopify": "Des [avis clients] sur Shopify",
+  "creer-une-collection-shopify": "Créer une [collection] sur Shopify",
+  "creer-une-page-webinaire-leadpages": "Une page [webinaire] avec Leadpages",
+  "creer-une-carte-cadeau-shopify": "Vendre des [cartes-cadeaux] sur Shopify",
+  "creer-une-page-de-tarifs-html-pub": "Une page de [tarifs] avec HTML Pub",
   "creer-une-page-lien-en-bio-avec-html-pub": "Votre page [lien en bio] Instagram et TikTok",
 };
 

@@ -148,6 +148,26 @@ Un visiteur qui ne vous connaît pas regarde d'abord les avis.
 Sur Shopify : une application d'avis (plusieurs sont gratuites), les étoiles sous le titre du produit, et une demande d'avis 7 à 14 jours après la livraison.
 Comment faire : https://zunrel.com/guides/ajouter-des-avis-clients-shopify/?utm_source=SOURCE&utm_medium=social&utm_campaign=post-diario
 
+### Dia 27
+Vingt rayons à moitié vides perdent le client. Trois à six collections bien remplies le guident.
+Sur Shopify, une collection peut être manuelle (vos coups de cœur) ou automatique (tous les produits d'un type, même les nouveaux).
+Comment faire : https://zunrel.com/guides/creer-une-collection-shopify/?utm_source=SOURCE&utm_medium=social&utm_campaign=post-diario
+
+### Dia 28
+Un webinaire, c'est des contacts qui veulent vraiment apprendre.
+La page d'inscription qui marche : un titre qui promet un résultat, trois points, prénom + e-mail, un compte à rebours, et une page de confirmation.
+Avec Leadpages : https://zunrel.com/guides/creer-une-page-webinaire-leadpages/?utm_source=SOURCE&utm_medium=social&utm_campaign=post-diario
+
+### Dia 29
+La carte-cadeau, c'est le cadeau de dernière minute… et souvent un nouveau client.
+Sur Shopify : un produit carte-cadeau avec 3 montants, mis en avant avant les fêtes, et un e-mail testé.
+Comment faire : https://zunrel.com/guides/creer-une-carte-cadeau-shopify/?utm_source=SOURCE&utm_medium=social&utm_campaign=post-diario
+
+### Dia 30
+Avant d'acheter, tout le monde cherche la même chose : combien, et pour quoi ?
+Une page de tarifs claire : 2 ou 3 offres, ce qui est inclus, un bouton par offre, une FAQ honnête. Avec l'IA de HTML Pub, sans code.
+Comment faire : https://zunrel.com/guides/creer-une-page-de-tarifs-html-pub/?utm_source=SOURCE&utm_medium=social&utm_campaign=post-diario
+
 ---
 
 ## Pinterest: 5 pins por dia

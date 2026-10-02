@@ -938,6 +938,162 @@ export const enGuides: TranslatedGuide[] = [
     ],
   },
   {
+    slug: "creer-une-collection-shopify",
+    localSlug: "create-collection-shopify",
+    question: "How to create a product collection on Shopify?",
+    summary: "Group your products by category, by hand or automatically, and show them in your store menu.",
+    intro:
+      "A collection is an aisle in your store: « Candles », « New arrivals », « Sale ». It helps customers find what they want and lets you feature products in the menu or on the home page.",
+    steps: [
+      {
+        title: "Open collections",
+        text: "In your Shopify admin, click « Products », then « Collections », then « Create collection ».",
+      },
+      {
+        title: "Add a title and description",
+        text: "The title shows on your store: keep it short and clear (« Scented candles »). Add a one-line description and an image: they appear at the top of the collection page and help Google understand it.",
+      },
+      {
+        title: "Choose manual or automated",
+        text: "« Manual »: you add each product yourself, great for a small selection (« Staff picks »). « Automated »: you set conditions (for example product type is « Candle », or tag contains « sale ») and Shopify adds matching products on its own, including new ones.",
+      },
+      {
+        title: "Add products and set the order",
+        text: "For a manual collection, search and add products. For an automated one, check the resulting list. Then pick the sort order: best selling, price, newest, or manual.",
+      },
+      {
+        title: "Check availability and save",
+        text: "Under « Sales channels » (or « Availability »), make sure the collection is available on the Online Store. Click « Save ».",
+      },
+      {
+        title: "Add it to the menu",
+        text: "Go to « Online Store » > « Navigation » (or « Menus »), open the main menu and add a link to the collection. It now shows in your store navigation.",
+      },
+    ],
+    pitfalls: [
+      "One collection per product: too many near-empty aisles lose the customer. Aim for 3 to 6 well-stocked collections.",
+      "An automated collection with conditions that are too broad: unrelated products slip in. Check the list after adding products.",
+      "Forgetting to add it to the menu: nobody finds it.",
+    ],
+  },
+  {
+    slug: "creer-une-page-webinaire-leadpages",
+    localSlug: "webinar-registration-page-leadpages",
+    question: "How to create a webinar registration page with Leadpages?",
+    summary: "Start from a webinar template, sum up the topic in three points, add a form and a countdown, then confirm the signup.",
+    intro:
+      "A webinar is a great way to collect qualified leads: people give their email to learn something specific. Leadpages has templates built for this, with a form and a countdown.",
+    steps: [
+      {
+        title: "Start from a webinar template",
+        text: "In Leadpages, create a new landing page and filter templates by the webinar category. Check the mobile preview, then pick a simple template: headline, promise, date, form.",
+      },
+      {
+        title: "Write a headline that promises a result",
+        text: "The headline says what people will be able to do afterwards: « Open your Shopify store in a weekend », not « Shopify webinar ». Right below: the date, the time with the time zone, and the length.",
+      },
+      {
+        title: "Sum up the content in three points",
+        text: "Three bullets are enough: what you'll cover, who it's for, and what they'll leave with. Add one line about you (no photo if you'd rather stay low-key) to say why they should listen.",
+      },
+      {
+        title: "Set up the registration form",
+        text: "Keep first name and email, nothing more. Connect the form to your email or webinar tool so registrants get the link. Add an unchecked consent box if you plan to send other emails.",
+      },
+      {
+        title: "Add a countdown",
+        text: "A « Countdown » element set to the webinar date and time reminds people the event has a deadline. Place it near the signup button.",
+      },
+      {
+        title: "Prepare the confirmation page and publish",
+        text: "After signup, send people to a thank-you page: « You're in! Add the date to your calendar » plus the time. Publish, register yourself and check that the confirmation email arrives.",
+      },
+    ],
+    pitfalls: [
+      "A form that's too long (phone, company, job title): every extra field costs signups.",
+      "Forgetting the time zone: some registrants join an hour late.",
+      "Not sending reminders the day before and an hour before: many registrants forget to show up.",
+    ],
+  },
+  {
+    slug: "creer-une-carte-cadeau-shopify",
+    localSlug: "sell-gift-cards-shopify",
+    question: "How to sell gift cards on Shopify?",
+    summary: "Create a gift card product with several amounts, feature it for the holidays and track used cards.",
+    intro:
+      "A gift card is the perfect last-minute present, and it often brings a new customer to your store. On Shopify it's a separate product: the customer picks an amount, pays, and gets a code by email.",
+    steps: [
+      {
+        title: "Open gift cards",
+        text: "In your Shopify admin, click « Products », then « Gift cards », then « Add a gift card product ».",
+      },
+      {
+        title: "Add a title, description and image",
+        text: "For example « Glow Candles gift card ». In the description, say how it's used (online, valid store-wide). Add a clear image of the card: it's what customers see in your store.",
+      },
+      {
+        title: "Set the amounts",
+        text: "Shopify suggests default amounts (« denominations »). Replace them with yours, for example 20, 50 and 100, add more with « Add denomination » or delete with the trash icon. Customers can't type a custom amount: they choose from these.",
+      },
+      {
+        title: "Save and check availability",
+        text: "Click « Save gift card product ». Make sure it's available on the Online Store, then add it to a collection or the menu (for example « Gift ideas »).",
+      },
+      {
+        title: "Test the purchase and the email",
+        text: "Place a test order: the customer gets an email with the card code to use at checkout. Review that message in your notification settings and adjust the text if needed.",
+      },
+      {
+        title: "Track used cards",
+        text: "Under « Products » > « Gift cards », you see every card sold, its balance and any expiration date. You can also issue a card by hand to make things right with a customer.",
+      },
+    ],
+    pitfalls: [
+      "Setting an expiration date without checking the rules: in the US, federal law and many states limit gift card expiration.",
+      "Not featuring it: buried in the catalog, it won't sell. Show it in December and before holidays.",
+      "Not testing the email: a poorly presented code makes customers think the card never arrived.",
+    ],
+  },
+  {
+    slug: "creer-une-page-de-tarifs-html-pub",
+    localSlug: "pricing-page-html-pub",
+    question: "How to create a pricing page with HTML Pub?",
+    summary: "Show your offers side by side, with what's included and one button per offer, without writing code.",
+    intro:
+      "A clear pricing page answers the question everyone asks before buying: how much, and for what? With HTML Pub's AI assistant, you describe it, it builds it, then you refine it by chatting.",
+    steps: [
+      {
+        title: "Plan your offers on paper",
+        text: "Two or three offers, no more. For each: a name, a price, a « who it's for » line, and three to five included items. Pick the offer you most want to sell: it will be highlighted.",
+      },
+      {
+        title: "Open the create screen",
+        text: "In HTML Pub, click « Create » in the left menu, then choose « Landing page ». If you already have an HTML Pub site, add a page to that site instead to keep the same menu.",
+      },
+      {
+        title: "Describe the page to the assistant",
+        text: "Paste your offers and ask: « A pricing page with three columns, the middle one highlighted with a Most popular badge, one button per offer, and a short FAQ below. » Send.",
+      },
+      {
+        title: "Link each button",
+        text: "Each button must go to the right place: the Shopify product page, checkout or a contact form. Ask the assistant to add your links, then click each one in the preview to check.",
+      },
+      {
+        title: "Add a short FAQ",
+        text: "Four or five questions that block a purchase: « Can I switch plans? », « How does payment work? », « Is there a commitment? ». A short, honest answer to each.",
+      },
+      {
+        title: "Check on mobile and publish",
+        text: "On a phone, columns stack: the highlighted offer must stay easy to see. Check, publish, then add the page to your site menu.",
+      },
+    ],
+    pitfalls: [
+      "Too many offers: beyond three, visitors hesitate and leave without choosing.",
+      "Prices without what's included: visitors can't compare.",
+      "Hiding costs (shipping, taxes, commitment): it's the top reason people abandon at checkout.",
+    ],
+  },
+  {
     slug: "ajouter-un-produit-shopify",
     localSlug: "add-product-shopify",
     question: "How to add a product on Shopify?",

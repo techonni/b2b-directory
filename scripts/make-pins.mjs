@@ -4,6 +4,7 @@
 //
 // Lancer :
 //   node --experimental-strip-types scripts/make-pins.mjs [--fonts <dossier Lato>] [--chrome <chemin>] [--force] [--variant erreurs] [slug…]
+// --variant etapes : quatrième épingle, fond noir avec toutes les étapes, dans public/pins/etapes/<slug>.jpg.
 // --variant minimal : troisième épingle sobre, dans public/pins/minimal/<slug>.jpg.
 // --variant erreurs : deuxième épingle par guide (fond sombre, les erreurs à éviter au lieu des étapes),
 // dans public/pins/erreurs/<slug>.jpg, pour varier les épingles d'un même guide sur Pinterest.
@@ -95,8 +96,43 @@ p{margin-top:48px;font-size:36px;line-height:1.4;color:#737373}
 </body></html>`;
 }
 
+// --variant etapes : quatrième épingle, fond noir, titre et toutes les étapes en liste.
+function etapes(guide) {
+  const badge = guide.theme === "boutique" ? "Shopify" : guide.slug.includes("html-pub") ? "HTML Pub" : "Leadpages";
+  const dots = Array.from({ length: 12 }, (_, i) => {
+    const a = (i / 12) * 2 * Math.PI;
+    return `<circle cx="${12 + 8.1 * Math.sin(a)}" cy="${12 - 8.1 * Math.cos(a)}" r="1.25" fill="#ffffff"/>`;
+  }).join("");
+  const plain = title(guide).replace(/<[^>]+>/g, "").replace(/ ([?!:])/g, "&nbsp;$1");
+  const steps = guide.steps.slice(0, 6).map((step) => escape(step.title));
+  return `<!doctype html><html><head><meta charset="utf-8"><style>
+@font-face{font-family:Lato;font-weight:900;src:url("file://${fonts}/Lato-Black.ttf")}
+@font-face{font-family:Lato;font-weight:700;src:url("file://${fonts}/Lato-Bold.ttf")}
+@font-face{font-family:Lato;font-weight:400;src:url("file://${fonts}/Lato-Regular.ttf")}
+*{box-sizing:border-box;margin:0}
+body{width:1000px;height:1500px;background:#171717;color:#ffffff;font-family:Lato,sans-serif;position:relative;overflow:hidden}
+.top{position:absolute;top:90px;left:90px;right:90px;display:flex;justify-content:space-between;align-items:center}
+.brand{display:flex;align-items:center;gap:14px;font-weight:700;font-size:34px}
+.badge{font-size:26px;color:#171717;background:#ffffff;border-radius:30px;padding:10px 26px;font-weight:700}
+h1{position:absolute;top:220px;left:90px;right:90px;font-weight:900;font-size:${plain.length > 60 ? 74 : 86}px;line-height:1.08;letter-spacing:-1.5px}
+.kicker{position:absolute;top:640px;left:90px;font-size:26px;letter-spacing:2px;text-transform:uppercase;color:#a0a0a0;font-weight:700}
+ol{position:absolute;top:700px;left:90px;right:90px;list-style:none;padding:0}
+li{display:flex;gap:26px;align-items:baseline;font-size:36px;line-height:1.25;padding:20px 0;border-top:1px solid #333}
+li b{font-weight:900;color:#a0a0a0;width:44px;flex:none}
+.foot{position:absolute;left:90px;right:90px;bottom:90px;display:flex;justify-content:space-between;font-size:30px;color:#a0a0a0}
+.foot b{color:#ffffff;font-weight:900}
+</style></head><body>
+<div class="top"><div class="brand"><svg width="48" height="48" viewBox="0 0 24 24">${dots}</svg>Zunrel</div><div class="badge">${badge}</div></div>
+<h1>${plain}</h1>
+<p class="kicker">${guide.steps.length > 6 ? "Les 6 premières étapes" : `${steps.length} étapes`}</p>
+<ol>${steps.map((step, i) => `<li><b>${i + 1}</b>${step}</li>`).join("")}</ol>
+<div class="foot"><span>Guide gratuit</span><b>zunrel.com</b></div>
+</body></html>`;
+}
+
 function html(guide) {
   if (variant === "minimal") return minimal(guide);
+  if (variant === "etapes") return etapes(guide);
   const shop = guide.theme === "boutique";
   const badge = shop ? "Shopify" : guide.slug.includes("html-pub") ? "HTML Pub" : "Leadpages";
   const errors = variant === "erreurs";

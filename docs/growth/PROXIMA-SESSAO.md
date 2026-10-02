@@ -21,7 +21,9 @@ Data: 28/09/2026 (7.ª sessão do dia: resultados dos lotes 2, P e 4; link Shopi
 - **Guias das semanas 10, 11 e 12** publicados em FR, PT e EN: `ajouter-un-compte-a-rebours-leadpages`, `creer-une-page-bientot-disponible-html-pub`, `ajouter-des-avis-clients-shopify` (3 pins cada: normal, erreurs, minimal). O calendário de `plano-growth.md` está todo feito: **escrever as semanas 13 a 16** na próxima sessão.
 - **Arrumação:** resumos dos guias completos sem « chaque écran »; imagem de partilha (og:image) e botão Pinterest passam a usar `pins/minimal/`; apagados `vercel.json`, `lib/`, `directory.ts`, `marks.ts`, `BrandIcon`, `SubscribeForm`.
 - **Redes:** posts X/LinkedIn até ao Dia 26 em `fila-redes.md` (carrinhos abandonados, compte à rebours, bientôt disponible, avis). `pinterest-agendar-3.csv` pronto: 9 pins, 3 por dia, de 16/10 a 18/10. **Falta o Techonni carregá-lo.**
-- Traduções: os 52 guias estão todos em PT e EN (só o guia EN de preços da Shopify continua escondido).
+- **2.ª parte de 02/10:** revisão SEO (seoTitle em 17 guias, seoDescription em 21; todos os 56 guias dentro dos limites), secção « Nouveaux guides » na página inicial, velocidade medida (CLS 0, LCP < 0,5 s em telemóvel: nada a corrigir), guias das semanas 13-16 (coleções, webinar, cartões-presente, página de preços) em FR/PT/EN, semanas 17-20 planeadas em `plano-growth.md`.
+- **Redes:** `posts-x.md` com 7 posts prontos para o X (Dia 23-29); `fila-redes.md` até ao Dia 30. 4.ª variante de pins (`--variant etapes`, fundo preto com as etapas) e `pinterest-agendar-4.csv`: 56 pins, 10 por dia, de 19/10 a 24/10. **Falta o Techonni carregar `pinterest-agendar-3.csv` e `pinterest-agendar-4.csv`.**
+- Traduções: os 56 guias estão todos em PT e EN (só o guia EN de preços da Shopify continua escondido).
 
 ---
 
@@ -195,12 +197,13 @@ Data: 28/09/2026 (7.ª sessão do dia: resultados dos lotes 2, P e 4; link Shopi
 ## Próxima sessão (fazer tudo, por esta ordem)
 
 1. Ler as visitas (GA4 ou Cloudflare Web Analytics, se o Techonni o tiver ativado): páginas mais vistas e de onde vêm.
-2. Search Console (quando o Techonni der os dados): `seoTitle` / `seoDescription` nas 5 páginas com mais impressões e CTR mais baixo.
-3. GA4, semana de 05/10: `affiliate_click` por `placement` e `guide`; `web_vital` por página; `pdf_download`.
-4. Escrever as semanas 13 a 16 em `plano-growth.md` e publicar o guia da semana 13 em FR, PT e EN, sem capturas, com 3 pins (normal, erreurs, minimal) e 2 links internos.
-5. Newsletter: **nada** enquanto não houver inscrito real (regra 0). Não perguntar ao Techonni.
-6. `fila-redes.md` tem posts até ao Dia 26: manter 7 dias de avanço. Antes de 18/10: `pinterest-agendar-4.csv` (a partir de 19/10) com os guias novos e uma 4.ª variante de imagem. **Títulos sempre únicos no mesmo CSV, máx. 100 caracteres.**
-7. Atualizar este ficheiro, publicar e enviar ao Techonni.
+2. Revisão mensal de `/offres/` e preços a 28/10.
+3. Search Console (quando o Techonni der os dados): `seoTitle` / `seoDescription` nas 5 páginas com mais impressões e CTR mais baixo.
+4. GA4, semana de 05/10: `affiliate_click` por `placement` e `guide`; `web_vital` por página; `pdf_download`.
+5. Publicar os guias das semanas 17 a 20 (já escritos em `plano-growth.md`) em FR, PT e EN, sem capturas, com 4 pins (normal, erreurs, minimal, etapes) e 2 links internos.
+6. Newsletter: **nada** enquanto não houver inscrito real (regra 0). Não perguntar ao Techonni.
+7. `fila-redes.md` tem posts até ao Dia 30 e `posts-x.md` até ao Dia 29: manter 7 dias de avanço. Antes de 24/10: `pinterest-agendar-5.csv` (a partir de 25/10) com os guias novos e uma 5.ª variante de imagem. **Títulos sempre únicos no mesmo CSV, máx. 100 caracteres.**
+8. Atualizar este ficheiro, publicar e enviar ao Techonni.
 
 ---
 

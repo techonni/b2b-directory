@@ -1,9 +1,8 @@
 ---
-// Page d'un guide traduit (/pt/guias/… ou /en/guides/…). Texte de la traduction ; captures,
+// Page d'un guide traduit (/pt/guias/… ou /en/guides/…). Texte de la traduction ;
 // sources et bouton affilié repris du guide français.
 import Base from "../layouts/Base.astro";
 import { affiliateLink, getGuide, shopifyLink, type Guide } from "../lib/guides";
-import { imageSize } from "../lib/image-size";
 import NewsletterForm from "./NewsletterForm.astro";
 import {
   localizeSource,
@@ -120,7 +119,6 @@ const howTo = {
     <ol class="mt-6 space-y-8">
       {
         item.steps.map((step, index) => {
-          const image = guide.steps[index]?.image;
           return (
             <li class="flex gap-4">
               <span class="flex size-7 shrink-0 items-center justify-center rounded-full bg-[#171717] text-[13px] font-medium text-white">
@@ -131,17 +129,6 @@ const howTo = {
                 {step.text.split("\n\n").map((paragraph, i) => (
                   <p class:list={["text-[15px] leading-6 text-[#666666]", i === 0 ? "mt-1" : "mt-3"]}>{paragraph}</p>
                 ))}
-                {image ? (
-                  <img
-                    src={image.src}
-                    alt={step.alt ?? image.alt}
-                    width={imageSize(image.src)?.width}
-                    height={imageSize(image.src)?.height}
-                    loading="lazy"
-                    decoding="async"
-                    class="mt-4 w-full rounded-[6px] shadow-[0_0_0_1px_rgba(0,0,0,0.07),0_1px_2px_rgba(0,0,0,0.05)]"
-                  />
-                ) : null}
               </div>
             </li>
           );

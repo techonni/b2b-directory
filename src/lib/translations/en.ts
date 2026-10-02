@@ -1,4 +1,4 @@
-// English versions of the most-read guides. Captures, sources and tools come from the French guide
+// English versions of the most-read guides. Sources and tools come from the French guide
 // (same `slug`); only the text lives here. Each step matches, in order, a step of the French guide.
 import type { TranslatedGuide } from "../i18n";
 
@@ -14,7 +14,6 @@ export const enGuides: TranslatedGuide[] = [
       {
         title: "Open the pricing page",
         text: "On shopify.com/pricing, the top of the page shows the current offer in the US: how long the free trial lasts, then the launch price and how many months it applies. Offers change often and differ by country, so read it on the day.",
-        alt: "Shopify pricing page (European version shown): free trial, then a launch offer",
       },
       {
         title: "Click the button to start for free",
@@ -49,12 +48,10 @@ export const enGuides: TranslatedGuide[] = [
       {
         title: "Selling several products? Choose Shopify",
         text: "Catalog, stock, variants, shipping rates, taxes, orders and returns: Shopify handles all of it. Leadpages is not built to run a store.",
-        alt: "Shopify plans Basic, Grow, Advanced and Plus",
       },
       {
         title: "Want to collect leads? Choose Leadpages or HTML Pub",
         text: "Sign-up page, waiting page before a launch, webinar, free guide: a landing page with a form is enough, no store needed.",
-        alt: "HTML Pub and Leadpages plans side by side",
       },
       {
         title: "One product or a service? Start simple",
@@ -89,7 +86,6 @@ export const enGuides: TranslatedGuide[] = [
       {
         title: "Look at the three HTML Pub plans",
         text: "Starter: 5 pages and 1 domain. Pro: 25 pages, 1 blog and API access, for a solo creator. Business: 50 pages, 2 domains and 2 blogs, for a small team or an agency. Publishing from Claude is included in every plan.",
-        alt: "Pricing page: HTML Pub (Publish) and Leadpages (Optimize) plans side by side",
       },
       {
         title: "Look at the three Leadpages plans",
@@ -124,7 +120,6 @@ export const enGuides: TranslatedGuide[] = [
       {
         title: "Click « Start 7-Day Free Trial »",
         text: "Create your account with your email address, then enter a bank card. It is only used to continue after the trial.",
-        alt: "« Start 7-Day Free Trial » buttons on each plan",
       },
       {
         title: "Write down the end date",
@@ -155,37 +150,30 @@ export const enGuides: TranslatedGuide[] = [
       {
         title: "Open the creation screen",
         text: "In the left menu, click « Create ». Piper, the assistant, asks « What are you making? »: choose « Landing page ».",
-        alt: "Create screen: Piper asks « What are you making? »",
       },
       {
         title: "Describe your page precisely",
         text: "In the bottom field, say who the page is for, what you offer, the tone, the colors and the sections you want (headline, benefits, reviews, form). The more precise you are, the better the result. Click « Send ».",
-        alt: "Landing page description typed in the input bar",
       },
       {
         title: "Choose the images",
         text: "Piper asks what to use for images: your own, AI-generated images (more credits) or none for now. The estimated credit cost is shown at the top right. « Skip images for now » is the cheapest choice.",
-        alt: "Image choice with the credit estimate",
       },
       {
         title: "Pick a style",
         text: "Three visual directions are offered. Click the one you like, adjust « How far should I push it? » if you wish, then click « Build it ».",
-        alt: "Three style directions offered by Piper",
       },
       {
         title: "Let Piper build",
         text: "The build runs in six steps, in about a minute: reading the request, sections, copy, images, assembly and checks.",
-        alt: "Page being built, step by step",
       },
       {
         title: "Fix it by chatting",
         text: "Click « Open in editor ». In the « Ask Piper to edit this page… » field, ask for one change at a time. Piper lists what it changed and how many credits it used.",
-        alt: "Editor: Piper applies a requested change",
       },
       {
         title: "Check on mobile, then publish",
         text: "The icons at the bottom right of the editor show the page on desktop, tablet and mobile. To put it online, keep the free pubhtml.com address or connect your domain (« Where should this live? »). After that, « Update » publishes your changes.",
-        alt: "Choosing where to publish: free address or your own domain",
       },
     ],
     pitfalls: [
@@ -208,7 +196,6 @@ export const enGuides: TranslatedGuide[] = [
       {
         title: "Get to know the admin",
         text: "The left menu holds everything: Orders, Products, Customers, Discounts, Online Store and Settings. The home page shows the state of your store and a bar to ask Sidekick for help.",
-        alt: "Shopify admin home page with the menu and Sidekick (French interface)",
       },
       {
         title: "Add your first products",
@@ -246,17 +233,14 @@ export const enGuides: TranslatedGuide[] = [
       {
         title: "The starting offer: 3 days free, then €1 a month",
         text: "On 27 September 2026, Shopify showed a 3-day free trial, then €1 a month for 3 months. After those 3 months, the normal price of the chosen plan starts.",
-        alt: "Shopify pricing page: 3-day free trial, then €1/month for 3 months",
       },
       {
         title: "The price of the four plans",
         text: "Paid yearly: Basic €19 a month, Grow €56 a month, Advanced €289 a month, and Plus from €2,100 a month. Paid monthly, Basic costs €27 a month.\n\nFor one person getting started, Basic is almost always enough.",
-        alt: "Shopify plans paid yearly: Basic €19/month, Grow €56/month, Advanced €289/month, Plus from €2,100/month",
       },
       {
         title: "Fees on each sale",
         text: "With Shopify Payments, each card payment has a fee: on Basic, from 1.8 % + €0.30 per sale (rate shown in Belgium on 27 September 2026). These fees go down as the plan goes up.\n\nIf you use another payment provider instead of Shopify Payments, Shopify adds transaction fees, up to 2 % on Basic.",
-        alt: "Payment settings: Shopify Payments active and PayPal as an extra provider (French interface)",
       },
       {
         title: "The costs people forget",
@@ -284,12 +268,10 @@ export const enGuides: TranslatedGuide[] = [
       {
         title: "Pick a single offer",
         text: "A hero product or a welcome discount. Create the code in Shopify first, for example 10 % off the first order: it is the reason to leave an email.",
-        alt: "Welcome code BIENVENUE10 created in Shopify (French interface)",
       },
       {
         title: "Create the page with AI",
         text: "In HTML Pub or Leadpages, click « Create » and describe the page: the product, the audience, the offer and the button you want. Keep a short headline, three benefits and a product photo.",
-        alt: "Create screen: the assistant asks « What are you making? »",
       },
       {
         title: "Add a form and a button",
@@ -298,7 +280,6 @@ export const enGuides: TranslatedGuide[] = [
       {
         title: "Connect the page to your tools",
         text: "In « Connectors », send leads to your email tool and connect Shopify to find your customers in one place.",
-        alt: "Shopify connector in HTML Pub",
       },
       {
         title: "Send traffic and measure",
@@ -326,7 +307,6 @@ export const enGuides: TranslatedGuide[] = [
       {
         title: "Create the waiting page with AI",
         text: "In HTML Pub or Leadpages, describe the page: the upcoming product, the date, what subscribers get and a form with a single email field.",
-        alt: "Description of a waiting page with an email form in the HTML Pub AI assistant",
       },
       {
         title: "Add consent and an easy way out",
@@ -335,12 +315,10 @@ export const enGuides: TranslatedGuide[] = [
       {
         title: "Find your subscribers",
         text: "Each sign-up lands in « Submissions ». You can view them and export them as CSV.",
-        alt: "Submissions page with the form responses",
       },
       {
         title: "Send them to your email tool",
         text: "In « Connectors », connect Mailchimp, Brevo or another tool so each subscriber arrives there automatically. Prepare a welcome email and the launch-day email.",
-        alt: "Connectors page with email apps to connect",
       },
     ],
     pitfalls: [
@@ -360,7 +338,6 @@ export const enGuides: TranslatedGuide[] = [
       {
         title: "Open « Domains »",
         text: "In the left menu, click « Domains », then « Connect Domain ». No domain yet? Depending on your plan, « Claim Free Domain » gives you one.",
-        alt: "Domains page with « Connect Domain » and « Claim Free Domain »",
       },
       {
         title: "Type your domain",
@@ -369,7 +346,6 @@ export const enGuides: TranslatedGuide[] = [
       {
         title: "Choose what it shows",
         text: "In « Homepage », choose « Page », « Site » or « Blog », then the item to show. You can also pick an error page (« Custom 404 page »). Click « Add & Configure Domain ».",
-        alt: "Connect Your Domain form",
       },
       {
         title: "Let the automatic setup work",
@@ -412,7 +388,6 @@ export const enGuides: TranslatedGuide[] = [
       {
         title: "Add the page to your menu",
         text: "Go to Content, then Menus, and open your main menu or footer menu. Click Add menu item, type \"Contact\" and pick the Contact page as the link. Save.",
-        alt: "Content > Menus: main menu and footer menu, where you add the Contact link",
       },
       {
         title: "Check where messages go",
@@ -440,7 +415,6 @@ export const enGuides: TranslatedGuide[] = [
       {
         title: "Open the product",
         text: "In the left menu, click Products, then the product you want to edit, or Add product to create one. Fill in the title, description and photos first.",
-        alt: "Add product page in the Shopify admin",
       },
       {
         title: "Add an option",
@@ -453,7 +427,6 @@ export const enGuides: TranslatedGuide[] = [
       {
         title: "Set the price and inventory of each variant",
         text: "Shopify lists the variants. Click a variant to change its price (an XL can cost more), its SKU and its quantity in stock. Use Group by to edit all the variants of one color at once.",
-        alt: "Pricing and Inventory sections, filled in for each variant",
       },
       {
         title: "Match a photo to each color",
@@ -481,7 +454,6 @@ export const enGuides: TranslatedGuide[] = [
       {
         title: "Start from a link-in-bio template",
         text: "On the Create screen, click Templates, then Browse all templates. Pick a link-in-bio template, look at it with Preview, then click Use.",
-        alt: "Templates panel with Preview, Use and Browse all templates",
       },
       {
         title: "Add your photo and one sentence",
@@ -498,7 +470,6 @@ export const enGuides: TranslatedGuide[] = [
       {
         title: "Check on your phone and publish",
         text: "Almost every visitor comes from a phone. Click the mobile icon at the bottom right of the editor, make sure each button is easy to tap, then publish.",
-        alt: "Mobile preview of the page in the editor",
       },
       {
         title: "Paste the link in your bio",
@@ -561,7 +532,6 @@ export const enGuides: TranslatedGuide[] = [
       {
         title: "HTML Pub plans, to publish",
         text: "On September 28, 2026, billed yearly: Starter costs $5.58 a month ($7 billed monthly), Pro $16 a month ($20 monthly) and Business $26.42 a month ($33 monthly).\n\nHTML Pub publishes landing pages, websites and blogs on your own domain, with the AI assistant. It has no A/B testing.",
-        alt: "Pricing page: HTML Pub Pro at $16/month and Business at $26.42/month, Leadpages Grow at $53.58/month and Optimize at $108/month, billed yearly",
       },
       {
         title: "Leadpages plans, to convert more",
@@ -574,7 +544,6 @@ export const enGuides: TranslatedGuide[] = [
       {
         title: "Try it for 7 days before paying",
         text: "Every plan can be tried free for 7 days, with all its features. A card is required, but nothing is charged before the trial ends. Put the end date in your calendar.",
-        alt: "« Start 7-Day Free Trial » buttons on each plan",
       },
       {
         title: "Choose based on your traffic",
@@ -684,7 +653,6 @@ export const enGuides: TranslatedGuide[] = [
       {
         title: "Write the code and its value",
         text: "Keep the « Discount code » method, type a code that is easy to remember (for example WELCOME10), then choose « Percentage » or « Fixed amount » and the value. The summary on the right updates right away.",
-        alt: "« Create discount » form with the code BIENVENUE10 and 10 % off the order (French interface)",
       },
       {
         title: "Set the conditions",
@@ -711,7 +679,6 @@ export const enGuides: TranslatedGuide[] = [
       {
         title: "Open « Shipping and delivery »",
         text: "In the admin, click « Settings » at the bottom left, then « Shipping and delivery ». The « General » shipping profile applies to all your products: that is the one you will set up.",
-        alt: "Settings > Shipping and delivery: general profile, estimated delivery dates and packages (French interface)",
       },
       {
         title: "Create your shipping zones",
@@ -868,7 +835,6 @@ export const enGuides: TranslatedGuide[] = [
       {
         title: "Open « Add product »",
         text: "In the left menu, click « Products », then « Add product ».",
-        alt: "« Add product » form: title, description, media (French interface)",
       },
       {
         title: "Write the title and description",
@@ -881,7 +847,6 @@ export const enGuides: TranslatedGuide[] = [
       {
         title: "Set the price and inventory",
         text: "Enter the price and, if you want, a « Compare-at price ». In « Inventory », enter the quantity available.",
-        alt: "Price and Inventory sections of the product page (French interface)",
       },
       {
         title: "Set shipping and variants",
@@ -905,7 +870,6 @@ export const enGuides: TranslatedGuide[] = [
       {
         title: "Open the Theme Store",
         text: "Go to themes.shopify.com or, in the admin, to « Online Store » then « Themes ». In the « Price » filter, check « Free » to see only free themes.",
-        alt: "Shopify Theme Store filtered on free themes: Horizon, Colorblock, Tinker",
       },
       {
         title: "Filter by your business",
@@ -944,7 +908,6 @@ export const enGuides: TranslatedGuide[] = [
       {
         title: "Change your plan",
         text: "The page shows every plan, with « Current Plan » on yours. Pick a higher or lower plan. The change takes effect at the next billing cycle.",
-        alt: "Billing page: plans, « Current Plan », « Manage Subscription » and « Cancel »",
       },
       {
         title: "Or cancel",
@@ -975,27 +938,22 @@ export const enGuides: TranslatedGuide[] = [
       {
         title: "Pick a plan and start the trial",
         text: "The pricing page has two families of plans. HTML Pub is for publishing pages, sites and blogs. Leadpages adds tools to improve results: A/B testing from the Grow plan, then Smart Traffic and heatmaps from Optimize.\n\nFor a first page, HTML Pub is often enough. If you want to test two versions of your page, choose Leadpages Grow.\n\nClick « Start 7-Day Free Trial ». A credit card is required, but nothing is charged before day 7. Put the end date in your calendar. Prices change often: check today's on the official page.",
-        alt: "« Start 7-Day Free Trial » buttons on each plan",
       },
       {
         title: "Open the Create screen",
         text: "In the left menu, click « Create ». The AI assistant, Piper, asks « What are you making? »: choose « Landing page ».\n\nPrefer to start from something ready-made? Click « Templates » to pick one, then « Use ». The rest of the guide stays the same.",
-        alt: "Create screen: Piper asks « What are you making? »",
       },
       {
         title: "Describe your page in detail",
         text: "In the field at the bottom, use your notes from step 1: the audience, the offer, the tone, the colors and the sections you want. For example: a headline, three benefits, a customer review, an FAQ and a form with a single email field.\n\nThe more precise the description, the fewer credits you'll spend on fixes. Click « Send ».\n\nExample of a complete description: « Landing page in English for a free PDF guide for independent fitness coaches who want to find their first clients online. Simple, motivating tone. Colors: navy and orange. Sections: headline with the promised result, three benefits, a short author bio, two FAQs, a form with a single email field and an unchecked consent box. Button: Get the guide. »\n\nYou can also paste the address of an existing page or some HTML: Piper uses it as a starting point.",
-        alt: "Landing page description typed into the input bar",
       },
       {
         title: "Choose images and style",
         text: "Piper asks which images to use: yours, AI-generated images (which cost more credits) or none for now. The estimated cost is shown at the top right.\n\nIt then suggests three visual directions. Click the one you like, then « Build it ». The page is built in about a minute.",
-        alt: "Three style directions suggested by Piper",
       },
       {
         title: "Fix the page by chatting",
         text: "Click « Open in editor ». In the « Ask Piper to edit this page… » field, ask for one change at a time: « Replace the headline with… », « Make the button green », « Remove the pricing section ».\n\nPiper lists what it changed and the credits used. Reread every piece of text yourself: AI can make up numbers or reviews. Replace them with real ones, or delete them.\n\nA few useful requests for a first page: « Shorten every paragraph to two sentences max », « Add the button at the top of the page too », « Put my logo at the top left » (after uploading it in « Assets »), « Use my Brand Kit colors ».\n\nFor a small text change, clicking directly in the page is often faster than going through AI. Keep Piper for layout or style changes.",
-        alt: "Editor: Piper applies a requested change",
       },
       {
         title: "Check the form and consent",
@@ -1004,27 +962,22 @@ export const enGuides: TranslatedGuide[] = [
       {
         title: "Check the mobile view",
         text: "Most visitors arrive on their phone. At the bottom right of the editor, click the mobile icon. Check that the headline reads without zooming, the button is visible without scrolling too far, and the form is easy to fill in with a thumb.\n\nCheck speed too: heavy images slow the page down on a mobile network, and every second of waiting makes visitors leave. Use reasonably sized photos and avoid autoplay videos at the top of the page.\n\nFinally, read everything out loud one last time. Typos and sentences that run too long are much easier to spot that way.",
-        alt: "Mobile preview of the page in the editor",
       },
       {
         title: "Set the address and SEO",
         text: "In the editor, the « … » menu at the top right shows the page address (the slug). Keep it short and readable, for example free-guide.\n\nIn « SEO & Social », set the title and description shown on Google and when the page is shared, plus the tab icon. If the page is only for an ad, you can ask Google not to index it.",
-        alt: "SEO & Social window",
       },
       {
         title: "Publish on your own domain",
         text: "When you publish, the question « Where should this live? » appears. You can keep the free address provided, or connect your domain to look more trustworthy.\n\nTo connect a domain, open « Domains » in the left menu, then « Connect Domain ». A subdomain like offer.mysite.com is the simplest. Automatic setup configures the domain for you. HTTPS is free and can take up to 48 hours.\n\nIf automatic setup isn't available with your domain provider, add the records Leadpages shows by hand: a CNAME for the subdomain and a TXT for security. Copy the exact values from your account.\n\nAfter each change, click « Update » to put the page live.",
-        alt: "Choosing where to publish: free address or your domain",
       },
       {
         title: "Send leads to your email tool",
         text: "In the left menu, open « Connectors ». Find your tool (Mailchimp, Brevo, MailerLite, HubSpot…) and click « Connect ».\n\nIn the « Automations » tab, click « Create automation », choose the « Form submitted » trigger, then the tool that will receive the leads. Every new subscriber lands there automatically. Set up a welcome email there.",
-        alt: "Connectors page with apps to connect",
       },
       {
         title: "Run a full test yourself",
         text: "Open the published page on your phone, fill in the form with your own address, then check three things.\n\nThe response shows up in « Submissions », where you can also export it as CSV. The contact arrives in your email tool. The welcome email goes out. If something fails, « View execution logs » in « Connectors » shows why.",
-        alt: "Submissions page with form responses",
       },
       {
         title: "Bring in your first visitors",
@@ -1033,12 +986,10 @@ export const enGuides: TranslatedGuide[] = [
       {
         title: "Track your results",
         text: "Open « Analytics ». The key numbers are at the top: « Sessions » (visits), « Form submissions », « Conversions » and « Conv. rate » (conversion rate).\n\nPick the period (7, 14 or 30 days) and a specific page with « All Pages ». The « Acquisition » tab shows where visitors come from. Wait for at least a hundred visits before drawing conclusions.\n\nIf lots of people come but few sign up, the problem is often the headline or the offer: the promise isn't clear or useful enough. If almost nobody comes, it's distribution that needs work: share the link in your emails, on social media, in your Instagram bio or on a Pinterest pin.\n\nTo track ads, « Scripts & Pixels », in the editor's « … » menu, lets you add the Meta or Google Ads pixel.",
-        alt: "Analytics page: conversions, conversion rate, form submissions and sessions",
       },
       {
         title: "Improve the page with an A/B test",
         text: "With Leadpages Grow or higher, duplicate the page to create a version B and change one thing only: the headline, the button or the offer.\n\nChoose your goal (form submitted, click, purchase), split traffic 50/50 and wait for the « clear winner » result. Then keep the better version and start a new test. On the Optimize plan, Smart Traffic can send each visitor to the version most likely to appeal to them.\n\nWhere to start? The headline, almost always: it's what everyone reads. Then the button text, then the offer itself (a guide or a checklist, a discount or a freebie). Log each test and its result in a simple table: after a few months, you'll know exactly what your audience responds to.\n\nOn HTML Pub? You can move up to Leadpages Grow from your account settings when you're ready: your pages and domains are kept.",
-        alt: "Creating a variant B and switching between A and B",
       },
     ],
     pitfalls: [
@@ -1059,7 +1010,6 @@ export const enGuides: TranslatedGuide[] = [
       {
         title: "Open the templates",
         text: "On the « Create » screen, click « Templates » above the input bar, or « Browse all templates » to see them all.",
-        alt: "Templates panel with « Preview », « Use » and « Browse all templates »",
       },
       {
         title: "Preview before choosing",
@@ -1076,7 +1026,6 @@ export const enGuides: TranslatedGuide[] = [
       {
         title: "Check on mobile, then publish",
         text: "Most visitors arrive on their phone. In the editor, click the mobile icon at the bottom right to check, then publish.",
-        alt: "Mobile preview of the page in the editor",
       },
     ],
     pitfalls: [
@@ -1099,7 +1048,6 @@ export const enGuides: TranslatedGuide[] = [
       {
         title: "Add your code",
         text: "Paste your HTML into the « Describe the page you want, or paste a URL or HTML… » field, or use the upload icon in the bar to drop in an .html file.",
-        alt: "Input bar for pasting HTML, with the file upload icon",
       },
       {
         title: "Check the preview",
@@ -1126,17 +1074,14 @@ export const enGuides: TranslatedGuide[] = [
       {
         title: "Choose « Website »",
         text: "In the left menu, open the arrow next to « Create » and choose « Site ». Or, on the « Create » screen, select « Website ».",
-        alt: "« What are you creating? » menu with the « New website » option",
       },
       {
         title: "Describe your site",
         text: "Explain your business, your audience, the style you want and the pages you need, then click « Send ». Type everything on a single line: each line break sends a separate message.",
-        alt: "Site description typed with « New website »",
       },
       {
         title: "Approve the page list",
         text: "Piper suggests the menu pages. Rename, remove (« Remove ») or add some (« Add a page »), then click « These pages ».",
-        alt: "List of pages suggested for the site",
       },
       {
         title: "Choose images and style, then build the homepage",
@@ -1145,7 +1090,6 @@ export const enGuides: TranslatedGuide[] = [
       {
         title: "Build the other pages",
         text: "The « The rest of the site » card lists the remaining pages with a credit estimate. « Build 3 pages » builds them one by one, with the homepage's header and style. « Skip for now » lets you do it later.",
-        alt: "« The rest of the site » card with the button to build the pages",
       },
     ],
     pitfalls: [
@@ -1164,22 +1108,18 @@ export const enGuides: TranslatedGuide[] = [
       {
         title: "Create the blog",
         text: "In the left menu, open « Blog » and click « New Blog ». Give it a title; the address (slug) fills in on its own. The description and author name are optional. Click « Create Blog ».",
-        alt: "New Blog window with title, slug and description",
       },
       {
         title: "Explore the blog dashboard",
         text: "The blog page shows the design of the blog homepage (« Feed layout ») and of posts (« Post layout »), then your published, draft and scheduled posts.",
-        alt: "Blog dashboard",
       },
       {
         title: "Write a post",
         text: "Click « New post ». The editor opens with Penn, the writing assistant: pick a suggestion (« Write a how-to guide »…) or write it yourself.",
-        alt: "Post editor with the Penn assistant",
       },
       {
         title: "Fill in the post settings",
         text: "The document icon at the bottom opens « Post Settings »: title, content, author, cover image and SEO. Click « Save changes ».",
-        alt: "Post Settings panel for a post",
       },
       {
         title: "Publish",
@@ -1206,7 +1146,6 @@ export const enGuides: TranslatedGuide[] = [
       {
         title: "Open the page menu",
         text: "In « Pages », click « … » at the bottom of the page's card. The menu groups stats, responses, sharing and settings.",
-        alt: "A page's « … » menu: Settings, Set Password, Tags",
       },
       {
         title: "Change the title and address",
@@ -1215,7 +1154,6 @@ export const enGuides: TranslatedGuide[] = [
       {
         title: "Or do it from the editor",
         text: "In the page editor, the « … » menu at the top right shows the address (slug, editable with the pencil), the published address, and the « SEO & Social » and « Scripts & Pixels » options.",
-        alt: "Editor « … » menu: slug, SEO & Social, Scripts & Pixels",
       },
       {
         title: "Protect with a password",
@@ -1228,7 +1166,6 @@ export const enGuides: TranslatedGuide[] = [
       {
         title: "Take care of SEO",
         text: "« SEO & Social » sets the tab icon (favicon), indexing by Google, and the title and description shown in search results.",
-        alt: "SEO & Social window",
       },
     ],
     pitfalls: [
@@ -1251,7 +1188,6 @@ export const enGuides: TranslatedGuide[] = [
       {
         title: "Open « Submissions »",
         text: "In the left menu, click « Submissions ». The « Leads » page groups every response: name, email, source page and date.",
-        alt: "Submissions (Leads) page with form responses",
       },
       {
         title: "Review the responses",
@@ -1282,7 +1218,6 @@ export const enGuides: TranslatedGuide[] = [
       {
         title: "Open « Connectors »",
         text: "In the left menu, click « Connectors ». Search for your tool by name or category (email, CRM, ads…) and click « Connect ».",
-        alt: "Connectors page with apps to connect",
       },
       {
         title: "Authorize the connection",
@@ -1291,7 +1226,6 @@ export const enGuides: TranslatedGuide[] = [
       {
         title: "Set up the automation",
         text: "In the « Automations » tab, click « Create automation ». Choose the trigger (« Form submitted », « Checkout completed » or « Visitor identified »), then the connected app that receives the leads.",
-        alt: "Creating an automation: choosing the trigger",
       },
       {
         title: "Test with your own email",
@@ -1318,7 +1252,6 @@ export const enGuides: TranslatedGuide[] = [
       {
         title: "Create a variant",
         text: "Duplicate your page in one click, or let the AI suggest a variant. Change one important thing only: the headline, the button or the offer.",
-        alt: "Creating a variant B and switching between A and B",
       },
       {
         title: "Choose your goal",
@@ -1357,7 +1290,6 @@ export const enGuides: TranslatedGuide[] = [
       {
         title: "Turn on heatmap mode",
         text: "In the page editor, click the flame icon in the toolbar.",
-        alt: "Click heatmap, with the Clicks, Scroll and Attention tabs",
       },
       {
         title: "Read the clicks",
@@ -1396,7 +1328,6 @@ export const enGuides: TranslatedGuide[] = [
       {
         title: "Turn on Smart Traffic",
         text: "Click « Let AI optimize this for me ». Instead of a fixed split, the AI routes each visitor and gets better as visits add up.",
-        alt: "Optimize panel: automatic traffic split between the original and the variant",
       },
       {
         title: "Track the results",
@@ -1423,12 +1354,10 @@ export const enGuides: TranslatedGuide[] = [
       {
         title: "Read your current stats",
         text: "Before changing anything, write down the current conversion rate. In Leadpages, open the page dashboard: you'll see unique visitors, conversions and the rate. That's your starting point.\n\nIf you just launched the page and traffic is low, wait for at least 200 visitors before drawing conclusions. Below that, the numbers aren't reliable.",
-        alt: "Leadpages dashboard: unique visitors, conversions and conversion rate",
       },
       {
         title: "Use heatmaps to find blockers",
         text: "Heatmaps show where visitors click and how far they scroll. If nobody scrolls down to the form, the problem is above it. If everyone clicks an element that isn't a link, that's a missed opportunity.\n\nIn Leadpages, heatmaps are available from the Optimize plan. Turn them on in the page settings and let them run a few days before reading them.",
-        alt: "Leadpages heatmap: click areas and scroll depth",
       },
       {
         title: "Rewrite the main headline",
@@ -1437,7 +1366,6 @@ export const enGuides: TranslatedGuide[] = [
       {
         title: "Simplify the form",
         text: "Every extra field in a form lowers the conversion rate. If you ask for first name, last name, email, phone and company, cut it down to email only to start. You can ask for the rest later, once you have the contact.\n\nIn Leadpages, open the form in the editor and delete the fields you don't need. Keep a single action button with clear text: « Get the guide », not « Submit ».",
-        alt: "Leadpages form editor: fields and call-to-action button",
       },
       {
         title: "Add social proof",
@@ -1450,7 +1378,6 @@ export const enGuides: TranslatedGuide[] = [
       {
         title: "Optimize for mobile",
         text: "More than half of traffic comes from phones. If your page is hard to read or the button is too small on mobile, you lose conversions.\n\nIn Leadpages, use the editor's mobile preview. Check that the headline reads without zooming, the form is easy to fill in with a thumb, and the button is big enough to tap easily.",
-        alt: "Mobile preview in the Leadpages editor: checking the layout on a phone",
       },
       {
         title: "Build a thank-you page that works",
@@ -1463,17 +1390,14 @@ export const enGuides: TranslatedGuide[] = [
       {
         title: "Run an A/B test",
         text: "Don't change everything at once. Create a variant with a single change: a different headline, a different button color, a shorter form. Let the test run until you have at least 100 conversions per variant for a reliable result.\n\nIn Leadpages, duplicate your page, change one element and start the test from the Optimize tab. Leadpages splits the traffic automatically.",
-        alt: "Leadpages A/B testing interface: original and test variant with traffic split",
       },
       {
         title: "Turn on Smart Traffic to automate",
         text: "Once you have several variants that work, Smart Traffic takes over. Instead of splitting traffic evenly, the AI sends each visitor to the variant most likely to convert them, based on their device, location and behavior.\n\nSmart Traffic is available from Leadpages Optimize. Turn it on in your page's Optimize tab after creating at least two variants.",
-        alt: "Optimize panel: turning on Smart Traffic for smart traffic routing",
       },
       {
         title: "Optimize the page's SEO",
         text: "A page that ranks well gets free, qualified traffic. Fill in the SEO title, meta description and URL with your main keywords. Add alt text to every image.\n\nIn Leadpages, open the page's SEO settings. The title should include your main keyword and stay under 60 characters. The description should make people want to click, in under 155 characters.",
-        alt: "SEO and social settings in Leadpages: title, description and share image",
       },
       {
         title: "Set up weekly tracking",
@@ -1507,7 +1431,6 @@ export const enGuides: TranslatedGuide[] = [
       {
         title: "Authorize access",
         text: "Sign in to your HTML Pub account when Claude asks. No API key is needed. Claude then appears in « Connected Apps », in your workspace menu.",
-        alt: "Connected Apps page, where Claude appears once connected",
       },
       {
         title: "Ask for your page",
@@ -1534,7 +1457,6 @@ export const enGuides: TranslatedGuide[] = [
       {
         title: "Open « Ads »",
         text: "In the left menu, click « Ads ». Describe your product, your audience and the style you want: product ad or UGC-style video.",
-        alt: "Ads page (Ad Studio): « Ad Studio is available on Optimize and above »",
       },
       {
         title: "Approve the starting image",
@@ -1566,7 +1488,6 @@ export const enGuides: TranslatedGuide[] = [
       {
         title: "Compare the four plans",
         text: "Basic for solo entrepreneurs, Grow for small teams (up to 5 staff accounts), Advanced for selling internationally with more tools (up to 15 accounts), Plus for large businesses.",
-        alt: "The Basic, Grow, Advanced and Plus plans on the pricing page",
       },
       {
         title: "Choose yearly or monthly billing",
@@ -1601,62 +1522,50 @@ export const enGuides: TranslatedGuide[] = [
       {
         title: "Start the free trial",
         text: "On shopify.com, open the Pricing page. It shows the current offer: a free trial, often followed by a discounted launch price for the first months. Offers change often and depend on your country: read today's offer before you start.\n\nClick « Start free trial », enter your email and answer the questions about your project. Your answers only help set up the admin: you can change everything later.\n\nPut two dates in your calendar right away: the end of the free trial, and the end of the launch offer, when the regular plan price starts.",
-        alt: "Shopify pricing page with the free trial and launch offer",
       },
       {
         title: "Find your way around the admin",
         text: "Everything happens in the Shopify admin. The left menu groups the sections you'll use every day: « Orders », « Products », « Customers », « Discounts », « Content » and « Online Store ». Store settings are all in « Settings », at the bottom left.\n\nIn the middle of the home page, a bar lets you ask Sidekick, Shopify's AI assistant, a question. It knows your store: ask it, for example, « How do I offer free shipping over $50? ». Still, check its answers against the official help center before changing an important setting.",
-        alt: "Shopify admin home with the left menu and the Sidekick bar",
       },
       {
         title: "Add your first product",
         text: "Click « Products », then « Add product ». Write a clear title, the way a customer would search for it on Google: « Bauhaus Poster 11x17 » rather than « Model 12 ».\n\nThe description answers the buyer's questions: what it is, the material, the size, how to use it, shipping time. Short sentences and a bullet list read better on a phone.\n\nIn « Media », click « Upload » and add several photos: the product alone on a light background, then in use. Keep the same format for every photo in the store: that's what makes it look professional.",
-        alt: "« Add product » form: title, description and media",
       },
       {
         title: "Set price, inventory, weight and variants",
         text: "In « Pricing », enter the selling price. The « Compare-at price » field shows a crossed-out price: only use it for a real sale.\n\nIn « Inventory », enter the quantity available so Shopify stops selling when you run out. For an item you ship, enter the weight including packaging: it's used to calculate shipping. For a downloadable file, turn off « Physical product ».\n\nIf the product comes in several sizes or colors, add variants: each one can have its own price, inventory and photo. Finally, set the status to « Active » and click « Save ». Repeat for your other products.",
-        alt: "Pricing and Inventory sections of the Shopify product page",
       },
       {
         title: "Choose and customize your theme",
         text: "The theme decides how the whole store looks. In « Online Store », then « Themes », or on themes.shopify.com, filter for free themes: they're built and updated by Shopify and more than enough to start.\n\nChoose a theme for the way it shows products, not for its demo photos. Click « Add »: the theme goes into your library without replacing the one that's live.\n\nClick « Customize » to add your logo, colors and fonts and to arrange the home page: a large image, your featured products, a line that says what you sell. Always check the mobile preview, then click « Publish ».",
-        alt: "Shopify Theme Store filtered on free themes",
       },
       {
         title: "Organize the store menus",
         text: "Menus link your pages together. Open « Content », then « Menus ». Two menus already exist: the main menu, at the top of the store, and the footer menu.\n\nIn the main menu, keep few entries: home, the catalog or your collections, and a contact page. In the footer, put the practical pages: shipping, returns, terms of sale, legal notice.\n\nClick a menu to add, rename or drag and drop an item, then save.",
-        alt: "Content > Menus: main menu, footer menu and customer account menu",
       },
       {
         title: "Set up shipping and delivery",
         text: "Click « Settings », then « Shipping and delivery ». The « General profile » applies to all your products: open it to see your shipping zones (for example the United States, then the rest of the world) and the rates for each zone.\n\nFor each zone, create simple rates: a flat price, or a price based on order weight. A « Free shipping » rate above a certain amount often nudges customers to add one more item.\n\nIn « Packages », enter the dimensions of your usual box: Shopify uses them to estimate shipping costs. If you only sell digital products, you don't need a shipping rate.",
-        alt: "Settings > Shipping and delivery: general profile, estimated delivery dates and packages",
       },
       {
         title: "Check your taxes",
         text: "In « Settings », open « Taxes and duties ». Shopify Tax calculates sales tax automatically based on where the customer is, in the regions where you're set up to collect.\n\nIn the United States, you generally collect sales tax in states where you have nexus (a physical presence or enough sales there). Check that the right states are listed, and register with each state before collecting.\n\nShopify says it on this screen itself: if you're unsure about your tax obligations, talk to an accountant or tax professional before opening the store.",
-        alt: "Settings > Taxes and duties: Shopify tax services and tax regions",
       },
       {
         title: "Turn on payments",
         text: "In « Settings », then « Payments », turn on Shopify Payments. Shopify asks for details about your business and the bank account that will receive payouts. Two-step authentication is required.\n\nWith Shopify Payments, you accept cards and local payment methods without an outside provider. Card rates depend on your plan: check them on shopify.com/pricing. If you use another provider instead, Shopify adds transaction fees.\n\nPayPal can be added under « Supported payment methods » or « Additional payment methods ».",
-        alt: "Settings > Payments: Shopify Payments, payment methods, payouts and PayPal",
       },
       {
         title: "Choose your customers' payment methods",
         text: "Still in « Payments », open the payment methods. Turn on the ones your customers really use: Visa and Mastercard, American Express, Apple Pay, Google Pay and Shop Pay.\n\nThe button to view payment rates shows the fees for each method: some cost more than others. There's no need to turn everything on; too many logos can even confuse buyers at checkout.",
-        alt: "List of online payment methods: Shop Pay, Visa, Mastercard, American Express, Apple Pay",
       },
       {
         title: "Write your policies",
         text: "In « Settings », open « Policies ». Written policies appear in the checkout footer: customers see them before they buy.\n\nAt a minimum, fill in the return and refund policy, terms of service, shipping policy and privacy policy. « Contact information » is marked required: it's what lets customers reach you.\n\nIf Shopify offers a template, start from it, but adapt it to how you really work. US law doesn't set a single return period for online purchases, so state your own window clearly (30 days is common). Then add these pages to the footer menu.",
-        alt: "Settings > Policies: return rules and written policies (return, privacy, terms of service, shipping, contact information, legal notice)",
       },
       {
         title: "Create a welcome code",
         text: "A small discount helps trigger the first order. Click « Discounts », then « Create discount » and choose « Amount off order ».\n\nType an easy-to-remember code, like WELCOME10, then the value: 10% for example. Under « Maximum discount uses », check the one-use-per-customer limit, or the code works on every order. Save: the code works at checkout right away.\n\nYou'll also use this code on your promo pages and social media.",
-        alt: "« Create discount » form with a 10% off order code",
       },
       {
         title: "Place a test order",
@@ -1665,22 +1574,18 @@ export const enGuides: TranslatedGuide[] = [
       {
         title: "Choose a plan",
         text: "To keep the store after the trial, choose a plan in « Settings », then « Plan ». For a solo seller, Basic is almost always enough. Check the current US prices, monthly and yearly, on shopify.com/pricing.\n\nIf there's a launch offer, it applies for the first months, then the regular price starts. Grow and Advanced are mostly for teams and high volumes: you can change plans later, when your sales justify it.\n\nRemember that paid apps come on top of the plan price.",
-        alt: "Shopify Basic, Grow, Advanced and Plus plans on the pricing page",
       },
       {
         title: "Connect your domain name",
         text: "Your store already has a free .myshopify.com address, but your own domain looks more trustworthy. In « Settings », then « Domains », choose to connect an existing domain, transfer a domain or buy a new one.\n\nWith many domain providers, Shopify connects it automatically. Otherwise, it tells you which DNS records to change at your provider. Connecting often takes less than two hours, sometimes up to two days. The HTTPS certificate is free.\n\nIf several domains are connected, choose the one customers will see as « Primary ».",
-        alt: "Settings > Domains with connected domains",
       },
       {
         title: "Open the store to the public",
         text: "While the store is being set up, it's password protected. To open it, go to « Online Store », then « Preferences ». Under store access, turn off password protection: the store becomes visible to everyone.\n\nOn the same page, fill in the home page title and meta description: that's what Google and social networks show when someone shares your store.\n\nThe admin home page then shows that the store is live, with live visit and visitor counts.",
-        alt: "Online Store > Preferences: store access section with the password option",
       },
       {
         title: "Attract your first customers",
         text: "An online store doesn't get visits on its own. Pick a hero product and an offer (your welcome code), then create a landing page that only talks about that offer, with HTML Pub or Leadpages.\n\nShare that page's address on social media, in your bio, on Pinterest or in your ads. The page button goes straight to the Shopify product page, not the store home page.\n\nEvery week, look at how many visitors arrive and how many buy, and improve the page that converts least. The quick guide « get customers with a landing page » covers this step in detail.",
-        alt: "Creating a landing page with AI: the assistant asks « What are you making? »",
       },
     ],
     pitfalls: [
@@ -1702,7 +1607,6 @@ export const enGuides: TranslatedGuide[] = [
       {
         title: "Open « Domains »",
         text: "Click « Settings » at the bottom left, then « Domains ». Three choices: connect an existing domain, transfer a domain or buy a new domain.",
-        alt: "Settings > Domains with connected domains",
       },
       {
         title: "Connect an existing domain",
@@ -1737,7 +1641,6 @@ export const enGuides: TranslatedGuide[] = [
       {
         title: "Open « Payments »",
         text: "Click « Settings », then « Payments ». You'll see the status of Shopify Payments, your payment methods, your payouts and additional providers like PayPal.",
-        alt: "Settings > Payments: Shopify Payments, payment methods, payouts and PayPal",
       },
       {
         title: "Turn on Shopify Payments",
@@ -1746,7 +1649,6 @@ export const enGuides: TranslatedGuide[] = [
       {
         title: "Choose payment methods",
         text: "Open the payment methods and turn on the ones your customers use: cards, Shop Pay, Apple Pay, Google Pay, and buy now, pay later options if you want them. The button to view payment rates shows the fees for each method.",
-        alt: "List of online payment methods: Shop Pay, Visa, Mastercard, American Express, Apple Pay",
       },
       {
         title: "Add PayPal if needed",
@@ -1777,7 +1679,6 @@ export const enGuides: TranslatedGuide[] = [
       {
         title: "Enter your store address",
         text: "Click « Connect », enter your store's .myshopify.com address, then click « Connect Shopify ». Then approve the authorization in Shopify.",
-        alt: "HTML Pub Connectors: Shopify card with the « Your Shopify store domain » field",
       },
       {
         title: "Add a button to Shopify",
@@ -1812,7 +1713,6 @@ export const enGuides: TranslatedGuide[] = [
       {
         title: "Describe the page to the AI",
         text: "In HTML Pub or Leadpages, create a page with AI and describe it precisely: the product, who it's for, 3 benefits, customer reviews, FAQs and a « Buy now » button.",
-        alt: "Describing a sales page for a Shopify product in HTML Pub's AI assistant",
       },
       {
         title: "Link the button to the product",
@@ -1821,7 +1721,6 @@ export const enGuides: TranslatedGuide[] = [
       {
         title: "Add a reason to buy now",
         text: "A time-limited discount code, free shipping or a bonus. Create it in Shopify first so it works at checkout.",
-        alt: "Creating a discount code in Shopify",
       },
       {
         title: "Publish and test on your phone",
@@ -1845,7 +1744,6 @@ export const enGuides: TranslatedGuide[] = [
       {
         title: "Open « Policies »",
         text: "In the admin, click « Settings », then « Policies ». You'll find the return rules and the list of written policies.",
-        alt: "Settings > Policies: return rules and written policies (return, privacy, terms of service, shipping, contact information, legal notice)",
       },
       {
         title: "Set your return rules",
@@ -1881,7 +1779,6 @@ export const enGuides: TranslatedGuide[] = [
       {
         title: "Open « Menus »",
         text: "In the admin, click « Content », then « Menus ». Click the menu to edit, for example the main menu.",
-        alt: "Content > Menus: main menu, footer menu and customer account menu",
       },
       {
         title: "Add a link",
@@ -1916,7 +1813,6 @@ export const enGuides: TranslatedGuide[] = [
       {
         title: "Choose a plan",
         text: "The password can only be removed after you choose a plan. In « Settings », then « Plan », pick one. During the free trial, billing only starts when the trial ends.",
-        alt: "Shopify Basic, Grow, Advanced and Plus plans on the pricing page",
       },
       {
         title: "Open the store preferences",
@@ -1925,7 +1821,6 @@ export const enGuides: TranslatedGuide[] = [
       {
         title: "Turn off password protection",
         text: "Turn off password protection, then save. The store is visible to everyone, with no password.",
-        alt: "Online Store > Preferences: store access section with the password option",
       },
       {
         title: "Fill in the title and description for Google",
@@ -1956,7 +1851,6 @@ export const enGuides: TranslatedGuide[] = [
       {
         title: "Get your offer ready in Shopify",
         text: "Before building the funnel, your product must be ready in Shopify. Create it with photos, price, description and variants. Check that payment works by placing a test order.\n\nCopy the direct link to the product or collection: you'll need it for the buy button in your emails and on your sales page.",
-        alt: "Shopify product page: title, description, price and product images",
       },
       {
         title: "Create an irresistible lead magnet",
@@ -1965,12 +1859,10 @@ export const enGuides: TranslatedGuide[] = [
       {
         title: "Build the opt-in landing page",
         text: "In Leadpages, create a new page from a template or with AI. The page has one goal: convince the visitor to leave their email in exchange for the lead magnet.\n\nThe headline announces the lead magnet's benefit. The form asks for email only. The button says exactly what the visitor gets: « Get the 10 recipes » rather than « Sign up ». Remove anything distracting: no menu, no links to other pages.",
-        alt: "Creating a landing page with the AI assistant in Leadpages",
       },
       {
         title: "Connect your email service",
         text: "In Leadpages, open your page's integrations and connect your email marketing service: Mailchimp, Kit (formerly ConvertKit), ActiveCampaign or another. Every new subscriber is added automatically to a specific list or tag.\n\nCreate a list or tag just for this funnel so your sales emails only reach people who asked for this particular lead magnet.",
-        alt: "Leadpages integrations panel: connecting email services",
       },
       {
         title: "Write the email sequence",
@@ -1979,12 +1871,10 @@ export const enGuides: TranslatedGuide[] = [
       {
         title: "Create a discount code in Shopify",
         text: "In Shopify, go to Discounts and create a promo code just for your funnel subscribers. A code like WELCOME15 for 15% off the first order gives people a reason to buy now rather than later.\n\nLimit the code to one use per customer and set an end date to create real urgency.",
-        alt: "Creating a discount code in Shopify: percentage, conditions and limits",
       },
       {
         title: "Build the sales page",
         text: "Create a second page in Leadpages: the sales page. It's where your emails send contacts who are ready to buy. It presents your product in detail with a button that leads to Shopify.\n\nThis page is longer than the opt-in page: testimonials, product details, guarantee, FAQ. The buy button uses the direct link to your Shopify product.",
-        alt: "HTML Pub sales page with a buy button linked to Shopify",
       },
       {
         title: "Set up the thank-you page",
@@ -2001,12 +1891,10 @@ export const enGuides: TranslatedGuide[] = [
       {
         title: "Track results at each stage",
         text: "A sales funnel is measured stage by stage. Write down the landing page conversion rate, the email open rate, the click-through rate to Shopify and the final purchase rate.\n\nIn Leadpages, the dashboard gives the page's conversion rate. In your email service, you see opens and clicks. In Shopify, sales with the discount code show how many sales come from the funnel.",
-        alt: "Leadpages dashboard: tracking conversions and traffic",
       },
       {
         title: "Optimize with A/B tests",
         text: "Once the funnel is running and producing data, improve each stage. Test two headlines on the opt-in page. Test two email subject lines. Test two prices or two offers on the sales page.\n\nIn Leadpages, use A/B tests for the opt-in page and the sales page. Change one element at a time and wait for at least 100 conversions per variant before picking a winner.",
-        alt: "Leadpages A/B testing interface: comparing two page variants",
       },
     ],
     pitfalls: [

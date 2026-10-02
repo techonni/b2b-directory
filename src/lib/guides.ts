@@ -10,8 +10,6 @@ export type Theme = {
 export type Step = {
   title: string;
   text: string;
-  // Capture d'écran facultative, placée dans /public/captures/.
-  image?: { src: string; alt: string };
 };
 
 export type Source = {
@@ -34,7 +32,7 @@ export type Guide = {
   related: string[];
   popular?: boolean;
   // « express » (par défaut) : une question, l'essentiel en 30 secondes.
-  // « complet » : un projet de A à Z, long et riche en captures.
+  // « complet » : un projet de A à Z, plus long et plus détaillé.
   format?: GuideFormat;
   // Facultatif, pour Google : titre et description propres à la recherche (Search Console).
   // Sans eux, le titre est la question et la description est construite par `seoDescription`.
@@ -117,7 +115,6 @@ export const guides: Guide[] = [
       {
         title: "Regardez les trois offres HTML Pub",
         text: "Starter : 5 pages et 1 domaine. Pro : 25 pages, 1 blog et l'accès API, pour un créateur seul. Business : 50 pages, 2 domaines et 2 blogs, pour une petite équipe ou une agence. La publication depuis Claude est incluse dans toutes les offres.",
-        image: { src: "/captures/choisir-offre.webp", alt: "Page des tarifs : les offres HTML Pub (Publish) et Leadpages (Optimize) côte à côte" },
       },
       {
         title: "Regardez les trois offres Leadpages",
@@ -161,7 +158,6 @@ export const guides: Guide[] = [
       {
         title: "Cliquez sur « Start 7-Day Free Trial »",
         text: "Créez votre compte avec votre adresse e-mail, puis indiquez une carte bancaire. Elle sert seulement à continuer après l'essai.",
-        image: { src: "/captures/essai-gratuit.webp", alt: "Boutons « Start 7-Day Free Trial » sur chaque offre" },
       },
       {
         title: "Notez la date de fin",
@@ -204,7 +200,6 @@ export const guides: Guide[] = [
       {
         title: "Changez d'offre",
         text: "La page affiche toutes les offres, avec « Current Plan » sur la vôtre. Choisissez l'offre supérieure ou inférieure. Le changement prend effet au prochain cycle de facturation.",
-        image: { src: "/captures/facturation.webp", alt: "Page Billing : offres, « Current Plan », « Manage Subscription » et « Cancel »" },
       },
       {
         title: "Ou annulez",
@@ -241,12 +236,10 @@ export const guides: Guide[] = [
       {
         title: "Vous vendez plusieurs produits ? Prenez Shopify",
         text: "Catalogue, stock, variantes, frais de livraison, taxes, commandes et retours : Shopify gère tout cela. Leadpages n'est pas fait pour tenir une boutique.",
-        image: { src: "/captures/shopify-offres.webp", alt: "Les forfaits Shopify Basic, Grow, Advanced et Plus" },
       },
       {
         title: "Vous voulez récolter des contacts ? Prenez Leadpages ou HTML Pub",
         text: "Page d'inscription, page d'attente avant un lancement, webinaire, guide gratuit : une landing page avec un formulaire suffit, sans boutique.",
-        image: { src: "/captures/choisir-offre.webp", alt: "Les offres HTML Pub et Leadpages côte à côte" },
       },
       {
         title: "Vous avez un seul produit ou un service ? Commencez simple",
@@ -287,7 +280,6 @@ export const guides: Guide[] = [
       {
         title: "Les offres HTML Pub, pour publier",
         text: "Au 28 septembre 2026, en paiement annuel : Starter coûte 5,58 $ par mois (7 $ en paiement mensuel), Pro 16 $ par mois (20 $ en mensuel) et Business 26,42 $ par mois (33 $ en mensuel).\n\nHTML Pub sert à publier des landing pages, des sites et des blogs sur votre domaine, avec l'assistant IA. Il n'a pas de tests A/B.",
-        image: { src: "/captures/choisir-offre.webp", alt: "Page des tarifs : HTML Pub Pro à 16 $/mois et Business à 26,42 $/mois, Leadpages Grow à 53,58 $/mois et Optimize à 108 $/mois, en paiement annuel" },
       },
       {
         title: "Les offres Leadpages, pour convertir plus",
@@ -300,7 +292,6 @@ export const guides: Guide[] = [
       {
         title: "Essayez 7 jours avant de payer",
         text: "Chaque offre s'essaie gratuitement pendant 7 jours, avec toutes ses fonctions. Une carte est demandée, mais rien n'est prélevé avant la fin de l'essai. Notez la date de fin dans votre agenda.",
-        image: { src: "/captures/essai-gratuit.webp", alt: "Boutons « Start 7-Day Free Trial » sur chaque offre" },
       },
       {
         title: "Choisissez selon votre trafic",
@@ -340,27 +331,22 @@ export const guides: Guide[] = [
       {
         title: "Choisissez l'offre et démarrez l'essai",
         text: "Sur la page des tarifs, deux familles d'offres existent. HTML Pub sert à publier des pages, des sites et des blogs. Leadpages ajoute les outils pour améliorer les résultats : tests A/B à partir de l'offre Grow, puis Smart Traffic et cartes de chaleur à partir d'Optimize.\n\nPour une première page, HTML Pub suffit souvent. Si vous voulez tester deux versions de votre page, prenez Leadpages Grow.\n\nCliquez sur « Start 7-Day Free Trial ». Une carte bancaire est demandée, mais rien n'est prélevé avant le 7e jour. Notez la date de fin dans votre agenda. Les prix changent souvent : lisez ceux du jour sur la page officielle.",
-        image: { src: "/captures/essai-gratuit.webp", alt: "Boutons « Start 7-Day Free Trial » sur chaque offre" },
       },
       {
         title: "Ouvrez l'écran de création",
         text: "Dans le menu de gauche, cliquez sur « Create ». L'assistant IA, Piper, vous demande « What are you making? » : choisissez « Landing page ».\n\nVous préférez partir d'une base existante ? Cliquez sur « Templates » pour choisir un modèle, puis sur « Use ». La suite du guide reste la même.",
-        image: { src: "/captures/creer-page-ia.webp", alt: "Écran Create : Piper demande « What are you making? »" },
       },
       {
         title: "Décrivez votre page en détail",
         text: "Dans le champ du bas, reprenez vos notes de l'étape 1 : le public, l'offre, le ton, les couleurs et les sections voulues. Par exemple : un titre, trois avantages, un avis client, une question fréquente et un formulaire avec un seul champ e-mail.\n\nPlus la description est précise, moins vous dépenserez de crédits en corrections. Cliquez sur « Send ».\n\nExemple de description complète : « Landing page en français pour un guide PDF gratuit destiné aux coachs sportifs indépendants qui veulent trouver leurs premiers clients en ligne. Ton simple et motivant. Couleurs : bleu nuit et orange. Sections : titre avec le résultat promis, trois avantages, un court texte sur l'auteur, deux questions fréquentes, un formulaire avec un seul champ e-mail et une case de consentement non cochée. Bouton : Recevoir le guide. »\n\nVous pouvez aussi coller l'adresse d'une page existante ou du code HTML : Piper s'en sert comme point de départ.",
-        image: { src: "/captures/ia-description.webp", alt: "Description d'une landing page tapée dans la barre de saisie" },
       },
       {
         title: "Choisissez les images et le style",
         text: "Piper demande quelles images utiliser : les vôtres, des images générées par IA (qui coûtent plus de crédits) ou aucune pour l'instant. Le coût estimé est affiché en haut à droite.\n\nIl propose ensuite trois directions visuelles. Cliquez sur celle qui vous plaît, puis sur « Build it ». La page se construit en une minute environ.",
-        image: { src: "/captures/ia-style.webp", alt: "Trois directions de style proposées par Piper" },
       },
       {
         title: "Corrigez la page en discutant",
         text: "Cliquez sur « Open in editor ». Dans le champ « Ask Piper to edit this page… », demandez un seul changement à la fois : « Remplace le titre par… », « Mets le bouton en vert », « Supprime la section tarifs ».\n\nPiper liste ce qu'il a modifié et les crédits utilisés. Relisez chaque texte vous-même : l'IA peut inventer des chiffres ou des avis. Remplacez-les par les vrais, ou supprimez-les.\n\nQuelques demandes utiles pour une première page : « Raccourcis tous les paragraphes à deux phrases maximum », « Ajoute le bouton aussi en haut de la page », « Mets mon logo en haut à gauche » (après l'avoir envoyé dans « Assets »), « Utilise les couleurs de mon Brand Kit ».\n\nPour un petit changement de texte, cliquer directement dans la page est souvent plus rapide que de passer par l'IA. Gardez Piper pour les changements de mise en page ou de style.",
-        image: { src: "/captures/ia-modification.webp", alt: "Éditeur : Piper applique une modification demandée" },
       },
       {
         title: "Vérifiez le formulaire et le consentement",
@@ -369,27 +355,22 @@ export const guides: Guide[] = [
       {
         title: "Contrôlez l'affichage sur mobile",
         text: "La plupart des visiteurs arrivent sur téléphone. En bas à droite de l'éditeur, cliquez sur l'icône mobile. Vérifiez que le titre se lit sans zoomer, que le bouton se voit sans descendre trop bas et que le formulaire est facile à remplir avec le pouce.\n\nRegardez aussi la vitesse : des images trop lourdes ralentissent la page sur un réseau mobile, et chaque seconde d'attente fait partir des visiteurs. Utilisez des photos de taille raisonnable et évitez les vidéos en lecture automatique en haut de page.\n\nEnfin, relisez tout à voix haute une dernière fois. Les fautes et les phrases trop longues se repèrent beaucoup mieux ainsi.",
-        image: { src: "/captures/apercu-mobile.webp", alt: "Aperçu mobile de la page dans l'éditeur" },
       },
       {
         title: "Réglez l'adresse et le référencement",
         text: "Dans l'éditeur, le menu « … » en haut à droite affiche l'adresse de la page (le slug). Choisissez-la courte et lisible, par exemple guide-gratuit.\n\nDans « SEO & Social », indiquez le titre et la description qui s'affichent sur Google et lors d'un partage, et l'icône de l'onglet. Si la page sert seulement à une publicité, vous pouvez demander à Google de ne pas l'indexer.",
-        image: { src: "/captures/seo-social.webp", alt: "Fenêtre SEO & Social" },
       },
       {
         title: "Publiez sur votre propre domaine",
         text: "Au moment de publier, la question « Where should this live? » s'affiche. Vous pouvez garder l'adresse gratuite fournie, ou relier votre domaine pour inspirer plus confiance.\n\nPour relier un domaine, ouvrez « Domains » dans le menu de gauche, puis « Connect Domain ». Un sous-domaine comme offre.monsite.com est le plus simple. La configuration automatique règle le domaine pour vous. Le HTTPS est offert et peut prendre jusqu'à 48 heures.\n\nSi la configuration automatique n'est pas possible chez votre hébergeur de domaine, ajoutez à la main les enregistrements affichés par Leadpages : un CNAME pour le sous-domaine et un TXT pour la sécurité. Copiez les valeurs exactes depuis votre compte.\n\nAprès chaque modification, cliquez sur « Update » pour mettre la page en ligne.",
-        image: { src: "/captures/ia-publier.webp", alt: "Choix de l'adresse de publication : gratuite ou votre domaine" },
       },
       {
         title: "Envoyez les contacts vers votre outil e-mail",
         text: "Dans le menu de gauche, ouvrez « Connectors ». Cherchez votre outil (Mailchimp, Brevo, MailerLite, HubSpot…) et cliquez sur « Connect ».\n\nDans l'onglet « Automations », cliquez sur « Create automation », choisissez le déclencheur « Form submitted », puis l'outil qui recevra les contacts. Chaque nouvel inscrit y arrivera tout seul. Préparez-y un e-mail de bienvenue.",
-        image: { src: "/captures/integrations.webp", alt: "Page Connectors avec les applications à connecter" },
       },
       {
         title: "Faites un test complet vous-même",
         text: "Ouvrez la page publiée sur votre téléphone, remplissez le formulaire avec votre propre adresse, puis vérifiez trois choses.\n\nLa réponse apparaît dans « Submissions », d'où vous pouvez aussi l'exporter en CSV. Le contact arrive dans votre outil e-mail. L'e-mail de bienvenue part bien. Si un point bloque, « View execution logs » dans « Connectors » indique la raison.",
-        image: { src: "/captures/formulaires.webp", alt: "Page Submissions avec les réponses du formulaire" },
       },
       {
         title: "Faites venir vos premiers visiteurs",
@@ -398,12 +379,10 @@ export const guides: Guide[] = [
       {
         title: "Suivez les résultats",
         text: "Ouvrez « Analytics ». Les chiffres clés sont en haut : « Sessions » (les visites), « Form submissions » (les formulaires envoyés), « Conversions » et « Conv. rate » (le taux de conversion).\n\nChoisissez la période (7, 14 ou 30 jours) et une page précise avec « All Pages ». L'onglet « Acquisition » montre d'où viennent vos visiteurs. Attendez au moins une centaine de visites avant de tirer des conclusions.\n\nSi beaucoup de personnes viennent mais peu s'inscrivent, le problème est souvent le titre ou l'offre : la promesse n'est pas assez claire ou pas assez utile. Si presque personne ne vient, c'est la diffusion qu'il faut travailler : partagez le lien dans vos e-mails, sur vos réseaux, dans votre bio Instagram ou sur une épingle Pinterest.\n\nPour suivre les publicités, « Scripts & Pixels », dans le menu « … » de l'éditeur, permet d'ajouter le pixel de Meta ou de Google Ads.",
-        image: { src: "/captures/statistiques.webp", alt: "Page Analytics : conversions, taux de conversion, formulaires envoyés et sessions" },
       },
       {
         title: "Améliorez la page avec un test A/B",
         text: "Avec Leadpages Grow ou plus, dupliquez la page pour créer une version B et changez une seule chose : le titre, le bouton ou l'offre.\n\nChoisissez votre objectif (formulaire envoyé, clic, achat), répartissez le trafic à 50/50 et attendez le résultat « gagnant clair ». Gardez ensuite la meilleure version et lancez un nouveau test. Sur l'offre Optimize, Smart Traffic peut envoyer chaque visiteur vers la version qui a le plus de chances de lui plaire.\n\nPar quoi commencer ? Le titre, presque toujours : c'est ce que tout le monde lit. Ensuite, le texte du bouton, puis l'offre elle-même (un guide ou une liste, une réduction ou un cadeau). Notez chaque test et son résultat dans un simple tableau : au bout de quelques mois, vous saurez précisément ce qui fait réagir votre public.\n\nVous êtes sur HTML Pub ? Vous pouvez passer à Leadpages Grow depuis les réglages de votre compte quand vous serez prêt : vos pages et vos domaines sont conservés.",
-        image: { src: "/captures/test-ab.webp", alt: "Création d'une variante B et bascule entre A et B" },
       },
     ],
     pitfalls: [
@@ -439,37 +418,30 @@ export const guides: Guide[] = [
       {
         title: "Ouvrez l'écran de création",
         text: "Dans le menu de gauche, cliquez sur « Create ». Piper, l'assistant, vous demande « What are you making? » : choisissez « Landing page ».",
-        image: { src: "/captures/creer-page-ia.webp", alt: "Écran Create : Piper demande « What are you making? »" },
       },
       {
         title: "Décrivez votre page précisément",
         text: "Dans le champ du bas, indiquez à qui s'adresse la page, ce que vous proposez, le ton, les couleurs et les sections voulues (titre, avantages, avis, formulaire). Plus c'est précis, meilleur est le résultat. Cliquez sur « Send ».",
-        image: { src: "/captures/ia-description.webp", alt: "Description d'une landing page tapée dans la barre de saisie" },
       },
       {
         title: "Choisissez les images",
         text: "Piper demande quoi utiliser pour les images : les vôtres, des images générées par IA (plus de crédits) ou aucune pour l'instant. Le coût estimé en crédits est affiché en haut à droite. « Skip images for now » est le choix le plus économique.",
-        image: { src: "/captures/ia-images.webp", alt: "Choix des images avec l'estimation en crédits" },
       },
       {
         title: "Choisissez un style",
         text: "Trois directions visuelles sont proposées. Cliquez sur celle qui vous plaît, réglez « How far should I push it? » si vous voulez, puis cliquez sur « Build it ».",
-        image: { src: "/captures/ia-style.webp", alt: "Trois directions de style proposées par Piper" },
       },
       {
         title: "Laissez Piper construire",
         text: "La construction se fait en six étapes, en une minute environ : lecture de la demande, sections, textes, images, assemblage et vérification.",
-        image: { src: "/captures/ia-construction.webp", alt: "Construction de la page, étape par étape" },
       },
       {
         title: "Corrigez en discutant",
         text: "Cliquez sur « Open in editor ». Dans le champ « Ask Piper to edit this page… », demandez un changement à la fois. Piper liste ce qu'il a modifié et le nombre de crédits utilisés.",
-        image: { src: "/captures/ia-modification.webp", alt: "Éditeur : Piper applique une modification demandée" },
       },
       {
         title: "Vérifiez sur mobile, puis publiez",
         text: "Les icônes en bas à droite de l'éditeur montrent la page sur ordinateur, tablette et mobile. Pour la mettre en ligne, gardez l'adresse gratuite en pubhtml.com ou reliez votre domaine (« Where should this live? »). Ensuite, « Update » publie vos changements.",
-        image: { src: "/captures/ia-publier.webp", alt: "Choix de l'adresse de publication : gratuite ou votre domaine" },
       },
     ],
     pitfalls: [
@@ -496,7 +468,6 @@ export const guides: Guide[] = [
       {
         title: "Ouvrez les modèles",
         text: "Sur l'écran « Create », cliquez sur « Templates » au-dessus de la barre de saisie, ou sur « Browse all templates » pour tout voir.",
-        image: { src: "/captures/modele.webp", alt: "Panneau Templates avec « Preview », « Use » et « Browse all templates »" },
       },
       {
         title: "Prévisualisez avant de choisir",
@@ -513,7 +484,6 @@ export const guides: Guide[] = [
       {
         title: "Relisez sur mobile, puis publiez",
         text: "La plupart des visiteurs arrivent sur téléphone. Dans l'éditeur, cliquez sur l'icône mobile en bas à droite pour vérifier, puis publiez.",
-        image: { src: "/captures/apercu-mobile.webp", alt: "Aperçu mobile de la page dans l'éditeur" },
       },
     ],
     pitfalls: [
@@ -537,7 +507,6 @@ export const guides: Guide[] = [
       {
         title: "Partez d'un modèle « lien en bio »",
         text: "Sur l'écran « Create », cliquez sur « Templates », puis « Browse all templates ». Choisissez un modèle de page « lien en bio », regardez-le avec « Preview », puis cliquez sur « Use ».",
-        image: { src: "/captures/modele.webp", alt: "Panneau Templates avec « Preview », « Use » et « Browse all templates »" },
       },
       {
         title: "Mettez votre photo et une phrase",
@@ -554,7 +523,6 @@ export const guides: Guide[] = [
       {
         title: "Vérifiez sur téléphone et publiez",
         text: "Presque tous les visiteurs viennent de leur téléphone. Cliquez sur l'icône mobile en bas à droite de l'éditeur, vérifiez que chaque bouton est facile à toucher, puis publiez.",
-        image: { src: "/captures/apercu-mobile.webp", alt: "Aperçu mobile de la page dans l'éditeur" },
       },
       {
         title: "Collez l'adresse dans votre bio",
@@ -587,7 +555,6 @@ export const guides: Guide[] = [
       {
         title: "Ajoutez votre code",
         text: "Collez votre HTML dans le champ « Describe the page you want, or paste a URL or HTML… », ou utilisez l'icône d'envoi de fichier de la barre pour déposer un fichier .html.",
-        image: { src: "/captures/publier-html.webp", alt: "Barre de saisie où coller du HTML, avec l'icône d'envoi de fichier" },
       },
       {
         title: "Vérifiez l'aperçu",
@@ -619,17 +586,14 @@ export const guides: Guide[] = [
       {
         title: "Choisissez « Website »",
         text: "Dans le menu de gauche, ouvrez la flèche à côté de « Create » et choisissez « Site ». Ou, sur l'écran « Create », sélectionnez « Website ».",
-        image: { src: "/captures/site-web.webp", alt: "Menu « What are you creating? » avec l'option « New website »" },
       },
       {
         title: "Décrivez votre site",
         text: "Expliquez votre activité, votre public, le style voulu et les pages souhaitées, puis cliquez sur « Send ». Tapez tout sur une seule ligne : chaque retour à la ligne envoie un message séparé.",
-        image: { src: "/captures/site-description.webp", alt: "Description d'un site tapée avec « New website »" },
       },
       {
         title: "Validez la liste des pages",
         text: "Piper propose les pages du menu. Renommez, retirez (« Remove ») ou ajoutez-en (« Add a page »), puis cliquez sur « These pages ».",
-        image: { src: "/captures/site-pages.webp", alt: "Liste des pages proposées pour le site" },
       },
       {
         title: "Choisissez images et style, puis construisez l'accueil",
@@ -638,7 +602,6 @@ export const guides: Guide[] = [
       {
         title: "Construisez les autres pages",
         text: "La carte « The rest of the site » liste les pages restantes avec une estimation en crédits. « Build 3 pages » les construit une par une, avec l'en-tête et le style de l'accueil. « Skip for now » permet de le faire plus tard.",
-        image: { src: "/captures/site-reste.webp", alt: "Carte « The rest of the site » avec le bouton pour construire les pages" },
       },
     ],
     pitfalls: [
@@ -662,22 +625,18 @@ export const guides: Guide[] = [
       {
         title: "Créez le blog",
         text: "Dans le menu de gauche, ouvrez « Blog » puis cliquez sur « New Blog ». Donnez un titre ; l'adresse (slug) se remplit toute seule. La description et le nom d'auteur sont facultatifs. Cliquez sur « Create Blog ».",
-        image: { src: "/captures/blog-creer.webp", alt: "Fenêtre New Blog avec titre, slug et description" },
       },
       {
         title: "Découvrez le tableau du blog",
         text: "La page du blog montre le design de la page d'accueil du blog (« Feed layout ») et des articles (« Post layout »), puis vos articles publiés, en brouillon ou programmés.",
-        image: { src: "/captures/blog-tableau.webp", alt: "Tableau de bord d'un blog" },
       },
       {
         title: "Écrivez un article",
         text: "Cliquez sur « New post ». L'éditeur s'ouvre avec Penn, l'assistant d'écriture : choisissez une suggestion (« Write a how-to guide »…) ou écrivez vous-même.",
-        image: { src: "/captures/blog-article.webp", alt: "Éditeur d'article avec l'assistant Penn" },
       },
       {
         title: "Remplissez les réglages de l'article",
         text: "L'icône de document en bas ouvre « Post Settings » : titre, contenu, auteur, image de couverture et SEO. Cliquez sur « Save changes ».",
-        image: { src: "/captures/blog-reglages.webp", alt: "Panneau Post Settings d'un article" },
       },
       {
         title: "Publiez",
@@ -712,7 +671,6 @@ export const guides: Guide[] = [
       {
         title: "Ouvrez « Domains »",
         text: "Dans le menu de gauche, cliquez sur « Domains », puis sur « Connect Domain ». Pas encore de domaine ? Selon votre offre, « Claim Free Domain » vous en offre un.",
-        image: { src: "/captures/domaine.webp", alt: "Page Domains avec « Connect Domain » et « Claim Free Domain »" },
       },
       {
         title: "Tapez votre domaine",
@@ -721,7 +679,6 @@ export const guides: Guide[] = [
       {
         title: "Choisissez ce qu'il affiche",
         text: "Dans « Homepage », choisissez « Page », « Site » ou « Blog », puis l'élément à afficher. Vous pouvez aussi choisir une page d'erreur (« Custom 404 page »). Cliquez sur « Add & Configure Domain ».",
-        image: { src: "/captures/domaine-formulaire.webp", alt: "Formulaire Connect Your Domain" },
       },
       {
         title: "Laissez faire la configuration automatique",
@@ -763,7 +720,6 @@ export const guides: Guide[] = [
       {
         title: "Ouvrez le menu de la page",
         text: "Dans « Pages », cliquez sur « … » en bas de la carte de la page. Le menu regroupe les statistiques, les réponses, le partage et les réglages.",
-        image: { src: "/captures/reglages-page.webp", alt: "Menu « … » d'une page : Settings, Set Password, Tags" },
       },
       {
         title: "Changez le titre et l'adresse",
@@ -772,7 +728,6 @@ export const guides: Guide[] = [
       {
         title: "Ou passez par l'éditeur",
         text: "Dans l'éditeur de la page, le menu « … » en haut à droite affiche l'adresse (slug, modifiable avec le crayon), l'adresse publiée, et les options « SEO & Social » et « Scripts & Pixels ».",
-        image: { src: "/captures/editeur-options.webp", alt: "Menu « … » de l'éditeur : slug, SEO & Social, Scripts & Pixels" },
       },
       {
         title: "Protégez par mot de passe",
@@ -785,7 +740,6 @@ export const guides: Guide[] = [
       {
         title: "Soignez le référencement",
         text: "« SEO & Social » règle l'icône de l'onglet (favicon), l'indexation par Google, le titre et la description qui s'affichent dans les résultats de recherche.",
-        image: { src: "/captures/seo-social.webp", alt: "Fenêtre SEO & Social" },
       },
     ],
     pitfalls: [
@@ -816,7 +770,6 @@ export const guides: Guide[] = [
       {
         title: "Ouvrez « Submissions »",
         text: "Dans le menu de gauche, cliquez sur « Submissions ». La page « Leads » regroupe toutes les réponses : nom, e-mail, page d'origine et date.",
-        image: { src: "/captures/formulaires.webp", alt: "Page Submissions (Leads) avec les réponses des formulaires" },
       },
       {
         title: "Consultez les réponses",
@@ -852,7 +805,6 @@ export const guides: Guide[] = [
       {
         title: "Ouvrez « Connectors »",
         text: "Dans le menu de gauche, cliquez sur « Connectors ». Cherchez votre outil par nom ou par catégorie (e-mail, CRM, publicité…) et cliquez sur « Connect ».",
-        image: { src: "/captures/integrations.webp", alt: "Page Connectors avec les applications à connecter" },
       },
       {
         title: "Autorisez la connexion",
@@ -861,7 +813,6 @@ export const guides: Guide[] = [
       {
         title: "Réglez l'automatisation",
         text: "Dans l'onglet « Automations », cliquez sur « Create automation ». Choisissez le déclencheur (« Form submitted », « Checkout completed » ou « Visitor identified »), puis l'application connectée qui reçoit les contacts.",
-        image: { src: "/captures/automation-declencheur.webp", alt: "Création d'une automatisation : choix du déclencheur" },
       },
       {
         title: "Testez avec votre propre e-mail",
@@ -902,7 +853,6 @@ export const guides: Guide[] = [
       {
         title: "Créez la page d'attente avec l'IA",
         text: "Dans HTML Pub ou Leadpages, décrivez la page : le produit à venir, la date, ce que reçoivent les inscrits et un formulaire avec un seul champ e-mail.",
-        image: { src: "/captures/htmlpub-page-attente.webp", alt: "Description d'une page d'attente avec un formulaire e-mail dans l'assistant IA de HTML Pub" },
       },
       {
         title: "Ajoutez le consentement",
@@ -911,12 +861,10 @@ export const guides: Guide[] = [
       {
         title: "Retrouvez les inscrits",
         text: "Chaque inscription arrive dans « Submissions ». Vous pouvez les consulter et les exporter en CSV.",
-        image: { src: "/captures/formulaires.webp", alt: "Page Submissions avec les réponses du formulaire" },
       },
       {
         title: "Envoyez-les vers votre outil e-mail",
         text: "Dans « Connectors », reliez Mailchimp, Brevo ou un autre outil pour que chaque inscrit y arrive automatiquement. Préparez un e-mail de bienvenue et l'e-mail du jour du lancement.",
-        image: { src: "/captures/integrations.webp", alt: "Page Connectors avec les applications e-mail à connecter" },
       },
     ],
     pitfalls: [
@@ -1088,7 +1036,6 @@ export const guides: Guide[] = [
       {
         title: "Créez une variante",
         text: "Dupliquez votre page en un clic, ou laissez l'IA proposer une variante. Changez une seule chose importante : le titre, le bouton ou l'offre.",
-        image: { src: "/captures/test-ab.webp", alt: "Création d'une variante B et bascule entre A et B" },
       },
       {
         title: "Choisissez votre objectif",
@@ -1132,7 +1079,6 @@ export const guides: Guide[] = [
       {
         title: "Activez le mode carte de chaleur",
         text: "Dans l'éditeur de la page, cliquez sur l'icône en forme de flamme dans la barre d'outils.",
-        image: { src: "/captures/heatmap.webp", alt: "Carte de chaleur des clics, avec les onglets Clicks, Scroll et Attention" },
       },
       {
         title: "Lisez les clics",
@@ -1176,7 +1122,6 @@ export const guides: Guide[] = [
       {
         title: "Activez Smart Traffic",
         text: "Cliquez sur « Let AI optimize this for me ». Au lieu d'une répartition fixe, l'IA dirige chaque visiteur et s'améliore au fil des visites.",
-        image: { src: "/captures/smart-traffic.webp", alt: "Panneau Optimize : répartition automatique du trafic entre l'original et la variante" },
       },
       {
         title: "Suivez les résultats",
@@ -1210,12 +1155,10 @@ export const guides: Guide[] = [
       {
         title: "Lisez vos statistiques actuelles",
         text: "Avant de changer quoi que ce soit, notez le taux de conversion actuel. Dans Leadpages, ouvrez le tableau de bord de la page : vous voyez les visiteurs uniques, les conversions et le taux. C'est votre point de départ.\n\nSi vous venez de lancer la page et que le trafic est faible, attendez au moins 200 visiteurs avant de tirer des conclusions. En dessous, les chiffres ne sont pas fiables.",
-        image: { src: "/captures/statistiques.webp", alt: "Tableau de bord Leadpages : visiteurs uniques, conversions et taux de conversion" },
       },
       {
         title: "Utilisez les cartes de chaleur pour trouver les blocages",
         text: "Les cartes de chaleur montrent où les visiteurs cliquent et jusqu'où ils défilent. Si personne ne descend jusqu'au formulaire, le problème est au-dessus. Si tout le monde clique sur un élément qui n'est pas un lien, c'est une opportunité manquée.\n\nDans Leadpages, les cartes de chaleur sont disponibles dès l'offre Optimize. Activez-les dans les réglages de la page et laissez-les tourner quelques jours avant de les lire.",
-        image: { src: "/captures/heatmap.webp", alt: "Carte de chaleur Leadpages : zones de clics et profondeur de défilement" },
       },
       {
         title: "Réécrivez le titre principal",
@@ -1224,7 +1167,6 @@ export const guides: Guide[] = [
       {
         title: "Simplifiez le formulaire",
         text: "Chaque champ supplémentaire dans un formulaire fait baisser le taux de conversion. Si vous demandez le nom, le prénom, l'email, le téléphone et l'entreprise, réduisez à l'email seul pour commencer. Vous pourrez demander le reste plus tard, une fois le contact acquis.\n\nDans Leadpages, ouvrez le formulaire dans l'éditeur et supprimez les champs inutiles. Gardez un seul bouton d'action avec un texte clair : « Recevoir le guide », pas « Soumettre ».",
-        image: { src: "/captures/formulaires.webp", alt: "Éditeur de formulaire Leadpages : champs et bouton d'appel à l'action" },
       },
       {
         title: "Ajoutez de la preuve sociale",
@@ -1237,7 +1179,6 @@ export const guides: Guide[] = [
       {
         title: "Optimisez l'affichage mobile",
         text: "Plus de la moitié du trafic vient du téléphone. Si votre page est difficile à lire ou que le bouton est trop petit sur mobile, vous perdez des conversions.\n\nDans Leadpages, utilisez l'aperçu mobile de l'éditeur. Vérifiez que le titre est lisible sans zoomer, que le formulaire est facile à remplir au pouce et que le bouton est assez grand pour être tapé facilement.",
-        image: { src: "/captures/apercu-mobile.webp", alt: "Aperçu mobile dans l'éditeur Leadpages : vérification de la mise en page sur téléphone" },
       },
       {
         title: "Créez une page de remerciement efficace",
@@ -1250,17 +1191,14 @@ export const guides: Guide[] = [
       {
         title: "Lancez un test A/B",
         text: "Ne changez pas tout d'un coup. Créez une variante avec un seul changement : un titre différent, un bouton d'une autre couleur, un formulaire plus court. Laissez le test tourner jusqu'à avoir au moins 100 conversions par variante pour un résultat fiable.\n\nDans Leadpages, dupliquez votre page, modifiez un élément et lancez le test depuis l'onglet Optimize. Leadpages répartit le trafic automatiquement.",
-        image: { src: "/captures/test-ab.webp", alt: "Interface de test A/B Leadpages : variante originale et variante de test avec répartition du trafic" },
       },
       {
         title: "Activez Smart Traffic pour automatiser",
         text: "Une fois que vous avez plusieurs variantes qui fonctionnent, Smart Traffic prend le relais. Au lieu de répartir le trafic à parts égales, l'IA envoie chaque visiteur vers la variante la plus susceptible de le convertir, en fonction de son appareil, sa localisation et son comportement.\n\nSmart Traffic est disponible dès Leadpages Optimize. Activez-le dans l'onglet Optimize de votre page après avoir créé au moins deux variantes.",
-        image: { src: "/captures/smart-traffic.webp", alt: "Panneau Optimize : activation de Smart Traffic pour une répartition intelligente du trafic" },
       },
       {
         title: "Optimisez le référencement de la page",
         text: "Une page bien référencée reçoit du trafic gratuit et qualifié. Remplissez le titre SEO, la méta-description et l'URL avec vos mots-clés principaux. Ajoutez un texte alt à chaque image.\n\nDans Leadpages, ouvrez les réglages SEO de la page. Le titre doit contenir votre mot-clé principal et faire moins de 60 caractères. La description doit donner envie de cliquer en moins de 155 caractères.",
-        image: { src: "/captures/seo-social.webp", alt: "Réglages SEO et réseaux sociaux dans Leadpages : titre, description et image de partage" },
       },
       {
         title: "Mettez en place un suivi hebdomadaire",
@@ -1308,7 +1246,6 @@ export const guides: Guide[] = [
       {
         title: "Autorisez l'accès",
         text: "Connectez-vous à votre compte HTML Pub quand Claude le demande. Aucune clé API n'est nécessaire. Claude apparaît ensuite dans « Connected Apps », dans le menu de votre espace.",
-        image: { src: "/captures/claude-connecteur.webp", alt: "Page Connected Apps, où apparaît Claude une fois connecté" },
       },
       {
         title: "Demandez votre page",
@@ -1340,7 +1277,6 @@ export const guides: Guide[] = [
       {
         title: "Ouvrez « Ads »",
         text: "Dans le menu de gauche, cliquez sur « Ads ». Décrivez votre produit, votre public et le style voulu : pub produit ou vidéo façon UGC.",
-        image: { src: "/captures/adstudio.webp", alt: "Page Ads (Ad Studio) : « Ad Studio is available on Optimize and above »" },
       },
       {
         title: "Validez l'image de départ",
@@ -1380,7 +1316,6 @@ export const guides: Guide[] = [
       {
         title: "Ouvrez la page des tarifs",
         text: "Sur shopify.com, la page Tarification affiche l'offre du moment : 3 jours gratuits, puis 1 € par mois pendant 3 mois. L'offre peut changer : lisez-la le jour même.",
-        image: { src: "/captures/shopify-essai.webp", alt: "Page Tarification de Shopify : 3 jours d'essai, puis 1 €/mois pendant 3 mois" },
       },
       {
         title: "Cliquez sur « Démarrer gratuitement »",
@@ -1417,7 +1352,6 @@ export const guides: Guide[] = [
       {
         title: "Comparez les quatre forfaits",
         text: "Basic pour les entrepreneurs seuls, Grow pour les petites équipes (jusqu'à 5 comptes d'employés), Advanced pour vendre à l'international avec plus d'outils (jusqu'à 15 comptes), Plus pour les grandes entreprises.",
-        image: { src: "/captures/shopify-offres.webp", alt: "Les forfaits Basic, Grow, Advanced et Plus sur la page des tarifs" },
       },
       {
         title: "Choisissez le paiement annuel ou mensuel",
@@ -1450,17 +1384,14 @@ export const guides: Guide[] = [
       {
         title: "L'offre de départ : 3 jours gratuits, puis 1 € par mois",
         text: "Au 28 septembre 2026, Shopify affiche 3 jours d'essai gratuit, puis 1 € par mois pendant 3 mois. Après ces 3 mois, le prix normal du forfait choisi commence.",
-        image: { src: "/captures/shopify-essai.webp", alt: "Page Tarification de Shopify : 3 jours d'essai gratuit, puis 1 €/mois pendant 3 mois" },
       },
       {
         title: "Le prix des quatre forfaits",
         text: "En paiement annuel : Basic 19 € par mois, Grow 56 € par mois, Advanced 289 € par mois, et Plus à partir de 2 100 € par mois. En paiement mensuel, Basic coûte 27 € par mois.\n\nPour une personne seule qui démarre, Basic suffit presque toujours.",
-        image: { src: "/captures/shopify-offres.webp", alt: "Forfaits Shopify en paiement annuel : Basic 19 €/mois, Grow 56 €/mois, Advanced 289 €/mois, Plus à partir de 2 100 €/mois" },
       },
       {
         title: "Les frais sur chaque vente",
         text: "Avec Shopify Payments, chaque paiement par carte coûte des frais : sur Basic, à partir de 1,8 % + 0,30 € par vente (tarif affiché en Belgique le 27 septembre 2026). Ces frais baissent quand le forfait monte.\n\nSi vous utilisez un autre prestataire de paiement à la place de Shopify Payments, Shopify ajoute des frais de transaction, jusqu'à 2 % sur Basic.",
-        image: { src: "/captures/shopify-paiements.webp", alt: "Réglages Paiements : Shopify Payments activé et PayPal en fournisseur supplémentaire" },
       },
       {
         title: "Les coûts qu'on oublie",
@@ -1502,98 +1433,50 @@ export const guides: Guide[] = [
       {
         title: "Démarrez l'essai gratuit",
         text: "Sur shopify.com, ouvrez la page Tarification. Au 27 septembre 2026, l'offre affichée en Belgique est : 3 jours d'essai gratuit, puis 1 € par mois pendant 3 mois. Les offres changent souvent : lisez celle du jour avant de commencer.\n\nCliquez sur « Démarrer gratuitement », entrez votre adresse e-mail et répondez aux questions sur votre projet. Ces réponses servent seulement à préparer l'administration : vous pourrez tout modifier ensuite.\n\nNotez tout de suite deux dates dans votre agenda : la fin des 3 jours d'essai, et la fin des 3 mois à 1 €, quand le prix normal du forfait commence.",
-        image: {
-          src: "/captures/shopify-essai.webp",
-          alt: "Page Tarification de Shopify : 3 jours d'essai gratuit, puis 1 € par mois pendant 3 mois",
-        },
       },
       {
         title: "Prenez vos repères dans l'administration",
         text: "Tout se passe dans l'administration Shopify. Le menu de gauche regroupe les rubriques que vous utiliserez chaque jour : « Commandes », « Produits », « Clients », « Réductions », « Contenu » et « Boutique en ligne ». Les réglages de la boutique sont tous dans « Paramètres », en bas à gauche.\n\nAu centre de l'accueil, une barre permet de poser une question à Sidekick, l'assistant IA de Shopify. Il connaît votre boutique : demandez-lui par exemple « Comment proposer la livraison gratuite dès 50 € ? ». Vérifiez tout de même ses réponses dans l'aide officielle avant de changer un réglage important.",
-        image: {
-          src: "/captures/shopify-accueil.webp",
-          alt: "Accueil de l'administration Shopify avec le menu de gauche et la barre Sidekick",
-        },
       },
       {
         title: "Ajoutez votre premier produit",
         text: "Cliquez sur « Produits », puis sur « Ajouter un produit ». Écrivez un titre clair, comme le client le chercherait sur Google : « Affiche Bauhaus A3 » plutôt que « Modèle 12 ».\n\nLa description répond aux questions que l'acheteur se pose : ce que c'est, la matière, la taille, l'usage, le délai d'envoi. Des phrases courtes et une liste de points se lisent mieux sur téléphone.\n\nDans « Supports multimédias », cliquez sur « Importer » et ajoutez plusieurs photos : le produit seul sur fond clair, puis en situation. Gardez le même format pour toutes les photos de la boutique : c'est ce qui donne un aspect professionnel.",
-        image: {
-          src: "/captures/shopify-produit.webp",
-          alt: "Formulaire « Ajouter un produit » : titre, description et supports multimédias",
-        },
       },
       {
         title: "Fixez le prix, le stock, le poids et les variantes",
         text: "Dans « Prix », indiquez le prix de vente. Le champ « Prix avant réduction » affiche un prix barré : ne l'utilisez que pour une vraie promotion.\n\nDans « Stock », entrez la quantité disponible pour que Shopify arrête la vente quand il n'y a plus rien. Pour un objet à envoyer, indiquez le poids avec l'emballage : c'est lui qui calcule les frais de livraison. Pour un fichier à télécharger, désactivez « Produit physique ».\n\nSi le produit existe en plusieurs tailles ou couleurs, ajoutez des variantes : chacune peut avoir son prix, son stock et sa photo. Réglez enfin le statut sur « Actif » et cliquez sur « Enregistrer ». Répétez l'opération pour vos autres produits.",
-        image: {
-          src: "/captures/shopify-prix.webp",
-          alt: "Sections Prix et Stock de la fiche produit Shopify",
-        },
       },
       {
         title: "Choisissez et personnalisez votre thème",
         text: "Le thème décide de l'apparence de toute la boutique. Dans « Boutique en ligne », puis « Thèmes », ou sur themes.shopify.com, filtrez sur les thèmes gratuits : ils sont conçus et mis à jour par Shopify et suffisent largement pour commencer.\n\nChoisissez un thème pour la façon dont il présente les produits, pas pour ses photos de démonstration. Cliquez sur « Ajouter » : le thème arrive dans votre bibliothèque sans remplacer celui qui est en ligne.\n\nCliquez sur « Personnaliser » pour ajouter votre logo, vos couleurs, vos polices et organiser la page d'accueil : une grande image, vos produits phares, une phrase qui dit ce que vous vendez. Regardez toujours l'aperçu sur mobile, puis cliquez sur « Publier ».",
-        image: {
-          src: "/captures/shopify-themes.webp",
-          alt: "Theme Store de Shopify filtrée sur les thèmes gratuits",
-        },
       },
       {
         title: "Organisez les menus de la boutique",
         text: "Les menus relient les pages entre elles. Ouvrez « Contenu », puis « Menus ». Deux menus existent déjà : le menu principal, en haut de la boutique, et le menu du pied de page.\n\nDans le menu principal, gardez peu d'entrées : l'accueil, le catalogue ou vos collections, et une page de contact. Dans le pied de page, mettez les pages pratiques : livraison, retours, conditions de vente, mentions légales.\n\nCliquez sur un menu pour ajouter, renommer ou déplacer un élément par glisser-déposer, puis enregistrez.",
-        image: {
-          src: "/captures/shopify-menus.webp",
-          alt: "Contenu > Menus : menu principal, menu de pied de page et menu du compte client",
-        },
       },
       {
         title: "Réglez l'expédition et la livraison",
         text: "Cliquez sur « Paramètres », puis sur « Expédition et livraison ». Le « Profil général » s'applique à tous vos produits : ouvrez-le pour voir les zones de livraison (par exemple la Belgique, puis le reste de l'Union européenne) et les tarifs de chaque zone.\n\nPour chaque zone, créez des tarifs simples : un prix fixe, ou un prix selon le poids de la commande. Un tarif « Livraison gratuite » à partir d'un certain montant pousse souvent les clients à ajouter un article.\n\nDans « Emballages », indiquez les dimensions de votre colis habituel : Shopify s'en sert pour estimer les frais. Si vous ne vendez que des produits numériques, vous n'avez pas besoin de tarif d'expédition.",
-        image: {
-          src: "/captures/shopify-expedition.webp",
-          alt: "Paramètres > Expédition et livraison : profil général, dates de livraison estimées et emballages",
-        },
       },
       {
         title: "Vérifiez les taxes et la TVA",
         text: "Dans « Paramètres », ouvrez « Taxes et droits de douane ». Le service fiscal de Shopify calcule automatiquement la TVA selon le pays du client, dans les « Régions fiscales » où vous livrez, comme l'Union européenne.\n\nVérifiez que vos régions de livraison apparaissent bien dans la liste. Vos obligations dépendent de votre statut : un indépendant en franchise de TVA ne facture pas la TVA comme une société assujettie.\n\nShopify le dit lui-même sur cet écran : en cas de doute sur vos obligations fiscales, consultez un comptable ou un fiscaliste avant d'ouvrir la boutique.",
-        image: {
-          src: "/captures/shopify-taxes.webp",
-          alt: "Paramètres > Taxes et frais de douane : services fiscaux Shopify actifs et régions fiscales",
-        },
       },
       {
         title: "Activez les paiements",
         text: "Dans « Paramètres », puis « Paiements », activez Shopify Payments. Shopify demande des informations sur votre activité et le compte bancaire qui recevra les versements. L'authentification en deux étapes est obligatoire.\n\nAvec Shopify Payments, vous acceptez les cartes et les moyens de paiement locaux sans prestataire externe. Sur le forfait Basic, les frais de carte commencent à 1,8 % + 0,30 € par vente (tarifs affichés en Belgique le 27 septembre 2026). Si vous utilisez un autre prestataire à la place, Shopify ajoute des frais de transaction.\n\nPayPal peut s'ajouter dans « Fournisseurs de services de paiement supplémentaires ».",
-        image: {
-          src: "/captures/shopify-paiements.webp",
-          alt: "Paramètres > Paiements : Shopify Payments, moyens de paiement, versements et PayPal",
-        },
       },
       {
         title: "Choisissez les moyens de paiement de vos clients",
         text: "Toujours dans « Paiements », cliquez sur « Moyens de paiement ». Activez ceux que vos clients utilisent vraiment : cartes Visa et Mastercard, Apple Pay, Shop Pay, et Bancontact si vous vendez en Belgique.\n\nLe bouton « Voir les tarifs de paiement » affiche les frais de chaque moyen : certains coûtent plus cher que d'autres. Inutile de tout activer ; trop de logos peut même embrouiller l'acheteur au moment de payer.",
-        image: {
-          src: "/captures/shopify-moyens-paiement.webp",
-          alt: "Liste des moyens de paiement en ligne : Shop Pay, Visa, Mastercard, American Express, Apple Pay",
-        },
       },
       {
         title: "Rédigez vos politiques et vos mentions légales",
         text: "Dans « Paramètres », ouvrez « Politiques ». Les politiques écrites s'affichent dans le pied de page du paiement : le client les voit avant d'acheter.\n\nRemplissez au minimum la politique de retour et de remboursement, les conditions de service, la politique d'expédition et la mention légale. Les « Coordonnées » sont marquées « Obligatoire » : ce sont les informations qui permettent au client de vous contacter.\n\nSi Shopify vous propose un modèle de texte, partez de là, mais adaptez-le à votre vraie façon de travailler. En Europe, le client a en général 14 jours pour se rétracter après un achat en ligne. Ajoutez ensuite ces pages au menu du pied de page.",
-        image: {
-          src: "/captures/shopify-politiques.webp",
-          alt: "Paramètres > Politiques : règles de retour et politiques écrites (retour, confidentialité, conditions de service, expédition, coordonnées, mention légale)",
-        },
       },
       {
         title: "Créez un code de bienvenue",
         text: "Une petite réduction aide à déclencher la première commande. Cliquez sur « Réductions », puis « Créer une réduction » et choisissez « Montant sur la commande ».\n\nTapez un code facile à retenir, comme BIENVENUE10, puis la valeur : 10 % par exemple. Dans « Utilisations maximales », cochez la limite d'une utilisation par client, sinon le code sert à chaque commande. Enregistrez : le code fonctionne tout de suite au paiement.\n\nCe code servira aussi sur vos pages de promotion et sur vos réseaux sociaux.",
-        image: {
-          src: "/captures/shopify-reduction.webp",
-          alt: "Formulaire « Créer une réduction » avec le code BIENVENUE10 à 10 % sur la commande",
-        },
       },
       {
         title: "Passez une commande test",
@@ -1602,34 +1485,18 @@ export const guides: Guide[] = [
       {
         title: "Choisissez un forfait",
         text: "Pour garder la boutique après l'essai, choisissez un forfait dans « Paramètres », puis « Forfait ». Pour une personne seule, Basic suffit presque toujours : au 27 septembre 2026, il coûte 27 € par mois en paiement mensuel, ou l'équivalent de 19 € par mois en paiement annuel.\n\nL'offre de lancement à 1 € par mois s'applique alors pendant 3 mois, puis le prix normal commence. Grow et Advanced servent surtout aux équipes et aux gros volumes : vous pourrez changer de forfait plus tard, quand vos ventes le justifient.\n\nN'oubliez pas que les applications payantes s'ajoutent au prix du forfait.",
-        image: {
-          src: "/captures/shopify-offres.webp",
-          alt: "Les forfaits Shopify Basic, Grow, Advanced et Plus sur la page des tarifs",
-        },
       },
       {
         title: "Connectez votre nom de domaine",
         text: "Votre boutique a déjà une adresse gratuite en .myshopify.com, mais votre propre domaine inspire plus confiance. Dans « Paramètres », puis « Domaines », choisissez « Connecter un domaine existant », « Transférer un domaine » ou « Acheter un nouveau domaine ».\n\nPour beaucoup d'hébergeurs de domaine, Shopify fait la connexion automatiquement. Sinon, il vous indique les enregistrements DNS à modifier chez votre hébergeur. La connexion prend souvent moins de deux heures, parfois jusqu'à deux jours. Le certificat HTTPS est gratuit.\n\nSi plusieurs domaines sont reliés, choisissez celui que les clients verront comme « Principal ».",
-        image: {
-          src: "/captures/shopify-domaines.webp",
-          alt: "Paramètres > Domaines avec les domaines connectés",
-        },
       },
       {
         title: "Ouvrez la boutique au public",
         text: "Tant que la boutique est en préparation, elle est protégée par un mot de passe. Pour l'ouvrir, allez dans « Boutique en ligne », puis « Préférences ». Dans « Accès à la boutique », désactivez « Mode privé » : la boutique devient visible pour tout le monde.\n\nSur la même page, remplissez le titre et la méta-description de la page d'accueil : c'est ce que Google et les réseaux sociaux affichent quand quelqu'un partage votre boutique.\n\nL'accueil de l'administration affiche alors « La boutique est en ligne », avec le nombre de visites et de visiteurs en direct.",
-        image: {
-          src: "/captures/shopify-acces-boutique.webp",
-          alt: "Boutique en ligne > Préférences : section Accès à la boutique avec l'option Mode privé",
-        },
       },
       {
         title: "Attirez vos premiers clients",
         text: "Une boutique en ligne ne reçoit pas de visites toute seule. Choisissez un produit phare et une offre (votre code de bienvenue), puis créez une landing page qui ne parle que de cette offre, avec HTML Pub ou Leadpages.\n\nPartagez l'adresse de cette page sur vos réseaux, dans votre bio, sur Pinterest ou dans vos publicités. Le bouton de la page mène directement à la fiche produit Shopify, pas à l'accueil de la boutique.\n\nRegardez chaque semaine combien de visiteurs arrivent et combien achètent, et améliorez la page qui convertit le moins. Le guide express « attirer des clients avec une landing page » détaille cette étape.",
-        image: {
-          src: "/captures/creer-page-ia.webp",
-          alt: "Création d'une landing page avec l'IA : l'assistant demande « What are you making? »",
-        },
       },
     ],
     pitfalls: [
@@ -1678,7 +1545,6 @@ export const guides: Guide[] = [
       {
         title: "Découvrez l'administration",
         text: "Le menu de gauche regroupe tout : Commandes, Produits, Clients, Réductions, Boutique en ligne et Paramètres. L'accueil affiche l'état de la boutique et une barre pour demander de l'aide à Sidekick.",
-        image: { src: "/captures/shopify-accueil.webp", alt: "Accueil de l'administration Shopify avec le menu et Sidekick" },
       },
       {
         title: "Ajoutez vos premiers produits",
@@ -1715,7 +1581,6 @@ export const guides: Guide[] = [
       {
         title: "Ouvrez « Ajouter un produit »",
         text: "Dans le menu de gauche, cliquez sur « Produits », puis sur « Ajouter un produit ».",
-        image: { src: "/captures/shopify-produit.webp", alt: "Formulaire « Ajouter un produit » : titre, description, supports multimédias" },
       },
       {
         title: "Écrivez le titre et la description",
@@ -1728,7 +1593,6 @@ export const guides: Guide[] = [
       {
         title: "Fixez le prix et le stock",
         text: "Indiquez le prix, et si vous voulez un « Prix avant réduction ». Dans « Stock », entrez la quantité disponible.",
-        image: { src: "/captures/shopify-prix.webp", alt: "Sections Prix et Stock de la fiche produit" },
       },
       {
         title: "Réglez l'expédition et les variantes",
@@ -1852,7 +1716,6 @@ export const guides: Guide[] = [
       {
         title: "Ouvrez le produit",
         text: "Dans le menu de gauche, cliquez sur « Produits », puis sur le produit à modifier, ou sur « Ajouter un produit » pour en créer un. Remplissez d'abord le titre, la description et les photos.",
-        image: { src: "/captures/shopify-produit.webp", alt: "Fiche « Ajouter un produit » dans l'administration Shopify" },
       },
       {
         title: "Ajoutez une option",
@@ -1865,7 +1728,6 @@ export const guides: Guide[] = [
       {
         title: "Réglez le prix et le stock de chaque variante",
         text: "Shopify affiche la liste des variantes. Cliquez sur une variante pour changer son prix (un XL peut coûter plus cher), sa référence (SKU) et sa quantité en stock. Utilisez « Grouper par » pour modifier toutes les variantes d'une couleur d'un coup.",
-        image: { src: "/captures/shopify-prix.webp", alt: "Sections Prix et Stock, à remplir pour chaque variante" },
       },
       {
         title: "Associez une photo à chaque couleur",
@@ -1913,10 +1775,6 @@ export const guides: Guide[] = [
       {
         title: "Ajoutez la page au menu",
         text: "Dans « Contenu », puis « Menus », ouvrez le menu principal ou celui du pied de page. Cliquez sur « Ajouter un élément de menu », écrivez « Contact » et choisissez la page « Contact » comme destination. Enregistrez.",
-        image: {
-          src: "/captures/shopify-menus.webp",
-          alt: "Contenu > Menus : menu principal et menu du pied de page, où ajouter le lien « Contact »",
-        },
       },
       {
         title: "Vérifiez où arrivent les messages",
@@ -1952,7 +1810,6 @@ export const guides: Guide[] = [
       {
         title: "Ouvrez « Domaines »",
         text: "Cliquez sur « Paramètres » en bas à gauche, puis sur « Domaines ». Trois choix : « Connecter un domaine existant », « Transférer un domaine » ou « Acheter un nouveau domaine ».",
-        image: { src: "/captures/shopify-domaines.webp", alt: "Paramètres > Domaines avec les domaines connectés" },
       },
       {
         title: "Connectez un domaine existant",
@@ -1989,7 +1846,6 @@ export const guides: Guide[] = [
       {
         title: "Ouvrez « Paiements »",
         text: "Cliquez sur « Paramètres », puis sur « Paiements ». Vous y voyez l'état de Shopify Payments, vos moyens de paiement, vos versements et les prestataires supplémentaires comme PayPal.",
-        image: { src: "/captures/shopify-paiements.webp", alt: "Paramètres > Paiements : Shopify Payments, moyens de paiement, versements et PayPal" },
       },
       {
         title: "Activez Shopify Payments",
@@ -1998,7 +1854,6 @@ export const guides: Guide[] = [
       {
         title: "Choisissez les moyens de paiement",
         text: "Cliquez sur « Moyens de paiement » et activez ceux que vos clients utilisent : cartes, Shop Pay, Apple Pay, Bancontact en Belgique, Klarna, etc. Le bouton « Voir les tarifs de paiement » affiche les frais de chaque moyen.",
-        image: { src: "/captures/shopify-moyens-paiement.webp", alt: "Liste des moyens de paiement en ligne : Shop Pay, Visa, Mastercard, American Express, Apple Pay" },
       },
       {
         title: "Ajoutez PayPal si besoin",
@@ -2026,7 +1881,6 @@ export const guides: Guide[] = [
       {
         title: "Ouvrez la Theme Store",
         text: "Allez sur themes.shopify.com ou, dans l'administration, sur « Boutique en ligne » puis « Thèmes ». Dans le filtre « Price », cochez « Free » pour ne voir que les thèmes gratuits.",
-        image: { src: "/captures/shopify-themes.webp", alt: "Theme Store de Shopify filtrée sur les thèmes gratuits : Horizon, Colorblock, Tinker" },
       },
       {
         title: "Filtrez selon votre activité",
@@ -2078,7 +1932,6 @@ export const guides: Guide[] = [
       {
         title: "Écrivez le code et sa valeur",
         text: "Gardez la méthode « Code de réduction », tapez un code facile à retenir (par exemple BIENVENUE10), puis choisissez « Pourcentage » ou « Montant fixe » et la valeur. Le résumé à droite se met à jour tout de suite.",
-        image: { src: "/captures/shopify-reduction.webp", alt: "Formulaire « Créer une réduction » avec le code BIENVENUE10 et 10 % de réduction sur la commande" },
       },
       {
         title: "Fixez les conditions",
@@ -2116,7 +1969,6 @@ export const guides: Guide[] = [
       {
         title: "Indiquez l'adresse de votre boutique",
         text: "Cliquez sur « Connect », entrez l'adresse en .myshopify.com de votre boutique, puis sur « Connect Shopify ». Validez ensuite l'autorisation dans Shopify.",
-        image: { src: "/captures/htmlpub-shopify.webp", alt: "Connectors HTML Pub : carte Shopify avec le champ « Your Shopify store domain »" },
       },
       {
         title: "Ajoutez un bouton vers Shopify",
@@ -2159,12 +2011,10 @@ export const guides: Guide[] = [
       {
         title: "Choisissez une seule offre",
         text: "Un produit phare ou une réduction de bienvenue. Créez d'abord le code dans Shopify, par exemple 10 % sur la première commande : c'est la raison de laisser son e-mail.",
-        image: { src: "/captures/shopify-reduction.webp", alt: "Code de bienvenue BIENVENUE10 créé dans Shopify" },
       },
       {
         title: "Créez la page avec l'IA",
         text: "Dans HTML Pub ou Leadpages, cliquez sur « Create » et décrivez la page : le produit, le public, l'offre et le bouton attendu. Gardez un titre court, trois avantages et une photo du produit.",
-        image: { src: "/captures/creer-page-ia.webp", alt: "Écran Create : l'assistant demande « What are you making? »" },
       },
       {
         title: "Ajoutez un formulaire et un bouton",
@@ -2173,7 +2023,6 @@ export const guides: Guide[] = [
       {
         title: "Reliez la page à vos outils",
         text: "Dans « Connectors », envoyez les contacts vers votre outil e-mail et reliez Shopify pour retrouver vos clients au même endroit.",
-        image: { src: "/captures/htmlpub-shopify.webp", alt: "Connecteur Shopify dans HTML Pub" },
       },
       {
         title: "Envoyez du trafic et mesurez",
@@ -2213,7 +2062,6 @@ export const guides: Guide[] = [
       {
         title: "Décrivez la page à l'IA",
         text: "Dans HTML Pub ou Leadpages, créez une page avec l'IA et décrivez-la précisément : le produit, pour qui il est fait, 3 avantages, des avis clients, des questions fréquentes et un bouton « Acheter maintenant ».",
-        image: { src: "/captures/htmlpub-page-de-vente.webp", alt: "Description d'une page de vente pour un produit Shopify dans l'assistant IA de HTML Pub" },
       },
       {
         title: "Reliez le bouton au produit",
@@ -2222,7 +2070,6 @@ export const guides: Guide[] = [
       {
         title: "Ajoutez une raison d'acheter maintenant",
         text: "Un code de réduction limité dans le temps, la livraison offerte ou un bonus. Créez-le d'abord dans Shopify pour qu'il fonctionne au paiement.",
-        image: { src: "/captures/shopify-reduction.webp", alt: "Création du code de réduction BIENVENUE10 dans Shopify" },
       },
       {
         title: "Publiez et testez sur téléphone",
@@ -2257,10 +2104,6 @@ export const guides: Guide[] = [
       {
         title: "Ouvrez « Expédition et livraison »",
         text: "Dans l'administration, cliquez sur « Paramètres », en bas à gauche, puis sur « Expédition et livraison ». Le « Profil général » s'applique à tous vos produits : c'est lui que vous allez régler.",
-        image: {
-          src: "/captures/shopify-expedition.webp",
-          alt: "Paramètres > Expédition et livraison : profil général, dates de livraison estimées et emballages",
-        },
       },
       {
         title: "Créez vos zones de livraison",
@@ -2355,10 +2198,6 @@ export const guides: Guide[] = [
       {
         title: "Ouvrez « Politiques »",
         text: "Dans l'administration, cliquez sur « Paramètres », puis sur « Politiques ». Vous y trouvez les règles de retour et la liste des politiques écrites.",
-        image: {
-          src: "/captures/shopify-politiques.webp",
-          alt: "Paramètres > Politiques : règles de retour et politiques écrites (retour, confidentialité, conditions de service, expédition, coordonnées, mention légale)",
-        },
       },
       {
         title: "Réglez vos règles de retour",
@@ -2402,10 +2241,6 @@ export const guides: Guide[] = [
       {
         title: "Ouvrez « Menus »",
         text: "Dans l'administration, cliquez sur « Contenu », puis sur « Menus ». Cliquez sur le menu à modifier, par exemple le menu principal.",
-        image: {
-          src: "/captures/shopify-menus.webp",
-          alt: "Contenu > Menus : menu principal, menu de pied de page et menu du compte client",
-        },
       },
       {
         title: "Ajoutez un lien",
@@ -2445,10 +2280,6 @@ export const guides: Guide[] = [
       {
         title: "Choisissez un forfait",
         text: "Le mot de passe ne peut être retiré qu'après le choix d'un forfait. Dans « Paramètres », puis « Forfait », choisissez-en un. Pendant l'essai gratuit, l'abonnement ne commence qu'à la fin de l'essai.",
-        image: {
-          src: "/captures/shopify-offres.webp",
-          alt: "Les forfaits Shopify Basic, Grow, Advanced et Plus sur la page des tarifs",
-        },
       },
       {
         title: "Ouvrez les préférences de la boutique",
@@ -2457,10 +2288,6 @@ export const guides: Guide[] = [
       {
         title: "Désactivez le mode privé",
         text: "Désactivez « Mode privé », puis enregistrez. La boutique est visible pour tout le monde, sans mot de passe.",
-        image: {
-          src: "/captures/shopify-acces-boutique.webp",
-          alt: "Boutique en ligne > Préférences : section Accès à la boutique avec l'option Mode privé",
-        },
       },
       {
         title: "Remplissez le titre et la description pour Google",
@@ -2501,7 +2328,6 @@ export const guides: Guide[] = [
       {
         title: "Préparez votre offre dans Shopify",
         text: "Avant de construire le tunnel, votre produit doit être prêt dans Shopify. Créez le produit avec ses photos, son prix, sa description et ses variantes. Vérifiez que le paiement fonctionne en passant une commande test.\n\nCopiez le lien direct vers le produit ou la collection : vous en aurez besoin pour le bouton d'achat dans vos emails et sur votre page de vente.",
-        image: { src: "/captures/shopify-produit.webp", alt: "Page produit Shopify : titre, description, prix et images du produit" },
       },
       {
         title: "Créez un lead magnet irrésistible",
@@ -2510,12 +2336,10 @@ export const guides: Guide[] = [
       {
         title: "Construisez la landing page de capture",
         text: "Dans Leadpages, créez une nouvelle page à partir d'un modèle ou avec l'IA. La page a un seul objectif : convaincre le visiteur de laisser son email en échange du lead magnet.\n\nLe titre doit annoncer le bénéfice du lead magnet. Le formulaire ne demande que l'email. Le bouton dit exactement ce que le visiteur reçoit : « Recevoir les 10 recettes » plutôt que « S'inscrire ». Supprimez tout ce qui distrait : pas de menu, pas de liens vers d'autres pages.",
-        image: { src: "/captures/creer-page-ia.webp", alt: "Création d'une landing page avec l'assistant IA dans Leadpages" },
       },
       {
         title: "Connectez votre service d'emailing",
         text: "Dans Leadpages, ouvrez les intégrations de votre page et connectez votre service d'emailing : Mailchimp, ConvertKit, ActiveCampaign ou un autre. Chaque nouvel inscrit est automatiquement ajouté à une liste ou un tag spécifique.\n\nCréez une liste ou un tag dédié à ce tunnel pour que vos emails de vente n'arrivent qu'aux personnes qui ont demandé ce lead magnet précis.",
-        image: { src: "/captures/integrations.webp", alt: "Panneau d'intégrations Leadpages : connexion avec les services d'emailing" },
       },
       {
         title: "Écrivez la séquence d'emails",
@@ -2524,12 +2348,10 @@ export const guides: Guide[] = [
       {
         title: "Créez un code de réduction dans Shopify",
         text: "Dans Shopify, allez dans Réductions et créez un code promotionnel réservé aux abonnés de votre tunnel. Un code comme BIENVENUE15 pour 15 % de réduction sur la première commande donne une raison d'acheter maintenant plutôt que plus tard.\n\nLimitez le code à une utilisation par client et fixez une date d'expiration pour créer un sentiment d'urgence réel.",
-        image: { src: "/captures/shopify-reduction.webp", alt: "Création d'un code de réduction dans Shopify : pourcentage, conditions et limites" },
       },
       {
         title: "Construisez la page de vente",
         text: "Créez une deuxième page dans Leadpages : la page de vente. C'est la page vers laquelle vos emails envoient les contacts prêts à acheter. Elle présente votre produit en détail avec un bouton qui renvoie vers Shopify.\n\nCette page est plus longue que la page de capture : témoignages, détails du produit, garantie, FAQ. Le bouton d'achat utilise le lien direct vers votre produit Shopify.",
-        image: { src: "/captures/htmlpub-shopify.webp", alt: "Page de vente HTML Pub avec bouton d'achat lié à Shopify" },
       },
       {
         title: "Configurez la page de remerciement",
@@ -2546,12 +2368,10 @@ export const guides: Guide[] = [
       {
         title: "Suivez les résultats à chaque étape",
         text: "Un tunnel de vente se mesure étape par étape. Notez le taux de conversion de la landing page, le taux d'ouverture des emails, le taux de clic vers Shopify et le taux d'achat final.\n\nDans Leadpages, le tableau de bord donne le taux de conversion de la page. Dans votre service d'emailing, vous voyez les ouvertures et les clics. Dans Shopify, les ventes avec le code de réduction vous montrent combien de ventes viennent du tunnel.",
-        image: { src: "/captures/statistiques.webp", alt: "Tableau de bord Leadpages : suivi des conversions et du trafic" },
       },
       {
         title: "Optimisez avec les tests A/B",
         text: "Une fois que le tunnel tourne et génère des données, améliorez chaque étape. Testez deux titres différents sur la page de capture. Testez deux objets d'email. Testez deux prix ou deux offres sur la page de vente.\n\nDans Leadpages, utilisez les tests A/B pour la page de capture et la page de vente. Changez un seul élément à la fois et attendez au moins 100 conversions par variante avant de choisir un gagnant.",
-        image: { src: "/captures/test-ab.webp", alt: "Interface de test A/B Leadpages : comparaison entre deux variantes de page" },
       },
     ],
     pitfalls: [
@@ -2684,7 +2504,7 @@ export const formats: { slug: string; format: GuideFormat; name: string; label: 
     format: "complet",
     name: "Guides complets",
     label: "Tout comprendre",
-    blurb: "Un projet de A à Z, avec beaucoup de captures d'écran : plus de 10 minutes de lecture.",
+    blurb: "Un projet de A à Z, étape par étape : plus de 10 minutes de lecture.",
   },
 ];
 

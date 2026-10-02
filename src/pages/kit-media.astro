@@ -5,20 +5,18 @@ import { guides, guidesInFormat, themes, tools } from "../lib/guides";
 
 const express = guidesInFormat("express").length;
 const complet = guidesInFormat("complet").length;
-const withCaptures = guides.filter((guide) => guide.steps.some((step) => step.image)).length;
 const activeThemes = themes.filter((theme) => guides.some((guide) => guide.theme === theme.slug));
 
 const stats = [
   { value: String(guides.length), label: "guides publiés" },
   { value: String(complet), label: complet > 1 ? "guides complets (A à Z)" : "guide complet (A à Z)" },
-  { value: String(withCaptures), label: "guides illustrés de captures" },
   { value: String(tools.length), label: "outils couverts" },
 ];
 
 const facts = [
   {
     title: "Ce que fait Zunrel",
-    body: "Zunrel publie des guides « comment faire », étape par étape, en français, pour créer ses pages avec Leadpages et HTML Pub, puis vendre en ligne avec Shopify. Chaque guide répond à une seule question qu'un débutant tape sur Google, avec les étapes dans l'ordre réel, les erreurs fréquentes, des captures d'écran de l'interface et les liens vers l'aide officielle.",
+    body: "Zunrel publie des guides « comment faire », étape par étape, en français, pour créer ses pages avec Leadpages et HTML Pub, puis vendre en ligne avec Shopify. Chaque guide répond à une seule question qu'un débutant tape sur Google, avec les étapes dans l'ordre réel, les erreurs fréquentes et les liens vers l'aide officielle.",
   },
   {
     title: "Audience",
@@ -26,7 +24,7 @@ const facts = [
   },
   {
     title: "Formats",
-    body: `Guides express (${express}) : l'essentiel se lit en 30 secondes. Guides complets (${complet}) : un projet de A à Z, plus de 10 minutes de lecture et de nombreuses captures. Chaque guide existe aussi en épingle Pinterest verticale et peut être imprimé ou enregistré en PDF.`,
+    body: `Guides express (${express}) : l'essentiel se lit en 30 secondes. Guides complets (${complet}) : un projet de A à Z, plus de 10 minutes de lecture. Chaque guide existe aussi en épingle Pinterest verticale et peut être imprimé ou enregistré en PDF.`,
   },
   {
     title: "Diffusion",

@@ -24,7 +24,6 @@ import {
   type Tool,
 } from "../../lib/guides";
 import { href } from "../../lib/paths";
-import { imageSize } from "../../lib/image-size";
 import { guideAlternates } from "../../lib/i18n";
 
 export function getStaticPaths() {
@@ -138,7 +137,7 @@ const howTo = {
       ) : null
     }
     <a href="#etapes" data-pagefind-ignore class="no-print mt-4 inline-block text-[14px] font-medium leading-5 text-[#171717] hover:underline">
-      Voir le détail avec les captures ↓
+      Voir le pas à pas ↓
     </a>
   </section>
 
@@ -156,17 +155,6 @@ const howTo = {
               {step.text.split("\n\n").map((paragraph, index) => (
                 <p class:list={["text-[15px] leading-6 text-[#666666]", index === 0 ? "mt-1" : "mt-3"]}>{paragraph}</p>
               ))}
-              {step.image ? (
-                <img
-                  src={step.image.src}
-                  alt={step.image.alt}
-                  width={imageSize(step.image.src)?.width}
-                  height={imageSize(step.image.src)?.height}
-                  loading="lazy"
-                  decoding="async"
-                  class="mt-4 w-full rounded-[6px] shadow-[0_0_0_1px_rgba(0,0,0,0.07),0_1px_2px_rgba(0,0,0,0.05)]"
-                />
-              ) : null}
             </div>
           </li>
         ))

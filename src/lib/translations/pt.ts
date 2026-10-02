@@ -1,4 +1,4 @@
-// Versões em português dos guias mais lidos. As capturas, as fontes e as ferramentas vêm do guia
+// Versões em português dos guias mais lidos. As fontes e as ferramentas vêm do guia
 // francês (mesmo `slug`) ; aqui só está o texto. Cada etapa corresponde, pela ordem, a uma etapa do guia francês.
 import type { TranslatedGuide } from "../i18n";
 
@@ -14,7 +14,6 @@ export const ptGuides: TranslatedGuide[] = [
       {
         title: "Abra a página de preços",
         text: "Em shopify.com, a página de preços mostra a oferta do momento: 3 dias grátis, depois 1 € por mês durante 3 meses. A oferta pode mudar e depender do país: leia-a no próprio dia.",
-        alt: "Página de preços da Shopify: 3 dias de teste, depois 1 €/mês durante 3 meses",
       },
       {
         title: "Clique no botão para começar grátis",
@@ -49,12 +48,10 @@ export const ptGuides: TranslatedGuide[] = [
       {
         title: "Vende vários produtos? Escolha a Shopify",
         text: "Catálogo, inventário, variantes, custos de envio, impostos, pedidos e devoluções: a Shopify cuida de tudo isso. A Leadpages não foi feita para administrar uma loja.",
-        alt: "Os planos Shopify Basic, Grow, Advanced e Plus",
       },
       {
         title: "Quer captar e-mails de clientes? Escolha a Leadpages ou o HTML Pub",
         text: "Página de inscrição, página de espera antes de um lançamento, webinar, guia gratuito: basta uma landing page com um formulário, sem loja.",
-        alt: "As ofertas HTML Pub e Leadpages lado a lado",
       },
       {
         title: "Tem um só produto ou um serviço? Comece simples",
@@ -89,7 +86,6 @@ export const ptGuides: TranslatedGuide[] = [
       {
         title: "Veja as três ofertas HTML Pub",
         text: "Starter: 5 páginas e 1 domínio. Pro: 25 páginas, 1 blog e acesso API, para um criador sozinho. Business: 50 páginas, 2 domínios e 2 blogs, para pequenas empresas ou agências. A publicação a partir do Claude está incluída em todas as ofertas.",
-        alt: "Página de preços: as ofertas HTML Pub (Publish) e Leadpages (Optimize) lado a lado",
       },
       {
         title: "Veja as três ofertas Leadpages",
@@ -124,7 +120,6 @@ export const ptGuides: TranslatedGuide[] = [
       {
         title: "Clique em « Start 7-Day Free Trial »",
         text: "Crie a conta com o seu e-mail e indique um cartão bancário. Só serve para continuar depois do teste.",
-        alt: "Botões « Start 7-Day Free Trial » em cada oferta",
       },
       {
         title: "Aponte a data de fim",
@@ -155,37 +150,30 @@ export const ptGuides: TranslatedGuide[] = [
       {
         title: "Abra a página de criação",
         text: "No menu da esquerda, clique em « Create ». O Piper pergunta « What are you making? »: escolha « Landing page ».",
-        alt: "Página Create: o Piper pergunta « What are you making? »",
       },
       {
         title: "Descreva a página com precisão",
         text: "No campo de baixo, diga a quem se dirige a página, o que oferece, o tom, as cores e as secções que quer (título, vantagens, opiniões, formulário). Quanto mais preciso, melhor o resultado. Clique em « Send ».",
-        alt: "Descrição de uma landing page escrita na barra de texto",
       },
       {
         title: "Escolha as imagens",
         text: "O Piper pergunta o que usar nas imagens: as suas, imagens geradas por IA (mais créditos) ou nenhuma por agora. O custo estimado em créditos aparece no canto superior direito. « Skip images for now » é a opção que gasta menos créditos.",
-        alt: "Escolha das imagens com a estimativa de créditos",
       },
       {
         title: "Escolha um estilo",
         text: "São propostas três direções visuais. Clique na que prefere, ajuste « How far should I push it? » se quiser e clique em « Build it ».",
-        alt: "Três direções de estilo propostas pelo Piper",
       },
       {
         title: "Deixe o Piper construir",
         text: "A construção faz-se em seis etapas, em cerca de um minuto: leitura do pedido, secções, textos, imagens, montagem e verificação.",
-        alt: "Construção da página, etapa a etapa",
       },
       {
         title: "Corrija numa conversa",
         text: "Clique em « Open in editor ». No campo « Ask Piper to edit this page… », peça uma alteração de cada vez. O Piper lista o que mudou e os créditos usados.",
-        alt: "Editor: o Piper aplica uma alteração pedida",
       },
       {
         title: "Verifique no smartphone e publique",
         text: "Os ícones no canto inferior direito do editor mostram a página em computador, tablet e smartphone. Para a pôr online, mantenha o endereço gratuito em pubhtml.com ou conecte o seu domínio (« Where should this live? »). Depois, « Update » publica as alterações.",
-        alt: "Escolha do endereço de publicação: gratuito ou o seu domínio",
       },
     ],
     pitfalls: [
@@ -208,7 +196,6 @@ export const ptGuides: TranslatedGuide[] = [
       {
         title: "Conheça a administração",
         text: "O menu da esquerda reúne tudo: pedidos, produtos, clientes, descontos, loja online e configurações. A página inicial mostra o estado da loja e uma barra para pedir ajuda ao Sidekick.",
-        alt: "Página inicial da administração Shopify com o menu e o Sidekick",
       },
       {
         title: "Adicione os primeiros produtos",
@@ -243,17 +230,14 @@ export const ptGuides: TranslatedGuide[] = [
       {
         title: "A oferta de partida: 3 dias grátis, depois 1 € por mês",
         text: "A 27 de setembro de 2026, a Shopify mostrava 3 dias de teste grátis, depois 1 € por mês durante 3 meses. Depois desses 3 meses começa o preço normal do plano escolhido.",
-        alt: "Página de preços da Shopify: 3 dias de teste grátis, depois 1 €/mês durante 3 meses",
       },
       {
         title: "O preço dos quatro planos",
         text: "Com pagamento anual: Basic 19 € por mês, Grow 56 € por mês, Advanced 289 € por mês e Plus a partir de 2100 € por mês. Com pagamento mensal, o Basic custa 27 € por mês.\n\nPara quem começa sozinho, o Basic chega quase sempre.",
-        alt: "Planos Shopify com pagamento anual: Basic 19 €/mês, Grow 56 €/mês, Advanced 289 €/mês, Plus a partir de 2100 €/mês",
       },
       {
         title: "As taxas em cada venda",
         text: "Com o Shopify Payments, cada pagamento com cartão tem uma taxa: no Basic, a partir de 1,8 % + 0,30 € por venda (valor visto na Bélgica a 27 de setembro de 2026). Estas taxas descem quando o plano sobe.\n\nSe usar outro prestador de pagamento em vez do Shopify Payments, a Shopify junta taxas de transação, até 2 % no Basic.",
-        alt: "Configurações de pagamentos: Shopify Payments ativo e PayPal como prestador adicional",
       },
       {
         title: "Os custos que se esquecem",
@@ -281,12 +265,10 @@ export const ptGuides: TranslatedGuide[] = [
       {
         title: "Escolha uma só oferta",
         text: "Um produto de destaque ou um desconto de boas-vindas. Crie primeiro o código na Shopify, por exemplo 10 % no primeiro pedido: é a razão para deixar o e-mail.",
-        alt: "Código de boas-vindas BIENVENUE10 criado na Shopify",
       },
       {
         title: "Crie a página com a IA",
         text: "No HTML Pub ou na Leadpages, clique em « Create » e descreva a página: o produto, o público, a oferta e o botão pretendido. Mantenha um título curto, três vantagens e uma foto do produto.",
-        alt: "Página Create: o assistente pergunta « What are you making? »",
       },
       {
         title: "Adicione um formulário e um botão",
@@ -295,7 +277,6 @@ export const ptGuides: TranslatedGuide[] = [
       {
         title: "Conecte a página às suas ferramentas",
         text: "Em « Connectors », envie os inscritos para a sua ferramenta de e-mail e conecte a Shopify para ter os clientes no mesmo lugar.",
-        alt: "Conector Shopify no HTML Pub",
       },
       {
         title: "Traga tráfego e meça",
@@ -323,7 +304,6 @@ export const ptGuides: TranslatedGuide[] = [
       {
         title: "Crie a página de espera com a IA",
         text: "No HTML Pub ou na Leadpages, descreva a página: o produto que vem aí, a data, o que recebem os inscritos e um formulário com um só campo de e-mail.",
-        alt: "Descrição de uma página de espera com formulário de e-mail no assistente de IA do HTML Pub",
       },
       {
         title: "Peça o consentimento",
@@ -332,12 +312,10 @@ export const ptGuides: TranslatedGuide[] = [
       {
         title: "Encontre os inscritos",
         text: "Cada inscrição chega a « Submissions ». Pode consultá-las e exportá-las em CSV.",
-        alt: "Página Submissions com as respostas do formulário",
       },
       {
         title: "Envie-os para a sua ferramenta de e-mail",
         text: "Em « Connectors », conecte o Mailchimp, o Brevo ou outra ferramenta para que cada inscrito chegue lá automaticamente. Prepare um e-mail de boas-vindas e o e-mail do dia do lançamento.",
-        alt: "Página Connectors com os aplicativos de e-mail para conectar",
       },
     ],
     pitfalls: [
@@ -357,7 +335,6 @@ export const ptGuides: TranslatedGuide[] = [
       {
         title: "Abra « Domains »",
         text: "No menu da esquerda, clique em « Domains » e depois em « Connect Domain ». Ainda não tem domínio? Conforme a sua oferta, « Claim Free Domain » dá-lhe um.",
-        alt: "Página Domains com « Connect Domain » e « Claim Free Domain »",
       },
       {
         title: "Escreva o seu domínio",
@@ -366,7 +343,6 @@ export const ptGuides: TranslatedGuide[] = [
       {
         title: "Escolha o que ele mostra",
         text: "Em « Homepage », escolha « Page », « Site » ou « Blog » e depois o elemento a mostrar. Também pode escolher uma página de erro (« Custom 404 page »). Clique em « Add & Configure Domain ».",
-        alt: "Formulário Connect Your Domain",
       },
       {
         title: "Deixe a configuração automática trabalhar",
@@ -409,7 +385,6 @@ export const ptGuides: TranslatedGuide[] = [
       {
         title: "Adicione a página ao menu",
         text: "Em « Conteúdo » e depois « Menus », abra o menu principal ou o do rodapé. Clique em « Adicionar item ao menu », escreva « Contato » e escolha a página « Contato » como destino. Salve.",
-        alt: "Conteúdo > Menus: menu principal e menu do rodapé, onde adicionar o link « Contato »",
       },
       {
         title: "Confira para onde vão as mensagens",
@@ -437,7 +412,6 @@ export const ptGuides: TranslatedGuide[] = [
       {
         title: "Abra o produto",
         text: "No menu à esquerda, clique em « Produtos » e depois no produto a alterar, ou em « Adicionar produto » para criar um. Preencha primeiro o título, a descrição e as fotos.",
-        alt: "Página « Adicionar produto » no painel da Shopify",
       },
       {
         title: "Adicione uma opção",
@@ -450,7 +424,6 @@ export const ptGuides: TranslatedGuide[] = [
       {
         title: "Defina o preço e o estoque de cada variante",
         text: "A Shopify mostra a lista das variantes. Clique numa variante para mudar o preço (um GG pode custar mais), a referência (SKU) e a quantidade em estoque. Use « Agrupar por » para alterar todas as variantes de uma cor de uma só vez.",
-        alt: "Seções Preço e Estoque, a preencher para cada variante",
       },
       {
         title: "Associe uma foto a cada cor",
@@ -478,7 +451,6 @@ export const ptGuides: TranslatedGuide[] = [
       {
         title: "Comece por um modelo « link na bio »",
         text: "Na tela « Create », clique em « Templates » e depois em « Browse all templates ». Escolha um modelo de página « link in bio », veja-o com « Preview » e clique em « Use ».",
-        alt: "Painel Templates com « Preview », « Use » e « Browse all templates »",
       },
       {
         title: "Ponha a sua foto e uma frase",
@@ -495,7 +467,6 @@ export const ptGuides: TranslatedGuide[] = [
       {
         title: "Confira no celular e publique",
         text: "Quase todos os visitantes chegam pelo celular. Clique no ícone de celular no canto inferior direito do editor, confira que cada botão é fácil de tocar e publique.",
-        alt: "Pré-visualização da página em celular no editor",
       },
       {
         title: "Cole o endereço na sua bio",
@@ -558,7 +529,6 @@ export const ptGuides: TranslatedGuide[] = [
       {
         title: "As ofertas HTML Pub, para publicar",
         text: "A 28 de setembro de 2026, com pagamento anual: o Starter custa 5,58 US$ por mês (7 US$ no pagamento mensal), o Pro 16 US$ por mês (20 US$ no mensal) e o Business 26,42 US$ por mês (33 US$ no mensal).\n\nO HTML Pub serve para publicar landing pages, sites e blogs no seu domínio, com o assistente de IA. Não tem testes A/B.",
-        alt: "Página de preços: HTML Pub Pro a 16 US$/mês e Business a 26,42 US$/mês, Leadpages Grow a 53,58 US$/mês e Optimize a 108 US$/mês, com pagamento anual",
       },
       {
         title: "As ofertas Leadpages, para converter mais",
@@ -571,7 +541,6 @@ export const ptGuides: TranslatedGuide[] = [
       {
         title: "Experimente 7 dias antes de pagar",
         text: "Cada oferta pode ser testada grátis durante 7 dias, com todas as funções. É pedido um cartão, mas nada é cobrado antes do fim do teste. Anote a data de fim na sua agenda.",
-        alt: "Botões « Start 7-Day Free Trial » em cada oferta",
       },
       {
         title: "Escolha conforme o seu tráfego",
@@ -681,7 +650,6 @@ export const ptGuides: TranslatedGuide[] = [
       {
         title: "Escreva o código e o valor",
         text: "Mantenha o método « Código de desconto », escreva um código fácil de lembrar (por exemplo BEMVINDO10) e escolha « Percentagem » ou « Valor fixo » e o valor. O resumo à direita atualiza-se logo.",
-        alt: "Formulário « Criar desconto » com o código BIENVENUE10 e 10 % de desconto no pedido (painel em francês)",
       },
       {
         title: "Defina as condições",
@@ -708,7 +676,6 @@ export const ptGuides: TranslatedGuide[] = [
       {
         title: "Abra « Envio e entrega »",
         text: "No painel, clique em « Configurações », em baixo à esquerda, e depois em « Envio e entrega ». O perfil geral aplica-se a todos os produtos: é esse que vai configurar.",
-        alt: "Configurações > Envio e entrega: perfil geral, datas de entrega estimadas e embalagens (painel em francês)",
       },
       {
         title: "Crie as suas zonas de envio",
@@ -865,7 +832,6 @@ export const ptGuides: TranslatedGuide[] = [
       {
         title: "Abra « Adicionar produto »",
         text: "No menu da esquerda, clique em « Produtos » e depois em « Adicionar produto ».",
-        alt: "Formulário « Adicionar produto »: título, descrição, multimédia (painel em francês)",
       },
       {
         title: "Escreva o título e a descrição",
@@ -878,7 +844,6 @@ export const ptGuides: TranslatedGuide[] = [
       {
         title: "Defina o preço e a quantidade",
         text: "Indique o preço e, se quiser, um preço de comparação (o preço antes do desconto). Na parte do inventário, escreva a quantidade disponível.",
-        alt: "Secções Preço e Inventário da ficha do produto (painel em francês)",
       },
       {
         title: "Configure o envio e as variantes",
@@ -902,7 +867,6 @@ export const ptGuides: TranslatedGuide[] = [
       {
         title: "Abra a Theme Store",
         text: "Vá a themes.shopify.com ou, no painel, a « Loja virtual » (ou « Loja online ») e depois « Temas ». No filtro « Price », marque « Free » para ver só os temas grátis.",
-        alt: "Theme Store da Shopify filtrada nos temas grátis: Horizon, Colorblock, Tinker",
       },
       {
         title: "Filtre conforme a sua atividade",
@@ -941,7 +905,6 @@ export const ptGuides: TranslatedGuide[] = [
       {
         title: "Mude de plano",
         text: "A página mostra todas as ofertas, com « Current Plan » na sua. Escolha o plano acima ou abaixo. A mudança vale a partir do próximo ciclo de faturação.",
-        alt: "Página Billing: ofertas, « Current Plan », « Manage Subscription » e « Cancel »",
       },
       {
         title: "Ou cancele",
@@ -972,27 +935,22 @@ export const ptGuides: TranslatedGuide[] = [
       {
         title: "Escolha o plano e comece o teste",
         text: "Na página de preços há duas famílias de ofertas. O HTML Pub serve para publicar páginas, sites e blogs. A Leadpages junta as ferramentas para melhorar os resultados: testes A/B a partir do plano Grow, e Smart Traffic e mapas de calor a partir do Optimize.\n\nPara uma primeira página, o HTML Pub muitas vezes basta. Se quiser testar duas versões da página, escolha Leadpages Grow.\n\nClique em « Start 7-Day Free Trial ». É pedido um cartão, mas nada é cobrado antes do 7.º dia. Anote a data de fim na sua agenda. Os preços mudam muitas vezes: leia os do dia na página oficial.",
-        alt: "Botões « Start 7-Day Free Trial » em cada oferta",
       },
       {
         title: "Abra a tela de criação",
         text: "No menu da esquerda, clique em « Create ». O assistente de IA, Piper, pergunta « What are you making? »: escolha « Landing page ».\n\nPrefere partir de uma base pronta? Clique em « Templates » para escolher um modelo e depois em « Use ». O resto do guia é igual.",
-        alt: "Tela Create: o Piper pergunta « What are you making? »",
       },
       {
         title: "Descreva a página em detalhe",
         text: "No campo de baixo, use as notas do passo 1: o público, a oferta, o tom, as cores e as secções que quer. Por exemplo: um título, três vantagens, uma opinião de cliente, uma pergunta frequente e um formulário com um só campo de e-mail.\n\nQuanto mais precisa for a descrição, menos créditos gasta em correções. Clique em « Send ».\n\nExemplo de descrição completa: « Landing page em português para um guia PDF grátis para personal trainers independentes que querem encontrar os primeiros clientes online. Tom simples e motivador. Cores: azul-escuro e laranja. Secções: título com o resultado prometido, três vantagens, um texto curto sobre o autor, duas perguntas frequentes, um formulário com um só campo de e-mail e uma caixa de consentimento não marcada. Botão: Receber o guia. »\n\nTambém pode colar o endereço de uma página existente ou código HTML: o Piper usa-o como ponto de partida.",
-        alt: "Descrição de uma landing page escrita na barra de texto",
       },
       {
         title: "Escolha as imagens e o estilo",
         text: "O Piper pergunta que imagens usar: as suas, imagens geradas por IA (gastam mais créditos) ou nenhuma por agora. O custo estimado aparece no canto superior direito.\n\nDepois propõe três direções visuais. Clique na que prefere e em « Build it ». A página fica pronta em cerca de um minuto.",
-        alt: "Três direções de estilo propostas pelo Piper",
       },
       {
         title: "Corrija a página conversando",
         text: "Clique em « Open in editor ». No campo « Ask Piper to edit this page… », peça uma só mudança de cada vez: « Troque o título por… », « Ponha o botão verde », « Apague a secção de preços ».\n\nO Piper lista o que mudou e os créditos usados. Releia cada texto você mesmo: a IA pode inventar números ou opiniões. Troque-os pelos verdadeiros, ou apague-os.\n\nAlguns pedidos úteis numa primeira página: « Encurte todos os parágrafos para duas frases no máximo », « Ponha o botão também no topo da página », « Ponha o meu logo no canto superior esquerdo » (depois de o enviar em « Assets »), « Use as cores do meu Brand Kit ».\n\nPara uma pequena mudança de texto, clicar diretamente na página é muitas vezes mais rápido do que pedir à IA. Guarde o Piper para mudanças de estrutura ou de estilo.",
-        alt: "Editor: o Piper aplica uma mudança pedida",
       },
       {
         title: "Verifique o formulário e o consentimento",
@@ -1001,27 +959,22 @@ export const ptGuides: TranslatedGuide[] = [
       {
         title: "Confira a página no celular",
         text: "A maioria dos visitantes chega pelo celular. No canto inferior direito do editor, clique no ícone de celular. Verifique que o título se lê sem zoom, que o botão se vê sem descer muito e que o formulário se preenche facilmente com o polegar.\n\nVeja também a velocidade: imagens pesadas deixam a página lenta numa rede móvel, e cada segundo de espera faz sair visitantes. Use fotos de tamanho razoável e evite vídeos com reprodução automática no topo da página.\n\nPor fim, leia tudo em voz alta uma última vez. Os erros e as frases longas demais notam-se muito melhor assim.",
-        alt: "Pré-visualização da página no celular dentro do editor",
       },
       {
         title: "Defina o endereço e o SEO",
         text: "No editor, o menu « … » no canto superior direito mostra o endereço da página (o slug). Escolha um curto e legível, por exemplo guia-gratis.\n\nEm « SEO & Social », indique o título e a descrição que aparecem no Google e quando alguém partilha a página, e o ícone do separador. Se a página só serve para um anúncio, pode pedir ao Google para não a indexar.",
-        alt: "Janela SEO & Social",
       },
       {
         title: "Publique no seu próprio domínio",
         text: "Ao publicar, aparece a pergunta « Where should this live? ». Pode ficar com o endereço grátis ou conectar o seu domínio para passar mais confiança.\n\nPara conectar um domínio, abra « Domains » no menu da esquerda e depois « Connect Domain ». Um subdomínio como oferta.meusite.com é o mais simples. A configuração automática trata do domínio por si. O HTTPS é grátis e pode demorar até 48 horas.\n\nSe a configuração automática não for possível no seu fornecedor de domínio, junte à mão os registos que a Leadpages mostra: um CNAME para o subdomínio e um TXT para a segurança. Copie os valores exatos da sua conta.\n\nDepois de cada mudança, clique em « Update » para pôr a página online.",
-        alt: "Escolha do endereço de publicação: grátis ou o seu domínio",
       },
       {
         title: "Envie os contatos para a sua ferramenta de e-mail",
         text: "No menu da esquerda, abra « Connectors ». Procure a sua ferramenta (Mailchimp, Brevo, MailerLite, HubSpot…) e clique em « Connect ».\n\nNo separador « Automations », clique em « Create automation », escolha o gatilho « Form submitted » e depois a ferramenta que recebe os contatos. Cada novo inscrito chega lá sozinho. Prepare lá um e-mail de boas-vindas.",
-        alt: "Página Connectors com as aplicações para conectar",
       },
       {
         title: "Faça você mesmo um teste completo",
         text: "Abra a página publicada no celular, preencha o formulário com o seu próprio endereço e verifique três coisas.\n\nA resposta aparece em « Submissions », de onde também a pode exportar em CSV. O contato chega à sua ferramenta de e-mail. O e-mail de boas-vindas é enviado. Se algo falhar, « View execution logs » em « Connectors » mostra o motivo.",
-        alt: "Página Submissions com as respostas do formulário",
       },
       {
         title: "Traga os primeiros visitantes",
@@ -1030,12 +983,10 @@ export const ptGuides: TranslatedGuide[] = [
       {
         title: "Acompanhe os resultados",
         text: "Abra « Analytics ». Os números principais estão no topo: « Sessions » (as visitas), « Form submissions » (os formulários enviados), « Conversions » e « Conv. rate » (a taxa de conversão).\n\nEscolha o período (7, 14 ou 30 dias) e uma página específica com « All Pages ». O separador « Acquisition » mostra de onde vêm os visitantes. Espere pelo menos uma centena de visitas antes de tirar conclusões.\n\nSe vem muita gente mas poucos se inscrevem, o problema costuma ser o título ou a oferta: a promessa não é clara ou útil o suficiente. Se quase ninguém vem, é a divulgação que precisa de trabalho: partilhe o link nos seus e-mails, nas redes, na bio do Instagram ou num pin do Pinterest.\n\nPara acompanhar anúncios, « Scripts & Pixels », no menu « … » do editor, permite juntar o pixel da Meta ou do Google Ads.",
-        alt: "Página Analytics: conversões, taxa de conversão, formulários enviados e sessões",
       },
       {
         title: "Melhore a página com um teste A/B",
         text: "Com Leadpages Grow ou superior, duplique a página para criar uma versão B e mude uma só coisa: o título, o botão ou a oferta.\n\nEscolha o objetivo (formulário enviado, clique, compra), divida o tráfego 50/50 e espere pelo resultado « vencedor claro ». Fique depois com a melhor versão e comece um novo teste. No plano Optimize, o Smart Traffic pode enviar cada visitante para a versão com mais hipóteses de lhe agradar.\n\nPor onde começar? Pelo título, quase sempre: é o que toda a gente lê. Depois, o texto do botão, e por fim a própria oferta (um guia ou uma lista, um desconto ou um brinde). Anote cada teste e o resultado numa tabela simples: ao fim de alguns meses, vai saber exatamente o que faz o seu público reagir.\n\nEstá no HTML Pub? Pode passar para Leadpages Grow nas configurações da conta quando estiver pronto: as suas páginas e domínios ficam.",
-        alt: "Criação de uma variante B e troca entre A e B",
       },
     ],
     pitfalls: [
@@ -1056,7 +1007,6 @@ export const ptGuides: TranslatedGuide[] = [
       {
         title: "Abra os modelos",
         text: "Na tela « Create », clique em « Templates » por cima da barra de texto, ou em « Browse all templates » para ver todos.",
-        alt: "Painel Templates com « Preview », « Use » e « Browse all templates »",
       },
       {
         title: "Pré-visualize antes de escolher",
@@ -1073,7 +1023,6 @@ export const ptGuides: TranslatedGuide[] = [
       {
         title: "Reveja no celular e publique",
         text: "A maioria dos visitantes chega pelo celular. No editor, clique no ícone de celular no canto inferior direito para verificar, e depois publique.",
-        alt: "Pré-visualização da página no celular dentro do editor",
       },
     ],
     pitfalls: [
@@ -1096,7 +1045,6 @@ export const ptGuides: TranslatedGuide[] = [
       {
         title: "Junte o seu código",
         text: "Cole o HTML no campo « Describe the page you want, or paste a URL or HTML… », ou use o ícone de envio de arquivo da barra para enviar um arquivo .html.",
-        alt: "Barra de texto onde colar HTML, com o ícone de envio de arquivo",
       },
       {
         title: "Verifique a pré-visualização",
@@ -1123,17 +1071,14 @@ export const ptGuides: TranslatedGuide[] = [
       {
         title: "Escolha « Website »",
         text: "No menu da esquerda, abra a seta ao lado de « Create » e escolha « Site ». Ou, na tela « Create », selecione « Website ».",
-        alt: "Menu « What are you creating? » com a opção « New website »",
       },
       {
         title: "Descreva o seu site",
         text: "Explique o seu negócio, o seu público, o estilo que quer e as páginas desejadas, e clique em « Send ». Escreva tudo numa só linha: cada mudança de linha envia uma mensagem separada.",
-        alt: "Descrição de um site escrita com « New website »",
       },
       {
         title: "Valide a lista de páginas",
         text: "O Piper propõe as páginas do menu. Mude o nome, retire (« Remove ») ou junte páginas (« Add a page »), e clique em « These pages ».",
-        alt: "Lista das páginas propostas para o site",
       },
       {
         title: "Escolha imagens e estilo, e construa a página inicial",
@@ -1142,7 +1087,6 @@ export const ptGuides: TranslatedGuide[] = [
       {
         title: "Construa as outras páginas",
         text: "O cartão « The rest of the site » lista as páginas que faltam com uma estimativa de créditos. « Build 3 pages » constrói-as uma a uma, com o cabeçalho e o estilo da página inicial. « Skip for now » deixa para mais tarde.",
-        alt: "Cartão « The rest of the site » com o botão para construir as páginas",
       },
     ],
     pitfalls: [
@@ -1161,22 +1105,18 @@ export const ptGuides: TranslatedGuide[] = [
       {
         title: "Crie o blog",
         text: "No menu da esquerda, abra « Blog » e clique em « New Blog ». Dê um título; o endereço (slug) preenche-se sozinho. A descrição e o nome do autor são opcionais. Clique em « Create Blog ».",
-        alt: "Janela New Blog com título, slug e descrição",
       },
       {
         title: "Conheça o painel do blog",
         text: "A página do blog mostra o design da página inicial do blog (« Feed layout ») e dos artigos (« Post layout »), e depois os seus artigos publicados, em rascunho ou agendados.",
-        alt: "Painel de um blog",
       },
       {
         title: "Escreva um artigo",
         text: "Clique em « New post ». O editor abre com o Penn, o assistente de escrita: escolha uma sugestão (« Write a how-to guide »…) ou escreva você mesmo.",
-        alt: "Editor de artigo com o assistente Penn",
       },
       {
         title: "Preencha as configurações do artigo",
         text: "O ícone de documento em baixo abre « Post Settings »: título, conteúdo, autor, imagem de capa e SEO. Clique em « Save changes ».",
-        alt: "Painel Post Settings de um artigo",
       },
       {
         title: "Publique",
@@ -1203,7 +1143,6 @@ export const ptGuides: TranslatedGuide[] = [
       {
         title: "Abra o menu da página",
         text: "Em « Pages », clique em « … » no fundo do cartão da página. O menu junta as estatísticas, as respostas, a partilha e as configurações.",
-        alt: "Menu « … » de uma página: Settings, Set Password, Tags",
       },
       {
         title: "Mude o título e o endereço",
@@ -1212,7 +1151,6 @@ export const ptGuides: TranslatedGuide[] = [
       {
         title: "Ou faça-o no editor",
         text: "No editor da página, o menu « … » no canto superior direito mostra o endereço (slug, editável com o lápis), o endereço publicado e as opções « SEO & Social » e « Scripts & Pixels ».",
-        alt: "Menu « … » do editor: slug, SEO & Social, Scripts & Pixels",
       },
       {
         title: "Proteja com senha",
@@ -1225,7 +1163,6 @@ export const ptGuides: TranslatedGuide[] = [
       {
         title: "Cuide do SEO",
         text: "« SEO & Social » define o ícone do separador (favicon), a indexação pelo Google, e o título e a descrição que aparecem nos resultados de pesquisa.",
-        alt: "Janela SEO & Social",
       },
     ],
     pitfalls: [
@@ -1248,7 +1185,6 @@ export const ptGuides: TranslatedGuide[] = [
       {
         title: "Abra « Submissions »",
         text: "No menu da esquerda, clique em « Submissions ». A página « Leads » junta todas as respostas: nome, e-mail, página de origem e data.",
-        alt: "Página Submissions (Leads) com as respostas dos formulários",
       },
       {
         title: "Consulte as respostas",
@@ -1279,7 +1215,6 @@ export const ptGuides: TranslatedGuide[] = [
       {
         title: "Abra « Connectors »",
         text: "No menu da esquerda, clique em « Connectors ». Procure a sua ferramenta pelo nome ou pela categoria (e-mail, CRM, publicidade…) e clique em « Connect ».",
-        alt: "Página Connectors com as aplicações para conectar",
       },
       {
         title: "Autorize a conexão",
@@ -1288,7 +1223,6 @@ export const ptGuides: TranslatedGuide[] = [
       {
         title: "Configure a automação",
         text: "No separador « Automations », clique em « Create automation ». Escolha o gatilho (« Form submitted », « Checkout completed » ou « Visitor identified ») e a aplicação conectada que recebe os contatos.",
-        alt: "Criação de uma automação: escolha do gatilho",
       },
       {
         title: "Teste com o seu próprio e-mail",
@@ -1315,7 +1249,6 @@ export const ptGuides: TranslatedGuide[] = [
       {
         title: "Crie uma variante",
         text: "Duplique a página com um clique, ou deixe a IA propor uma variante. Mude uma só coisa importante: o título, o botão ou a oferta.",
-        alt: "Criação de uma variante B e troca entre A e B",
       },
       {
         title: "Escolha o objetivo",
@@ -1354,7 +1287,6 @@ export const ptGuides: TranslatedGuide[] = [
       {
         title: "Ative o modo mapa de calor",
         text: "No editor da página, clique no ícone em forma de chama na barra de ferramentas.",
-        alt: "Mapa de calor dos cliques, com os separadores Clicks, Scroll e Attention",
       },
       {
         title: "Leia os cliques",
@@ -1393,7 +1325,6 @@ export const ptGuides: TranslatedGuide[] = [
       {
         title: "Ative o Smart Traffic",
         text: "Clique em « Let AI optimize this for me ». Em vez de uma divisão fixa, a IA encaminha cada visitante e melhora com o tempo.",
-        alt: "Painel Optimize: divisão automática do tráfego entre o original e a variante",
       },
       {
         title: "Acompanhe os resultados",
@@ -1420,12 +1351,10 @@ export const ptGuides: TranslatedGuide[] = [
       {
         title: "Leia as suas estatísticas atuais",
         text: "Antes de mudar seja o que for, anote a taxa de conversão atual. Na Leadpages, abra o painel da página: vê os visitantes únicos, as conversões e a taxa. É o seu ponto de partida.\n\nSe acabou de lançar a página e o tráfego é baixo, espere pelo menos 200 visitantes antes de tirar conclusões. Abaixo disso, os números não são fiáveis.",
-        alt: "Painel Leadpages: visitantes únicos, conversões e taxa de conversão",
       },
       {
         title: "Use os mapas de calor para encontrar os bloqueios",
         text: "Os mapas de calor mostram onde os visitantes clicam e até onde descem. Se ninguém chega ao formulário, o problema está acima dele. Se toda a gente clica num elemento que não é um link, é uma oportunidade perdida.\n\nNa Leadpages, os mapas de calor existem a partir do plano Optimize. Ative-os nas configurações da página e deixe-os correr alguns dias antes de os ler.",
-        alt: "Mapa de calor Leadpages: zonas de cliques e profundidade de rolagem",
       },
       {
         title: "Reescreva o título principal",
@@ -1434,7 +1363,6 @@ export const ptGuides: TranslatedGuide[] = [
       {
         title: "Simplifique o formulário",
         text: "Cada campo a mais num formulário baixa a taxa de conversão. Se pede nome, apelido, e-mail, telefone e empresa, reduza ao e-mail para começar. Pode pedir o resto mais tarde, quando já tiver o contato.\n\nNa Leadpages, abra o formulário no editor e apague os campos inúteis. Mantenha um só botão de ação com um texto claro: « Receber o guia », e não « Submeter ».",
-        alt: "Editor de formulário Leadpages: campos e botão de ação",
       },
       {
         title: "Junte prova social",
@@ -1447,7 +1375,6 @@ export const ptGuides: TranslatedGuide[] = [
       {
         title: "Otimize para celular",
         text: "Mais de metade do tráfego vem do celular. Se a página é difícil de ler ou o botão é pequeno demais no celular, perde conversões.\n\nNa Leadpages, use a pré-visualização de celular do editor. Confirme que o título se lê sem zoom, que o formulário se preenche facilmente com o polegar e que o botão é grande o suficiente para tocar sem esforço.",
-        alt: "Pré-visualização de celular no editor Leadpages: verificação do layout no telefone",
       },
       {
         title: "Crie uma página de agradecimento eficaz",
@@ -1460,17 +1387,14 @@ export const ptGuides: TranslatedGuide[] = [
       {
         title: "Lance um teste A/B",
         text: "Não mude tudo de uma vez. Crie uma variante com uma só mudança: outro título, um botão de outra cor, um formulário mais curto. Deixe o teste correr até ter pelo menos 100 conversões por variante para um resultado fiável.\n\nNa Leadpages, duplique a página, mude um elemento e lance o teste no separador Optimize. A Leadpages divide o tráfego automaticamente.",
-        alt: "Interface de teste A/B Leadpages: variante original e variante de teste com divisão do tráfego",
       },
       {
         title: "Ative o Smart Traffic para automatizar",
         text: "Quando tiver várias variantes que funcionam, o Smart Traffic assume. Em vez de dividir o tráfego por igual, a IA envia cada visitante para a variante com mais hipóteses de o converter, conforme o aparelho, a localização e o comportamento.\n\nO Smart Traffic existe a partir do Leadpages Optimize. Ative-o no separador Optimize da página depois de criar pelo menos duas variantes.",
-        alt: "Painel Optimize: ativação do Smart Traffic para uma divisão inteligente do tráfego",
       },
       {
         title: "Otimize o SEO da página",
         text: "Uma página bem posicionada recebe tráfego grátis e qualificado. Preencha o título SEO, a meta-descrição e o URL com as suas palavras-chave principais. Junte um texto alternativo a cada imagem.\n\nNa Leadpages, abra as configurações de SEO da página. O título deve conter a palavra-chave principal e ter menos de 60 caracteres. A descrição deve dar vontade de clicar em menos de 155 caracteres.",
-        alt: "Configurações de SEO e redes sociais na Leadpages: título, descrição e imagem de partilha",
       },
       {
         title: "Crie um acompanhamento semanal",
@@ -1504,7 +1428,6 @@ export const ptGuides: TranslatedGuide[] = [
       {
         title: "Autorize o acesso",
         text: "Entre na sua conta HTML Pub quando o Claude pedir. Não precisa de chave de API. O Claude aparece depois em « Connected Apps », no menu do seu espaço.",
-        alt: "Página Connected Apps, onde o Claude aparece depois de conectado",
       },
       {
         title: "Peça a sua página",
@@ -1531,7 +1454,6 @@ export const ptGuides: TranslatedGuide[] = [
       {
         title: "Abra « Ads »",
         text: "No menu da esquerda, clique em « Ads ». Descreva o produto, o público e o estilo que quer: anúncio de produto ou vídeo no estilo UGC.",
-        alt: "Página Ads (Ad Studio): « Ad Studio is available on Optimize and above »",
       },
       {
         title: "Valide a imagem de partida",
@@ -1563,7 +1485,6 @@ export const ptGuides: TranslatedGuide[] = [
       {
         title: "Compare os quatro planos",
         text: "Basic para quem trabalha sozinho, Grow para pequenas equipes (até 5 contas de funcionários), Advanced para vender para outros países com mais ferramentas (até 15 contas), Plus para grandes empresas.",
-        alt: "Os planos Basic, Grow, Advanced e Plus na página de preços",
       },
       {
         title: "Escolha pagamento anual ou mensal",
@@ -1598,62 +1519,50 @@ export const ptGuides: TranslatedGuide[] = [
       {
         title: "Comece o teste grátis",
         text: "Em shopify.com, abra a página de preços. A 27 de setembro de 2026, a oferta mostrada na Bélgica era: 3 dias de teste grátis, depois 1 € por mês durante 3 meses. As ofertas mudam muitas vezes e dependem do país: leia a do dia antes de começar.\n\nClique no botão para começar grátis, introduza o seu e-mail e responda às perguntas sobre o projeto. As respostas só servem para preparar a administração: pode mudar tudo depois.\n\nAnote já duas datas na agenda: o fim dos 3 dias de teste e o fim da oferta de lançamento, quando começa o preço normal do plano.",
-        alt: "Página de preços da Shopify: 3 dias de teste grátis, depois 1 € por mês durante 3 meses",
       },
       {
         title: "Conheça a administração",
         text: "Tudo acontece na administração da Shopify. O menu da esquerda junta as secções que vai usar todos os dias: « Pedidos », « Produtos », « Clientes », « Descontos », « Conteúdo » e « Loja virtual ». As configurações da loja estão todas em « Configurações », no canto inferior esquerdo.\n\nNo centro da página inicial, uma barra permite fazer perguntas ao Sidekick, o assistente de IA da Shopify. Ele conhece a sua loja: pergunte por exemplo « Como oferecer frete grátis a partir de 50? ». Mesmo assim, confirme as respostas na ajuda oficial antes de mudar uma configuração importante.",
-        alt: "Página inicial da administração Shopify com o menu da esquerda e a barra do Sidekick",
       },
       {
         title: "Junte o seu primeiro produto",
         text: "Clique em « Produtos » e depois em « Adicionar produto ». Escreva um título claro, como o cliente o procuraria no Google: « Pôster Bauhaus A3 » em vez de « Modelo 12 ».\n\nA descrição responde às perguntas do comprador: o que é, o material, o tamanho, o uso, o prazo de envio. Frases curtas e uma lista de pontos leem-se melhor no celular.\n\nEm « Mídia », clique em « Carregar » e junte várias fotos: o produto sozinho em fundo claro, e depois em uso. Mantenha o mesmo formato em todas as fotos da loja: é isso que dá um aspeto profissional.",
-        alt: "Formulário « Adicionar produto »: título, descrição e mídia",
       },
       {
         title: "Defina preço, estoque, peso e variantes",
         text: "Em « Preço », indique o preço de venda. O campo « Preço comparativo » mostra um preço riscado: use-o só numa promoção verdadeira.\n\nEm « Estoque », indique a quantidade disponível para a Shopify parar a venda quando não houver mais. Num objeto para enviar, indique o peso com a embalagem: é ele que calcula o frete. Num arquivo para baixar, desative « Produto físico ».\n\nSe o produto existe em vários tamanhos ou cores, junte variantes: cada uma pode ter o seu preço, o seu estoque e a sua foto. Por fim, defina o status como « Ativo » e clique em « Salvar ». Repita para os outros produtos.",
-        alt: "Secções Preço e Estoque da ficha de produto Shopify",
       },
       {
         title: "Escolha e personalize o tema",
         text: "O tema decide o aspeto de toda a loja. Em « Loja virtual » e depois « Temas », ou em themes.shopify.com, filtre pelos temas grátis: são feitos e atualizados pela Shopify e chegam bem para começar.\n\nEscolha um tema pela forma como mostra os produtos, não pelas fotos de demonstração. Clique em « Adicionar »: o tema entra na sua biblioteca sem substituir o que está online.\n\nClique em « Personalizar » para pôr o seu logo, as cores, as fontes e organizar a página inicial: uma imagem grande, os produtos principais, uma frase que diz o que vende. Veja sempre a pré-visualização no celular e depois clique em « Publicar ».",
-        alt: "Theme Store da Shopify filtrada pelos temas grátis",
       },
       {
         title: "Organize os menus da loja",
         text: "Os menus ligam as páginas entre si. Abra « Conteúdo » e depois « Menus ». Já existem dois: o menu principal, no topo da loja, e o menu do rodapé.\n\nNo menu principal, mantenha poucas entradas: a página inicial, o catálogo ou as coleções, e uma página de contato. No rodapé, ponha as páginas práticas: envio, devoluções, condições de venda, informações legais.\n\nClique num menu para juntar, mudar o nome ou mover um item arrastando-o, e salve.",
-        alt: "Conteúdo > Menus: menu principal, menu do rodapé e menu da conta do cliente",
       },
       {
         title: "Configure o envio e a entrega",
         text: "Clique em « Configurações » e depois em « Frete e entrega ». O « Perfil geral » aplica-se a todos os produtos: abra-o para ver as zonas de entrega (por exemplo o seu país e depois o resto do mundo) e as tarifas de cada zona.\n\nEm cada zona, crie tarifas simples: um preço fixo, ou um preço conforme o peso do pedido. Uma tarifa de « Frete grátis » a partir de um certo valor leva muitas vezes o cliente a juntar mais um artigo.\n\nEm « Embalagens », indique as medidas da sua embalagem habitual: a Shopify usa-as para estimar o frete. Se só vende produtos digitais, não precisa de tarifa de envio.",
-        alt: "Configurações > Frete e entrega: perfil geral, datas de entrega estimadas e embalagens",
       },
       {
         title: "Verifique os impostos",
         text: "Em « Configurações », abra « Impostos e taxas alfandegárias ». O serviço fiscal da Shopify calcula os impostos conforme o país do cliente, nas regiões onde entrega.\n\nConfirme que as suas regiões de entrega aparecem na lista. As suas obrigações dependem do seu estatuto e do seu país: um trabalhador independente não fatura os impostos da mesma forma que uma empresa.\n\nA própria Shopify o diz nesta tela: em caso de dúvida sobre as suas obrigações fiscais, fale com um contador antes de abrir a loja.",
-        alt: "Configurações > Impostos e taxas: serviços fiscais da Shopify ativos e regiões fiscais",
       },
       {
         title: "Ative os pagamentos",
         text: "Em « Configurações » e depois « Pagamentos », ative o Shopify Payments. A Shopify pede informações sobre o seu negócio e a conta bancária que recebe os repasses. A autenticação em dois fatores é obrigatória.\n\nCom o Shopify Payments, aceita cartões e meios de pagamento locais sem prestador externo. O Shopify Payments não existe em todos os países: se não aparecer, use um dos prestadores propostos. No plano Basic, as taxas de cartão começavam em 1,8 % + 0,30 € por venda (tarifas mostradas na Bélgica a 27 de setembro de 2026). Se usar outro prestador em vez dele, a Shopify junta taxas de transação.\n\nO PayPal pode ser adicionado em « Provedores de pagamento adicionais ».",
-        alt: "Configurações > Pagamentos: Shopify Payments, meios de pagamento, repasses e PayPal",
       },
       {
         title: "Escolha os meios de pagamento dos clientes",
         text: "Ainda em « Pagamentos », clique em « Formas de pagamento ». Ative as que os seus clientes usam de verdade: cartões Visa e Mastercard, Apple Pay, Shop Pay, e os meios de pagamento locais do seu país.\n\nO botão para ver as tarifas de pagamento mostra as taxas de cada meio: alguns custam mais do que outros. Não vale a pena ativar tudo; logos a mais podem até confundir o comprador na hora de pagar.",
-        alt: "Lista dos meios de pagamento online: Shop Pay, Visa, Mastercard, American Express, Apple Pay",
       },
       {
         title: "Escreva as suas políticas e informações legais",
         text: "Em « Configurações », abra « Políticas ». As políticas escritas aparecem no rodapé do checkout: o cliente vê-as antes de comprar.\n\nPreencha no mínimo a política de devolução e reembolso, os termos de serviço, a política de envio e as informações legais. Os « Dados de contato » são obrigatórios: são as informações que permitem ao cliente falar consigo.\n\nSe a Shopify propuser um modelo de texto, parta daí, mas adapte-o à sua forma real de trabalhar. As regras de devolução dependem do país: na União Europeia, o cliente tem em geral 14 dias para desistir de uma compra online, e no Brasil o Código de Defesa do Consumidor dá 7 dias. Depois, junte estas páginas ao menu do rodapé.",
-        alt: "Configurações > Políticas: regras de devolução e políticas escritas (devolução, privacidade, termos de serviço, envio, contato, informações legais)",
       },
       {
         title: "Crie um código de boas-vindas",
         text: "Um pequeno desconto ajuda a fazer o primeiro pedido acontecer. Clique em « Descontos », depois em « Criar desconto » e escolha « Valor do pedido ».\n\nEscreva um código fácil de lembrar, como BEMVINDO10, e o valor: 10 % por exemplo. Em « Máximo de usos », marque o limite de um uso por cliente, senão o código serve em todos os pedidos. Salve: o código funciona logo no checkout.\n\nEste código também serve nas suas páginas de promoção e nas redes sociais.",
-        alt: "Formulário « Criar desconto » com um código de 10 % no pedido",
       },
       {
         title: "Faça um pedido de teste",
@@ -1662,22 +1571,18 @@ export const ptGuides: TranslatedGuide[] = [
       {
         title: "Escolha um plano",
         text: "Para manter a loja depois do teste, escolha um plano em « Configurações » e depois « Plano ». Para quem trabalha sozinho, o Basic quase sempre basta: a 27 de setembro de 2026, custava na Bélgica 27 € por mês em pagamento mensal, ou o equivalente a 19 € por mês em pagamento anual. Os preços mudam conforme o país: veja os seus na página de preços.\n\nA oferta de lançamento aplica-se então durante 3 meses, e depois começa o preço normal. Grow e Advanced servem sobretudo equipes e grandes volumes: pode mudar de plano mais tarde, quando as vendas o justificarem.\n\nNão se esqueça de que as aplicações pagas se somam ao preço do plano.",
-        alt: "Os planos Shopify Basic, Grow, Advanced e Plus na página de preços",
       },
       {
         title: "Conecte o seu domínio",
         text: "A loja já tem um endereço grátis em .myshopify.com, mas o seu próprio domínio passa mais confiança. Em « Configurações » e depois « Domínios », escolha conectar um domínio existente, transferir um domínio ou comprar um novo.\n\nEm muitos fornecedores de domínio, a Shopify faz a conexão automaticamente. Senão, indica os registos DNS a mudar no seu fornecedor. A conexão demora muitas vezes menos de duas horas, às vezes até dois dias. O certificado HTTPS é grátis.\n\nSe tiver vários domínios conectados, escolha o que os clientes vão ver como « Principal ».",
-        alt: "Configurações > Domínios com os domínios conectados",
       },
       {
         title: "Abra a loja ao público",
         text: "Enquanto está em preparação, a loja está protegida por senha. Para a abrir, vá a « Loja virtual » e depois « Preferências ». Em « Acesso à loja », desative o modo privado (a proteção por senha): a loja fica visível para toda a gente.\n\nNa mesma página, preencha o título e a meta-descrição da página inicial: é o que o Google e as redes sociais mostram quando alguém partilha a sua loja.\n\nA página inicial da administração mostra então que a loja está online, com o número de visitas e de visitantes em direto.",
-        alt: "Loja virtual > Preferências: secção de acesso à loja com a opção de modo privado",
       },
       {
         title: "Atraia os primeiros clientes",
         text: "Uma loja online não recebe visitas sozinha. Escolha um produto principal e uma oferta (o seu código de boas-vindas), e crie uma landing page que só fala dessa oferta, com o HTML Pub ou a Leadpages.\n\nPartilhe o endereço dessa página nas redes, na bio, no Pinterest ou nos anúncios. O botão da página leva diretamente à ficha do produto Shopify, não à página inicial da loja.\n\nVeja todas as semanas quantos visitantes chegam e quantos compram, e melhore a página que converte menos. O guia « atrair clientes com uma landing page » explica esta etapa em detalhe.",
-        alt: "Criação de uma landing page com IA: o assistente pergunta « What are you making? »",
       },
     ],
     pitfalls: [
@@ -1699,7 +1604,6 @@ export const ptGuides: TranslatedGuide[] = [
       {
         title: "Abra « Domínios »",
         text: "Clique em « Configurações » no canto inferior esquerdo e depois em « Domínios ». Três opções: conectar um domínio existente, transferir um domínio ou comprar um novo.",
-        alt: "Configurações > Domínios com os domínios conectados",
       },
       {
         title: "Conecte um domínio existente",
@@ -1734,7 +1638,6 @@ export const ptGuides: TranslatedGuide[] = [
       {
         title: "Abra « Pagamentos »",
         text: "Clique em « Configurações » e depois em « Pagamentos ». Vê o estado do Shopify Payments, os meios de pagamento, os repasses e os prestadores extra, como o PayPal.",
-        alt: "Configurações > Pagamentos: Shopify Payments, meios de pagamento, repasses e PayPal",
       },
       {
         title: "Ative o Shopify Payments",
@@ -1743,7 +1646,6 @@ export const ptGuides: TranslatedGuide[] = [
       {
         title: "Escolha os meios de pagamento",
         text: "Clique em « Formas de pagamento » e ative os que os seus clientes usam: cartões, Shop Pay, Apple Pay e os meios locais do seu país. O botão das tarifas de pagamento mostra as taxas de cada meio.",
-        alt: "Lista dos meios de pagamento online: Shop Pay, Visa, Mastercard, American Express, Apple Pay",
       },
       {
         title: "Junte o PayPal se precisar",
@@ -1774,7 +1676,6 @@ export const ptGuides: TranslatedGuide[] = [
       {
         title: "Indique o endereço da sua loja",
         text: "Clique em « Connect », escreva o endereço .myshopify.com da sua loja e clique em « Connect Shopify ». Depois valide a autorização na Shopify.",
-        alt: "Connectors HTML Pub: cartão Shopify com o campo « Your Shopify store domain »",
       },
       {
         title: "Junte um botão para a Shopify",
@@ -1809,7 +1710,6 @@ export const ptGuides: TranslatedGuide[] = [
       {
         title: "Descreva a página à IA",
         text: "No HTML Pub ou na Leadpages, crie uma página com IA e descreva-a com precisão: o produto, para quem é, 3 vantagens, opiniões de clientes, perguntas frequentes e um botão « Comprar agora ».",
-        alt: "Descrição de uma página de vendas para um produto Shopify no assistente de IA do HTML Pub",
       },
       {
         title: "Ligue o botão ao produto",
@@ -1818,7 +1718,6 @@ export const ptGuides: TranslatedGuide[] = [
       {
         title: "Dê uma razão para comprar agora",
         text: "Um código de desconto por tempo limitado, frete grátis ou um brinde. Crie-o primeiro na Shopify para funcionar no pagamento.",
-        alt: "Criação de um código de desconto na Shopify",
       },
       {
         title: "Publique e teste no celular",
@@ -1842,7 +1741,6 @@ export const ptGuides: TranslatedGuide[] = [
       {
         title: "Abra « Políticas »",
         text: "Na administração, clique em « Configurações » e depois em « Políticas ». Encontra as regras de devolução e a lista das políticas escritas.",
-        alt: "Configurações > Políticas: regras de devolução e políticas escritas (devolução, privacidade, termos de serviço, envio, contato, informações legais)",
       },
       {
         title: "Defina as regras de devolução",
@@ -1878,7 +1776,6 @@ export const ptGuides: TranslatedGuide[] = [
       {
         title: "Abra « Menus »",
         text: "Na administração, clique em « Conteúdo » e depois em « Menus ». Clique no menu a editar, por exemplo o menu principal.",
-        alt: "Conteúdo > Menus: menu principal, menu do rodapé e menu da conta do cliente",
       },
       {
         title: "Junte um link",
@@ -1913,7 +1810,6 @@ export const ptGuides: TranslatedGuide[] = [
       {
         title: "Escolha um plano",
         text: "A senha só pode ser retirada depois de escolher um plano. Em « Configurações » e depois « Plano », escolha um. Durante o teste grátis, a assinatura só começa no fim do teste.",
-        alt: "Os planos Shopify Basic, Grow, Advanced e Plus na página de preços",
       },
       {
         title: "Abra as preferências da loja",
@@ -1922,7 +1818,6 @@ export const ptGuides: TranslatedGuide[] = [
       {
         title: "Desative o modo privado",
         text: "Desative o modo privado (a proteção por senha) e salve. A loja fica visível para toda a gente, sem senha.",
-        alt: "Loja virtual > Preferências: secção de acesso à loja com a opção de modo privado",
       },
       {
         title: "Preencha o título e a descrição para o Google",
@@ -1953,7 +1848,6 @@ export const ptGuides: TranslatedGuide[] = [
       {
         title: "Prepare a oferta na Shopify",
         text: "Antes de montar o funil, o produto tem de estar pronto na Shopify. Crie o produto com fotos, preço, descrição e variantes. Confirme que o pagamento funciona com um pedido de teste.\n\nCopie o link direto para o produto ou para a coleção: vai precisar dele para o botão de compra nos e-mails e na página de vendas.",
-        alt: "Página de produto Shopify: título, descrição, preço e imagens do produto",
       },
       {
         title: "Crie um brinde irresistível",
@@ -1962,12 +1856,10 @@ export const ptGuides: TranslatedGuide[] = [
       {
         title: "Monte a landing page de captura",
         text: "Na Leadpages, crie uma página nova a partir de um modelo ou com IA. A página tem um só objetivo: convencer o visitante a deixar o e-mail em troca do brinde.\n\nO título anuncia o benefício do brinde. O formulário só pede o e-mail. O botão diz exatamente o que o visitante recebe: « Receber as 10 receitas » em vez de « Inscrever-me ». Tire tudo o que distrai: sem menu, sem links para outras páginas.",
-        alt: "Criação de uma landing page com o assistente de IA da Leadpages",
       },
       {
         title: "Conecte o seu serviço de e-mail",
         text: "Na Leadpages, abra as integrações da página e conecte o seu serviço de e-mail marketing: Mailchimp, Kit (ex-ConvertKit), ActiveCampaign ou outro. Cada novo inscrito entra automaticamente numa lista ou tag específica.\n\nCrie uma lista ou tag só para este funil, para que os e-mails de venda cheguem apenas a quem pediu este brinde.",
-        alt: "Painel de integrações da Leadpages: conexão com os serviços de e-mail",
       },
       {
         title: "Escreva a sequência de e-mails",
@@ -1976,12 +1868,10 @@ export const ptGuides: TranslatedGuide[] = [
       {
         title: "Crie um código de desconto na Shopify",
         text: "Na Shopify, vá a Descontos e crie um código promocional só para os inscritos do funil. Um código como BEMVINDO15 com 15 % de desconto na primeira compra dá uma razão para comprar agora e não mais tarde.\n\nLimite o código a um uso por cliente e defina uma data de fim para criar uma urgência verdadeira.",
-        alt: "Criação de um código de desconto na Shopify: percentagem, condições e limites",
       },
       {
         title: "Monte a página de vendas",
         text: "Crie uma segunda página na Leadpages: a página de vendas. É para ela que os e-mails levam os contatos prontos a comprar. Apresenta o produto em detalhe com um botão que leva à Shopify.\n\nEsta página é mais longa do que a de captura: depoimentos, detalhes do produto, garantia, perguntas frequentes. O botão de compra usa o link direto para o produto Shopify.",
-        alt: "Página de vendas HTML Pub com botão de compra ligado à Shopify",
       },
       {
         title: "Configure a página de agradecimento",
@@ -1998,12 +1888,10 @@ export const ptGuides: TranslatedGuide[] = [
       {
         title: "Acompanhe os resultados em cada etapa",
         text: "Um funil de vendas mede-se etapa a etapa. Anote a taxa de conversão da landing page, a taxa de abertura dos e-mails, a taxa de clique para a Shopify e a taxa de compra final.\n\nNa Leadpages, o painel dá a taxa de conversão da página. No serviço de e-mail, vê as aberturas e os cliques. Na Shopify, as vendas com o código de desconto mostram quantas vendas vêm do funil.",
-        alt: "Painel Leadpages: acompanhamento das conversões e do tráfego",
       },
       {
         title: "Otimize com testes A/B",
         text: "Quando o funil já funciona e gera dados, melhore cada etapa. Teste dois títulos na página de captura. Teste dois assuntos de e-mail. Teste dois preços ou duas ofertas na página de vendas.\n\nNa Leadpages, use os testes A/B na página de captura e na página de vendas. Mude um só elemento de cada vez e espere pelo menos 100 conversões por variante antes de escolher a vencedora.",
-        alt: "Interface de teste A/B Leadpages: comparação entre duas variantes da página",
       },
     ],
     pitfalls: [

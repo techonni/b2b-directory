@@ -1,7 +1,6 @@
 // Crée les épingles Pinterest (1000 × 1500, JPEG) des guides qui n'en ont pas encore,
 // dans public/pins/<slug>.jpg, avec le même style que les épingles existantes.
-// Rendu avec Chromium (pas de dépendance npm) : le titre, la première capture du guide
-// et la liste des étapes.
+// Rendu avec Chromium (pas de dépendance npm) : le titre et la liste des étapes.
 //
 // Lancer :
 //   node --experimental-strip-types scripts/make-pins.mjs [--fonts <dossier Lato>] [--chrome <chemin>] [--force] [--variant erreurs] [slug…]
@@ -64,7 +63,6 @@ const title = (guide) => {
 function html(guide) {
   const shop = guide.theme === "boutique";
   const badge = shop ? "Shopify" : guide.slug.includes("html-pub") ? "HTML Pub" : "Leadpages";
-  const image = guide.steps.find((step) => step.image)?.image;
   const errors = variant === "erreurs";
   const shorten = (text) => {
     const head = text.split(/ : |: | \(|, alors que /)[0].replace(/\.$/, "");
@@ -108,7 +106,6 @@ ${errors ? ".card li{font-size:27px;margin-bottom:18px}" : ""}
 </style></head><body>
 <div class="top"><div class="brand"><svg width="44" height="44" viewBox="0 0 24 24">${dots}</svg>Zunrel</div><div class="badge">${badge}</div></div>
 <h1>${title(guide)}</h1>
-${image ? `<div class="shot"><img src="file://${join(root, "public", image.src)}"></div>` : ""}
 <div class="card">${errors ? '<p class="kicker">Les erreurs à éviter</p>' : ""}<ol>${steps.slice(0, 4).map((step, i) => `<li><span>${errors ? "✕" : i + 1}</span>${step}</li>`).join("")}</ol>
 <div class="foot"><small>Guide gratuit, étape par étape</small><b>zunrel.com</b></div></div>
 </body></html>`;

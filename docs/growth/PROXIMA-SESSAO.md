@@ -10,6 +10,14 @@ Data: 28/09/2026 (7.ª sessão do dia: resultados dos lotes 2, P e 4; link Shopi
 
 ---
 
+## Sessão de 03/10/2026: novo site Techonni (GTA 6)
+
+- **Novo site separado**, sem mexer no Zunrel: repositório `techonni/techonni-jeu`, domínio **techonni.com** (Hostinger, DNS passado para a Cloudflare pelo Cowork). 15 guias GTA 6 em francês com fontes. Tudo o resto (regras, pendentes, próximos passos) está em `docs/PROXIMA-SESSAO.md` desse repositório.
+- techonni.fr: deixar expirar (não renovar).
+- **Falta o Techonni (lote 3 do Cowork):** ligar `techonni/techonni-jeu` a um projeto Cloudflare Pages e juntar o domínio techonni.com.
+
+---
+
 ## Sessão de 02/10/2026: o que foi feito
 
 - **Site de jogos retirado.** De 29/09 a 02/10 o `main` teve um site de jogos (PRs #61 a #79). O PR #80 repôs o site de afiliação (estado do PR #60). Os jogos continuam no histórico do git.

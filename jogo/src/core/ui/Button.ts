@@ -31,9 +31,9 @@ export class Button extends Container {
     super();
     this.w = o.width;
     this.h = o.height;
-    this.color = o.color ?? C.btnPrimary;
+    this.color = o.color ?? C.accent;
     this.radius = o.radius ?? R.btn;
-    this.caption = makeText(o.label, { fontSize: o.fontSize ?? 18, fontWeight: '600', fill: o.textColor ?? C.text });
+    this.caption = makeText(o.label, { fontSize: o.fontSize ?? 17, fontWeight: '600', fill: o.textColor ?? C.onAccent });
     this.caption.anchor.set(0.5);
     this.body.addChild(this.bg, this.caption);
     this.addChild(this.body);
@@ -64,9 +64,14 @@ export class Button extends Container {
     if (this.caption.text !== text) this.caption.text = text;
   }
 
-  setColor(color: number, textColor: number = C.text): void {
+  setColor(color: number, textColor: number = C.onAccent): void {
     this.color = color;
     this.caption.style.fill = textColor;
+    this.redraw();
+  }
+
+  setStroke(color: number | null): void {
+    this.stroke = color;
     this.redraw();
   }
 
@@ -76,8 +81,12 @@ export class Button extends Container {
     this.alpha = on ? 1 : 0.5;
   }
 
+  /** Contorno opcional (botões claros sobre fundo branco). */
+  stroke: number | null = null;
+
   private redraw(): void {
     this.bg.clear().roundRect(-this.w / 2, -this.h / 2, this.w, this.h, this.radius).fill(this.color);
+    if (this.stroke !== null) this.bg.stroke({ width: 1, color: this.stroke, alignment: 1 });
     this.body.position.set(this.w / 2, this.h / 2);
     this.hitArea = new Rectangle(0, 0, this.w, this.h);
   }

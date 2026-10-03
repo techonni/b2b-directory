@@ -5,7 +5,7 @@ export type SfxName =
   | 'click'
   | 'sheet'
   | 'error'
-  // Crash
+  // Ponto Alto
   | 'bet'
   | 'tick'
   | 'launch'
@@ -67,7 +67,7 @@ function build(): Record<SfxName | 'engine', Float32Array> {
   };
 }
 
-/** Gestão de som do site com Howler.js: efeitos sintetizados, motor do Crash e mute global. */
+/** Gestão de som do site com Howler.js: efeitos sintetizados, motor do Ponto Alto e mute global. */
 class SoundManager {
   muted = false;
   onMuteChange: ((muted: boolean) => void) | null = null;

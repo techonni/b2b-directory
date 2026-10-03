@@ -1,32 +1,31 @@
-// Tokens de "UI Design Rules – HTML5 Games" convertidos para PixiJS (site + jogos).
+// Ponto Alto: tokens da marca Zunrel (zunrel.com) convertidos para PixiJS.
 export const C = {
-  bgBase: 0x1b2836,
-  bgStage: 0x111f2b,
-  bgPanel: 0x233445,
-  bgInput: 0x1b2431,
-  bgAddon: 0x405368,
-  btnPrimary: 0x3574d8,
-  btnSecondary: 0x43586b,
-  border: 0x35485c,
-  text: 0xffffff,
-  textMuted: 0x8fa3b7,
-  textPlaceholder: 0x6f8296,
-  win: 0x6bdd4a,
-  winText: 0x0b1a07,
-  loss: 0xbb2a3d,
-  coin: 0xf5c631,
-  coinText: 0x7a5a00,
-  multBlue: 0x3b82f6,
-  multRed: 0xe5364b,
-  curveStart: 0x67e8f9,
-  curveDead: 0x5d7185,
-  /** Direção "Sobe" (verde) e "Desce" (vermelho) — os mesmos papéis de ganho/perda. */
-  up: 0x6bdd4a,
-  down: 0xe5364b,
-  line: 0xffffff,
-  grid: 0x2a3b4c,
+  /** Fundo da página. */
+  bgBase: 0xfbfbfb,
+  /** Cartões (jogo, aposta, levantar automático, ação). */
+  bgPanel: 0xffffff,
+  /** Pílulas neutras, botões ½/2×, segmentado. */
+  bgSoft: 0xf3f3f3,
+  /** Pílulas azuis claras (histórico ≥ 2×, halo do ponto). */
+  accentSoft: 0xe8eefe,
+  accent: 0x0f4bf1,
+  onAccent: 0xffffff,
+  /** Botões escuros (selecionado, "Cancelar…", tooltip). */
+  ink: 0x171717,
+  border: 0xe5e5e5,
+  gridLine: 0xefefef,
+  dot: 0xd4d4d4,
+  text: 0x171717,
+  textMuted: 0x737373,
+  textSoft: 0xa0a0a0,
+  /** Estado "parou": usado com moderação (anel, legenda e avisos de perda). */
+  stop: 0xe5484d,
+  stopSoft: 0xfdecec,
+  /** Curva depois de parar. */
+  curveDead: 0xa0a0a0,
 } as const;
 
-export const R = { panel: 16, btn: 14, input: 12 } as const;
+export const R = { panel: 20, btn: 16, input: 14, small: 10 } as const;
 
-export const FONT = 'Figtree, "Proxima Nova", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif';
+export const FONT = 'Geist, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif';
+export const MONO = '"Geist Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace';

@@ -11,18 +11,18 @@ export class Toast extends Container {
 
   constructor() {
     super();
-    this.caption = makeText('', { fontSize: 16, fontWeight: '700', fill: C.text });
+    this.caption = makeText('', { fontSize: 14, fontWeight: '600', fill: C.onAccent });
     this.caption.anchor.set(0.5);
     this.addChild(this.bg, this.caption);
     this.alpha = 0;
     this.visible = false;
   }
 
-  show(text: string, color: number = C.btnSecondary, textColor: number = C.text): void {
+  show(text: string, color: number = C.ink, textColor: number = C.onAccent): void {
     this.caption.text = text;
     this.caption.style.fill = textColor;
-    const w = this.caption.width + 40;
-    const h = 44;
+    const w = this.caption.width + 36;
+    const h = 38;
     this.bg.clear().roundRect(-w / 2, -h / 2, w, h, h / 2).fill(color);
     this.tl?.kill();
     this.visible = true;

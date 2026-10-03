@@ -1,72 +1,62 @@
-import { Container, Graphics, type Text } from 'pixi.js';
+import { Container, Graphics } from 'pixi.js';
 import gsap from 'gsap';
 import { C } from '../theme';
-import { makeText } from '../text';
+import { makeMono } from '../text';
 import { fmtMult } from '../format';
 
-class Pill extends Container {
-  private readonly bg = new Graphics();
-  private readonly caption: Text;
+const H = 26;
+const GAP = 6;
+const KEEP = 14;
 
+class Pill extends Container {
+  readonly w: number;
   constructor(readonly value: number) {
     super();
-    const win = value >= 2;
-    this.caption = makeText(fmtMult(value), { fontSize: 15, fontWeight: '600', fill: win ? C.winText : C.text });
-    this.caption.anchor.set(0.5);
-    this.addChild(this.bg, this.caption);
-  }
-
-  draw(w: number, h: number): void {
-    this.bg.clear().roundRect(0, 0, w, h, h / 2).fill(this.value >= 2 ? C.win : C.btnSecondary);
-    this.caption.position.set(w / 2, h / 2);
+    const high = value >= 2;
+    const t = makeMono(fmtMult(value), { fontSize: 13, fontWeight: '600', fill: high ? C.accent : C.textMuted });
+    t.anchor.set(0.5);
+    this.w = Math.ceil(t.width) + 20;
+    t.position.set(this.w / 2, H / 2);
+    this.addChild(new Graphics().roundRect(0, 0, this.w, H, H / 2).fill(high ? C.accentSoft : C.bgSoft), t);
   }
 }
 
-/** Últimos resultados em pílulas (verde ≥ 2×). O mais recente entra pela esquerda. */
+/** Últimos resultados em pílulas (azul ≥ 2×). O mais recente entra pela esquerda; mostra só as que cabem. */
 export class HistoryBar extends Container {
-  static readonly HEIGHT = 40;
-  private static readonly GAP = 10;
-  private readonly clip = new Graphics();
-  private readonly row = new Container();
+  static readonly HEIGHT = H;
   private pills: Pill[] = [];
   private w = 320;
-  private readonly count: number;
-
-  constructor(count = 4) {
-    super();
-    this.count = count;
-    this.addChild(this.row, this.clip);
-    this.row.mask = this.clip;
-  }
-
-  private get pillW(): number {
-    return (this.w - HistoryBar.GAP * (this.count - 1)) / this.count;
-  }
 
   layout(w: number): void {
     this.w = w;
-    this.clip.clear().rect(0, -4, w, HistoryBar.HEIGHT + 8).fill(0xffffff);
-    this.pills.forEach((p, i) => {
-      gsap.killTweensOf(p);
-      p.draw(this.pillW, HistoryBar.HEIGHT);
-      p.x = i * (this.pillW + HistoryBar.GAP);
-    });
+    this.arrange(false);
   }
 
   push(value: number): void {
-    const step = this.pillW + HistoryBar.GAP;
     const pill = new Pill(value);
-    pill.draw(this.pillW, HistoryBar.HEIGHT);
-    pill.x = -step;
-    this.row.addChild(pill);
+    pill.x = -pill.w - GAP;
+    this.addChild(pill);
     this.pills.unshift(pill);
-
-    this.pills.forEach((p, i) => gsap.to(p, { x: i * step, duration: 0.45, ease: 'power3.out' }));
     gsap.from(pill.scale, { x: 0.6, y: 0.6, duration: 0.45, ease: 'back.out(2)' });
-
-    for (const old of this.pills.splice(this.count + 1)) {
+    for (const old of this.pills.splice(KEEP)) {
       gsap.killTweensOf(old);
       old.destroy({ children: true });
+    }
+    this.arrange(true);
+  }
+
+  private arrange(animate: boolean): void {
+    let x = 0;
+    for (const p of this.pills) {
+      const fits = x + p.w <= this.w;
+      gsap.killTweensOf(p, 'x,alpha');
+      if (animate) gsap.to(p, { x, alpha: fits ? 1 : 0, duration: 0.45, ease: 'power3.out' });
+      else {
+        p.x = x;
+        p.alpha = fits ? 1 : 0;
+      }
+      p.visible = fits || animate;
+      x += p.w + GAP;
     }
   }
 }

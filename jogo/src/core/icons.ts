@@ -1,41 +1,77 @@
-import { Container, Graphics } from 'pixi.js';
+import { Graphics } from 'pixi.js';
 import { C } from './theme';
-import { makeText } from './text';
 
-/** Moeda dourada com "C" (Coins demo), usada no Crash e no Binary. */
-export function coinIcon(size = 26): Container {
-  const c = new Container();
-  c.addChild(new Graphics().circle(0, 0, size / 2).fill(C.coin));
-  const t = makeText('C', { fontSize: size * 0.55, fontWeight: '800', fill: C.coinText });
-  t.anchor.set(0.5);
-  c.addChild(t);
-  return c;
+/** Posições dos 12 pontos do anel Zunrel (começa no topo, sentido dos ponteiros). */
+export function ringPoints(radius: number): { x: number; y: number }[] {
+  return Array.from({ length: 12 }, (_, i) => {
+    const a = -Math.PI / 2 + (i * Math.PI * 2) / 12;
+    return { x: Math.cos(a) * radius, y: Math.sin(a) * radius };
+  });
 }
 
+/** Marca Zunrel: anel de 12 pontos (centrado em 0,0). */
+export function ringLogo(size = 26, color: number = C.ink): Graphics {
+  const g = new Graphics();
+  const s = size / 24;
+  for (const p of ringPoints(8.1 * s)) g.circle(p.x, p.y, 1.25 * s).fill(color);
+  return g;
+}
+
+// Ícones de traço (grelha 24×24, centrados em 0,0), no estilo dos ícones do site.
+const W = 2;
+
 /** Altifalante com ondas (som ligado) ou com um X (som desligado). */
-export function speaker(g: Graphics, muted: boolean, color: number = C.text): Graphics {
+export function speaker(g: Graphics, muted: boolean, color: number = C.ink, size = 18): Graphics {
+  const k = size / 24;
   g.clear();
-  g.poly([-9, -4, -5, -4, 1, -9, 1, 9, -5, 4, -9, 4]).fill(color);
+  g.poly([-1 * k, -7 * k, -6 * k, -3 * k, -9 * k, -3 * k, -9 * k, 3 * k, -6 * k, 3 * k, -1 * k, 7 * k]).stroke({ width: W, color, join: 'round' });
   if (muted) {
-    g.moveTo(5, -4).lineTo(12, 4).moveTo(12, -4).lineTo(5, 4).stroke({ width: 2.2, color, cap: 'round' });
+    g.moveTo(3 * k, -3 * k).lineTo(9 * k, 3 * k).moveTo(9 * k, -3 * k).lineTo(3 * k, 3 * k).stroke({ width: W, color, cap: 'round' });
   } else {
-    g.arc(1, 0, 6, -Math.PI / 4, Math.PI / 4).stroke({ width: 2.2, color, cap: 'round' });
-    g.arc(1, 0, 11, -Math.PI / 3.2, Math.PI / 3.2).stroke({ width: 2.2, color, cap: 'round' });
+    g.arc(-1 * k, 0, 6.5 * k, -Math.PI / 4.2, Math.PI / 4.2).stroke({ width: W, color, cap: 'round' });
   }
   return g;
 }
 
-/** Marca zunrel: quadrado azul com "z" + palavra. */
-export function logo(size = 28): Container {
-  const c = new Container();
-  const box = size * 1.25;
-  c.addChild(new Graphics().roundRect(0, -box / 2, box, box, box * 0.28).fill(C.btnPrimary));
-  const z = makeText('z', { fontSize: size, fontWeight: '900', fontStyle: 'italic', fill: C.text });
-  z.anchor.set(0.5);
-  z.position.set(box / 2 - 1, -2);
-  const word = makeText('zunrel', { fontSize: size, fontWeight: '800', fontStyle: 'italic', fill: C.text, letterSpacing: -0.5 });
-  word.anchor.set(0, 0.5);
-  word.position.set(box + 10, -1);
-  c.addChild(z, word);
-  return c;
+export function helpIcon(g: Graphics, color: number = C.ink, size = 18): Graphics {
+  const k = size / 24;
+  g.clear();
+  g.circle(0, 0, 9 * k).stroke({ width: W, color });
+  g.moveTo(-2.5 * k, -2.5 * k)
+    .arc(0, -2.5 * k, 2.5 * k, Math.PI, Math.PI * 2.25)
+    .lineTo(0, 1.8 * k)
+    .stroke({ width: W, color, cap: 'round', join: 'round' });
+  g.circle(0, 5 * k, 1.1 * k).fill(color);
+  return g;
+}
+
+export function userIcon(g: Graphics, color: number = C.ink, size = 18): Graphics {
+  const k = size / 24;
+  g.clear();
+  g.circle(0, -4 * k, 4 * k).stroke({ width: W, color });
+  g.arc(0, 9 * k, 8 * k, Math.PI, Math.PI * 2).stroke({ width: W, color, cap: 'round' });
+  return g;
+}
+
+export function menuIcon(g: Graphics, color: number = C.ink, size = 18): Graphics {
+  const k = size / 24;
+  g.clear();
+  for (const y of [-6, 0, 6]) g.moveTo(-8 * k, y * k).lineTo(8 * k, y * k);
+  g.stroke({ width: W, color, cap: 'round' });
+  return g;
+}
+
+export function resetIcon(g: Graphics, color: number = C.ink, size = 18): Graphics {
+  const k = size / 24;
+  g.clear();
+  g.arc(0, 0, 8 * k, -Math.PI * 0.35, Math.PI * 1.45).stroke({ width: W, color, cap: 'round' });
+  g.poly([3 * k, -11 * k, 9 * k, -6 * k, 2 * k, -4 * k]).fill(color);
+  return g;
+}
+
+export function plusIcon(g: Graphics, color: number = C.onAccent, size = 12): Graphics {
+  const h = size / 2;
+  g.clear();
+  g.moveTo(-h, 0).lineTo(h, 0).moveTo(0, -h).lineTo(0, h).stroke({ width: 1.8, color, cap: 'round' });
+  return g;
 }

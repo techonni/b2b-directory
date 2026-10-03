@@ -1,23 +1,28 @@
 import { Text, type TextStyleOptions } from 'pixi.js';
-import { FONT } from './theme';
+import { FONT, MONO } from './theme';
 
-// Site e jogos usam escalas diferentes; cada Text acompanha a sua escala real no ecrã
+// Cada Text acompanha a sua escala real no ecrã
 // (verificado a cada frame, com margem para não re-rasterizar durante pequenas animações).
 const registry = new Set<Text>();
 let dpr = 1;
 
 export function makeText(text: string, style: TextStyleOptions): Text {
-  const t = new Text({ text, style: { fontFamily: FONT, ...style }, resolution: dpr });
+  const t = new Text({ text, style: { fontFamily: FONT, letterSpacing: -0.15, ...style }, resolution: dpr });
   registry.add(t);
   t.once('destroyed', () => registry.delete(t));
   return t;
+}
+
+/** Texto em Geist Mono (valores, multiplicadores, saldo). */
+export function makeMono(text: string, style: TextStyleOptions): Text {
+  return makeText(text, { fontFamily: MONO, letterSpacing: 0, ...style });
 }
 
 export function setDevicePixelRatio(r: number): void {
   dpr = r;
 }
 
-/** Ajusta a resolução dos textos à escala do mundo (chamado pelo ticker do site). */
+/** Ajusta a resolução dos textos à escala do mundo (chamado pelo ticker). */
 export function updateTextResolutions(): void {
   for (const t of registry) {
     if (!t.visible) continue;

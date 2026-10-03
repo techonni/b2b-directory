@@ -1,16 +1,17 @@
 import { Container, Graphics, Rectangle, type Text } from 'pixi.js';
 import gsap from 'gsap';
 import { C, R } from './theme';
-import { makeText } from './text';
-import { coinIcon } from './icons';
-import { speaker } from '../../core/icons';
+import { makeMono, makeText } from './text';
+import { helpIcon, menuIcon, plusIcon, resetIcon, ringLogo, speaker, userIcon } from './icons';
 import type { GameScene } from '../../core/scene';
+import { ScrollBox } from '../../core/ui/ScrollBox';
 import { sound } from './audio/Sound';
-import { clamp, floor2, fmt, fmtMult } from './format';
+import { clamp, floor2, fmt, fmtMult, fmtMultShort, fmtSigned, fmtTyped } from './format';
 import { CrashEngine, type Phase } from './game/CrashEngine';
 import { CrashView } from './game/CrashView';
 import { Wallet } from './game/Wallet';
-import { ControlsPanel } from './ui/ControlsPanel';
+import { ActionCard, AutoCard, BetCard } from './ui/Cards';
+import { pressable } from './ui/controls';
 import { Keypad } from './ui/Keypad';
 import { Toast } from './ui/Toast';
 import { START_BALANCE } from './game/Wallet';
@@ -21,49 +22,88 @@ import { Menu, type MenuItem } from './ui/Menu';
 interface Bet {
   amount: number;
   target: number;
+  /** Levantar automático ligado para esta aposta. */
+  auto: boolean;
   cashed: boolean;
 }
 
-const HEADER_H = 64;
-const PAD = 16;
 const MIN_TARGET = 1.01;
-/** Em cada 5 apostas: 3 ganham e 2 perdem (ordem baralhada). Só créditos fictícios. */
+/** Em cada 5 apostas: 3 ganham e 2 perdem (ordem baralhada). Só moedas virtuais. */
 const WINS_PER_5 = 3;
 const rand = () => crypto.getRandomValues(new Uint32Array(1))[0] / 2 ** 32;
 const HELP =
-  '1. Escolhe o montante e o multiplicador em "Retirar em".\n' +
+  '1. Escolhe a aposta e o multiplicador em "Levantar automático".\n' +
   '2. Carrega em Apostar antes da ronda começar.\n' +
-  '3. Se o multiplicador chegar ao teu "Retirar em" (ou carregares em Retirar), ganhas montante × multiplicador; se rebentar antes, perdes a aposta.\n' +
-  'Créditos fictícios, sem dinheiro real.';
+  '3. Enquanto o multiplicador sobe, carrega em Levantar (ou deixa o levantamento automático fazê-lo): recebes aposta × multiplicador. Se a ronda parar antes, perdes a aposta.\n' +
+  'No computador, a tecla Espaço aposta e levanta.\n' +
+  'Moedas virtuais, sem dinheiro real.';
 const MAX_TARGET = 1_000_000;
+const QUICK_AMOUNTS = [1, 10, 50];
+const TARGET_PRESETS = [1.5, 2, 3, 10];
 
-/** Crash embutido no site zunrel. */
+/** Botão quadrado com ícone (som, ajuda, conta, menu). A posição é o centro. */
+class IconButton extends Container {
+  readonly icon = new Graphics();
+  readonly dot = new Graphics();
+  private readonly bg = new Graphics();
+  private readonly body = new Container();
+
+  constructor(onTap: () => void) {
+    super();
+    this.body.addChild(this.bg, this.icon, this.dot);
+    this.addChild(this.body);
+    this.dot.circle(14, -14, 4.5).fill(C.accent).stroke({ width: 2, color: C.bgPanel });
+    this.dot.visible = false;
+    this.setSize(40);
+    pressable(this, onTap, () => false, this.body);
+  }
+
+  setSize(s: number): void {
+    this.bg.clear().roundRect(-s / 2, -s / 2, s, s, 12).fill(C.bgPanel).stroke({ width: 1, color: C.border, alignment: 1 });
+    this.dot.position.set((s - 40) / 2, -(s - 40) / 2);
+    this.hitArea = new Rectangle(-s / 2, -s / 2, s, s);
+  }
+}
+
+/** Ponto Alto: jogo demo da Zunrel (moedas virtuais, sem dinheiro real). */
 export class CrashGame implements GameScene {
   readonly view = new Container();
   private readonly root = this.view;
   private active = false;
+  private readonly page = new ScrollBox();
+
+  // Cabeçalho
   private readonly header = new Container();
-  private readonly headerBg = new Graphics();
-  private readonly logo: Text;
+  private readonly logo = ringLogo(26);
+  private readonly brand: Text;
+  private readonly sep: Text;
+  private readonly gameName: Text;
+  private readonly badge = new Container();
   private readonly balancePill = new Container();
   private readonly balanceBg = new Graphics();
+  private readonly balanceLabel: Text;
   private readonly balanceText: Text;
-  /** Botão ☰: abre o menu com conta, som, repor saldo e "Como jogar". */
-  private readonly menuBtn = new Container();
-  private readonly menuDot = new Graphics();
+  private readonly balancePlus = new Container();
+  private readonly soundBtn = new IconButton(() => this.toggleSound());
+  private readonly helpBtn = new IconButton(() => this.openHelp());
+  private readonly userBtn = new IconButton(() => this.openAccount());
+  /** Telemóvel: ☰ com conta, som, repor saldo e "Como jogar". */
+  private readonly menuBtn = new IconButton(() => {
+    if (this.menu.isOpen) this.menu.close();
+    else this.openMenu();
+  });
   private readonly menu = new Menu();
-  /** Computador: "Como jogar" no espaço livre por baixo dos controlos. */
-  private readonly help = new Container();
-  private readonly helpTitle: Text;
-  private readonly helpText: Text;
-  /** Telemóvel: janela com o "Como jogar". */
+
+  /** Janela "Como jogar". */
   private readonly helpSheet = new Container();
   private readonly helpSheetBg = new Graphics();
   private readonly helpSheetTitle: Text;
   private readonly helpSheetText: Text;
-  private readonly card = new Graphics();
+
   private readonly scene = new CrashView();
-  private readonly panel: ControlsPanel;
+  private readonly betCard: BetCard;
+  private readonly autoCard: AutoCard;
+  private readonly actionCard = new ActionCard();
   private readonly keypad = new Keypad();
   private readonly toast = new Toast();
   /** Conta (número + PIN) para guardar o saldo no servidor. */
@@ -71,6 +111,7 @@ export class CrashGame implements GameScene {
   private readonly accountSheet = new AccountSheet();
   private W = 400;
   private H = 800;
+  private wide = true;
 
   private readonly wallet = new Wallet();
   private readonly engine: CrashEngine;
@@ -78,13 +119,17 @@ export class CrashGame implements GameScene {
 
   private amount = 1;
   private target = 2;
+  /** Interruptor "Ativo" do levantamento automático (ligado = comportamento de sempre). */
+  private autoCashout = true;
   private bet: Bet | null = null;
-  private queued: { amount: number; target: number } | null = null;
+  private queued: { amount: number; target: number; auto: boolean } | null = null;
   private autoOn = false;
   private profit = 0;
   private lastTick = 0;
   /** Resultados ainda por sair neste bloco de 5 apostas (true = ganha). */
   private bag: boolean[] = [];
+  /** Texto da etiqueta depois de levantar (fica até ao fim da ronda). */
+  private cashedTag = '';
 
   constructor() {
     this.engine = new CrashEngine({
@@ -92,43 +137,52 @@ export class CrashGame implements GameScene {
       tick: (m) => this.onTick(m),
     });
     this.engine.pickCrash = () => this.pickCrash();
-    this.logo = makeText('Crash', { fontSize: 26, fontWeight: '800', fill: C.text });
-    this.logo.anchor.set(0, 0.5);
-    this.balanceText = makeText('', { fontSize: 17, fontWeight: '700', fill: C.text });
-    this.balanceText.anchor.set(1, 0.5);
-    const helpStyle = { fontSize: 14, fontWeight: '500', fill: C.textMuted, wordWrap: true, lineHeight: 20 } as const;
-    this.helpTitle = makeText('Como jogar', { fontSize: 16, fontWeight: '800', fill: C.text });
-    this.helpText = makeText(HELP, helpStyle);
-    this.help.addChild(this.helpTitle, this.helpText);
-    this.helpSheetTitle = makeText('Como jogar', { fontSize: 20, fontWeight: '800', fill: C.text });
-    this.helpSheetText = makeText(HELP, { ...helpStyle, fontSize: 16, lineHeight: 23 });
+
+    this.brand = makeText('Zunrel', { fontSize: 15, fontWeight: '600', fill: C.text });
+    this.sep = makeText('/', { fontSize: 15, fontWeight: '500', fill: C.dot });
+    this.gameName = makeText('Ponto Alto', { fontSize: 15, fontWeight: '600', fill: C.text });
+    for (const t of [this.brand, this.sep, this.gameName]) t.anchor.set(0, 0.5);
+    this.balanceLabel = makeText('Saldo', { fontSize: 14, fontWeight: '500', fill: C.textMuted });
+    this.balanceLabel.anchor.set(0, 0.5);
+    this.balanceText = makeMono('', { fontSize: 15, fontWeight: '600', fill: C.text });
+    this.balanceText.anchor.set(0, 0.5);
+
+    this.helpSheetTitle = makeText('Como jogar', { fontSize: 20, fontWeight: '600', fill: C.text, letterSpacing: -0.4 });
+    this.helpSheetText = makeText(HELP, { fontSize: 15, fontWeight: '400', fill: C.textMuted, wordWrap: true, lineHeight: 23 });
     this.helpSheet.addChild(this.helpSheetBg, this.helpSheetTitle, this.helpSheetText);
     this.helpSheet.visible = false;
     this.helpSheet.eventMode = 'static';
     this.helpSheet.cursor = 'pointer';
     this.helpSheet.on('pointertap', () => (this.helpSheet.visible = false));
 
-    this.panel = new ControlsPanel(
-      [
-        { label: '½', onTap: () => this.setAmount(this.amount / 2) },
-        { label: '2×', onTap: () => this.setAmount(Math.min(this.amount * 2, this.wallet.balance)) },
-      ],
-      [
-        { icon: 'down', onTap: () => this.stepTarget(-1) },
-        { icon: 'up', onTap: () => this.stepTarget(1) },
-      ],
+    this.betCard = new BetCard(
+      () => this.setAmount(this.amount / 2),
+      () => this.setAmount(Math.min(this.amount * 2, this.wallet.balance)),
+      (i) => this.setAmount(i < QUICK_AMOUNTS.length ? Math.min(QUICK_AMOUNTS[i], this.wallet.balance) : this.wallet.balance),
+    );
+    this.autoCard = new AutoCard(
+      () => this.stepTarget(-1),
+      () => this.stepTarget(1),
+      (i) => this.setTarget(TARGET_PRESETS[i]),
+      TARGET_PRESETS.map(fmtMultShort),
     );
 
     this.buildHeader();
-    this.root.addChild(this.card, this.scene, this.panel, this.help, this.header, this.menu, this.accountSheet, this.toast, this.keypad, this.helpSheet);
+    this.page.content.addChild(this.header, this.scene, this.betCard, this.autoCard, this.actionCard, this.toast);
+    this.root.addChild(this.page, this.menu, this.accountSheet, this.keypad, this.helpSheet);
 
-    this.panel.play.onTap = () => this.onPlay();
-    this.panel.mode.onChange = (i) => {
+    this.actionCard.play.onTap = () => this.onPlay();
+    this.actionCard.mode.onChange = (i) => {
       if (i === 0) this.autoOn = false;
       this.refresh();
     };
-    this.panel.amount.onFocus = () => this.edit('amount');
-    this.panel.cashout.onFocus = () => this.edit('cashout');
+    this.autoCard.toggle.onChange = (on) => {
+      this.autoCashout = on;
+      this.toast.show(on ? 'Levantar automático ativo' : 'Levantar automático desligado');
+      this.refresh();
+    };
+    this.betCard.box.onFocus = () => this.edit('amount');
+    this.autoCard.box.onFocus = () => this.edit('cashout');
 
     this.wallet.onChange = (b) => {
       this.animateBalance(b);
@@ -137,6 +191,7 @@ export class CrashGame implements GameScene {
     this.wireAccount();
     this.shownBalance.v = this.wallet.balance;
     this.balanceText.text = fmt(this.wallet.balance);
+    sound.onMuteChange = () => this.drawSoundIcon();
 
     this.setAmount(Math.min(1, this.wallet.balance));
     this.setTarget(2);
@@ -148,7 +203,8 @@ export class CrashGame implements GameScene {
     });
 
     this.scene.enterCountdown();
-    this.scene.setRound(this.engine.round, this.profit);
+    this.scene.setRound(this.engine.round);
+    this.updateSession();
     this.refresh();
   }
 
@@ -163,80 +219,85 @@ export class CrashGame implements GameScene {
   }
 
   private buildHeader(): void {
-    this.balancePill.addChild(this.balanceBg, this.balanceText);
-    const coin = coinIcon(24);
-    coin.label = 'coin';
-    this.balancePill.addChild(coin);
+    const badgeText = makeText('Demo · moedas virtuais', { fontSize: 12, fontWeight: '500', fill: C.textMuted, letterSpacing: 0.2 });
+    badgeText.anchor.set(0, 0.5);
+    badgeText.position.set(9, 0);
+    const bw = badgeText.width + 18;
+    this.badge.addChild(new Graphics().roundRect(0, -11, bw, 22, 11).fill(C.bgPanel).stroke({ width: 1, color: C.border, alignment: 1 }), badgeText);
+
+    const plusBg = new Graphics().circle(0, 0, 13).fill(C.ink);
+    this.balancePlus.addChild(plusBg, plusIcon(new Graphics(), C.onAccent, 11));
+    this.balancePlus.hitArea = new Rectangle(-18, -18, 36, 36);
+    pressable(this.balancePlus, () => this.resetWallet());
+    this.balancePill.addChild(this.balanceBg, this.balanceLabel, this.balanceText, this.balancePlus);
     this.balancePill.eventMode = 'static';
     this.balancePill.cursor = 'pointer';
-    this.balancePill.on('pointertap', () => this.toast.show('Créditos demo — sem dinheiro real'));
-    const bars = new Graphics();
-    for (const y of [-7, 0, 7]) bars.roundRect(-10, y - 1.25, 20, 2.5, 1.25).fill(C.text);
-    this.menuBtn.addChild(new Graphics().roundRect(-22, -22, 44, 44, R.input).fill(C.bgInput), bars, this.menuDot);
-    this.menuDot.circle(14, -14, 5).fill(C.win).stroke({ width: 2, color: C.bgBase });
-    this.menuBtn.eventMode = 'static';
-    this.menuBtn.cursor = 'pointer';
-    this.menuBtn.hitArea = new Rectangle(-22, -22, 44, 44);
-    this.menuBtn.on('pointertap', () => {
-      sound.play('click');
-      gsap.fromTo(this.menuBtn.scale, { x: 0.85, y: 0.85 }, { x: 1, y: 1, duration: 0.3, ease: 'back.out(3)' });
-      if (this.menu.isOpen) this.menu.close();
-      else this.openMenu();
+    this.balancePill.on('pointertap', (e) => {
+      if (e.target === this.balancePlus) return;
+      this.toast.show('Moedas virtuais, sem dinheiro real. O + repõe o saldo.');
     });
+
+    this.drawSoundIcon();
+    helpIcon(this.helpBtn.icon);
+    userIcon(this.userBtn.icon);
+    userIcon(this.menuBtn.icon);
     this.drawAccountIcon();
-    this.header.addChild(this.headerBg, this.logo, this.balancePill, this.menuBtn);
+    this.header.addChild(this.logo, this.brand, this.sep, this.gameName, this.badge, this.balancePill, this.soundBtn, this.helpBtn, this.userBtn, this.menuBtn);
+  }
+
+  private drawSoundIcon(): void {
+    speaker(this.soundBtn.icon, sound.muted);
+  }
+
+  private toggleSound(): void {
+    sound.toggleMute();
+    if (!sound.muted) sound.play('click');
+    this.toast.show(sound.muted ? 'Som desligado' : 'Som ligado');
+  }
+
+  private openHelp(): void {
+    this.menu.close();
+    this.helpSheet.visible = true;
+    gsap.fromTo(this.helpSheet, { alpha: 0 }, { alpha: 1, duration: 0.25 });
   }
 
   // ---------- Conta ----------
 
-  /** Ponto verde no ☰ quando há sessão iniciada. */
+  /** Ponto azul no botão da conta quando há sessão iniciada. */
   private drawAccountIcon(): void {
-    this.menuDot.visible = !!this.account.session;
+    const on = !!this.account.session;
+    this.userBtn.dot.visible = on;
+    this.menuBtn.dot.visible = on;
   }
 
   private openMenu(): void {
     const s = this.account.session;
-    const color = s ? C.win : C.text;
+    const color = s ? C.accent : C.text;
     const items: MenuItem[] = [
       {
         label: s ? `Conta ${fmtAccount(s.account)}` : 'Entrar / Criar conta',
-        icon: (g) => {
-          g.circle(0, -5, 5).stroke({ width: 2.2, color });
-          g.arc(0, 11, 9, Math.PI * 1.08, Math.PI * 1.92).stroke({ width: 2.2, color, cap: 'round' });
-        },
+        icon: (g) => void userIcon(g, color, 20),
         onTap: () => this.openAccount(),
       },
       {
         label: sound.muted ? 'Ligar som' : 'Desligar som',
-        icon: (g) => void speaker(g, sound.muted),
-        onTap: () => {
-          sound.toggleMute();
-          if (!sound.muted) sound.play('click');
-          this.toast.show(sound.muted ? 'Som desligado' : 'Som ligado');
-        },
+        icon: (g) => void speaker(g, sound.muted, C.text, 20),
+        onTap: () => this.toggleSound(),
       },
       {
         label: 'Repor saldo',
-        icon: (g) => {
-          g.arc(0, 0, 8, -Math.PI * 0.35, Math.PI * 1.45).stroke({ width: 2.2, color: C.text, cap: 'round' });
-          g.poly([4, -12, 10, -6, 2, -4]).fill(C.text);
-        },
+        icon: (g) => void resetIcon(g, C.text, 18),
         onTap: () => this.resetWallet(),
       },
       {
         label: 'Como jogar',
-        icon: (g) => {
-          g.circle(0, 0, 10).stroke({ width: 2.2, color: C.text });
-          g.moveTo(-3.5, -3).arc(0, -3, 3.5, Math.PI, Math.PI * 2.3).lineTo(0, 3).stroke({ width: 2.2, color: C.text, cap: 'round' });
-          g.circle(0, 6.5, 1.4).fill(C.text);
-        },
-        onTap: () => {
-          this.helpSheet.visible = true;
-          gsap.fromTo(this.helpSheet, { alpha: 0 }, { alpha: 1, duration: 0.25 });
-        },
+        icon: (g) => void helpIcon(g, C.text, 20),
+        onTap: () => this.openHelp(),
       },
     ];
-    this.menu.open(items, this.menuBtn.x + 22, HEADER_H - 4, this.W, this.H);
+    const p = this.menuBtn.getGlobalPosition();
+    const sc = this.root.scale.x;
+    this.menu.open(items, p.x / sc + 20, p.y / sc + 26, this.W, this.H);
   }
 
   private busy(): boolean {
@@ -288,7 +349,7 @@ export class CrashGame implements GameScene {
         this.drawAccountIcon();
         sound.play('cashout');
         sheet.close();
-        this.toast.show(`Conta ${fmtAccount(acc)} · saldo ${fmt(balance)}`, C.btnPrimary);
+        this.toast.show(`Conta ${fmtAccount(acc)} · saldo ${fmt(balance)}`, C.accent);
       } catch (e) {
         this.accountError((e as Error).message);
       }
@@ -311,96 +372,143 @@ export class CrashGame implements GameScene {
 
   private accountError(msg: string): void {
     sound.play('error');
-    this.toast.show(msg, C.loss);
+    this.toast.show(msg, C.stop);
   }
 
   /** Repõe o saldo demo (só sem aposta em jogo, para não baralhar a ronda). */
   private resetWallet(): void {
     if ((this.bet && !this.bet.cashed) || this.queued || this.autoOn) {
       sound.play('error');
-      this.toast.show('Termina a aposta antes de repor', C.loss);
+      this.toast.show('Termina a aposta antes de repor', C.stop);
       return;
     }
     this.wallet.refill();
-    this.toast.show(`Saldo demo reposto: ${fmt(START_BALANCE)}`, C.btnPrimary);
+    this.toast.show(`Saldo reposto: ${fmt(START_BALANCE)} moedas`, C.accent);
   }
 
-  /** Layout responsivo: coluna única no telemóvel, duas colunas em ecrãs largos. */
+  // ---------- Layout ----------
+
+  /** Computador: cabeçalho, cartão do jogo e três cartões em linha. Telemóvel: tudo numa coluna. */
   private layout(sw: number, sh: number): void {
-    const wide = sw / sh > 1.05 && sw >= 700;
-    const designH = wide ? 680 : 800;
-    let scale = sw / 400;
-    if (wide || sh / scale < designH) scale = sh / designH;
+    const wide = sw >= 860 && sw / sh >= 1;
+    this.wide = wide;
+    const scale = wide ? Math.min(1, sh / 720, sw / 980) : clamp(sw / 390, 0.82, 1.15);
     const W = sw / scale;
     const H = sh / scale;
     this.W = W;
     this.H = H;
     this.root.scale.set(scale);
-
-    const contentW = Math.min(W, wide ? 1200 / scale : 480);
-    const ox = (W - contentW) / 2;
-
-    // Cabeçalho
-    this.headerBg.clear().rect(0, 0, W, HEADER_H).fill(C.bgBase);
-    this.logo.position.set(ox + PAD + 4, HEADER_H / 2);
-    this.menuBtn.position.set(ox + contentW - PAD - 22, HEADER_H / 2);
-    this.layoutBalance(ox + contentW - PAD - 44 - 10);
     this.menu.close();
 
-    const top = HEADER_H + 4;
-    const bottom = H - PAD;
-    this.card.clear();
+    const padX = wide ? 32 : 16;
+    const contentW = Math.min(W - padX * 2, wide ? 1216 : 560);
+    const ox = (W - contentW) / 2;
+    const headerTop = wide ? 22 : 12;
+    const headerH = wide ? 44 : 40;
+    this.layoutHeader(ox, contentW, headerTop + headerH / 2, wide);
+
+    const gap = wide ? 14 : 10;
+    const gameTop = headerTop + headerH + gap;
+    let bottom: number;
     if (wide) {
-      const panelW = 360;
-      const cardH = bottom - top;
-      this.card.roundRect(ox + PAD, top, panelW, cardH, R.panel).fill(C.bgPanel);
-      this.panel.position.set(ox + PAD * 2, top + PAD);
-      this.panel.layout(panelW - PAD * 2);
-      this.scene.position.set(ox + PAD + panelW + 12, top);
-      this.scene.layout(contentW - PAD * 2 - panelW - 12, cardH, false);
+      const cardH = 222;
+      const cardsTop = Math.max(gameTop + 300 + gap, H - 18 - cardH);
+      const gameH = cardsTop - gap - gameTop;
+      this.scene.position.set(ox, gameTop);
+      this.scene.layout(contentW, gameH, false);
+      const unit = (contentW - gap * 2) / 3.25;
+      this.betCard.position.set(ox, cardsTop);
+      this.betCard.layout(unit, cardH, false);
+      this.autoCard.position.set(ox + unit + gap, cardsTop);
+      this.autoCard.layout(unit, cardH, false);
+      this.actionCard.position.set(ox + (unit + gap) * 2, cardsTop);
+      this.actionCard.layout(contentW - (unit + gap) * 2, cardH, false);
+      bottom = cardsTop + cardH;
     } else {
-      const panelH = ControlsPanel.HEIGHT + PAD * 2;
-      const stageH = Math.max(260, bottom - top - panelH);
-      const cardW = contentW - PAD * 2;
-      this.card.roundRect(ox + PAD, top, cardW, stageH + panelH, R.panel).fill(C.bgPanel);
-      this.scene.position.set(ox + PAD, top);
-      this.scene.layout(cardW, stageH, true);
-      this.panel.position.set(ox + PAD * 2, top + stageH + PAD);
-      this.panel.layout(cardW - PAD * 2);
+      // Telemóvel: jogo grande e o botão principal logo por baixo; os outros cartões seguem (com scroll se preciso).
+      const betH = 170;
+      const actionH = 156;
+      const gameH = clamp(Math.round(H * 0.39), 280, 400);
+      this.scene.position.set(ox, gameTop);
+      this.scene.layout(contentW, gameH, true);
+      let y = gameTop + gameH + gap;
+      this.actionCard.position.set(ox, y);
+      this.actionCard.layout(contentW, actionH, true);
+      y += actionH + gap;
+      this.betCard.position.set(ox, y);
+      this.betCard.layout(contentW, betH, true);
+      y += betH + gap;
+      this.autoCard.position.set(ox, y);
+      this.autoCard.layout(contentW, betH, true);
+      y += betH;
+      bottom = y;
     }
-    // Como jogar: no computador, no espaço livre do cartão dos controlos; também no menu ☰.
-    this.help.visible = wide;
-    if (wide) {
-      const hw = 360 - PAD * 2;
-      this.helpText.style.wordWrapWidth = hw;
-      this.helpTitle.position.set(0, 0);
-      this.helpText.position.set(0, 26);
-      const free = bottom - (top + PAD + ControlsPanel.HEIGHT + 24) - PAD;
-      const needed = 26 + this.helpText.height;
-      this.help.scale.set(Math.min(1, free / needed));
-      this.help.visible = free > 60;
-      this.help.position.set(ox + PAD * 2, bottom - PAD - needed * this.help.scale.y);
-    }
-    const sw2 = Math.min(contentW - PAD * 2, 440);
-    this.helpSheetText.style.wordWrapWidth = sw2 - 40;
-    const sh2 = 20 + 30 + this.helpSheetText.height + 24;
-    this.helpSheetBg.clear().rect(0, 0, W, H).fill({ color: 0x000000, alpha: 0.55 });
-    this.helpSheetBg.roundRect((W - sw2) / 2, (H - sh2) / 2, sw2, sh2, R.panel).fill(C.bgPanel);
-    this.helpSheetTitle.position.set((W - sw2) / 2 + 20, (H - sh2) / 2 + 20);
-    this.helpSheetText.position.set((W - sw2) / 2 + 20, (H - sh2) / 2 + 56);
+    void bottom;
+    this.page.layout(W, H);
+
+    const sw2 = Math.min(contentW, 440);
+    this.helpSheetText.style.wordWrapWidth = sw2 - 48;
+    const sh2 = 24 + 36 + this.helpSheetText.height + 28;
+    this.helpSheetBg.clear().rect(0, 0, W, H).fill({ color: 0x171717, alpha: 0.28 });
+    this.helpSheetBg.roundRect((W - sw2) / 2, (H - sh2) / 2, sw2, sh2, R.panel).fill(C.bgPanel).stroke({ width: 1, color: C.border, alignment: 1 });
+    this.helpSheetTitle.position.set((W - sw2) / 2 + 24, (H - sh2) / 2 + 24);
+    this.helpSheetText.position.set((W - sw2) / 2 + 24, (H - sh2) / 2 + 60);
     this.accountSheet.layout(W, H);
     this.toast.position.set(this.scene.x + this.scene.stageWidth / 2, this.scene.y + this.scene.noticeY);
-    this.keypad.layout(W, H, ox, contentW);
+    const kw = wide ? Math.min(420, contentW) : contentW;
+    this.keypad.layout(W, H, (W - kw) / 2, kw);
   }
 
-  private layoutBalance(right: number): void {
-    const w = Math.max(130, this.balanceText.width + 64);
-    const h = 44;
-    this.balanceBg.clear().roundRect(-w, -h / 2, w, h, R.input).fill(C.bgInput);
-    this.balanceText.position.set(-16, 0);
-    const coin = this.balancePill.getChildByLabel('coin');
-    if (coin) coin.position.set(-w + 24, 0);
-    this.balancePill.position.set(right, HEADER_H / 2);
+  private layoutHeader(ox: number, contentW: number, cy: number, wide: boolean): void {
+    const fs = wide ? 15 : 14;
+    for (const t of [this.brand, this.sep, this.gameName]) t.style.fontSize = fs;
+    this.logo.scale.set(wide ? 1 : 0.85);
+    let x = ox + (wide ? 13 : 11);
+    this.logo.position.set(x, cy);
+    x += wide ? 23 : 19;
+    this.brand.position.set(x, cy);
+    x += this.brand.width + (wide ? 10 : 7);
+    this.sep.position.set(x, cy);
+    x += this.sep.width + (wide ? 10 : 7);
+    this.gameName.position.set(x, cy);
+    x += this.gameName.width + 10;
+    this.badge.position.set(x, cy);
+    this.badge.visible = wide;
+
+    let r = ox + contentW;
+    for (const b of [this.userBtn, this.helpBtn, this.soundBtn]) {
+      b.visible = wide;
+      if (!wide) continue;
+      b.position.set(r - 20, cy);
+      r -= 40 + 12;
+    }
+    this.menuBtn.visible = !wide;
+    if (!wide) {
+      this.menuBtn.setSize(38);
+      menuIcon(this.menuBtn.icon);
+      this.menuBtn.position.set(r - 19, cy);
+      r -= 38 + 8;
+    }
+    this.balancePill.position.set(r, cy);
+    this.layoutBalance();
+  }
+
+  /** Pílula do saldo, alinhada à direita na posição do contentor. */
+  private layoutBalance(): void {
+    const wide = this.wide;
+    this.balanceLabel.visible = wide;
+    this.balanceText.style.fontSize = wide ? 15 : 14;
+    const h = wide ? 42 : 38;
+    const plusR = 13;
+    const left = wide ? 16 : 14;
+    const textW = this.balanceText.width;
+    const labelW = wide ? this.balanceLabel.width + 10 : 0;
+    const w = left + labelW + textW + 10 + plusR * 2 + 8;
+    this.balanceBg.clear().roundRect(-w, -h / 2, w, h, h / 2).fill(C.bgPanel).stroke({ width: 1, color: C.border, alignment: 1 });
+    this.balanceLabel.position.set(-w + left, 0);
+    this.balanceText.position.set(-w + left + labelW, 0);
+    this.balancePlus.position.set(-8 - plusR, 0);
+    this.balancePill.hitArea = new Rectangle(-w, -h / 2, w, h);
   }
 
   private animateBalance(to: number): void {
@@ -410,10 +518,11 @@ export class CrashGame implements GameScene {
       ease: 'power2.out',
       onUpdate: () => {
         this.balanceText.text = fmt(this.shownBalance.v);
-        this.layoutBalance(this.balancePill.x);
+        this.layoutBalance();
       },
     });
-    gsap.fromTo(this.balancePill.scale, { x: 1.06, y: 1.06 }, { x: 1, y: 1, duration: 0.4, ease: 'back.out(3)' });
+    gsap.fromTo(this.balancePill.scale, { x: 1.04, y: 1.04 }, { x: 1, y: 1, duration: 0.4, ease: 'back.out(3)' });
+    this.refreshChips();
   }
 
   // ---------- Ciclo de jogo ----------
@@ -427,15 +536,14 @@ export class CrashGame implements GameScene {
       const sec = Math.ceil(e.remaining / 1000);
       if (sec !== this.lastTick && sec <= 3 && sec > 0) sound.play('tick');
       this.lastTick = sec;
-    }
-    else if (e.phase === 'running') this.scene.updateRunning(e.flightMs, e.multiplier);
+    } else if (e.phase === 'running') this.scene.updateRunning(e.flightMs, e.multiplier);
   }
 
   private onPhase(p: Phase): void {
     const e = this.engine;
     if (p === 'countdown') {
       this.scene.enterCountdown();
-      this.scene.setRound(e.round, this.profit);
+      this.scene.setRound(e.round);
       if (this.queued) {
         this.bet = { ...this.queued, cashed: false };
         this.queued = null;
@@ -453,7 +561,7 @@ export class CrashGame implements GameScene {
       this.scene.history.push(e.multiplier);
       if (this.bet && !this.bet.cashed) {
         this.settle(-this.bet.amount);
-        if (this.bet.amount > 0) this.toast.show(`Perdeste ${fmt(this.bet.amount)}`, C.loss);
+        if (this.bet.amount > 0) this.toast.show(`Perdeste ${fmt(this.bet.amount)} · parou em ${fmtMult(e.multiplier)}`, C.stop);
       }
       this.bet = null;
     }
@@ -462,7 +570,7 @@ export class CrashGame implements GameScene {
 
   /**
    * Com aposta em jogo: tira o resultado do saco (3 ganhos e 2 perdas por cada 5 apostas).
-   * Ganho → o crash acontece bem depois do "Retirar em"; perda → antes dele.
+   * Ganho → a ronda para bem depois do alvo; perda → antes dele.
    * Sem aposta, a ronda segue aleatória.
    */
   private pickCrash(): number | null {
@@ -478,15 +586,19 @@ export class CrashGame implements GameScene {
     const win = this.bag.pop()!;
     const t = Math.max(MIN_TARGET, b.target);
     if (win) return t * (1.15 + rand() * 1.5);
-    // Perda: rebenta entre 1.00 e um pouco antes do alvo.
+    // Perda: para entre 1,00 e um pouco antes do alvo.
     return 1 + rand() * Math.max(0, (t - 1) * 0.85);
   }
 
   private onTick(m: number): void {
     sound.setEngineMultiplier(m);
     const b = this.bet;
-    if (b && !b.cashed && b.target >= MIN_TARGET && m >= b.target) this.cashOut(b.target);
-    else if (b && !b.cashed) this.panel.play.setText(`Retirar ${fmt(floor2(b.amount * m))}`);
+    if (b && !b.cashed && b.auto && b.target >= MIN_TARGET && m >= b.target) this.cashOut(b.target);
+    else if (b && !b.cashed) {
+      const payout = floor2(b.amount * m);
+      this.actionCard.play.set('Levantar', 'recebes', fmt(payout));
+      this.betCard.setGain('Ganho se levantar agora', fmtSigned(floor2(payout - b.amount)), true);
+    }
   }
 
   private cashOut(m: number): void {
@@ -497,14 +609,19 @@ export class CrashGame implements GameScene {
     this.wallet.add(payout);
     this.settle(payout - b.amount);
     sound.play('cashout');
-    this.scene.popCashout(`${fmtMult(m)}  +${fmt(payout)}`);
-    this.toast.show(`Ganhaste ${fmt(payout)} · ${fmtMult(m)}`, C.win, C.winText);
+    this.cashedTag = `Levantaste a ${fmtMult(m)}`;
+    this.scene.popCashout(this.cashedTag);
+    this.toast.show(`Recebeste ${fmt(payout)} moedas`, C.accent);
     this.refresh();
   }
 
   private settle(delta: number): void {
     this.profit = Math.round((this.profit + delta) * 100) / 100;
-    this.scene.setRound(this.engine.round, this.profit);
+    this.updateSession();
+  }
+
+  private updateSession(): void {
+    this.actionCard.setFoot(`Sessão ${fmtSigned(this.profit)}`, this.profit > 0);
   }
 
   /** Desconta a aposta; devolve false se não houver saldo. */
@@ -514,8 +631,8 @@ export class CrashGame implements GameScene {
       return true;
     }
     sound.play('error');
-    this.panel.amount.shake();
-    this.toast.show('Saldo insuficiente', C.loss);
+    this.betCard.box.shake();
+    this.toast.show('Saldo insuficiente', C.stop);
     return false;
   }
 
@@ -524,14 +641,14 @@ export class CrashGame implements GameScene {
       this.autoOn = false;
       return;
     }
-    const bet = { amount: this.amount, target: this.target };
+    const bet = { amount: this.amount, target: this.target, auto: this.autoCashout };
     if (this.engine.phase === 'countdown') this.bet = { ...bet, cashed: false };
     else this.queued = bet;
   }
 
   private onPlay(): void {
     const phase = this.engine.phase;
-    if (this.panel.mode.index === 1) {
+    if (this.actionCard.mode.index === 1) {
       this.autoOn = !this.autoOn;
       if (this.autoOn && phase === 'countdown' && !this.bet) this.placeBet();
       if (!this.autoOn && this.queued) this.cancelQueued();
@@ -554,34 +671,41 @@ export class CrashGame implements GameScene {
     this.queued = null;
   }
 
-  /** Atualiza o botão principal e bloqueia campos durante uma aposta ativa. */
+  /** Atualiza o botão principal, a etiqueta da curva e bloqueia campos durante uma aposta ativa. */
   private refresh(): void {
-    const { play, amount, cashout, mode } = this.panel;
+    const { play, mode } = this.actionCard;
     const phase = this.engine.phase;
     const b = this.bet;
-    let label: string;
-    let secondary = false;
+    const q = this.queued;
+    const amount = fmt(this.amount);
 
     if (mode.index === 1) {
-      label = this.autoOn ? 'Parar auto' : 'Iniciar auto';
-      secondary = this.autoOn;
+      if (this.autoOn && phase === 'running' && b && !b.cashed) play.set('Parar auto', 'em jogo', fmt(b.amount), C.ink);
+      else play.set(this.autoOn ? 'Parar auto' : 'Iniciar auto', 'aposta por ronda', amount, this.autoOn ? C.ink : C.accent);
     } else if (phase === 'running' && b && !b.cashed) {
-      label = `Retirar ${fmt(floor2(b.amount * this.engine.multiplier))}`;
+      play.set('Levantar', 'recebes', fmt(floor2(b.amount * this.engine.multiplier)));
     } else if (phase === 'countdown' && b) {
-      label = 'Cancelar aposta';
-      secondary = true;
-    } else if (this.queued) {
-      label = 'Cancelar próxima ronda';
-      secondary = true;
+      play.set('Cancelar aposta', 'aposta', fmt(b.amount), C.ink);
+    } else if (q) {
+      play.set('Cancelar', 'próxima ronda', fmt(q.amount), C.ink);
     } else {
-      label = phase === 'countdown' ? 'Apostar' : 'Jogar próxima ronda';
+      play.set(phase === 'countdown' ? 'Apostar' : 'Apostar na próxima', 'aposta', amount);
     }
-    play.setText(label);
-    play.setColor(secondary ? C.btnSecondary : C.btnPrimary);
 
-    const busy = this.autoOn || !!this.queued || (!!b && !b.cashed);
-    amount.setLocked(busy);
-    cashout.setLocked(busy);
+    // Etiqueta junto ao ponto: alvo da aposta em jogo.
+    const live = b && !b.cashed ? b : q;
+    if (b && b.cashed) this.scene.setTag(this.cashedTag, C.accent);
+    else if (live && live.auto) this.scene.setTag(`Levantar em ${fmtMult(live.target)}`);
+    else if (live) this.scene.setTag('Levantamento manual');
+    else this.scene.setTag(null);
+
+    this.updateGain();
+    const busy = this.autoOn || !!q || (!!b && !b.cashed);
+    this.betCard.box.setLocked(busy);
+    this.betCard.chips.setLocked(busy);
+    this.autoCard.box.setLocked(busy);
+    this.autoCard.chips.setLocked(busy);
+    this.autoCard.toggle.setLocked(busy);
     mode.setLocked(busy);
   }
 
@@ -589,14 +713,25 @@ export class CrashGame implements GameScene {
 
   private setAmount(v: number): void {
     this.amount = clamp(floor2(Number.isFinite(v) ? v : 0), 0, 1e9);
-    this.panel.amount.setValue(fmt(this.amount));
+    this.betCard.box.setValue(fmt(this.amount));
     this.updateGain();
+    this.refreshChips();
+    if (this.actionCard) this.refresh();
   }
 
   private setTarget(v: number): void {
     this.target = clamp(Math.round((Number.isFinite(v) ? v : 2) * 100) / 100, MIN_TARGET, MAX_TARGET);
-    this.panel.cashout.setValue(this.target.toFixed(2));
+    this.autoCard.box.setValue(fmt(this.target));
     this.updateGain();
+    this.refreshChips();
+  }
+
+  private refreshChips(): void {
+    const bal = this.wallet.balance;
+    let ai = QUICK_AMOUNTS.findIndex((a) => Math.abs(a - this.amount) < 1e-9);
+    if (ai < 0 && this.amount > 0 && Math.abs(this.amount - bal) < 1e-9) ai = QUICK_AMOUNTS.length;
+    this.betCard.chips.select(ai);
+    this.autoCard.chips.select(TARGET_PRESETS.findIndex((t) => Math.abs(t - this.target) < 1e-9));
   }
 
   private stepTarget(dir: 1 | -1): void {
@@ -605,28 +740,30 @@ export class CrashGame implements GameScene {
     this.setTarget(v + dir * step);
   }
 
+  /** Linha de ganho no cartão Aposta (ao vivo durante a ronda, previsto fora dela). */
   private updateGain(): void {
-    this.panel.gain.setValue(fmt(floor2(this.amount * (this.target - 1))));
+    const b = this.bet;
+    if (b && !b.cashed && this.engine.phase === 'running') {
+      const payout = floor2(b.amount * this.engine.multiplier);
+      this.betCard.setGain('Ganho se levantar agora', fmtSigned(floor2(payout - b.amount)), true);
+    } else {
+      this.betCard.setGain(`Ganho se levantar a ${fmtMult(this.target)}`, fmtSigned(floor2(this.amount * (this.target - 1))), false);
+    }
   }
 
   private edit(which: 'amount' | 'cashout'): void {
-    const field = which === 'amount' ? this.panel.amount : this.panel.cashout;
+    const field = which === 'amount' ? this.betCard.box : this.autoCard.box;
     const current = which === 'amount' ? this.amount.toFixed(2) : this.target.toFixed(2);
     field.setFocused(true);
     this.keypad.open({
-      title: which === 'amount' ? 'Montante' : 'Retirar em (×)',
+      title: which === 'amount' ? 'Aposta (moedas)' : 'Levantar automático em (×)',
       value: current,
       onChange: (s) => {
         const n = Number(s || '0');
-        if (which === 'amount') {
-          this.amount = floor2(n);
-          field.setValue(s || '0');
-          this.updateGain();
-        } else {
-          field.setValue(s || '0');
-          this.target = n;
-          this.updateGain();
-        }
+        field.setValue(fmtTyped(s || '0'));
+        if (which === 'amount') this.amount = floor2(n);
+        else this.target = n;
+        this.refresh();
       },
       onClose: () => {
         field.setFocused(false);
@@ -636,4 +773,3 @@ export class CrashGame implements GameScene {
     });
   }
 }
-

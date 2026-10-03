@@ -1,7 +1,8 @@
 import { Container, Graphics, Rectangle, type Text } from 'pixi.js';
 import gsap from 'gsap';
 import { C, R } from '../theme';
-import { makeText } from '../text';
+import { makeMono, makeText } from '../text';
+import { fmtTyped } from '../format';
 import { Button } from './Button';
 import { sound } from '../audio/Sound';
 
@@ -44,8 +45,8 @@ export class Keypad extends Container {
     this.backdrop.eventMode = 'static';
     this.backdrop.on('pointertap', () => this.close());
     this.sheet.eventMode = 'static';
-    this.title = makeText('', { fontSize: 16, fontWeight: '600', fill: C.textMuted });
-    this.valueText = makeText('', { fontSize: 28, fontWeight: '700', fill: C.text });
+    this.title = makeText('', { fontSize: 14, fontWeight: '600', fill: C.textMuted });
+    this.valueText = makeMono('', { fontSize: 26, fontWeight: '600', fill: C.text });
     this.valueText.anchor.set(0, 0.5);
     this.done = new Button({ label: 'OK', width: 300, height: 52 });
     this.done.onTap = () => this.close();
@@ -54,7 +55,7 @@ export class Keypad extends Container {
     for (const key of KEYS) {
       const view = new Container();
       const bg = new Graphics();
-      const t = makeText(key, { fontSize: 24, fontWeight: '600', fill: C.text });
+      const t = key === '⌫' || key === '.' ? makeText(key === '.' ? ',' : '⌫', { fontSize: 22, fontWeight: '500', fill: C.text }) : makeMono(key, { fontSize: 22, fontWeight: '600', fill: C.text });
       t.anchor.set(0.5);
       view.addChild(bg, t);
       view.eventMode = 'static';
@@ -73,7 +74,7 @@ export class Keypad extends Container {
 
   layout(screenW: number, screenH: number, contentX: number, contentW: number): void {
     this.screenH = screenH;
-    this.backdrop.clear().rect(0, 0, screenW, screenH).fill({ color: 0x000000, alpha: 0.55 });
+    this.backdrop.clear().rect(0, 0, screenW, screenH).fill({ color: 0x171717, alpha: 0.28 });
     this.backdrop.hitArea = new Rectangle(0, 0, screenW, screenH);
 
     const w = contentW;
@@ -81,14 +82,14 @@ export class Keypad extends Container {
     this.sheet.x = contentX;
     this.sheet.y = this.isOpen ? screenH - h : screenH;
     this.sheet.hitArea = new Rectangle(0, 0, w, h);
-    this.sheetBg.clear().roundRect(0, 0, w, h + R.panel, R.panel).fill(C.bgPanel);
-    this.sheetBg.roundRect(w / 2 - 22, 8, 44, 4, 2).fill(C.btnSecondary);
+    this.sheetBg.clear().roundRect(0, 0, w, h + R.panel, R.panel).fill(C.bgPanel).stroke({ width: 1, color: C.border });
+    this.sheetBg.roundRect(w / 2 - 22, 8, 44, 4, 2).fill(C.border);
 
     const px = 16;
     const inner = w - px * 2;
     this.title.position.set(px, 22);
-    this.display.clear().roundRect(px, 56, inner, 56, R.input).fill(C.btnPrimary);
-    this.display.roundRect(px + 2, 58, inner - 4, 52, R.input - 2).fill(C.bgInput);
+    this.display.clear().roundRect(px, 56, inner, 56, R.input).fill(C.accent);
+    this.display.roundRect(px + 1.5, 57.5, inner - 3, 53, R.input - 1.5).fill(C.bgPanel);
     this.valueText.position.set(px + 16, 84);
 
     const keyW = (inner - 2 * GAP) / 3;
@@ -97,7 +98,7 @@ export class Keypad extends Container {
       const col = i % 3;
       const row = Math.floor(i / 3);
       k.view.position.set(px + col * (keyW + GAP) + keyW / 2, top + row * (KEY_H + GAP) + KEY_H / 2);
-      k.bg.clear().roundRect(-keyW / 2, -KEY_H / 2, keyW, KEY_H, R.input).fill(k.key === '⌫' || k.key === '.' ? C.bgAddon : C.btnSecondary);
+      k.bg.clear().roundRect(-keyW / 2, -KEY_H / 2, keyW, KEY_H, R.input).fill(k.key === '⌫' || k.key === '.' ? C.bgPanel : C.bgSoft).stroke({ width: 1, color: k.key === '⌫' || k.key === '.' ? C.border : C.bgSoft });
       k.view.hitArea = new Rectangle(-keyW / 2, -KEY_H / 2, keyW, KEY_H);
     });
     this.done.setSize(inner, 52);
@@ -153,7 +154,7 @@ export class Keypad extends Container {
   }
 
   private refresh(): void {
-    this.valueText.text = this.value || '0';
+    this.valueText.text = fmtTyped(this.value || '0');
     this.valueText.alpha = this.fresh ? 0.6 : 1;
   }
 

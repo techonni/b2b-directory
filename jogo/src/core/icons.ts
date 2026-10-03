@@ -1,41 +1,44 @@
 import { Container, Graphics } from 'pixi.js';
 import { C } from './theme';
-import { makeText } from './text';
 
-/** Moeda dourada com "C" (Coins demo), usada no Crash e no Binary. */
-export function coinIcon(size = 26): Container {
-  const c = new Container();
-  c.addChild(new Graphics().circle(0, 0, size / 2).fill(C.coin));
-  const t = makeText('C', { fontSize: size * 0.55, fontWeight: '800', fill: C.coinText });
-  t.anchor.set(0.5);
-  c.addChild(t);
-  return c;
+/** Anel de 12 pontos do logo do Zunrel. */
+export const RING_DOTS = 12;
+
+export function ringPoint(i: number, radius: number): { x: number; y: number } {
+  const a = -Math.PI / 2 + (i * 2 * Math.PI) / RING_DOTS;
+  return { x: Math.cos(a) * radius, y: Math.sin(a) * radius };
 }
 
-/** Altifalante com ondas (som ligado) ou com um X (som desligado). */
-export function speaker(g: Graphics, muted: boolean, color: number = C.text): Graphics {
-  g.clear();
-  g.poly([-9, -4, -5, -4, 1, -9, 1, 9, -5, 4, -9, 4]).fill(color);
-  if (muted) {
-    g.moveTo(5, -4).lineTo(12, 4).moveTo(12, -4).lineTo(5, 4).stroke({ width: 2.2, color, cap: 'round' });
-  } else {
-    g.arc(1, 0, 6, -Math.PI / 4, Math.PI / 4).stroke({ width: 2.2, color, cap: 'round' });
-    g.arc(1, 0, 11, -Math.PI / 3.2, Math.PI / 3.2).stroke({ width: 2.2, color, cap: 'round' });
+/** Logo do Zunrel (anel de 12 pontos), centrado em (0,0). */
+export function logoMark(size = 26): Container {
+  const g = new Graphics();
+  for (let i = 0; i < RING_DOTS; i++) {
+    const p = ringPoint(i, size * 0.3375);
+    g.circle(p.x, p.y, size * 0.052).fill(C.text);
   }
-  return g;
+  const c = new Container();
+  c.addChild(g);
+  return c;
 }
 
-/** Marca zunrel: quadrado azul com "z" + palavra. */
-export function logo(size = 28): Container {
-  const c = new Container();
-  const box = size * 1.25;
-  c.addChild(new Graphics().roundRect(0, -box / 2, box, box, box * 0.28).fill(C.btnPrimary));
-  const z = makeText('z', { fontSize: size, fontWeight: '900', fontStyle: 'italic', fill: C.text });
-  z.anchor.set(0.5);
-  z.position.set(box / 2 - 1, -2);
-  const word = makeText('zunrel', { fontSize: size, fontWeight: '800', fontStyle: 'italic', fill: C.text, letterSpacing: -0.5 });
-  word.anchor.set(0, 0.5);
-  word.position.set(box + 10, -1);
-  c.addChild(z, word);
-  return c;
+export type IconKind = 'sound' | 'muted' | 'help' | 'user';
+
+/** Ícones de linha (grelha 24, traço 2), centrados em (0,0) e mostrados a 18 px. */
+export function drawIcon(g: Graphics, kind: IconKind, color: number = C.text): Graphics {
+  g.clear();
+  const s = { width: 2, color, cap: 'round', join: 'round' } as const;
+  if (kind === 'sound' || kind === 'muted') {
+    g.poly([-1, -7, -6, -3, -9, -3, -9, 3, -6, 3, -1, 7], true).stroke(s);
+    if (kind === 'sound') g.arc(-0.07, 0, 5, -0.775, 0.775).stroke(s);
+    else g.moveTo(4, -2.5).lineTo(9, 2.5).moveTo(9, -2.5).lineTo(4, 2.5).stroke(s);
+  } else if (kind === 'help') {
+    g.circle(0, 0, 9).stroke(s);
+    g.arc(0, -2.5, 2.5, Math.PI, Math.PI * 2 + 0.927).lineTo(0, 2).stroke(s);
+    g.circle(0, 5, 1.1).fill(color);
+  } else {
+    g.circle(0, -4, 4).stroke(s);
+    g.arc(0, 9, 8, Math.PI, Math.PI * 2).stroke(s);
+  }
+  g.scale.set(0.75);
+  return g;
 }

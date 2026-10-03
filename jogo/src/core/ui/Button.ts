@@ -31,9 +31,9 @@ export class Button extends Container {
     super();
     this.w = o.width;
     this.h = o.height;
-    this.color = o.color ?? C.btnPrimary;
-    this.radius = o.radius ?? R.btn;
-    this.caption = makeText(o.label, { fontSize: o.fontSize ?? 18, fontWeight: '600', fill: o.textColor ?? C.text });
+    this.color = o.color ?? C.blue;
+    this.radius = o.radius ?? R.cta;
+    this.caption = makeText(o.label, { fontSize: o.fontSize ?? 18, fontWeight: '600', fill: o.textColor ?? C.white });
     this.caption.anchor.set(0.5);
     this.body.addChild(this.bg, this.caption);
     this.addChild(this.body);
@@ -64,7 +64,7 @@ export class Button extends Container {
     if (this.caption.text !== text) this.caption.text = text;
   }
 
-  setColor(color: number, textColor: number = C.text): void {
+  setColor(color: number, textColor: number = C.white): void {
     this.color = color;
     this.caption.style.fill = textColor;
     this.redraw();

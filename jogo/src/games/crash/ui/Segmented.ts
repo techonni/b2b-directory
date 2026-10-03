@@ -1,12 +1,13 @@
 import { Container, Graphics, Rectangle, type Text } from 'pixi.js';
 import gsap from 'gsap';
-import { C } from '../theme';
+import { C, R } from '../theme';
 import { makeText } from '../text';
 import { sound } from '../audio/Sound';
+import { scrollGesture } from '../../../core/ui/ScrollBox';
 
-/** Seletor de 2+ opções em pílula, com indicador deslizante (GSAP). */
+/** Seletor Manual / Auto: fundo cinzento claro e indicador branco que desliza (GSAP). */
 export class Segmented extends Container {
-  static readonly HEIGHT = 50;
+  static readonly HEIGHT = 38;
   onChange: ((index: number) => void) | null = null;
   index = 0;
 
@@ -20,11 +21,13 @@ export class Segmented extends Container {
     super();
     this.addChild(this.bg, this.knob);
     this.labels = options.map((o, i) => {
-      const t = makeText(o, { fontSize: 16, fontWeight: '600', fill: C.text });
+      const t = makeText(o, { fontSize: 13, fontWeight: '600', fill: C.muted });
       t.anchor.set(0.5);
       t.eventMode = 'static';
       t.cursor = 'pointer';
-      t.on('pointertap', () => this.select(i));
+      t.on('pointertap', () => {
+        if (!scrollGesture.dragged) this.select(i);
+      });
       this.addChild(t);
       return t;
     });
@@ -35,30 +38,29 @@ export class Segmented extends Container {
   layout(w: number): void {
     this.w = w;
     const h = Segmented.HEIGHT;
-    const n = this.labels.length;
-    const segW = (w - 10) / n;
-    this.bg.clear().roundRect(0, 0, w, h, h / 2).fill(C.bgInput);
-    this.knob.clear().roundRect(0, 0, segW, h - 10, (h - 10) / 2).fill(C.bgAddon);
-    this.knob.position.set(5 + this.index * segW, 5);
+    const segW = (w - 8) / this.labels.length;
+    this.bg.clear().roundRect(0, 0, w, h, R.seg).fill(C.chip);
+    this.knob.clear().roundRect(0, 0, segW, h - 8, R.seg - 3).fill(C.white);
+    this.knob.position.set(4 + this.index * segW, 4);
     this.labels.forEach((t, i) => {
-      t.position.set(5 + segW * (i + 0.5), h / 2);
+      t.position.set(4 + segW * (i + 0.5), h / 2);
       t.hitArea = new Rectangle(-segW / 2, -h / 2, segW, h);
-      t.alpha = i === this.index ? 1 : 0.65;
+      t.style.fill = i === this.index ? C.text : C.muted;
     });
   }
 
   setLocked(on: boolean): void {
     this.locked = on;
-    this.alpha = on ? 0.55 : 1;
+    this.alpha = on ? 0.5 : 1;
   }
 
   select(i: number): void {
     if (this.locked || i === this.index) return;
     this.index = i;
     sound.play('click');
-    const segW = (this.w - 10) / this.labels.length;
-    gsap.to(this.knob, { x: 5 + i * segW, duration: 0.3, ease: 'power3.out' });
-    this.labels.forEach((t, j) => gsap.to(t, { alpha: j === i ? 1 : 0.65, duration: 0.2 }));
+    const segW = (this.w - 8) / this.labels.length;
+    gsap.to(this.knob, { x: 4 + i * segW, duration: 0.3, ease: 'power3.out' });
+    this.labels.forEach((t, j) => (t.style.fill = j === i ? C.text : C.muted));
     this.onChange?.(i);
   }
 }

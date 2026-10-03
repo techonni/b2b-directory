@@ -10,6 +10,13 @@ Data: 28/09/2026 (7.ª sessão do dia: resultados dos lotes 2, P e 4; link Shopi
 
 ---
 
+## Sessão de 03/10/2026 (2): novo visual « Ponto Alto » em game.zunrel.com
+
+- Visual do jogo refeito segundo a maquete do Techonni (claro, Geist, anel de 12 pontos, 3 cartões; telemóvel em coluna com o botão fixo em baixo). Tudo em `jogo/`, na branch `claude/friendly-feynman-9esfee`. **Não está em `main`: o Techonni quer ver antes de publicar.** Depois do « ok »: merge em `main` e confirmar game.zunrel.com.
+- Mecânica igual (3 ganhos em 5, RTP, contas). Novidades pedidas pela maquete: aposta mínima 0,10, interruptor « Levantar automático » (desligado = só manual), saldo reposto pelo « + ». Contagem de jogadores da maquete **não** foi posta (seria inventada).
+
+---
+
 ## Sessão de 03/10/2026: novo site Techonni (GTA 6)
 
 - **Novo site separado**, sem mexer no Zunrel: repositório `techonni/techonni-jeu`, domínio **techonni.com** (Hostinger, DNS passado para a Cloudflare pelo Cowork). 15 guias GTA 6 em francês com fontes. Tudo o resto (regras, pendentes, próximos passos) está em `docs/PROXIMA-SESSAO.md` desse repositório.

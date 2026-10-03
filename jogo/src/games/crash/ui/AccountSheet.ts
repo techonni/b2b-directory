@@ -1,6 +1,7 @@
 import { Container, Graphics, Rectangle, type Text } from 'pixi.js';
 import gsap from 'gsap';
-import { C, R } from '../theme';
+import { C, FONT_MONO } from '../theme';
+import { drawCard } from './Card';
 import { makeText } from '../text';
 import { Button } from './Button';
 
@@ -22,9 +23,9 @@ export class AccountSheet extends Container {
   private readonly title: Text;
   private readonly big: Text;
   private readonly text: Text;
-  private readonly primary = new Button({ label: '', width: 300, height: 52, fontSize: 18 });
-  private readonly secondary = new Button({ label: '', width: 300, height: 52, color: C.btnSecondary, fontSize: 18 });
-  private readonly closeBtn = new Button({ label: 'Fechar', width: 300, height: 44, color: C.bgInput, fontSize: 16 });
+  private readonly primary = new Button({ label: '', width: 300, height: 52, fontSize: 16 });
+  private readonly secondary = new Button({ label: '', width: 300, height: 52, color: C.chip, textColor: C.text, fontSize: 16 });
+  private readonly closeBtn = new Button({ label: 'Fechar', width: 300, height: 44, color: C.chip, textColor: C.text, fontSize: 15 });
   private view: AccountView = { kind: 'out' };
   private W = 400;
   private H = 800;
@@ -36,10 +37,10 @@ export class AccountSheet extends Container {
     this.backdrop.eventMode = 'static';
     this.backdrop.on('pointertap', () => this.close());
     this.panel.eventMode = 'static';
-    this.title = makeText('Conta', { fontSize: 22, fontWeight: '800', fill: C.text });
-    this.big = makeText('', { fontSize: 34, fontWeight: '800', fill: C.coin, letterSpacing: 2 });
+    this.title = makeText('Conta', { fontSize: 20, fontWeight: '600', fill: C.text });
+    this.big = makeText('', { fontSize: 32, fontWeight: '600', fontFamily: FONT_MONO, fill: C.blue, letterSpacing: 1 });
     this.big.anchor.set(0.5, 0);
-    this.text = makeText('', { fontSize: 15, fontWeight: '500', fill: C.textMuted, wordWrap: true, lineHeight: 21 });
+    this.text = makeText('', { fontSize: 15, fontWeight: '500', fill: C.muted, wordWrap: true, lineHeight: 21 });
     this.closeBtn.onTap = () => this.close();
     this.panel.addChild(this.bg, this.title, this.big, this.text, this.primary, this.secondary, this.closeBtn);
     this.addChild(this.backdrop, this.panel);
@@ -78,7 +79,7 @@ export class AccountSheet extends Container {
     this.secondary.visible = v.kind === 'out';
     if (v.kind === 'out') {
       this.title.text = 'Conta';
-      this.text.text = 'Cria uma conta para guardar o saldo e continuar noutro telemóvel ou computador. Só precisas de um PIN de 4 a 8 algarismos.';
+      this.text.text = 'Cria uma conta para guardar o saldo e continuar noutro telemóvel ou computador. Só precisas de um PIN de 4 a 8 algarismos. Moedas virtuais, sem dinheiro real.';
       this.primary.setText('Criar conta');
       this.primary.onTap = () => this.onCreate?.();
       this.secondary.setText('Já tenho conta · Entrar');
@@ -112,10 +113,10 @@ export class AccountSheet extends Container {
       y += (b === this.closeBtn ? 44 : 52) + 10;
     }
     const h = y + pad - 10;
-    this.bg.clear().roundRect(0, 0, this.w, h, R.panel).fill(C.bgPanel);
+    drawCard(this.bg, this.w, h);
     this.panel.pivot.set(this.w / 2, h / 2);
     this.panel.position.set(this.W / 2, this.H / 2);
     this.panel.hitArea = new Rectangle(0, 0, this.w, h);
-    this.backdrop.clear().rect(0, 0, this.W, this.H).fill({ color: 0x000000, alpha: 0.55 });
+    this.backdrop.clear().rect(0, 0, this.W, this.H).fill({ color: 0x000000, alpha: 0.3 });
   }
 }

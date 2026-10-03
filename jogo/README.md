@@ -1,6 +1,6 @@
-# Jogo Crash — game.zunrel.com
+# Ponto Alto — game.zunrel.com
 
-Só o jogo Crash (do antigo site de jogos, commit 0d75e32), em ecrã inteiro. Créditos fictícios, sem dinheiro real.
+Jogo de curva (tipo crash) em ecrã inteiro, com o visual claro do Zunrel (Geist, anel de 12 pontos, azul #0f4bf1). Moedas virtuais, sem dinheiro real.
 Feito com PixiJS v8 + GSAP + TypeScript + Howler.js.
 
 - Local: `cd jogo && npm install && npm run dev`
